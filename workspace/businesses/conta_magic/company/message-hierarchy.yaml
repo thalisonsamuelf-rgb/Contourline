@@ -1,0 +1,45 @@
+---
+# MESSAGE-HIERARCHY.YAML — Conta Magic
+# Guardian: CMO
+# Purpose: Hierarchical messaging framework (WHY > HOW > WHAT)
+metadata:
+  version: "1.0"
+  company_name: "Conta Magic"
+  status: "ACTIVE"
+  last_updated: "2026-03-15"
+  guardian: "CMO"
+  required_fields: 12
+  source: "Derived from brand/strategic-positioning.yaml"
+
+message_hierarchy:
+  level_1_why:
+    statement: "Profissionais de medicina estetica merecem equipamentos certificados que entregam resultado"
+    emotional_core: "Seguranca e excelencia — confiar que seu equipamento e certificado, seguro e vai entregar o resultado que seu paciente espera"
+    use_in: ["manifesto", "about_page", "brand_video", "keynote_opening"]
+
+  level_2_how:
+    statement: "Tecnologia de ponta com certificacao Anvisa e suporte tecnico completo"
+    mechanism: "Empresa com background de tecnologia/programacao + certificacao Anvisa completa + foco exclusivo em medicina estetica + suporte de 120 pessoas"
+    use_in: ["sales_page", "product_explainer", "webinar_middle"]
+
+  level_3_what:
+    statement: "Equipamentos medicos para procedimentos esteticos — certificados, seguros, eficazes"
+    tangible_proof: "R$115-120M de faturamento. 120 funcionarios. Uma das maiores do mercado exclusivo. Certificacao Anvisa."
+    use_in: ["feature_list", "pricing_page", "ad_copy", "email_cta"]
+
+messaging_by_audience:
+  cold_audience:
+    primary_message: "Seus pacientes confiam em voce — voce precisa confiar nos seus equipamentos"
+    tone: "inspirational, problem-aware"
+  warm_audience:
+    primary_message: "Equipamentos com certificacao Anvisa completa + suporte tecnico dedicado — foco exclusivo em medicina estetica"
+    tone: "educational, solution-aware"
+  hot_audience:
+    primary_message: "R$115-120M em faturamento. Certificacao Anvisa. 120 pessoas de suporte. Solicite seu orcamento."
+    tone: "direct, product-aware, CTA-heavy"
+
+messaging_by_channel:
+  social_media: "Equipamentos certificados Anvisa para medicina estetica — seguranca e resultado"
+  email: "Certificacao Anvisa + suporte tecnico completo + foco exclusivo em estetica"
+  landing_page: "Seus pacientes confiam em voce (hero) > Equipamentos com certificacao Anvisa e suporte dedicado (body) > Solicite orcamento (CTA)"
+  ads: "Equipamentos esteticos com certificacao Anvisa > Uma das maiores do mercado exclusivo"

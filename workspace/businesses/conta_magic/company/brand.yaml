@@ -1,0 +1,71 @@
+---
+# BRAND.YAML — Conta Magic (Egio Roberto)
+# ETL Deep Pass (v1) — perfil + call vendas
+metadata:
+  version: "1.0"
+  company_name: "Conta Magic"
+  status: "IN_PROGRESS"
+  last_updated: "2026-03-14"
+  source: "ETL Deep Pass v1 — perfil + formulario + call vendas (145 linhas)"
+  product_name: "conta_magic"
+  completeness_percentage: 40
+  etl_pass: 1
+
+brand_core:
+  brand_name: "Conta Magic (Conta Online Magic)"
+  brand_tagline: FILL_THIS # A PREENCHER NA IMERSAO
+  brand_purpose: FILL_THIS # A PREENCHER NA IMERSAO
+
+brand_essence:
+  core_belief: FILL_THIS # A PREENCHER NA IMERSAO
+
+promises:
+  marketing_promise: FILL_THIS # A PREENCHER NA IMERSAO
+  actual_promise: "Equipamentos medicos certificados Anvisa para profissionais de medicina estetica"
+  true_promise: FILL_THIS # A PREENCHER NA IMERSAO
+
+enemies:
+  NOT_the_enemy: "Profissionais de estetica (eles sao os clientes)"
+  THE_real_enemy: "Equipamentos sem certificacao, procedimentos inseguros, falta de padrao de qualidade no mercado estetico"
+
+personality:
+  warmth_level: 5 # Profissional mas acessivel
+  directness_level: 7 # B2B requer comunicacao direta
+  formality_level: 6 # Setor medico requer formalidade
+  confidence_level: 9 # R$115-120M, maior do mercado
+
+voice_dna:
+  power_words:
+    - "certificado"
+    - "Anvisa"
+    - "tecnologia"
+    - "inovacao"
+    - "resultado"
+    - "seguranca"
+  signature_phrases: [] # A PREENCHER NA IMERSAO
+  forbidden_words: [] # A PREENCHER NA IMERSAO
+
+brand_pillars:
+  pillar_1:
+    name: "Tecnologia"
+    description: "Empresa de tecnologia que cria equipamentos de ponta"
+  pillar_2:
+    name: "Certificacao"
+    description: "Conformidade total com Anvisa e normas regulatorias"
+  pillar_3:
+    name: "Resultado"
+    description: "Equipamentos que entregam resultado para profissionais"
+  pillar_4:
+    name: "Inovacao"
+    description: "IA, videos, animacoes — sempre na vanguarda"
+
+channels:
+  instagram_brand: "@onlinemag"
+  instagram_founder: "@egioroberto"
+  site: FILL_THIS # A PREENCHER — extrair de pesquisa web
+  acquisition: "Marketing digital (14 pessoas no time), vendas diretas"
+
+core_values:
+  value_1:
+    name: FILL_THIS # A PREENCHER NA IMERSAO
+    principle: FILL_THIS

@@ -1,0 +1,62 @@
+---
+# TRIBE-IDENTITY.YAML — Conta Magic
+# Personas arquetipicas da tribo + arco de transformacao
+# Guardian: Movement Architect / CMO
+# Status: SKELETON (inferido — precisa validacao com dados reais)
+metadata:
+  schema: "contamagic.tribe_identity"
+  version: "1.0"
+  status: "SKELETON"
+  updated_at: "2026-03-14"
+  note: "Archetypes inferidos do posicionamento B2B. Validacao pendente."
+
+archetypes:
+  archetype_1:
+    key: "o_profissional_exigente"
+    label: "O Profissional Exigente"
+    weight: 40
+    description: "Medico ou profissional de estetica que exige o melhor equipamento certificado para seus pacientes"
+    motivation_core: "Resultado clinico seguro e consistente — nao aceita risco"
+    main_fear: "Problema regulatorio (Anvisa), resultado ruim no paciente, perda de reputacao"
+    transformation: "De profissional inseguro sobre equipamento para referencia no mercado com tecnologia de ponta"
+    trigger: "Ver resultado clinico documentado de outro profissional com o equipamento"
+
+  archetype_2:
+    key: "o_empreendedor_clinica"
+    label: "O Empreendedor da Clinica"
+    weight: 35
+    description: "Dono de clinica que busca equipamentos como diferencial competitivo e fonte de receita"
+    motivation_core: "ROI — equipamento que se paga rapido e atrai pacientes"
+    main_fear: "Investir alto e nao ter retorno, equipamento ficar encostado"
+    transformation: "De clinica generica para referencia em procedimentos esteticos avancados"
+    trigger: "Calcular ROI: quantos procedimentos para pagar o equipamento"
+
+  archetype_3:
+    key: "o_inovador_cauteloso"
+    label: "O Inovador Cauteloso"
+    weight: 25
+    description: "Profissional que quer inovar mas precisa de seguranca regulatoria para dar o passo"
+    motivation_core: "Estar na vanguarda SEM risco regulatorio"
+    main_fear: "Adotar tecnologia nova que nao tem respaldo (Anvisa, evidencia clinica)"
+    transformation: "De conservador por medo para inovador com seguranca"
+    trigger: "Ver que o equipamento tem certificacao Anvisa completa"
+
+transformation_arc:
+  stage_1:
+    name: "A Necessidade"
+    description: "Profissional percebe que precisa de equipamento melhor para competir"
+  stage_2:
+    name: "A Pesquisa"
+    description: "Busca fornecedores, compara opcoes, se preocupa com certificacao"
+  stage_3:
+    name: "A Confianca"
+    description: "Encontra Conta Magic — certificacao Anvisa, escala, background tech"
+  stage_4:
+    name: "O Investimento"
+    description: "Compra o equipamento, instala na clinica"
+  stage_5:
+    name: "O Resultado"
+    description: "Ve resultado clinico, pacientes satisfeitos, retorno do investimento"
+  stage_6:
+    name: "A Referencia"
+    description: "Se torna referencia no mercado local, indica para outros profissionais"

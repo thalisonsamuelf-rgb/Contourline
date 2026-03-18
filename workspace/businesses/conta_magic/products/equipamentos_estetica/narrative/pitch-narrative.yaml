@@ -1,0 +1,18 @@
+---
+# PITCH-NARRATIVE.YAML — Conta Magic / Equipamentos para Medicina Estetica
+# Status: SKELETON
+metadata:
+  version: "1.0"
+  product_name: "Equipamentos para Medicina Estetica"
+  status: "SKELETON"
+  last_updated: "2026-03-14"
+
+elevator_pitch:
+  version_30s: |
+    A Conta Magic e uma das maiores empresas do mercado exclusivo de equipamentos
+    para medicina estetica no Brasil. Com certificacao Anvisa completa e
+    background de tecnologia, entregamos equipamentos que profissionais confiam
+    para resultados seguros e consistentes. Faturamos R$115-120M/ano com 120
+    funcionarios operando 100% remoto.
+  version_60s: FILL_THIS # A PREENCHER NA IMERSAO
+  version_3min: FILL_THIS # A PREENCHER NA IMERSAO

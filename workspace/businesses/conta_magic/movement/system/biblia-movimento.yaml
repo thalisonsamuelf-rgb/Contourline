@@ -1,0 +1,12 @@
+---
+# BIBLIA-MOVIMENTO.YAML — Conta Magic
+# Status: SKELETON
+metadata:
+  schema: "contamagic.biblia"
+  version: "1.0"
+  status: "SKELETON"
+  updated_at: "2026-03-14"
+
+movement_bible:
+  title: FILL_THIS # A PREENCHER NA IMERSAO
+  chapters: [] # A PREENCHER NA IMERSAO

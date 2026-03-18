@@ -1,0 +1,114 @@
+---
+# AUTHORITY-STORY.YAML — Como a Conta Magic construiu autoridade
+# Guardian: Founder / CMO
+# Status: SKELETON — call curta (145 linhas), dados limitados
+metadata:
+  version: "1.0"
+  company_name: "Conta Magic"
+  founder_name: "Egio Roberto"
+  status: "SKELETON"
+  last_updated: "2026-03-14"
+  owner: "Egio Roberto (CEO/Socio-fundador)"
+  notes: |
+    Authority story da Conta Magic.
+    Fontes: perfil, formulario, call vendas (145 linhas — curta).
+    Dados limitados — requer enriquecimento via web scraping e imersao.
+  product_name: "Equipamentos para Medicina Estetica"
+
+the_problem:
+  market_problem: |
+    Mercado de medicina estetica cresce rapidamente no Brasil, mas profissionais
+    enfrentam dificuldade em encontrar equipamentos confiaveis com certificacao Anvisa.
+    Equipamentos sem certificacao colocam pacientes em risco e profissionais em
+    situacao regulatoria precaria.
+  why_existing_experts_failed: |
+    Fornecedores tradicionais nao combinam tecnologia de ponta com compliance
+    regulatorio. Muitos vendem equipamentos importados sem a devida certificacao.
+    Falta uma empresa que una background tecnologico com expertise regulatoria.
+  founder_frustration: |
+    Egio Roberto, com background de programacao, via a oportunidade de criar
+    uma empresa de tecnologia focada em equipamentos medicos esteticos.
+    A frustracao: ser uma empresa de tecnologia mas nao usar IA internamente
+    de forma coordenada. "Em Casa de Ferreiro, o espeto e de pau."
+
+obsession_phase:
+  the_realization: |
+    O mercado de medicina estetica precisava de um fornecedor que combinasse
+    tecnologia, inovacao e conformidade regulatoria. A certificacao Anvisa
+    e uma barreira de entrada significativa que protege quem a tem.
+  decision_to_master_it: FILL_THIS # A PREENCHER NA IMERSAO
+  the_sacrifice: FILL_THIS # A PREENCHER NA IMERSAO
+  obsession_proof: |
+    - Uma das maiores do mercado exclusivo de equipamentos esteticos
+    - Certificacao Anvisa completa
+    - R$115-120M de faturamento anual
+    - 120 funcionarios
+
+testing_phase:
+  first_experiment: FILL_THIS # A PREENCHER NA IMERSAO
+  early_validation: FILL_THIS # A PREENCHER NA IMERSAO
+  the_breakthrough: |
+    Conta Magic se tornou uma das maiores do mercado exclusivo de equipamentos
+    para medicina estetica no Brasil, atingindo R$115-120M de faturamento anual.
+
+public_emergence:
+  first_public_claim: FILL_THIS # A PREENCHER NA IMERSAO
+  reputation_spreading: |
+    A reputacao se construiu via:
+    - Certificacao Anvisa (validacao regulatoria)
+    - Escala significativa (R$115-120M)
+    - Time de 120 pessoas operando 100% home office
+    - Uso de IA em marketing (videos, animacoes)
+
+authority_stack:
+  layer_1_practitioner:
+    description: "Primeiro, prove que voce FEZ"
+    your_evidence: |
+      Egio Roberto fundou e lidera a Conta Magic — uma das maiores do mercado
+      exclusivo de equipamentos esteticos no Brasil.
+      R$115-120M/ano de faturamento. 120 funcionarios.
+      Opera 100% home office nacional.
+      Certificacao Anvisa em todos os equipamentos.
+  layer_2_teacher:
+    description: "Depois, prove que voce pode ENSINAR"
+    your_evidence: FILL_THIS # A PREENCHER NA IMERSAO
+  layer_3_author:
+    description: "Documente seu conhecimento em formato publicado"
+    your_evidence: FILL_THIS # A PREENCHER NA IMERSAO
+  layer_4_speaker:
+    description: "Compartilhe de palcos prestigiosos"
+    your_evidence: FILL_THIS # A PREENCHER NA IMERSAO
+  layer_5_results_proof:
+    description: "Mostre resultados de clientes/parceiros"
+    your_evidence: FILL_THIS # A PREENCHER NA IMERSAO
+  layer_6_media:
+    description: "Seja entrevistado por veiculos crediveis"
+    your_evidence: FILL_THIS # A PREENCHER — pesquisa web
+  layer_7_recognition:
+    description: "Receba reconhecimento de pares"
+    your_evidence: FILL_THIS # A PREENCHER NA IMERSAO
+
+authority_narrative:
+  headline: |
+    Como um empreendedor com background de programacao construiu uma das maiores
+    empresas de equipamentos para medicina estetica do Brasil — R$115-120M/ano,
+    120 funcionarios, certificacao Anvisa completa
+
+one_page_story:
+  version_30_seconds: |
+    Egio Roberto, nascido em SP e radicado em Sete Lagoas (MG), usou seu
+    background de programacao para fundar a Conta Magic — uma das maiores
+    empresas de equipamentos para medicina estetica do Brasil.
+    Com certificacao Anvisa completa, fatura R$115-120M/ano com 120
+    funcionarios operando 100% home office. Agora busca IA coordenada
+    para otimizar operacoes e reduzir custos.
+
+completion_checklist:
+  - "[x] The problem identified"
+  - "[x] Obsession proof (numeros)"
+  - "[x] Authority stack layer 1 (practitioner)"
+  - "[x] Headline and 30-second story"
+  - "[ ] Origin story completa — REQUIRES FOUNDER INPUT"
+  - "[ ] Testing phase — REQUIRES FOUNDER INPUT"
+  - "[ ] Public emergence — REQUIRES FOUNDER INPUT"
+  - "[ ] Authority layers 2-7 — REQUIRES FOUNDER INPUT + WEB SEARCH"

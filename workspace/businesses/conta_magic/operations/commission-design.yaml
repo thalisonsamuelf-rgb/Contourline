@@ -1,0 +1,26 @@
+---
+# COMMISSION-DESIGN.YAML - Conta Magic Sales Compensation
+# Guardian: COO / Sales Lead / CFO
+# Status: TEMPLATE — awaiting data
+metadata:
+  version: "1.0"
+  product_name: "conta_magic"
+  status: "TEMPLATE"
+  last_updated: "2026-03-14"
+  owner: "COO / Sales Lead"
+  framework: "Cole Gordon Commission Structures"
+
+compensation_philosophy:
+  approach: FILL_THIS
+  alignment_principle: FILL_THIS
+
+commission_structure:
+  role_1:
+    role_title: FILL_THIS
+    base_salary: FILL_THIS
+    commission_rate: FILL_THIS
+
+cross_references:
+  depends_on:
+    - "kpi-scorecards.yaml"
+    - "team-structure.yaml"

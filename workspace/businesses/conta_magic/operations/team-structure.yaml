@@ -1,0 +1,91 @@
+---
+# TEAM-STRUCTURE.YAML - Conta Magic Org Design
+# Guardian: Egio Roberto (CEO)
+# Status: 55% Complete
+# Sources: Call vendas (145 linhas), Perfil, Formulario
+metadata:
+  version: "1.0"
+  product_name: "Conta Magic"
+  status: "55% Complete"
+  last_updated: "2026-03-14"
+  owner: "Egio Roberto (CEO)"
+
+current_team:
+  total_headcount: "~120 pessoas"
+  hq: "Sete Lagoas, MG (100% home office)"
+  work_model: "100% remoto nacional"
+
+  leadership:
+    ceo:
+      name: "Egio Roberto"
+      title: "CEO / Socio-fundador"
+      role: "Visao estrategica, validacao de processos, background de programacao"
+      background: "Programacao e tecnologia — nascido em SP, radicado em Sete Lagoas"
+      type: "Full-time / Founder"
+    cfo:
+      name: FILL_THIS # Mencionado na call como "diretor financeiro"
+      title: "Diretor Financeiro"
+      role: "Gestao financeira, validacao de investimentos"
+      type: "Full-time"
+
+  departments_identified:
+    marketing:
+      lead: FILL_THIS # A PREENCHER NA IMERSAO
+      team_size: 14
+      key_roles:
+        - "Criacao de conteudo com IA (videos, animacoes)"
+        - "Gestao de trafego pago"
+        - "Analise de dados (IA para insights)"
+        - "Producao de videos com IA"
+      primary_kpi: "Leads gerados, conversao de marketing"
+      pain: "Muita verba de anuncio mas pouca IA automatizada"
+      # Fonte: call — "so na equipe de marketing tem 14 pessoas"
+    vendas:
+      lead: FILL_THIS
+      team_size: FILL_THIS
+      key_roles:
+        - "SDR (tentando com IA, 'apanhando ainda')"
+        - "Vendas diretas B2B"
+        - "Tratamento de leads"
+      primary_kpi: "Leads qualificados, vendas fechadas"
+      pain: "Tratamento de leads manual, SDR com IA nao funcional"
+    financeiro:
+      lead: "Diretor Financeiro"
+      team_size: FILL_THIS
+      key_roles:
+        - "Gestao financeira"
+        - "Planejamento orcamentario"
+        - "Controle de folha (R$700-800k/mes)"
+      primary_kpi: "Eficiencia de custos, margem"
+      pain: "Usa Totvs mas quer algo mais personalizado"
+      current_tool: "Totvs"
+    juridico_compliance:
+      lead: FILL_THIS
+      team_size: FILL_THIS
+      key_roles:
+        - "Normativas Anvisa"
+        - "Compliance regulatorio"
+        - "Documentacao juridica"
+      primary_kpi: "Conformidade Anvisa, zero infrações"
+      ai_usage: "Chat PDF para consultas normativas (ja em uso)"
+
+  founder_wearing_hats: |
+    Egio: CEO + visao estrategica + validacao de processos + ponte com tecnologia
+    Gaps visiveis: CTO formal (Egio tem background mas e CEO), Head de IA/Automacao
+
+key_tools:
+  erp: "Totvs"
+  ai_tools:
+    - "IA para criacao de videos"
+    - "IA para animacoes"
+    - "Chat PDF para compliance Anvisa"
+    - "Eleven Labs para audio"
+    - "AIOX (instalado, em teste)"
+  project_management: FILL_THIS # A PREENCHER NA IMERSAO
+
+cross_references:
+  depends_on:
+    - "company/company-profile.yaml (company size)"
+  feeds_into:
+    - "operations/kpi-scorecards.yaml"
+    - "operations/commission-design.yaml"

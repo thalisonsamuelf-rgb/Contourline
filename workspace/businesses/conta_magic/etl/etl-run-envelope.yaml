@@ -1,0 +1,128 @@
+---
+# ETL RUN ENVELOPE — Egio Roberto
+metadata:
+  schema: "etl.run_envelope"
+  version: "1.0.0"
+  status: "COMPLETE"
+  run_id: "deep-pass-conta_magic-20260314"
+  generated_at: "2026-03-14"
+  business_slug: "conta_magic"
+
+contract:
+  status: "COMPLETE"
+  mode: "deep_pass_extraction"
+  sources:
+    - path: "apps/aiox-imersao/recursos/perfis/egio-roberto.md"
+      type: "perfil"
+      lines: 87
+    - path: "apps/aiox-imersao/recursos/formulario/Egio Roberto/formulario.md"
+      type: "formulario"
+      lines: 18
+    - path: "apps/aiox-imersao/recursos/Calls vendas/Egio - Thalison/transcricao.md"
+      type: "call_vendas"
+      lines: 145
+  desired_output: "full workspace (company/*, brand/*, operations/*, products/*, movement/*, ai/*, tech/*, evidence/*)"
+
+artifacts:
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/company-profile.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/founder-dna.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/diagnosis.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/brand.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/icp.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/credentials.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/offerbook.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/analytics.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/company/authority-story.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/brand/brandbook.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/brand/strategic-positioning.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/operations/team-structure.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/operations/pricing-strategy.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/operations/kpi-scorecards.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/operations/commission-design.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/products/equipamentos_estetica/offerbook.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/products/equipamentos_estetica/proof.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/products/equipamentos_estetica/testimonials.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/products/equipamentos_estetica/narrative/brandscript.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/products/equipamentos_estetica/narrative/objection-destroyers.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/products/equipamentos_estetica/narrative/pitch-narrative.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/products/equipamentos_estetica/narrative/product-story.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/foundation/tribe-identity.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/identity/leaders.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/reading/fenomenologia-cultural.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/reading/persona/ideological-persona.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/system/cosmology.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/system/biblia-movimento.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/system/mrd-bank/doctrines.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/system/mrd-bank/myths.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/system/mrd-bank/rites.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/movement/system/mrd-bank/vocabulary.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/ai/strategy.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/tech/strategy.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/tech/stack.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/etl/etl-run-envelope.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/evidence/source-registry.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/evidence/completeness-manifest.yaml"
+  - kind: "YAML"
+    path: "workspace/businesses/conta_magic/evidence/workspace-context-summary.yaml"
+
+metrics:
+  sources_used: 3
+  total_source_lines: 250
+  chars_in: 12500
+  fidelity_ratio: 0.90
+  note: "Shorter call (145 lines vs 699 for brasil_em_dobro) — some areas have less data"
+
+checkpoints:
+  - phase: "extraction"
+    passed: true
+    timestamp: "2026-03-14"
+  - phase: "transformation"
+    passed: true
+    timestamp: "2026-03-14"
+  - phase: "validation"
+    passed: true
+    timestamp: "2026-03-14"
+
+warnings:
+  - "Call vendas curta (145 linhas) — menos dados que o gold standard (699 linhas)"
+  - "Sem fonte de instalacao (NONE)"
+  - "Website URL nao encontrado nas fontes — requer pesquisa web"
+errors: []

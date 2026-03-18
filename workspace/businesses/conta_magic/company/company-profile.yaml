@@ -1,0 +1,177 @@
+---
+# COMPANY-PROFILE.YAML — Conta Magic (Egio Roberto)
+# ETL Deep Pass (v1) — perfil + formulario + call vendas (145 linhas)
+metadata:
+  version: "1.0"
+  company_name: "Conta Magic"
+  status: "IN_PROGRESS"
+  last_updated: "2026-03-14"
+  owner: "Egio Roberto"
+  source: "ETL Deep Pass v1 — perfil + formulario + call vendas (145 linhas)"
+  product_name: "conta_magic"
+  etl_pass: 1
+
+company_essence:
+  legal_name: FILL_THIS # A PREENCHER NA IMERSAO
+  trade_name: "Conta Magic (Conta Online Magic)"
+  year_founded: FILL_THIS # A PREENCHER NA IMERSAO
+  headquarters: "Sete Lagoas, MG"
+  one_liner: "Uma das maiores empresas do mercado exclusivo de equipamentos para medicina estetica no Brasil"
+  origin_story_short: FILL_THIS # A PREENCHER NA IMERSAO
+  brand_description: "Empresa de tecnologia com background de programacao que fornece equipamentos medicos certificados pela Anvisa para profissionais de medicina estetica"
+
+contact:
+  instagram_brand: "@onlinemag"
+  instagram_founder: "@egioroberto"
+  phone: "55 31991888632"
+  email: FILL_THIS # A PREENCHER NA IMERSAO
+  role: "CEO / Socio-fundador"
+  site: FILL_THIS # A PREENCHER — extrair do Instagram ou pesquisa web
+
+mission:
+  statement: FILL_THIS # A PREENCHER NA IMERSAO
+  who_benefits:
+    - "Profissionais de medicina estetica"
+    - "Clinicas de estetica avancada"
+  transformation: "Fornecer equipamentos medicos de ponta com certificacao Anvisa para profissionais que buscam excelencia em medicina estetica"
+
+vision:
+  statement: FILL_THIS # A PREENCHER NA IMERSAO
+  proof_of_traction:
+    - "Faturamento anual: R$ 115-120 milhoes"
+    - "~120 funcionarios"
+    - "Uma das maiores do mercado exclusivo de equipamentos esteticos"
+    - "Certificacao Anvisa (alta barreira regulatoria)"
+    - "Time 100% home office nacional"
+
+values:
+  value_1:
+    name: FILL_THIS # A PREENCHER NA IMERSAO
+    definition: FILL_THIS
+  value_2:
+    name: FILL_THIS # A PREENCHER NA IMERSAO
+    definition: FILL_THIS
+
+positioning:
+  target_market: "Profissionais de medicina estetica — B2B"
+  unique_angle: "Empresa de tecnologia com background de programacao que domina equipamentos esteticos certificados Anvisa"
+  primary_promise: "Equipamentos medicos de alta performance com certificacao regulatoria completa"
+  credibility_foundation: "Uma das maiores do mercado exclusivo, R$ 115-120M faturamento, certificacao Anvisa"
+
+products:
+  product_1:
+    name: "Equipamentos para Medicina Estetica"
+    type: "B2B — Venda de equipamentos medicos de alto valor"
+    positioning: "Equipamentos certificados Anvisa para profissionais de medicina estetica"
+    channels: "Marketing digital (time de 14 pessoas), vendas diretas"
+    annual_revenue_estimate: "R$ 115.000.000-120.000.000"
+    status: "ACTIVE"
+    pricing:
+      modelo: "Venda de equipamentos de alto ticket"
+      ticket_medio: FILL_THIS # Equipamentos medicos — alto valor unitario
+    details: |
+      - Equipamentos medicos para medicina estetica
+      - Certificacao Anvisa obrigatoria (alta barreira regulatoria)
+      - Empresa de tecnologia com background de programacao
+      - Videos com IA para marketing de produtos
+  total_revenue_estimate: "R$ 115.000.000-120.000.000"
+
+leadership_team:
+  founder_1:
+    name: "Egio Roberto (Egio Almeida)"
+    title: "CEO / Socio-fundador (dono da empresa)"
+    role: "Visao estrategica, validacao de processos, background de programacao"
+    reference_file: "founder-dna.yaml"
+    imersao_status: "Procedimento de saude — possibilidade remota de participar"
+  socio_1:
+    name: "Thalison Samuel Franca Abreu"
+    title: "Socio"
+    role: "Participa da imersao no lugar do Egio"
+    empresa_propria: "Contourline Equipamentos Medicos e Diagnosticos (CNPJ 14.458.149/0001-23)"
+    phone: "55 31995810314"
+    email: "thalison@contourline.com.br"
+    cidade: "Sete Lagoas, MG"
+  socio_2:
+    name: "Claudio Kaizer"
+    title: "Socio"
+    role: "Participa da imersao no lugar do Egio junto com Thalison"
+    phone: "55 31996845374"
+    email: "claudio.kaizer@contourline.com.br"
+    cidade: "Sete Lagoas, MG"
+
+team_size:
+  total_headcount: "~120 pessoas"
+  key_roles:
+    - "Egio Roberto (Egio Almeida) — CEO / Socio-fundador (dono)"
+    - "Thalison Samuel Franca Abreu — Socio (participante da imersao)"
+    - "Claudio Kaizer — Socio (participante da imersao)"
+    - "Diretor Financeiro — gestao financeira (mencionado na call)"
+    - "Time de Marketing — 14 pessoas"
+
+market_analysis:
+  competitive_landscape:
+    your_advantage: |
+      - Certificacao Anvisa (barreira regulatoria alta — dificulta novos entrantes)
+      - Background de tecnologia e programacao do CEO
+      - Uma das maiores do mercado exclusivo
+      - Time 100% home office (eficiencia operacional)
+  competitive_moat: "Certificacao Anvisa + expertise tecnica + escala (R$115-120M) + background de tecnologia"
+  market_timing:
+    why_now: "IA pode automatizar processos manuais de marketing, vendas e financeiro — reduzir folha de R$700-800k/mes"
+
+stage:
+  current_stage: "SCALE"
+  phase_description: "Empresa consolidada, faturando R$115-120M/ano, buscando otimizacao via IA para reduzir custos e aumentar produtividade"
+  key_pains:
+    pain_1: "Uso fragmentado de IA:: Acoes individuais do time mas nada coordenado"
+    pain_2: "Falta de sistema central:: Nao tem lugar onde ve o que esta acontecendo com IA"
+    pain_3: "Marketing manual:: 14 pessoas, muita verba de anuncio mas pouca IA automatizada"
+    pain_4: "Tratamento de leads manual:: Muitos contatos que poderiam ser tratados melhor"
+    pain_5: "SDR com IA:: Ja tentou mas esta 'apanhando ainda'"
+    pain_6: "Coordenacao entre areas:: Handoff entre departamentos e o processo mais demorado"
+  average_ticket: "Equipamentos medicos de alto valor"
+
+key_metrics:
+  revenue_annual: "R$ 115.000.000-120.000.000"
+  team_size: "~120"
+  marketing_team_size: 14
+  monthly_payroll: "R$ 700.000-800.000"
+  payroll_reduction_target: "30% (meta do CEO)"
+  potential_savings: "R$ 210.000-240.000/mes"
+
+company_voice:
+  tone:
+    primary: FILL_THIS # Inferido: tecnico, profissional, regulatorio
+  personality_archetype: FILL_THIS # Inferido: Creator/Ruler (tecnologia + regulacao)
+
+strategic_roadmap:
+  priority_1:
+    goal: "Sistema coordenado de IA para marketing e financeiro"
+    timeline: "2026 — prioridade imediata"
+    impact: "Reduzir R$700-800k/mes de folha em pelo menos 30% = R$210-240k/mes de economia"
+  priority_2:
+    goal: "Automatizar gestao financeira com IA personalizada"
+    timeline: "2026"
+    impact: "Complementar Totvs com sistema mais personalizado de IA"
+  priority_3:
+    goal: "SDR com IA para tratamento de leads"
+    timeline: "2026"
+    impact: "Escalar atendimento de leads sem aumentar headcount"
+
+completion_checklist:
+  - "[x] Company name and basic info"
+  - "[x] Revenue and team size"
+  - "[x] Product/service identified"
+  - "[x] Stage determined"
+  - "[x] Key pains documented (6 pains)"
+  - "[x] Leadership partially mapped"
+  - "[x] Positioning articulated"
+  - "[x] Competitive advantage documented"
+  - "[x] Strategic roadmap with 3 priorities"
+  - "[x] Key metrics captured"
+  - "[ ] Mission and vision statements — REQUIRES FOUNDER INPUT"
+  - "[ ] Values defined — REQUIRES FOUNDER INPUT"
+  - "[ ] Company voice defined — REQUIRES FOUNDER INPUT"
+  - "[ ] Year founded — REQUIRES FOUNDER INPUT"
+  - "[ ] Origin story — REQUIRES FOUNDER INPUT"
+  - "[ ] Website URL — REQUIRES WEB SEARCH"

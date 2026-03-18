@@ -1,0 +1,10 @@
+---
+# MYTHS.YAML — Conta Magic
+# Status: SKELETON
+metadata:
+  schema: "contamagic.myths"
+  version: "1.0"
+  status: "SKELETON"
+  updated_at: "2026-03-14"
+
+myths: [] # A PREENCHER NA IMERSAO

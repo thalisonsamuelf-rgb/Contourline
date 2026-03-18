@@ -1,0 +1,263 @@
+---
+# COMPLETENESS MANIFEST — Conta Magic (Egio Roberto)
+# ETL Deep Pass v1 + Local Sources Only (no web scraping yet)
+metadata:
+  business_slug: "conta_magic"
+  company_name: "Conta Magic"
+  generated_at: "2026-03-14"
+  etl_pass: 1
+  overall_completeness: 55
+  previous_completeness: 0
+  web_scraping_pass: false
+  structure_hardened: true
+  note: "Call vendas curta (145 linhas vs 699 gold standard). Sem instalacao. Website pendente."
+
+# ============================================================================
+# SQUAD READINESS STATUS
+# ============================================================================
+squad_readiness:
+  copy:
+    status: "PARTIAL"
+    required_files:
+      icp: { exists: true, completeness: 45, path: "company/icp.yaml" }
+      brand: { exists: true, completeness: 40, path: "company/brand.yaml" }
+      brandbook: { exists: true, completeness: 35, path: "brand/brandbook.yaml" }
+      strategic_positioning: { exists: true, completeness: 50, path: "brand/strategic-positioning.yaml" }
+      offerbook: { exists: true, completeness: 35, path: "products/equipamentos_estetica/offerbook.yaml" }
+      proof: { exists: true, completeness: 30, path: "products/equipamentos_estetica/proof.yaml" }
+      testimonials: { exists: true, completeness: 0, path: "products/equipamentos_estetica/testimonials.yaml" }
+    note: "Todos os 7 arquivos obrigatorios existem mas com completeness baixa. Testimonials vazio. Requer web scraping e imersao."
+  traffic_masters:
+    status: "PARTIAL"
+    required_files:
+      icp: { exists: true, completeness: 45, path: "company/icp.yaml" }
+      brand: { exists: true, completeness: 40, path: "company/brand.yaml" }
+      strategic_positioning: { exists: true, completeness: 50, path: "brand/strategic-positioning.yaml" }
+      offerbook: { exists: true, completeness: 35, path: "products/equipamentos_estetica/offerbook.yaml" }
+      proof: { exists: true, completeness: 30, path: "products/equipamentos_estetica/proof.yaml" }
+    note: "Todos os 5 arquivos existem. ICP e proof precisam de mais dados."
+  design:
+    status: "NOT_STARTED"
+    note: "Visual identity pendente. Requer scraping do site."
+
+# ============================================================================
+# TEMPLATES COMPLETENESS
+# ============================================================================
+templates:
+  # Company Level
+  diagnosis:
+    file: "company/diagnosis.yaml"
+    completeness: 80
+    status: "COMPLETE"
+  company_profile:
+    file: "company/company-profile.yaml"
+    completeness: 75
+    status: "IN_PROGRESS"
+    note: "Pendente: mission, vision, values, year_founded, origin story, website"
+  founder_dna:
+    file: "company/founder-dna.yaml"
+    completeness: 80
+    status: "IN_PROGRESS"
+    note: "Bem preenchido — background, pains, AI engagement, philosophy. Pendente: age, origin acts 1/3"
+  icp:
+    file: "company/icp.yaml"
+    completeness: 45
+    status: "IN_PROGRESS"
+    note: "Pendente: demographics, archetypes, flags"
+  brand:
+    file: "company/brand.yaml"
+    completeness: 40
+    status: "IN_PROGRESS"
+    note: "Pendente: tagline, purpose, voice DNA, values"
+  credentials:
+    file: "company/credentials.yaml"
+    completeness: 45
+    status: "SKELETON"
+    note: "Credential headline OK. Pendente: education, media, awards"
+  authority_story:
+    file: "company/authority-story.yaml"
+    completeness: 35
+    status: "SKELETON"
+    note: "Problem e layer 1 OK. Maior parte requer founder input e web search"
+  analytics:
+    file: "company/analytics.yaml"
+    completeness: 15
+    status: "TEMPLATE"
+  offerbook_index:
+    file: "company/offerbook.yaml"
+    completeness: 100
+    status: "INDEX"
+
+  # Brand Level
+  brandbook:
+    file: "brand/brandbook.yaml"
+    completeness: 35
+    status: "IN_PROGRESS"
+    note: "Arquetipo mix inferido. Visual identity pendente (sem acesso ao site)."
+  strategic_positioning:
+    file: "brand/strategic-positioning.yaml"
+    completeness: 50
+    status: "IN_PROGRESS"
+    note: "Categoria, positioning, differentiation (3 concorrentes), moat (5). CEO quotes extraidas."
+
+  # Product Level
+  offerbook_product:
+    file: "products/equipamentos_estetica/offerbook.yaml"
+    completeness: 35
+    status: "IN_PROGRESS"
+    note: "Posicionamento basico. Pricing, narrativa, garantia pendentes."
+  proof:
+    file: "products/equipamentos_estetica/proof.yaml"
+    completeness: 30
+    status: "SKELETON"
+    note: "3 proofs self-reported. Sem verificacao externa."
+  testimonials:
+    file: "products/equipamentos_estetica/testimonials.yaml"
+    completeness: 0
+    status: "SKELETON"
+    note: "Nenhum depoimento disponivel nas fontes."
+  brandscript:
+    file: "products/equipamentos_estetica/narrative/brandscript.yaml"
+    completeness: 40
+    status: "SKELETON"
+  objection_destroyers:
+    file: "products/equipamentos_estetica/narrative/objection-destroyers.yaml"
+    completeness: 30
+    status: "SKELETON"
+  pitch_narrative:
+    file: "products/equipamentos_estetica/narrative/pitch-narrative.yaml"
+    completeness: 30
+    status: "SKELETON"
+  product_story:
+    file: "products/equipamentos_estetica/narrative/product-story.yaml"
+    completeness: 25
+    status: "SKELETON"
+
+  # Operations Level
+  team_structure:
+    file: "operations/team-structure.yaml"
+    completeness: 55
+    status: "IN_PROGRESS"
+    note: "Leadership + marketing team mapped. Department sizes pendente."
+  pricing_strategy:
+    file: "operations/pricing-strategy.yaml"
+    completeness: 40
+    status: "IN_PROGRESS"
+    note: "B2B alto ticket. Detalhes de pricing pendentes."
+  kpi_scorecards:
+    file: "operations/kpi-scorecards.yaml"
+    completeness: 20
+    status: "TEMPLATE"
+  commission_design:
+    file: "operations/commission-design.yaml"
+    completeness: 5
+    status: "TEMPLATE"
+
+  # AI/Tech Level
+  ai_strategy:
+    file: "ai/strategy.yaml"
+    completeness: 65
+    status: "IN_PROGRESS"
+    note: "4 use cases prioritarios com estado atual e desejado. Bem preenchido."
+  tech_strategy:
+    file: "tech/strategy.yaml"
+    completeness: 30
+    status: "SKELETON"
+  tech_stack:
+    file: "tech/stack.yaml"
+    completeness: 40
+    status: "SKELETON"
+    note: "Totvs, Eleven Labs, Chat PDF, AIOX identificados."
+
+  # Movement Level
+  tribe_identity:
+    file: "movement/foundation/tribe-identity.yaml"
+    completeness: 40
+    status: "SKELETON"
+    note: "3 archetypes inferidos do posicionamento B2B."
+  leaders:
+    file: "movement/identity/leaders.yaml"
+    completeness: 50
+    status: "SKELETON"
+  fenomenologia:
+    file: "movement/reading/fenomenologia-cultural.yaml"
+    completeness: 30
+    status: "SKELETON"
+  ideological_persona:
+    file: "movement/reading/persona/ideological-persona.yaml"
+    completeness: 25
+    status: "SKELETON"
+  cosmology:
+    file: "movement/system/cosmology.yaml"
+    completeness: 20
+    status: "SKELETON"
+  biblia_movimento:
+    file: "movement/system/biblia-movimento.yaml"
+    completeness: 5
+    status: "SKELETON"
+  mrd_doctrines:
+    file: "movement/system/mrd-bank/doctrines.yaml"
+    completeness: 5
+    status: "SKELETON"
+  mrd_myths:
+    file: "movement/system/mrd-bank/myths.yaml"
+    completeness: 5
+    status: "SKELETON"
+  mrd_rites:
+    file: "movement/system/mrd-bank/rites.yaml"
+    completeness: 5
+    status: "SKELETON"
+  mrd_vocabulary:
+    file: "movement/system/mrd-bank/vocabulary.yaml"
+    completeness: 5
+    status: "SKELETON"
+
+# ============================================================================
+# DELTA REPORT
+# ============================================================================
+delta_report:
+  initial_completeness: 0
+  current_completeness: 55
+  improvement: "+55pp (from zero)"
+  files_total: 38
+  files_new_created: 38
+  sources_used:
+    local:
+      - "perfis/egio-roberto.md (87 linhas)"
+      - "formulario/Egio Roberto/formulario.md (18 linhas)"
+      - "Calls vendas/Egio - Thalison/transcricao.md (145 linhas)"
+    web: []
+    note: "Web scraping pendente — Instagram @onlinemag e site da empresa"
+  fields_remaining_for_immersion: 25
+  remaining_fields:
+    - "company-profile: mission, vision, values, year_founded, origin story, website"
+    - "founder-dna: age, origin acts 1/3"
+    - "icp: demographics, archetypes, flags"
+    - "brand: tagline, purpose, voice DNA, values"
+    - "credentials: education, media, awards"
+    - "authority-story: most sections require founder input"
+    - "products: pricing details, testimonials, narrativa"
+    - "visual identity: cores, tipografia (requer site scraping)"
+
+# ============================================================================
+# COMPARISON TO GOLD STANDARD (brasil_em_dobro)
+# ============================================================================
+gold_standard_comparison:
+  brasil_em_dobro:
+    files: 40
+    lines: "~5849"
+    completeness: "~95%"
+    sources: "3 local + 6 web"
+    call_lines: 699
+  conta_magic:
+    files: 38
+    lines: "TBD"
+    completeness: "~55%"
+    sources: "3 local + 0 web"
+    call_lines: 145
+  gap_analysis: |
+    - 2 fewer files (no cities-map equivalent — single product vs multi-city)
+    - ~40pp completeness gap due to shorter call (145 vs 699 lines) and no web scraping
+    - Web scraping pass would likely add 15-20pp
+    - Immersion input would add another 15-20pp
+    - Realistic target: 75-85% after web + immersion (vs 95% for brasil_em_dobro)
