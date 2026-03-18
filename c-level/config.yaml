@@ -1,0 +1,512 @@
+name: c-level
+version: "1.0.0"
+description: |
+  Squad C-Level - Executivos estratégicos que estruturam o workspace da empresa.
+  Responsável por elicitação profunda, geração de documentos de referência,
+  e organização completa do workspace com visão executiva.
+
+  Suporta múltiplos negócios (businesses) dentro de um único workspace.
+
+author: Synkra AIOX
+license: MIT
+entry_agent: coo-orchestrator
+tested: true
+
+# Squad metadata
+metadata:
+  version: "1.0.0"
+  score: 7.4
+  category: strategy
+  tags:
+    - executive
+    - workspace
+    - company-structure
+    - elicitation
+    - strategy
+    - multi-business
+  maturity: beta
+
+workspace_integration:
+  level: workspace_first
+  rationale: >-
+    C-Level coordena a estrutura canônica de `workspace`, então precisa validar
+    bootstrap, templates e contexto antes de qualquer elicitação.
+  read_paths:
+    - workspace/workspace.yaml
+    - workspace/user.md
+    - workspace/config.md
+    - workspace/businesses/
+    - workspace/domains/c-level/
+    - workspace/_templates/company/
+    - workspace/_templates/operations/
+  write_paths:
+    - workspace/businesses/
+    - workspace/config.md
+    - docs/qa/workspace-health/
+  bootstrap:
+    required: true
+    script: "scripts/bootstrap-c-level-workspace.sh"
+  essentials_validation:
+    required: true
+    script: "scripts/validate-c-level-essentials.sh"
+
+workspace_governance:
+  readiness:
+    squads:
+      design:
+        resolver_kind: design_system
+        default_context: design_system
+        allowed_contexts:
+          - design_system
+        fallback_integration_level: controlled_runtime_consumer
+      copy:
+        resolver_kind: product
+        product_consumer: copy
+        default_context: product
+        allowed_contexts:
+          - product
+        fallback_integration_level: workspace_first
+      hormozi:
+        resolver_kind: product
+        product_consumer: hormozi
+        default_context: product
+        allowed_contexts:
+          - product
+        fallback_integration_level: controlled_runtime_consumer
+      movement:
+        resolver_kind: movement
+        default_context: movement
+        allowed_contexts:
+          - movement
+        fallback_integration_level: workspace_first
+      brand:
+        resolver_kind: brand
+        default_context: brand
+        allowed_contexts:
+          - brand
+        fallback_integration_level: workspace_first
+      franchise:
+        resolver_kind: franchise
+        default_context: franchise
+        allowed_contexts:
+          - franchise
+        fallback_integration_level: workspace_first
+      traffic-masters:
+        resolver_kind: product
+        product_consumer: traffic-masters
+        default_context: product
+        allowed_contexts:
+          - product
+        fallback_integration_level: controlled_runtime_consumer
+      storytelling:
+        resolver_kind: product
+        product_consumer: storytelling
+        default_context: product
+        allowed_contexts:
+          - product
+        fallback_integration_level: controlled_runtime_consumer
+      application-forms:
+        resolver_kind: product
+        product_consumer: application-forms
+        default_context: product
+        allowed_contexts:
+          - product
+        fallback_integration_level: controlled_runtime_consumer
+      gerador-pop:
+        resolver_kind: operations
+        default_context: operations
+        allowed_contexts:
+          - operations
+        fallback_integration_level: controlled_runtime_consumer
+  product_readiness:
+    narrative_artifacts:
+      company:
+        - id: message_hierarchy
+          path: company/message-hierarchy.yaml
+        - id: authority_story
+          path: company/authority-story.yaml
+        - id: founder_dna
+          path: company/founder-dna.yaml
+      product:
+        - id: brandscript
+          path: products/{product}/narrative/brandscript.yaml
+        - id: product_story
+          path: products/{product}/narrative/product-story.yaml
+        - id: pitch_narrative
+          path: products/{product}/narrative/pitch-narrative.yaml
+        - id: objection_destroyers
+          path: products/{product}/narrative/objection-destroyers.yaml
+    consumers:
+      copy:
+        required_shared_sources:
+          - id: icp
+            path: company/icp.yaml
+          - id: brandbook
+            path: brand/brandbook.yaml
+        required_product_sources:
+          - id: offerbook
+            path: products/{product}/offerbook.yaml
+          - id: proof
+            path: products/{product}/proof.yaml
+          - id: testimonials
+            path: products/{product}/testimonials.yaml
+      hormozi:
+        required_shared_sources:
+          - id: brandbook
+            path: brand/brandbook.yaml
+        required_product_sources:
+          - id: offerbook
+            path: products/{product}/offerbook.yaml
+          - id: proof
+            path: products/{product}/proof.yaml
+      traffic-masters:
+        required_shared_sources:
+          - id: icp
+            path: company/icp.yaml
+          - id: brandbook
+            path: brand/brandbook.yaml
+        required_product_sources:
+          - id: offerbook
+            path: products/{product}/offerbook.yaml
+          - id: proof
+            path: products/{product}/proof.yaml
+      storytelling:
+        required_shared_sources:
+          - id: icp
+            path: company/icp.yaml
+          - id: brandbook
+            path: brand/brandbook.yaml
+        required_product_sources:
+          - id: offerbook
+            path: products/{product}/offerbook.yaml
+          - id: proof
+            path: products/{product}/proof.yaml
+      application-forms:
+        required_shared_sources:
+          - id: icp
+            path: company/icp.yaml
+          - id: brandbook
+            path: brand/brandbook.yaml
+        required_product_sources:
+          - id: offerbook
+            path: products/{product}/offerbook.yaml
+          - id: proof
+            path: products/{product}/proof.yaml
+
+# Agents in this squad
+agents:
+  - id: coo-orchestrator
+    file: agents/coo-orchestrator.md
+    role: Chief Operating Officer - Orchestrator
+    description: Orquestra o squad, coordena estrutura geral do workspace
+    is_lead: true
+    tier: orchestrator
+
+  - id: vision-chief
+    file: agents/vision-chief.md
+    role: Chief Executive Officer
+    description: Visão estratégica macro, direção geral, missão e visão
+    tier: 0
+
+  - id: cmo-architect
+    file: agents/cmo-architect.md
+    role: Chief Marketing Officer
+    description: ICP, proposta de valor, brand, messaging, posicionamento
+    tier: 0
+
+  - id: cto-architect
+    file: agents/cto-architect.md
+    role: Chief Technology Officer
+    description: Estratégia tecnológica, escolhas de stack, roadmap técnico
+    tier: 1
+
+  - id: cio-engineer
+    file: agents/cio-engineer.md
+    role: Chief Information Officer
+    description: Tech stack operacional, code standards, infraestrutura
+    tier: 1
+
+  - id: caio-architect
+    file: agents/caio-architect.md
+    role: Chief AI Officer
+    description: Estratégia de IA, configuração de agentes, orquestração
+    tier: 1
+
+# Tasks available
+tasks:
+  # Bootstrap (required first)
+  - id: bootstrap
+    file: tasks/bootstrap.md
+    description: Primeira task obrigatória - cria user.md e estrutura inicial
+    required: true
+    order: 1
+
+  - id: load-workspace-context
+    file: tasks/load-workspace-context.md
+    description: Carrega contexto do workspace antes de orquestrar handoffs
+    agent: coo-orchestrator
+
+  - id: resolve-squad-workspace-readiness
+    file: tasks/resolve-squad-workspace-readiness.md
+    description: Resolve readiness canônico de workspace para squads consumidores
+    agent: coo-orchestrator
+
+  - id: classify-squad-workspace-fit
+    file: tasks/classify-squad-workspace-fit.md
+    description: Decide se um squad deve integrar com workspace e em qual nível
+    agent: coo-orchestrator
+
+  # Business management
+  - id: add-business
+    file: tasks/add-business.md
+    description: Adiciona novo negócio ao workspace
+    agent: coo-orchestrator
+
+  # Elicitation tasks by C-Level
+  - id: elicit-vision
+    file: tasks/elicit-vision.md
+    description: CEO elicita missão, visão e direção estratégica
+    agent: vision-chief
+
+  - id: elicit-icp
+    file: tasks/elicit-icp.md
+    description: CMO elicita ICP, proposta de valor, brand e messaging
+    agent: cmo-architect
+
+  - id: elicit-tech-strategy
+    file: tasks/elicit-tech-strategy.md
+    description: CTO elicita estratégia tecnológica e roadmap
+    agent: cto-architect
+
+  - id: elicit-tech-stack
+    file: tasks/elicit-tech-stack.md
+    description: CIO elicita tech stack, code standards e infraestrutura
+    agent: cio-engineer
+
+  - id: elicit-ai-strategy
+    file: tasks/elicit-ai-strategy.md
+    description: CAIO elicita estratégia de IA, modelos e orquestração
+    agent: caio-architect
+
+  - id: elicit-operations
+    file: tasks/elicit-operations.md
+    description: COO elicita estrutura operacional e processos
+    agent: coo-orchestrator
+
+  # Full workspace setup
+  - id: setup-workspace
+    file: tasks/setup-workspace.md
+    description: Configura workspace completo (executa todas as elicitações)
+    agent: coo-orchestrator
+
+  # Business Profile Pipeline (YAML-output tasks)
+  - id: scaffold-templates
+    file: tasks/scaffold-templates.md
+    description: Copia templates YAML de _templates/ para diretório do negócio
+    agent: coo-orchestrator
+
+  - id: setup-business-profile
+    file: tasks/setup-business-profile.md
+    description: Pipeline completo de perfil de negócio (6 fases, 7 YAMLs)
+    agent: coo-orchestrator
+
+  - id: elicit-company-profile
+    file: tasks/elicit-company-profile.md
+    description: COO elicita perfil completo da empresa → company-profile.yaml
+    agent: coo-orchestrator
+
+  - id: elicit-founder-dna
+    file: tasks/elicit-founder-dna.md
+    description: CEO elicita DNA do fundador → founder-dna.yaml
+    agent: vision-chief
+
+  - id: elicit-credentials
+    file: tasks/elicit-credentials.md
+    description: CEO elicita credenciais e provas de autoridade → credentials.yaml
+    agent: vision-chief
+
+  - id: elicit-team-structure
+    file: tasks/elicit-team-structure.md
+    description: COO elicita estrutura de time → team-structure.yaml
+    agent: coo-orchestrator
+
+  - id: elicit-icp-yaml
+    file: tasks/elicit-icp-yaml.md
+    description: CMO elicita ICP completo com diagnosis gate → icp.yaml
+    agent: cmo-architect
+
+  - id: elicit-brand-yaml
+    file: tasks/elicit-brand-yaml.md
+    description: CMO elicita brand guidelines completo → brand.yaml
+    agent: cmo-architect
+
+  - id: elicit-pricing-strategy
+    file: tasks/elicit-pricing-strategy.md
+    description: CMO elicita estratégia de pricing → pricing-strategy.yaml
+    agent: cmo-architect
+
+  # Product-level tasks
+  - id: add-product
+    file: tasks/add-product.md
+    description: Adiciona novo produto ao workspace com posicionamento próprio
+    agent: cmo-architect
+
+  # ETL Deep Pass tasks (COO — automated workspace enrichment)
+  - id: etl-deep-pass
+    file: tasks/etl-deep-pass.md
+    description: Master orchestrator — executa pipeline de 4 camadas para enriquecer workspace de business
+    agent: coo-orchestrator
+
+  - id: etl-local-extract
+    file: tasks/etl-local-extract.md
+    description: Layer 1 — extrai dados profundos de fontes locais (perfil, formulario, call, instalacao)
+    agent: coo-orchestrator
+
+  - id: etl-web-scrape
+    file: tasks/etl-web-scrape.md
+    description: Layer 2 — scrape do site da empresa para conteudo e design tokens
+    agent: coo-orchestrator
+
+  - id: etl-web-research
+    file: tasks/etl-web-research.md
+    description: Layer 3 — pesquisa web para midia, social, app data e UGC
+    agent: coo-orchestrator
+
+  - id: etl-generate-artifacts
+    file: tasks/etl-generate-artifacts.md
+    description: Layer 4 — gera todos os artefatos consumiveis por squads (brand, narrative, movement, proof)
+    agent: coo-orchestrator
+
+  - id: etl-batch-runner
+    file: tasks/etl-batch-runner.md
+    description: Executor em lote — roda ETL Deep Pass para multiplos businesses
+    agent: coo-orchestrator
+
+  # Governance tasks (COO)
+  - id: workspace-health-check
+    file: tasks/workspace-health-check.md
+    description: Auditoria completa de saúde do workspace (semanal)
+    agent: coo-orchestrator
+    trigger: scheduled
+    schedule: "0 9 * * 1"
+
+# Checklists
+checklists:
+  - id: workspace-health-checklist
+    file: checklists/workspace-health-checklist.md
+    description: Checklist completo para validação de saúde do workspace
+    owner: coo-orchestrator
+
+  - id: squad-workspace-fit-checklist
+    file: checklists/squad-workspace-fit-checklist.md
+    description: Checklist de decisão para classificar integração de squads com workspace
+    owner: coo-orchestrator
+
+  - id: etl-deep-pass-checklist
+    file: checklists/etl-deep-pass-checklist.md
+    description: Quality gate para validar resultado do ETL Deep Pass por business
+    owner: coo-orchestrator
+
+# Workflows
+workflows:
+  - id: workspace-governance
+    file: workflows/workspace-governance.yaml
+    description: Workflow de governança com validações automáticas e agendadas
+    owner: coo-orchestrator
+
+  - id: business-profile-pipeline
+    file: workflows/business-profile-pipeline.yaml
+    description: Pipeline de 6 fases para elicitação completa do perfil de negócio (7 YAMLs)
+    owner: coo-orchestrator
+
+  - id: etl-deep-pass-pipeline
+    file: workflows/etl-deep-pass-pipeline.yaml
+    description: Pipeline de 4 camadas para enriquecer workspace de 55% para 95% (local → web scrape → web research → generate artifacts)
+    owner: coo-orchestrator
+
+# Workspace structure this squad manages (multi-business)
+workspace_structure:
+  root: workspace/
+
+  # Root level files
+  root_files:
+    - path: workspace/user.md
+      owner: bootstrap
+      description: Bootstrap - informações do usuário
+      required: true
+
+    - path: workspace/config.md
+      owner: coo-orchestrator
+      description: Configuração geral do workspace
+
+  # Business structure template
+  business_template:
+    path: workspace/businesses/{business-slug}/
+    directories:
+      company:
+        path: company/
+        owner: cmo-architect + vision-chief
+        files:
+          - icp.md (CMO)
+          - mission-vision.md (CEO)
+          - value-proposition.md (CMO)
+          - elevator-pitch.md (CMO)
+          - brand.md (CMO)
+
+      operations:
+        path: operations/
+        owner: coo-orchestrator + cmo-architect
+        files:
+          - team-structure.yaml (COO)
+          - pricing-strategy.yaml (CMO)
+          - kpi-scorecards.yaml (COO, placeholder)
+          - commission-design.yaml (COO, placeholder)
+
+      products:
+        path: products/{product-slug}/
+        owner: cmo-architect + coo-orchestrator
+        files:
+          - positioning.md (CMO)
+          - offer.md (CMO)
+          - operations.md (COO)
+
+      tech:
+        path: tech/
+        owner: cto-architect + cio-engineer
+        files:
+          - strategy.md (CTO)
+          - stack.md (CIO)
+          - code_stand.md (CIO)
+          - infra.md (CIO)
+
+      ai:
+        path: ai/
+        owner: caio-architect
+        files:
+          - strategy.md
+          - models.md
+          - agents.md
+
+  # Shared across businesses
+  shared:
+    - path: workspace/ui/
+      owner: transversal
+      description: Design system compartilhado
+      subdirs:
+        - tokens/
+        - components/
+        - styles/
+
+# Data files
+data:
+  - id: imersao-business-map
+    file: data/imersao-business-map.yaml
+    description: Mapeamento determinístico de fontes por business da Imersão AIOX (17 businesses)
+    owner: coo-orchestrator
+
+# Dependencies
+dependencies:
+  squads: []
+  tools:
+    - name: elicitation
+      description: Framework de elicitação estruturada

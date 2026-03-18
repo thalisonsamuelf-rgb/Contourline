@@ -1,0 +1,310 @@
+# AIOX Ads - Multi-Agent Paid Traffic Squad
+# Version: 4.0.0 (Fusion: media-buyer-squad v2.0 + traffic-masters v3.0)
+# Fusion Date: 2026-03-16
+
+name: aiox-ads
+version: 4.0.0
+description: |
+  Squad operacional de tráfego pago multi-plataforma (Meta, Google, YouTube).
+  9 agentes em 3 tiers: comando, execução core, plataforma/mercado.
+  18 skills executáveis de 47 frameworks de 5+ experts.
+
+  Fusão cirúrgica: base operacional (media-buyer-squad) + especialistas
+  de plataforma/mercado (traffic-masters). Zero duplicação de funções.
+
+author:
+  name: Thiago Finch
+  organization: BILHON
+  base: SynkraAI
+
+license: MIT
+
+keywords:
+  - paid-traffic
+  - meta-ads
+  - google-ads
+  - youtube-ads
+  - roas
+  - media-buyer
+  - performance-marketing
+  - trafego-pago
+  - multi-platform
+
+workspace_integration:
+  level: controlled_runtime_consumer
+  rationale: >-
+    O squad AIOX Ads depende de contexto canonico do business para operar
+    campanhas com qualidade, mas o runtime principal continua orientado a
+    plataformas de ads e artefatos operacionais externos ao workspace. O COO
+    resolve readiness antes da execucao operacional.
+  read_paths:
+    - workspace/workspace.yaml
+    - workspace/businesses/{business}/operations/ads/
+  write_paths:
+    - outputs/ads/{business}/
+  readiness_owner: coo-orchestrator
+  readiness_resolver: squads/c-level/scripts/resolve-squad-workspace-readiness.cjs
+
+# Squad Configuration
+squad:
+  id: aiox-ads
+  icon: "🎯"
+  activation: "@aiox-ads"
+  lead: ad-midas
+
+  # ═══════════════════════════════════════════════════════════════
+  # TIER 0 — COMANDO (1 agente)
+  # ═══════════════════════════════════════════════════════════════
+  tier_0:
+    - id: ad-midas
+      name: Midas
+      icon: "🎯"
+      archetype: The Commander
+      role: Lead
+      file: agents/ad-midas.md
+      type: operational
+      skills: [campaign-monitor, funnel-selection, campaign-structure, scale-readiness-check, unit-economics]
+      whenToUse: "Campaign strategy, funnel selection, scaling decisions, squad coordination, publish campaigns"
+
+  # ═══════════════════════════════════════════════════════════════
+  # TIER 1 — EXECUÇÃO CORE (4 agentes)
+  # ═══════════════════════════════════════════════════════════════
+  tier_1:
+    - id: performance-analyst
+      name: Dash
+      icon: "📊"
+      archetype: The Analyzer
+      role: Specialist
+      file: agents/performance-analyst.md
+      type: operational
+      skills: [metric-diagnosis, kill-scale-rules, budget-allocation, audience-expansion, funnel-analysis, attribution-analysis]
+      whenToUse: "Metric diagnosis, CPA/ROAS analysis, kill/scale decisions, budget allocation"
+
+    - id: creative-analyst
+      name: Nova
+      icon: "🎨"
+      archetype: The Creator
+      role: Specialist
+      file: agents/creative-analyst.md
+      type: operational
+      skills: [hook-generator, creative-brief, copy-generator, angle-generator, dsl-structure, creative-fatigue-detector]
+      whenToUse: "Hook generation, creative briefs, copy writing, DSL structure, creative fatigue"
+
+    - id: pixel-specialist
+      name: Track
+      icon: "📍"
+      archetype: The Tracker
+      role: Specialist
+      file: agents/pixel-specialist.md
+      type: operational
+      skills: [tracking-audit, attribution-analysis, pixel-setup]
+      whenToUse: "Pixel setup, audits, CAPI configuration, event setup, match rate optimization"
+
+    - id: fiscal
+      name: Sentinel
+      icon: "🛡️"
+      archetype: The Guardian
+      role: QA Gate
+      file: agents/fiscal.md
+      type: operational
+      skills: [ad-compliance-gate, scorecard-builder, accountability-loop]
+      whenToUse: "QA gate before publish, policy compliance, scorecards, accountability tracking"
+
+  # ═══════════════════════════════════════════════════════════════
+  # TIER 2 — PLATAFORMA / MERCADO (4 agentes)
+  # ═══════════════════════════════════════════════════════════════
+  tier_2:
+    - id: kasim-aslam
+      name: Kasim
+      icon: "🔍"
+      archetype: The Architect
+      role: Platform Master (Google)
+      file: agents/kasim-aslam.md
+      type: operational
+      skills: [google-campaign-architect, google-search-optimizer]
+      whenToUse: "Google Ads campaigns, PMax, Search/Display, Quality Score, negative keywords"
+
+    - id: tom-breeze
+      name: Tom
+      icon: "🎬"
+      archetype: The Director
+      role: Platform Master (YouTube)
+      file: agents/tom-breeze.md
+      type: operational
+      skills: [youtube-ad-scriptwriter, youtube-campaign-launcher]
+      whenToUse: "YouTube Ads scripts, 7-Part structure, launch protocol, targeting pyramid"
+
+    - id: ralph-burns
+      name: Ralph
+      icon: "🚀"
+      archetype: The Scaler
+      role: Scaling Master
+      file: agents/ralph-burns.md
+      type: operational
+      skills: [creative-bombardment, forester-scaling-system]
+      whenToUse: "Aggressive scaling, Creative Lab bombardment, Forester 6-campaign structure"
+
+    - id: br-traffic-operator
+      name: Sobral
+      icon: "🇧🇷"
+      archetype: The Operator
+      role: Market Master (Brasil)
+      file: agents/br-traffic-operator.md
+      type: operational
+      skills: [br-campaign-ops]
+      whenToUse: "Brasil market, PAF 4 fases, BFCM seasonal, daily checklist, WhatsApp funnels"
+
+  # ═══════════════════════════════════════════════════════════════
+  # COLLABORATION
+  # ═══════════════════════════════════════════════════════════════
+  collaboration:
+    handoff_rules:
+      # Tier 0 → Tier 1
+      - from: ad-midas
+        to: creative-analyst
+        trigger: "creative briefing needed OR hook_rate < 15%"
+      - from: ad-midas
+        to: pixel-specialist
+        trigger: "tracking setup needed OR conversions == 0"
+      - from: ad-midas
+        to: performance-analyst
+        trigger: "metrics analysis needed OR CPA > target"
+      - from: ad-midas
+        to: fiscal
+        trigger: "pre-publish QA gate OR compliance check"
+
+      # Tier 1 → Tier 0
+      - from: performance-analyst
+        to: ad-midas
+        trigger: "scaling decision needed OR budget change > 50%"
+      - from: fiscal
+        to: ad-midas
+        trigger: "QA PASS or QA FAIL verdict"
+
+      # Tier 1 → Tier 1
+      - from: performance-analyst
+        to: creative-analyst
+        trigger: "CTR dropping OR creative fatigue detected"
+
+      # Tier 0 → Tier 2 (platform routing)
+      - from: ad-midas
+        to: kasim-aslam
+        trigger: "platform == google"
+      - from: ad-midas
+        to: tom-breeze
+        trigger: "platform == youtube"
+      - from: ad-midas
+        to: ralph-burns
+        trigger: "aggressive scaling needed OR creative lab"
+      - from: ad-midas
+        to: br-traffic-operator
+        trigger: "market == brasil"
+
+# ═══════════════════════════════════════════════════════════════
+# SKILLS (29 total: 18 original + 11 novas)
+# ═══════════════════════════════════════════════════════════════
+skills:
+  strategic:
+    - campaign-structure
+    - funnel-selection
+    - scale-readiness-check
+    - unit-economics
+    - google-campaign-architect      # NEW — kasim-aslam
+    - youtube-campaign-launcher      # NEW — tom-breeze
+    - forester-scaling-system        # NEW — ralph-burns
+    - scorecard-builder              # NEW — fiscal
+  diagnostic:
+    - metric-diagnosis
+    - tracking-audit
+    - funnel-analysis
+    - attribution-analysis
+    - creative-fatigue-detector
+  generative:
+    - hook-generator
+    - creative-brief
+    - copy-generator
+    - angle-generator
+    - dsl-structure
+    - youtube-ad-scriptwriter        # NEW — tom-breeze
+  optimization:
+    - kill-scale-rules
+    - budget-allocation
+    - audience-expansion
+    - google-search-optimizer        # NEW — kasim-aslam
+    - creative-bombardment           # NEW — ralph-burns
+  automation:
+    - campaign-monitor
+  operational:
+    - ad-compliance-gate             # NEW — fiscal
+    - accountability-loop            # NEW — fiscal
+    - pixel-setup                    # NEW — pixel-specialist
+    - br-campaign-ops                # NEW — br-traffic-operator
+
+# ═══════════════════════════════════════════════════════════════
+# EXPERT SOURCES (47 frameworks from 5 experts)
+# ═══════════════════════════════════════════════════════════════
+expert_sources:
+  jeremy_haynes:
+    frameworks: 28
+    weight: 0.95
+    primary: [DSL Revolution, CBO vs ABO, Kill/Scale Rules, Funnel Selection, Constants vs Variables]
+  brian_moncada:
+    frameworks: 10
+    weight: 0.90
+    primary: [Andromeda Method, Metric Thresholds, Audience Saturation]
+  alex_hormozi:
+    frameworks: 5
+    weight: 0.92
+    primary: [Unit Economics, LTV/CAC Ratio, Hydra Strategy]
+  brandon_carter:
+    frameworks: 3
+    weight: 0.88
+    primary: [Constants vs Variables, Scientific Hook Testing]
+  jordan_stupar:
+    frameworks: 1
+    weight: 0.85
+    primary: [Creative Strategy]
+
+# ═══════════════════════════════════════════════════════════════
+# SKILL EXTRACTION LOG (Pipeline Alan — 2026-03-16)
+# ═══════════════════════════════════════════════════════════════
+# Source: 10 playbooks do Mega Brain (28.971 files, 32 playbooks)
+# Assessment: 25 checkpoints × 5 dimensões → 3 MIXED, 7 BRONZE
+# Extraction: ~87 frameworks → Pareto ao Cubo → 3 genialidade (0.8%) + 15 excelência (4%)
+# Result: 11 novas skills criadas (10 + 1 formalizada)
+# All 9 agents now type: operational
+
+# ═══════════════════════════════════════════════════════════════
+# FUSION METADATA
+# ═══════════════════════════════════════════════════════════════
+fusion:
+  date: "2026-03-16"
+  sources:
+    - name: media-buyer-squad
+      version: "2.0.0"
+      contributed: "4 agents, 18 skills, 5 tasks, 2 checklists, 3 templates, 3 configs"
+    - name: traffic-masters
+      version: "3.0.0"
+      contributed: "5 agents (kasim-aslam, tom-breeze, ralph-burns, br-traffic-operator, fiscal)"
+  cut_agents:
+    - traffic-masters-chief  # routing absorbed by ad-midas
+    - molly-pittman          # advisory absorbed by ad-midas frameworks
+    - depesh-mandalia        # BPM absorbed by ad-midas Meta strategy
+    - nicholas-kusmich       # lead gen absorbed by funnel-selection skill
+    - media-buyer            # superseded by ad-midas
+    - ads-analyst            # diagnostics absorbed by performance-analyst
+    - scale-optimizer        # scaling absorbed by ad-midas + performance-analyst
+
+dependencies:
+  aios-core: "^3.0.0"
+
+metadata:
+  created: "2026-03-16"
+  status: active
+  maturity: production
+  score: 9.2
+
+tags:
+  platforms: [meta-ads, google-ads, youtube-ads, tiktok-ads]
+  markets: [brasil, latam]
+  use_cases: [lead-generation, ecommerce, infoproducts, saas]

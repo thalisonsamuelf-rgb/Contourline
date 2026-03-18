@@ -1,0 +1,4653 @@
+[
+  {
+    "route": "/brandbook",
+    "url": "http://127.0.0.1:3100/brandbook",
+    "theme": "lime",
+    "title": "AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Há dois anos me levava 3 meses. Há seis meses, 3 semanas. Há dois dias, 3 horas.\" -- RODRIGO FAERMAN",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Pegou minha mentalidade, jogou no lixo e colocou uma semente nova.\" -- LUCAS D.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"A sensação que dá é que parece que estamos aprendendo o mapa do tesouro.\" -- JOAO DA PASSEIOS",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Estou me sentindo PODEROSAAAA DEMAAAAAIS!\" -- BETTY BONAPARTE",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Meu sonho era ser programador. Agora é um sonho que se realiza com 47 anos.\" -- CLAUDIO",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook",
+    "url": "http://127.0.0.1:3100/brandbook",
+    "theme": "gold",
+    "title": "AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/advanced",
+    "url": "http://127.0.0.1:3100/brandbook/advanced",
+    "theme": "lime",
+    "title": "Advanced — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 2,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "3",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "3",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/advanced",
+    "url": "http://127.0.0.1:3100/brandbook/advanced",
+    "theme": "gold",
+    "title": "Advanced — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 2,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "3",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "3",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/aiox",
+    "url": "http://127.0.0.1:3100/brandbook/aiox",
+    "theme": "lime",
+    "title": "AIOX Movimento — Brandbook Estrategico",
+    "appliedTheme": "lime",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "section#manifesto > div > div > div",
+        "text": "Todo mundo está vendendo inteligência artificial. \"A IA que faz por você.\" \"A IA que substitui você.\" \"A IA que pensa po",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Analogia: Se AIOX fosse uma pessoa, seria Morpheus em Matrix.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Regra: \"Alan atrai. AIOX retém e entrega.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "section#contraste > div > div",
+        "text": "Nenhum concorrente no mercado de ferramentas IA usa Outlaw como arquétipo primário. Isso é único e deliberado.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > table > tbody > tr",
+        "text": "\"A IA e a seta. O X e seu.\" Provocativa PRIMARIA — Hero message",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CRIAR / CRIADOR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PODER",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "TERMINAL",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A SETA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "O X / DESTINO",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CLAREZA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PÍLULA VERMELHA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "DESPERTAR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A TOCA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "SEMENTE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "BARULHEIRA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "X MARKS THE SPOT",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "section#vocabulario > div > div",
+        "text": "O AIOX fala como Morpheus: um mentor que já esteve na trincheira. Nunca grita. Nunca implora. Revela.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Hackear as barreiras e devolver o poder.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Não é pra todo mundo. Coragem é o filtro de entrada.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"150+ resultados documentados. R$1M+ em resultados reais.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"O poder de criar nunca saiu de você.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Pegou minha mentalidade, jogou no lixo e colocou uma semente nova. — Lucas D",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Meu sonho era ser programador. Agora é um sonho que se realiza com 47 anos. — Claudio",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Estou me sentindo PODEROSAAAA DEMAAAAAIS! — Betty Bonaparte",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/aiox",
+    "url": "http://127.0.0.1:3100/brandbook/aiox",
+    "theme": "gold",
+    "title": "AIOX Movimento — Brandbook Estrategico",
+    "appliedTheme": "gold",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "section#manifesto > div > div > div",
+        "text": "Todo mundo está vendendo inteligência artificial. \"A IA que faz por você.\" \"A IA que substitui você.\" \"A IA que pensa po",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Analogia: Se AIOX fosse uma pessoa, seria Morpheus em Matrix.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Regra: \"Alan atrai. AIOX retém e entrega.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "section#contraste > div > div",
+        "text": "Nenhum concorrente no mercado de ferramentas IA usa Outlaw como arquétipo primário. Isso é único e deliberado.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > table > tbody > tr",
+        "text": "\"A IA e a seta. O X e seu.\" Provocativa PRIMARIA — Hero message",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CRIAR / CRIADOR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PODER",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "TERMINAL",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A SETA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "O X / DESTINO",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CLAREZA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PÍLULA VERMELHA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "DESPERTAR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A TOCA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "SEMENTE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "BARULHEIRA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "X MARKS THE SPOT",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "section#vocabulario > div > div",
+        "text": "O AIOX fala como Morpheus: um mentor que já esteve na trincheira. Nunca grita. Nunca implora. Revela.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Hackear as barreiras e devolver o poder.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Não é pra todo mundo. Coragem é o filtro de entrada.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"150+ resultados documentados. R$1M+ em resultados reais.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"O poder de criar nunca saiu de você.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Pegou minha mentalidade, jogou no lixo e colocou uma semente nova. — Lucas D",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Meu sonho era ser programador. Agora é um sonho que se realiza com 47 anos. — Claudio",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Estou me sentindo PODEROSAAAA DEMAAAAAIS! — Betty Bonaparte",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/buttons",
+    "url": "http://127.0.0.1:3100/brandbook/buttons",
+    "theme": "lime",
+    "title": "Buttons — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/buttons",
+    "url": "http://127.0.0.1:3100/brandbook/buttons",
+    "theme": "gold",
+    "title": "Buttons — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/cards",
+    "url": "http://127.0.0.1:3100/brandbook/cards",
+    "theme": "lime",
+    "title": "Cards — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 1,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "ACTIVE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      }
+    ],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/cards--lime.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/cards",
+    "url": "http://127.0.0.1:3100/brandbook/cards",
+    "theme": "gold",
+    "title": "Cards — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/cards--gold.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/charts",
+    "url": "http://127.0.0.1:3100/brandbook/charts",
+    "theme": "lime",
+    "title": "Charts — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/charts--lime.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/charts",
+    "url": "http://127.0.0.1:3100/brandbook/charts",
+    "theme": "gold",
+    "title": "Charts — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/charts--gold.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/color-tokens",
+    "url": "http://127.0.0.1:3100/brandbook/color-tokens",
+    "theme": "lime",
+    "title": "Color Tokens — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 17,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "--BB-LIME ON --BB-DARK",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "section.bg-bb-dark > div.grid.grid-cols-[2.5rem_1fr_1fr_1.5fr] > div.flex.items-center > div.h-5.w-5",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "section.bg-bb-dark > div.grid.grid-cols-[2.5rem_1fr_1fr_1.5fr] > div.flex.items-center > div.h-5.w-5",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/color-tokens",
+    "url": "http://127.0.0.1:3100/brandbook/color-tokens",
+    "theme": "gold",
+    "title": "Color Tokens — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 15,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "--BB-LIME ON --BB-DARK",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/components",
+    "url": "http://127.0.0.1:3100/brandbook/components",
+    "theme": "lime",
+    "title": "Components — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 1,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "LIVE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      }
+    ],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/components--lime.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/components",
+    "url": "http://127.0.0.1:3100/brandbook/components",
+    "theme": "gold",
+    "title": "Components — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/components--gold.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/editorial",
+    "url": "http://127.0.0.1:3100/brandbook/editorial",
+    "theme": "lime",
+    "title": "Editorial // AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "KINETIC LIMON HEX #D1FF00 RGB 209, 255, 0 TOKEN --bb-lime",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "10%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "25%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "50%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "75%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "100%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "10%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "25%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "50%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "75%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "100%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > strong",
+        "text": "25% Lime",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "03",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "04",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "06",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "section.editorial-spread > div > div > div",
+        "text": "“Estou me sentindo PODEROSAAAA DEMAAAAAIS!” // BETTY BONAPARTE",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "section.editorial-spread > div > div > div",
+        "text": "“Essa parada nos da super poderes, ne?” // PERICLES",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "Agora o controle é seu.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "A IA não é o herói. Você é.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "Terminal não é o fim.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "X marks the spot.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "08",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "ORIGEM Cresceu em Guajuviras, RS. Bairro onde a energia e a água eram cortadas. Trabalhou 8 anos a 15h/dia, 7 dias/seman",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "1",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "2",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/editorial",
+    "url": "http://127.0.0.1:3100/brandbook/editorial",
+    "theme": "gold",
+    "title": "Editorial // AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "KINETIC LIMON HEX #D1FF00 RGB 209, 255, 0 TOKEN --bb-lime",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "10%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "25%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "50%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "75%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "100%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "10%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "25%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "50%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "75%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "100%",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > strong",
+        "text": "25% Lime",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "03",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "04",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "06",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "section.editorial-spread > div > div > div",
+        "text": "“Estou me sentindo PODEROSAAAA DEMAAAAAIS!” // BETTY BONAPARTE",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "section.editorial-spread > div > div > div",
+        "text": "“Essa parada nos da super poderes, ne?” // PERICLES",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "Agora o controle é seu.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "A IA não é o herói. Você é.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "Terminal não é o fim.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "X marks the spot.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "08",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "main > section.editorial-spread > div > div",
+        "text": "ORIGEM Cresceu em Guajuviras, RS. Bairro onde a energia e a água eram cortadas. Trabalhou 8 anos a 15h/dia, 7 dias/seman",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "1",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "2",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/effects",
+    "url": "http://127.0.0.1:3100/brandbook/effects",
+    "theme": "lime",
+    "title": "Effects — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 1,
+    "limeHits": [
+      {
+        "path": "div.min-w-0.w-full > div.w-full > div > span",
+        "text": "LIME",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      }
+    ],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/effects--lime.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/effects",
+    "url": "http://127.0.0.1:3100/brandbook/effects",
+    "theme": "gold",
+    "title": "Effects — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/effects--gold.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/feedback",
+    "url": "http://127.0.0.1:3100/brandbook/feedback",
+    "theme": "lime",
+    "title": "Feedback — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 3,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "Success Operation completed successfully.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.flex.flex-col > div.flex.items-center",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.flex.flex-col > div.flex.items-center",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/feedback",
+    "url": "http://127.0.0.1:3100/brandbook/feedback",
+    "theme": "gold",
+    "title": "Feedback — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 1,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "Success Operation completed successfully.",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/flow-diagram",
+    "url": "http://127.0.0.1:3100/brandbook/flow-diagram",
+    "theme": "lime",
+    "title": "FlowDiagram — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "div.relative.w-full > div.flex.flex-wrap > span.inline-flex.items-center > span.inline-block.w-2",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "svg > g > g > polygon",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "div.relative.w-full > div.flex.flex-wrap > span.inline-flex.items-center > span.inline-block.w-2",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "div.relative.w-full > div.flex.flex-wrap > span.inline-flex.items-center > span.inline-block.w-2",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "div.relative.w-full > div.flex.flex-wrap > span.inline-flex.items-center > span.inline-block.w-2",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "div.w-full.overflow-hidden > svg > g > path",
+        "text": "",
+        "props": [
+          "stroke"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "div.relative.w-full > div.flex.flex-wrap > span.inline-flex.items-center > span.inline-block.w-2",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/flow-diagram",
+    "url": "http://127.0.0.1:3100/brandbook/flow-diagram",
+    "theme": "gold",
+    "title": "FlowDiagram — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      },
+      {
+        "path": "svg > g > g > rect",
+        "text": "",
+        "props": [
+          "fill"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/forms",
+    "url": "http://127.0.0.1:3100/brandbook/forms",
+    "theme": "lime",
+    "title": "Forms — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/forms--lime.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/forms",
+    "url": "http://127.0.0.1:3100/brandbook/forms",
+    "theme": "gold",
+    "title": "Forms — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/forms--gold.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/foundations",
+    "url": "http://127.0.0.1:3100/brandbook/foundations",
+    "theme": "lime",
+    "title": "Foundations — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/foundations",
+    "url": "http://127.0.0.1:3100/brandbook/foundations",
+    "theme": "gold",
+    "title": "Foundations — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/guidelines",
+    "url": "http://127.0.0.1:3100/brandbook/guidelines",
+    "theme": "lime",
+    "title": "Guidelines — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Há dois anos me levava 3 meses. Há seis meses, 3 semanas. Há dois dias, 3 horas.\" -- RODRIGO FAERMAN",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Pegou minha mentalidade, jogou no lixo e colocou uma semente nova.\" -- LUCAS D.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"A sensação que dá é que parece que estamos aprendendo o mapa do tesouro.\" -- JOAO DA PASSEIOS",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Estou me sentindo PODEROSAAAA DEMAAAAAIS!\" -- BETTY BONAPARTE",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.guidelines-panel.relative > div.flex.flex-col > div > div.hover:translate-x-1",
+        "text": "\"Meu sonho era ser programador. Agora é um sonho que se realiza com 47 anos.\" -- CLAUDIO",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/guidelines",
+    "url": "http://127.0.0.1:3100/brandbook/guidelines",
+    "theme": "gold",
+    "title": "Guidelines — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/icons",
+    "url": "http://127.0.0.1:3100/brandbook/icons",
+    "theme": "lime",
+    "title": "Icons — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/icons",
+    "url": "http://127.0.0.1:3100/brandbook/icons",
+    "theme": "gold",
+    "title": "Icons — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/layering",
+    "url": "http://127.0.0.1:3100/brandbook/layering",
+    "theme": "lime",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/layering",
+    "url": "http://127.0.0.1:3100/brandbook/layering",
+    "theme": "gold",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/lists",
+    "url": "http://127.0.0.1:3100/brandbook/lists",
+    "theme": "lime",
+    "title": "Lists — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 1,
+    "limeHits": [
+      {
+        "path": "div > div > span > span",
+        "text": "ACTIVE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/lists",
+    "url": "http://127.0.0.1:3100/brandbook/lists",
+    "theme": "gold",
+    "title": "Lists — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/loading",
+    "url": "http://127.0.0.1:3100/brandbook/loading",
+    "theme": "lime",
+    "title": "Loading — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/loading",
+    "url": "http://127.0.0.1:3100/brandbook/loading",
+    "theme": "gold",
+    "title": "Loading — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/logo",
+    "url": "http://127.0.0.1:3100/brandbook/logo",
+    "theme": "lime",
+    "title": "Logo — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "div.w-full > div > div > div",
+        "text": "1X 1X 1X 1X",
+        "props": [
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/logo",
+    "url": "http://127.0.0.1:3100/brandbook/logo",
+    "theme": "gold",
+    "title": "Logo — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "div.w-full > div > div > div",
+        "text": "1X 1X 1X 1X",
+        "props": [
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "1X",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/lp-sections",
+    "url": "http://127.0.0.1:3100/brandbook/lp-sections",
+    "theme": "lime",
+    "title": "LP Sections — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/lp-sections",
+    "url": "http://127.0.0.1:3100/brandbook/lp-sections",
+    "theme": "gold",
+    "title": "LP Sections — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/moodboard",
+    "url": "http://127.0.0.1:3100/brandbook/moodboard",
+    "theme": "lime",
+    "title": "Moodboard — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "b2ec385e43a7d471f497f078fc382171.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "DARK GRID",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "LIME CTA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Hero Section",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Button System",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Grid Background",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "d8fd523c13b98c0023ca5301c3111b4b.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "FORM DESIGN",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "LIME ACCENTS",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Form Elements",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Select Styling",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "CTA Pattern",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "4ffdb5a2c3f3c3030293be3a1f66ce4a.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "DARK COCKPIT",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "DATA PANELS",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Tables",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "KPI Cards",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Charts",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Section Dividers",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "d0082d3d1efefb26f112c5bfe7304f1d.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "GAMING UI",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "STATS CARD",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Cards",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Badges",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Rankings",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/moodboard",
+    "url": "http://127.0.0.1:3100/brandbook/moodboard",
+    "theme": "gold",
+    "title": "Moodboard — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "b2ec385e43a7d471f497f078fc382171.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Hero Section",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Button System",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Grid Background",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "d8fd523c13b98c0023ca5301c3111b4b.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Form Elements",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Select Styling",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "CTA Pattern",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "4ffdb5a2c3f3c3030293be3a1f66ce4a.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Tables",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "KPI Cards",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Charts",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Section Dividers",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "d0082d3d1efefb26f112c5bfe7304f1d.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Cards",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Badges",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Rankings",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Progress Bars",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "7e22a29aaee06324da5997dbb4ba489c.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Background Patterns",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Wallpapers",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "79c48c2b5c8c14ce48d002e6c5583062.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Page Backgrounds",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "Hero Sections",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "f7169e877d519078704d2e72af02b25a.webp",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/motion",
+    "url": "http://127.0.0.1:3100/brandbook/motion",
+    "theme": "lime",
+    "title": "Motion — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/motion",
+    "url": "http://127.0.0.1:3100/brandbook/motion",
+    "theme": "gold",
+    "title": "Motion — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/movimento",
+    "url": "http://127.0.0.1:3100/brandbook/movimento",
+    "theme": "lime",
+    "title": "AIOX Movimento — Brandbook Estrategico",
+    "appliedTheme": "lime",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "section#manifesto > div > div > div",
+        "text": "Todo mundo está vendendo inteligência artificial. \"A IA que faz por você.\" \"A IA que substitui você.\" \"A IA que pensa po",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Analogia: Se AIOX fosse uma pessoa, seria Morpheus em Matrix.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Regra: \"Alan atrai. AIOX retém e entrega.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "section#contraste > div > div",
+        "text": "Nenhum concorrente no mercado de ferramentas IA usa Outlaw como arquétipo primário. Isso é único e deliberado.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > table > tbody > tr",
+        "text": "\"A IA e a seta. O X e seu.\" Provocativa PRIMARIA — Hero message",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CRIAR / CRIADOR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PODER",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "TERMINAL",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A SETA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "O X / DESTINO",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CLAREZA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PÍLULA VERMELHA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "DESPERTAR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A TOCA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "SEMENTE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "BARULHEIRA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "X MARKS THE SPOT",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "section#vocabulario > div > div",
+        "text": "O AIOX fala como Morpheus: um mentor que já esteve na trincheira. Nunca grita. Nunca implora. Revela.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Hackear as barreiras e devolver o poder.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Não é pra todo mundo. Coragem é o filtro de entrada.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"150+ resultados documentados. R$1M+ em resultados reais.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"O poder de criar nunca saiu de você.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Pegou minha mentalidade, jogou no lixo e colocou uma semente nova. — Lucas D",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Meu sonho era ser programador. Agora é um sonho que se realiza com 47 anos. — Claudio",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Estou me sentindo PODEROSAAAA DEMAAAAAIS! — Betty Bonaparte",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/movimento",
+    "url": "http://127.0.0.1:3100/brandbook/movimento",
+    "theme": "gold",
+    "title": "AIOX Movimento — Brandbook Estrategico",
+    "appliedTheme": "gold",
+    "limeHitCount": 25,
+    "limeHits": [
+      {
+        "path": "section#manifesto > div > div > div",
+        "text": "Todo mundo está vendendo inteligência artificial. \"A IA que faz por você.\" \"A IA que substitui você.\" \"A IA que pensa po",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Analogia: Se AIOX fosse uma pessoa, seria Morpheus em Matrix.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "Regra: \"Alan atrai. AIOX retém e entrega.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "section#contraste > div > div",
+        "text": "Nenhum concorrente no mercado de ferramentas IA usa Outlaw como arquétipo primário. Isso é único e deliberado.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > table > tbody > tr",
+        "text": "\"A IA e a seta. O X e seu.\" Provocativa PRIMARIA — Hero message",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CRIAR / CRIADOR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PODER",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "TERMINAL",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A SETA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "O X / DESTINO",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "CLAREZA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "PÍLULA VERMELHA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "DESPERTAR",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "A TOCA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "SEMENTE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "BARULHEIRA",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.mb-12.grid > div > div > span",
+        "text": "X MARKS THE SPOT",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "section#vocabulario > div > div",
+        "text": "O AIOX fala como Morpheus: um mentor que já esteve na trincheira. Nunca grita. Nunca implora. Revela.",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Hackear as barreiras e devolver o poder.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"Não é pra todo mundo. Coragem é o filtro de entrada.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"150+ resultados documentados. R$1M+ em resultados reais.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "\"O poder de criar nunca saiu de você.\"",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Pegou minha mentalidade, jogou no lixo e colocou uma semente nova. — Lucas D",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Meu sonho era ser programador. Agora é um sonho que se realiza com 47 anos. — Claudio",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div.grid.grid-cols-1 > div",
+        "text": "Estou me sentindo PODEROSAAAA DEMAAAAAIS! — Betty Bonaparte",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/navigation",
+    "url": "http://127.0.0.1:3100/brandbook/navigation",
+    "theme": "lime",
+    "title": "Navigation — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 4,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "⊞ Dashboard",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "⊞",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "⊞",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "⊞",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/navigation",
+    "url": "http://127.0.0.1:3100/brandbook/navigation",
+    "theme": "gold",
+    "title": "Navigation — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 4,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "⊞ Dashboard",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "⊞",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "⊞",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "⊞",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/patterns",
+    "url": "http://127.0.0.1:3100/brandbook/patterns",
+    "theme": "lime",
+    "title": "Patterns — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/patterns--lime.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/patterns",
+    "url": "http://127.0.0.1:3100/brandbook/patterns",
+    "theme": "gold",
+    "title": "Patterns — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/patterns--gold.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/sections",
+    "url": "http://127.0.0.1:3100/brandbook/sections",
+    "theme": "lime",
+    "title": "Sections — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 2,
+    "limeHits": [
+      {
+        "path": "div.flex.flex-col > div.flex.flex-col > h2.text-[32px].sm:text-[44px] > span.text-[#d1ff00].tracking-[-0.02em]",
+        "text": "[10X]",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div.flex.flex-col > div.flex.flex-col > h2.text-[32px].sm:text-[44px] > span.text-[#d1ff00].tracking-[-0.02em]",
+        "text": "[100]",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/sections",
+    "url": "http://127.0.0.1:3100/brandbook/sections",
+    "theme": "gold",
+    "title": "Sections — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 2,
+    "limeHits": [
+      {
+        "path": "div.flex.flex-col > div.flex.flex-col > h2.text-[32px].sm:text-[44px] > span.text-[#d1ff00].tracking-[-0.02em]",
+        "text": "[10X]",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div.flex.flex-col > div.flex.flex-col > h2.text-[32px].sm:text-[44px] > span.text-[#d1ff00].tracking-[-0.02em]",
+        "text": "[100]",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/semantic-tokens",
+    "url": "http://127.0.0.1:3100/brandbook/semantic-tokens",
+    "theme": "lime",
+    "title": "Semantic Tokens — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 10,
+    "limeHits": [
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/semantic-tokens",
+    "url": "http://127.0.0.1:3100/brandbook/semantic-tokens",
+    "theme": "gold",
+    "title": "Semantic Tokens — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 10,
+    "limeHits": [
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div.grid.grid-cols-1 > div > div",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/seo",
+    "url": "http://127.0.0.1:3100/brandbook/seo",
+    "theme": "lime",
+    "title": "SEO & Digital Identity — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/seo",
+    "url": "http://127.0.0.1:3100/brandbook/seo",
+    "theme": "gold",
+    "title": "SEO & Digital Identity — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase",
+    "url": "http://127.0.0.1:3100/brandbook/showcase",
+    "theme": "lime",
+    "title": "AIOX - Design System & Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase",
+    "url": "http://127.0.0.1:3100/brandbook/showcase",
+    "theme": "gold",
+    "title": "AIOX - Design System & Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/apparel",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/apparel",
+    "theme": "lime",
+    "title": "Apparel — AIOX Brand Showcase",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/apparel",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/apparel",
+    "theme": "gold",
+    "title": "Apparel — AIOX Brand Showcase",
+    "appliedTheme": "gold",
+    "limeHitCount": 6,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/avatars",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/avatars",
+    "theme": "lime",
+    "title": "Avatars — AIOX Brand Showcase",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/avatars",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/avatars",
+    "theme": "gold",
+    "title": "Avatars — AIOX Brand Showcase",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/calc-squad",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/calc-squad",
+    "theme": "lime",
+    "title": "AIOX - Design System & Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/calc-squad",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/calc-squad",
+    "theme": "gold",
+    "title": "AIOX - Design System & Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div.jsx-37fa3efdf30091af.p-4 > div.jsx-37fa3efdf30091af.absolute > span",
+        "text": "MARKETING",
+        "props": [
+          "color",
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/jackets",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/jackets",
+    "theme": "lime",
+    "title": "Jackets — AIOX Brand Showcase",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/jackets",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/jackets",
+    "theme": "gold",
+    "title": "Jackets — AIOX Brand Showcase",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/mockups",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/mockups",
+    "theme": "lime",
+    "title": "Mockups — AIOX Brand Showcase",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/mockups",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/mockups",
+    "theme": "gold",
+    "title": "Mockups — AIOX Brand Showcase",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/outfits",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/outfits",
+    "theme": "lime",
+    "title": "Outfits — AIOX Brand Showcase",
+    "appliedTheme": "lime",
+    "limeHitCount": 15,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "01",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "02",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "03",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/outfits",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/outfits",
+    "theme": "gold",
+    "title": "Outfits — AIOX Brand Showcase",
+    "appliedTheme": "gold",
+    "limeHitCount": 15,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "01",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "02",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "03",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/slides",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/slides",
+    "theme": "lime",
+    "title": "Slides — AIOX Brand Showcase",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/slides",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/slides",
+    "theme": "gold",
+    "title": "Slides — AIOX Brand Showcase",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/sneakers",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/sneakers",
+    "theme": "lime",
+    "title": "Sneakers — AIOX Brand Showcase",
+    "appliedTheme": "lime",
+    "limeHitCount": 13,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/showcase/sneakers",
+    "url": "http://127.0.0.1:3100/brandbook/showcase/sneakers",
+    "theme": "gold",
+    "title": "Sneakers — AIOX Brand Showcase",
+    "appliedTheme": "gold",
+    "limeHitCount": 13,
+    "limeHits": [
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div > div > div > div",
+        "text": "▶ MP4",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/spacing",
+    "url": "http://127.0.0.1:3100/brandbook/spacing",
+    "theme": "lime",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/spacing",
+    "url": "http://127.0.0.1:3100/brandbook/spacing",
+    "theme": "gold",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/spacing-layout",
+    "url": "http://127.0.0.1:3100/brandbook/spacing-layout",
+    "theme": "lime",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/spacing-layout",
+    "url": "http://127.0.0.1:3100/brandbook/spacing-layout",
+    "theme": "gold",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/spacing-scale",
+    "url": "http://127.0.0.1:3100/brandbook/spacing-scale",
+    "theme": "lime",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/spacing-scale",
+    "url": "http://127.0.0.1:3100/brandbook/spacing-scale",
+    "theme": "gold",
+    "title": "Spacing & Layout — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/states",
+    "url": "http://127.0.0.1:3100/brandbook/states",
+    "theme": "lime",
+    "title": "States — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/states",
+    "url": "http://127.0.0.1:3100/brandbook/states",
+    "theme": "gold",
+    "title": "States — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/surfaces",
+    "url": "http://127.0.0.1:3100/brandbook/surfaces",
+    "theme": "lime",
+    "title": "Surfaces & Borders — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 8,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "#050505",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "#0F0F11",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "#1C1E19",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.13 0 0)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "RGBA(15,15,17,0.92)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.15 0.005 280)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.11 0.005 280)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.22 0.06 283)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/surfaces",
+    "url": "http://127.0.0.1:3100/brandbook/surfaces",
+    "theme": "gold",
+    "title": "Surfaces & Borders — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 8,
+    "limeHits": [
+      {
+        "path": "div > div > div > span",
+        "text": "#050505",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "#0F0F11",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "#1C1E19",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.13 0 0)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "RGBA(15,15,17,0.92)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.15 0.005 280)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.11 0.005 280)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      },
+      {
+        "path": "div > div > div > span",
+        "text": "OKLCH(0.22 0.06 283)",
+        "props": [
+          "color",
+          "textDecorationColor",
+          "caretColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/tables",
+    "url": "http://127.0.0.1:3100/brandbook/tables",
+    "theme": "lime",
+    "title": "Tables — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 3,
+    "limeHits": [
+      {
+        "path": "tbody > tr.border-b.border-bb-border > td.px-4.py-3 > span",
+        "text": "ACTIVE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "tbody > tr.border-b.border-bb-border > td.px-4.py-3 > span",
+        "text": "ACTIVE",
+        "props": [
+          "backgroundColor",
+          "borderTopColor",
+          "borderRightColor",
+          "borderBottomColor",
+          "borderLeftColor"
+        ]
+      },
+      {
+        "path": "div.max-w-lg.p-6 > div.space-y-3 > div.flex.flex-col > div.flex.items-center",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/tables--lime.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/tables",
+    "url": "http://127.0.0.1:3100/brandbook/tables",
+    "theme": "gold",
+    "title": "Tables — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": "/tmp/ds-theme-coverage/screenshots/tables--gold.png",
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/templates",
+    "url": "http://127.0.0.1:3100/brandbook/templates",
+    "theme": "lime",
+    "title": "Templates — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/templates",
+    "url": "http://127.0.0.1:3100/brandbook/templates",
+    "theme": "gold",
+    "title": "Templates — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/token-export",
+    "url": "http://127.0.0.1:3100/brandbook/token-export",
+    "theme": "lime",
+    "title": "Token Export — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 5,
+    "limeHits": [
+      {
+        "path": "div.py-8 > ol.list-decimal.list-inside > li > code",
+        "text": "index.css",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "div.py-8 > ol.list-decimal.list-inside > li > code",
+        "text": "globals.css",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "main > div.flex.gap-3 > div.flex.items-center > div.h-6.w-6",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "main > div.mb-8.overflow-hidden > div.flex.items-center > button.rounded.px-3",
+        "text": "COPY CSS",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "main > div.mb-8.overflow-hidden > div.flex.items-center > button.rounded.px-3",
+        "text": "COPY CSS",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/token-export",
+    "url": "http://127.0.0.1:3100/brandbook/token-export",
+    "theme": "gold",
+    "title": "Token Export — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 3,
+    "limeHits": [
+      {
+        "path": "main > div.flex.gap-3 > div.flex.items-center > div.h-6.w-6",
+        "text": "",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "main > div.mb-8.overflow-hidden > div.flex.items-center > button.rounded.px-3",
+        "text": "COPY CSS",
+        "props": [
+          "backgroundColor"
+        ]
+      },
+      {
+        "path": "main > div.mb-8.overflow-hidden > div.flex.items-center > button.rounded.px-3",
+        "text": "COPY CSS",
+        "props": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/typography",
+    "url": "http://127.0.0.1:3100/brandbook/typography",
+    "theme": "lime",
+    "title": "Typography — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/typography",
+    "url": "http://127.0.0.1:3100/brandbook/typography",
+    "theme": "gold",
+    "title": "Typography — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/vfx",
+    "url": "http://127.0.0.1:3100/brandbook/vfx",
+    "theme": "lime",
+    "title": "VFX System — AIOX Brandbook",
+    "appliedTheme": "lime",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  },
+  {
+    "route": "/brandbook/vfx",
+    "url": "http://127.0.0.1:3100/brandbook/vfx",
+    "theme": "gold",
+    "title": "VFX System — AIOX Brandbook",
+    "appliedTheme": "gold",
+    "limeHitCount": 0,
+    "limeHits": [],
+    "screenshotPath": null,
+    "status": "ok"
+  }
+]

@@ -1,0 +1,119 @@
+name: aiox-ads
+version: "1.0.0"
+score: 9.2
+slashPrefix: aiox-ads
+title: "Ads & Traffic — Unified Campaign Management & Optimization"
+description: >
+  Squad unificado para gestão de tráfego pago multi-plataforma.
+  Combina capacidades analíticas (ads-audit: 225+ checks) e
+  operacionais (media-buyer: campaign execution via API) em uma
+  interface única. 7 plataformas: Meta, Google, LinkedIn, TikTok,
+  Microsoft/Bing, YouTube, Apple Search Ads. Dashboard integrado
+  no AIOX para setup, criação de campanhas, monitoramento e
+  otimização com agentes IA especializados.
+author: "AIOS Team"
+icon: "📣"
+type: operational
+
+independence: false
+independence_details: |
+  Requer conexão com APIs de plataformas de ads para funcionalidade
+  completa. O Setup Wizard no dashboard configura credenciais por
+  plataforma. Funciona em modo mock/demo sem APIs conectadas.
+
+dependencies:
+  required: []
+  optional:
+    - name: meta-ads-mcp
+      description: "Meta Marketing API for campaign management"
+      get_at: "MCP server configuration"
+    - name: google-ads-mcp
+      description: "Google Ads API for campaign management"
+      get_at: "https://github.com/google/google-ads-mcp"
+
+environment:
+  required: []
+  optional:
+    - name: META_APP_ID
+      description: "Meta App ID for API access"
+    - name: META_APP_SECRET
+      description: "Meta App Secret"
+    - name: META_ACCESS_TOKEN
+      description: "Meta long-lived access token"
+    - name: GOOGLE_ADS_CLIENT_ID
+      description: "Google Ads OAuth Client ID"
+    - name: GOOGLE_ADS_REFRESH_TOKEN
+      description: "Google Ads OAuth Refresh Token"
+
+workspace_integration:
+  level: controlled_runtime_consumer
+  rationale: >-
+    O squad AIOX Ads depende de contexto canonico do business para operar
+    campanhas com qualidade, mas o runtime principal continua orientado a
+    plataformas de ads e artefatos operacionais externos ao workspace. O COO
+    resolve readiness antes da execucao operacional.
+  read_paths:
+    - workspace/workspace.yaml
+    - workspace/businesses/{business}/operations/ads/
+  write_paths:
+    - outputs/ads/{business}/
+  readiness_owner: coo-orchestrator
+  readiness_resolver: squads/c-level/scripts/resolve-squad-workspace-readiness.cjs
+
+entry_agent: ads-traffic-chief
+
+agents:
+  - ads-traffic-chief
+  - campaign-manager
+  - performance-analyst
+  - creative-analyst
+  - pixel-specialist
+  - audit-orchestrator
+
+sub_squads:
+  - name: ads-audit
+    path: squads/ads-audit
+    purpose: "Analytical audit capabilities (225+ checks)"
+  - name: media-buyer-squad
+    path: squads/media-buyer-squad
+    purpose: "Operational campaign execution via Meta API"
+
+tasks:
+  - setup-platform
+  - create-campaign
+  - optimize-campaign
+  - audit-campaign
+  - diagnose-metrics
+  - generate-hooks
+  - audit-tracking
+
+workflows:
+  - campaign-lifecycle
+  - platform-onboarding
+
+checklists:
+  - pre-launch
+  - optimization
+
+data:
+  - platform-specs
+  - benchmarks
+
+tags:
+  - ads
+  - traffic
+  - campaigns
+  - meta-ads
+  - google-ads
+  - linkedin-ads
+  - tiktok-ads
+  - microsoft-ads
+  - youtube-ads
+  - apple-search-ads
+  - roas
+  - cpa
+  - creative
+  - tracking
+  - pixel
+  - media-buying
+  - optimization
