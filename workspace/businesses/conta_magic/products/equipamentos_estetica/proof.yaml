@@ -1,64 +1,77 @@
+---
+# PROOF.YAML — Conta Magic / Equipamentos para Medicina Estetica
+# Guardian: CMO / Egio Roberto
+# Sources: perfil, formulario, call vendas (145 linhas)
+# Status: SKELETON — dados publicos muito limitados, requer pesquisa web
 metadata:
-  version: '1.0'
-  product_name: Equipamentos para Medicina Estetica
-  product_slug: equipamentos_estetica
-  status: SKELETON
-  last_updated: '2026-03-14'
+  version: "1.0"
+  product_name: "Equipamentos para Medicina Estetica"
+  product_slug: "equipamentos_estetica"
+  status: "SKELETON"
+  last_updated: "2026-03-14"
   total_financial_proofs: 3
   total_statistics: 4
   update_frequency: FILL_THIS
+
 financial_results:
-  description: Resultados financeiros extraidos das fontes do ETL.
+  description: "Resultados financeiros extraidos das fontes do ETL."
+
   result_01:
-    claim: 'Faturamento anual: R$ 115-120 milhoes'
-    timeline: 2025-2026
-    context: Uma das maiores do mercado exclusivo de equipamentos esteticos
-    source: Perfil ETL + call vendas
-    verification: SELF-REPORTED — declaracao do CEO na call
-    category: annual_revenue
+    claim: "Faturamento anual: R$ 115-120 milhoes"
+    timeline: "2025-2026"
+    context: "Uma das maiores do mercado exclusivo de equipamentos esteticos"
+    source: "Perfil ETL + call vendas"
+    verification: "SELF-REPORTED — declaracao do CEO na call"
+    category: "annual_revenue"
+
   result_02:
-    claim: Folha mensal de R$ 700-800 mil (~120 funcionarios)
-    timeline: 2025-2026
-    context: Meta de reducao de 30% via IA = R$210-240k/mes de economia
-    source: Call vendas
-    verification: 'SELF-REPORTED — Egio na call: ''deve estar beirando uns 700, 800 pau por mes'''
-    category: operational_cost
+    claim: "Folha mensal de R$ 700-800 mil (~120 funcionarios)"
+    timeline: "2025-2026"
+    context: "Meta de reducao de 30% via IA = R$210-240k/mes de economia"
+    source: "Call vendas"
+    verification: "SELF-REPORTED — Egio na call: 'deve estar beirando uns 700, 800 pau por mes'"
+    category: "operational_cost"
+
   result_03:
-    claim: ~120 funcionarios em operacao 100% home office nacional
-    timeline: 2025-2026
-    source: Perfil ETL
-    verification: SELF-REPORTED
-    category: team_scale
+    claim: "~120 funcionarios em operacao 100% home office nacional"
+    timeline: "2025-2026"
+    source: "Perfil ETL"
+    verification: "SELF-REPORTED"
+    category: "team_scale"
+
 key_statistics:
   stat_01:
-    metric: Faturamento anual
-    value: R$ 115-120 milhoes
-    source: Perfil ETL + call vendas
+    metric: "Faturamento anual"
+    value: "R$ 115-120 milhoes"
+    source: "Perfil ETL + call vendas"
   stat_02:
-    metric: Equipe total
-    value: ~120 pessoas
-    source: Perfil ETL
+    metric: "Equipe total"
+    value: "~120 pessoas"
+    source: "Perfil ETL"
   stat_03:
-    metric: Equipe de marketing
-    value: 14 pessoas
-    source: Call vendas
+    metric: "Equipe de marketing"
+    value: "14 pessoas"
+    source: "Call vendas"
   stat_04:
-    metric: Folha mensal
-    value: R$ 700-800 mil
-    source: Call vendas
+    metric: "Folha mensal"
+    value: "R$ 700-800 mil"
+    source: "Call vendas"
+
 certifications:
   anvisa:
-    claim: Certificacao Anvisa em equipamentos medicos
-    context: Muita normativa regulatoria — alta barreira de entrada
-    source: Perfil ETL + call vendas
-    verification: SELF-REPORTED — a verificar via site/registros Anvisa
+    claim: "Certificacao Anvisa em equipamentos medicos"
+    context: "Muita normativa regulatoria — alta barreira de entrada"
+    source: "Perfil ETL + call vendas"
+    verification: "SELF-REPORTED — a verificar via site/registros Anvisa"
+
 media_coverage:
-  note: Nenhuma cobertura de midia encontrada nas fontes locais. Requer pesquisa web.
+  note: "Nenhuma cobertura de midia encontrada nas fontes locais. Requer pesquisa web."
+
 completion_checklist:
-- '[x] Revenue data (self-reported)'
-- '[x] Team size'
-- '[x] Anvisa certification mentioned'
-- '[ ] External verification of claims — REQUIRES WEB SEARCH'
-- '[ ] Media coverage — REQUIRES WEB SEARCH'
-- '[ ] Client testimonials — REQUIRES FOUNDER INPUT'
-- '[ ] Case studies — REQUIRES FOUNDER INPUT'
+  - "[x] Revenue data (self-reported)"
+  - "[x] Team size"
+  - "[x] Anvisa certification mentioned"
+  - "[ ] External verification of claims — REQUIRES WEB SEARCH"
+  - "[ ] Media coverage — REQUIRES WEB SEARCH"
+  - "[ ] Client testimonials — REQUIRES FOUNDER INPUT"
+  - "[ ] Case studies — REQUIRES FOUNDER INPUT"

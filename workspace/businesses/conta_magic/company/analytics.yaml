@@ -1,3 +1,8 @@
+---
+# [Conta Magic] - Analytics & Research Data
+# Master source for validating all claims made in offerbook.yaml
+# Guardian: Data Officer / CMO
+# Required: ALL claims in offerbook must have supporting data here
 metadata:
   analysis_date: FILL_THIS
   total_sample_size: FILL_THIS
@@ -5,50 +10,54 @@ metadata:
   confidence_level: FILL_THIS
   refresh_cycle: FILL_THIS
   status: INCOMPLETE
-  last_updated: '2026-03-14'
-  product_name: egio_roberto
+  last_updated: "2026-03-14"
+  product_name: "conta_magic"
+
 demographics:
   age_distribution:
-    18-25: FILL_THIS
-    26-35: FILL_THIS
-    36-45: FILL_THIS
-    46-55: FILL_THIS
-    56-69: FILL_THIS
+    "18-25": FILL_THIS
+    "26-35": FILL_THIS
+    "36-45": FILL_THIS
+    "46-55": FILL_THIS
+    "56-69": FILL_THIS
     median_age: FILL_THIS
     core_segment: FILL_THIS
   geography:
-    Primary_City: FILL_THIS
-    Secondary_Cities: FILL_THIS
+    "Primary_City": FILL_THIS
+    "Secondary_Cities": FILL_THIS
     international: FILL_THIS
+
 archetypes:
-  Archetype_1_Name: FILL_THIS
+  "Archetype_1_Name": FILL_THIS
   detailed_breakdown:
     archetype_1:
       percentage: FILL_THIS
       age_range: FILL_THIS
       avg_monthly_income: FILL_THIS
       biggest_pain: FILL_THIS
+
 pain_analysis:
   primary_pains:
-    Equipamentos sem certificacao no mercado: FILL_THIS
-    Dificuldade em encontrar fornecedor confiavel: FILL_THIS
-    Alto investimento com risco de qualidade duvidosa: FILL_THIS
+    "Equipamentos sem certificacao no mercado": FILL_THIS
+    "Dificuldade em encontrar fornecedor confiavel": FILL_THIS
+    "Alto investimento com risco de qualidade duvidosa": FILL_THIS
   hidden_pains_not_verbalized:
-    Medo de problema regulatorio: FILL_THIS
-    Inseguranca sobre resultado do equipamento: FILL_THIS
+    "Medo de problema regulatorio": FILL_THIS
+    "Inseguranca sobre resultado do equipamento": FILL_THIS
+
 key_insights:
-  insight_1: 'FILL_THIS
+  insight_1: |
+    FILL_THIS
+  insight_2: |
+    FILL_THIS
 
-    '
-  insight_2: 'FILL_THIS
-
-    '
 data_validation:
   sample_size: FILL_THIS
   confidence_level: FILL_THIS
   methodology: FILL_THIS
   last_validation: FILL_THIS
+
 metadata_final:
-  version: '1.0'
-  last_updated: '2026-03-14'
-  status: INCOMPLETE - Waiting for research data
+  version: "1.0"
+  last_updated: "2026-03-14"
+  status: "INCOMPLETE - Waiting for research data"

@@ -1,27 +1,30 @@
+---
+# TECH/STRATEGY.YAML — Conta Magic — Estrategia tecnologica
+# Guardian: CTO / Egio Roberto (CEO com background de programacao)
+# Status: SKELETON
 metadata:
-  version: '1.0'
-  company_name: Conta Magic
-  product_name: egio_roberto
-  status: SKELETON
-  last_updated: '2026-03-14'
-  owner: CTO / Egio Roberto
-  notes: 'CEO tem background de programacao.
-
+  version: "1.0"
+  company_name: "Conta Magic"
+  product_name: "conta_magic"
+  status: "SKELETON"
+  last_updated: "2026-03-14"
+  owner: "CTO / Egio Roberto"
+  notes: |
+    CEO tem background de programacao.
     Empresa de tecnologia que fornece equipamentos medicos.
-
     ERP: Totvs. Operacao 100% home office.
 
-    '
 strategy_context:
-  product_core: Equipamentos medicos B2B + plataforma de marketing digital
+  product_core: "Equipamentos medicos B2B + plataforma de marketing digital"
   current_scale:
-    team: ~120 pessoas
-    revenue: R$ 115-120M/ano
-    work_model: 100% home office nacional
+    team: "~120 pessoas"
+    revenue: "R$ 115-120M/ano"
+    work_model: "100% home office nacional"
   key_constraints:
-    compliance: Anvisa — regulacao obrigatoria
-    erp: Totvs (em uso, quer complementar com IA)
+    compliance: "Anvisa — regulacao obrigatoria"
+    erp: "Totvs (em uso, quer complementar com IA)"
+
 tech_priorities:
-  priority_1: Implementar AIOX para coordenacao de IA entre areas
-  priority_2: Integrar IA com Totvs para gestao financeira avancada
-  priority_3: SDR automatizado com IA
+  priority_1: "Implementar AIOX para coordenacao de IA entre areas"
+  priority_2: "Integrar IA com Totvs para gestao financeira avancada"
+  priority_3: "SDR automatizado com IA"

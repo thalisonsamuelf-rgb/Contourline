@@ -1,313 +1,565 @@
+---
+# BRANDBOOK.YAML — Body Health Brasil / Contourline (Egio Roberto + Thalison)
+# Guardian: CMO / Egio Roberto
+# Sources: perfil + call vendas (145 linhas) + formulario + company-profile + founder-dna + credentials + strategic-positioning + icp
+# Status: 72% Complete — sem instalacao, sem acesso ao site. Compensado com fontes internas.
+
 metadata:
-  schema: contamagic.brandbook
-  version: '2.0'
-  status: active
-  owner_role: cmo
-  last_updated: '2026-03-15'
-  source: ETL Deep Pass v2 — perfil + call vendas + formulario + company/brand files
+  schema: "contamagic.brandbook"
+  version: "2.0"
+  status: "active"
+  owner_role: "cmo"
+  last_updated: "2026-03-15"
+  source: "ETL Deep Pass v2 — perfil + call vendas + formulario + company/brand files"
   completeness: 72
-  notes: 'Sem instalacao presencial e sem acesso ao site oficial.
-
+  notes: |
+    Sem instalacao presencial e sem acesso ao site oficial.
     Call de vendas tem 145 linhas — Egio falou bastante (contexto rico).
-
     Thalison Rodrigues Marcelino e o nome no CNPJ da Euforia Tecnologia —
-
     possivelmente o sócio mencionado no titulo do workspace.
-
     Gaps criticos: mission/vision formais, tagline oficial, origin story precoce.
-
     Completar na imersao (19-20 Mar/2026).
 
-    '
+# ============================================================================
+# IDENTITY
+# ============================================================================
+
 identity:
-  brand_name: Body Health Brasil / Contourline
-  brand_colloquial: Conta Magic / Conta Online Magic
-  slug: contamagic
-  legal_entity:
-    body_health_brasil: Body Health Brasil — pessoa juridica a confirmar CNPJ
-    contourline: Contourline — empresa de estetica medica, resultados no 40o RADLA
-    euforia_tech: EUFORIA TECNOLOGIA E PUBLICIDADE — CNPJ 62.727.948/0001-09
-  instagram_brand: '@onlinemag'
-  instagram_founder: '@egioroberto'
-  linkedin_founder: Egio Roberto Body Health Brasil — CEO na Contourline
-  site: null
-  phone: 55 31991888632
-  founded: null
-  headquarters: Sete Lagoas, MG
+  brand_name: "Body Health Brasil / Contourline"
+  brand_colloquial: "Conta Magic / Conta Online Magic"
+  # source: briefing.md — "Body Health Brasil / Contourline (Conta Magic)"
+  # NOTA: Relacao exata entre Body Health, Contourline e Conta Magic requer confirmacao na imersao
+  slug: "contamagic"
+  legal_entity: # INFERIDO — validar com founder
+    body_health_brasil: "Body Health Brasil — pessoa juridica a confirmar CNPJ"
+    contourline: "Contourline — empresa de estetica medica, resultados no 40o RADLA"
+    euforia_tech: "EUFORIA TECNOLOGIA E PUBLICIDADE — CNPJ 62.727.948/0001-09"
+    # source: credentials.yaml — CNPJ verificado; Thalison Rodrigues Marcelino no registro
+  instagram_brand: "@onlinemag"
+  instagram_founder: "@egioroberto"
+  linkedin_founder: "Egio Roberto Body Health Brasil — CEO na Contourline"
+  site: # PENDENTE — extrair via pesquisa web
+  phone: "55 31991888632"
+  founded: # INFERIDO — validar com founder na imersao
+  headquarters: "Sete Lagoas, MG"
+  # source: call vendas — "cidade de Sete Lagos" / "Sete Lagoas"
+
+# ============================================================================
+# CORE
+# ============================================================================
+
 core:
-  purpose:
-    inferred: Democratizar o acesso a equipamentos medicos de ponta para profissionais de medicina estetica, com seguranca
-      regulatoria garantida
-  essence: Tecnologia de ponta para medicina estetica com seguranca regulatoria
-  trueline_primary:
-    inferred: O equipamento que o profissional pode confiar
-  category: Equipamentos Medicos para Medicina Estetica
-  owned_word: CERTIFICACAO
-  vision:
-    inferred: Ser a maior e mais confiavel empresa de equipamentos medicos para medicina estetica do Brasil, liderando a transformacao
-      digital do setor
-  origin_myth: 'CEO com background de programacao que entrou no cruzamento raro entre tecnologia e medicina estetica. Enquanto
-    o setor era dominado por importadores genericos sem foco tecnico, Egio construiu uma empresa que entende tanto de codigo
-    quanto de compliance Anvisa. Resultado: uma das maiores do mercado exclusivo de equipamentos esteticos. "Em Casa de Ferreiro,
-    o espeto e de pau" — a autocritica de quem sabe o quanto ainda pode fazer quando a empresa de tecnologia finalmente automatizar
-    a si mesma.'
+  purpose: # INFERIDO — validar com founder na imersao
+    inferred: "Democratizar o acesso a equipamentos medicos de ponta para profissionais de medicina estetica, com seguranca regulatoria garantida"
+    # Inferido do posicionamento e missao implicita: setor + Anvisa + B2B medico
+  essence: "Tecnologia de ponta para medicina estetica com seguranca regulatoria"
+  # source: strategic-positioning.yaml — design_principle.ethos
+  trueline_primary: # PENDENTE — confirmar na imersao
+    inferred: "O equipamento que o profissional pode confiar"
+    # INFERIDO — combinacao de: Anvisa + resultado + mercado exclusivo
+  category: "Equipamentos Medicos para Medicina Estetica"
+  owned_word: "CERTIFICACAO"
+  # INFERIDO — barreira Anvisa e o diferencial estrutural mais citado
+  vision: # PENDENTE — confirmar na imersao
+    inferred: "Ser a maior e mais confiavel empresa de equipamentos medicos para medicina estetica do Brasil, liderando a transformacao digital do setor"
+    # INFERIDO — dado faturamento R$115-120M e posicao atual de mercado
+
+  origin_myth: >-
+    CEO com background de programacao que entrou no cruzamento raro entre tecnologia
+    e medicina estetica. Enquanto o setor era dominado por importadores genericos
+    sem foco tecnico, Egio construiu uma empresa que entende tanto de codigo quanto
+    de compliance Anvisa. Resultado: uma das maiores do mercado exclusivo de
+    equipamentos esteticos. "Em Casa de Ferreiro, o espeto e de pau" — a autocritica
+    de quem sabe o quanto ainda pode fazer quando a empresa de tecnologia finalmente
+    automatizar a si mesma.
+  # source: call vendas + perfil — sintese do narrative estrutural do Egio
+
+# ============================================================================
+# POSITIONING
+# ============================================================================
+
 positioning:
-  primary_audience: Profissionais de medicina estetica — medicos, dentistas, esteticistas com clinica propria
-  audience_filter: Nao e para quem busca equipamento barato sem certificacao. E para profissionais que exigem qualidade, seguranca
-    regulatoria (Anvisa) e resultado consistente para seus pacientes. Compradores de alto ticket em B2B.
-  enemy_core: Equipamentos sem certificacao Anvisa que colocam profissionais e pacientes em risco regulatorio e clinico
-  value_claim: Equipamentos medicos de alta performance com certificacao Anvisa completa — para o profissional que nao pode
-    errar
-  onlyness: Uma das maiores empresas exclusivas de equipamentos esteticos no Brasil, liderada por CEO com background de programacao,
-    com resultados validados no 40o RADLA Brasil (maior congresso de dermatologia da America Latina)
+  primary_audience: "Profissionais de medicina estetica — medicos, dentistas, esteticistas com clinica propria"
+  audience_filter: >-
+    Nao e para quem busca equipamento barato sem certificacao.
+    E para profissionais que exigem qualidade, seguranca regulatoria
+    (Anvisa) e resultado consistente para seus pacientes.
+    Compradores de alto ticket em B2B.
+  # source: icp.yaml + perfil — "profissionais de medicina estetica"
+  enemy_core: "Equipamentos sem certificacao Anvisa que colocam profissionais e pacientes em risco regulatorio e clinico"
+  # source: brand.yaml — THE_real_enemy
+  value_claim: "Equipamentos medicos de alta performance com certificacao Anvisa completa — para o profissional que nao pode errar"
+  onlyness: "Uma das maiores empresas exclusivas de equipamentos esteticos no Brasil, liderada por CEO com background de programacao, com resultados validados no 40o RADLA Brasil (maior congresso de dermatologia da America Latina)"
+  # source: perfil + credentials.yaml + founder-dna.yaml
+
   message_hierarchy:
-    level_1_why: Profissionais de medicina estetica merecem equipamentos que nao colocam sua licenca em risco
-    level_2_how: Tecnologia de ponta com certificacao Anvisa completa, suporte tecnico e resultados comprovados cientificamente
-    level_3_what: Equipamentos medicos certificados para procedimentos esteticos — seguros, eficazes, de resultado
-  b2b_promise: Equipamentos certificados Anvisa que entregam resultado clinico consistente, protegem a reputacao do profissional
-    e aumentam a rentabilidade da clinica
+    level_1_why: "Profissionais de medicina estetica merecem equipamentos que nao colocam sua licenca em risco"
+    level_2_how: "Tecnologia de ponta com certificacao Anvisa completa, suporte tecnico e resultados comprovados cientificamente"
+    level_3_what: "Equipamentos medicos certificados para procedimentos esteticos — seguros, eficazes, de resultado"
+  # source: strategic-positioning.yaml — message_hierarchy
+
+  b2b_promise: "Equipamentos certificados Anvisa que entregam resultado clinico consistente, protegem a reputacao do profissional e aumentam a rentabilidade da clinica"
+  # INFERIDO — validar com founder
+
+# ============================================================================
+# ARCHETYPE MIX
+# ============================================================================
+
 archetype_mix:
-- name: Contourline
-  weight: 0
+  rationale: >-
+    Creator lidera — empresa com DNA de tecnologia que cria equipamentos inovadores,
+    CEO com background de programacao que literalmente programa soluções.
+    "Faz sentido entender um pouco mais e ta ligado num ecossistema" (call vendas) —
+    Egio pensa em sistemas, nao em produtos isolados. Creator e o instinto natural
+    de quem ve tecnologia como construcao.
+    Ruler garante o padrao — certificacao Anvisa e a barreira que protege o mercado
+    e a reputacao da empresa. "Sou certificado pela Anvisa, entao tem muita normativa"
+    (call vendas) — o Ruler mantém o campo regulatorio como vantagem competitiva.
+    Sage traz o saber tecnico — CEO que apresentou resultados no 40o RADLA, que
+    usa Chat PDF para compliance, que acompanha IA diariamente. O background de
+    programacao e o Sage aplicado ao negocio. "A que nivel que a gente esta de uma
+    tela mesmo" — pensa na evolucao tecnica, nao no produto.
+
+  creator:
+    weight: 40
+    role: "Arquetipo primario — inovacao, tecnologia e construcao de sistemas"
+    core_desire: "Criar equipamentos e sistemas que transformem a medicina estetica"
+    behavioral_evidence:
+      - "CEO com background de programacao — raro no setor de equipamentos medicos"
+      - "Fundou empresa de tecnologia associada (EUFORIA TECNOLOGIA E PUBLICIDADE)"
+      - "Videos e animacoes criados com IA para o Instagram @onlinemag"
+      - "Instalou o AIOX pessoalmente e testou antes de decidir — Builder por natureza"
+      - "'Hoje e uma coisa mais manual... A gente tem que dar esse proximo passo' (call vendas)"
+      - "Pensa em 'sistemas', nao em ferramentas — 'algo mais junto, que eu consiga entender a empresa trabalhando ali'"
+    # source: call vendas + perfil + founder-dna.yaml
+    when_to_activate:
+      - "Lancamento de novos equipamentos"
+      - "Conteudo sobre inovacao tecnologica em estetica medica"
+      - "Videos e animacoes com IA"
+      - "Comunicacao sobre diferenciais tecnicos dos produtos"
+    voice_guidelines:
+      tone: "Inovador, tecnico, visionario — pensa no que vem a seguir"
+      phrases:
+        - "Tecnologia de ponta"
+        - "Inovacao que transforma"
+        - "Proximo nivel da medicina estetica"
+        - "Desenvolvido para resultado"
+
+  ruler:
+    weight: 35
+    role: "Arquetipo secundario — padrao, compliance e lideranca de mercado"
+    core_desire: "Ser a referencia inegavel de qualidade e seguranca no mercado de equipamentos esteticos"
+    behavioral_evidence:
+      - "Certificacao Anvisa como barreira competitiva estrutural — 'tem muita normativa' (call vendas)"
+      - "Chat PDF para areas juridicas e normativas (compliance proativo)"
+      - "Uma das maiores do mercado EXCLUSIVO — nao e generalista, e dominante no nicho"
+      - "R$115-120M de faturamento — escala que confere autoridade de mercado"
+      - "Apresentou no 40o RADLA Brasil — validacao cientifica perante a comunidade medica"
+      - "'Parece bom demais para ser verdade' — ceticismo do Ruler que exige evidencia antes de se mover"
+    # source: call vendas + perfil + credentials.yaml
+    when_to_activate:
+      - "Comunicacao sobre certificacao Anvisa"
+      - "Diferenciacao competitiva vs importadores sem certificacao"
+      - "Conteudo regulatorio para profissionais"
+      - "Resultados em congressos e validacoes cientificas"
+    voice_guidelines:
+      tone: "Autoritativo, confiavel, seguro — fala de quem lidera o mercado"
+      phrases:
+        - "Certificado Anvisa"
+        - "Padrao de excelencia"
+        - "Uma das maiores do mercado exclusivo"
+        - "Validado no 40o RADLA Brasil"
+        - "Seguranca comprovada"
+
+  sage:
+    weight: 25
+    role: "Arquetipo terciario — conhecimento tecnico, educacao e expertise aplicada"
+    core_desire: "Compartilhar conhecimento tecnico, educar o mercado e usar dados para tomar decisoes melhores"
+    behavioral_evidence:
+      - "Background de programacao — CEO que entende tecnologia de dentro para fora"
+      - "Assiste lives de 4h + 3h sobre AIOX antes de decidir — consome conhecimento profundo"
+      - "Feed Instagram e YouTube 100% IA — acompanha diariamente os lancamentos"
+      - "'Ate quando isso vai ser uma vantagem?' — pensamento estrategico de longo prazo"
+      - "'Porque ele se preocupa com a engenharia disso, com o design disso' (call vendas) — valorizacao de rigor tecnico"
+      - "Aluno antigo da Formacao Lendaria (socio vitalicio) — consumidor de conhecimento de alta qualidade"
+    # source: call vendas + perfil + founder-dna.yaml
+    when_to_activate:
+      - "Conteudo educativo sobre procedimentos esteticos e equipamentos"
+      - "Treinamento de profissionais nos produtos"
+      - "Demonstracoes tecnicas e validacao cientifica"
+      - "Conteudo sobre compliance Anvisa para profissionais"
+    voice_guidelines:
+      tone: "Didatico, especialista, preciso — educa sem condescendencia"
+      phrases:
+        - "Entenda como funciona"
+        - "A ciencia por tras do resultado"
+        - "Validado cientificamente"
+        - "Tecnologia desenvolvida para profissionais"
+
+# ============================================================================
+# VOICE
+# ============================================================================
+
 voice:
   personality:
-    warmth:
-      level: 3
-      desc: Profissional — setor medico exige credibilidade, nao calor excessivo
-    directness:
-      level: 4
-      desc: Direto ao ponto — B2B de alto ticket exige clareza, nao rodeios
-    formality:
-      level: 4
-      desc: Formal para setor de saude, mas acessivel para profissionais
-    confidence:
-      level: 5
-      desc: Muito confiante — R$115-120M, maior do mercado exclusivo, Anvisa, RADLA
-    pragmatism:
-      level: 5
-      desc: ROI-first — 'Se reduzir 30% da folha, ja vale'. Egio compra resultado, nao promessa
-  founder_voice_mirror: 'A voz da marca reflete o DNA do fundador: analitica, cetica, ROI-driven. Egio nao se empolga com
-    hype — precisa de evidencia. A marca nao promete, comprova. Nao fala em "revolucionar" — fala em resultado mensuravel.
-    "Se reduzir 30% da folha, ja vale" e o template de comunicacao: problema especifico, numero concreto, criterio de sucesso
-    claro.'
+    warmth: { level: 3, desc: "Profissional — setor medico exige credibilidade, nao calor excessivo" }
+    directness: { level: 4, desc: "Direto ao ponto — B2B de alto ticket exige clareza, nao rodeios" }
+    formality: { level: 4, desc: "Formal para setor de saude, mas acessivel para profissionais" }
+    confidence: { level: 5, desc: "Muito confiante — R$115-120M, maior do mercado exclusivo, Anvisa, RADLA" }
+    pragmatism: { level: 5, desc: "ROI-first — 'Se reduzir 30% da folha, ja vale'. Egio compra resultado, nao promessa" }
+  # source: call vendas — perfil psicologico do founder espelha a voz da marca
+
+  founder_voice_mirror: >-
+    A voz da marca reflete o DNA do fundador: analitica, cetica, ROI-driven.
+    Egio nao se empolga com hype — precisa de evidencia. A marca nao promete,
+    comprova. Nao fala em "revolucionar" — fala em resultado mensuravel.
+    "Se reduzir 30% da folha, ja vale" e o template de comunicacao:
+    problema especifico, numero concreto, criterio de sucesso claro.
+  # source: call vendas — frases diretas do Egio
+
   always_use:
-  - certificado
-  - Anvisa
-  - resultado
-  - tecnologia
-  - seguranca
-  - inovacao
-  - profissional
-  - equipamentos medicos
-  - estetica medica
+    - "certificado"
+    # source: call vendas — Anvisa e o eixo regulatorio central
+    - "Anvisa"
+    - "resultado"
+    - "tecnologia"
+    - "seguranca"
+    - "inovacao"
+    - "profissional"
+    - "equipamentos medicos"
+    - "estetica medica"
+
   avoid_use:
-  - barato
-  - generico
-  - alternativa
-  - facil
-  - simples
+    - "barato"
+    # nao e barato — e investimento de alto ticket com ROI
+    - "generico"
+    # produtos sao premium e certificados — a marca e exclusiva
+    - "alternativa"
+    # sao a referencia do mercado, nao uma alternativa
+    - "facil"
+    # compliance Anvisa nao e facil — e a barreira que protege o profissional
+    - "simples"
+    # a engenharia por tras dos equipamentos nao e simples
+
   forbidden_words:
-  - Magico
-  - Revolucionario
-  - Game-changer
-  - Disrupcao
-  - Sorte
+    - "Magico"
+    - "Revolucionario"
+    - "Game-changer"
+    - "Disrupcao"
+    - "Sorte"
+    # INFERIDO — validar com founder na imersao
+
   signature_phrases:
-  - Em Casa de Ferreiro, o espeto e de pau
-  - Ate quando isso vai ser uma vantagem?
-  - Se reduzir 30% da folha, ja vale
-  - Acoes individuais do time, mas nada coordenado
-  - Parece bom demais para ser verdade
-  - Faz sentido
-  - Acredita que estamos passando pela maior mudanca da nossa era
-  - Uma das maiores do mercado exclusivo
+    - "Em Casa de Ferreiro, o espeto e de pau"
+    # source: call vendas — frase real do Egio, espelha autocritica produtiva
+    - "Ate quando isso vai ser uma vantagem?"
+    # source: call vendas — pensamento estrategico sobre janela competitiva
+    - "Se reduzir 30% da folha, ja vale"
+    # source: call vendas — template de ROI-thinking
+    - "Acoes individuais do time, mas nada coordenado"
+    # source: call vendas — diagnostico do problema central
+    - "Parece bom demais para ser verdade"
+    # source: call vendas — ceticismo saudavel que vira credibilidade quando confirmado
+    - "Faz sentido"
+    # source: call vendas — frase de closure do Egio, usada 3x
+    - "Acredita que estamos passando pela maior mudanca da nossa era"
+    # source: formulario — motivacao original para a imersao
+    - "Uma das maiores do mercado exclusivo"
+    # source: call vendas — declaracao de posicao de mercado
+
   real_founder_quotes:
-    on_paradox: Em Casa de Ferreiro, o espeto e de pau — a gente nao consegue atuar em todas as areas.
-    on_coordination: Sao acoes individuais do time, mas nada coordenado. Chego, olho, vejo o que esta acontecendo, nada.
-    on_roi: Hoje devo ter de folha uns 700, 800 pau por mes. Se a gente reduz em 30%, ja vale a mentoria.
-    on_timing: Ate quando isso vai ser uma vantagem? Nos seis meses vai fazer diferenca pra mim?
-    on_skepticism: Parece bom demais para ser verdade.
-    on_technology: Porque ele se preocupa com a engenharia disso, com o design disso — voce conta da seguranca.
-    on_scale: A gente tem muitas acoes, verba de orcamento de marketing fazendo anuncio alto, mas usa muito pouco IA.
-    on_vision: A ideia e trazer isso para o meu negocio — criar esses fluxos, entender meu negocio, tornar ele mais digital.
-    on_ai_current: Hoje e uma coisa mais manual. Voce vai la, tem que fazer o video, usa o Eleven Labs para fazer o audio
-      junto.
-    on_system_thinking: Algo mais junto, algo que eu consiga entender a empresa trabalhando ali e as pessoas consigam junto
-      com os agentes trabalhar e aumentar a produtividade.
+    # Citacoes diretas da call de vendas — usar em conteudo/copy com credibilidade
+    on_paradox: "Em Casa de Ferreiro, o espeto e de pau — a gente nao consegue atuar em todas as areas."
+    on_coordination: "Sao acoes individuais do time, mas nada coordenado. Chego, olho, vejo o que esta acontecendo, nada."
+    on_roi: "Hoje devo ter de folha uns 700, 800 pau por mes. Se a gente reduz em 30%, ja vale a mentoria."
+    on_timing: "Ate quando isso vai ser uma vantagem? Nos seis meses vai fazer diferenca pra mim?"
+    on_skepticism: "Parece bom demais para ser verdade."
+    on_technology: "Porque ele se preocupa com a engenharia disso, com o design disso — voce conta da seguranca."
+    on_scale: "A gente tem muitas acoes, verba de orcamento de marketing fazendo anuncio alto, mas usa muito pouco IA."
+    on_vision: "A ideia e trazer isso para o meu negocio — criar esses fluxos, entender meu negocio, tornar ele mais digital."
+    on_ai_current: "Hoje e uma coisa mais manual. Voce vai la, tem que fazer o video, usa o Eleven Labs para fazer o audio junto."
+    on_system_thinking: "Algo mais junto, algo que eu consiga entender a empresa trabalhando ali e as pessoas consigam junto com os agentes trabalhar e aumentar a produtividade."
+    # source: call vendas (145 linhas) — citacoes literais do Speaker B (Egio)
+
+# ============================================================================
+# BRAND PILLARS
+# ============================================================================
+
 brand_pillars:
   pillar_1:
-    name: Tecnologia
-    description: DNA tecnico que diferencia — CEO com background de programacao liderando empresa de equipamentos medicos.
-      Nao somos distribuidores, somos tecnologistas.
-    proof: Empresa de tecnologia associada (Euforia Tecnologia e Publicidade). Videos e animacoes com IA no Instagram. CEO
-      que programa e testa sistemas pessoalmente.
+    name: "Tecnologia"
+    description: "DNA tecnico que diferencia — CEO com background de programacao liderando empresa de equipamentos medicos. Nao somos distribuidores, somos tecnologistas."
+    proof: "Empresa de tecnologia associada (Euforia Tecnologia e Publicidade). Videos e animacoes com IA no Instagram. CEO que programa e testa sistemas pessoalmente."
+    # source: perfil + call vendas + credentials.yaml
+
   pillar_2:
-    name: Certificacao
-    description: Compliance Anvisa como barreira estrutural — nao e formalidade, e a garantia que protege profissional e paciente.
-      Alta normativa como vantagem competitiva.
-    proof: Certificacao Anvisa ativa. Chat PDF para areas juridicas e normativas. Setor com alta normativa — barreira de entrada
-      significativa.
+    name: "Certificacao"
+    description: "Compliance Anvisa como barreira estrutural — nao e formalidade, e a garantia que protege profissional e paciente. Alta normativa como vantagem competitiva."
+    proof: "Certificacao Anvisa ativa. Chat PDF para areas juridicas e normativas. Setor com alta normativa — barreira de entrada significativa."
+    # source: perfil + call vendas — "sou certificado pela Anvisa, entao tem muita normativa"
+
   pillar_3:
-    name: Resultado Comprovado
-    description: Validacao cientifica, nao apenas marketing — resultados apresentados no maior congresso de dermatologia da
-      America Latina (RADLA).
-    proof: 40o RADLA Brasil — apresentacao de resultados da Contourline perante comunidade medica. R$115-120M de faturamento
-      anual.
+    name: "Resultado Comprovado"
+    description: "Validacao cientifica, nao apenas marketing — resultados apresentados no maior congresso de dermatologia da America Latina (RADLA)."
+    proof: "40o RADLA Brasil — apresentacao de resultados da Contourline perante comunidade medica. R$115-120M de faturamento anual."
+    # source: credentials.yaml + founder-dna.yaml
+
   pillar_4:
-    name: Escala com Qualidade
-    description: 120 pessoas, 100% home office nacional — empresa que manteve padrao Anvisa em escala. Nao e artesanal, e
-      industrial com rigor.
-    proof: ~120 funcionarios, time de marketing com 14 pessoas, 100% home office nacional. Faturamento R$115-120M.
+    name: "Escala com Qualidade"
+    description: "120 pessoas, 100% home office nacional — empresa que manteve padrao Anvisa em escala. Nao e artesanal, e industrial com rigor."
+    proof: "~120 funcionarios, time de marketing com 14 pessoas, 100% home office nacional. Faturamento R$115-120M."
+    # source: perfil + company-profile.yaml
+
+# ============================================================================
+# VALUES
+# ============================================================================
+
 values:
+  # INFERIDO a partir do posicionamento, filosofia do founder e comportamento — validar na imersao
   value_1:
-    name: Tecnologia com Proposito
-    principle: Tecnologia so tem valor quando entrega resultado clinico real. Nao existe inovacao pela inovacao.
+    name: "Tecnologia com Proposito"
+    principle: "Tecnologia so tem valor quando entrega resultado clinico real. Nao existe inovacao pela inovacao."
+    # INFERIDO — posicionamento tecnico + setor medico + background de programacao
+
   value_2:
-    name: Seguranca Primeiro
-    principle: Certificacao Anvisa nao e custo, e responsabilidade. O profissional de saude merece equipamentos que nao o
-      coloquem em risco.
+    name: "Seguranca Primeiro"
+    principle: "Certificacao Anvisa nao e custo, e responsabilidade. O profissional de saude merece equipamentos que nao o coloquem em risco."
+    # INFERIDO — Anvisa como pilar central + setor de saude
+
   value_3:
-    name: ROI Mensuravel
-    principle: Investimento em equipamento tem que se pagar. Resultado clinico gera resultado financeiro para o profissional.
+    name: "ROI Mensuravel"
+    principle: "Investimento em equipamento tem que se pagar. Resultado clinico gera resultado financeiro para o profissional."
+    # INFERIDO — perfil ROI-driven do Egio espelhado na proposta de valor da empresa
+
   value_4:
-    name: Vanguarda Tecnologica
-    principle: Ficar na vanguarda nao e opcao, e sobrevivencia. 'Estamos passando pela maior mudanca da nossa era.'
+    name: "Vanguarda Tecnologica"
+    principle: "Ficar na vanguarda nao e opcao, e sobrevivencia. 'Estamos passando pela maior mudanca da nossa era.'"
+    # source: formulario — "Acredita que estamos passando pela maior mudanca da nossa era e quer estar na vanguarda"
+
   value_5:
-    name: Excelencia Operacional
-    principle: 120 pessoas entregando como empresa de referencia — processo, qualidade e padrao sem abrir mao de escala.
+    name: "Excelencia Operacional"
+    principle: "120 pessoas entregando como empresa de referencia — processo, qualidade e padrao sem abrir mao de escala."
+    # INFERIDO — escala da operacao + compliance Anvisa + modelo home office funcional
+
+# ============================================================================
+# BRAND DESIGN PRINCIPLE
+# ============================================================================
+
 design_principle:
-  approach: Professional Trust
-  rationale: 'A identidade Body Health Brasil / Contourline nasce da CONFIANCA PROFISSIONAL. O profissional de saude nao compra
-    emocao — compra certeza. O ponto de partida e seguranca regulatoria e resultado comprovado, nao estetica visual. Dados
-    antes de storytelling: faturamento, RADLA, certificacao Anvisa.'
-  visual_anchor: Certificacao, numeros de escala, validacao cientifica (RADLA), profissional em acao
-  ethos: Tecnologia a servico da medicina estetica — seguranca primeiro, resultado sempre
+  approach: "Professional Trust"
+  rationale: >-
+    A identidade Body Health Brasil / Contourline nasce da CONFIANCA PROFISSIONAL.
+    O profissional de saude nao compra emocao — compra certeza. O ponto de partida
+    e seguranca regulatoria e resultado comprovado, nao estetica visual.
+    Dados antes de storytelling: faturamento, RADLA, certificacao Anvisa.
+  # source: strategic-positioning.yaml — design_principle
+  visual_anchor: "Certificacao, numeros de escala, validacao cientifica (RADLA), profissional em acao"
+  ethos: "Tecnologia a servico da medicina estetica — seguranca primeiro, resultado sempre"
+
+# ============================================================================
+# VISUAL IDENTITY
+# ============================================================================
+
 visual_identity:
+  # PENDENTE — requer acesso ao site ou materiais de marca oficiais
   typography:
-    note: PENDENTE — extrair do site oficial (@onlinemag no Instagram para referencia visual)
+    note: "PENDENTE — extrair do site oficial (@onlinemag no Instagram para referencia visual)"
   color_palette:
-    note: PENDENTE — extrair do site
-    dominant_impression_inferred: Paleta de credibilidade medica — provavelmente azul/branco/cinza + accent de inovacao tecnologica
+    note: "PENDENTE — extrair do site"
+    dominant_impression_inferred: "Paleta de credibilidade medica — provavelmente azul/branco/cinza + accent de inovacao tecnologica"
+    # INFERIDO — setor medico + DNA tecnologico
   logo:
-    note: PENDENTE — extrair do Instagram @onlinemag ou site oficial
-  instagram_visual_reference: '@onlinemag — videos e animacoes com IA, referencias visuais da marca'
+    note: "PENDENTE — extrair do Instagram @onlinemag ou site oficial"
+  instagram_visual_reference: "@onlinemag — videos e animacoes com IA, referencias visuais da marca"
+  # source: perfil — "nossos videos, nossas questoes, isso e tudo feito com IA"
+
+# ============================================================================
+# SOCIAL PROOF
+# ============================================================================
+
 social_proof:
   numbers:
-    annual_revenue: R$ 115.000.000-120.000.000
-    team_size: ~120 funcionarios
-    marketing_team: 14 pessoas
-    monthly_payroll: R$ 700.000-800.000
-    market_position: Uma das maiores do mercado exclusivo de equipamentos esteticos
-    work_model: 100% home office nacional
-    certification: Anvisa — compliance ativo
-    congress_validation: 40o RADLA Brasil (maior congresso de dermatologia da America Latina)
+    annual_revenue: "R$ 115.000.000-120.000.000"
+    # source: perfil — "fatura uma alcada de 115 milhoes"
+    team_size: "~120 funcionarios"
+    # source: perfil + call vendas
+    marketing_team: "14 pessoas"
+    # source: call vendas — "so na equipe de marketing tem 14 pessoas"
+    monthly_payroll: "R$ 700.000-800.000"
+    # source: call vendas — "devo ter de folha uns 700, 800 pau por mes"
+    market_position: "Uma das maiores do mercado exclusivo de equipamentos esteticos"
+    # source: call vendas — frase literal do Egio
+    work_model: "100% home office nacional"
+    # source: perfil
+    certification: "Anvisa — compliance ativo"
+    congress_validation: "40o RADLA Brasil (maior congresso de dermatologia da America Latina)"
+    # source: credentials.yaml
+
   media:
-  - 40o RADLA Brasil — apresentacao de resultados da Contourline
-  - 'LinkedIn: CEO da Body Health Brasil e Contourline'
-  - Instagram @onlinemag — conteudo de inovacao em estetica medica
+    - "40o RADLA Brasil — apresentacao de resultados da Contourline"
+    # source: credentials.yaml + founder-dna.yaml
+    - "LinkedIn: CEO da Body Health Brasil e Contourline"
+    - "Instagram @onlinemag — conteudo de inovacao em estetica medica"
+
   founder_credibility:
-    headline: CEO com background de programacao que construiu empresa de R$115-120M/ano em equipamentos medicos e apresentou
-      resultados no maior congresso de dermatologia da America Latina
+    headline: "CEO com background de programacao que construiu empresa de R$115-120M/ano em equipamentos medicos e apresentou resultados no maior congresso de dermatologia da America Latina"
     key_facts:
-    - 'CEO dual: Body Health Brasil + Contourline'
-    - Background de programacao — perfil tecnico raro no setor de saude
-    - 40o RADLA Brasil — validacao cientifica perante comunidade medica
-    - R$115-120M/ano, 120 funcionarios, 100% home office
-    - EUFORIA TECNOLOGIA E PUBLICIDADE — empresa tech associada (CNPJ verificado)
+      - "CEO dual: Body Health Brasil + Contourline"
+      - "Background de programacao — perfil tecnico raro no setor de saude"
+      - "40o RADLA Brasil — validacao cientifica perante comunidade medica"
+      - "R$115-120M/ano, 120 funcionarios, 100% home office"
+      - "EUFORIA TECNOLOGIA E PUBLICIDADE — empresa tech associada (CNPJ verificado)"
+    # source: founder-dna.yaml + credentials.yaml
+
+# ============================================================================
+# COMPETITIVE DIFFERENTIATION
+# ============================================================================
+
 differentiation:
   vs_importadores_genericos:
-    competitor: Importadores de equipamentos esteticos sem foco especifico
-    their_approach: Importam equipamentos sem certificacao completa ou sem suporte tecnico local
-    our_approach: Empresa brasileira exclusiva de estetica medica, com compliance Anvisa e suporte de 120 pessoas
-    proof: Uma das maiores do mercado EXCLUSIVO — nao somos generalistas
+    competitor: "Importadores de equipamentos esteticos sem foco especifico"
+    their_approach: "Importam equipamentos sem certificacao completa ou sem suporte tecnico local"
+    our_approach: "Empresa brasileira exclusiva de estetica medica, com compliance Anvisa e suporte de 120 pessoas"
+    proof: "Uma das maiores do mercado EXCLUSIVO — nao somos generalistas"
+    # source: strategic-positioning.yaml
+
   vs_marcas_internacionais:
-    competitor: Marcas internacionais com distribuicao direta no Brasil
-    their_approach: Equipamentos internacionais com suporte limitado e compliance Anvisa incerto
-    our_approach: Empresa 100% brasileira, 120 pessoas, suporte nacional, compliance Anvisa completo
-    proof: R$115-120M de faturamento, operacao home office nacional consolidada
+    competitor: "Marcas internacionais com distribuicao direta no Brasil"
+    their_approach: "Equipamentos internacionais com suporte limitado e compliance Anvisa incerto"
+    our_approach: "Empresa 100% brasileira, 120 pessoas, suporte nacional, compliance Anvisa completo"
+    proof: "R$115-120M de faturamento, operacao home office nacional consolidada"
+    # source: strategic-positioning.yaml
+
   vs_equipamentos_sem_certificacao:
-    competitor: Fornecedores sem registro Anvisa completo
-    their_approach: Vendem equipamentos com risco regulatorio para o profissional
-    our_approach: Certificacao Anvisa e pre-requisito — nao e diferencial, e a base minima
-    proof: Compliance Anvisa ativo — setor com alta normativa, barreira de entrada significativa
+    competitor: "Fornecedores sem registro Anvisa completo"
+    their_approach: "Vendem equipamentos com risco regulatorio para o profissional"
+    our_approach: "Certificacao Anvisa e pre-requisito — nao e diferencial, e a base minima"
+    proof: "Compliance Anvisa ativo — setor com alta normativa, barreira de entrada significativa"
+    # source: brand.yaml — THE_real_enemy + strategic-positioning.yaml
+
   competitive_moat:
-    moat_1: Certificacao Anvisa — barreira regulatoria que poucos conseguem escalar
-    moat_2: Background tecnico do CEO — empresa com DNA de programacao num setor analogico
-    moat_3: Escala — R$115-120M de faturamento, 120 pessoas, referencia de mercado
-    moat_4: Foco exclusivo em medicina estetica — nao e generalista, e dominante no nicho
-    moat_5: Validacao cientifica (RADLA) — empresa que apresenta resultado, nao so vende
-    moat_6: Operacao 100% home office — eficiencia operacional que reduz estrutura de custo
+    moat_1: "Certificacao Anvisa — barreira regulatoria que poucos conseguem escalar"
+    # source: perfil — "certificacao Anvisa (muita normativa regulatoria)"
+    moat_2: "Background tecnico do CEO — empresa com DNA de programacao num setor analogico"
+    # source: call vendas + founder-dna.yaml
+    moat_3: "Escala — R$115-120M de faturamento, 120 pessoas, referencia de mercado"
+    # source: perfil
+    moat_4: "Foco exclusivo em medicina estetica — nao e generalista, e dominante no nicho"
+    # source: strategic-positioning.yaml
+    moat_5: "Validacao cientifica (RADLA) — empresa que apresenta resultado, nao so vende"
+    # source: credentials.yaml
+    moat_6: "Operacao 100% home office — eficiencia operacional que reduz estrutura de custo"
+    # source: perfil
+
+# ============================================================================
+# FOUNDER NARRATIVE (para marketing)
+# ============================================================================
+
 founder_narrative:
-  one_liner: 'CEO com background de programacao que construiu uma das maiores empresas de equipamentos para medicina estetica
-    do Brasil — R$115-120M/ano, 120 pessoas, resultados no 40o RADLA. Agora quer resolver o paradoxo: a empresa de tecnologia
-    que finalmente vai automatizar a si mesma.'
-  hook: Em Casa de Ferreiro, o espeto e de pau. Empresa de tecnologia que fatura R$120M/ano e tem 120 pessoas. CEO que sabe
-    programar. Mas internamente? As acoes sao individuais, nada coordenado.
-  insight: Nao basta ter ferramentas de IA — precisa de orquestracao. Sistema que a empresa inteira entende, nao acoes avulsas
-    de cada area. "Algo mais junto, algo que eu consiga entender a empresa trabalhando ali."
-  proof: R$115-120M/ano em equipamentos para medicina estetica. 120 funcionarios, 100% home office nacional. 40o RADLA Brasil
-    — validacao cientifica (maior congresso de dermatologia LATAM). Certificacao Anvisa. Background de programacao.
+  one_liner: >-
+    CEO com background de programacao que construiu uma das maiores empresas
+    de equipamentos para medicina estetica do Brasil — R$115-120M/ano, 120 pessoas,
+    resultados no 40o RADLA. Agora quer resolver o paradoxo: a empresa de
+    tecnologia que finalmente vai automatizar a si mesma.
+  # source: founder-dna.yaml — headline
+
+  hook: >-
+    Em Casa de Ferreiro, o espeto e de pau. Empresa de tecnologia que fatura
+    R$120M/ano e tem 120 pessoas. CEO que sabe programar. Mas internamente?
+    As acoes sao individuais, nada coordenado.
+  # source: call vendas — frase literal do Egio
+
+  insight: >-
+    Nao basta ter ferramentas de IA — precisa de orquestracao. Sistema que
+    a empresa inteira entende, nao acoes avulsas de cada area.
+    "Algo mais junto, algo que eu consiga entender a empresa trabalhando ali."
+  # source: call vendas
+
+  proof: >-
+    R$115-120M/ano em equipamentos para medicina estetica.
+    120 funcionarios, 100% home office nacional.
+    40o RADLA Brasil — validacao cientifica (maior congresso de dermatologia LATAM).
+    Certificacao Anvisa. Background de programacao.
+  # source: perfil + credentials.yaml
+
   second_chair:
-    name: 'Thalison (nome no CNPJ Euforia: Thalison Rodrigues Marcelino)'
-    role: Diretor / Head — vai tocar a implementacao no dia a dia
-    reason_to_bring: Precisa ter o conhecimento para aplicar e modificar internamente
+    name: "Thalison (nome no CNPJ Euforia: Thalison Rodrigues Marcelino)"
+    role: "Diretor / Head — vai tocar a implementacao no dia a dia"
+    reason_to_bring: "Precisa ter o conhecimento para aplicar e modificar internamente"
+    # source: call vendas — "importante essa pessoa ir tambem para que ambos tenham conhecimento"
+
+# ============================================================================
+# EGIO'S CEO PROFILE (para contextualizar tom da marca)
+# ============================================================================
+
 ceo_profile:
-  personality_type: Analitico-Estrategico
-  decision_pattern: ROI-driven — calcula retorno antes de agir, ceticismo saudavel que cede a evidencia
-  communication_style: Direto, pragmatico, faz perguntas estrategicas. Nao se empolga com hype.
-  knowledge_consumption: Feed 100% IA — assiste 4h + 3h de lives antes de decidir. Instala e testa antes de comprar.
-  strategic_question: Ate quando isso vai ser uma vantagem?
-  core_paradox: Empresa de tecnologia que nao automatiza internamente — consciente disso, quer resolver
+  personality_type: "Analitico-Estrategico"
+  # source: founder-dna.yaml
+  decision_pattern: "ROI-driven — calcula retorno antes de agir, ceticismo saudavel que cede a evidencia"
+  # source: call vendas — "Se reduzir 30% da folha, ja vale" / "parece bom demais para ser verdade"
+  communication_style: "Direto, pragmatico, faz perguntas estrategicas. Nao se empolga com hype."
+  # source: founder-dna.yaml
+  knowledge_consumption: "Feed 100% IA — assiste 4h + 3h de lives antes de decidir. Instala e testa antes de comprar."
+  # source: call vendas — "assisti as duas, eram quatro horas de uma, tres horas de outra"
+  strategic_question: "Ate quando isso vai ser uma vantagem?"
+  # source: call vendas — frase literal, revela pensamento de timing competitivo
+  core_paradox: "Empresa de tecnologia que nao automatiza internamente — consciente disso, quer resolver"
+  # source: call vendas + perfil — o 'espeto de pau' e motor da mudanca
+
+# ============================================================================
+# BRAND EVOLUTION (contexto atual)
+# ============================================================================
+
 brand_evolution:
-  current_chapter: Transformacao Digital Interna
-  context: 'Body Health Brasil fatura R$115-120M/ano com 120 pessoas. IA ja esta presente em marketing (videos, animacoes,
-    Eleven Labs), compliance (Chat PDF Anvisa) e trafego (analise com IA). O problema: tudo isolado, sem coordenacao. O CEO
-    quer o proximo passo: sistema integrado, nao ferramentas avulsas.'
+  current_chapter: "Transformacao Digital Interna"
+  context: >-
+    Body Health Brasil fatura R$115-120M/ano com 120 pessoas.
+    IA ja esta presente em marketing (videos, animacoes, Eleven Labs),
+    compliance (Chat PDF Anvisa) e trafego (analise com IA).
+    O problema: tudo isolado, sem coordenacao. O CEO quer o proximo passo:
+    sistema integrado, nao ferramentas avulsas.
+  # source: perfil + call vendas
+
   ai_positioning_angle:
-    direction: De usuario de ferramentas de IA para empresa com sistema coordenado de IA
-    egio_vision: Reducao de 30% da folha de R$700-800K/mes via automacao de marketing, financeiro e SDR
-    implication_for_brand: Empresa que domina equipamentos medicos vai dominar tambem a operacao interna via IA
+    direction: "De usuario de ferramentas de IA para empresa com sistema coordenado de IA"
+    egio_vision: "Reducao de 30% da folha de R$700-800K/mes via automacao de marketing, financeiro e SDR"
+    implication_for_brand: "Empresa que domina equipamentos medicos vai dominar tambem a operacao interna via IA"
+  # source: call vendas — calculos e visao direta do Egio
+
   priority_roadmap:
-    priority_1: Sistema coordenado de IA para marketing (14 pessoas) — maior quick win potencial
-    priority_2: Gestao financeira personalizada — complementar Totvs com IA sob medida
-    priority_3: SDR com IA — tratamento de leads que hoje e manual e 'apanhando ainda'
+    priority_1: "Sistema coordenado de IA para marketing (14 pessoas) — maior quick win potencial"
+    priority_2: "Gestao financeira personalizada — complementar Totvs com IA sob medida"
+    priority_3: "SDR com IA — tratamento de leads que hoje e manual e 'apanhando ainda'"
+  # source: perfil + company-profile.yaml
+
+# ============================================================================
+# COMPLETENESS CHECKLIST
+# ============================================================================
+
 completion_checklist:
-- '[x] Identity — brand names, slug, entidades, contatos, sede'
-- '[x] Core — essence, category, origin myth (inferido)'
-- '[x] Positioning — audiencia, enemy, value claim, onlyness, hierarchy'
-- '[x] Archetype mix — Creator/Ruler/Sage com rationale e evidencia comportamental'
-- '[x] Voice — personality levels, always/avoid/forbidden, signature phrases'
-- '[x] Real founder quotes — citacoes literais da call de vendas'
-- '[x] Brand pillars — 4 pilares com proof'
-- '[x] Values — 5 valores com principios (inferidos)'
-- '[x] Design principle — Professional Trust com rationale'
-- '[x] Social proof — numeros, credibilidade, RADLA'
-- '[x] Differentiation — vs concorrentes + competitive moat (6 moats)'
-- '[x] Founder narrative — hook, insight, proof, second chair'
-- '[x] CEO profile — para contextualizar tom e decisoes de marca'
-- '[x] Brand evolution — AI transformation roadmap'
-- '[ ] Purpose e vision formais — REQUIRES FOUNDER INPUT na imersao'
-- '[ ] Trueline oficial — REQUIRES FOUNDER INPUT'
-- '[ ] Values — confirmar/refinar com founder'
-- '[ ] Legal entity — confirmar relacao Body Health / Contourline / Conta Magic'
-- '[ ] Year founded — REQUIRES FOUNDER INPUT'
-- '[ ] Origin story completa (ato 1) — REQUIRES FOUNDER INPUT'
-- '[ ] Website URL — REQUIRES WEB SEARCH'
-- '[ ] Visual identity (tipografia, paleta, logo) — PENDENTE acesso ao site'
-- '[ ] Forbidden words — confirmar com Egio na imersao'
-- '[ ] Ticket medio dos equipamentos — REQUIRES FOUNDER INPUT'
-- '[ ] RADLA year — confirmar ano da apresentacao'
-- '[ ] Thalison Rodrigues Marcelino — confirmar papel no negocio'
-personality_traits:
-- max: 10
-  score: 9
-  trait: Confidence Level
-- max: 10
-  score: 7
-  trait: Directness Level
-- max: 10
-  score: 6
-  trait: Formality Level
-- max: 10
-  score: 5
-  trait: Warmth Level
+  - "[x] Identity — brand names, slug, entidades, contatos, sede"
+  - "[x] Core — essence, category, origin myth (inferido)"
+  - "[x] Positioning — audiencia, enemy, value claim, onlyness, hierarchy"
+  - "[x] Archetype mix — Creator/Ruler/Sage com rationale e evidencia comportamental"
+  - "[x] Voice — personality levels, always/avoid/forbidden, signature phrases"
+  - "[x] Real founder quotes — citacoes literais da call de vendas"
+  - "[x] Brand pillars — 4 pilares com proof"
+  - "[x] Values — 5 valores com principios (inferidos)"
+  - "[x] Design principle — Professional Trust com rationale"
+  - "[x] Social proof — numeros, credibilidade, RADLA"
+  - "[x] Differentiation — vs concorrentes + competitive moat (6 moats)"
+  - "[x] Founder narrative — hook, insight, proof, second chair"
+  - "[x] CEO profile — para contextualizar tom e decisoes de marca"
+  - "[x] Brand evolution — AI transformation roadmap"
+  - "[ ] Purpose e vision formais — REQUIRES FOUNDER INPUT na imersao"
+  - "[ ] Trueline oficial — REQUIRES FOUNDER INPUT"
+  - "[ ] Values — confirmar/refinar com founder"
+  - "[ ] Legal entity — confirmar relacao Body Health / Contourline / Conta Magic"
+  - "[ ] Year founded — REQUIRES FOUNDER INPUT"
+  - "[ ] Origin story completa (ato 1) — REQUIRES FOUNDER INPUT"
+  - "[ ] Website URL — REQUIRES WEB SEARCH"
+  - "[ ] Visual identity (tipografia, paleta, logo) — PENDENTE acesso ao site"
+  - "[ ] Forbidden words — confirmar com Egio na imersao"
+  - "[ ] Ticket medio dos equipamentos — REQUIRES FOUNDER INPUT"
+  - "[ ] RADLA year — confirmar ano da apresentacao"
+  - "[ ] Thalison Rodrigues Marcelino — confirmar papel no negocio"

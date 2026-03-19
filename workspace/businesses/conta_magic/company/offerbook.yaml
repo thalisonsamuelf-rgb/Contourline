@@ -1,15 +1,19 @@
+---
+# OFFERBOOK INDEX — Conta Magic (Egio Roberto)
+# Este arquivo e um INDICE que aponta para offerbooks por produto.
 metadata:
-  version: '1.0'
-  company_name: Conta Magic
-  status: INDEX
-  last_updated: '2026-03-14'
-  note: Offerbook canonico esta em products/equipamentos_estetica/offerbook.yaml
+  version: "1.0"
+  company_name: "Conta Magic"
+  status: "INDEX"
+  last_updated: "2026-03-14"
+  note: "Offerbook canonico esta em products/equipamentos_estetica/offerbook.yaml"
+
 products:
   equipamentos_estetica:
-    name: Equipamentos para Medicina Estetica
-    offerbook_path: products/equipamentos_estetica/offerbook.yaml
-    proof_path: products/equipamentos_estetica/proof.yaml
-    testimonials_path: products/equipamentos_estetica/testimonials.yaml
-    status: ACTIVE
-    ticket: Alto valor (equipamentos medicos)
-    modelo: Venda B2B direta
+    name: "Equipamentos para Medicina Estetica"
+    offerbook_path: "products/equipamentos_estetica/offerbook.yaml"
+    proof_path: "products/equipamentos_estetica/proof.yaml"
+    testimonials_path: "products/equipamentos_estetica/testimonials.yaml"
+    status: "ACTIVE"
+    ticket: "Alto valor (equipamentos medicos)"
+    modelo: "Venda B2B direta"

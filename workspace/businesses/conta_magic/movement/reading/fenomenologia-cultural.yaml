@@ -1,18 +1,23 @@
+---
+# FENOMENOLOGIA-CULTURAL.YAML — Conta Magic
+# Leitura cultural do mundo antes/depois do movimento
+# Status: SKELETON (inferido do posicionamento)
 metadata:
-  schema: contamagic.fenomenologia
-  version: '1.0'
-  status: SKELETON
-  updated_at: '2026-03-14'
+  schema: "contamagic.fenomenologia"
+  version: "1.0"
+  status: "SKELETON"
+  updated_at: "2026-03-14"
+
 worldview:
   before:
-  - Equipamento de estetica e generico — compra qualquer um que funcione
-  - Certificacao Anvisa e burocracia desnecessaria
-  - Profissional de estetica nao precisa de tecnologia de ponta
-  - Fornecedor de equipamento e so vendedor
-  - IA e ferramenta isolada — cada pessoa usa como quer
+    - "Equipamento de estetica e generico — compra qualquer um que funcione"
+    - "Certificacao Anvisa e burocracia desnecessaria"
+    - "Profissional de estetica nao precisa de tecnologia de ponta"
+    - "Fornecedor de equipamento e so vendedor"
+    - "IA e ferramenta isolada — cada pessoa usa como quer"
   after:
-  - Equipamento certificado e diferencial competitivo e seguranca
-  - Certificacao Anvisa protege profissional e paciente
-  - Tecnologia de ponta e o que separa o profissional do amador
-  - Fornecedor e parceiro estrategico com background tech
-  - IA coordenada transforma a operacao inteira da empresa
+    - "Equipamento certificado e diferencial competitivo e seguranca"
+    - "Certificacao Anvisa protege profissional e paciente"
+    - "Tecnologia de ponta e o que separa o profissional do amador"
+    - "Fornecedor e parceiro estrategico com background tech"
+    - "IA coordenada transforma a operacao inteira da empresa"

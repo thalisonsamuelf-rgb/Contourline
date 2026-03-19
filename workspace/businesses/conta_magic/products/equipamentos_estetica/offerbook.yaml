@@ -1,60 +1,69 @@
+---
+# OFFERBOOK.YAML — Conta Magic — Equipamentos para Medicina Estetica
+# ETL Deep Pass (v1) — perfil + call vendas
 metadata:
-  version: '1.0'
-  company_name: Conta Magic
-  status: IN_PROGRESS
-  last_updated: '2026-03-14'
-  source: ETL Deep Pass v1 — perfil + formulario + call vendas (145 linhas)
-  product_name: egio_roberto
+  version: "1.0"
+  company_name: "Conta Magic"
+  status: "IN_PROGRESS"
+  last_updated: "2026-03-14"
+  source: "ETL Deep Pass v1 — perfil + formulario + call vendas (145 linhas)"
+  product_name: "conta_magic"
   completeness_percentage: 35
   etl_pass: 1
+
 posicionamento:
   oferta:
-    nome_produto: Equipamentos para Medicina Estetica
-    promessa: Equipamentos medicos certificados Anvisa que entregam resultado seguro e consistente
-    unique_selling_proposition: Uma das maiores do mercado exclusivo de equipamentos esteticos, com certificacao Anvisa e
-      background de tecnologia
-    valor_ancoragem: FILL_THIS
+    nome_produto: "Equipamentos para Medicina Estetica"
+    promessa: "Equipamentos medicos certificados Anvisa que entregam resultado seguro e consistente"
+    unique_selling_proposition: "Uma das maiores do mercado exclusivo de equipamentos esteticos, com certificacao Anvisa e background de tecnologia"
+    valor_ancoragem: FILL_THIS # Valor do equipamento vs retorno para o profissional
   autoridade:
-    especialista: Conta Magic (Egio Roberto — CEO)
-    titulos_qualificacoes: Maior do mercado exclusivo, certificacao Anvisa, R$115-120M faturamento
-    resultados_somados: R$ 115.000.000-120.000.000/ano
+    especialista: "Conta Magic (Egio Roberto — CEO)"
+    titulos_qualificacoes: "Maior do mercado exclusivo, certificacao Anvisa, R$115-120M faturamento"
+    resultados_somados: "R$ 115.000.000-120.000.000/ano"
+
 avatar:
-  frase_que_define_icp: FILL_THIS
+  frase_que_define_icp: FILL_THIS # A PREENCHER NA IMERSAO
   a_dor_central:
-    superficial: Preciso de equipamentos bons para minha clinica
-    real: Preciso de equipamentos certificados que entreguem resultado e me protejam de problemas regulatorios
-    profunda: FILL_THIS
+    superficial: "Preciso de equipamentos bons para minha clinica"
+    real: "Preciso de equipamentos certificados que entreguem resultado e me protejam de problemas regulatorios"
+    profunda: FILL_THIS # A PREENCHER NA IMERSAO
+
 problema_e_solucao:
-  problema_central: Mercado de estetica tem equipamentos sem certificacao — risco para profissional e paciente
+  problema_central: "Mercado de estetica tem equipamentos sem certificacao — risco para profissional e paciente"
   consequencias_se_nao_resolver:
-  - Risco regulatorio (multa, interdicao por falta de certificacao Anvisa)
-  - Resultado inconsistente para pacientes
-  - Perda de credibilidade profissional
-  mecanismo_unico: Empresa de tecnologia com certificacao Anvisa que combina inovacao + conformidade regulatoria
+    - "Risco regulatorio (multa, interdicao por falta de certificacao Anvisa)"
+    - "Resultado inconsistente para pacientes"
+    - "Perda de credibilidade profissional"
+  mecanismo_unico: "Empresa de tecnologia com certificacao Anvisa que combina inovacao + conformidade regulatoria"
+
 proof_and_results:
-  depoimentos: FILL_THIS
+  depoimentos: FILL_THIS # A PREENCHER NA IMERSAO
   numeros:
-    faturamento_anual: R$ 115.000.000-120.000.000
-    funcionarios: ~120
-    market_position: Uma das maiores do mercado exclusivo
+    faturamento_anual: "R$ 115.000.000-120.000.000"
+    funcionarios: "~120"
+    market_position: "Uma das maiores do mercado exclusivo"
   beneficios_diretos:
     30_dias: FILL_THIS
     60_dias: FILL_THIS
     90_dias: FILL_THIS
   garantia:
-    tipo: FILL_THIS
+    tipo: FILL_THIS # A PREENCHER NA IMERSAO
+
 narrativa:
-  ato_1_atencao: FILL_THIS
-  ato_5_problema: Equipamentos sem certificacao colocam profissionais e pacientes em risco
-  ato_11_solucao: 'Conta Magic: equipamentos certificados Anvisa com tecnologia de ponta'
-  ato_18_cta: FILL_THIS
+  ato_1_atencao: FILL_THIS # A PREENCHER NA IMERSAO
+  ato_5_problema: "Equipamentos sem certificacao colocam profissionais e pacientes em risco"
+  ato_11_solucao: "Conta Magic: equipamentos certificados Anvisa com tecnologia de ponta"
+  ato_18_cta: FILL_THIS # A PREENCHER NA IMERSAO
+
 pricing:
-  ticket: FILL_THIS
-  modelo: Venda direta B2B
+  ticket: FILL_THIS # Alto valor — equipamentos medicos
+  modelo: "Venda direta B2B"
+
 go_to_market:
-  acquisition_model: Marketing digital (14 pessoas) + vendas diretas
+  acquisition_model: "Marketing digital (14 pessoas) + vendas diretas"
   channels:
-  - Instagram @onlinemag
-  - Vendas diretas
-  - Videos com IA
-  creatives_strategy: Videos e animacoes com IA para demonstrar equipamentos
+    - "Instagram @onlinemag"
+    - "Vendas diretas"
+    - "Videos com IA"
+  creatives_strategy: "Videos e animacoes com IA para demonstrar equipamentos"

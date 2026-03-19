@@ -1,17 +1,22 @@
+---
+# PRODUCT-STORY.YAML — Conta Magic / Equipamentos para Medicina Estetica
+# Status: SKELETON
 metadata:
-  version: '1.0'
-  product_name: Equipamentos para Medicina Estetica
-  status: SKELETON
-  last_updated: '2026-03-14'
+  version: "1.0"
+  product_name: "Equipamentos para Medicina Estetica"
+  status: "SKELETON"
+  last_updated: "2026-03-14"
+
 origin:
-  why_created: FILL_THIS
-  problem_solved: Profissionais de medicina estetica precisavam de equipamentos certificados, seguros e com suporte tecnico
-    brasileiro
-  founder_connection: Egio Roberto tem background de programacao — criou empresa de TECNOLOGIA para resolver problema de SAUDE
+  why_created: FILL_THIS # A PREENCHER NA IMERSAO
+  problem_solved: "Profissionais de medicina estetica precisavam de equipamentos certificados, seguros e com suporte tecnico brasileiro"
+  founder_connection: "Egio Roberto tem background de programacao — criou empresa de TECNOLOGIA para resolver problema de SAUDE"
+
 evolution:
-  phase_1: FILL_THIS
+  phase_1: FILL_THIS # A PREENCHER NA IMERSAO
   phase_2: FILL_THIS
-  current_phase: Uma das maiores do mercado exclusivo — R$115-120M, 120 funcionarios
+  current_phase: "Uma das maiores do mercado exclusivo — R$115-120M, 120 funcionarios"
+
 future:
-  vision: Integrar IA coordenada em todas as areas para escalar sem aumentar headcount
-  next_milestone: Sistema de IA que coordene marketing, vendas e financeiro
+  vision: "Integrar IA coordenada em todas as areas para escalar sem aumentar headcount"
+  next_milestone: "Sistema de IA que coordene marketing, vendas e financeiro"
