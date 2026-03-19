@@ -1,0 +1,258 @@
+name: Sync — Supabase → Business Repos
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Pull Supabase → Write YAMLs → Push
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout template (for scripts)
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Create supabase-to-yaml script
+        run: |
+          cat > supabase-to-yaml.py << 'PYEOF'
+          import json, os, re, sys, urllib.request, yaml
+
+          SB_URL = os.environ["SUPABASE_URL"]
+          SB_KEY = os.environ["SUPABASE_KEY"]
+          REPOS_DIR = os.environ.get("REPOS_DIR", "repos")
+
+          SLUG_MAP = {
+              "thiago_nishikata": "brasil_em_dobro",
+              "egio_roberto": "conta_magic",
+              "daniel_tenorio": "daniel_tenorio",
+              "junior_lorenzi": "ecossistema_builder",
+              "eduardo_colautti": "eduardo_colautti",
+              "bruno_kosminsky": "eu_medico_residente",
+              "fabio_avelar": "grupo_fabio_avelar",
+              "marcel_scalcko": "grupo_scalco",
+              "wiliaquison_valentim": "grupo_wv",
+              "italo_gustavo": "italo_gustavo",
+              "joao_biggie_com_romulo_medeiros": "level8_herobase",
+              "matheusvinicius": "matheus_vinicius",
+              "andre_franco": "mentoria_andre_franco",
+              "karine_lago": "nexos_educacao",
+              "luca_cortez": "nutraself",
+              "rafaela_mendes_com_michel_arruda": "omni_hypnosis",
+              "hugo_santos": "optimus_isystem",
+              "diogo_pereira": "youfront",
+          }
+
+          SKIP_FAMILIES = {"_preserved", "completeness-report.yaml", "design-system"}
+
+          TYPE_TO_PATH = {
+              ("company", "company-profile"): "company/company-profile.yaml",
+              ("company", "founder-dna"): "company/founder-dna.yaml",
+              ("company", "icp"): "company/icp.yaml",
+              ("company", "credentials"): "company/credentials.yaml",
+              ("company", "authority-story"): "company/authority-story.yaml",
+              ("company", "diagnosis"): "company/diagnosis.yaml",
+              ("company", "brand"): "company/brand.yaml",
+              ("company", "offerbook"): "company/offerbook.yaml",
+              ("company", "analytics"): "company/analytics.yaml",
+              ("brand", "brandbook"): "brand/brandbook.yaml",
+              ("brand", "strategic-positioning"): "brand/strategic-positioning.yaml",
+              ("brand", "context"): "brand/context.yaml",
+              ("brand", "logo-concept"): "brand/logo-concept.yaml",
+              ("brand", "branding-repository"): "brand/branding-repository.yaml",
+              ("operations", "team-structure"): "operations/team-structure.yaml",
+              ("operations", "pricing-strategy"): "operations/pricing-strategy.yaml",
+              ("operations", "kpi-scorecards"): "operations/kpi-scorecards.yaml",
+              ("operations", "commission-design"): "operations/commission-design.yaml",
+              ("operations", "channel-strategy"): "operations/channel-strategy.yaml",
+              ("operations", "roadmap"): "operations/roadmap.yaml",
+              ("tech", "stack"): "tech/stack.yaml",
+              ("tech", "strategy"): "tech/strategy.yaml",
+              ("ai", "strategy"): "ai/strategy.yaml",
+              ("evidence", "document-links"): "evidence/document-links.yaml",
+              ("evidence", "completeness-manifest"): "evidence/completeness-manifest.yaml",
+              ("evidence", "source-registry"): "evidence/source-registry.yaml",
+              ("evidence", "workspace-context-summary"): "evidence/workspace-context-summary.yaml",
+              ("etl", "etl-run-envelope"): "etl/etl-run-envelope.yaml",
+              ("analytics", "executive-summary"): "analytics/executive-summary.yaml",
+              ("analytics", "activation-score"): "analytics/activation-score.yaml",
+              ("analytics", "icp-deep-analysis"): "analytics/icp-deep-analysis.yaml",
+              ("analytics", "segmentation-rfm"): "analytics/segmentation-rfm.yaml",
+          }
+
+          def supabase_get(endpoint):
+              url = f"{SB_URL}/rest/v1/{endpoint}"
+              req = urllib.request.Request(url, headers={
+                  "apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}",
+              })
+              with urllib.request.urlopen(req) as resp:
+                  return json.loads(resp.read().decode())
+
+          def deep_merge(base, update):
+              if not isinstance(base, dict) or not isinstance(update, dict):
+                  return update
+              merged = dict(base)
+              for key, value in update.items():
+                  if key in merged and isinstance(merged[key], dict) and isinstance(value, dict):
+                      merged[key] = deep_merge(merged[key], value)
+                  else:
+                      if value is not None and value != "" and value != [] and value != {}:
+                          merged[key] = value
+                      elif key not in merged:
+                          merged[key] = value
+              return merged
+
+          def read_yaml(path):
+              if not os.path.exists(path):
+                  return {}
+              try:
+                  with open(path, "r", encoding="utf-8") as f:
+                      data = yaml.safe_load(f)
+                      return data if isinstance(data, dict) else {}
+              except yaml.YAMLError:
+                  return {}
+
+          def write_yaml(path, data):
+              os.makedirs(os.path.dirname(path), exist_ok=True)
+              with open(path, "w", encoding="utf-8") as f:
+                  yaml.dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False, width=120)
+
+          def get_yaml_path(family, artifact_type, source_path):
+              key = (family, artifact_type)
+              if key in TYPE_TO_PATH:
+                  return TYPE_TO_PATH[key]
+              if family == "product":
+                  if source_path:
+                      match = re.search(r"products/(.+)", source_path)
+                      if match:
+                          p = match.group(0)
+                          return p if p.endswith(".yaml") else p + ".yaml"
+                  return f"products/{artifact_type}.yaml"
+              if family == "movement":
+                  if source_path:
+                      match = re.search(r"movement/(.+)", source_path)
+                      if match:
+                          p = match.group(0)
+                          return p if p.endswith(".yaml") else p + ".yaml"
+                  return f"movement/{artifact_type}.yaml"
+              if family == "analytics":
+                  return f"analytics/{artifact_type}.yaml"
+              return f"{family}/{artifact_type}.yaml"
+
+          def sync_business(db_slug, ws_folder):
+              biz_dir = os.path.join(REPOS_DIR, ws_folder, "workspace", "businesses", ws_folder)
+              businesses = supabase_get(f"businesses?slug=eq.{db_slug}&select=id")
+              if not businesses:
+                  print(f"  SKIP: '{db_slug}' not in Supabase")
+                  return 0
+              biz_id = businesses[0]["id"]
+              artifacts = supabase_get(
+                  f"artifacts?scope_id=eq.{biz_id}"
+                  f"&select=artifact_family,artifact_type,source_path,raw_payload,version,updated_at"
+                  f"&order=artifact_family,artifact_type"
+              )
+              written = 0
+              for art in artifacts:
+                  family = art["artifact_family"]
+                  atype = art["artifact_type"]
+                  payload = art["raw_payload"]
+                  source_path = art.get("source_path")
+                  if family in SKIP_FAMILIES or not payload:
+                      continue
+                  yaml_rel = get_yaml_path(family, atype, source_path)
+                  yaml_abs = os.path.join(biz_dir, yaml_rel)
+                  existing = read_yaml(yaml_abs)
+                  merged = deep_merge(existing, payload) if existing else payload
+                  write_yaml(yaml_abs, merged)
+                  written += 1
+              return written
+
+          total = 0
+          for db_slug, ws_folder in sorted(SLUG_MAP.items(), key=lambda x: x[1]):
+              print(f"[{ws_folder}] (db: {db_slug})")
+              count = sync_business(db_slug, ws_folder)
+              total += count
+              print(f"  {count} files written")
+          print(f"\nDone: {total} files written")
+          PYEOF
+
+      - name: Clone all business repos
+        env:
+          GH_TOKEN: ${{ secrets.AIOXSQUAD_PAT }}
+        run: |
+          BUSINESSES=(
+            brasil_em_dobro conta_magic daniel_tenorio ecossistema_builder
+            eduardo_colautti eu_medico_residente grupo_fabio_avelar grupo_scalco
+            grupo_wv italo_gustavo level8_herobase matheus_vinicius
+            mentoria_andre_franco nexos_educacao nutraself omni_hypnosis
+            optimus_isystem youfront
+          )
+
+          mkdir -p repos
+          for biz in "${BUSINESSES[@]}"; do
+            git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/AIOXsquad/${biz}.git" "repos/$biz" 2>/dev/null
+          done
+          echo "✅ Cloned ${#BUSINESSES[@]} repos"
+
+      - name: Fetch from Supabase & write YAMLs
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          REPOS_DIR: repos
+        run: python3 supabase-to-yaml.py
+
+      - name: Commit & push changed repos
+        env:
+          GH_TOKEN: ${{ secrets.AIOXSQUAD_PAT }}
+        run: |
+          BUSINESSES=(
+            brasil_em_dobro conta_magic daniel_tenorio ecossistema_builder
+            eduardo_colautti eu_medico_residente grupo_fabio_avelar grupo_scalco
+            grupo_wv italo_gustavo level8_herobase matheus_vinicius
+            mentoria_andre_franco nexos_educacao nutraself omni_hypnosis
+            optimus_isystem youfront
+          )
+
+          PUSHED=0 UNCHANGED=0 FAILED=0
+
+          for biz in "${BUSINESSES[@]}"; do
+            cd "repos/$biz"
+            git config user.name "AIOXsquad-bot"
+            git config user.email "aioxsquad-bot@users.noreply.github.com"
+
+            if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard)" ]; then
+              UNCHANGED=$((UNCHANGED + 1))
+              cd ../..
+              continue
+            fi
+
+            CHANGES=$(git status --short | wc -l)
+            git add -A
+            git commit -q -m "sync: update workspace from Supabase"
+
+            if git push -q; then
+              echo "✅ $biz — $CHANGES files"
+              PUSHED=$((PUSHED + 1))
+            else
+              echo "❌ $biz — push failed"
+              FAILED=$((FAILED + 1))
+            fi
+
+            cd ../..
+          done
+
+          echo ""
+          echo "============================================"
+          echo "  🚀 $PUSHED pushed, ⏭️ $UNCHANGED unchanged, ❌ $FAILED failed"
+          echo "============================================"
+
+          if [ $FAILED -gt 0 ]; then exit 1; fi
