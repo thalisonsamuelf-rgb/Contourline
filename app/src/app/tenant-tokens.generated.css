@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Tenant Tokens Bridge (auto-generated)
+   Source Label: aiox-starter
+   Source: starter/design-system.config.yaml
+   Generated: 2026-03-18
+   DO NOT EDIT — re-run: npm run tokens:sync:write
+   ========================================================================== */
+
+@import "../components/brandbook/styles/tokens.css";
+@import "../components/brandbook/styles/keyframes.css";
+@import "../components/brandbook/styles/patterns.css";
+@import "../components/brandbook/styles/primitives.css";
+@import "../components/brandbook/styles/components-lib.css";
+@import "../components/brandbook/styles/editorial-lib.css";
+
+@layer tenant-tokens {
+  .brandbook-root[data-bb-theme="main"],
+.brandbook-root[data-bb-theme="lime"],
+.brandbook-root[data-bb-theme="gold"] {
+    --bb-accent: #DDD1BB;
+  }
+
+  .brandbook-root[data-bb-theme="secondary"] {
+    --bb-accent: #BFA37A;
+  }
+
+}

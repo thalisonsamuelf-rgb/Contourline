@@ -1,0 +1,137 @@
+id: aiox-starter
+name: AIOX Design Starter
+status: active
+owner_bu: aiox-starter
+
+source:
+  type: local
+  repo_root: .
+  ds_root: src/components/brandbook
+
+default_theme: main
+
+themes:
+  main:
+    label: Starter Main
+    role: primary
+    status: active
+    description: Tema base do starter com escala gold para experiencias white-label de alta legibilidade.
+    allowed_use_cases:
+      - default_site
+      - landing_page
+      - product_page
+      - calculator
+      - brandbook
+    forbidden_use_cases: []
+    modes:
+      - main
+    tokens:
+      primary: src/components/brandbook/styles/tokens.css
+      files:
+        - src/components/brandbook/styles/keyframes.css
+        - src/components/brandbook/styles/patterns.css
+        - src/components/brandbook/styles/primitives.css
+        - src/components/brandbook/styles/components-lib.css
+        - src/components/brandbook/styles/editorial-lib.css
+      prefix: --bb-
+    brandbook:
+      picker_label: Gold
+      edition_label: Starter Gold Edition
+      accent_name: Starter Gold
+      accent_hex: "#DDD1BB"
+      accent_rgb: "RGB 221,209,187"
+      accent_cmyk: "CMYK 0,5,15,13"
+      accent_text_color: "var(--bb-dark)"
+      live_badge_color: "var(--bb-accent)"
+      legacy_ids:
+        - lime
+        - gold
+    patterns:
+      - pattern-crosshair-grid
+      - pattern-dot-grid
+      - pattern-circuit-board
+    notes: ""
+
+  secondary:
+    label: Starter Secondary
+    role: secondary
+    status: restricted
+    description: Tema secundario do starter com acento bronze para contextos editoriais e premium.
+    allowed_use_cases:
+      - premium_offer
+      - premium_event
+      - executive_presentation
+    forbidden_use_cases:
+      - default_site
+      - evergreen_landing
+      - operational_ui
+    modes:
+      - secondary
+    tokens:
+      primary: src/components/brandbook/styles/tokens.css
+      files:
+        - src/components/brandbook/styles/keyframes.css
+        - src/components/brandbook/styles/patterns.css
+        - src/components/brandbook/styles/primitives.css
+        - src/components/brandbook/styles/components-lib.css
+        - src/components/brandbook/styles/editorial-lib.css
+      prefix: --bb-
+    brandbook:
+      picker_label: Bronze
+      edition_label: Starter Bronze Edition
+      accent_name: Starter Bronze
+      accent_hex: "#BFA37A"
+      accent_rgb: "RGB 191,163,122"
+      accent_cmyk: "CMYK 0,15,36,25"
+      accent_text_color: "var(--bb-dark)"
+      live_badge_color: "#BFA37A"
+      legacy_ids: []
+    patterns:
+      - frame-bracket
+      - pattern-glow-center
+    notes: Nao usar como default.
+
+apps:
+  - id: aiox-design-starter
+    root: .
+    theme: main
+    framework: next.js
+    ui_primitives: radix-ui
+    components_root: src/components
+    component_dirs:
+      atoms: brandbook/atoms
+      molecules: brandbook/molecules
+      organisms: brandbook/organisms
+      chrome: brandbook/chrome
+      patterns: brandbook-sections/patterns
+      motion: brandbook-sections/motion
+      pages: brandbook/pages
+      ui: ui
+    hooks_dir: src/components/brandbook/hooks
+    blueprint_files:
+      - src/components/brandbook/pages/lp-sections-page.tsx
+      - src/components/brandbook/pages/editorial-page.tsx
+    token_files:
+      - src/components/brandbook/styles/tokens.css
+      - src/components/brandbook/styles/keyframes.css
+      - src/components/brandbook/styles/patterns.css
+      - src/components/brandbook/styles/primitives.css
+      - src/components/brandbook/styles/components-lib.css
+      - src/components/brandbook/styles/editorial-lib.css
+    data_dir: src/components/brandbook/data
+    app_dir: src/app
+    notes: Tema default do starter e main. Variantes novas devem nascer do scaffold local.
+
+governance:
+  requires_explicit_approval_for_theme_override: true
+  fallback_theme: main
+  validation_rules:
+    - source_must_exist
+    - source_type_must_be_local_or_external
+    - source_repo_root_must_exist
+    - source_ds_root_must_exist
+    - default_theme_must_exist
+    - secondary_cannot_be_default
+    - app_theme_must_exist
+    - declared_paths_must_exist
+    - missing_config_means_ds_not_configured

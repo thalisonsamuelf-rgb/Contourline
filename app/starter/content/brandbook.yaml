@@ -1,0 +1,344 @@
+metadata:
+  schema: aiox.site_content.brandbook
+  version: "1.0"
+  status: seed
+
+surface: brandbook
+
+source_fallback:
+  entrypoint: src/app/(brandbook)/brandbook/page.tsx
+  modules:
+    - src/app/(brandbook)/brandbook/layout.tsx
+    - src/app/(brandbook)/not-found.tsx
+    - src/app/(brandbook)/brandbook/token-export/page.tsx
+    - src/components/brandbook/pages/brandbook-main-page.tsx
+    - src/components/brandbook/pages/guidelines-page.tsx
+    - src/components/brandbook/pages/foundations-page.tsx
+    - src/components/brandbook/pages/components-page.tsx
+
+sections:
+  overview:
+    enabled: true
+  guidelines:
+    enabled: true
+  foundations:
+    enabled: true
+  components:
+    enabled: true
+  token_export:
+    enabled: true
+
+shell:
+  home_href: /brandbook
+  home_aria_label: AIOX Starter Brandbook home
+
+navigation:
+  top_links:
+    - label: Guidelines
+      href: /brandbook/guidelines
+      surface: brandbook
+    - label: Movimento
+      href: /brandbook/movimento
+      surface: brandbook
+  groups:
+    - label: Brandbook
+      links:
+        - label: Foundations
+          href: /brandbook/foundations
+          group: Brandbook
+        - label: Logo
+          href: /brandbook/logo
+          group: Brandbook
+        - label: Icons
+          href: /brandbook/icons
+          group: Brandbook
+        - label: Moodboard
+          href: /brandbook/moodboard
+          group: Brandbook
+        - label: Estratégia de Marca
+          href: /brandbook/movimento
+          group: Brandbook
+    - label: Design System
+      links:
+        - label: Typography
+          href: /brandbook/typography
+          group: Design System
+        - label: Color Tokens
+          href: /brandbook/color-tokens
+          group: Design System
+        - label: Spacing & Layout
+          href: /brandbook/spacing-layout
+          group: Design System
+        - label: Surfaces & Borders
+          href: /brandbook/surfaces
+          group: Design System
+        - label: Semantic Tokens
+          href: /brandbook/semantic-tokens
+          group: Design System
+        - label: Token Export
+          href: /brandbook/token-export
+          group: Design System
+        - label: Components
+          href: /brandbook/components
+          group: Design System
+        - label: Buttons
+          href: /brandbook/buttons
+          group: Design System
+        - label: Cards
+          href: /brandbook/cards
+          group: Design System
+        - label: Forms
+          href: /brandbook/forms
+          group: Design System
+        - label: Feedback
+          href: /brandbook/feedback
+          group: Design System
+        - label: States
+          href: /brandbook/states
+          group: Design System
+        - label: Tables
+          href: /brandbook/tables
+          group: Design System
+        - label: Lists
+          href: /brandbook/lists
+          group: Design System
+        - label: Charts
+          href: /brandbook/charts
+          group: Design System
+        - label: Navigation
+          href: /brandbook/navigation
+          group: Design System
+        - label: LP Sections
+          href: /brandbook/lp-sections
+          group: Design System
+        - label: Flow Diagram
+          href: /brandbook/flow-diagram
+          group: Design System
+        - label: Advanced
+          href: /brandbook/advanced
+          group: Design System
+        - label: Effects
+          href: /brandbook/effects
+          group: Design System
+        - label: Patterns
+          href: /brandbook/patterns
+          group: Design System
+        - label: Templates
+          href: /brandbook/templates
+          group: Design System
+        - label: Motion
+          href: /brandbook/motion
+          group: Design System
+        - label: SEO
+          href: /brandbook/seo
+          group: Design System
+      columns:
+        -
+          - heading: Tokens
+            links:
+              - label: Foundations
+                href: /brandbook/foundations
+              - label: Typography
+                href: /brandbook/typography
+              - label: Color Tokens
+                href: /brandbook/color-tokens
+              - label: Spacing & Layout
+                href: /brandbook/spacing-layout
+              - label: Surfaces & Borders
+                href: /brandbook/surfaces
+              - label: Semantic Tokens
+                href: /brandbook/semantic-tokens
+              - label: Token Export
+                href: /brandbook/token-export
+          - heading: Visual
+            links:
+              - label: Effects
+                href: /brandbook/effects
+              - label: Patterns
+                href: /brandbook/patterns
+              - label: Motion
+                href: /brandbook/motion
+          - heading: Meta
+            links:
+              - label: Templates
+                href: /brandbook/templates
+              - label: SEO
+                href: /brandbook/seo
+        -
+          - heading: Input
+            links:
+              - label: Buttons
+                href: /brandbook/buttons
+              - label: Forms
+                href: /brandbook/forms
+              - label: Feedback
+                href: /brandbook/feedback
+              - label: States
+                href: /brandbook/states
+          - heading: Data Display
+            links:
+              - label: Tables
+                href: /brandbook/tables
+              - label: Lists
+                href: /brandbook/lists
+              - label: Charts
+                href: /brandbook/charts
+              - label: Cards
+                href: /brandbook/cards
+          - heading: Layout
+            links:
+              - label: Components
+                href: /brandbook/components
+              - label: Navigation
+                href: /brandbook/navigation
+              - label: LP Sections
+                href: /brandbook/lp-sections
+              - label: Flow Diagram
+                href: /brandbook/flow-diagram
+              - label: Advanced
+                href: /brandbook/advanced
+    - label: Showcase
+      links:
+        - label: Editorial
+          href: /brandbook/editorial
+          group: Showcase
+        - label: Slides
+          href: /brandbook/showcase/slides
+          group: Showcase
+
+footer:
+  meta_line: Brand Identity System // v2.0 // Confidential
+
+not_found:
+  title: "404"
+  message: Page not found in the brandbook
+  cta_label: Back to Brandbook
+
+token_export:
+  header:
+    nav_left: AIOX STARTER
+    nav_center: TOKEN EXPORT
+    nav_right: V1.0 // VARIANT READY
+    title_prefix: Token
+    title_accent: Export
+    subtitle: Copy starter theme tokens for Tailwind + shadcn/ui projects
+    footer_left: Starter System
+    footer_center: 2 Themes
+    footer_right: "2026"
+  instructions:
+    - Pick a theme below and review the palette preview before copying the CSS block.
+    - Click Copy CSS to copy the full variable block.
+    - Paste into your project's index.css or globals.css.
+    - All shadcn/ui components will automatically adopt the starter visual system.
+  compatibility_note: Compatible with Tailwind CSS v3 + v4, shadcn/ui, and Lovable. Values are plain hex/rgba - no oklch dependency.
+  blocks:
+    - id: gold
+      title: Gold
+      edition: Starter Gold Edition
+      description: Warm editorial palette with #DDD1BB accent. Default scale for the starter shell.
+      accentHex: "#DDD1BB"
+      surfaceHex: "#151517"
+      textHex: "#F4F4F4"
+      borderPreview: "#FFFFFF17"
+      css: |-
+        /* AIOX Design Starter — Gold */
+        /* Paste into index.css of your Tailwind + shadcn/ui project */
+
+        @layer base {
+          :root {
+            /* Palette */
+            --background: #09090A;
+            --foreground: #F4F4F4;
+            --primary: #DDD1BB;
+            --primary-foreground: #121213;
+            --card: #151517;
+            --card-foreground: #F4F4F4;
+            --popover: #151517;
+            --popover-foreground: #F4F4F4;
+            --secondary: #1D1D20;
+            --secondary-foreground: #F4F4F4;
+            --muted: #18181B;
+            --muted-foreground: rgba(244, 244, 244, 0.52);
+            --accent: rgba(221, 209, 187, 0.1);
+            --accent-foreground: #DDD1BB;
+            --destructive: #EF4444;
+            --destructive-foreground: #FFFFFF;
+            --border: rgba(255, 255, 255, 0.09);
+            --input: rgba(255, 255, 255, 0.12);
+            --ring: rgba(221, 209, 187, 0.4);
+            --radius: 0.5rem;
+
+            /* Extended Palette */
+            --surface: #151517;
+            --surface-alt: #1D1D20;
+            --dim: rgba(244, 244, 244, 0.52);
+            --blue: #0099FF;
+            --flare: #C4B7A2;
+            --error: #EF4444;
+            --warning: #F59E0B;
+
+            /* Font Stack */
+            --font-sans: "Manrope", system-ui, sans-serif;
+            --font-mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, monospace;
+
+            /* Motion */
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+            --ease-decel: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+    - id: bronze
+      title: Bronze
+      edition: Starter Bronze Edition
+      description: Deeper metallic palette with #BFA37A accent. Good for premium or editorial variants.
+      accentHex: "#BFA37A"
+      surfaceHex: "#151517"
+      textHex: "#F4F4F4"
+      borderPreview: "#FFFFFF17"
+      css: |-
+        /* AIOX Design Starter — Bronze */
+        /* Paste into index.css of your Tailwind + shadcn/ui project */
+
+        @layer base {
+          :root {
+            /* Palette */
+            --background: #09090A;
+            --foreground: #F4F4F4;
+            --primary: #BFA37A;
+            --primary-foreground: #121213;
+            --card: #151517;
+            --card-foreground: #F4F4F4;
+            --popover: #151517;
+            --popover-foreground: #F4F4F4;
+            --secondary: #1D1D20;
+            --secondary-foreground: #F4F4F4;
+            --muted: #18181B;
+            --muted-foreground: rgba(244, 244, 244, 0.52);
+            --accent: rgba(191, 163, 122, 0.1);
+            --accent-foreground: #BFA37A;
+            --destructive: #EF4444;
+            --destructive-foreground: #FFFFFF;
+            --border: rgba(255, 255, 255, 0.09);
+            --input: rgba(255, 255, 255, 0.12);
+            --ring: rgba(191, 163, 122, 0.4);
+            --radius: 0.5rem;
+
+            /* Extended Palette */
+            --surface: #151517;
+            --surface-alt: #1D1D20;
+            --dim: rgba(244, 244, 244, 0.52);
+            --blue: #0099FF;
+            --flare: #A78B60;
+            --error: #EF4444;
+            --warning: #F59E0B;
+
+            /* Font Stack */
+            --font-sans: "Manrope", system-ui, sans-serif;
+            --font-mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, monospace;
+
+            /* Motion */
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+            --ease-decel: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#121213"/>
+  <rect x="40" y="40" width="1520" height="820" rx="24" fill="#151517" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="84" y="92" width="1432" height="716" rx="16" fill="url(#bg)"/>
+  <path d="M120 708H1480" stroke="#DDD1BB" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M120 160H1480" stroke="#DDD1BB" stroke-opacity="0.18" stroke-width="2"/>
+  <rect x="120" y="196" width="280" height="280" rx="16" fill="#DDD1BB" fill-opacity="0.12" stroke="#DDD1BB" stroke-opacity="0.35"/>
+  <rect x="430" y="196" width="470" height="18" rx="9" fill="#DDD1BB" fill-opacity="0.9"/>
+  <rect x="430" y="238" width="320" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.82"/>
+  <rect x="430" y="274" width="520" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="430" y="308" width="470" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="430" y="342" width="390" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.22"/>
+  <rect x="430" y="406" width="200" height="48" rx="24" fill="#DDD1BB"/>
+  <rect x="650" y="406" width="200" height="48" rx="24" fill="#1D1D20" stroke="#DDD1BB" stroke-opacity="0.4"/>
+  <rect x="980" y="196" width="500" height="280" rx="16" fill="#1D1D20" stroke="#DDD1BB" stroke-opacity="0.18"/>
+  <rect x="1020" y="236" width="420" height="12" rx="6" fill="#DDD1BB" fill-opacity="0.24"/>
+  <rect x="1020" y="270" width="360" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="1020" y="304" width="390" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="1020" y="338" width="300" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="1020" y="372" width="350" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="120" y="530" width="1360" height="220" rx="16" fill="#1D1D20" stroke="#DDD1BB" stroke-opacity="0.18"/>
+  <text x="120" y="138" fill="#DDD1BB" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="4">STARTER MEDIA</text>
+  <text x="120" y="632" fill="#FFFFFF" font-family="Space Grotesk, Manrope, sans-serif" font-size="72" font-weight="700">Placeholder Asset</text>
+  <text x="120" y="688" fill="#FFFFFF" fill-opacity="0.65" font-family="Manrope, sans-serif" font-size="28">Replace with your own photography, renders, screenshots, or editorial visuals.</text>
+  <text x="120" y="760" fill="#DDD1BB" font-family="IBM Plex Mono, monospace" font-size="18" letter-spacing="3">SAFE DEFAULT FOR THE STARTER</text>
+  <defs>
+    <linearGradient id="bg" x1="84" y1="92" x2="1516" y2="808" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#151517"/>
+      <stop offset="0.55" stop-color="#1D1D20"/>
+      <stop offset="1" stop-color="#121213"/>
+    </linearGradient>
+  </defs>
+</svg>

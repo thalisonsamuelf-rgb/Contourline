@@ -1,0 +1,131 @@
+shell:
+  home_aria_label: Orbit Flow Brandbook home
+
+footer:
+  meta_line: Orbit Flow // Brandbook // Variant Fixture
+
+not_found:
+  message: Page not found in the Orbit Flow brandbook
+
+token_export:
+  header:
+    nav_left: ORBIT FLOW
+    nav_right: V1.0 // SCAFFOLD READY
+    title_accent: Toolkit
+    subtitle: Copy Orbit Flow tokens for Tailwind + shadcn/ui projects
+  instructions:
+    - Pick a theme below and review the palette preview before copying the CSS block.
+    - Click Copy CSS to copy the full variable block.
+    - Paste into your project's index.css or globals.css.
+    - All shadcn/ui components will automatically adopt the Orbit Flow visual system.
+  blocks:
+    - id: cyan
+      title: Cyan
+      edition: Signal Stream Edition
+      description: Primary token export block with #46D6FF accent.
+      accentHex: "#46D6FF"
+      surfaceHex: "#0F1B29"
+      textHex: "#ECF7FF"
+      borderPreview: "rgba(236, 247, 255, 0.14)"
+      css: |-
+        /* Cyan Theme */
+        /* Paste into index.css of your Tailwind + shadcn/ui project */
+
+        @layer base {
+          :root {
+            /* Palette */
+            --background: #08111A;
+            --foreground: #ECF7FF;
+            --primary: #46D6FF;
+            --primary-foreground: #08111A;
+            --card: #0F1B29;
+            --card-foreground: #ECF7FF;
+            --popover: #0F1B29;
+            --popover-foreground: #ECF7FF;
+            --secondary: #162739;
+            --secondary-foreground: #ECF7FF;
+            --muted: #0F1B29;
+            --muted-foreground: rgba(236, 247, 255, 0.45);
+            --accent: rgba(70,214,255, 0.1);
+            --accent-foreground: #46D6FF;
+            --destructive: #EF5A5A;
+            --destructive-foreground: #FFFFFF;
+            --border: rgba(236, 247, 255, 0.14);
+            --input: rgba(236, 247, 255, 0.18);
+            --ring: rgba(70,214,255, 0.4);
+            --radius: 0.5rem;
+
+            /* Extended Palette */
+            --surface: #0F1B29;
+            --surface-alt: #162739;
+            --dim: rgba(236, 247, 255, 0.45);
+            --blue: #46D6FF;
+            --flare: #FFB36B;
+            --error: #EF5A5A;
+            --warning: #F7B955;
+
+            /* Font Stack */
+            --font-sans: "Manrope", system-ui, sans-serif;
+            --font-mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, monospace;
+
+            /* Motion */
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+            --ease-decel: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }
+    - id: amber
+      title: Amber
+      edition: Sunset Relay Edition
+      description: Secondary token export block with #FFB36B accent.
+      accentHex: "#FFB36B"
+      surfaceHex: "#0F1B29"
+      textHex: "#ECF7FF"
+      borderPreview: "rgba(236, 247, 255, 0.14)"
+      css: |-
+        /* Amber Theme */
+        /* Paste into index.css of your Tailwind + shadcn/ui project */
+
+        @layer base {
+          :root {
+            /* Palette */
+            --background: #08111A;
+            --foreground: #ECF7FF;
+            --primary: #FFB36B;
+            --primary-foreground: #08111A;
+            --card: #0F1B29;
+            --card-foreground: #ECF7FF;
+            --popover: #0F1B29;
+            --popover-foreground: #ECF7FF;
+            --secondary: #162739;
+            --secondary-foreground: #ECF7FF;
+            --muted: #0F1B29;
+            --muted-foreground: rgba(236, 247, 255, 0.45);
+            --accent: rgba(255,179,107, 0.1);
+            --accent-foreground: #FFB36B;
+            --destructive: #EF5A5A;
+            --destructive-foreground: #FFFFFF;
+            --border: rgba(236, 247, 255, 0.14);
+            --input: rgba(236, 247, 255, 0.18);
+            --ring: rgba(255,179,107, 0.4);
+            --radius: 0.5rem;
+
+            /* Extended Palette */
+            --surface: #0F1B29;
+            --surface-alt: #162739;
+            --dim: rgba(236, 247, 255, 0.45);
+            --blue: #46D6FF;
+            --flare: #FFB36B;
+            --error: #EF5A5A;
+            --warning: #F7B955;
+
+            /* Font Stack */
+            --font-sans: "Manrope", system-ui, sans-serif;
+            --font-mono: "IBM Plex Mono", "SFMono-Regular", ui-monospace, monospace;
+
+            /* Motion */
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+            --ease-decel: cubic-bezier(0, 0, 0.2, 1);
+          }
+        }

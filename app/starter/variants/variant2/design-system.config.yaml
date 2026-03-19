@@ -1,0 +1,33 @@
+id: variant2
+name: Orbit Flow Design System
+owner_bu: variant2
+
+themes:
+  main:
+    label: Orbit Flow Main
+    description: Tema principal de Orbit Flow.
+    tokens:
+      primary: starter/variants/variant2/tokens.css
+    brandbook:
+      picker_label: Cyan
+      edition_label: Signal Stream Edition
+      accent_name: Orbit Flow Cyan
+      accent_hex: "#46D6FF"
+      accent_rgb: RGB 70,214,255
+      accent_cmyk: CMYK custom
+      live_badge_color: "#46D6FF"
+      legacy_ids: []
+  secondary:
+    label: Orbit Flow Secondary
+    description: Tema secundario de Orbit Flow.
+    tokens:
+      primary: starter/variants/variant2/tokens.css
+    brandbook:
+      picker_label: Amber
+      edition_label: Sunset Relay Edition
+      accent_name: Orbit Flow Amber
+      accent_hex: "#FFB36B"
+      accent_rgb: RGB 255,179,107
+      accent_cmyk: CMYK custom
+      live_badge_color: "#FFB36B"
+      legacy_ids: []

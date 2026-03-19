@@ -1,0 +1,90 @@
+# CodeRabbit — site-aiox
+# Next.js 16 (App Router) | React 19 | Tailwind v4 | Vercel | Storybook 10
+# Inherits global config from root .coderabbit.yaml
+version: 2
+inheritance: true
+
+reviews:
+  path_instructions:
+    # ── App Router (pages & layouts) ───────────────────────────
+    - path: "src/app/**"
+      instructions: |
+        Next.js 16 App Router.
+        - Every page.tsx/layout.tsx must export metadata or generateMetadata
+        - Correct 'use client' / 'use server' directives
+        - Server Components by default — 'use client' only when needed
+        - loading.tsx and error.tsx for async routes
+        - No fetch() in client components — use Server Actions
+        - generateStaticParams for dynamic routes
+        - Flag next/router — must use next/navigation
+
+    # ── Components ─────────────────────────────────────────────
+    - path: "src/components/**"
+      instructions: |
+        Shared React components with Radix UI + Tailwind v4.
+        - cn() from @/lib/utils for classNames
+        - Images via next/image with width/height/alt
+        - No inline styles — Tailwind only
+        - Default to Server Components unless marked 'use client'
+        - Framer Motion in 'use client' files only
+        - Touch targets >= 44px
+
+    # ── UI Primitives ──────────────────────────────────────────
+    - path: "src/components/ui/**"
+      instructions: |
+        Shadcn/ui-style primitives.
+        - Minimal customization — wrap for business logic
+        - CVA (class-variance-authority) patterns
+        - Maintain Radix accessibility
+
+    # ── Lib / Utils ────────────────────────────────────────────
+    - path: "src/lib/**"
+      instructions: |
+        Utilities — framework-agnostic (no React imports).
+        - Pure functions, explicit types, no side effects
+        - cn() uses clsx + tailwind-merge
+
+    # ── Config / Data ──────────────────────────────────────────
+    - path: "src/config/**"
+      instructions: |
+        App configuration.
+        - No secrets — use environment variables
+        - Types exported for all config objects
+
+    - path: "src/data/**"
+      instructions: |
+        Static data and content — typed with interfaces.
+
+    # ── Scripts ────────────────────────────────────────────────
+    - path: "scripts/**"
+      instructions: |
+        Build and generation scripts.
+        - Idempotent (safe to run multiple times)
+        - Proper error handling and exit codes
+        - No hardcoded paths
+
+    # ── Storybook ──────────────────────────────────────────────
+    - path: "**/*.stories.tsx"
+      instructions: |
+        Storybook 10 stories — CSF3 format.
+        - Meta with proper title hierarchy
+        - Accessibility annotations
+        - Play functions for interactive components
+
+    # ── Deploy Config ──────────────────────────────────────────
+    - path: "vercel.json"
+      instructions: |
+        - Redirects/rewrites don't conflict with App Router
+        - Security headers (CSP, X-Frame-Options)
+        - Caching rules appropriate
+
+    - path: "next.config.ts"
+      instructions: |
+        - Image remotePatterns restricted
+        - Experimental features stable for production
+        - Webpack customizations don't break Vercel builds
+
+  path_filters:
+    - "!**/.next/**"
+    - "!**/storybook-static/**"
+    - "!**/*.tsbuildinfo"

@@ -1,0 +1,94 @@
+slug: aiox-starter
+name: AIOX Design Starter
+language: pt-BR
+default_theme: main
+
+seo:
+  title: AIOX Design Starter - White-label Brandbook Framework
+  description: Starter framework local-first para criar brandbooks, design systems e experiencias white-label sem depender do workspace.
+  og_image: /logo/AIOX-Starter-OG.svg
+  metadata_base: http://localhost:3001
+
+branding:
+  marketing_wordmark: starter
+  home_aria_label: Ir para a home do starter
+  logo_light_alt: AIOX Design Starter
+  logo_dark_alt: AIOX Design Starter
+  brandbook_tagline: White-label Brandbook Framework
+  version_label: Starter
+  edition_label: Local-First
+  brandbook_cta_label: Explore Brandbook
+  floating_brandbook_label: Starter
+  footer_badges:
+    - 60+ Components
+    - Local-first
+    - Variant-ready
+    - Token driven
+
+navigation:
+  main:
+    - label: Brandbook
+      href: /brandbook/guidelines
+      surface: brandbook
+  cta:
+    label: Start Variant
+    href: mailto:starter@aiox.ai
+
+footer:
+  entity:
+    display_name: AIOX Starter
+    legal_name: AIOX Design Starter
+  contact:
+    email: starter@aiox.ai
+    phone: "+55 (48) 3000-4242"
+    city: Florianopolis
+    region: SC
+    country: Brazil
+    location_lines:
+      - Florianopolis, SC
+      - Brazil
+  socials:
+    - label: X / Twitter
+      href: https://x.com/AIOXsquad
+    - label: TikTok
+      href: https://tiktok.com/@AIOXsquad
+    - label: Instagram
+      href: https://instagram.com/AIOXsquad
+    - label: YouTube
+      href: https://youtube.com/@AIOXsquad
+    - label: LinkedIn
+      href: https://linkedin.com/company/AIOXsquad
+    - label: GitHub
+      href: https://github.com/SynkraAI/aiox-core
+  legal:
+    - label: Acceptable Use Policy
+      href: "#"
+    - label: Privacy Policy
+      href: "#"
+    - label: Terms & Conditions
+      href: "#"
+    - label: Cookies
+      href: "#"
+  copyright_notice: AIOX Design Starter. All rights reserved.
+  bottom_note: Local-first starter for white-label brand systems
+
+assets:
+  logo_light: /logo/AIOX-Starter-White.svg
+  logo_dark: /logo/AIOX-Starter-Dark.svg
+  favicon: /icon.svg
+  og_image: /logo/AIOX-Starter-OG.svg
+
+fonts:
+  external_stylesheets:
+    - https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap
+
+surface_registry:
+  brandbook:
+    enabled: true
+    path: /brandbook
+    layout: "(brandbook)"
+    content: content/brandbook.yaml
+
+features:
+  newsletter_form: true
+  brandbook_theming: true

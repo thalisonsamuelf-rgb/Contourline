@@ -1,0 +1,94 @@
+slug: aiox
+name: AIOX Design System
+language: pt-BR
+default_theme: main
+
+seo:
+  title: AIOX - Design System & Brandbook
+  description: Single source of truth para identidade visual, componentes UI e a voz do movimento AIOX.
+  og_image: /logo/AIOX_color.svg
+  metadata_base: http://localhost:3001
+
+branding:
+  marketing_wordmark: aiox
+  home_aria_label: Ir para a home da AIOX
+  logo_light_alt: AIOX
+  logo_dark_alt: AIOX
+  brandbook_tagline: Design System & Brandbook
+  version_label: V1.0
+  edition_label: Dark Cockpit Edition
+  brandbook_cta_label: Abrir Brandbook
+  floating_brandbook_label: Brandbook
+  footer_badges:
+    - 60+ Components
+    - Dark Cockpit
+    - 4 Pilares
+    - 100% Tokens
+
+navigation:
+  main:
+    - label: Brandbook
+      href: /brandbook/guidelines
+      surface: brandbook
+  cta:
+    label: Agendar Chamada
+    href: mailto:hello@aiox.ai
+
+footer:
+  entity:
+    display_name: AIOX
+    legal_name: AIOX Squad LTDA
+  contact:
+    email: hello@aiox.ai
+    phone: "+55 (11) 99999-9999"
+    city: Sao Paulo
+    region: SP
+    country: Brazil
+    location_lines:
+      - Sao Paulo, SP
+      - Brazil
+  socials:
+    - label: X / Twitter
+      href: https://x.com/AIOXsquad
+    - label: TikTok
+      href: https://tiktok.com/@AIOXsquad
+    - label: Instagram
+      href: https://instagram.com/AIOXsquad
+    - label: YouTube
+      href: https://youtube.com/@AIOXsquad
+    - label: LinkedIn
+      href: https://linkedin.com/company/AIOXsquad
+    - label: GitHub
+      href: https://github.com/SynkraAI/aiox-core
+  legal:
+    - label: Acceptable Use Policy
+      href: "#"
+    - label: Privacy Policy
+      href: "#"
+    - label: Terms & Conditions
+      href: "#"
+    - label: Cookies
+      href: "#"
+  copyright_notice: AIOX Squad. All rights reserved.
+  bottom_note: Built with AIOX PRO in Florianopolis
+
+assets:
+  logo_light: /logo/AIOX-White.svg
+  logo_dark: /logo/AIOX-Black.svg
+  favicon: /icon.svg
+  og_image: /logo/AIOX_color.svg
+
+fonts:
+  external_stylesheets:
+    - https://fonts.cdnfonts.com/css/tasa-orbiter-display
+
+surface_registry:
+  brandbook:
+    enabled: true
+    path: /brandbook
+    layout: "(brandbook)"
+    content: content/brandbook.yaml
+
+features:
+  newsletter_form: true
+  brandbook_theming: true

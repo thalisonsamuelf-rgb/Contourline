@@ -1,0 +1,10 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#111214"/>
+  <rect x="96" y="96" width="708" height="1008" stroke="#DDD1BB" stroke-width="2"/>
+  <circle cx="450" cy="312" r="126" fill="#DDD1BB" fill-opacity="0.14"/>
+  <path d="M276 1018C276 893.955 354.799 793.5 452 793.5C549.201 793.5 628 893.955 628 1018V1136H276V1018Z" fill="#DDD1BB" fill-opacity="0.18"/>
+  <path d="M352 450C352 395.324 396.324 351 451 351C505.676 351 550 395.324 550 450V560C550 614.676 505.676 659 451 659C396.324 659 352 614.676 352 560V450Z" fill="#F4F4F4"/>
+  <path d="M288 720H612" stroke="#DDD1BB" stroke-width="3" stroke-dasharray="10 10"/>
+  <text x="112" y="1032" fill="#F4F4F4" font-family="Arial, sans-serif" font-size="72" font-weight="700">SYSTEMS LEAD</text>
+  <text x="116" y="1088" fill="#DDD1BB" font-family="Courier New, monospace" font-size="24" letter-spacing="4">STARTER PORTRAIT PLACEHOLDER</text>
+</svg>
