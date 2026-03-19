@@ -1,9 +1,8 @@
 # Task: Parallel Discovery
 
 **Task ID:** parallel-discovery
+**Version:** 1.0.0
 **Execution Type:** Hybrid (Worker parallelization + Agent synthesis)
-**Model:** Sonnet
-**Haiku Eligible:** NO
 **Purpose:** Run domain discovery streams in parallel and merge deterministically
 **Orchestrator:** @squad-chief
 
@@ -43,8 +42,8 @@ streams:
 
 ```yaml
 discovery_bundle:
-  merged_file: .aiox/squad-runtime/discovery/{domain}/discovery-merged.yaml
-  summary_file: .aiox/squad-runtime/discovery/{domain}/discovery-summary.md
+  merged_file: outputs/discovery/{domain}/discovery-merged.yaml
+  summary_file: outputs/discovery/{domain}/discovery-summary.md
   confidence_score: 0-1
   unresolved_conflicts:
     - "..."

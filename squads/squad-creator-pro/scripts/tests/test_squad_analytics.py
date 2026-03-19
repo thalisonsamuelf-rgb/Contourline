@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
-"""Tests for squad-analytics.py."""
+"""
+Tests for squad-analytics.py
+Run with: pytest scripts/tests/test_squad_analytics.py -v
+"""
 
-import importlib.util
-from pathlib import Path
-
+import os
+import sys
 import pytest
+from pathlib import Path
+from datetime import datetime
 
+# Add parent directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
-SCRIPT_PATH = Path(__file__).parent.parent / "squad-analytics.py"
-
-spec = importlib.util.spec_from_file_location("squad_analytics", SCRIPT_PATH)
+# Import using underscore version of module name
+import importlib.util
+spec = importlib.util.spec_from_file_location(
+    "squad_analytics",
+    Path(__file__).parent.parent / "squad-analytics.py"
+)
 squad_analytics = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(squad_analytics)
 
@@ -23,156 +32,230 @@ calculate_quality_score = squad_analytics.calculate_quality_score
 analyze_all_squads = squad_analytics.analyze_all_squads
 format_table = squad_analytics.format_table
 
-MATURITY_DRAFT = squad_analytics.MATURITY_DRAFT
-MATURITY_DEVELOPING = squad_analytics.MATURITY_DEVELOPING
-MATURITY_OPERATIONAL = squad_analytics.MATURITY_OPERATIONAL
+
+class TestCountFilesByExtension:
+    """Tests for count_files_by_extension function"""
+
+    def test_count_files_empty_dir(self, tmp_path):
+        """Empty directory returns 0"""
+        empty_dir = tmp_path / "empty"
+        empty_dir.mkdir()
+
+        result = count_files_by_extension(empty_dir, [".py"])
+
+        assert result == 0
+
+    def test_count_files_with_matches(self, tmp_path):
+        """Files matching extension are counted"""
+        test_dir = tmp_path / "test"
+        test_dir.mkdir()
+
+        (test_dir / "script1.py").write_text("# Python")
+        (test_dir / "script2.py").write_text("# Python")
+        (test_dir / "script3.js").write_text("// JS")
+
+        result = count_files_by_extension(test_dir, [".py"])
+
+        assert result == 2
+
+    def test_count_files_multiple_extensions(self, tmp_path):
+        """Multiple extensions work correctly"""
+        test_dir = tmp_path / "test"
+        test_dir.mkdir()
+
+        (test_dir / "file.py").write_text("PY")
+        (test_dir / "file.js").write_text("JS")
+        (test_dir / "file.sh").write_text("SH")
+
+        result = count_files_by_extension(test_dir, [".py", ".js"])
+
+        assert result == 2
+
+    def test_count_files_nonexistent_dir(self, tmp_path):
+        """Nonexistent directory returns 0"""
+        result = count_files_by_extension(tmp_path / "nonexistent", [".py"])
+
+        assert result == 0
 
 
-def _create_manifest(squad_dir: Path, version: str = "1.0.0") -> None:
-    (squad_dir / "squad.yaml").write_text(
-        f"""
-name: {squad_dir.name}
-version: {version}
-description: Analytics test squad
-domain: data
-""".strip()
-    )
+class TestCountMdFiles:
+    """Tests for count_md_files function"""
+
+    def test_count_md_files_basic(self, tmp_path):
+        """MD files are counted"""
+        test_dir = tmp_path / "test"
+        test_dir.mkdir()
+
+        (test_dir / "file1.md").write_text("# F1")
+        (test_dir / "file2.md").write_text("# F2")
+
+        result = count_md_files(test_dir)
+
+        assert result == 2
+
+    def test_count_md_files_excludes_readme(self, tmp_path):
+        """README.md is excluded"""
+        test_dir = tmp_path / "test"
+        test_dir.mkdir()
+
+        (test_dir / "real-file.md").write_text("# Real")
+        (test_dir / "README.md").write_text("# README")
+        (test_dir / "readme.md").write_text("# readme")
+        (test_dir / "template.md").write_text("# Template")
+
+        result = count_md_files(test_dir)
+
+        assert result == 1
 
 
-def _create_usage_evidence(project_root: Path, squad_name: str, files: int = 3) -> None:
-    output_dir = project_root / "outputs" / squad_name
-    output_dir.mkdir(parents=True, exist_ok=True)
-    for index in range(files):
-        (output_dir / f"evidence-{index}.txt").write_text("ok")
+class TestListFiles:
+    """Tests for list_files function"""
 
+    def test_list_files_basic(self, tmp_path):
+        """Files are listed correctly"""
+        test_dir = tmp_path / "test"
+        test_dir.mkdir()
 
-class TestRecursiveCounting:
-    def test_count_files_by_extension_recursive(self, tmp_path: Path) -> None:
-        root = tmp_path / "content"
-        nested = root / "nested"
-        nested.mkdir(parents=True)
+        (test_dir / "alpha.md").write_text("A")
+        (test_dir / "beta.md").write_text("B")
 
-        (root / "a.py").write_text("print('a')")
-        (nested / "b.py").write_text("print('b')")
-        (nested / "c.ts").write_text("console.log('c')")
+        result = list_files(test_dir, [".md"])
 
-        assert count_files_by_extension(root, [".py"]) == 2
-        assert count_files_by_extension(root, [".py", ".ts"]) == 3
+        assert len(result) == 2
+        assert "alpha" in result
+        assert "beta" in result
 
-    def test_count_files_by_extension_missing_dir(self, tmp_path: Path) -> None:
-        assert count_files_by_extension(tmp_path / "missing", [".py"]) == 0
+    def test_list_files_sorted(self, tmp_path):
+        """Files are returned sorted"""
+        test_dir = tmp_path / "test"
+        test_dir.mkdir()
 
-    def test_count_md_files_excludes_readme_template(self, tmp_path: Path) -> None:
-        docs = tmp_path / "docs"
-        docs.mkdir()
+        (test_dir / "zebra.md").write_text("Z")
+        (test_dir / "alpha.md").write_text("A")
 
-        (docs / "README.md").write_text("# ignore")
-        (docs / "readme.md").write_text("# ignore")
-        (docs / "template.md").write_text("# ignore")
-        (docs / "actual.md").write_text("# keep")
+        result = list_files(test_dir, [".md"])
 
-        assert count_md_files(docs) == 1
+        assert result == ["alpha", "zebra"]
 
-    def test_list_files_returns_relative_stems(self, tmp_path: Path) -> None:
-        workflows = tmp_path / "workflows"
-        (workflows / "nested").mkdir(parents=True)
+    def test_list_files_excludes_special(self, tmp_path):
+        """Special files are excluded"""
+        test_dir = tmp_path / "test"
+        test_dir.mkdir()
 
-        (workflows / "main.yaml").write_text("steps: []")
-        (workflows / "nested" / "child.yml").write_text("steps: []")
+        (test_dir / "real.md").write_text("R")
+        (test_dir / "readme.md").write_text("README")
 
-        files = list_files(workflows, [".yaml", ".yml"])
-        assert files == ["main", "nested/child"]
+        result = list_files(test_dir, [".md"])
 
-    def test_list_files_sorted_and_excludes_readme(self, tmp_path: Path) -> None:
-        docs = tmp_path / "docs"
-        docs.mkdir()
-        (docs / "z.md").write_text("# Z")
-        (docs / "a.md").write_text("# A")
-        (docs / "README.md").write_text("# ignore")
-
-        files = list_files(docs, [".md"])
-        assert files == ["a", "z"]
+        assert "real" in result
+        assert "readme" not in result
 
 
 class TestSimpleYamlParse:
-    def test_simple_yaml_parse_basic(self) -> None:
-        parsed = simple_yaml_parse(
-            """
+    """Tests for simple_yaml_parse function"""
+
+    def test_simple_yaml_parse_basic(self):
+        """Basic key-value pairs are parsed"""
+        content = """
 name: test-squad
 version: 1.0.0
 description: Test description
-""".strip()
-        )
-        assert parsed["name"] == "test-squad"
-        assert parsed["version"] == "1.0.0"
-        assert parsed["description"] == "Test description"
+"""
+        result = simple_yaml_parse(content)
 
-    def test_simple_yaml_parse_quoted_and_comments(self) -> None:
-        parsed = simple_yaml_parse(
-            """
-# comment
+        assert result["name"] == "test-squad"
+        assert result["version"] == "1.0.0"
+        assert result["description"] == "Test description"
+
+    def test_simple_yaml_parse_quoted_values(self):
+        """Quoted values have quotes stripped"""
+        content = """
 name: "quoted-value"
 other: 'single-quoted'
-""".strip()
-        )
-        assert parsed["name"] == "quoted-value"
-        assert parsed["other"] == "single-quoted"
+"""
+        result = simple_yaml_parse(content)
 
-    def test_simple_yaml_parse_skips_list_items(self) -> None:
-        parsed = simple_yaml_parse(
-            """
+        assert result["name"] == "quoted-value"
+        assert result["other"] == "single-quoted"
+
+    def test_simple_yaml_parse_skips_comments(self):
+        """Comments are skipped"""
+        content = """
+# This is a comment
+name: value
+# Another comment
+version: 1.0.0
+"""
+        result = simple_yaml_parse(content)
+
+        assert "name" in result
+        assert result["name"] == "value"
+
+    def test_simple_yaml_parse_skips_list_items(self):
+        """List items (starting with -) are skipped"""
+        content = """
 name: test
 items:
   - item1
   - item2
 version: 1.0.0
-""".strip()
-        )
-        assert parsed["name"] == "test"
-        assert parsed["version"] == "1.0.0"
+"""
+        result = simple_yaml_parse(content)
+
+        assert "name" in result
+        assert "version" in result
+        # List items should not create keys
 
 
-class TestManifestAndQuality:
-    def test_read_config_reads_squad_yaml(self, tmp_path: Path) -> None:
-        squad = tmp_path / "alpha"
-        squad.mkdir()
-        _create_manifest(squad, "2.2.0")
+class TestReadConfig:
+    """Tests for read_config function"""
 
-        config = read_config(squad)
+    def test_read_config_exists(self, tmp_path):
+        """Config is read when exists"""
+        squad_dir = tmp_path / "test-squad"
+        squad_dir.mkdir()
 
-        assert config is not None
-        assert config["name"] == "alpha"
-        assert config["version"] == "2.2.0"
+        (squad_dir / "config.yaml").write_text("""
+name: test-squad
+version: 2.0.0
+""")
 
-    def test_calculate_quality_score(self) -> None:
+        result = read_config(squad_dir)
+
+        assert result is not None
+        assert result["name"] == "test-squad"
+        assert result["version"] == "2.0.0"
+
+    def test_read_config_not_exists(self, tmp_path):
+        """Returns None when config doesn't exist"""
+        squad_dir = tmp_path / "test-squad"
+        squad_dir.mkdir()
+
+        result = read_config(squad_dir)
+
+        assert result is None
+
+
+class TestCalculateQualityScore:
+    """Tests for calculate_quality_score function"""
+
+    def test_quality_score_complete(self):
+        """Complete squad gets high score"""
         counts = {
-            "agents": 2,
-            "tasks": 3,
-            "workflows": 1,
-            "templates": 1,
-            "checklists": 1,
-            "data": 1,
+            "agents": 5,
+            "tasks": 10,
+            "workflows": 3,
+            "templates": 5,
+            "checklists": 3,
+            "data": 2,
         }
-        assert "⭐" in calculate_quality_score(counts, has_readme=True, has_config=True)
+        result = calculate_quality_score(counts, has_readme=True, has_config=True)
 
-    def test_calculate_quality_score_tiers(self) -> None:
-        high = {
-            "agents": 1,
-            "tasks": 1,
-            "workflows": 1,
-            "templates": 1,
-            "checklists": 1,
-            "data": 1,
-        }
-        medium = {
-            "agents": 1,
-            "tasks": 1,
-            "workflows": 0,
-            "templates": 0,
-            "checklists": 0,
-            "data": 0,
-        }
-        low = {
+        assert "⭐⭐⭐" in result
+
+    def test_quality_score_minimal(self):
+        """Minimal squad gets low score"""
+        counts = {
             "agents": 0,
             "tasks": 0,
             "workflows": 0,
@@ -180,129 +263,187 @@ class TestManifestAndQuality:
             "checklists": 0,
             "data": 0,
         }
+        result = calculate_quality_score(counts, has_readme=False, has_config=False)
 
-        assert calculate_quality_score(high, has_readme=True, has_config=True) == "⭐⭐⭐"
-        assert calculate_quality_score(medium, has_readme=True, has_config=True) == "⭐⭐"
-        assert calculate_quality_score(low, has_readme=False, has_config=False) == "🔨"
+        assert "🔨" in result or "⭐" not in result
+
+    def test_quality_score_medium(self):
+        """Medium squad gets medium score"""
+        counts = {
+            "agents": 2,
+            "tasks": 3,
+            "workflows": 0,
+            "templates": 0,
+            "checklists": 0,
+            "data": 0,
+        }
+        result = calculate_quality_score(counts, has_readme=True, has_config=True)
+
+        # Should have some stars but not maximum
+        assert "⭐" in result
 
 
 class TestAnalyzeSquad:
-    def test_analyze_squad_recursive_counts_and_auto_promotion(self, tmp_path: Path) -> None:
-        project_root = tmp_path / "project"
-        squad = project_root / "squads" / "alpha"
+    """Tests for analyze_squad function"""
 
-        (squad / "agents" / "nested").mkdir(parents=True)
-        (squad / "tasks").mkdir(parents=True)
-        (squad / "workflows").mkdir(parents=True)
-        (squad / "templates" / "nested").mkdir(parents=True)
-        (squad / "data").mkdir(parents=True)
-        (squad / "scripts" / "jobs").mkdir(parents=True)
+    def test_analyze_squad_complete(self, tmp_path):
+        """Complete squad is analyzed correctly"""
+        squad_dir = tmp_path / "test-squad"
+        squad_dir.mkdir()
 
-        _create_manifest(squad)
-        (squad / "README.md").write_text("# readme")
-        (squad / "agents" / "nested" / "agent.md").write_text("# agent")
-        (squad / "tasks" / "task-1.md").write_text("# t1")
-        (squad / "tasks" / "task-2.md").write_text("# t2")
-        (squad / "tasks" / "task-3.md").write_text("# t3")
-        (squad / "workflows" / "flow.yml").write_text("steps: []")
-        (squad / "templates" / "nested" / "template.yaml").write_text("k: v")
-        (squad / "data" / "data.json").write_text("{}")
-        (squad / "scripts" / "jobs" / "run.py").write_text("print('ok')")
+        (squad_dir / "config.yaml").write_text("""
+name: test-squad
+version: 1.5.0
+description: Test description
+short-title: Test
+""")
 
-        _create_usage_evidence(project_root, "alpha", files=4)
+        agents_dir = squad_dir / "agents"
+        agents_dir.mkdir()
+        (agents_dir / "agent1.md").write_text("# A1")
+        (agents_dir / "agent2.md").write_text("# A2")
 
-        result = analyze_squad(squad)
+        tasks_dir = squad_dir / "tasks"
+        tasks_dir.mkdir()
+        (tasks_dir / "task1.md").write_text("# T1")
 
-        assert result["counts"]["agents"] == 1
-        assert result["counts"]["templates"] == 1
-        assert result["counts"]["scripts"] == 1
-        assert result["maturity"] == MATURITY_OPERATIONAL
-        assert result["validated"] is True
-        assert result["auto_promoted"] is True
+        (squad_dir / "README.md").write_text("# README")
+        (squad_dir / "CHANGELOG.md").write_text("# Changes")
 
-    def test_analyze_squad_manual_devalidation_blocks(self, tmp_path: Path) -> None:
-        project_root = tmp_path / "project"
-        squad = project_root / "squads" / "alpha"
-        (squad / "tasks").mkdir(parents=True)
+        result = analyze_squad(squad_dir)
 
-        _create_manifest(squad)
-        (squad / "tasks" / "t1.md").write_text("1")
-        (squad / "tasks" / "t2.md").write_text("2")
-        (squad / "tasks" / "t3.md").write_text("3")
-        _create_usage_evidence(project_root, "alpha", files=4)
+        assert result["name"] == "test-squad"
+        assert result["version"] == "1.5.0"
+        assert result["counts"]["agents"] == 2
+        assert result["counts"]["tasks"] == 1
+        assert result["has_readme"] == True
+        assert result["has_changelog"] == True
+        assert result["has_config"] == True
+        assert result["total"] == 3  # 2 agents + 1 task
+        assert "quality_score" in result
 
-        result = analyze_squad(squad, existing_validated=False, validated_explicit=True)
+    def test_analyze_squad_includes_components(self, tmp_path):
+        """Component names are captured"""
+        squad_dir = tmp_path / "test-squad"
+        squad_dir.mkdir()
 
-        assert result["maturity"] == MATURITY_DEVELOPING
-        assert result["validated"] is False
-        assert result["auto_promoted"] is False
+        agents_dir = squad_dir / "agents"
+        agents_dir.mkdir()
+        (agents_dir / "alpha-agent.md").write_text("# A")
+        (agents_dir / "beta-agent.md").write_text("# B")
+
+        result = analyze_squad(squad_dir)
+
+        assert "alpha-agent" in result["components"]["agents"]
+        assert "beta-agent" in result["components"]["agents"]
 
 
 class TestAnalyzeAllSquads:
-    def test_analyze_all_squads_requires_squad_yaml(self, tmp_path: Path) -> None:
+    """Tests for analyze_all_squads function"""
+
+    def test_analyze_all_squads_empty(self, tmp_path):
+        """Empty directory returns empty results"""
         squads_dir = tmp_path / "squads"
         squads_dir.mkdir()
 
-        valid = squads_dir / "valid"
+        result = analyze_all_squads(squads_dir)
+
+        assert result["totals"]["squads"] == 0
+        assert len(result["squads"]) == 0
+
+    def test_analyze_all_squads_multiple(self, tmp_path):
+        """Multiple squads are analyzed"""
+        squads_dir = tmp_path / "squads"
+        squads_dir.mkdir()
+
+        # Squad 1
+        s1 = squads_dir / "squad-one"
+        s1.mkdir()
+        (s1 / "config.yaml").write_text("name: squad-one")
+        (s1 / "agents").mkdir()
+        (s1 / "agents" / "a1.md").write_text("A")
+        (s1 / "agents" / "a2.md").write_text("A")
+
+        # Squad 2
+        s2 = squads_dir / "squad-two"
+        s2.mkdir()
+        (s2 / "config.yaml").write_text("name: squad-two")
+        (s2 / "agents").mkdir()
+        (s2 / "agents" / "a1.md").write_text("A")
+
+        result = analyze_all_squads(squads_dir)
+
+        assert result["totals"]["squads"] == 2
+        assert result["totals"]["agents"] == 3
+        assert len(result["squads"]) == 2
+
+    def test_analyze_all_squads_skips_hidden(self, tmp_path):
+        """Hidden directories are skipped"""
+        squads_dir = tmp_path / "squads"
+        squads_dir.mkdir()
+
+        # Valid
+        valid = squads_dir / "valid-squad"
         valid.mkdir()
-        _create_manifest(valid)
+        (valid / "agents").mkdir()
 
-        legacy = squads_dir / "legacy"
-        legacy.mkdir()
-        (legacy / "config.yaml").write_text("name: legacy")
+        # Hidden
+        hidden = squads_dir / ".hidden-squad"
+        hidden.mkdir()
+        (hidden / "agents").mkdir()
 
-        results = analyze_all_squads(squads_dir, registry_dir / "ecosystem-registry.yaml")
+        result = analyze_all_squads(squads_dir)
 
-        assert results["totals"]["squads"] == 1
-        assert results["squads"][0]["name"] == "valid"
-
-    def test_analyze_all_squads_respects_registry_manual_flags(self, tmp_path: Path) -> None:
-        squads_dir = tmp_path / "squads"
-        squads_dir.mkdir()
-
-        squad = squads_dir / "alpha"
-        (squad / "tasks").mkdir(parents=True)
-        _create_manifest(squad)
-        (squad / "tasks" / "t1.md").write_text("1")
-        (squad / "tasks" / "t2.md").write_text("2")
-        (squad / "tasks" / "t3.md").write_text("3")
-
-        registry_dir = squads_dir
-        (registry_dir / "ecosystem-registry.yaml").write_text(
-            """
-squads:
-  alpha:
-    validated: false
-    validated_explicit: true
-""".strip()
-        )
-
-        project_root = squads_dir.parent
-        _create_usage_evidence(project_root, "alpha", files=5)
-
-        results = analyze_all_squads(squads_dir)
-        alpha = results["squads"][0]
-
-        assert alpha["maturity"] == MATURITY_DEVELOPING
-        assert alpha["validated"] is False
-        assert alpha["validated_explicit"] is True
+        assert result["totals"]["squads"] == 1
 
 
 class TestFormatTable:
-    def test_format_table_includes_maturity_distribution(self, tmp_path: Path) -> None:
+    """Tests for format_table function"""
+
+    def test_format_table_has_header(self, tmp_path):
+        """Table has header"""
         squads_dir = tmp_path / "squads"
         squads_dir.mkdir()
 
-        squad = squads_dir / "alpha"
-        squad.mkdir()
-        _create_manifest(squad)
+        valid = squads_dir / "test-squad"
+        valid.mkdir()
+        (valid / "config.yaml").write_text("name: test-squad")
 
         results = analyze_all_squads(squads_dir)
-        table = format_table(results)
+        output = format_table(results)
 
-        assert "SQUAD ANALYTICS" in table
-        assert "MATURITY DISTRIBUTION" in table
-        assert "alpha" in table
+        assert "SQUAD ANALYTICS" in output
+        assert "Squad" in output
+
+    def test_format_table_shows_squads(self, tmp_path):
+        """Table shows squad data"""
+        squads_dir = tmp_path / "squads"
+        squads_dir.mkdir()
+
+        squad = squads_dir / "my-squad"
+        squad.mkdir()
+        (squad / "config.yaml").write_text("name: my-squad")
+        (squad / "agents").mkdir()
+        (squad / "agents" / "agent.md").write_text("A")
+
+        results = analyze_all_squads(squads_dir)
+        output = format_table(results)
+
+        assert "my-squad" in output
+
+    def test_format_table_shows_totals(self, tmp_path):
+        """Table shows totals"""
+        squads_dir = tmp_path / "squads"
+        squads_dir.mkdir()
+
+        squad = squads_dir / "test"
+        squad.mkdir()
+        (squad / "config.yaml").write_text("name: test")
+
+        results = analyze_all_squads(squads_dir)
+        output = format_table(results)
+
+        assert "SUMMARY" in output or "Squads:" in output
 
 
 if __name__ == "__main__":

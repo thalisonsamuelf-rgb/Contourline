@@ -7,51 +7,30 @@
 
 const fs = require('fs');
 const path = require('path');
-const {
-  DEFAULT_WORKFLOW,
-  getCanonicalStatePath,
-  getWorkflowRuntimeRoot,
-  readActiveSquad: readActiveSquadFromRuntime,
-  writeActiveSquad: writeActiveSquadToRuntime,
-  readStateWithLegacyFallback,
-  writeCanonicalState,
-  toWorkspaceRelative,
-} = require(path.resolve(__dirname, '..', '..', 'squad-creator', 'scripts', 'lib', 'squad-runtime-paths.cjs'));
 
 // ═══════════════════════════════════════════════════════════════════════════
 // CONSTANTS
 // ═══════════════════════════════════════════════════════════════════════════
 
-const CONCURRENCY_THRESHOLD_MS = Number(process.env.AIOX_RUNTIME_CONCURRENCY_THRESHOLD_MS || 5000); // --force bypasses this check
+const SQUADS_BASE = path.resolve(__dirname, '..', '..'); // squads/
+const ACTIVE_SQUAD_PATH = path.join(SQUADS_BASE, '.active-squad');
 
-const SLUG_PATTERN = /^[a-z0-9]+(?:[-_][a-z0-9]+)*$/;
-const EXECUTION_MODELS = ['legacy', 'epic'];
+const CONCURRENCY_THRESHOLD_MS = 5000; // --force bypasses this check
 
-const LEGACY_PHASES = [
+// Squad creation pipeline phases
+const VALID_PHASES = [
   'init',
-  'research',
-  'source_validation',
-  'dna_extraction',
-  'agent_scaffolding',
-  'task_anatomy',
-  'quality_gate',
-  'integration',
-  'smoke_test',
+  'research',           // phase_0: Research sources
+  'source_validation',  // phase_0_5: Validate sources
+  'dna_extraction',     // phase_1: Extract DNA patterns
+  'agent_scaffolding',  // phase_2: Create agent structure
+  'task_anatomy',       // phase_3: Define tasks
+  'quality_gate',       // phase_4: CHECKPOINT - Human approval
+  'integration',        // phase_5: Integrate into squad
+  'smoke_test',         // phase_6: Functional test
   'completed',
   'failed'
 ];
-
-const EPIC_PHASES = [
-  'init',
-  'epic_init',
-  'story_ready',
-  'story_in_progress',
-  'epic_validation',
-  'completed',
-  'failed'
-];
-
-const VALID_PHASES = Array.from(new Set([...LEGACY_PHASES, ...EPIC_PHASES]));
 
 const VALID_STATUSES = [
   'pending',
@@ -62,6 +41,7 @@ const VALID_STATUSES = [
   'completed'
 ];
 
+// Agent mapping for each phase
 const PHASE_AGENTS = {
   'research': 'oalanicolas',
   'source_validation': 'oalanicolas',
@@ -70,11 +50,7 @@ const PHASE_AGENTS = {
   'task_anatomy': 'pedro-valerio',
   'quality_gate': 'pedro-valerio',
   'integration': 'squad-chief',
-  'smoke_test': 'squad-chief',
-  'epic_init': 'squad-chief',
-  'story_ready': 'squad-chief',
-  'story_in_progress': 'squad-chief',
-  'epic_validation': 'squad-chief'
+  'smoke_test': 'squad-chief'
 };
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -92,100 +68,26 @@ function outputError(code, message, details = {}) {
   });
 }
 
-function slugToDisplayName(slug) {
-  return slug
-    .split(/[-_]/)
-    .filter(Boolean)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-
-function parseOptionalNumber(value) {
-  if (value === null || value === undefined || value === '') return null;
-  const parsed = Number.parseInt(value, 10);
-  return Number.isFinite(parsed) ? parsed : null;
-}
-
-function isDynamicEpicPhase(phase) {
-  return /^epic_\d+_(init|planning|story_ready|in_progress|validated|completed)$/.test(phase || '');
-}
-
-function parseDynamicEpicPhase(phase) {
-  const match = /^epic_(\d+)_(init|planning|story_ready|in_progress|validated|completed)$/.exec(phase || '');
-  if (!match) return null;
-  return {
-    number: Number.parseInt(match[1], 10),
-    suffix: match[2]
-  };
-}
-
-function inferExecutionModel(state, phase = null) {
-  const explicit = state?.execution_model || state?.metadata?.execution_model;
-  if (explicit && EXECUTION_MODELS.includes(explicit)) return explicit;
-
-  const targetPhase = phase || state?.current_phase;
-  if (
-    ['epic_init', 'story_ready', 'story_in_progress', 'epic_validation'].includes(targetPhase) ||
-    isDynamicEpicPhase(targetPhase)
-  ) {
-    return 'epic';
-  }
-
-  return 'legacy';
-}
-
-function getRuntimeTaxonomy(state) {
-  return state?.runtime_taxonomy || state?.metadata?.runtime_taxonomy || {};
-}
-
-function usesWaveCommandUnit(state) {
-  return getRuntimeTaxonomy(state).command_unit === 'wave';
-}
-
-function syncWaveAliases(state) {
-  if (!usesWaveCommandUnit(state)) return;
-
-  const epicNumber = state.current_epic ?? state.metadata?.epic?.number ?? null;
-  const totalEpics = state.total_epics ?? state.metadata?.epic?.total ?? null;
-  if (!state.metadata || typeof state.metadata !== 'object') {
-    state.metadata = {};
-  }
-
-  state.display_execution_model = 'wave';
-  if (epicNumber !== null) state.current_wave = epicNumber;
-  if (totalEpics !== null) state.total_waves = totalEpics;
-
-  if (epicNumber !== null || totalEpics !== null || state.metadata?.epic?.title) {
-    state.metadata.wave = {
-      ...(state.metadata.wave || {}),
-      ...(epicNumber !== null ? { number: epicNumber } : {}),
-      ...(totalEpics !== null ? { total: totalEpics } : {}),
-      ...(state.metadata?.epic?.title ? { title: state.metadata.epic.title } : {})
-    };
-  }
-
-  if (typeof state.current_phase === 'string') {
-    state.display_phase = state.current_phase.replace(/^epic_(\d+)_/i, 'wave_$1_');
-  }
-  if (typeof state.checkpoint_status === 'string') {
-    state.wave_status = state.checkpoint_status.replace(/^ready_for_epic_/i, 'ready_for_wave_');
-  }
-}
-
 function getStatePath(slug) {
-  return getCanonicalStatePath(slug, DEFAULT_WORKFLOW);
+  return path.join(SQUADS_BASE, slug, 'metadata', 'state.json');
 }
 
 function readActiveSquad() {
-  return readActiveSquadFromRuntime();
+  if (fs.existsSync(ACTIVE_SQUAD_PATH)) {
+    return fs.readFileSync(ACTIVE_SQUAD_PATH, 'utf8').trim();
+  }
+  return null;
 }
 
 function writeActiveSquad(slug) {
-  writeActiveSquadToRuntime(slug, DEFAULT_WORKFLOW);
+  if (!fs.existsSync(SQUADS_BASE)) {
+    fs.mkdirSync(SQUADS_BASE, { recursive: true });
+  }
+  fs.writeFileSync(ACTIVE_SQUAD_PATH, slug);
 }
 
 /**
- * Resolve slug: use provided slug or fallback to active squad pointer.
+ * Resolve slug: use provided slug or fallback to .active-squad.
  */
 function resolveSlug(slug) {
   if (slug && !slug.startsWith('-')) return slug;
@@ -193,21 +95,24 @@ function resolveSlug(slug) {
 }
 
 function readState(slug) {
-  const result = readStateWithLegacyFallback(slug, {
-    workflow: DEFAULT_WORKFLOW,
-  });
-
-  if (!result.state) return null;
-
-  if (result.state.__corrupted) {
-    return { __corrupted: true };
+  const statePath = getStatePath(slug);
+  if (fs.existsSync(statePath)) {
+    try {
+      return JSON.parse(fs.readFileSync(statePath, 'utf8'));
+    } catch {
+      return { __corrupted: true };
+    }
   }
-
-  return result.state;
+  return null;
 }
 
 function writeState(slug, state) {
-  writeCanonicalState(slug, state, DEFAULT_WORKFLOW);
+  const statePath = getStatePath(slug);
+  const dir = path.dirname(statePath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
 }
 
 /**
@@ -228,136 +133,51 @@ function checkConcurrency(slug) {
  * Initialize a new squad pipeline state.
  */
 function cmdInit(slug, options = {}) {
-  const {
-    name = null,
-    sourceMind = null,
-    targetDomain = null,
-    executionModel = null,
-    prdPath = null,
-    epicNumber = null,
-    epicTitle = null,
-    storyId = null,
-    storyTitle = null,
-    storyPath = null,
-    scopeType = null,
-    workflowsMapped = null,
-    agentsNeeded = null,
-    contextEntrypoint = null,
-    totalEpics = null,
-    squadType = null
-  } = options;
+  const { name = null, sourceMind = null, targetDomain = null } = options;
 
-  if (!SLUG_PATTERN.test(slug)) {
-    outputError('INVALID_SLUG', 'Slug must be kebab-case or snake_case', {
+  // Validate slug format (snake_case)
+  if (!/^[a-z0-9]+(_[a-z0-9]+)*$/.test(slug)) {
+    outputError('INVALID_SLUG', 'Slug must be snake_case', {
       received: slug,
-      expected_pattern: '^[a-z0-9]+(?:[-_][a-z0-9]+)*$'
-    });
-    process.exit(1);
-  }
-
-  if (executionModel && !EXECUTION_MODELS.includes(executionModel)) {
-    outputError('INVALID_EXECUTION_MODEL', 'execution model must be one of: legacy, epic', {
-      received: executionModel,
-      valid_models: EXECUTION_MODELS
+      expected_pattern: '^[a-z0-9]+(_[a-z0-9]+)*$'
     });
     process.exit(1);
   }
 
   const now = new Date().toISOString();
-  const displayName = name || slugToDisplayName(slug);
-  const normalizedEpicNumber = parseOptionalNumber(epicNumber);
-  const normalizedTotalEpics = parseOptionalNumber(totalEpics);
-  const normalizedWorkflowsMapped = parseOptionalNumber(workflowsMapped);
-  const normalizedAgentsNeeded = parseOptionalNumber(agentsNeeded);
+  const displayName = name || slug.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
   // Create or update state
   const existingState = readState(slug);
-  const resolvedExecutionModel =
-    executionModel ||
-    inferExecutionModel(existingState, normalizedEpicNumber ? 'epic_init' : null);
   const state = (existingState && !existingState.__corrupted) ? existingState : {
     slug,
     display_name: displayName,
-    workflow: DEFAULT_WORKFLOW,
-    execution_model: resolvedExecutionModel,
     created_at: now,
     current_phase: 'init',
     checkpoint_status: 'pending',
-    current_epic: null,
-    total_epics: null,
-    epics: {},
     phases: {},
     completed_outputs: [],
     agent_history: [],
-    metadata: {}
+    metadata: {
+      source_mind: sourceMind,
+      target_domain: targetDomain
+    }
   };
 
-  if (!state.metadata || typeof state.metadata !== 'object') {
-    state.metadata = {};
-  }
-
   state.updated_at = now;
-  state.workflow = DEFAULT_WORKFLOW;
-  state.execution_model = resolvedExecutionModel;
   state.current_phase = 'init';
   state.checkpoint_status = 'pending';
   if (name) state.display_name = displayName;
-  if (!state.display_name) state.display_name = displayName;
-
-  state.metadata.execution_model = resolvedExecutionModel;
   if (sourceMind) state.metadata.source_mind = sourceMind;
   if (targetDomain) state.metadata.target_domain = targetDomain;
-  if (prdPath) state.metadata.prd_path = prdPath;
-  if (scopeType) state.metadata.scope_type = scopeType;
-  if (contextEntrypoint) state.metadata.context_entrypoint = contextEntrypoint;
-  if (squadType) state.metadata.squad_type = squadType;
 
-  if (normalizedWorkflowsMapped !== null || normalizedAgentsNeeded !== null) {
-    state.metadata.scope_metrics = {
-      ...(state.metadata.scope_metrics || {}),
-      ...(normalizedWorkflowsMapped !== null ? { workflows_mapped: normalizedWorkflowsMapped } : {}),
-      ...(normalizedAgentsNeeded !== null ? { agents_needed: normalizedAgentsNeeded } : {})
-    };
-  }
-
-  if (normalizedEpicNumber !== null || epicTitle) {
-    state.metadata.epic = {
-      ...(state.metadata.epic || {}),
-      ...(normalizedEpicNumber !== null ? { number: normalizedEpicNumber } : {}),
-      ...(normalizedTotalEpics !== null ? { total: normalizedTotalEpics } : {}),
-      ...(epicTitle ? { title: epicTitle } : {})
-    };
-  }
-
-  if (normalizedEpicNumber !== null) state.current_epic = normalizedEpicNumber;
-  if (normalizedTotalEpics !== null) state.total_epics = normalizedTotalEpics;
-  if (!state.epics || typeof state.epics !== 'object') state.epics = {};
-  if (normalizedEpicNumber !== null) {
-    state.epics[String(normalizedEpicNumber)] = {
-      ...(state.epics[String(normalizedEpicNumber)] || {}),
-      number: normalizedEpicNumber,
-      ...(epicTitle ? { title: epicTitle } : {}),
-      ...(storyPath ? { story_path: storyPath } : {})
-    };
-  }
-
-  if (storyId || storyTitle || storyPath) {
-    state.metadata.story = {
-      ...(state.metadata.story || {}),
-      ...(storyId ? { id: storyId } : {}),
-      ...(storyTitle ? { title: storyTitle } : {}),
-      ...(storyPath ? { path: storyPath } : {})
-    };
-  }
-
-  syncWaveAliases(state);
   writeState(slug, state);
   writeActiveSquad(slug);
 
   outputJson({
     success: true,
     slug,
-    path: toWorkspaceRelative(getStatePath(slug)),
+    path: getStatePath(slug),
     display_name: state.display_name
   });
 }
@@ -369,10 +189,10 @@ function cmdUpdate(slug, phase, status, options = {}) {
   const { force = false, output = null } = options;
 
   // Validate phase
-  if (!VALID_PHASES.includes(phase) && !isDynamicEpicPhase(phase)) {
+  if (!VALID_PHASES.includes(phase)) {
     outputError('INVALID_PHASE', `Invalid phase: ${phase}`, {
       received: phase,
-      valid_phases: [...VALID_PHASES, 'epic_<N>_init', 'epic_<N>_planning', 'epic_<N>_story_ready', 'epic_<N>_in_progress', 'epic_<N>_validated', 'epic_<N>_completed']
+      valid_phases: VALID_PHASES
     });
     process.exit(1);
   }
@@ -416,7 +236,6 @@ function cmdUpdate(slug, phase, status, options = {}) {
 
   // Update phase tracking
   const resolvedStatus = status || 'in_progress';
-  const resolvedExecutionModel = inferExecutionModel(state, phase);
   if (!state.phases) state.phases = {};
   state.phases[phase] = {
     status: resolvedStatus,
@@ -425,42 +244,13 @@ function cmdUpdate(slug, phase, status, options = {}) {
     ...(resolvedStatus === 'completed' ? { completed_at: now } : {})
   };
 
-  if (!state.metadata || typeof state.metadata !== 'object') {
-    state.metadata = {};
-  }
-  if (!state.epics || typeof state.epics !== 'object') {
-    state.epics = {};
-  }
-  state.execution_model = resolvedExecutionModel;
-  state.metadata.execution_model = resolvedExecutionModel;
-
-  const dynamicEpic = parseDynamicEpicPhase(phase);
-  if (dynamicEpic) {
-    state.phases[phase].agent = 'squad-chief';
-    state.current_epic = dynamicEpic.number;
-    state.metadata.epic = {
-      ...(state.metadata.epic || {}),
-      number: dynamicEpic.number,
-      ...(state.total_epics !== null && state.total_epics !== undefined ? { total: state.total_epics } : {})
-    };
-    state.epics[String(dynamicEpic.number)] = {
-      ...(state.epics[String(dynamicEpic.number)] || {}),
-      number: dynamicEpic.number,
-      status: resolvedStatus,
-      phase,
-      suffix: dynamicEpic.suffix,
-      updated_at: now
-    };
-  }
   state.current_phase = phase;
   state.checkpoint_status = resolvedStatus;
   state.updated_at = now;
-  syncWaveAliases(state);
 
   // Track agent history
-  const phaseAgent = dynamicEpic ? 'squad-chief' : PHASE_AGENTS[phase];
-  if (phaseAgent && !state.agent_history.includes(phaseAgent)) {
-    state.agent_history.push(phaseAgent);
+  if (PHASE_AGENTS[phase] && !state.agent_history.includes(PHASE_AGENTS[phase])) {
+    state.agent_history.push(PHASE_AGENTS[phase]);
   }
 
   // Track completed outputs
@@ -478,7 +268,7 @@ function cmdUpdate(slug, phase, status, options = {}) {
     current: {
       current_phase: phase,
       checkpoint_status: resolvedStatus,
-      agent: phaseAgent || null
+      agent: PHASE_AGENTS[phase] || null
     }
   });
 }
@@ -489,7 +279,7 @@ function cmdUpdate(slug, phase, status, options = {}) {
 function cmdGet(slug) {
   const resolvedSlug = resolveSlug(slug);
   if (!resolvedSlug) {
-    outputError('NO_ACTIVE_SQUAD', 'No slug provided and no active squad pointer found', {
+    outputError('NO_ACTIVE_SQUAD', 'No slug provided and no .active-squad file found', {
       hint: 'Run: node squad-state-manager.cjs init <slug>'
     });
     process.exit(1);
@@ -503,7 +293,7 @@ function cmdGet(slug) {
 
   if (state.__corrupted) {
     outputError('CORRUPTED_STATE', `state.json for ${resolvedSlug} is corrupted (invalid JSON)`, {
-      path: toWorkspaceRelative(getStatePath(resolvedSlug))
+      path: getStatePath(resolvedSlug)
     });
     process.exit(1);
   }
@@ -515,13 +305,12 @@ function cmdGet(slug) {
  * List all squads with optional status filter.
  */
 function cmdList(statusFilter) {
-  const workflowRoot = getWorkflowRuntimeRoot(DEFAULT_WORKFLOW);
-  if (!fs.existsSync(workflowRoot)) {
+  if (!fs.existsSync(SQUADS_BASE)) {
     outputJson({ squads: [], count: 0, filter: statusFilter || 'all' });
     return;
   }
 
-  const entries = fs.readdirSync(workflowRoot, { withFileTypes: true });
+  const entries = fs.readdirSync(SQUADS_BASE, { withFileTypes: true });
   const squads = [];
   const activeSquad = readActiveSquad();
 
@@ -544,10 +333,8 @@ function cmdList(statusFilter) {
     squads.push({
       slug,
       display_name: state.display_name || slug,
-      execution_model: inferExecutionModel(state),
       current_phase: phase,
       checkpoint_status: status,
-      epic_number: state.metadata?.epic?.number || null,
       updated_at: state.updated_at || null,
       is_active_squad: slug === activeSquad,
       agent_history: state.agent_history || []
@@ -590,19 +377,6 @@ Init options:
   --name "Display Name"     Squad's display name (default: slug title-cased)
   --source-mind <slug>      Source mind for cloning (optional)
   --target-domain <domain>  Target domain/expertise (optional)
-  --execution-model <mode>  legacy | epic
-  --prd <path>              PRD path for epic execution
-  --epic <number>           Epic number for epic execution
-  --epic-title <title>      Epic title for epic execution
-  --story <id>              Story identifier for epic execution
-  --story-title <title>     Story title for epic execution
-  --story-path <path>       Story file path for epic execution
-  --total-epics <n>         Total epic count for epic execution
-  --squad-type <type>       operational | expert | hybrid
-  --scope-type <type>       direct | epic_required
-  --workflows-mapped <n>    Scope metric used for gate enforcement
-  --agents-needed <n>       Scope metric used for gate enforcement
-  --context-entrypoint <id> Canonical workflow/entrypoint identifier
 
 Update options:
   --phase <phase>           Pipeline phase (required)
@@ -613,16 +387,16 @@ Update options:
 List options:
   --status active|completed|all   Filter by status (default: all)
 
-Valid phases: ${VALID_PHASES.join(', ')}, epic_<N>_init, epic_<N>_planning, epic_<N>_story_ready, epic_<N>_in_progress, epic_<N>_validated, epic_<N>_completed
+Valid phases: ${VALID_PHASES.join(', ')}
 Valid statuses: ${VALID_STATUSES.join(', ')}
 
 Phase → Agent mapping:
   research, source_validation, dna_extraction, agent_scaffolding → oalanicolas
   task_anatomy, quality_gate → pedro-valerio
-  integration, smoke_test, epic_init, story_ready, story_in_progress, epic_validation → squad-chief
+  integration, smoke_test → squad-chief
 
-Canonical state path: .aiox/squad-runtime/create-squad/{slug}/state.json
-Active squad file:    .aiox/squad-runtime/active-squad.json`);
+Canonical state path: squads/{slug}/metadata/state.json
+Active squad file:    squads/.active-squad`);
     process.exit(0);
   }
 
@@ -638,43 +412,13 @@ Active squad file:    .aiox/squad-runtime/active-squad.json`);
     const name = parseArg(args, '--name');
     const sourceMind = parseArg(args, '--source-mind');
     const targetDomain = parseArg(args, '--target-domain');
-    const executionModel = parseArg(args, '--execution-model');
-    const prdPath = parseArg(args, '--prd');
-    const epicNumber = parseArg(args, '--epic');
-    const epicTitle = parseArg(args, '--epic-title');
-    const storyId = parseArg(args, '--story');
-    const storyTitle = parseArg(args, '--story-title');
-    const storyPath = parseArg(args, '--story-path');
-    const totalEpics = parseArg(args, '--total-epics');
-    const squadType = parseArg(args, '--squad-type');
-    const scopeType = parseArg(args, '--scope-type');
-    const workflowsMapped = parseArg(args, '--workflows-mapped');
-    const agentsNeeded = parseArg(args, '--agents-needed');
-    const contextEntrypoint = parseArg(args, '--context-entrypoint');
-    cmdInit(slug, {
-      name,
-      sourceMind,
-      targetDomain,
-      executionModel,
-      prdPath,
-      epicNumber,
-      epicTitle,
-      storyId,
-      storyTitle,
-      storyPath,
-      totalEpics,
-      squadType,
-      scopeType,
-      workflowsMapped,
-      agentsNeeded,
-      contextEntrypoint
-    });
+    cmdInit(slug, { name, sourceMind, targetDomain });
 
   } else if (command === 'update') {
     const slugArg = args[1] && !args[1].startsWith('-') ? args[1] : null;
     const slug = resolveSlug(slugArg);
     if (!slug) {
-      outputError('NO_ACTIVE_SQUAD', 'No slug provided and no active squad pointer found');
+      outputError('NO_ACTIVE_SQUAD', 'No slug provided and no .active-squad file found');
       process.exit(1);
     }
 

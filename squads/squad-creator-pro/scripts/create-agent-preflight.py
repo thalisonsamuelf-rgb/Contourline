@@ -61,8 +61,8 @@ def check_local_sources(specialist_slug: str, sources_path: str = None) -> dict:
 
     # Default paths to search
     search_paths = [
-        f".aiox/squad-runtime/minds/{specialist_slug}/sources",
-        f".aiox/squad-runtime/minds/{specialist_slug}/analysis",
+        f"outputs/minds/{specialist_slug}/sources",
+        f"outputs/minds/{specialist_slug}/analysis",
         f"squads/*/minds/{specialist_slug}",
     ]
 

@@ -1,11 +1,7 @@
 ---
 task-id: extract-voice-dna
 name: Extract Voice DNA (Communication & Writing Style)
-version: 1.4.0
-execution_type: Agent
-model: Opus
-haiku_eligible: false
-model_rationale: "Extração semântica de padrões de comunicação requer interpretação profunda de linguagem natural - não determinístico"
+version: 1.2.0
 note: "Exemplos usam copywriting. Substitua pelo seu domínio."
 estimated-time: 1-2 hours
 complexity: medium
@@ -36,16 +32,6 @@ related_tasks:
 > **Objetivo:** Extrair COMO um expert se comunica e escreve.
 >
 > **Complemento:** Use `extract-thinking-dna.md` para frameworks e decisões.
-
----
-
-## Veto Conditions
-
-| ID | Condition | Check | Result |
-|----|-----------|-------|--------|
-| VETO-EVD-001 | Minimum 5 sources (books, articles, interviews, podcasts) must be available before extraction | Verify sources input contains >= 5 items of varied types | VETO - BLOCK. Run collect-sources to acquire sufficient material before extracting voice DNA. |
-| VETO-EVD-002 | Existing voice_dna block in agent file must be backed up before modification | Check if target agent.md already contains a voice_dna section | VETO - BLOCK. Create snapshot of current voice DNA before overwriting. |
-| VETO-EVD-003 | All power_words and signature_phrases must have SOURCE citations before output is finalized | Validate every vocabulary entry has non-empty source field with [SOURCE: doc, page] format | VETO - BLOCK. Remove uncited entries or find supporting source references before finalizing. |
 
 ---
 
@@ -88,29 +74,20 @@ Palavras que usa REPETIDAMENTE com peso emocional:
 ```yaml
 power_words:
   - word: ""
-    source: "[SOURCE: documento, página/seção]"  # OBRIGATÓRIO
     context: "quando usa"
     emotional_weight: "alto|médio"
 ```
 
-**REGRA:** Cada power word DEVE ter `source:` com citação exata.
-
-### 2.2 Frases Assinatura (8-12)
+### 2.2 Frases Assinatura (5-10)
 
 Expressões que IDENTIFICAM a pessoa:
 
 ```yaml
 signature_phrases:
   - phrase: ""
-    source: "[SOURCE: documento, página/seção]"  # OBRIGATÓRIO
     meaning: ""
     use_when: ""
-    example_usage: ""  # Como usar em copy NOVO (não só citar)
 ```
-
-**REGRA:** Cada frase DEVE ter:
-- `source:` com citação exata
-- `example_usage:` mostrando aplicação prática
 
 ### 2.3 Metáforas Favoritas (3-5)
 
@@ -226,23 +203,6 @@ formatting_habits:
   special_chars: []  # ex: "→", "•", etc
 ```
 
-### 4.4 Padrões de Estrutura de Frase (3-5)
-
-```yaml
-sentence_patterns:
-  - pattern: "Nome do padrão"
-    description: "O que caracteriza"
-    example: "Exemplo real do expert"
-    source: "[SOURCE: documento, página]"
-    when_to_use: "Quando aplicar esse padrão"
-
-# Exemplos de padrões comuns:
-# - Fragmentos curtos para ênfase: "A starving crowd. That's what you need."
-# - Anáfora (repetição): "Hard work. Daily work. Consistent work."
-# - Escolhas binárias: "You can be a whiner or you can be a winner."
-# - Imperativos diretos: "Listen up. Read this carefully."
-```
-
 ---
 
 ## FASE 5: TOM & VOZ (10 min)
@@ -271,7 +231,7 @@ contextual_tone:
   celebrating: ""     # quando elogia
 ```
 
-### 5.3 Identidade em Trinity Frase
+### 5.3 Identidade em Uma Frase
 
 > "[Nome] escreve/fala como ________________"
 
@@ -281,31 +241,21 @@ contextual_tone:
 
 > O que o expert NUNCA faz/diz na comunicação?
 
-### 6.1 O Que Nunca Dizem (5+)
+### 6.1 O Que Nunca Dizem
 
 ```yaml
 communication_anti_patterns:
   never_say:
     - term: ""
-      source: "[SOURCE: inferido de documento, página]"  # De onde inferiu
       reason: "Por que evita"
       substitute: "O que usa no lugar"
-      example_wrong: "Frase que violaria a voz"  # NOVO
-      example_correct: "Frase corrigida na voz do expert"  # NOVO
 
   # Exemplo Gary Halbert:
   never_say:
     - term: "synergy"
-      source: "[SOURCE: The Boron Letters, Letter 3, p.15 - rejeita 'fancy words']"
-      reason: "Corporate bullshit - viola 'simple works'"
+      reason: "Corporate bullshit"
       substitute: "work together"
-      example_wrong: "Let's leverage our synergies to optimize outcomes."
-      example_correct: "Let's work together to get more sales."
 ```
-
-**REGRA:** Cada anti-pattern DEVE ter:
-- `example_wrong:` mostrando o que NÃO fazer
-- `example_correct:` mostrando a correção na voz do expert
 
 ### 6.2 Comportamentos que Evitam
 
@@ -442,15 +392,12 @@ voice_dna:
   vocabulary:
     power_words:
       - word: ""
-        source: "[SOURCE: ]"
         context: ""
         weight: ""
 
     signature_phrases:
       - phrase: ""
-        source: "[SOURCE: ]"
         use_when: ""
-        example_usage: ""
 
     metaphors:
       - concept: ""
@@ -492,12 +439,6 @@ voice_dna:
       opening_pattern: ""
       closing_pattern: ""
 
-    sentence_patterns:
-      - pattern: ""
-        example: ""
-        source: "[SOURCE: ]"
-        when_to_use: ""
-
     rhetorical_devices:
       questions: ""
       repetition: ""
@@ -533,15 +474,11 @@ voice_dna:
   anti_patterns:
     never_say:
       - term: ""
-        source: "[SOURCE: ]"
         reason: ""
         substitute: ""
-        example_wrong: ""
-        example_correct: ""
 
     never_do:
       - behavior: ""
-        source: "[SOURCE: ]"
         reason: ""
 
     rejected_styles: []
@@ -586,31 +523,18 @@ voice_dna:
 
 ## QUALITY CHECK
 
-### Quantidades Mínimas
-- [ ] 10+ power words com [SOURCE:]
-- [ ] 8+ frases assinatura (não apenas 5)
+- [ ] 10+ power words
+- [ ] 5+ frases assinatura
 - [ ] 3+ metáforas
 - [ ] 3+ histórias/anedotas recorrentes
 - [ ] Story structure mapeado
-- [ ] Todas dimensões de voz preenchidas (1-10)
+- [ ] Todas dimensões de voz preenchidas
 - [ ] Tom por contexto definido
-- [ ] 5+ anti-patterns de comunicação
+- [ ] 3+ anti-patterns de comunicação
 - [ ] 2+ rejeições automáticas (immune system)
 - [ ] 1+ paradoxo/contradição documentado
 
-### Requisitos de Qualidade (OBRIGATÓRIOS)
-- [ ] TODOS power words têm `source:` com [SOURCE: doc, page]
-- [ ] TODAS signature_phrases têm `source:` com [SOURCE: doc, page]
-- [ ] TODAS signature_phrases têm `example_usage:` (copy NOVO, não citação)
-- [ ] TODOS anti-patterns têm `example_wrong:` + `example_correct:`
-- [ ] ZERO conteúdo inventado - apenas extraído das fontes
-
-### Verificação Final
-- [ ] Posso rastrear cada claim até uma fonte específica?
-- [ ] Os example_usage são copy NOVO (não apenas repetir a citação)?
-- [ ] Os example_correct soam como o expert falaria?
-
-**Score mínimo:** 8/10 quantidades + 100% requisitos de qualidade → PASS
+**Score mínimo:** 8/10 → PASS
 
 ---
 

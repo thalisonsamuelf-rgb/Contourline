@@ -2,40 +2,27 @@
 
 **Task ID:** `migrate-workflows-to-yaml`
 **Pattern:** HO-TP-001 (Task Anatomy Standard)
-**Last Updated:** 2026-02-11
-**Execution Type:** Hybrid (parsing/validation scripts + Agent for semantic conversion)
-**Model:** `Sonnet` (requires understanding workflow semantics for proper conversion)
-**Haiku Eligible:** NO — semantic understanding needed for accurate conversion
+**Version:** 1.0.0
+**Last Updated:** 2026-02-05
 
 ## Task Anatomy
 
 | Field | Value |
 |-------|-------|
 | **task_name** | Migrate Workflows to YAML |
-| **status** | `active` |
+| **status** | `completed` |
 | **responsible_executor** | @squad-chief |
-| **execution_type** | `Hybrid` |
-| **input** | Workflow .md files in any squad's workflows/ folder |
+| **execution_type** | `Agent` |
+| **input** | Workflow .md files in workflows/ folder |
 | **output** | Migrated .yaml files + archived .md files |
 | **action_items** | 4 steps |
 | **acceptance_criteria** | 3 criteria |
 
-**Estimated Time:** 30min per workflow
-**Note:** Reusable task for any squad with legacy .md workflows
-
-## Veto Conditions
-
-| ID | Condition | Check | Result |
-|----|-----------|-------|--------|
-| VETO-MWY-001 | Dry-run output must be reviewed before conversion is applied | Generate YAML preview for each .md file and validate syntax before writing | VETO - BLOCK. Fix YAML syntax errors in preview before applying conversion. |
-| VETO-MWY-002 | Original .md files must be archived before deletion or overwrite | Verify _archive/ directory exists and originals are copied before any modification | VETO - BLOCK. Create archive backup of all source .md files before proceeding. |
-| VETO-MWY-003 | All cross-references to .md workflow files must be identified before archiving | Grep for references to source .md filenames across tasks, workflows, and config files | VETO - BLOCK. Update all references to point to new .yaml files before archiving originals. |
-
----
+**Estimated Time:** 30min
 
 ## Overview
 
-Migrar workflows em formato `.md` (legacy/narrativo) para o formato `.yaml` padrão do AIOX.
+Migrar workflows em formato `.md` (legacy/narrativo) para o formato `.yaml` padrão do AIOS.
 
 **Motivação:**
 - Consistência no ecossistema (todos workflows em .yaml)
@@ -43,10 +30,9 @@ Migrar workflows em formato `.md` (legacy/narrativo) para o formato `.yaml` padr
 - Suporte a tooling (templates, linters, geradores)
 - Validação por schema
 
-**Exemplo de arquivos a migrar:**
-```
-squads/{squad-name}/workflows/*.md → squads/{squad-name}/workflows/wf-*.yaml
-```
+**Arquivos a migrar:**
+1. `workflows/mind-research-loop.md` → `workflows/wf-mind-research-loop.yaml`
+2. `workflows/research-then-create-agent.md` → `workflows/wf-research-then-create-agent.yaml`
 
 ## Input
 
@@ -58,7 +44,7 @@ squads/{squad-name}/workflows/*.md → squads/{squad-name}/workflows/wf-*.yaml
 - **template** (file)
   - Description: Template de workflow YAML
   - Required: Yes
-  - Source: `squads/squad-creator/templates/workflow-tmpl.yaml`
+  - Source: `squads/squad-creator-pro/templates/workflow-tmpl.yaml`
 
 ## Output
 
@@ -87,7 +73,7 @@ Ler cada arquivo .md e extrair:
 - agents envolvidos
 
 **Substeps:**
-- [ ] Ler workflow markdown legado de mind research e mapear estrutura
+- [ ] Ler `mind-research-loop.md` e mapear estrutura
 - [ ] Ler `research-then-create-agent.md` e mapear estrutura
 - [ ] Identificar gaps em relação ao template YAML
 
@@ -116,7 +102,7 @@ Mover arquivos .md para pasta de archive.
 
 **Substeps:**
 - [ ] Criar pasta `workflows/_archive/` se não existir
-- [ ] Mover workflow markdown legado de mind research para `_archive/`
+- [ ] Mover `mind-research-loop.md` para `_archive/`
 - [ ] Mover `research-then-create-agent.md` para `_archive/`
 - [ ] Atualizar referências em outros arquivos (se houver)
 
@@ -227,11 +213,12 @@ The following artifacts are passed to the next task:
 
 ### Exemplo de Conversão
 
-**Antes (workflow markdown legado):**
+**Antes (mind-research-loop.md):**
 ```markdown
 # Workflow: Mind Research Loop
 
 **Workflow ID:** mind-research-loop
+**Version:** 2.1.0
 **Purpose:** Research and validate...
 
 ## Core Philosophy
@@ -266,7 +253,7 @@ phases:
 
 ---
 
-_Task Version: 1.1.0_
+_Task Version: 1.0.0_
 _Pattern: HO-TP-001 (Task Anatomy Standard)_
-_Last Updated: 2026-02-11_
+_Last Updated: 2026-02-05_
 _Compliant: Yes_

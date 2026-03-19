@@ -65,7 +65,7 @@ internal_assets:
       - capability: document_collectors
         primary_tool: "infrastructure/services/etl/collectors/*"
 
-  aiox_core_infrastructure:
+  aios_core_infrastructure:
     type: framework
     path: ".aiox-core/infrastructure"
     provides:

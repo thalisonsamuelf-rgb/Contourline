@@ -437,7 +437,7 @@ validate_references() {
 
 ```yaml
 # Template: config_template.yaml
-          squad:
+pack:
   name: "{target_name}"
   title: "{target_title}"
   # ... static parts

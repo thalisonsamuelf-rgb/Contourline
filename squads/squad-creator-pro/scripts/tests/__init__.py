@@ -1,1 +1,1 @@
-# Tests for squad-creator-pro scripts
+# Tests for squad-creator scripts

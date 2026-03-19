@@ -1,18 +1,13 @@
 ---
 task-id: update-mind
-name: Update Existing Agent DNA (Brownfield)
-version: 2.0.0
-execution_type: Hybrid
-model: Sonnet
-haiku_eligible: false
+name: Update Existing Mind DNA (Brownfield)
+version: 1.0.0
 estimated-time: 1-2 hours
 complexity: medium
-note: "Para atualizar agents em squads criados pelo squad-creator"
 
 inputs:
   required:
-    - squad_name: "Nome do squad (ex: copy, legal)"
-    - agent_slug: "Slug do agent existente (snake_case)"
+    - mind_slug: "Slug do mind existente (snake_case)"
   optional:
     - new_sources_path: "Caminho para novas fontes"
     - focus: "voice|thinking|both (default: both)"
@@ -20,29 +15,17 @@ inputs:
 
 outputs:
   primary:
-    - updated_agent: "Agent file atualizado com novo DNA"
+    - updated_dna: "mind_dna_complete.yaml atualizado"
     - diff_report: "Relatório do que mudou"
 
 elicit: true
 ---
 
-# Update Existing Agent DNA (Brownfield)
+# Update Existing Mind DNA (Brownfield)
 
 > **Princípio:** "Evolução > Revolução. Preserve o que funciona, adicione o que falta."
 >
 > **Regra:** NUNCA substituir DNA existente sem validar que o novo é melhor.
->
-> **Escopo:** Agents em `squads/{squad}/agents/` criados pelo squad-creator.
-
----
-
-## Veto Conditions
-
-| ID | Condition | Check | Result |
-|----|-----------|-------|--------|
-| VETO-UPM-001 | Backup of current mind files must exist before any modification | Verify backup created at squads/{squad_name}/.backup/{agent_slug}.{timestamp}.md | VETO - BLOCK. Create backup snapshot before proceeding with DNA update. |
-| VETO-UPM-002 | Existing agent file must be loadable and parseable before applying deltas | Validate agent file exists at expected path and YAML blocks parse without error | VETO - BLOCK. Fix agent file path or structure before attempting update. |
-| VETO-UPM-003 | Protected sections (primary_framework, identity_statement, veto_heuristics) must not be replaced without explicit human approval | Check merge_rules.protected list against proposed changes | VETO - BLOCK. Route protected section changes through selective mode with human review. |
 
 ---
 
@@ -52,9 +35,11 @@ elicit: true
 
 ```yaml
 existing_files:
-  agent_file: "squads/{squad_name}/agents/{agent_slug}.md"
-  sources_dir: "squads/{squad_name}/minds/{agent_slug}/sources/"  # Se existir
-  metadata: "squads/{squad_name}/minds/{agent_slug}/metadata.yaml"  # Se existir
+  mind_dna: "outputs/minds/{mind_slug}/mind_dna_complete.yaml"
+  voice_dna: "outputs/minds/{mind_slug}/voice_dna.yaml"
+  thinking_dna: "outputs/minds/{mind_slug}/thinking_dna.yaml"
+  sources_inventory: "outputs/minds/{mind_slug}/sources_inventory.yaml"
+  agent_file: "squads/{squad}/agents/{mind_slug}.md"  # Se já tem agente
 ```
 
 ### 0.2 Snapshot Before
@@ -233,13 +218,20 @@ conflicts:
 
 ```yaml
 updated_files:
-  agent_file:
-    path: "squads/{squad_name}/agents/{agent_slug}.md"
-    backup: "squads/{squad_name}/.backup/{agent_slug}.{timestamp}.md"
+  mind_dna_complete:
+    path: "outputs/minds/{mind_slug}/mind_dna_complete.yaml"
+    backup: "outputs/minds/{mind_slug}/backups/mind_dna_{timestamp}.yaml"
+
+  voice_dna:
+    path: "outputs/minds/{mind_slug}/voice_dna.yaml"
     sections_updated: []
 
-  metadata:
-    path: "squads/{squad_name}/minds/{agent_slug}/metadata.yaml"
+  thinking_dna:
+    path: "outputs/minds/{mind_slug}/thinking_dna.yaml"
+    sections_updated: []
+
+  sources_inventory:
+    path: "outputs/minds/{mind_slug}/sources_inventory.yaml"
     new_sources_added: 0
 ```
 
@@ -406,14 +398,14 @@ update_report:
 ## COMMANDS
 
 ```bash
-# Update agent com novas fontes
-*update-mind copy gary_halbert --sources /path/to/new/materials
+# Update com novas fontes
+*update-mind gary_halbert --sources /path/to/new/materials
 
 # Update apenas voice
-*update-mind copy gary_halbert --focus voice --sources /path/to/interviews
+*update-mind gary_halbert --focus voice --sources /path/to/interviews
 
 # Update com merge manual
-*update-mind legal contract_lawyer --mode selective
+*update-mind gary_halbert --mode selective
 ```
 
 ---
@@ -432,6 +424,5 @@ update_report:
 
 ---
 
-**Squad Architect | Update Agent DNA v2.0**
-_Last Updated: 2026-02-11_
+**Squad Architect | Update Mind v1.0**
 *"Evolution beats revolution. Preserve what works, add what's missing."*

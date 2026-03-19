@@ -52,7 +52,7 @@ trap "rm -rf $TMP" EXIT
 # Fixture: modern workflow (should score high)
 cat > "$TMP/modern.yaml" << 'FIXTURE'
 name: modern-workflow
-description: A fully modern AIOX workflow
+description: A fully modern AIOS workflow
 
 # Teams
 Use TeamCreate to set up the team.
@@ -66,7 +66,7 @@ Use run_in_background for parallel work.
 Load git status and gotchas before starting.
 
 # Communication
-Write results to .aiox/squad-runtime/minds/slug/result.yaml
+Write results to outputs/minds/slug/result.yaml
 
 # Agent refs
 Read .claude/agents/specialist.md for identity.
@@ -84,7 +84,7 @@ Send shutdown request and call TeamDelete.
 NEVER skip validation. DO NOT hardcode values.
 
 # Artifacts
-Store in .aiox/squad-runtime/minds/slug/artifacts/
+Store in outputs/minds/slug/artifacts/
 FIXTURE
 
 # Fixture: legacy workflow (should score low)
@@ -107,7 +107,7 @@ description: Partially modern
 
 # Has some modern patterns
 NEVER skip testing.
-Write to .aiox/squad-runtime/results/
+Write to outputs/results/
 
 But missing: teams, subagents, background, context, agents, deps, permissions, finalization
 FIXTURE
