@@ -1,0 +1,22 @@
+---
+metadata:
+  schema: "brand.growth_availability_plan"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+availability:
+  mental:
+    status: "FILL_THIS"
+    category_entry_points: []
+  physical:
+    status: "FILL_THIS"
+    channel_coverage: []
+growth_priorities:
+  short_term: []
+  medium_term: []
+kpis:
+  - name: "FILL_THIS"
+    target: "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

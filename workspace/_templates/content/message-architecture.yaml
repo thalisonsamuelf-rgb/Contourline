@@ -1,0 +1,89 @@
+metadata:
+  artifact: message_architecture
+  version: "1.0.0"
+  status: draft
+  campaign_slug: FILL_THIS
+  business: FILL_THIS
+  product: FILL_THIS
+  owner: FILL_THIS
+  updated_at: YYYY-MM-DD
+
+source_of_truth:
+  campaign_brief: "workspace/businesses/{business}/copy/{campaign_slug}/campaign-brief.yaml"
+  brand_voice: "workspace/businesses/{business}/company/brand.yaml"
+  brand_positioning: "workspace/businesses/{business}/brand/strategic-positioning.yaml"
+  product_offer: "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+  product_proof:
+    - "workspace/businesses/{business}/products/{product}/proof.yaml"
+    - "workspace/businesses/{business}/products/{product}/testimonials.yaml"
+
+positioning:
+  category: FILL_THIS
+  onlyness: FILL_THIS
+  enemy: FILL_THIS
+  identity_shift: FILL_THIS
+
+promise:
+  primary: FILL_THIS
+  supporting: FILL_THIS
+  transformation_statement: FILL_THIS
+
+mechanism:
+  name: FILL_THIS
+  why_old_way_fails: FILL_THIS
+  why_this_way_works: FILL_THIS
+
+proof_hierarchy:
+  pillar_1: FILL_THIS
+  pillar_2: FILL_THIS
+  pillar_3: FILL_THIS
+  highest_credibility_evidence: FILL_THIS
+
+message_hierarchy:
+  - order: 1
+    message: FILL_THIS
+  - order: 2
+    message: FILL_THIS
+  - order: 3
+    message: FILL_THIS
+  - order: 4
+    message: FILL_THIS
+  - order: 5
+    message: FILL_THIS
+
+audience_tensions:
+  current_pain: FILL_THIS
+  false_beliefs:
+    - FILL_THIS
+  desired_future_state: FILL_THIS
+  emotional_stakes: FILL_THIS
+
+language_controls:
+  required_phrases:
+    - FILL_THIS
+  preferred_phrasing:
+    - FILL_THIS
+  forbidden_words:
+    - FILL_THIS
+  tone_notes:
+    - FILL_THIS
+
+claims:
+  allowed:
+    - FILL_THIS
+  qualify:
+    - FILL_THIS
+  forbidden:
+    - FILL_THIS
+
+channel_adaptations:
+  sales_page: FILL_THIS
+  ads: FILL_THIS
+  email: FILL_THIS
+  webinar_or_vsl: FILL_THIS
+
+approval:
+  non_negotiables:
+    - FILL_THIS
+  flexible_elements:
+    - FILL_THIS

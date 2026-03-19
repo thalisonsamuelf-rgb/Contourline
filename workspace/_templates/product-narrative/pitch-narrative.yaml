@@ -1,0 +1,51 @@
+---
+# PITCH-NARRATIVE.YAML - Shared pitch structure
+# PURPOSE: Canonical pitch narrative for sales, founder presentations, webinars,
+# traffic hooks, and franchise recruitment.
+
+metadata:
+  version: "1.0"
+  artifact_type: "pitch_narrative"
+  status: "DRAFT"
+  owner: "coo-orchestrator"
+  canonical_storage:
+    product: "workspace/businesses/{business}/products/{product}/narrative/pitch-narrative.yaml"
+    franchise: "workspace/businesses/{business}/franchise/narrative/pitch-narrative.yaml"
+  shared_across:
+    - copy
+    - storytelling
+    - traffic-masters
+    - franchise
+  source_dependencies:
+    - "workspace/businesses/{business}/company/brand.yaml"
+    - "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+    - "workspace/businesses/{business}/products/{product}/proof.yaml"
+
+context:
+  business_slug: "FILL_THIS"
+  product_slug: "FILL_THIS"
+  pitch_type: "sales|founder|webinar|franchise_recruitment|investor"
+  audience: "FILL_THIS"
+
+opening:
+  hook: "FILL_THIS"
+  problem_reframe: "FILL_THIS"
+  stakes: "FILL_THIS"
+
+middle:
+  opportunity: "FILL_THIS"
+  mechanism: "FILL_THIS"
+  why_now: "FILL_THIS"
+  proof_blocks:
+    - "FILL_THIS"
+
+close:
+  offer_summary: "FILL_THIS"
+  objection_preemption: "FILL_THIS"
+  cta: "FILL_THIS"
+  urgency_or_next_step: "FILL_THIS"
+
+adaptations:
+  short_pitch_30s: "FILL_THIS"
+  deck_summary: "FILL_THIS"
+  webinar_transition: "FILL_THIS"

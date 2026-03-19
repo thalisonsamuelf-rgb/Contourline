@@ -1,0 +1,387 @@
+---
+# MARKET-VALIDATION.YAML - Pre-Offer Market Validation Gate (Hormozi 4 Indicators)
+# Purpose: Validate the market BEFORE building any offer — this is the gate that determines go/no-go
+# Guardian: Offer Engineer / Founder / CMO
+# Timing: FILL BEFORE any other offerbook file. This is STEP ZERO.
+# Framework: Alex Hormozi, $100M Offers — The 4 Indicators of a Winning Market + Starving Crowd Principle
+# Dependency: NONE. This file comes first. Everything else depends on this passing.
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Offer Engineer / Founder"
+  framework: "Hormozi Market Validation (4 Indicators)"
+  notes: |
+    The Hot Dog Stand analogy: If you had a hot dog stand and could choose
+    only ONE advantage — best location, best price, best quality, best marketing —
+    the winning answer is: a STARVING CROWD.
+
+    With enough demand, you can be mediocre at everything else and still succeed.
+    Without demand, perfection in everything else produces zero revenue.
+
+    This file answers ONE question: "Is this market worth building an offer for?"
+
+    If the market fails this validation, the correct action is to PIVOT THE MARKET,
+    not to build a better offer. A Grand Slam Offer in a dead market is still dead.
+
+    ORDER OF OPERATIONS:
+    1. VALIDATE THE MARKET (this file) -- gate
+    2. Build the diagnosis (diagnosis.yaml)
+    3. Define the ICP (icp.yaml)
+    4. Diagnose the offer (value-equation.yaml)
+    5. Engineer the offer (problem-solution-matrix.yaml, offerbook.yaml, etc.)
+
+    Do NOT skip to step 2 without a passing score here.
+# ============================================================================
+# INDICATOR 1: MASSIVE PAIN (Score 1-10)
+# ============================================================================
+# How desperately does the market need a solution?
+# This is not "would they like it?" This is "are they suffering without it?"
+#
+# CRITICAL DISTINCTION:
+# - Nice to have: They would use it if free. They would not sacrifice for it.
+# - Important: They actively look for solutions. They spend some money on it.
+# - Urgent: They think about it daily. They have tried multiple solutions.
+# - Hair on fire: They will pay anything. They cannot sleep because of this problem.
+#
+# The higher the pain, the less your marketing needs to work.
+# At "hair on fire" level, you just need to show up with a fire extinguisher.
+massive_pain:
+  score: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Nice to have — market is aware of the problem but not actively seeking solutions. They would use a free solution but would not pay meaningfully."
+    range_4_6: "Important — market is spending money on partial solutions. They search for answers but do not feel desperate. Multiple alternatives exist and they compare casually."
+    range_7_8: "Urgent — market is frustrated with existing solutions. They have tried 2-3 alternatives and none fully worked. They think about this problem weekly or daily."
+    range_9_10: "Hair on fire — market is in acute pain. They will pay premium prices immediately. They are actively searching for a solution RIGHT NOW. Not solving this has major consequences (financial, health, relationship, legal)."
+  diagnostic_questions:
+    frequency: "FILL — How often does the target audience think about this problem? (Daily / Weekly / Monthly / Rarely)"
+    failed_attempts: "FILL — How many solutions have they already tried? What did they try? Why did those fail?"
+    consequences: "FILL — What happens if they do NOT solve this problem? Be specific about tangible consequences."
+    emotional_weight: "FILL — How does this problem make them FEEL? (Frustrated / Anxious / Ashamed / Desperate / Indifferent)"
+    willingness_to_sacrifice: "FILL — What would they sacrifice to solve this? (Time / Money / Comfort / Status)"
+  evidence:
+    search_volume: |
+      FILL — What are people searching for related to this problem?
+      Tools: Google Trends, Keyword Planner, AnswerThePublic
+      List top 5-10 search queries and their monthly volume.
+    forum_complaints: |
+      FILL — Where are people complaining about this problem?
+      Check: Reddit, Quora, Facebook groups, YouTube comments, Twitter/X
+      List 3-5 specific complaints you found (with source).
+    existing_spend: |
+      FILL — How much does the market already spend trying to solve this?
+      What products/services do they buy? At what price points?
+      This is the strongest pain indicator: money already flowing = validated pain.
+    professional_demand: |
+      FILL — Are there professionals/businesses that exist solely to solve this problem?
+      If yes, the market is validated. If no, you may be creating demand (harder).
+  pain_summary: "FILL — In one sentence, describe the pain this market feels."
+# ============================================================================
+# INDICATOR 2: PURCHASING POWER (Score 1-10)
+# ============================================================================
+# Does the market have money — or access to money?
+# Pain without purchasing power = charity, not business.
+#
+# B2B vs B2C purchasing power is fundamentally different:
+# - B2B: The buyer spends company money. Budget exists. ROI justifies cost.
+# - B2C: The buyer spends personal money. Emotion justifies cost. Disposable income matters.
+#
+# PROXY INDICATOR: Look at what they ALREADY spend on related solutions.
+# If someone spends $200/month on supplements, they have purchasing power for health products.
+# If someone spends $0 on professional development, selling them a $5,000 course is uphill.
+purchasing_power:
+  score: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Low purchasing power — market has limited disposable income. Solutions must be priced under $50-100. Discounts are expected. Payment plans are essential."
+    range_4_6: "Moderate purchasing power — market can afford $100-$1,000 solutions. They compare prices carefully. Value must be clearly demonstrated before purchase."
+    range_7_8: "Strong purchasing power — market regularly invests $1,000-$10,000 in solutions. They value quality over price. Budget is available if the offer is compelling."
+    range_9_10: "Abundant purchasing power — market has significant budgets ($10,000+). B2B with allocated budgets, or high-income B2C. Price is secondary to results."
+  diagnostic_questions:
+    income_indicators: |
+      FILL — What is the typical income/revenue of your target market?
+      B2C: Household income range. Employment status. Financial priorities.
+      B2B: Company revenue. Department budgets. Typical spend on solutions like yours.
+    current_spend_on_solutions: |
+      FILL — How much do they currently spend on related solutions?
+      List specific products/services and their prices.
+      This is the single best proxy for purchasing power.
+    price_sensitivity: "FILL — How price-sensitive is this market? Do they buy on price or on value? Do they negotiate? Do they compare 3+ options before buying?"
+    payment_preferences: "FILL — How do they prefer to pay? (One-time / Monthly / Annual / Payment plans / Credit)"
+    b2b_vs_b2c: "FILL — Is this B2B or B2C? If B2B, who controls the budget? What is the approval process?"
+  evidence:
+    competitor_pricing: |
+      FILL — What do competitors charge for similar solutions?
+      List 3-5 competitors with their pricing.
+      If competitors charge premium prices and stay in business, purchasing power is validated.
+    average_transaction_value: "FILL — What is the average amount this market spends per transaction in your category?"
+    willingness_to_pay_signals: |
+      FILL — What signals indicate they are willing to pay?
+      Examples: Premium subscriptions, paid communities, high-ticket events they attend,
+      luxury purchases in related categories.
+  purchasing_power_summary: "FILL — In one sentence, describe this market's ability and willingness to pay."
+# ============================================================================
+# INDICATOR 3: EASY TO TARGET (Score 1-10)
+# ============================================================================
+# Can you find and reach them efficiently?
+# A market in massive pain with abundant money is worthless if you cannot reach them.
+#
+# The best markets congregate — they gather in identifiable places where you
+# can reach them at scale without guessing.
+#
+# The worst markets are diffuse — scattered across demographics with no
+# shared behavior, platform, or gathering point.
+easy_to_target:
+  score: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Difficult to target — no clear gathering points. Hard to define demographics. No obvious platforms, events, or lists. Requires broad advertising with low relevance."
+    range_4_6: "Moderate targeting — some identifiable platforms or behaviors. Can be reached through general channels but with waste. Some competition for attention."
+    range_7_8: "Easy to target — clear platforms, groups, events, or publications. Identifiable by behavior or demographic. Multiple channels available. Reasonable reach costs."
+    range_9_10: "Extremely easy — concentrated in specific platforms, associations, or lists. Self-identified (job title, group membership, behavior). Can be reached at low cost with high relevance."
+  diagnostic_questions:
+    where_they_congregate: |
+      FILL — Where does this market gather? List all known locations:
+      Online: Facebook groups, subreddits, YouTube channels, newsletters, forums, Discord servers
+      Offline: Conferences, associations, trade shows, local meetups, professional organizations
+      Lists: Industry directories, professional associations, alumni networks
+    identification_signals: |
+      FILL — How do you IDENTIFY someone who is in this market?
+      Demographics: Age, location, income, job title, company size
+      Psychographics: Values, beliefs, aspirations, fears
+      Behaviors: What they buy, where they go, what they read, who they follow
+    channel_availability: |
+      FILL — What marketing channels can effectively reach them?
+      List each channel and its estimated effectiveness:
+      - Paid ads (which platforms? estimated CPM/CPC)
+      - Organic content (which platforms? what format?)
+      - Email/newsletter (are lists available? what size?)
+      - Partnerships (who has their attention already?)
+      - Events (which ones do they attend?)
+      - Outbound (can you find their contact info?)
+    cost_per_reach: "FILL — Estimated cost to reach 1,000 people in this market. (Use ad platform estimates or past data)"
+  evidence:
+    platform_presence: |
+      FILL — List specific platforms where this market is active:
+      Platform 1: [name] — estimated audience size: [X]
+      Platform 2: [name] — estimated audience size: [X]
+      Platform 3: [name] — estimated audience size: [X]
+    existing_lists: "FILL — Are there purchasable or accessible lists/databases? (Industry lists, association directories, lead databases)"
+    competitor_channels: "FILL — How do competitors reach this market? What channels do they use? Where do they advertise?"
+  targeting_summary: "FILL — In one sentence, describe how easily you can find and reach this market."
+# ============================================================================
+# INDICATOR 4: GROWING MARKET (Score 1-10)
+# ============================================================================
+# Is the market expanding or contracting?
+# A growing market provides tailwind. A shrinking market provides headwind.
+# You want to swim with the current, not against it.
+#
+# CRITICAL: Growing market does NOT mean trending topic.
+# A fad grows fast and dies fast. A growing market has sustained expansion
+# backed by structural changes (demographics, technology, regulation, culture).
+growing_market:
+  score: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Declining — market is contracting. Fewer buyers over time. Technology or regulation is making the problem obsolete. Legacy industry."
+    range_4_6: "Stable — market is flat. Not growing, not shrinking. Demand is steady but competition is established. No major tailwinds."
+    range_7_8: "Growing — market is expanding. More people entering the category. New segments emerging. Industry reports show 10-20% annual growth."
+    range_9_10: "Rapidly growing — market is exploding. Massive adoption curve. Major structural shifts driving demand (technology, regulation, demographics). 20%+ annual growth."
+  diagnostic_questions:
+    trend_direction: "FILL — Is the overall market trend UP, FLAT, or DOWN over the past 3 years?"
+    structural_drivers: |
+      FILL — What structural forces are driving growth (or decline)?
+      Technology shifts: [describe]
+      Demographic changes: [describe]
+      Regulatory changes: [describe]
+      Cultural shifts: [describe]
+    new_entrants: "FILL — Are new companies entering this market? Is venture capital flowing in? Are established companies launching competing products?"
+    market_lifecycle: |
+      FILL — Where is this market in its lifecycle?
+      - Emerging: Few players, high uncertainty, high upside
+      - Growth: Many new entrants, demand outpacing supply
+      - Mature: Established players, price competition, commoditization risk
+      - Declining: Consolidation, exits, shrinking demand
+  evidence:
+    google_trends: "FILL — What does Google Trends show for key terms over the past 5 years? (Include screenshot or description)"
+    industry_reports: "FILL — What do industry reports say about market size and growth rate? (Source, date, key numbers)"
+    tam_sam_som:
+      tam: "FILL — Total Addressable Market: How many people/businesses COULD use a solution like yours? (Global)"
+      sam: "FILL — Serviceable Available Market: How many can you realistically reach with your business model? (Geographic, language, channel constraints)"
+      som: "FILL — Serviceable Obtainable Market: How many can you realistically capture in the next 12-24 months? (Your capacity, budget, team)"
+    leading_indicators: |
+      FILL — What leading indicators suggest future growth?
+      Examples: Job postings in the field, university program creation,
+      media coverage frequency, social media conversation volume,
+      related product launches, regulatory proposals
+  growth_summary: "FILL — In one sentence, describe this market's growth trajectory."
+# ============================================================================
+# COMPOSITE SCORE + DECISION MATRIX
+# ============================================================================
+# The 4 indicators combine into a market score.
+# This score determines whether to proceed, pivot, or abandon.
+#
+# FORMULA: Pain + Power + Targeting + Growth = Market Score (out of 40)
+#
+# WEIGHTED PERSPECTIVE: Pain and Power matter more than Targeting and Growth.
+# A market in massive pain with money will find a way to buy even if hard to target.
+# An easy-to-target growing market with no pain and no money is a waste of resources.
+composite_score:
+  massive_pain: "FILL — /10"
+  purchasing_power: "FILL — /10"
+  easy_to_target: "FILL — /10"
+  growing_market: "FILL — /10"
+  total: "FILL — /40"
+  decision_matrix:
+    green_zone:
+      condition: "All 4 indicators >= 7 (total >= 28)"
+      action: "PROCEED to offer engineering. This market is validated."
+      next_step: "Move to diagnosis.yaml and icp.yaml"
+    yellow_zone:
+      condition: "Mixed scores (5-7 range). Total between 20-27."
+      action: "PROCEED WITH CAUTION. Identify the weakest indicator and determine if it can be improved."
+      next_step: "Address the weakest indicator before investing heavily in offer engineering."
+      weakest_indicator: "FILL — Which indicator scored lowest? What can you do about it?"
+    red_zone:
+      condition: "Any indicator < 5. Total below 20."
+      action: "PIVOT. Do not build an offer for this market. Either niche down or choose a different market entirely."
+      next_step: "Re-evaluate the market. Consider adjacent niches or sub-segments that might score higher."
+      pivot_options: |
+        FILL — If the market failed, what are your options?
+        Option 1: Niche deeper (same market, more specific segment)
+        Option 2: Adjacent market (same skillset, different audience)
+        Option 3: Different market entirely (new problem, new audience)
+  your_verdict: "FILL — GREEN / YELLOW / RED"
+  reasoning: "FILL — Why did you reach this verdict? Which indicators were strong? Which were weak?"
+# ============================================================================
+# STARVING CROWD IDENTIFICATION
+# ============================================================================
+# Within your validated market, who is the MOST desperate sub-segment?
+# The starving crowd is not the whole market. It is the slice that is in
+# acute pain RIGHT NOW and will pay immediately for relief.
+#
+# This is your launch audience. The people you serve first.
+# After you win with the starving crowd, you expand outward.
+starving_crowd:
+  who_is_desperate: |
+    FILL — Who in this market is DESPERATE for a solution right now?
+    Not "who would benefit" — who is LOSING SLEEP over this problem?
+    Be as specific as possible: demographics + psychographics + situation.
+  hair_on_fire_test: |
+    FILL — Apply the "hair on fire" test:
+    If your target client's hair was literally on fire, would they stop to read
+    your sales page? That is how urgent the problem needs to feel.
+
+    Does your starving crowd pass this test? FILL (Yes / No)
+    If no, you have not found the true starving crowd yet. Keep narrowing.
+  demographic_signals: |
+    FILL — What demographic characteristics identify the starving crowd?
+    Age range: [X]
+    Income/revenue: [X]
+    Location: [X]
+    Job title / role: [X]
+    Company size (if B2B): [X]
+  psychographic_signals: |
+    FILL — What psychological characteristics identify the starving crowd?
+    Beliefs: [what do they believe about the problem?]
+    Values: [what do they prioritize?]
+    Fears: [what keeps them up at night?]
+    Desires: [what do they want most?]
+  behavioral_signals: |
+    FILL — What observable behaviors identify the starving crowd?
+    What have they already bought? (related products, courses, services)
+    What do they search for? (specific queries, forums, questions)
+    What communities do they join? (groups, memberships, events)
+    What content do they consume? (podcasts, channels, newsletters)
+  icp_connection: |
+    FILL — How does this starving crowd connect to your ICP in icp.yaml?
+    The starving crowd should be a sub-segment of your ICP — the most acute
+    version of your ideal client.
+# ============================================================================
+# MARKET COMPARISON MATRIX (Optional — If Evaluating Multiple Markets)
+# ============================================================================
+# Use this section if you are choosing between multiple market opportunities.
+# Compare up to 3 markets side by side.
+#
+# WARNING: "Don't niche-slap." Do not take a generic offer and apply it to
+# a niche just because the niche scores well. The offer must be designed
+# FOR that niche from the ground up.
+market_comparison:
+  comparing: "FILL — Yes / No. Are you evaluating multiple markets?"
+  market_a:
+    name: "FILL — Market A name"
+    pain: "FILL — /10"
+    power: "FILL — /10"
+    targeting: "FILL — /10"
+    growth: "FILL — /10"
+    total: "FILL — /40"
+  market_b:
+    name: "FILL — Market B name"
+    pain: "FILL — /10"
+    power: "FILL — /10"
+    targeting: "FILL — /10"
+    growth: "FILL — /10"
+    total: "FILL — /40"
+  market_c:
+    name: "FILL — Market C name (if applicable)"
+    pain: "FILL — /10"
+    power: "FILL — /10"
+    targeting: "FILL — /10"
+    growth: "FILL — /10"
+    total: "FILL — /40"
+  winner: "FILL — Which market wins and why?"
+  niche_slap_check: "FILL — Is the offer genuinely designed for this market, or are you applying a generic offer to a high-scoring niche? Be honest."
+# ============================================================================
+# PRE-OFFER CHECKLIST (Gate to Proceed)
+# ============================================================================
+# Before moving to ANY other offerbook file, confirm ALL items below.
+# If any item is unchecked, you are not ready to proceed.
+pre_offer_checklist:
+  items:
+    - "[ ] Market score >= 28/40 (GREEN zone)"
+    - "[ ] Starving crowd identified with demographic + psychographic + behavioral signals"
+    - "[ ] At least one accessible channel confirmed (can reach the market at reasonable cost)"
+    - "[ ] Purchasing power validated with proxy data (they already spend on related solutions)"
+    - "[ ] Growth trajectory confirmed (market is not declining)"
+    - "[ ] No indicator scored below 5 (no RED flags)"
+    - "[ ] If comparing markets, winner selected with reasoning"
+    - "[ ] Niche-slap check passed (offer will be designed FOR this market)"
+  gate_result: "FILL — PASS (proceed to diagnosis.yaml) / FAIL (pivot or niche down)"
+# ============================================================================
+# DIAGNOSTIC SUMMARY
+# ============================================================================
+diagnostic_summary:
+  market_name: "FILL — What market are you validating?"
+  composite_score: "FILL — /40"
+  verdict: "FILL — GREEN / YELLOW / RED"
+  strongest_indicator: "FILL — Which indicator scored highest? Why?"
+  weakest_indicator: "FILL — Which indicator scored lowest? What will you do about it?"
+  starving_crowd_identified: "FILL — Yes / No"
+  pre_offer_gate: "FILL — PASS / FAIL"
+  next_actions:
+    if_green: "Proceed to diagnosis.yaml and icp.yaml. Your market is validated."
+    if_yellow: "Address the weakest indicator. Consider niching deeper to strengthen the weak score."
+    if_red: "Do not build an offer. Pivot the market, niche down, or choose a different audience."
+  action_1: "FILL — Most important next step"
+  action_2: "FILL — Second priority"
+  action_3: "FILL — Third priority"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# TEMPLATE INSTRUCTIONS
+# 1. This file is STEP ZERO — fill it before any other offerbook file
+# 2. Score each indicator honestly — overrating your market wastes months of effort
+# 3. Use the scoring rubric — do not just pick a number. Match your market to the description.
+# 4. Collect EVIDENCE for each indicator — gut feelings are not validation
+# 5. Apply the decision matrix ruthlessly — if RED, pivot. Do not rationalize.
+# 6. Identify the starving crowd — this is your launch target, not the whole market
+# 7. If comparing markets, use the comparison matrix for objective selection
+# 8. Pass the pre-offer checklist before proceeding to any other file
+#
+# CROSS-REFERENCES:
+# - diagnosis.yaml: Market sophistication and awareness levels (fill AFTER this file passes)
+# - icp.yaml: Ideal Client Profile (the starving crowd becomes the core ICP)
+# - value-equation.yaml: The offer diagnostic assumes a validated market
+# - offerbook.yaml: The offer architecture assumes market-offer fit
+# - This file gates ALL other files. If it fails, nothing else matters.

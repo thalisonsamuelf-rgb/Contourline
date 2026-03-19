@@ -1,0 +1,22 @@
+---
+metadata:
+  schema: "brand.naming_domain_recommendation"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+selected:
+  name: "FILL_THIS"
+  domain: "FILL_THIS"
+  inpi_risk_level: "<low|medium|high|unknown>"
+fallback_options:
+  - name: "FILL_THIS"
+    domain: "FILL_THIS"
+  - name: "FILL_THIS"
+    domain: "FILL_THIS"
+next_steps:
+  - "FILL_THIS"
+  - "FILL_THIS"
+references:
+  naming_shortlist_source: "FILL_THIS"
+  domain_legal_source: "FILL_THIS"

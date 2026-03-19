@@ -1,0 +1,386 @@
+---
+# SCARCITY-URGENCY.YAML - Ethical Scarcity & Urgency Engineering (Hormozi Method)
+# Purpose: Design genuine scarcity and urgency mechanisms that accelerate purchase decisions without eroding trust
+# Guardian: Offer Engineer / CMO
+# Timing: FILL after offerbook.yaml and guarantee-design.yaml are complete
+# Framework: Alex Hormozi, $100M Offers — SUBGN Enhancement Stack (S + U)
+# Dependency: offerbook.yaml (offer architecture must exist), guarantee-design.yaml (risk reversal defined)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Offer Engineer"
+  framework: "Hormozi Ethical Scarcity/Urgency Design"
+  notes: |
+    Scarcity and urgency are the final accelerators in a Grand Slam Offer.
+    They do NOT create desire. They compress the decision timeline for people
+    who already want the offer but have not acted.
+
+    FUNDAMENTAL RULE:
+    Every scarcity and urgency element in this file MUST be REAL.
+    Fabricated scarcity trades long-term trust for short-term sales.
+    That is an antipattern. Trust is a compounding asset. Do not burn it.
+
+    DATA POINT: 50-60% of all sales happen in the last 4 hours of any campaign.
+    This is not because urgency is manipulative. It is because humans defer
+    decisions until a forcing function appears. Your job is to provide
+    a genuine forcing function.
+
+    ORDER OF OPERATIONS:
+    1. Build an offer so good people feel stupid saying no (offerbook.yaml)
+    2. Remove all risk from the decision (guarantee-design.yaml)
+    3. THEN compress the decision timeline (this file)
+
+    If you skip steps 1-2 and jump straight here, you are using urgency
+    to compensate for a weak offer. Fix the offer first.
+# ============================================================================
+# STEP 1: ETHICAL FILTER (Non-Negotiable Gate)
+# ============================================================================
+# EVERY scarcity and urgency element MUST pass this filter.
+# This is not a suggestion. It is a gate. If it fails, the element is killed.
+#
+# RULE: "Trading long-term trust for short-term sales = antipattern."
+# RULE: "If you would be embarrassed if your client discovered it was fake, do not do it."
+ethical_filter:
+  filter_questions:
+    is_real: "FILL — Is this scarcity/urgency element REAL? Not manufactured, not artificial, not resettable."
+    embarrassment_test: "FILL — If a journalist wrote about this, would you be embarrassed? If a client investigated, would they find it genuine?"
+    serves_buyer: "FILL — Does this serve the buyer's interest by forcing a decision on something genuinely good for them? Or does it only serve your revenue?"
+    provable: "FILL — Can you PROVE this is real if challenged? What evidence exists?"
+    reversible: "FILL — If you removed this element entirely, would the offer still be strong? (If no, the offer is weak, not the urgency.)"
+  ethical_verdict: "FILL — PASS (all answers are clean) / FAIL (redesign or remove the element)"
+  anti_patterns_to_avoid:
+    - pattern: "Fake countdown timers that reset when the page is refreshed"
+      why_it_destroys_trust: "Clients talk. One person screenshots the timer, another visits a day later and sees it reset. Trust = zero."
+      detection_risk: "High — browser extensions, social media exposure, competitor callouts"
+    - pattern: "'Only 3 left' when inventory is unlimited"
+      why_it_destroys_trust: "Digital products have no inventory. Clients know this. You insult their intelligence."
+      detection_risk: "Very high — anyone who buys and checks later"
+    - pattern: "Evergreen funnels pretending to be live launches"
+      why_it_destroys_trust: "A client joins the 'exclusive live cohort' and discovers 50 other people got the same 'exclusive' email on different dates."
+      detection_risk: "Medium — takes time, but communities share"
+    - pattern: "Price anchoring without a genuine deadline"
+      why_it_destroys_trust: "'Price goes up Friday!' — but it never does. Repeat buyers learn the pattern."
+      detection_risk: "High — returning visitors see through it immediately"
+    - pattern: "Fake social proof counters ('247 people viewing this right now')"
+      why_it_destroys_trust: "When numbers are static or nonsensical, credibility collapses for the entire page."
+      detection_risk: "High — clients test by refreshing and comparing"
+    - pattern: "Manufactured waitlists when enrollment is always open"
+      why_it_destroys_trust: "Client refers a friend who gets instant access. Both lose trust."
+      detection_risk: "Medium — referrals expose it"
+# ============================================================================
+# STEP 2: SCARCITY TYPES (Genuine Only)
+# ============================================================================
+# Scarcity limits the QUANTITY available.
+# There are five legitimate types of scarcity. Identify which ones apply to your offer.
+# You do NOT need all five. You need ONE that is real and defensible.
+scarcity_types:
+  capacity_scarcity:
+    description: "Limited by your delivery capacity — seats, bandwidth, personal attention, staff hours"
+    when_genuine: "When your service model requires personal interaction, live delivery, or human attention"
+    examples:
+      - "Coaching program limited to 10 clients per cohort (coach does weekly 1-on-1 calls)"
+      - "Agency accepts 5 new clients per month (team capacity constraint)"
+      - "Workshop limited to 30 seats (venue size)"
+      - "Done-for-you service capped at 8 concurrent projects (quality threshold)"
+    proof_mechanism: "Show current client count, team size, delivery calendar, or waitlist"
+    your_capacity_limit: "FILL — What is your genuine delivery capacity? What constrains it?"
+    your_current_utilization: "FILL — How many slots are currently filled vs available?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what is the real constraint?"
+  time_scarcity:
+    description: "Limited by a real enrollment window — next cohort starts in X months, seasonal availability"
+    when_genuine: "When the offer has a fixed start date, a live component, or seasonal relevance"
+    examples:
+      - "January cohort — enrollment closes December 15. Next cohort: April."
+      - "Tax preparation service — available October through April only"
+      - "Summer intensive program — 8 weeks, starts June 1"
+      - "Annual conference — once per year, registration closes 30 days before"
+    proof_mechanism: "Published calendar, past cohort dates, event logistics"
+    your_enrollment_window: "FILL — When does enrollment open and close? What is the next available window?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what is the real window?"
+  bonus_scarcity:
+    description: "Limited bonuses — early bird pricing, first-N-buyer extras, launch-only additions"
+    when_genuine: "When the bonus involves real cost or effort that cannot scale infinitely"
+    examples:
+      - "First 50 buyers get a 1-on-1 onboarding call (your time is finite)"
+      - "Launch bonus: signed physical workbook (limited print run of 200)"
+      - "Early bird pricing for first 100 enrollments (documented price increase after)"
+      - "First 20 buyers get personal audit of their business (4 hours of labor per audit)"
+    proof_mechanism: "Counter on sales page, public announcement of when bonuses run out, post-sale email confirming bonus claim"
+    your_bonus_limits: "FILL — What bonuses have genuine limits? What constrains them?"
+    applies_to_your_offer: "FILL — Yes / No. Which bonuses are genuinely limited?"
+  cohort_scarcity:
+    description: "Limited by cohort structure — next cohort starts in X months, fixed group size"
+    when_genuine: "When you run cohort-based programs with live elements, accountability groups, or peer learning"
+    examples:
+      - "Cohort 7 starts March 1. Next cohort: September. 6-month gap."
+      - "Mastermind group — 12 members maximum. Current spots available: 3."
+      - "Accelerator runs twice per year. Miss this one, wait 6 months."
+    proof_mechanism: "Published cohort schedule, alumni testimonials with cohort numbers, waitlist signup page"
+    your_cohort_structure: "FILL — How are your cohorts structured? How often do they run?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what is the cohort cycle?"
+  supply_scarcity:
+    description: "Limited by physical inventory — one-time production, handmade items, licensed quantities"
+    when_genuine: "When the product involves physical goods, limited-edition items, or licensed content"
+    examples:
+      - "Signed first-edition books — 500 printed, no reprint planned"
+      - "Physical toolkit — manufactured in batches of 100, next batch in 8 weeks"
+      - "Licensed case study collection — rights expire December 31"
+      - "Handmade companion materials — artisan production, 50 units per month"
+    proof_mechanism: "Inventory photos, production receipts, supplier agreements"
+    your_supply_constraints: "FILL — What physical or licensed components limit supply?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what is the inventory situation?"
+# ============================================================================
+# STEP 3: URGENCY TYPES (Genuine Only)
+# ============================================================================
+# Urgency limits the TIME available to act.
+# There are four legitimate types. Identify which ones apply.
+urgency_types:
+  deadline_based:
+    description: "A real date after which the offer changes — cart closes, price increases, bonuses expire"
+    when_genuine: "When the deadline is tied to a real business decision (price restructuring, product launch cycle, seasonal close)"
+    examples:
+      - "Cart closes Friday at midnight. Next opening: 90 days."
+      - "Price increases from $997 to $1,497 on March 1 (documented, irreversible)."
+      - "Launch pricing ends when we reach 200 enrollments (counter visible on page)."
+      - "Early bird bonuses expire 48 hours before the live event."
+    proof_mechanism: "Published schedule, price change history, email announcing future price before current launch"
+    your_deadline: "FILL — What real deadline exists? What happens after it passes?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what is the deadline and what changes?"
+  event_based:
+    description: "Urgency created by a real event — workshop start date, live cohort kick-off, conference"
+    when_genuine: "When missing the event means missing the experience entirely (live components cannot be replayed)"
+    examples:
+      - "Live workshop on March 15. If you are not enrolled, you cannot attend."
+      - "Cohort kick-off call on the first Monday of the month. Miss it, miss the group context."
+      - "Guest expert session on [date] — this expert is not available for replay."
+    proof_mechanism: "Calendar invites, event logistics, speaker confirmations"
+    your_event: "FILL — What real event creates urgency? When does it happen?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what event?"
+  consequence_based:
+    description: "The problem itself gets worse over time — urgency comes from the cost of inaction"
+    when_genuine: "When the client's problem compounds, when market conditions are shifting, when regulatory changes are approaching"
+    examples:
+      - "Every month without a selling system is a month of revenue you never recover."
+      - "Algorithm changes in Q2 will make organic reach harder. Build the system now."
+      - "Tax law changes take effect January 1. Restructure before then or pay 15% more."
+      - "Your competitors are already implementing this. The advantage window is narrowing."
+    proof_mechanism: "Industry data, trend reports, competitor analysis, regulatory announcements"
+    your_consequence: "FILL — What happens to the client if they wait? How does the problem compound?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what is the cost of inaction?"
+  opportunity_based:
+    description: "A market window is opening or closing — first-mover advantage, emerging trend, seasonal peak"
+    when_genuine: "When timing genuinely matters for the result — early adopters benefit more, market conditions favor action now"
+    examples:
+      - "AI tools are democratizing content creation NOW. In 2 years, everyone will use them. The advantage is in acting first."
+      - "Holiday season is 90 days away. Build your funnel now or miss the highest-revenue quarter."
+      - "New platform launched with low competition. Early creators get disproportionate reach."
+    proof_mechanism: "Market data, platform analytics, trend charts, case studies of early movers"
+    your_opportunity: "FILL — What opportunity window exists? When does it close?"
+    applies_to_your_offer: "FILL — Yes / No. If yes, what is the window?"
+# ============================================================================
+# STEP 4: SCARCITY/URGENCY SELECTION EXERCISE
+# ============================================================================
+# Choose the elements that genuinely apply to your offer.
+# Do NOT force elements that do not exist. One genuine element is stronger
+# than five fabricated ones.
+selection_exercise:
+  scarcity_selection:
+    primary_scarcity_type: "FILL — Which scarcity type is most genuine for your offer?"
+    scarcity_proof: "FILL — What evidence proves this scarcity is real?"
+    scarcity_statement: |
+      FILL — Write the scarcity statement as it would appear in your copy:
+      Example: "We accept 10 clients per cohort because our delivery model requires
+      weekly 1-on-1 attention. Once spots fill, the next opening is in 4 months."
+  urgency_selection:
+    primary_urgency_type: "FILL — Which urgency type is most genuine for your offer?"
+    urgency_proof: "FILL — What evidence proves this urgency is real?"
+    urgency_statement: |
+      FILL — Write the urgency statement as it would appear in your copy:
+      Example: "Enrollment closes Friday at midnight. After that, the price increases
+      to $1,497 and the launch bonuses disappear permanently."
+  combined_statement: |
+    FILL — Write the combined scarcity + urgency statement:
+    Example: "10 spots available in the March cohort. Enrollment closes February 28.
+    After that, the next cohort opens in September — and at the new price of $1,497."
+  ethical_filter_check:
+    scarcity_passes_filter: "FILL — Yes / No. Run the ethical filter from Step 1 on your scarcity element."
+    urgency_passes_filter: "FILL — Yes / No. Run the ethical filter from Step 1 on your urgency element."
+    both_pass: "FILL — Yes / No. If either fails, redesign before proceeding."
+# ============================================================================
+# STEP 5: COMMUNICATION TIMELINE
+# ============================================================================
+# Based on the data that 50-60% of sales happen in the last 4 hours,
+# your communication must intensify as the deadline approaches.
+# This is not manipulation. This is reminding people who WANT to act
+# but have not. The reminder is a service.
+#
+# RULE: Every message in this timeline must provide VALUE, not just pressure.
+# Each message adds new information, reframes the offer, or addresses an objection.
+communication_timeline:
+  t_minus_7_days:
+    purpose: "Announcement + value framing. Introduce the deadline."
+    tone: "Informational, educational"
+    message_framework: |
+      FILL — Your version of:
+      "[Offer name] is available until [date]. Here is what is included and why it matters..."
+      Focus: VALUE of the offer, not the deadline.
+      The deadline is mentioned once, matter-of-factly.
+    channel: "FILL — Email / Social / WhatsApp / All"
+  t_minus_48_hours:
+    purpose: "Some people will miss this. Surface the cost of inaction."
+    tone: "Empathetic, consequence-aware"
+    message_framework: |
+      FILL — Your version of:
+      "In 48 hours, [what changes]. Some of you are still deciding.
+      Let me address the most common question I have been getting: [objection + answer].
+      The cost of waiting is [specific consequence]."
+    channel: "FILL — Email / Social / WhatsApp"
+  t_minus_24_hours:
+    purpose: "Tomorrow you will wish you had acted today."
+    tone: "Direct, personal"
+    message_framework: |
+      FILL — Your version of:
+      "Tomorrow at this time, [the offer changes / closes / the price increases].
+      I have been in your position before — debating whether to invest in myself.
+      The difference between where I am now and where I was then: I said yes."
+    channel: "FILL — Email + SMS/WhatsApp"
+  t_minus_4_hours:
+    purpose: "The next 4 hours define the next 4 years. Peak communication."
+    tone: "Intense, factual, evidence-driven"
+    message_framework: |
+      FILL — Your version of:
+      "4 hours left. [X people] have already enrolled. The question is not whether
+      this works — the [testimonials / case studies / guarantee] answer that.
+      The question is whether you are going to act on what you already know."
+    channel: "FILL — Email + SMS/WhatsApp + Social post"
+  t_minus_1_hour:
+    purpose: "Final reminder. Social proof of real-time action."
+    tone: "Urgent but factual"
+    message_framework: |
+      FILL — Your version of:
+      "1 hour. While you are reading this, [X] people have enrolled today.
+      After [time], [what exactly happens — price increase / cart close / bonuses gone].
+      Here is the link: [link]."
+    channel: "FILL — SMS/WhatsApp + Email"
+  t_plus_closed:
+    purpose: "Confirm the close. Show what happens next for those who missed it."
+    tone: "Matter-of-fact, not gloating"
+    message_framework: |
+      FILL — Your version of:
+      "[Offer] is now closed. For those who enrolled: welcome. Your onboarding email
+      is on the way. For those who missed it: [waitlist / next cohort date / new price].
+      No hard feelings. The next opportunity is [when]."
+    channel: "FILL — Email"
+# ============================================================================
+# STEP 6: COPY TEMPLATES (Ready for Sales Page + Emails)
+# ============================================================================
+# Draft the actual copy for your scarcity and urgency elements.
+# Three contexts: sales page section, email snippet, and short-form (ads/social).
+copy_templates:
+  sales_page_scarcity_section: |
+    FILL — Write the scarcity section as it would appear on your sales page:
+    Example:
+    "Why the limit? Because our delivery model requires [specific reason].
+    We cap enrollment at [number] per [period] to maintain [quality metric].
+    Current availability: [X] of [Y] spots remaining.
+    Next enrollment window: [date]."
+  sales_page_urgency_section: |
+    FILL — Write the urgency section as it would appear on your sales page:
+    Example:
+    "Enrollment closes [date] at [time]. After that:
+    - The price increases to [new price]
+    - Launch bonuses are removed permanently
+    - The next cohort does not start until [date]
+    This is not a countdown trick. Check back after [date] and see."
+  email_scarcity_snippet: |
+    FILL — 2-3 sentence scarcity mention for email sequences:
+    Example: "[X] spots remain in the current cohort. When they fill,
+    the next opening is [months away]. If you have been considering it,
+    now is the time to decide."
+  email_urgency_snippet: |
+    FILL — 2-3 sentence urgency mention for email sequences:
+    Example: "The current pricing expires [date]. After that, the investment
+    increases by [amount]. Everything else stays the same — just the price changes."
+  short_form_version: |
+    FILL — 1-2 sentence version for ads or social posts:
+    Example: "[X] spots left at current price. Enrollment closes [date].
+    Link in bio."
+# ============================================================================
+# STEP 7: INTEGRATION POINTS
+# ============================================================================
+# Scarcity and urgency do not exist in isolation.
+# They connect to other offerbook files.
+integration:
+  email_sequences_connection: |
+    FILL — How do scarcity/urgency elements integrate with your email sequences?
+    Reference: email-sequences.yaml
+    The communication timeline (Step 5) should map directly to your email
+    sequence timing. The final 4 emails in any launch sequence should follow
+    the 48h / 24h / 4h / 1h cadence above.
+  sales_page_connection: |
+    FILL — Where do scarcity/urgency elements appear on the sales page?
+    Reference: sales-page.yaml
+    Recommended placements:
+    - After the offer section (section 11) — state what is limited
+    - After the guarantee (section 12) — state when the offer changes
+    - In the CTA area (section 13) — reinforce with remaining spots or deadline
+  offerbook_connection: |
+    FILL — How do scarcity/urgency align with the offer architecture?
+    Reference: offerbook.yaml
+    The scarcity must be logically consistent with the delivery model.
+    If you offer unlimited digital access, you cannot claim limited spots
+    unless the live component (calls, coaching, community onboarding) is the constraint.
+  guarantee_connection: |
+    FILL — Does the urgency conflict with the guarantee?
+    Reference: guarantee-design.yaml
+    Common conflict: "Enroll NOW before it closes" + "30-day guarantee"
+    Resolution: The guarantee applies regardless of urgency. Make this explicit.
+    "Enroll before [date]. If within 30 days you are not [result], full refund.
+    The deadline is about pricing, not your protection."
+# ============================================================================
+# DIAGNOSTIC SUMMARY
+# ============================================================================
+diagnostic_summary:
+  scarcity_type_used: "FILL — Which scarcity type did you select?"
+  scarcity_is_genuine: "FILL — Yes / No. Can you prove it?"
+  urgency_type_used: "FILL — Which urgency type did you select?"
+  urgency_is_genuine: "FILL — Yes / No. Can you prove it?"
+  ethical_filter_passed: "FILL — Yes / No (both elements)"
+  communication_timeline_drafted: "FILL — Yes / No"
+  copy_templates_written: "FILL — Yes / No"
+  integration_points_mapped: "FILL — Yes / No"
+  value_equation_connection: |
+    FILL — How do scarcity and urgency connect to the Value Equation?
+    - Time Delay: Scarcity/urgency reduce the client's decision delay (not delivery delay)
+    - Perceived Likelihood: Genuine scarcity signals demand, which increases confidence
+    - Dream Outcome: Urgency reframes the cost of NOT achieving the dream
+    - Effort & Sacrifice: A clear deadline reduces the mental effort of deciding
+  next_actions:
+    action_1: "FILL — Most important next step"
+    action_2: "FILL — Second priority"
+    action_3: "FILL — Third priority"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# TEMPLATE INSTRUCTIONS
+# 1. Start with the ethical filter — internalize it before designing any element
+# 2. Inventory your genuine scarcity types — do not force ones that do not exist
+# 3. Inventory your genuine urgency types — one real deadline beats five fake ones
+# 4. Select the strongest genuine element from each category
+# 5. Draft the communication timeline — this is where the conversion happens
+# 6. Write copy templates for each channel
+# 7. Map integration points with other offerbook files
+# 8. Run the ethical filter one final time on everything you wrote
+#
+# CROSS-REFERENCES:
+# - offerbook.yaml: Offer architecture that scarcity/urgency accelerate
+# - guarantee-design.yaml: Risk reversal that makes urgency ethical (they can still get out)
+# - email-sequences.yaml: Communication timeline maps to email sequence
+# - sales-page.yaml: Placement of scarcity/urgency sections on the page
+# - proof.yaml: Social proof amplifies urgency ("X people already enrolled")
+# - problem-solution-matrix.yaml: The value stack that justifies acting now

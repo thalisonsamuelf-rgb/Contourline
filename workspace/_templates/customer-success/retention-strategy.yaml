@@ -1,0 +1,180 @@
+---
+# RETENTION-STRATEGY.YAML - 5-Layer Retention Architecture & Renewal Engineering
+# Purpose: Design a systematic retention strategy that keeps customers engaged and renewing
+# Guardian: Customer Success Lead / COO
+# Timing: FILL after onboarding-flow.yaml and kpi-scorecards.yaml are complete
+# Framework: 5-Layer Retention Model + Renewal Engineering + DOSSIER-RETENTION
+# Dependency: onboarding-flow.yaml (first value), kpi-scorecards.yaml (retention metrics)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Customer Success Lead / COO"
+  framework: "5-Layer Retention Model + Renewal Engineering"
+  notes: |
+    Retention is about delivering on your promise. Period.
+
+    If the customer gets results, they stay.
+    If they do not get results, no tricks will keep them.
+
+    The 5-Layer Model:
+    Layer 1: RAPID VALUE — Show value immediately (first week)
+    Layer 2: MOMENTUM — Build weekly victories (weeks 2-12)
+    Layer 3: COMMUNITY — Create belonging (ongoing)
+    Layer 4: RESULTS — Deliver measurable outcomes (90 days)
+    Layer 5: RENEWAL — Make renewal easy and obvious (month 12)
+
+    RULE: Fix layer 1 before optimizing layer 5.
+    If they do not get value early, no renewal strategy saves them.
+
+# ============================================================================
+# STEP 1: RETENTION METRICS (CURRENT)
+# ============================================================================
+
+current_metrics:
+  first_48h_retention: "FILL — % who are still active after 48 hours"
+  first_30d_retention: "FILL — % still active at 30 days"
+  first_90d_retention: "FILL — % still active at 90 days"
+  annual_retention: "FILL — % who renew annually"
+  churn_rate_monthly: "FILL — Monthly churn rate"
+  average_customer_lifespan: "FILL — Average months a customer stays"
+
+# ============================================================================
+# STEP 2: LAYER 1 — RAPID VALUE (Week 1)
+# ============================================================================
+
+layer_1_rapid_value:
+  timing: "First week"
+  goal: "Prove the system works immediately"
+
+  actions:
+    action_1: "FILL — First value delivery (what do they get/achieve in day 1?)"
+    action_2: "FILL — Platform/product setup (make it frictionless)"
+    action_3: "FILL — First quick win (specific, measurable)"
+    action_4: "FILL — First accountability touchpoint (check-in, call, message)"
+    action_5: "FILL — First metric defined (what are they tracking?)"
+
+  success_criteria: "FILL — How do you know Layer 1 worked? What % should achieve first win?"
+
+# ============================================================================
+# STEP 3: LAYER 2 — MOMENTUM (Weeks 2-12)
+# ============================================================================
+
+layer_2_momentum:
+  timing: "Weeks 2-12"
+  goal: "Build consistent progress with weekly victories"
+
+  weekly_rituals:
+    ritual_1: "FILL — What happens every week? (check-in, content drop, challenge)"
+    ritual_2: "FILL — Second weekly ritual"
+    ritual_3: "FILL — Third weekly ritual"
+
+  progress_tracking:
+    method: "FILL — How do customers track their progress? (dashboard, checklist, journal)"
+    milestones: "FILL — Key milestones at weeks 4, 8, 12"
+    celebrations: "FILL — How are milestones celebrated?"
+
+  re_engagement_for_stalled:
+    trigger: "FILL — What triggers re-engagement? (X days inactive, missed milestone)"
+    method: "FILL — How do you re-engage them? (personal outreach, special content, call)"
+
+# ============================================================================
+# STEP 4: LAYER 3 — COMMUNITY (Ongoing)
+# ============================================================================
+
+layer_3_community:
+  timing: "Ongoing"
+  goal: "Create belonging that transcends the product"
+
+  community_elements:
+    element_1: "FILL — Community platform (Slack, Discord, Circle, Forum)"
+    element_2: "FILL — Regular community events (live calls, challenges, meetups)"
+    element_3: "FILL — Peer connections (accountability partners, small groups)"
+    element_4: "FILL — Recognition system (badges, leaderboards, spotlights)"
+
+  belonging_indicators: "FILL — How do you measure belonging? (participation rate, peer interactions, testimonials)"
+
+# ============================================================================
+# STEP 5: LAYER 4 — RESULTS (90 Days)
+# ============================================================================
+
+layer_4_results:
+  timing: "90-day mark"
+  goal: "Deliver measurable, undeniable outcomes"
+
+  expected_outcomes:
+    outcome_1: "FILL — Primary measurable outcome (e.g., '3x revenue increase')"
+    outcome_2: "FILL — Secondary outcome"
+    outcome_3: "FILL — Tertiary outcome"
+
+  outcome_tracking:
+    method: "FILL — How are outcomes measured and reported?"
+    proof_collection: "FILL — How do you collect proof of results? (surveys, data, testimonials)"
+
+  if_results_not_achieved:
+    diagnosis: "FILL — How do you diagnose why they did not get results?"
+    intervention: "FILL — What support do you provide? (extra coaching, modified plan, extension)"
+    guarantee_trigger: "FILL — Does this trigger your guarantee? (from guarantee-design.yaml)"
+
+# ============================================================================
+# STEP 6: LAYER 5 — RENEWAL (Month 10-12)
+# ============================================================================
+
+layer_5_renewal:
+  timing: "3 months before renewal date"
+  goal: "Make renewal feel like the obvious next step"
+
+  renewal_sequence:
+    month_10: "FILL — What happens 3 months before renewal? (results recap, future roadmap)"
+    month_11: "FILL — 2 months before (renewal conversation, new features preview)"
+    month_12: "FILL — Renewal month (easy renewal process, loyalty bonus)"
+
+  renewal_incentives:
+    loyalty_discount: "FILL — Discount for renewing early?"
+    new_features: "FILL — What new value do they get in year 2?"
+    status_upgrade: "FILL — Status or access upgrade for loyal members?"
+
+  renewal_friction_removal:
+    auto_renewal: "FILL — Is auto-renewal enabled? (with clear communication)"
+    payment_ease: "FILL — How easy is the payment process?"
+    cancellation_alternative: "FILL — If they want to cancel, what alternative do you offer? (pause, downgrade)"
+
+# ============================================================================
+# STEP 7: SCORING & DIAGNOSTIC
+# ============================================================================
+
+retention_strength_score:
+  rapid_value: "FILL 1-10"
+  momentum_system: "FILL 1-10"
+  community_strength: "FILL 1-10"
+  results_delivery: "FILL 1-10"
+  renewal_engineering: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "No structured retention, customers left alone after purchase, no community, no renewal process."
+    range_4_6: "Basic onboarding, some check-ins, community exists but passive, results are inconsistent, manual renewal."
+    range_7_8: "Strong onboarding with first win, weekly rituals, active community, majority get results, proactive renewal."
+    range_9_10: "Guaranteed first win in 48h, habit-forming weekly system, thriving community with deep belonging, 90%+ get measurable results, renewal feels automatic."
+
+evidence:
+  data_points: "FILL — Retention data, NPS scores, renewal rates, churn reasons"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  weakest_layer: "FILL — Which layer needs the most work?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "onboarding-flow.yaml"
+    - "kpi-scorecards.yaml"
+  feeds_into:
+    - "analytics.yaml"
+    - "monetization-strategy.yaml"
+  related:
+    - "churn-prevention.yaml"
+    - "nps-feedback-loop.yaml"
+    - "guarantee-design.yaml"

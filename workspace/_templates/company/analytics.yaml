@@ -1,0 +1,167 @@
+---
+# [COMPANY_NAME] - Analytics & Research Data
+# Master source for validating all claims made in offerbook.yaml
+# Guardian: Data Officer / CMO
+# Required: ALL claims in offerbook must have supporting data here
+
+metadata:
+  analysis_date: "FILL_THIS: When data was collected"
+  total_sample_size: "FILL_THIS: e.g., FILL_THIS members analyzed"
+  methodology: "FILL_THIS: How data was collected (interviews, surveys, etc.)"
+  confidence_level: "FILL_THIS: High/Medium/Low"
+  refresh_cycle: "FILL_THIS: e.g., Quarterly"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# ============================================================================
+# DEMOGRAPHIC STATISTICS
+# ============================================================================
+demographics:
+  age_distribution:
+    "18-25": "FILL_THIS: percentage or count"
+    "26-35": "FILL_THIS"
+    "36-45": "FILL_THIS"
+    "46-55": "FILL_THIS"
+    "56-69": "FILL_THIS"
+    median_age: "FILL_THIS: number"
+    core_segment: "FILL_THIS: e.g., 36-45"
+  geography:
+    "Primary_City": "FILL_THIS: percentage"
+    "Secondary_Cities": "FILL_THIS: percentage"
+    international: "FILL_THIS: percentage"
+  education:
+    "University_Degree": "FILL_THIS: percentage"
+    "Postgraduate_MBA": "FILL_THIS: percentage"
+    fields: ["FILL_THIS"]
+# ============================================================================
+# ARCHETYPE DISTRIBUTION
+# ============================================================================
+archetypes:
+  "Archetype_1_Name": "FILL_THIS: percentage"
+  "Archetype_2_Name": "FILL_THIS: percentage"
+  detailed_breakdown:
+    archetype_1:
+      percentage: "FILL_THIS"
+      age_range: "FILL_THIS"
+      avg_monthly_income: "FILL_THIS"
+      biggest_pain: "FILL_THIS"
+# ============================================================================
+# PAIN STATISTICS
+# ============================================================================
+pain_analysis:
+  primary_pains:
+    "Pain 1 description": "FILL_THIS: percentage experiencing"
+    "Pain 2 description": "FILL_THIS"
+    "Pain 3 description": "FILL_THIS"
+  hidden_pains_not_verbalized:
+    "Hidden Pain 1": "FILL_THIS: High/Medium/Low"
+    "Hidden Pain 2": "FILL_THIS"
+# ============================================================================
+# FEARS
+# ============================================================================
+fears:
+  explicit_fears:
+    "Fear 1": "FILL_THIS: percentage experiencing"
+    "Fear 2": "FILL_THIS"
+  implicit_fears:
+    "Fear 1": "FILL_THIS: High/Medium/Low (symptoms)"
+  existential_fears:
+    "Fear 1": "FILL_THIS: percentage"
+# ============================================================================
+# BEHAVIOR PATTERNS
+# ============================================================================
+behavior_patterns:
+  content_consumption_ratio:
+    hours_per_week: "FILL_THIS"
+    consumption_percentage: "FILL_THIS"
+    execution_percentage: "FILL_THIS"
+  course_purchasing:
+    courses_per_year: "FILL_THIS"
+    completion_rate: "FILL_THIS"
+    implementation_rate: "FILL_THIS"
+  projects_in_progress:
+    average_wip: "FILL_THIS"
+    abandonment_rate: "FILL_THIS"
+# ============================================================================
+# MEMBER OUTCOMES
+# ============================================================================
+member_outcomes:
+  business_results:
+    average_income_increase: "FILL_THIS: e.g., 3-5x within 12 months"
+    timeframe:
+      "30_days": "FILL_THIS: metric achieved"
+      "60_days": "FILL_THIS"
+      "90_days": "FILL_THIS"
+      "180_days": "FILL_THIS"
+      "365_days": "FILL_THIS"
+  lifestyle_changes:
+    "Work reduced to X hours/day": "FILL_THIS: percentage achieving"
+    "Geographic freedom": "FILL_THIS"
+    "Family satisfaction improvement": "FILL_THIS"
+  psychological_outcomes:
+    "Clarity about direction": "FILL_THIS: percentage"
+    "Burnout relief": "FILL_THIS"
+    "Belonging to tribe": "FILL_THIS"
+# ============================================================================
+# RETENTION & CHURN
+# ============================================================================
+retention_analytics:
+  first_30_days: "FILL_THIS: percentage retained"
+  first_90_days: "FILL_THIS"
+  first_year: "FILL_THIS"
+  churn_reasons:
+    "Reason 1": "FILL_THIS: percentage of churn"
+    "Reason 2": "FILL_THIS"
+# ============================================================================
+# CONVERSION FUNNEL
+# ============================================================================
+conversion_funnel:
+  awareness_to_consideration: "FILL_THIS: percentage"
+  consideration_to_decision: "FILL_THIS"
+  decision_to_purchase: "FILL_THIS"
+  purchase_to_activation: "FILL_THIS"
+# ============================================================================
+# KEY INSIGHTS
+# ============================================================================
+key_insights:
+  insight_1: |
+    FILL_THIS: What's the #1 finding from your data?
+  insight_2: |
+    FILL_THIS: What surprised you?
+  insight_3: |
+    FILL_THIS: What pattern emerged?
+  insight_4: |
+    FILL_THIS: What else discovered?
+  insight_5: |
+    FILL_THIS: Data vs beliefs (where were you wrong?)
+# ============================================================================
+# DATA VALIDATION
+# ============================================================================
+data_validation:
+  sample_size: "FILL_THIS"
+  confidence_level: "FILL_THIS: 90%+ or state lower"
+  margin_of_error: "FILL_THIS: ±X%"
+  methodology: "FILL_THIS"
+  bias_controls: "FILL_THIS"
+  last_validation: "FILL_THIS: date"
+# ============================================================================
+# CRITICAL RULE: NO CLAIMS WITHOUT DATA
+# ============================================================================
+validation_rule: |
+  BEFORE any marketing claim in offerbook.yaml:
+    1. Find supporting data in THIS file
+    2. Include [SOURCE: analytics.yaml] if citing
+    3. Never extrapolate beyond data
+    4. When uncertain, caveat with "approximately"
+
+  Example:
+    ✅ "80% report time stolen by repetitive tasks" [SOURCE: pain_analysis]
+    ❌ "90% feel their time is completely wasted" (overstate)
+metadata_final:
+  version: "1.0"
+  last_updated: "FILL_THIS"
+  next_update_due: "FILL_THIS"
+  data_guardian: "FILL_THIS"
+  access_level: "Internal (CMO, Data, Product)"
+  status: "INCOMPLETE - Waiting for research data"
+next_step: "Once complete, all claims in offerbook.yaml are validated"

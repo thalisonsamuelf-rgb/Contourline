@@ -1,0 +1,15 @@
+---
+metadata:
+  schema: "brand.workspace_context"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  generated_at: "FILL_THIS"
+  brand_name: "FILL_THIS"
+workspace_context:
+  workspace_preflight: "FILL_THIS"
+  available_canonical_templates: []
+  missing_templates: []
+  canonical_outputs_allowed: []
+  custom_outputs_allowed:
+    - "docs/brand/FILL_THIS/"
+  blockers: []

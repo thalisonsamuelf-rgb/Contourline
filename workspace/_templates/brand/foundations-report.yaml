@@ -1,0 +1,21 @@
+---
+metadata:
+  schema: "brand.foundations_report"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+summary:
+  strategic_baseline: "FILL_THIS"
+  key_findings:
+    - "FILL_THIS"
+    - "FILL_THIS"
+priority_gaps:
+  - "FILL_THIS"
+  - "FILL_THIS"
+recommended_focus_next_phase:
+  - "FILL_THIS"
+references:
+  cbbe_source: "FILL_THIS"
+  identity_architecture_source: "FILL_THIS"
+  growth_plan_source: "FILL_THIS"

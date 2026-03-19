@@ -1,0 +1,33 @@
+---
+# Template: manifestation coherence test dataset (N7)
+
+metadata:
+  template_id: "movement.manifestation_coherence_test"
+  version: "1.0.0"
+  lifecycle_stage: "manifestation"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+coherence_test:
+  content_id: "<required>"
+  cycle_id: "<required>"
+  five_questions:
+    serves_which_doctrine:
+      answer: "<required>"
+      status: "<pass|gap|fail>"
+    carries_which_myth:
+      answer: "<required>"
+      status: "<pass|gap|fail>"
+    reinforces_which_rite_dimension:
+      answer: "<required>"
+      status: "<pass|gap|fail>"
+    coherent_with_discourse:
+      answer: "<required>"
+      status: "<pass|gap|fail>"
+    advances_flywheel_phase:
+      answer: "<required>"
+      status: "<pass|gap|fail>"
+  verdict: "<coherent|gaps|incoherent>"
+  correction_actions: []
+provenance:
+  source_docs: []

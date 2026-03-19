@@ -1,0 +1,19 @@
+---
+metadata:
+  schema: "brand.culture_alignment_plan"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+fusion_alignment:
+  internal_behaviors_required: []
+  external_promises: []
+  gaps_identified: []
+actions:
+  - owner: "FILL_THIS"
+    action: "FILL_THIS"
+    due_date: "YYYY-MM-DD"
+rituals:
+  - "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

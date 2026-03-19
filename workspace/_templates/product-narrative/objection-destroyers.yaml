@@ -1,0 +1,51 @@
+---
+# OBJECTION-DESTROYERS.YAML - Shared objection handling artifact
+# PURPOSE: Canonical objection map reusable across pages, ads, pitches,
+# sales calls, and franchise recruitment.
+
+metadata:
+  version: "1.0"
+  artifact_type: "objection_destroyers"
+  status: "DRAFT"
+  owner: "coo-orchestrator"
+  canonical_storage:
+    product: "workspace/businesses/{business}/products/{product}/narrative/objection-destroyers.yaml"
+  shared_across:
+    - copy
+    - storytelling
+    - traffic-masters
+    - franchise
+  source_dependencies:
+    - "workspace/businesses/{business}/company/icp.yaml"
+    - "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+    - "workspace/businesses/{business}/products/{product}/proof.yaml"
+    - "workspace/businesses/{business}/products/{product}/testimonials.yaml"
+
+context:
+  business_slug: "FILL_THIS"
+  product_slug: "FILL_THIS"
+
+objections:
+  - id: objection_1
+    what_they_say: "FILL_THIS"
+    what_they_mean: "FILL_THIS"
+    proof_or_mechanism: "FILL_THIS"
+    response: "FILL_THIS"
+    best_use:
+      - "landing_page"
+      - "sales_call"
+  - id: objection_2
+    what_they_say: "FILL_THIS"
+    what_they_mean: "FILL_THIS"
+    proof_or_mechanism: "FILL_THIS"
+    response: "FILL_THIS"
+    best_use:
+      - "ad_retarg"
+      - "pitch"
+
+summary:
+  top_3_public_objections:
+    - "FILL_THIS"
+  top_3_private_objections:
+    - "FILL_THIS"
+  strongest_destroyer: "FILL_THIS"

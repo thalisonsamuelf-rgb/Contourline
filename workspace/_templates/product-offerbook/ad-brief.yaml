@@ -1,0 +1,896 @@
+---
+# AD-BRIEF.YAML - Media Buyer Extraction Layer
+# Purpose: One file = everything a media buyer needs to create ads.
+#          Extracts and organizes data from 20 offerbook files into a single actionable brief.
+# Guardian: Ads Manager / Media Buyer / CMO
+# Timing: FILL using data from completed offerbook files (30-60 min extraction exercise)
+# Framework: GOATed Ads Assembly Process (Hook + Meat + CTA)
+# Dependencies: icp.yaml, proof.yaml, objections.yaml, diagnosis.yaml, value-equation.yaml,
+#               testimonials.yaml, scarcity-urgency.yaml, headlines.yaml, copy-swipes.yaml,
+#               guarantee-design.yaml, offerbook.yaml
+#
+# PROBLEM THIS FILE SOLVES:
+# A media buyer receiving 20 offerbook files needs 2-4 hours to FIND the relevant data.
+# This file is the EXTRACTION LAYER — it pulls everything a media buyer needs into one place.
+# Fill it once, reference it every time you create ads.
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Ads Manager / Media Buyer"
+  estimated_fill_time: "30-60 minutes (using other offerbook files)"
+  notes: |
+    HOW TO USE THIS FILE:
+    1. Open this file alongside the source files listed in the source_map below
+    2. For each section, go to the referenced source file and EXTRACT the data
+    3. Write it in the prospect's EXACT language (not marketing speak)
+    4. Once filled, this is your ONLY reference when creating ads
+    5. Update when source files change (new proof, new objections, new testimonials)
+
+    RULE: Every field has a source reference. You are EXTRACTING, not inventing.
+    If the source file is empty, the ad brief field stays empty. Do not guess.
+# ============================================================================
+# SOURCE MAP — Where to find each section's data
+# ============================================================================
+# Before filling anything, read this map. It tells you EXACTLY which file
+# provides which section. Open only the files you need.
+source_map:
+  ad_targeting:
+    primary_source: "icp.yaml > demographics, psychographics, archetypes"
+    secondary_source: "analytics.yaml > behavioral data (if available)"
+    what_to_extract: "Avatar definition, pain language, fear language, desire language, targeting parameters"
+  ad_angles:
+    primary_source: "icp.yaml > pains, fears, motivations, archetypes"
+    secondary_source: "objections.yaml > Tier 1 and Tier 2 objections"
+    tertiary_source: "value-equation.yaml > Dream Outcome, weakest variable"
+    what_to_extract: "10+ distinct angles mapped to awareness levels and platforms"
+  hook_bank:
+    primary_source: "headlines.yaml > headlines_by_awareness, headlines_by_channel"
+    secondary_source: "copy-swipes.yaml > opening_hooks, headlines by level"
+    what_to_extract: "10+ hooks organized by type, awareness level, and platform"
+  proof_arsenal:
+    primary_source: "proof.yaml > case_studies, statistics, social_proof, founder_proof"
+    secondary_source: "testimonials.yaml > testimonials_by_awareness_level, themed_quotes"
+    what_to_extract: "Stat-based proof hooks, screenshot-ready proof, video testimonial scripts"
+  urgency_elements:
+    primary_source: "scarcity-urgency.yaml > scarcity_types, urgency_types, copy_templates"
+    what_to_extract: "Genuine scarcity statements, deadline copy, communication timeline"
+  guarantee_copy:
+    primary_source: "guarantee-design.yaml > guarantee_language, guarantee_variations"
+    what_to_extract: "Guarantee name, headline, short copy, ad version"
+  awareness_routing:
+    primary_source: "diagnosis.yaml > market_awareness_level, combined_diagnosis"
+    what_to_extract: "Primary awareness level, copy length guidance, headline approach"
+  value_equation_data:
+    primary_source: "value-equation.yaml > dream_outcome, perceived_likelihood, time_delay, effort_sacrifice"
+    what_to_extract: "Dream Outcome statement, transformation before/after, weakest variable"
+  offer_architecture:
+    primary_source: "offerbook.yaml > offer components, pricing, bonuses"
+    what_to_extract: "What they get, price, value stack, unique mechanism"
+  objection_data:
+    primary_source: "objections.yaml > Tier 1 objections (top 5)"
+    what_to_extract: "Top 5 objections with responses for retargeting ads"
+# ============================================================================
+# SECTION 1: AD TARGETING SUMMARY
+# ============================================================================
+# Extract from: icp.yaml > core_icp, demographics, psychographics, archetypes
+# Purpose: Give the media buyer a clear picture of WHO they are targeting
+ad_targeting:
+  primary_avatar:
+    one_sentence: "FILL — Extract from: icp.yaml > core_icp > one_sentence_definition"
+    avatar_name: "FILL — Extract from: icp.yaml > core_icp > icp_name"
+  top_3_pains_verbatim:
+    # Use the prospect's EXACT words. Not your marketing version.
+    pain_1: "FILL — Extract from: icp.yaml > pains > latent_pains > pain_1"
+    pain_2: "FILL — Extract from: icp.yaml > pains > latent_pains > pain_2"
+    pain_3: "FILL — Extract from: icp.yaml > pains > latent_pains > pain_3"
+  top_3_fears_verbatim:
+    fear_1: "FILL — Extract from: icp.yaml > fears > explicit_fears_declared > fear_1 > name + manifestation"
+    fear_2: "FILL — Extract from: icp.yaml > fears > explicit_fears_declared > fear_2 > name + manifestation"
+    fear_3: "FILL — Extract from: icp.yaml > fears > explicit_fears_declared > fear_3 > name + manifestation"
+  top_3_desires_verbatim:
+    desire_1: "FILL — Extract from: icp.yaml > what_really_seeking > deep_level"
+    desire_2: "FILL — Extract from: icp.yaml > values_hierarchy > value_1"
+    desire_3: "FILL — Extract from: icp.yaml > archetypes > archetype_1 > what_really_seeks > deep"
+  demographic_targeting:
+    age_range: "FILL — Extract from: icp.yaml > demographics > age > primary_range"
+    gender: "FILL — Extract from: icp.yaml > demographics (if specified)"
+    location: "FILL — Extract from: icp.yaml > demographics > geographic_distribution"
+    income_level: "FILL — Extract from: icp.yaml > archetypes (income range across archetypes)"
+    job_titles: "FILL — Extract from: icp.yaml > demographics > professional_experience > field"
+    education: "FILL — Extract from: icp.yaml > demographics > education"
+  interest_based_targeting:
+    what_they_follow: "FILL — Infer from: icp.yaml > psychographics > consumption_pattern + behavioral_patterns"
+    what_they_read: "FILL — Infer from: icp.yaml > psychographics > core_beliefs + mindset"
+    what_they_buy: "FILL — Extract from: icp.yaml > behavioral_patterns > consumption_pattern > courses_purchased_per_year"
+    influencers_they_follow: "FILL — Research based on ICP archetype (not in offerbook — media buyer research)"
+    platforms_they_use: "FILL — Research based on ICP demographics"
+  behavioral_signals:
+    what_they_search: "FILL — Infer from: icp.yaml > psychographics > mindset > dominant_thought + secondary_thought"
+    where_they_congregate: "FILL — Infer from: icp.yaml > community_need + archetypes"
+    purchase_triggers: "FILL — Extract from: icp.yaml > motivations > action_triggers"
+    purchase_blockers: "FILL — Extract from: icp.yaml > motivations > paralysis_triggers"
+# ============================================================================
+# SECTION 2: AD ANGLES MATRIX
+# ============================================================================
+# Extract from: icp.yaml + objections.yaml + value-equation.yaml
+# Purpose: 10+ distinct angles mapped to types, awareness levels, and platforms
+# Each angle is a DIRECTION for an ad, not a complete ad.
+ad_angles:
+  angle_1:
+    type: "Pain"
+    angle_name: "FILL — e.g., 'The Scattered Energy Problem'"
+    source_data_point: "FILL — Extract from: icp.yaml > pains > latent_pains > pain_1"
+    hook_direction: "FILL — 1-sentence hook concept. e.g., 'You have 5 projects and none making real money'"
+    awareness_level_fit: "Problem Aware (Level 2)"
+    platform_fit: "Facebook, Instagram Feed, YouTube"
+  angle_2:
+    type: "Fear"
+    angle_name: "FILL — e.g., 'The Irrelevance Clock'"
+    source_data_point: "FILL — Extract from: icp.yaml > fears > explicit_fears_declared > fear_3"
+    hook_direction: "FILL — e.g., 'While you are planning, someone younger is executing'"
+    awareness_level_fit: "Problem Aware (Level 2), Unaware (Level 1)"
+    platform_fit: "Facebook, YouTube, TikTok"
+  angle_3:
+    type: "Aspiration"
+    angle_name: "FILL — e.g., 'The Freedom Builder'"
+    source_data_point: "FILL — Extract from: icp.yaml > what_really_seeking > deep_level"
+    hook_direction: "FILL — e.g., 'What if your 20 years of experience became your unfair advantage?'"
+    awareness_level_fit: "Solution Aware (Level 3)"
+    platform_fit: "Facebook, Instagram, YouTube"
+  angle_4:
+    type: "Proof"
+    angle_name: "FILL — e.g., 'The Results Parade'"
+    source_data_point: "FILL — Extract from: proof.yaml > statistics > results + social_proof"
+    hook_direction: "FILL — e.g., 'FILL_THIS positive ROI in 90 days. Here is how.'"
+    awareness_level_fit: "Product Aware (Level 4), Solution Aware (Level 3)"
+    platform_fit: "Facebook, Instagram, YouTube"
+  angle_5:
+    type: "Curiosity"
+    angle_name: "FILL — e.g., 'The Hidden Pattern'"
+    source_data_point: "FILL — Extract from: icp.yaml > behavioral_patterns > cycling_pattern"
+    hook_direction: "FILL — e.g., 'The reason you start new projects every 2-3 months (and how to stop)'"
+    awareness_level_fit: "Unaware (Level 1), Problem Aware (Level 2)"
+    platform_fit: "TikTok, Instagram Reels, YouTube"
+  angle_6:
+    type: "Mechanism"
+    angle_name: "FILL — e.g., 'The System vs Course Distinction'"
+    source_data_point: "FILL — Extract from: value-equation.yaml > unique mechanism or offerbook.yaml > unique_mechanism"
+    hook_direction: "FILL — e.g., 'Courses sell information. Systems sell execution. Here is the difference.'"
+    awareness_level_fit: "Solution Aware (Level 3)"
+    platform_fit: "YouTube, Facebook, Native"
+  angle_7:
+    type: "Objection-Killer"
+    angle_name: "FILL — e.g., 'The Course Skeptic'"
+    source_data_point: "FILL — Extract from: objections.yaml > objection_1 (most frequent)"
+    hook_direction: "FILL — e.g., 'Already bought 5 courses that failed? This is not a course.'"
+    awareness_level_fit: "Product Aware (Level 4), Solution Aware (Level 3)"
+    platform_fit: "Facebook, YouTube (retargeting)"
+  angle_8:
+    type: "Contrast"
+    angle_name: "FILL — e.g., 'Before/After Transformation'"
+    source_data_point: "FILL — Extract from: proof.yaml > before_after > archetype_1"
+    hook_direction: "FILL — e.g., 'R$ 8k/month scattered across 5 projects to R$ 15k/month with 1 focused offer'"
+    awareness_level_fit: "Problem Aware (Level 2), Solution Aware (Level 3)"
+    platform_fit: "Instagram, TikTok, Facebook"
+  angle_9:
+    type: "Story"
+    angle_name: "FILL — e.g., 'The Founder Journey'"
+    source_data_point: "FILL — Extract from: proof.yaml > founder_proof or testimonials.yaml > level_3"
+    hook_direction: "FILL — e.g., 'FILL_THIS in revenue since 2014. Here is the one system that made it work.'"
+    awareness_level_fit: "Solution Aware (Level 3), Product Aware (Level 4)"
+    platform_fit: "YouTube, Facebook, Instagram"
+  angle_10:
+    type: "Authority"
+    angle_name: "FILL — e.g., 'The Track Record'"
+    source_data_point: "FILL — Extract from: proof.yaml > founder_credibility_proof + social_proof"
+    hook_direction: "FILL — e.g., '20,000+ students. FILL_THIS countries. FILL_THIS retention. The data speaks.'"
+    awareness_level_fit: "Most Aware (Level 5), Product Aware (Level 4)"
+    platform_fit: "Facebook, YouTube, Native"
+    # Add more angles as needed. 10 is the minimum, not the maximum.
+    # Each angle should map to a DIFFERENT pain, fear, desire, proof point, or objection.
+    # Diversity of angles = diversity of audiences reached.
+# ============================================================================
+# SECTION 3: HOOK BANK FOR ADS
+# ============================================================================
+# Extract from: headlines.yaml + copy-swipes.yaml
+# Purpose: 10+ hooks organized for ad use, tagged by type and awareness level
+# Distribution: 7 proven (Core), 2 adapted (Adjacent), 1 experimental (Moonshot)
+#
+# RULE: 70-20-10 distribution. 7 hooks from proven patterns, 2 adapted from
+# other niches, 1 completely experimental. This balances reliability with discovery.
+hook_bank:
+  distribution_check:
+    core_proven: 7
+    adjacent_adapted: 2
+    moonshot_experimental: 1
+    total: 10
+  # CORE HOOKS (70% — Proven patterns applied to your product)
+  hook_1:
+    text: "FILL — Extract pattern from: headlines.yaml > level_2 or level_3 formulas, apply to your product"
+    type: "Question"
+    awareness_level: "Problem Aware (Level 2)"
+    value_equation_variable: "Dream Outcome"
+    platform: "Facebook, Instagram"
+    category: "Core"
+    source_reference: "headlines.yaml > level_2_problem_aware > formula_1"
+  hook_2:
+    text: "FILL — Extract pattern from: headlines.yaml > level_3 formulas"
+    type: "Statement"
+    awareness_level: "Solution Aware (Level 3)"
+    value_equation_variable: "Perceived Likelihood"
+    platform: "Facebook, YouTube"
+    category: "Core"
+    source_reference: "headlines.yaml > level_3_solution_aware > formula_1"
+  hook_3:
+    text: "FILL — Extract pattern from: copy-swipes.yaml > opening_hooks > data_hook"
+    type: "Statistic"
+    awareness_level: "Solution Aware (Level 3)"
+    value_equation_variable: "Perceived Likelihood"
+    platform: "Facebook, Instagram, TikTok"
+    category: "Core"
+    source_reference: "copy-swipes.yaml > opening_hooks > data_hook"
+  hook_4:
+    text: "FILL — Build from: proof.yaml > statistics + case_studies (use specific numbers)"
+    type: "Proof"
+    awareness_level: "Product Aware (Level 4)"
+    value_equation_variable: "Perceived Likelihood"
+    platform: "Facebook, YouTube, Native"
+    category: "Core"
+    source_reference: "proof.yaml > statistics > results"
+  hook_5:
+    text: "FILL — Build from: icp.yaml > pains > hidden_pains_not_verbalized"
+    type: "Label"
+    awareness_level: "Problem Aware (Level 2)"
+    value_equation_variable: "Dream Outcome"
+    platform: "Facebook, Instagram"
+    category: "Core"
+    source_reference: "icp.yaml > pains > hidden_pains_not_verbalized"
+  hook_6:
+    text: "FILL — Build from: objections.yaml > objection_1 (flip the objection into a hook)"
+    type: "Conditional"
+    awareness_level: "Product Aware (Level 4)"
+    value_equation_variable: "Effort & Sacrifice"
+    platform: "Facebook, YouTube"
+    category: "Core"
+    source_reference: "objections.yaml > objection_1"
+  hook_7:
+    text: "FILL — Build from: value-equation.yaml > dream_outcome > one_sentence_promise"
+    type: "Command"
+    awareness_level: "Solution Aware (Level 3)"
+    value_equation_variable: "Dream Outcome"
+    platform: "Facebook, Instagram, TikTok"
+    category: "Core"
+    source_reference: "value-equation.yaml > dream_outcome"
+  # ADJACENT HOOKS (20% — Adapted from other niches)
+  hook_8:
+    text: "FILL — Find a winning hook from another industry and adapt the STRUCTURE (not the words)"
+    type: "Narrative"
+    awareness_level: "Unaware (Level 1)"
+    value_equation_variable: "Dream Outcome"
+    platform: "YouTube, Facebook"
+    category: "Adjacent"
+    source_reference: "External swipe file — adapted structure from [industry]"
+    adaptation_notes: "FILL — Original industry, original hook structure, how you adapted"
+  hook_9:
+    text: "FILL — Find a winning hook from another industry and adapt"
+    type: "List"
+    awareness_level: "Problem Aware (Level 2)"
+    value_equation_variable: "Time Delay"
+    platform: "TikTok, Instagram Reels"
+    category: "Adjacent"
+    source_reference: "External swipe file — adapted from [industry]"
+    adaptation_notes: "FILL — Original hook, adapted version, why it fits"
+  # MOONSHOT HOOK (10% — Completely experimental)
+  hook_10:
+    text: "FILL — Something nobody in your niche has tried. Visual pattern interrupt, confession, controversial statement."
+    type: "Exclamation / Pattern Interrupt"
+    awareness_level: "Unaware (Level 1)"
+    value_equation_variable: "N/A (attention-first)"
+    platform: "TikTok, Instagram Reels"
+    category: "Moonshot"
+    source_reference: "Original — no source. Pure experiment."
+    experiment_hypothesis: "FILL — What are you testing? Why might this work?"
+# ============================================================================
+# SECTION 4: AD MEAT TEMPLATES
+# ============================================================================
+# Purpose: 5 ad body formats with template structure, source mapping,
+#          and platform/awareness-level fit.
+# The meat fulfills the hook's promise. It must be congruent.
+# Rotate meats less often than hooks — fewer people see the body.
+ad_meat_templates:
+  format_1_problem_agitate_solve:
+    name: "Problem-Agitate-Solve (PAS)"
+    structure: |
+      [0-3s] Hook — state the problem (from hook_bank)
+      [3-8s] AGITATE — amplify the pain. Show consequences of NOT solving.
+              Make them FEEL the cost of inaction.
+      [8-18s] SOLVE — introduce your solution. Name the mechanism.
+              Explain WHY it works (not just WHAT it is).
+      [18-25s] PROOF — one stat, one testimonial, or one result.
+      [25-30s] CTA — clear next step.
+    where_to_pull_content:
+      problem: "icp.yaml > pains > latent_pains"
+      agitation: "icp.yaml > fears > explicit_fears_declared + hidden_pains_not_verbalized"
+      solution: "offerbook.yaml > unique_mechanism + value-equation.yaml > dream_outcome"
+      proof: "proof.yaml > statistics or testimonials.yaml > short_form"
+    example: |
+      HOOK: "If you have 5 projects and none making real money, this is for you."
+      AGITATE: "Every month you stay scattered is a month of income you never recover.
+      Your competitors with 1 focused offer are pulling ahead."
+      SOLVE: "The [Mechanism] system consolidates your expertise into 1 scalable offer
+      using IA automation. Not another course. A system you execute in real time."
+      PROOF: "FILL_THIS of members achieve positive ROI in 90 days."
+      CTA: "See if this is right for you. Link below."
+    best_platform: "Facebook (primary text + video), YouTube pre-roll"
+    best_awareness_level: "Problem Aware (Level 2), Solution Aware (Level 3)"
+  format_2_proof_first:
+    name: "Proof-First (Lead with Result)"
+    structure: |
+      [0-3s] Hook — lead with a specific result or testimonial
+      [3-10s] CONTEXT — who achieved this result? What was their situation before?
+      [10-20s] HOW — explain the mechanism that made it possible
+      [20-25s] BRIDGE — connect their result to the prospect's situation
+      [25-30s] CTA — clear next step
+    where_to_pull_content:
+      result: "proof.yaml > case_studies or before_after"
+      context: "proof.yaml > case_study_X > before_state"
+      mechanism: "offerbook.yaml > unique_mechanism"
+      bridge: "icp.yaml > archetypes > archetype matching the case study"
+    example: |
+      HOOK: "R$ 8k/month to R$ 15k/month in 90 days. With fewer projects, not more."
+      CONTEXT: "Maria was a digital entrepreneur with 5 projects. Scattered. Overwhelmed.
+      Income plateaued for 2 years."
+      HOW: "She joined [Product], implemented the WIP=1 system, and used IA automation
+      to replace 10 hours of manual work per week."
+      BRIDGE: "If you are in the same situation — multiple projects, no focus — this system
+      was built for you."
+      CTA: "See the full case study. Link below."
+    best_platform: "Facebook, Instagram Feed, YouTube"
+    best_awareness_level: "Solution Aware (Level 3), Product Aware (Level 4)"
+  format_3_story_arc:
+    name: "Story Arc (Before-Struggle-Discovery-Transformation)"
+    structure: |
+      [0-3s] Hook — intrigue or relatable opening
+      [3-8s] BEFORE — paint the before state (prospect sees themselves)
+      [8-12s] STRUGGLE — the turning point. What was the breaking moment?
+      [12-20s] DISCOVERY — how they found the solution
+      [20-25s] TRANSFORMATION — specific results, emotional and financial
+      [25-30s] CTA — clear next step
+    where_to_pull_content:
+      before: "proof.yaml > before_after > archetype_X > before"
+      struggle: "icp.yaml > fears > existential_fears + pains > existential_pains"
+      discovery: "offerbook.yaml > how they found the product"
+      transformation: "proof.yaml > before_after > archetype_X > after"
+    example: |
+      HOOK: "3 years ago, I was exactly where you are now."
+      BEFORE: "Burned out from consulting. 60-hour weeks. Income good but life terrible."
+      STRUGGLE: "I hit a wall. Health issues. Family tension. I knew something had to change."
+      DISCOVERY: "I found a system that replaced 10h/week of work with IA automation
+      and gave me a community of people executing alongside me."
+      TRANSFORMATION: "Today I work 30 hours. Income is higher. I actually enjoy the work."
+      CTA: "Your story can change too. See how. Link below."
+    best_platform: "YouTube (long-form), Facebook (video), Instagram Reels (compressed)"
+    best_awareness_level: "Unaware (Level 1), Problem Aware (Level 2)"
+  format_4_listicle:
+    name: "Listicle (Value-First Education)"
+    structure: |
+      [0-3s] Hook — "X things I learned about [topic]" or "X mistakes [group] makes"
+      [3-20s] VALUE — deliver 3-5 genuinely useful insights
+              Each insight = 1 sentence problem + 1 sentence solution
+      [20-25s] BRIDGE — "If you want the full system behind these insights..."
+      [25-30s] CTA — clear next step
+    where_to_pull_content:
+      insights: "icp.yaml > psychographics > mindset + behavioral_patterns + pains"
+      system: "offerbook.yaml > unique_mechanism or deliverables"
+    example: |
+      HOOK: "3 things I learned after 12 years building businesses with IA."
+      INSIGHT 1: "Information is not the bottleneck. You already know enough.
+      The bottleneck is a system that turns knowledge into action."
+      INSIGHT 2: "Working alone is the most expensive decision you can make.
+      A community of executors is the cheapest accountability system that exists."
+      INSIGHT 3: "The people winning with IA are not the smartest. They are the ones
+      with a system that automates the boring parts."
+      BRIDGE: "These 3 insights come from a system built over 12 years and used by 20,000+ people."
+      CTA: "See the full system. Link below."
+    best_platform: "TikTok, Instagram Reels, Facebook"
+    best_awareness_level: "Problem Aware (Level 2), Solution Aware (Level 3)"
+  format_5_mechanism_reveal:
+    name: "Mechanism Reveal (Why Common Approach Fails + What Works)"
+    structure: |
+      [0-3s] Hook — "Why [common approach] does not work" or "The real reason [result] is hard"
+      [3-10s] DEBUNK — explain why the common approach fails (be specific)
+      [10-18s] REVEAL — introduce your mechanism. Name it. Explain the core insight.
+      [18-25s] PROOF — one result that validates the mechanism
+      [25-30s] CTA — clear next step
+    where_to_pull_content:
+      common_approach: "objections.yaml > objection_1 assumptions + diagnosis.yaml > competitive landscape"
+      mechanism: "offerbook.yaml > unique_mechanism + value-equation.yaml > unique_mechanism_named"
+      proof: "proof.yaml > statistics or case_studies"
+    example: |
+      HOOK: "Courses do not work. And here is why."
+      DEBUNK: "Courses sell information. You already have information. 80% consumption,
+      20% execution. The problem is not knowledge. It is system."
+      REVEAL: "The [Mechanism] is not a course. It is an execution system with IA automation
+      and weekly community accountability. You do not learn. You build."
+      PROOF: "FILL_THIS of members get positive ROI in 90 days. Average course completion: 15%. Ours: 85%."
+      CTA: "See how the system works. Link below."
+    best_platform: "YouTube (education format), Facebook, Native Ads"
+    best_awareness_level: "Solution Aware (Level 3)"
+# ============================================================================
+# SECTION 5: CTA OPTIONS
+# ============================================================================
+# Purpose: 3 tiers of CTAs matched to traffic temperature
+# Extract from: copy-swipes.yaml > call_to_action + scarcity-urgency.yaml > copy_templates
+cta_options:
+  soft_cta:
+    use_when: "Cold traffic (Level 1-2 awareness). First touch. Building trust."
+    examples:
+      - "Learn more about how this works"
+      - "Watch the free training"
+      - "Get the free guide"
+      - "See if this is right for you"
+      - "See how it works — free walkthrough on the next page"
+    source_reference: "copy-swipes.yaml > call_to_action > soft_cta"
+  medium_cta:
+    use_when: "Warm traffic (Level 3-4 awareness). They know you. Building conviction."
+    examples:
+      - "Book your strategy call"
+      - "Start your free trial"
+      - "Join the waitlist"
+      - "Claim your spot"
+      - "See what changed for members"
+    source_reference: "copy-swipes.yaml > call_to_action > medium_cta"
+  hard_cta:
+    use_when: "Hot traffic (Level 5 awareness). Retargeting. Cart abandonment. Ready to buy."
+    examples:
+      - "FILL — Enroll now + [genuine scarcity element from scarcity-urgency.yaml]"
+      - "FILL — Buy today + [genuine urgency element from scarcity-urgency.yaml]"
+      - "FILL — Join before [real deadline] — [guarantee from guarantee-design.yaml]"
+    source_reference: "scarcity-urgency.yaml > copy_templates + guarantee-design.yaml > guarantee_variations > ad_version"
+  cta_rules:
+    rule_1: "Cold traffic = soft CTA. Do not ask for the sale on first impression."
+    rule_2: "Retargeting = hard CTA. They already know you. Remove the last objection and close."
+    rule_3: "Every CTA must tell them WHAT TO DO + WHAT HAPPENS NEXT."
+    rule_4: "Show and tell: if possible, show the next page (landing page, checkout) in the ad."
+    rule_5: "Genuine urgency only. Extract from scarcity-urgency.yaml. Never fabricate."
+# ============================================================================
+# SECTION 6: PLATFORM SPECS — Quick Reference
+# ============================================================================
+# Purpose: Character limits, aspect ratios, format rules per platform
+# The media buyer checks this BEFORE creating any ad.
+platform_specs:
+  facebook:
+    primary_text:
+      above_fold: "125 characters (everything after is hidden behind 'See More')"
+      total_limit: "No hard limit, but 125 chars is what shows without click"
+      rule: "The HOOK must fit in 125 characters. Everything after is bonus."
+    headline: "40 characters (truncates on mobile beyond this)"
+    description: "30 characters"
+    image_specs:
+      recommended_size: "1080x1080px (square) or 1200x628px (landscape)"
+      aspect_ratio: "1:1 (feed) or 16:9 (landscape)"
+      text_overlay: "Less than 20% text on image (not enforced but affects delivery)"
+    video_specs:
+      recommended_length: "15-60 seconds (sweet spot: 30 seconds)"
+      aspect_ratio: "1:1 (feed), 4:5 (feed optimized), 9:16 (stories/reels)"
+      first_3_seconds: "Hook MUST land here. 90% of viewers leave if hook fails."
+      captions: "Required. 85% of Facebook video is watched without sound."
+    carousel:
+      slides: "2-10 slides"
+      rule: "Each slide must be self-contained. Tell a story across slides."
+    cta_button: "Match to funnel stage: Learn More (cold), Sign Up (warm), Shop Now (hot)"
+    targeting_notes: |
+      Broad targeting (3-10% of population) = CPM 40% lower.
+      No interest stacking. Lookalike 1% from customer list.
+      Age: minimum 10-year range. Let CBO optimize.
+    benchmarks:
+      ctr_good: ">1%"
+      ctr_bad: "<0.5% = hook problem, kill the ad"
+      cpm_good: "<$30"
+      cpc_good: "<$3"
+      link_ctr: ">0.8%"
+      video_3s_views: ">30% of impressions"
+  instagram_feed:
+    caption:
+      first_line: "Critical. This IS the hook. 125 characters visible before 'more'."
+      total_limit: "2,200 characters"
+    image_specs:
+      recommended_size: "1080x1080px (square) or 1080x1350px (4:5 portrait)"
+      aspect_ratio: "1:1 or 4:5 (4:5 takes more screen space = more attention)"
+    carousel:
+      slides: "2-10 slides"
+      rule: "First slide = hook. Last slide = CTA. Middle = value."
+    video_specs:
+      recommended_length: "15-30 seconds"
+      aspect_ratio: "4:5 (feed optimized)"
+  instagram_reels:
+    first_3_seconds: "Everything. If the hook fails here, the reel is dead."
+    format: "Vertical only (9:16). Must look native, not produced."
+    recommended_length: "15-30 seconds (sweet spot)"
+    native_feel_rules:
+      - "iPhone quality outperforms studio quality"
+      - "Text overlays: large, readable, positioned for thumbs"
+      - "Trending sounds boost distribution"
+      - "UGC format dominates"
+      - "No logos in first 3 seconds (looks like an ad = death)"
+  youtube_pre_roll:
+    skip_window: "5 seconds. Your ENTIRE value proposition must land before the skip button."
+    first_3_seconds: "Hook = everything. Pattern interrupt or die."
+    recommended_length: "15-30 seconds (bumper), 2-5 minutes (high-ticket)"
+    format_rules:
+      - "Direct to camera performs best"
+      - "Education and story formats have highest completion"
+      - "Restate hook at 15-30 second mark (second chance for partial skippers)"
+    targeting_notes: |
+      Custom intent audiences (people searching your keywords).
+      Competitor channel placements. In-market audiences.
+  youtube_in_feed:
+    thumbnail_rules:
+      - "5 words maximum on thumbnail"
+      - "High contrast, readable at mobile size"
+      - "Face with expression outperforms text-only"
+    title_rules:
+      - "60 characters maximum"
+      - "Front-load the hook in the title"
+      - "Specific numbers in title boost CTR"
+  tiktok:
+    first_2_seconds: "MUST stop the scroll. Visual or verbal hook."
+    verbal_hook: "7 words maximum for the opening verbal hook"
+    format: "Vertical only (9:16). Must look native."
+    recommended_length: "15-30 seconds (sweet spot)"
+    native_rules:
+      - "If it looks like an ad, it dies"
+      - "Raw > polished (iPhone > studio)"
+      - "Trending sounds and formats boost distribution"
+      - "UGC format dominates"
+      - "Spark ads (boosting organic) often outperform traditional ads"
+    targeting_notes: |
+      Broad is king on TikTok. Let the algorithm learn.
+      Interest targeting is secondary. Lookalikes from pixel data.
+  native_ads:
+    headline_rules:
+      - "Must look editorial, not promotional"
+      - "Curiosity-driven, not hard sell"
+      - "Specific numbers in headlines boost CTR"
+      - "Test at least 10 headline/image combinations per campaign"
+    headline_formulas:
+      - "[City] [Professional] Reveals The [Number] [Topic] Secret"
+      - "Why [Specific Group] Are Switching From [Old] to [New]"
+      - "The [Number]-Step [Method] That Changed How I [Result]"
+      - "[Number] [Topic] Mistakes Even Experts Make"
+    image_rules:
+      - "Intriguing but not clickbaity"
+      - "Real photos outperform stock"
+      - "Faces perform well"
+    landing_page: "Must match editorial feel. Advertorial format: educate first, sell second."
+    compliance: "Each network has its own compliance rules. Review before submitting."
+# ============================================================================
+# SECTION 7: RETARGETING SEQUENCE MAP
+# ============================================================================
+# Extract from: objections.yaml (top 5 objections) + proof.yaml + guarantee-design.yaml
+# Purpose: Map each top objection to a retargeting ad.
+# Sequence: which ad shows at which stage of retargeting.
+retargeting_sequence:
+  sequencing_guidance: |
+    Day 1-3 after visit: Social proof ad (build trust)
+    Day 3-7: Objection crusher ad (remove #1 barrier)
+    Day 7-10: Mechanism explainer ad (show how it works)
+    Day 10-14: Urgency ad (deadline or scarcity)
+    Day 14+: Guarantee ad (final risk reversal push)
+
+    BUDGET RULE: 10% of total ad budget goes to retargeting.
+    Retargeting CPA is typically 30-50% of cold traffic CPA.
+    Frequency cap: 1 impression per person per day per ad.
+  ad_slot_1:
+    name: "Social Proof Ad"
+    shows_at: "Day 1-3 after page visit or video view 50%+"
+    objective: "Build trust through proof. They saw you. Now prove you are real."
+    objection_addressed: "FILL — Extract from: objections.yaml > objection_8 ('Does this really work?')"
+    ad_angle: "Proof"
+    hook: "FILL — Build from: proof.yaml > social_proof or statistics"
+    proof_point: "FILL — Extract from: proof.yaml > the_social_proof_stack"
+    cta: "FILL — Soft CTA: 'See what our members are building'"
+    source_reference: "proof.yaml > social_proof, testimonials.yaml"
+  ad_slot_2:
+    name: "Objection Crusher Ad"
+    shows_at: "Day 3-7 after page visit"
+    objective: "Address the #1 reason they did not convert."
+    objection_addressed: "FILL — Extract from: objections.yaml > objection_1 (most frequent)"
+    ad_angle: "Objection-Killer"
+    hook: "FILL — Flip objection_1 into a hook. e.g., 'Already bought courses that failed? Good. This is not a course.'"
+    proof_point: "FILL — Extract from: objections.yaml > objection_1 > proof_point"
+    cta: "FILL — Medium CTA: 'See how we are different'"
+    source_reference: "objections.yaml > objection_1"
+  ad_slot_3:
+    name: "Mechanism Explainer Ad"
+    shows_at: "Day 7-10 after page visit"
+    objective: "Show HOW it works. Reduce perceived effort and complexity."
+    objection_addressed: "FILL — Extract from: objections.yaml > objection_4 or objection_5 ('Too complex / not for me')"
+    ad_angle: "Mechanism"
+    hook: "FILL — Build from: value-equation.yaml > unique_mechanism"
+    proof_point: "FILL — Extract from: proof.yaml > case_study matching their archetype"
+    cta: "FILL — Medium CTA: 'See the full system walkthrough'"
+    source_reference: "value-equation.yaml, offerbook.yaml > unique_mechanism"
+  ad_slot_4:
+    name: "Urgency Ad"
+    shows_at: "Day 10-14 after page visit (or during cart-close window)"
+    objective: "Compress decision timeline with genuine urgency."
+    objection_addressed: "FILL — Extract from: objections.yaml > objection_10 ('I will wait for later')"
+    ad_angle: "Urgency + Consequence"
+    hook: "FILL — Build from: scarcity-urgency.yaml > urgency_types > consequence_based"
+    proof_point: "FILL — Cost of delay calculation from: scarcity-urgency.yaml or value-equation.yaml"
+    cta: "FILL — Hard CTA: 'Enrollment closes [date]. Lock in your spot.'"
+    source_reference: "scarcity-urgency.yaml > copy_templates"
+  ad_slot_5:
+    name: "Guarantee Ad (Final Push)"
+    shows_at: "Day 14+ or for cart abandoners"
+    objective: "Remove the last barrier: risk. Show the guarantee is real."
+    objection_addressed: "FILL — Extract from: objections.yaml > objection_2 ('Too expensive / risky')"
+    ad_angle: "Risk Reversal"
+    hook: "FILL — Build from: guarantee-design.yaml > guarantee_language > headline"
+    proof_point: "FILL — Extract from: guarantee-design.yaml > guarantee_as_proof"
+    cta: "FILL — Hard CTA: 'Try for [X] days. Full refund if [condition]. Zero risk.'"
+    source_reference: "guarantee-design.yaml > guarantee_variations > ad_version"
+# ============================================================================
+# SECTION 8: BEFORE/AFTER TRANSFORMATION SCRIPTS
+# ============================================================================
+# Extract from: proof.yaml > before_after + icp.yaml > archetypes
+# Purpose: 30-second ad transformation narratives (3 scripts, one per archetype)
+transformation_scripts:
+  script_template: |
+    [0-3s]  HOOK — from hook_bank (stop the scroll)
+    [3-8s]  BEFORE STATE — specific pain, specific situation, emotional truth
+    [8-15s] TURNING POINT — how they discovered the solution
+    [15-25s] AFTER STATE — specific results (numbers), emotional transformation
+    [25-30s] CTA — clear next step
+  script_1:
+    archetype: "FILL — Extract from: icp.yaml > archetypes > archetype_1 > name"
+    hook: "FILL — From hook_bank, select hook matching this archetype's pain"
+    before_state:
+      situation: "FILL — Extract from: proof.yaml > before_after > archetype_1 > before > challenge"
+      metric: "FILL — Extract from: proof.yaml > before_after > archetype_1 > before > metric"
+      emotional: "FILL — Extract from: proof.yaml > before_after > archetype_1 > before > emotional_state"
+    turning_point: "FILL — How did they find the product? What was the trigger?"
+    after_state:
+      achievement: "FILL — Extract from: proof.yaml > before_after > archetype_1 > after > achievement"
+      metric: "FILL — Extract from: proof.yaml > before_after > archetype_1 > after > metric"
+      emotional: "FILL — Extract from: proof.yaml > before_after > archetype_1 > after > emotional_state"
+    cta: "FILL — Match CTA to archetype awareness level"
+    source_reference: "proof.yaml > before_after > archetype_1 + icp.yaml > archetypes > archetype_1"
+  script_2:
+    archetype: "FILL — Extract from: icp.yaml > archetypes > archetype_2 > name"
+    hook: "FILL — From hook_bank, select hook matching this archetype's pain"
+    before_state:
+      situation: "FILL — Extract from: proof.yaml > before_after > archetype_2 > before > challenge"
+      metric: "FILL — Extract from: proof.yaml > before_after > archetype_2 > before > metric"
+      emotional: "FILL — Extract from: proof.yaml > before_after > archetype_2 > before > emotional_state"
+    turning_point: "FILL — How did they find the product?"
+    after_state:
+      achievement: "FILL — Extract from: proof.yaml > before_after > archetype_2 > after > achievement"
+      metric: "FILL — Extract from: proof.yaml > before_after > archetype_2 > after > metric"
+      emotional: "FILL — Extract from: proof.yaml > before_after > archetype_2 > after > emotional_state"
+    cta: "FILL — Match CTA to archetype awareness level"
+    source_reference: "proof.yaml > before_after > archetype_2 + icp.yaml > archetypes > archetype_2"
+  script_3:
+    archetype: "FILL — Extract from: icp.yaml > archetypes > archetype_3 > name"
+    hook: "FILL — From hook_bank, select hook matching this archetype's pain"
+    before_state:
+      situation: "FILL — Extract from: proof.yaml > before_after > archetype_3 > before > challenge"
+      metric: "FILL — Extract from: proof.yaml > before_after > archetype_3 > before > metric"
+      emotional: "FILL — Extract from: proof.yaml > before_after > archetype_3 > before > emotional_state"
+    turning_point: "FILL — How did they find the product?"
+    after_state:
+      achievement: "FILL — Extract from: proof.yaml > before_after > archetype_3 > after > achievement"
+      metric: "FILL — Extract from: proof.yaml > before_after > archetype_3 > after > metric"
+      emotional: "FILL — Extract from: proof.yaml > before_after > archetype_3 > after > emotional_state"
+    cta: "FILL — Match CTA to archetype awareness level"
+    source_reference: "proof.yaml > before_after > archetype_3 + icp.yaml > archetypes > archetype_3"
+# ============================================================================
+# SECTION 9: PROOF ARSENAL FOR ADS
+# ============================================================================
+# Extract from: proof.yaml + testimonials.yaml
+# Purpose: Proof formatted and ready to use as ad hooks, headlines, and creative elements
+proof_arsenal:
+  stat_based_proof_hooks:
+    # Format: "[Number] [metric] in [timeframe]" — ready to use as headline or first line
+    stat_hook_1: "FILL — Extract from: proof.yaml > statistics > retention > statistic_1"
+    stat_hook_2: "FILL — Extract from: proof.yaml > statistics > results > statistic_1"
+    stat_hook_3: "FILL — Extract from: proof.yaml > social_proof > total_members"
+    stat_hook_4: "FILL — Extract from: proof.yaml > statistics > speed_of_results > day_30"
+    stat_hook_5: "FILL — Extract from: proof.yaml > statistics > speed_of_results > day_90"
+    stat_hook_6: "FILL — Extract from: proof.yaml > founder_proof > financial_proof"
+    stat_hook_7: "FILL — Extract from: proof.yaml > member_diversity_proof > geographic"
+    stat_hook_8: "FILL — Extract from: proof.yaml > the_social_proof_stack > proof_3_satisfaction"
+    stat_hook_9: "FILL — Extract from: proof.yaml > guarantee_as_proof > guarantee"
+    stat_hook_10: "FILL — Extract from: proof.yaml > founder_credibility_proof > proof_2"
+  screenshot_ready_proof:
+    # What to screenshot for ad creative (faceless ad format)
+    screenshot_1: "FILL — Screenshots of member results (DMs, comments, metrics)"
+    screenshot_2: "FILL — Screenshots of community engagement"
+    screenshot_3: "FILL — Screenshots of before/after income or metrics"
+    screenshot_4: "FILL — Screenshots of member milestone celebrations"
+    screenshot_5: "FILL — Screenshot of guarantee page or refund policy"
+    source_reference: "proof.yaml > missing_proof_to_gather (prioritize collecting these)"
+  video_testimonial_ad_script:
+    # Derived from: testimonials.yaml > video_testimonial_format
+    duration: "60-90 seconds"
+    structure: |
+      [0-5s] Who are you? (name, role, business)
+      [5-15s] What was your situation BEFORE? (specific pain, numbers)
+      [15-25s] What almost stopped you from joining? (real objection)
+      [25-35s] What was the moment you realized this was different? (aha moment)
+      [35-50s] What changed? (specific numbers + timeline + emotional state)
+      [50-60s] Who should do this? (specific recommendation, not generic)
+    source_reference: "testimonials.yaml > video_testimonial_format > structure"
+    filming_tips: |
+      Natural lighting. Look at camera. Speak normally.
+      Audio matters more than video quality.
+      One take is fine if it is natural.
+# ============================================================================
+# SECTION 10: TESTING PLAN
+# ============================================================================
+# Purpose: What to test, in what order, with what budget, and when to kill/scale
+# Based on the GOATed Ads testing hierarchy
+testing_plan:
+  testing_hierarchy: |
+    Test in this order (highest impact first):
+    1. HOOKS (80% of ad performance) — test 10+ hooks against same meat + CTA
+    2. MEAT FORMAT (15% of impact) — test 3-5 meats with winning hook
+    3. CTA (5% of impact) — test 1-3 CTAs with winning hook + meat
+    4. AUDIENCE (after creative is optimized) — same ad, different segments
+    5. PLATFORM (after audience is optimized) — same ad, different platforms
+  what_to_test_first: "HOOKS. Always hooks. 80% of ad performance is the first 3 seconds."
+  budget_allocation:
+    testing_budget_per_variation: "FILL — Minimum: 10x your expected CPA per variation"
+    daily_budget_per_ad_set: "FILL — Minimum $50/day per ad set"
+    testing_phase_total: "FILL — Budget for initial testing phase (typically 2-4 weeks)"
+    split: |
+      70% = Proven campaigns (winners from previous tests)
+      20% = New tests (hooks, meats, audiences)
+      10% = Retargeting (warmest audiences)
+  kill_criteria:
+    after_48_hours:
+      - "CTR > 1% AND CPA within target = SCALE (increase budget 20% per 48h)"
+      - "CTR > 1% BUT CPA too high = OPTIMIZE (check landing page, offer)"
+      - "CTR < 1% AND CPA too high = KILL (hook is dead, test new one)"
+      - "CTR < 0.5% = KILL IMMEDIATELY (do not waste budget)"
+    after_7_days:
+      - "ROAS > 3x for 7 days straight = SCALE AGGRESSIVELY"
+      - "CPA stable for 500+ conversions = SCALE (proven winner)"
+      - "Frequency > 3 after 14 days = REFRESH creative"
+      - "CTR declining day over day = Creative fatigue, new hooks needed"
+  scale_criteria:
+    vertical_scale: |
+      Increase budget 20% every 48 hours. NEVER more than 20% at once.
+      Monitor CPA for 24h after each increase.
+      If CPA spikes > 30%, revert and wait 48h.
+    horizontal_scale: |
+      Same winning creative, new audiences.
+      Duplicate ad set with new targeting.
+      Test new platforms with proven creative.
+    creative_scale: |
+      Take winning hook, create 10 new variations.
+      Take winning format, test with new hooks.
+      Repurpose winning ad for different platforms.
+  minimum_test_requirements:
+    hooks_per_ad_set: "3 minimum (10 recommended)"
+    impressions_per_variation: "1,000 minimum"
+    runtime: "48 hours minimum, 7 days maximum"
+    statistical_confidence: "FILL_THIS before declaring a winner"
+  documentation: |
+    Track for EVERY ad variation:
+    - Hook text
+    - Hook type (Question/Statement/Label/etc.)
+    - Platform
+    - Awareness level targeted
+    - Daily spend
+    - Impressions
+    - Clicks
+    - CTR (%)
+    - Conversions
+    - CPA ($)
+    - ROAS
+    - Date range
+    - Winner/Loser status
+    Build your personal swipe file from winners. Document losers too — they teach what to avoid.
+# ============================================================================
+# SECTION 11: CREATIVE BRIEF SUMMARY (One-Page Reference)
+# ============================================================================
+# Purpose: Condensed 1-page summary. Print this. Pin it. Reference it daily.
+# Every field is extracted from a specific source file.
+creative_brief_summary:
+  product: "FILL — Extract from: offerbook.yaml > product_name"
+  price: "FILL — Extract from: offerbook.yaml > pricing or value-equation.yaml > financial_value_comparison > price"
+  avatar: "FILL — 1 sentence. Extract from: icp.yaml > core_icp > one_sentence_definition"
+  core_promise: "FILL — 1 sentence. Extract from: value-equation.yaml > dream_outcome > one_sentence_promise"
+  unique_mechanism: "FILL — 1 sentence. Extract from: value-equation.yaml > unique_mechanism_named or offerbook.yaml"
+  awareness_level: "FILL — Extract from: diagnosis.yaml > market_awareness_level > level_identified"
+  sophistication_stage: "FILL — Extract from: diagnosis.yaml > market_sophistication_stage > stage_identified"
+  top_3_proof_points:
+    proof_1: "FILL — Extract from: proof.yaml > the_social_proof_stack (pick strongest)"
+    proof_2: "FILL — Extract from: proof.yaml > the_social_proof_stack (pick second strongest)"
+    proof_3: "FILL — Extract from: proof.yaml > the_social_proof_stack (pick third strongest)"
+  guarantee: "FILL — 1 sentence. Extract from: guarantee-design.yaml > guarantee_language > headline"
+  primary_cta: "FILL — The ONE action you want. Extract from: copy-swipes.yaml > call_to_action"
+  urgency_element: "FILL — 1 sentence. Extract from: scarcity-urgency.yaml > selection_exercise > combined_statement"
+  daily_budget: "FILL — Starting test budget"
+  target_cpa: "FILL — Maximum acceptable cost per acquisition"
+  target_roas: "FILL — Minimum acceptable return on ad spend"
+  top_objection: "FILL — Extract from: objections.yaml > objection_1 > objection_what_they_say"
+  objection_response: "FILL — Extract from: objections.yaml > objection_1 > response (condensed to 1 sentence)"
+  winning_hook_format: "FILL — After testing, record the hook format that performs best"
+  winning_meat_format: "FILL — After testing, record the meat format that converts best"
+  winning_platform: "FILL — After testing, record the platform with lowest CPA"
+# ============================================================================
+# SECTION 12: DAILY / WEEKLY / MONTHLY OPTIMIZATION CADENCE
+# ============================================================================
+# Purpose: What to check and when. Keeps ads from dying silently.
+optimization_cadence:
+  daily_5_minutes:
+    - "CPA yesterday vs today (trending up or down?)"
+    - "Frequency < 5 across all ad sets"
+    - "Comments responded to (engagement = lower CPM)"
+    - "Budget utilization > 90% (underspending = algorithm starving)"
+    - "Any ad with CTR < 0.5% flagged for kill"
+  weekly:
+    - "Kill ads with CPA > 150% of target"
+    - "Duplicate budget of winners (20% increase)"
+    - "Test 3 new hooks (from hook_bank or new variations)"
+    - "Create lookalike of recent buyers"
+    - "Add retargeting layer if not active"
+    - "Review retargeting sequence performance"
+  monthly:
+    - "Review all ads — identify top 10% and bottom 10%"
+    - "Identify patterns in winners (hooks, formats, angles, audiences)"
+    - "Kill bottom 10% permanently — do not revive"
+    - "Document learnings in personal swipe file"
+    - "Calculate ROI by hook category (Question vs Statement vs Label etc.)"
+    - "Adjust 70-20-10 distribution based on what data teaches"
+    - "Refresh creative for any ad with frequency > 10"
+    - "Update this ad-brief if source files have changed"
+# ============================================================================
+# COMPLETION CHECKLIST
+# ============================================================================
+completion_checklist:
+  - "[ ] Source map reviewed — know where to find each section's data"
+  - "[ ] Ad targeting summary filled — avatar, pains, fears, desires, demographics"
+  - "[ ] 10+ ad angles mapped with type, source, awareness level, and platform"
+  - "[ ] 10 hooks in hook bank with 70-20-10 distribution (7 core, 2 adjacent, 1 moonshot)"
+  - "[ ] 5 ad meat templates reviewed — PAS, Proof-First, Story, Listicle, Mechanism"
+  - "[ ] 3 CTA tiers filled — soft, medium, hard"
+  - "[ ] Platform specs reviewed for target platforms"
+  - "[ ] 5 retargeting ads mapped to top objections"
+  - "[ ] 3 transformation scripts drafted (one per archetype)"
+  - "[ ] Proof arsenal extracted — 10 stat hooks, screenshot list, video script"
+  - "[ ] Testing plan defined — hierarchy, budget, kill/scale criteria"
+  - "[ ] Creative brief summary filled — printable one-page reference"
+  - "[ ] Optimization cadence reviewed — daily, weekly, monthly tasks clear"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# TEMPLATE INSTRUCTIONS
+# 1. Start by reading the source_map — it tells you exactly which file to open
+# 2. Open icp.yaml first — it is the richest source of targeting and angle data
+# 3. Fill ad_targeting, then ad_angles, then hook_bank (these 3 drive everything)
+# 4. Fill proof_arsenal from proof.yaml and testimonials.yaml
+# 5. Fill retargeting_sequence from objections.yaml
+# 6. Fill creative_brief_summary LAST — it is the condensed view
+# 7. Print creative_brief_summary and pin it next to your ad account
+#
+# CROSS-REFERENCES:
+# - icp.yaml: Avatar, pains, fears, desires, archetypes (richest source)
+# - proof.yaml: Case studies, statistics, social proof, founder proof
+# - objections.yaml: Top objections for retargeting ads
+# - diagnosis.yaml: Awareness level determines hook type and copy length
+# - value-equation.yaml: Dream Outcome, weakest variable, unique mechanism
+# - testimonials.yaml: Transformation stories, video scripts, themed quotes
+# - scarcity-urgency.yaml: Genuine urgency elements for hard CTAs
+# - headlines.yaml: Headline formulas by awareness level and channel
+# - copy-swipes.yaml: Opening hooks, bullets, CTA variations
+# - guarantee-design.yaml: Guarantee copy for risk reversal ads
+# - offerbook.yaml: Product name, pricing, offer components, unique mechanism

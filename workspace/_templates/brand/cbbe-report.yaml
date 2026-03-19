@@ -1,0 +1,19 @@
+---
+metadata:
+  schema: "brand.cbbe_report"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+cbbe_baseline:
+  salience: "FILL_THIS"
+  performance: "FILL_THIS"
+  imagery: "FILL_THIS"
+  judgments: "FILL_THIS"
+  feelings: "FILL_THIS"
+  resonance: "FILL_THIS"
+insights:
+  top_strengths: []
+  top_gaps: []
+references:
+  source_doc: "FILL_THIS"

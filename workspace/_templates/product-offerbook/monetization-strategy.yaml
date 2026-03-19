@@ -1,0 +1,149 @@
+---
+# MONETIZATION-STRATEGY.YAML - Revenue Architecture & Financial Projections
+# Purpose: Design the complete revenue model, pricing tiers, and financial projections for your offer
+# Guardian: CMO / Founder / CFO
+# Timing: FILL after offerbook.yaml and pricing-anchoring.yaml are complete
+# Framework: Revenue Stream Design (Hormozi Value Ladder) + SaaS/Membership Monetization Models
+# Dependency: offerbook.yaml (offer structure), pricing-anchoring.yaml (price positioning)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Founder"
+  framework: "Hormozi Value Ladder + Revenue Stream Architecture"
+  notes: |
+    Revenue is not a single number. It is an ARCHITECTURE.
+
+    Most offers leave money on the table because they have ONE revenue stream.
+    A well-designed monetization strategy has 2-4 streams that compound:
+    - Primary stream (main offer)
+    - Retention stream (renewals/recurring)
+    - Expansion stream (upsells/upgrades)
+    - Referral stream (word of mouth as revenue driver)
+
+    RULE: Design your monetization BEFORE you build the product.
+    The financial architecture determines what you build, not the reverse.
+
+    CRITICAL: Every projection must be CONSERVATIVE.
+    Use worst-case scenarios for planning, best-case for motivation.
+# ============================================================================
+# STEP 1: BUSINESS MODEL
+# ============================================================================
+business_model:
+  model_type: "FILL — One-time purchase / Subscription / Membership / Cohort-based / Hybrid"
+  pricing_philosophy: |
+    FILL — What is your pricing philosophy?
+    Value-based (price = % of value delivered)?
+    Cost-plus (price = cost + margin)?
+    Market-based (price = what competitors charge)?
+    Hormozi recommends: Price based on VALUE, not cost.
+# ============================================================================
+# STEP 2: PRIMARY REVENUE STREAMS
+# ============================================================================
+revenue_streams:
+  stream_1_primary:
+    name: "FILL — Name of your primary offer"
+    price: "FILL — Price point (e.g., 12x R$ 98 = FILL_THIS/year)"
+    payment_structure: "FILL — One-time / Monthly / Annual / Installments"
+    frequency: "FILL — One-time / Recurring monthly / Recurring annually"
+    includes: "FILL — What the client gets (reference deliverables.yaml)"
+    margin_estimate: "FILL — Estimated profit margin (%)"
+  stream_2_retention:
+    name: "FILL — Renewal or recurring component"
+    price: "FILL — Renewal price"
+    retention_rate_target: "FILL — Target retention rate (%)"
+    lifetime_value_estimate: "FILL — Estimated LTV per customer"
+    churn_rate_target: "FILL — Target churn rate (%)"
+  stream_3_expansion:
+    name: "FILL — Upsell, cross-sell, or premium tier"
+    price: "FILL — Price of expansion offer"
+    take_rate_estimate: "FILL — % of existing customers who upgrade"
+    trigger: "FILL — What triggers the upsell? (time-based, milestone-based, request-based)"
+# ============================================================================
+# STEP 3: SECONDARY REVENUE OPPORTUNITIES
+# ============================================================================
+secondary_opportunities:
+  opportunity_1:
+    name: "FILL — First secondary opportunity"
+    description: "FILL — What is it and who is it for?"
+    estimated_revenue: "FILL — Conservative estimate"
+    timeline: "FILL — When to launch (after X customers, after X months)"
+  opportunity_2:
+    name: "FILL — Second secondary opportunity"
+    description: "FILL — What is it and who is it for?"
+    estimated_revenue: "FILL — Conservative estimate"
+    timeline: "FILL — When to launch"
+  opportunity_3:
+    name: "FILL — Third secondary opportunity (if applicable)"
+    description: "FILL — What is it and who is it for?"
+    estimated_revenue: "FILL — Conservative estimate"
+    timeline: "FILL — When to launch"
+# ============================================================================
+# STEP 4: FINANCIAL PROJECTIONS (CONSERVATIVE)
+# ============================================================================
+financial_projections:
+  year_1:
+    new_customers_target: "FILL — How many new customers in year 1?"
+    revenue_from_new: "FILL — Revenue from new customers"
+    revenue_from_retention: "FILL — Revenue from renewals (if applicable)"
+    revenue_from_expansion: "FILL — Revenue from upsells"
+    total_projected_revenue: "FILL — Total year 1 revenue"
+    total_projected_costs: "FILL — Total year 1 costs (CAC, delivery, overhead)"
+    projected_profit: "FILL — Year 1 profit"
+  year_2:
+    new_customers_target: "FILL — Year 2 new customer target"
+    returning_customers: "FILL — Retained customers from year 1"
+    total_active_customers: "FILL — Total active customer base"
+    total_projected_revenue: "FILL — Total year 2 revenue"
+    growth_rate: "FILL — Year-over-year growth (%)"
+  unit_economics:
+    cac: "FILL — Customer Acquisition Cost"
+    ltv: "FILL — Lifetime Value"
+    ltv_cac_ratio: "FILL — LTV:CAC ratio (target: 3:1 minimum)"
+    payback_period: "FILL — Months to recover CAC"
+    monthly_recurring_revenue: "FILL — MRR (if applicable)"
+# ============================================================================
+# STEP 5: PRICING VALIDATION
+# ============================================================================
+pricing_validation:
+  value_delivered: "FILL — Quantify the value your offer delivers (in currency)"
+  price_to_value_ratio: "FILL — Price as % of value (Hormozi recommends: charge 10% of value created)"
+  competitor_price_range: "FILL — What do alternatives charge? (low / mid / high)"
+  your_position: "FILL — Where are you positioned? (budget / mid-market / premium)"
+  price_justification: |
+    FILL — Why is your price justified?
+    Reference value-equation.yaml and guarantee-design.yaml.
+# ============================================================================
+# STEP 6: SCORING & DIAGNOSTIC
+# ============================================================================
+monetization_strength_score:
+  stream_diversity: "FILL 1-10"
+  unit_economics: "FILL 1-10"
+  scalability: "FILL 1-10"
+  defensibility: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Single revenue stream, unclear unit economics, no retention model, easily replicated pricing."
+    range_4_6: "2 revenue streams, basic unit economics calculated, some retention, pricing based on competition."
+    range_7_8: "3+ revenue streams, strong LTV:CAC ratio (>3:1), solid retention model, value-based pricing with evidence."
+    range_9_10: "Diversified revenue architecture, exceptional unit economics (LTV:CAC >5:1), built-in expansion revenue, pricing creates competitive moat."
+evidence:
+  data_points: "FILL — What financial data supports these projections?"
+  benchmarks: "FILL — Industry benchmarks for comparison"
+  sources: "FILL — List verifiable sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  strongest_stream: "FILL — Which revenue stream is most robust?"
+  biggest_risk: "FILL — What is the biggest financial risk?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "offerbook.yaml"
+    - "pricing-anchoring.yaml"
+  feeds_into:
+    - "analytics.yaml"
+    - "conversion-funnel.yaml"
+  related:
+    - "value-equation.yaml"
+    - "upsell-architecture.yaml"

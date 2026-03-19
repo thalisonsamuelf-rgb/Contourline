@@ -1,0 +1,67 @@
+---
+# BRANDSCRIPT.YAML - Shared narrative artifact for product/business messaging
+# PURPOSE: Canonical StoryBrand-style brandscript reusable by copy, storytelling,
+# traffic, and franchise expansion narratives.
+
+metadata:
+  version: "1.0"
+  artifact_type: "brandscript"
+  status: "DRAFT"
+  owner: "coo-orchestrator"
+  canonical_storage:
+    product: "workspace/businesses/{business}/products/{product}/narrative/brandscript.yaml"
+  shared_across:
+    - copy
+    - storytelling
+    - traffic-masters
+    - franchise
+  source_dependencies:
+    - "workspace/businesses/{business}/company/icp.yaml"
+    - "workspace/businesses/{business}/company/brand.yaml"
+    - "workspace/businesses/{business}/brand/strategic-positioning.yaml"
+    - "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+
+context:
+  business_slug: "FILL_THIS"
+  product_slug: "FILL_THIS"
+  audience_segment: "FILL_THIS"
+  stage_of_awareness: "FILL_THIS"
+
+customer:
+  protagonist: "FILL_THIS"
+  wants:
+    external: "FILL_THIS"
+    internal: "FILL_THIS"
+    philosophical: "FILL_THIS"
+  pain_points:
+    - "FILL_THIS"
+  stakes_if_no_action:
+    - "FILL_THIS"
+
+brand_role:
+  guide_identity: "FILL_THIS"
+  empathy_statement: "FILL_THIS"
+  authority_statement: "FILL_THIS"
+
+plan:
+  process_steps:
+    - step: 1
+      label: "FILL_THIS"
+    - step: 2
+      label: "FILL_THIS"
+    - step: 3
+      label: "FILL_THIS"
+  agreement_or_rule: "FILL_THIS"
+
+cta:
+  direct: "FILL_THIS"
+  transitional: "FILL_THIS"
+
+success_and_failure:
+  success_world: "FILL_THIS"
+  failure_world: "FILL_THIS"
+
+messaging_outputs:
+  one_liner: "FILL_THIS"
+  short_pitch: "FILL_THIS"
+  homepage_summary: "FILL_THIS"

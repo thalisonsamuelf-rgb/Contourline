@@ -1,0 +1,17 @@
+---
+# Template: intake raw N1 dataset
+
+metadata:
+  template_id: "movement.intake_raw_n1"
+  version: "1.0.0"
+  lifecycle_stage: "intake"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+raw_n1:
+  worldview_signals: []
+  belief_system_signals: []
+  cultural_chain_hypotheses: []
+  notes: []
+provenance:
+  source_docs: []

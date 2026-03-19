@@ -1,0 +1,31 @@
+---
+metadata:
+  schema: "brand.logo_concept"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  updated_at: "YYYY-MM-DD"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+symbols:
+  primary:
+    glyph: "FILL_THIS"
+    unicode: "FILL_THIS"
+    semantic_layers:
+      - "FILL_THIS"
+      - "FILL_THIS"
+      - "FILL_THIS"
+      - "FILL_THIS"
+  secondary:
+    glyph: "FILL_THIS"
+    unicode: "FILL_THIS"
+    role: "FILL_THIS"
+narrative:
+  thesis: "FILL_THIS"
+  framing:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"
+  strategic_source: "FILL_THIS"

@@ -1,0 +1,31 @@
+---
+# Template: intake interview dossier dataset
+
+metadata:
+  template_id: "movement.intake_interview_dossier"
+  version: "1.0.0"
+  lifecycle_stage: "intake"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+interview_dossier:
+  brand_slug: "<required>"
+  interview_date: "<yyyy-mm-dd>"
+  interviewer: "<required>"
+  scope: "<all|n1|n3|n4-leader|n4-brand>"
+  blocks:
+    n1:
+      completed: "<true|false>"
+      key_signals: []
+    n3:
+      completed: "<true|false>"
+      key_signals: []
+    n4_leader:
+      completed: "<true|false>"
+      key_signals: []
+    n4_brand:
+      completed: "<true|false>"
+      key_signals: []
+  source_index: []
+provenance:
+  source_docs: []

@@ -1,0 +1,21 @@
+---
+metadata:
+  schema: "brand.positioning_narrative_report"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+summary:
+  positioning_statement: "FILL_THIS"
+  onlyness_statement: "FILL_THIS"
+  archetype_primary: "FILL_THIS"
+  narrative_core: "FILL_THIS"
+messaging_hierarchy:
+  level_1_why: "FILL_THIS"
+  level_2_how: "FILL_THIS"
+  level_3_what: "FILL_THIS"
+handoff_to_activation:
+  strategic_priorities: []
+  channel_implications: []
+references:
+  source_doc: "FILL_THIS"

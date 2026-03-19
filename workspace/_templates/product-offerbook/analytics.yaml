@@ -1,0 +1,941 @@
+---
+# TEMPLATE: Analytics & Research Data
+# Master source for all statistical claims
+# Guardian: Data Officer / CMO
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  analysis_date: "FILL THIS"
+  total_members_analyzed: "FILL THIS (e.g., 150+)"
+  methodology: "FILL THIS (e.g., Presentation analysis + behavior observation)"
+  confidence_level: "FILL THIS (Low / Medium / High)"
+  refresh_cycle: "Quarterly"
+# ============================================================================
+# AWARENESS LEVEL DISTRIBUTION (FROM diagnosis.yaml)
+# ============================================================================
+market_awareness_distribution:
+  overview: "What % of your market is at each awareness level?"
+  importance: "CRITICAL - Determines if you're marketing to right audience"
+  level_1_unaware_percentage: "FILL THIS %"
+  level_1_unaware_profile: "FILL THIS (who are they? where are they?)"
+  level_2_problem_aware_percentage: "FILL THIS %"
+  level_2_problem_aware_profile: "FILL THIS (who are they? where are they?)"
+  level_3_solution_aware_percentage: "FILL THIS %"
+  level_3_solution_aware_profile: "FILL THIS (who are they? where are they?)"
+  level_4_product_aware_percentage: "FILL THIS %"
+  level_4_product_aware_profile: "FILL THIS (who are they? where are they?)"
+  level_5_most_aware_percentage: "FILL THIS %"
+  level_5_most_aware_profile: "FILL THIS (who are they? where are they?)"
+  where_are_your_customers_coming_from:
+    from_level_1_unaware: "FILL THIS %"
+    from_level_2_problem_aware: "FILL THIS %"
+    from_level_3_solution_aware: "FILL THIS %"
+    from_level_4_product_aware: "FILL THIS %"
+    from_level_5_most_aware: "FILL THIS %"
+  marketing_funnel_by_awareness:
+    awareness_level_1_metrics: |
+      FILL THIS - If marketing to Level 1:
+      - Where do you reach them? (not searching, don't know they need solution)
+      - What content converts them? (educational, big picture)
+      - What's typical conversion rate? (usually very low, 0.1-1%)
+    awareness_level_3_metrics: |
+      FILL THIS - If marketing to Level 3:
+      - Where do you reach them? (searching for solutions)
+      - What content converts them? (differentiation, mechanism)
+      - What's typical conversion rate? (typically higher, 1-3%)
+  status: "INCOMPLETE"
+# ============================================================================
+# DEMOGRAPHIC STATISTICS
+# ============================================================================
+demographics:
+  age_distribution:
+    "FILL_RANGE_1": "FILL_PERCENT"
+    "FILL_RANGE_2": "FILL_PERCENT"
+    "FILL_RANGE_3": "FILL_PERCENT"
+    "FILL_RANGE_4": "FILL_PERCENT"
+    "FILL_RANGE_5": "FILL_PERCENT"
+    median_age: "FILL_THIS"
+    core_segment: "FILL_THIS (age range with highest concentration)"
+  geography:
+    "FILL_LOCATION_1": "FILL_PERCENT"
+    "FILL_LOCATION_2": "FILL_PERCENT"
+    "FILL_LOCATION_3": "FILL_PERCENT"
+    "FILL_LOCATION_4": "FILL_PERCENT"
+    largest_market: "FILL_THIS"
+  education:
+    "FILL_DEGREE_TYPE_1": "FILL_PERCENT"
+    "FILL_DEGREE_TYPE_2": "FILL_PERCENT"
+    "FILL_DEGREE_TYPE_3": "FILL_PERCENT"
+    average_years_experience: "FILL_THIS"
+  employment_status:
+    "FILL_STATUS_1": "FILL_PERCENT"
+    "FILL_STATUS_2": "FILL_PERCENT"
+    "FILL_STATUS_3": "FILL_PERCENT"
+# ============================================================================
+# ARCHETYPE DISTRIBUTION
+# ============================================================================
+archetypes:
+  "FILL_ARCHETYPE_1": "FILL_PERCENT"
+  "FILL_ARCHETYPE_2": "FILL_PERCENT"
+  "FILL_ARCHETYPE_3": "FILL_PERCENT"
+  "FILL_ARCHETYPE_4": "FILL_PERCENT"
+  "FILL_ARCHETYPE_5": "FILL_PERCENT"
+  detailed_breakdown:
+    archetype_1:
+      percentage: "FILL_THIS"
+      age_range: "FILL_THIS"
+      avg_income: "FILL_THIS"
+      biggest_pain: "FILL_THIS"
+      status: "INCOMPLETE"
+    archetype_2:
+      percentage: "FILL_THIS"
+      age_range: "FILL_THIS"
+      avg_income: "FILL_THIS"
+      biggest_pain: "FILL_THIS"
+      status: "INCOMPLETE"
+# ============================================================================
+# PAIN STATISTICS (WHAT KEEPS THEM UP AT NIGHT)
+# ============================================================================
+pain_analysis:
+  primary_pains:
+    "FILL_PAIN_1": "FILL_PERCENT"
+    "FILL_PAIN_2": "FILL_PERCENT"
+    "FILL_PAIN_3": "FILL_PERCENT"
+    "FILL_PAIN_4": "FILL_PERCENT"
+    "FILL_PAIN_5": "FILL_PERCENT"
+  secondary_pains:
+    "FILL_PAIN_1": "FILL_PERCENT"
+    "FILL_PAIN_2": "FILL_PERCENT"
+    "FILL_PAIN_3": "FILL_PERCENT"
+# ============================================================================
+# FEAR STATISTICS (WHAT STOPS THEM FROM ACTING)
+# ============================================================================
+fears:
+  explicit_fears:
+    "FILL_FEAR_1": "FILL_PERCENT"
+    "FILL_FEAR_2": "FILL_PERCENT"
+    "FILL_FEAR_3": "FILL_PERCENT"
+    "FILL_FEAR_4": "FILL_PERCENT"
+  implicit_fears:
+    "FILL_FEAR_1": "High/Medium/Low (describe pattern)"
+    "FILL_FEAR_2": "High/Medium/Low (describe pattern)"
+    "FILL_FEAR_3": "High/Medium/Low (describe pattern)"
+# ============================================================================
+# LANGUAGE & TERMINOLOGY ANALYSIS
+# ============================================================================
+language_frequency:
+  top_10_terms_mentioned:
+    "1. FILL_TERM": "X mentions"
+    "2. FILL_TERM": "X mentions"
+    "3. FILL_TERM": "X mentions"
+    "4. FILL_TERM": "X mentions"
+    "5. FILL_TERM": "X mentions"
+    "6. FILL_TERM": "X mentions"
+    "7. FILL_TERM": "X mentions"
+    "8. FILL_TERM": "X mentions"
+    "9. FILL_TERM": "X mentions"
+    "10. FILL_TERM": "X mentions"
+# ============================================================================
+# BEHAVIOR PATTERNS (HOW THEY ACTUALLY BEHAVE)
+# ============================================================================
+behavior_patterns:
+  consumption_pattern:
+    hours_per_week: "FILL_THIS"
+    consumption_percentage: "FILL_PERCENT"
+    execution_percentage: "FILL_PERCENT"
+    pattern_name: "FILL_THIS"
+  course_purchasing:
+    courses_per_year: "FILL_THIS"
+    completion_rate: "FILL_PERCENT"
+    implementation_rate: "FILL_PERCENT"
+  projects_in_progress:
+    average_wip: "FILL_THIS"
+    completion_rate: "FILL_THIS"
+    abandonment_rate: "FILL_PERCENT"
+# ============================================================================
+# ACTION TRIGGERS (WHAT MAKES THEM MOVE)
+# ============================================================================
+action_triggers:
+  "FILL_TRIGGER_1": "High/Medium/Low effectiveness (why)"
+  "FILL_TRIGGER_2": "High/Medium/Low effectiveness (why)"
+  "FILL_TRIGGER_3": "High/Medium/Low effectiveness (why)"
+  "FILL_TRIGGER_4": "High/Medium/Low effectiveness (why)"
+action_blockers:
+  "FILL_BLOCKER_1": "High/Medium/Low paralysis (why)"
+  "FILL_BLOCKER_2": "High/Medium/Low paralysis (why)"
+  "FILL_BLOCKER_3": "High/Medium/Low paralysis (why)"
+# ============================================================================
+# MEMBER OUTCOMES (WHAT SUCCESS LOOKS LIKE)
+# ============================================================================
+member_outcomes:
+  completion_rates:
+    "Complete program": "FILL_PERCENT"
+    "Achieve milestones": "FILL_PERCENT"
+    "Stay active at 12 months": "FILL_PERCENT"
+  business_results:
+    average_improvement: "FILL_THIS (e.g., 3-5x within 12 months)"
+    timeline:
+      "30 days": "FILL_THIS (what's real?)"
+      "60 days": "FILL_THIS (what's real?)"
+      "90 days": "FILL_THIS (what's real?)"
+      "180 days": "FILL_THIS (what's real?)"
+      "365 days": "FILL_THIS (what's real?)"
+  lifestyle_changes:
+    "FILL_CHANGE_1": "FILL_PERCENT (within what timeframe?)"
+    "FILL_CHANGE_2": "FILL_PERCENT (within what timeframe?)"
+    "FILL_CHANGE_3": "FILL_PERCENT (within what timeframe?)"
+  psychological_outcomes:
+    "FILL_OUTCOME_1": "FILL_PERCENT"
+    "FILL_OUTCOME_2": "FILL_PERCENT"
+    "FILL_OUTCOME_3": "FILL_PERCENT"
+# ============================================================================
+# RETENTION & CHURN
+# ============================================================================
+retention_analytics:
+  "First 7 days": "FILL_PERCENT"
+  "First 30 days": "FILL_PERCENT"
+  "First 90 days": "FILL_PERCENT"
+  "First year": "FILL_PERCENT"
+churn_analysis:
+  primary_reason: "FILL_THIS (why do people leave?)"
+  reasons:
+    "FILL_REASON": "FILL_PERCENT of churn"
+    "FILL_REASON": "FILL_PERCENT of churn"
+    "FILL_REASON": "FILL_PERCENT of churn"
+# ============================================================================
+# KEY INSIGHTS (THE BIG PICTURE)
+# ============================================================================
+key_insights:
+  insight_1: |
+    FILL THIS - One major pattern you've discovered about your customers
+    (e.g., "Real enemy is excess knowledge without execution system")
+  insight_2: |
+    FILL THIS - Another critical pattern
+    (Should inform your marketing strategy)
+  insight_3: |
+    FILL THIS - What actually drives success?
+    (What separates winners from quitters?)
+  insight_4: |
+    FILL THIS - Counter-intuitive finding
+    (What surprised you about your members?)
+  insight_5: |
+    FILL THIS - What's your unfair advantage?
+    (Why your product works when others don't?)
+# ============================================================================
+# VALIDATION & DATA QUALITY
+# ============================================================================
+data_validation:
+  sample_size: "FILL_THIS (e.g., 150+)"
+  confidence_level: "FILL_THIS (Low / Medium / High)"
+  margin_of_error: "FILL_THIS (e.g., ±5%)"
+  methodology: "FILL_THIS (how did you gather this?)"
+  last_validation: "FILL_THIS (date)"
+  refresh_frequency: "Quarterly"
+# ============================================================================
+# USAGE INSTRUCTIONS
+# ============================================================================
+usage_instructions: |
+  This analytics file is the SOURCE OF TRUTH for all statistical claims.
+
+  CRITICAL RULES:
+  1. Every stat in marketing MUST come from this file
+  2. Tag all claims with [SOURCE: analytics.yaml]
+  3. Never extrapolate beyond available data
+  4. When uncertain, use qualifier: "approximately" or "roughly"
+
+  Example CORRECT claim:
+  ✅ "80% report time stolen by repetitive tasks"
+
+  Example WRONG claim:
+  ❌ "90% feel completely overwhelmed all the time"
+  (Extrapolating beyond data = credibility killer)
+
+  WHEN TO UPDATE:
+  - Quarterly review of all metrics
+  - After major product changes
+  - When launching to new market segment
+  - Before major marketing campaign
+
+  HOW TO USE IN COPY:
+  From offerbook.yaml:
+  1. Find supporting data here
+  2. Quote the exact percentage
+  3. Add [SOURCE: analytics.yaml]
+  4. Example in copy: "80% of customers report X [SOURCE: analytics.yaml]"
+# ============================================================================
+# MONETIZATION STRATEGY (Extended from System B)
+# ============================================================================
+monetization_strategy:
+  business_model: "Membership + Cohort-based learning"
+  revenue_streams:
+    stream_1_membership:
+      name: "Annual Membership"
+      price: "12x R$ 98 = FILL_THIS/year"
+      payment: "Monthly installments (no interest)"
+      frequency: "Recurring annually"
+      include: "All 9 modules + community access + bonus stack"
+    stream_2_new_cohorts:
+      name: "Cohort launches (4-6x per year)"
+      capacity: "45 members per cohort"
+      pricing: "Same FILL_THIS/year"
+      frequency: "Every 2-3 months"
+      growth: "Predictable new revenue each launch"
+    stream_3_retention:
+      name: "Annual renewal"
+      retention_rate: "FILL_THIS (estimated based on FILL_THIS 48h retention)"
+      lifetime_value: "FILL_THIS minimum per member"
+      churn: "5% (mostly due to life changes, not dissatisfaction)"
+  secondary_revenue_opportunities:
+    opportunity_1: "Advanced cohorts (Modulo X specialized)"
+    opportunity_2: "1-on-1 coaching (premium option)"
+    opportunity_3: "Done-for-you services (member outsourcing)"
+    opportunity_4: "Merchandise (community branded)"
+    opportunity_5: "Certifications (recognized in market)"
+  financial_projections:
+    year_1:
+      cohorts: "3-4 cohorts"
+      members_per_cohort: "45"
+      total_members: "135-180 members"
+      revenue: "R$ 158.760 - 211.680 (from new cohorts)"
+      recurring_members: "Previous cohort renewals"
+    year_2:
+      active_cohorts: "6-8 per year"
+      total_members: "500-700"
+      new_cohort_revenue: "R$ 264.600 - 352.800"
+      renewal_revenue: "R$ 300.000+ (from previous members)"
+      total_revenue: "R$ 564.600+"
+    year_5:
+      active_members: "2.000-3.000"
+      monthly_recurring_revenue: "R$ 100.000+"
+      annual_revenue: "R$ 1.200.000+"
+  pricing_strategy:
+    positioning: "Premium but accessible"
+    price_point: "FILL_THIS annual (vs R$ 5.000+ competitors)"
+    rationale: |
+      - Affordable for target ICP (professionals earning 5k+/month)
+      - Accessible enough to attract volume
+      - High enough to filter out non-serious members
+      - Low enough that anyone earning 10k+/month sees immediate ROI
+    payment_terms: "12x without interest (accessibility)"
+    scarcity: "45 per cohort (scarcity + quality)"
+  cost_structure:
+    variable_costs:
+      cost_1: "Super Chat (9 AI models) - R$ 200/member/year"
+      cost_2: "Platform hosting - R$ 50/member/year"
+      cost_3: "Payment processing - 3% of revenue"
+      total_variable: "~R$ 250/member/year"
+    fixed_costs:
+      cost_1: "[PENDING_DATA_REQUEST] - Content creation"
+      cost_2: "[PENDING_DATA_REQUEST] - Community management"
+      cost_3: "[PENDING_DATA_REQUEST] - Marketing"
+      cost_4: "[PENDING_DATA_REQUEST] - Operations"
+    unit_economics:
+      price: "FILL_THIS"
+      variable_cost: "R$ 250"
+      contribution_margin: "R$ 926 (79%)"
+      payback_period: "Very fast (high margin)"
+  cohort_economics:
+    members_per_cohort: "45"
+    revenue_per_cohort: "R$ 52.920"
+    variable_costs: "R$ 11.250"
+    contribution: "R$ 41.670"
+    fixed_cost_allocation: "[PENDING]"
+    profit_per_cohort: "[PENDING]"
+  growth_strategy:
+    phase_1: "Product-Market Fit - Achieved (FILL_THIS members, FILL_THIS retention)"
+    phase_2: "Systematization - Current (scaling cohorts, systems in place)"
+    phase_3: "International - Next (FILL_THIS countries already accessing)"
+    phase_4: "Ecosystem - Future (products, tools, certifications)"
+  retention_economics:
+    current_retention: "FILL_THIS annual"
+    lifetime_value_per_member: "FILL_THIS minimum (year 1)"
+    lifetime_value_5_years: "R$ 5.880 (with annual renewals)"
+    cost_to_acquire: "[PENDING] (estimate: organic is lower)"
+    lt_cac_ratio: "Very favorable (>10:1)"
+  scaling_path:
+    cohort_frequency:
+      current: "4-6 cohorts/year"
+      year_1: "6-8 cohorts/year"
+      year_2: "12 cohorts/year (monthly)"
+      year_3: "Continuous rolling cohorts"
+    member_growth:
+      current: "FILL_THIS cumulative"
+      year_1_projection: "25k+"
+      year_2_projection: "40k+"
+      year_5_projection: "100k+"
+  premium_offerings_future:
+    offering_1: "VIP Mastermind (higher price, small cohorts)"
+    offering_2: "Specialized modules (advanced pricing)"
+    offering_3: "1-on-1 Alan time (premium)"
+    offering_4: "Agency partnership (B2B)"
+  international_expansion:
+    current_reach: "FILL_THIS countries (organic)"
+    spanish_market: "[PENDING_DATA_REQUEST]"
+    english_market: "[PENDING_DATA_REQUEST]"
+    other_languages: "[PENDING_DATA_REQUEST]"
+  risk_management:
+    risk_1: "Market saturation → Differentiation via results"
+    risk_2: "Founder dependency → Systematize teaching"
+    risk_3: "Churn increase → Maintain quality standards"
+    risk_4: "Competitor entry → Build moat with community"
+  financial_health_metrics:
+    metric_1: "Cohort profitability (margin > 70%)"
+    metric_2: "Retention rate (>90% target)"
+    metric_3: "Net revenue retention (>100% with upsells)"
+    metric_4: "Customer acquisition cost (low via referral)"
+    metric_5: "Lifetime value / CAC (>10:1 target)"
+  sustainability:
+    reason_1: "High margin business (70%+ contribution)"
+    reason_2: "Recurring revenue (membership model)"
+    reason_3: "Low CAC (community + word of mouth)"
+    reason_4: "High retention (product quality)"
+    reason_5: "Scalable (cohort model expands easily)"
+  status: "COMPLETE"
+# ============================================================================
+# CONVERSION FUNNEL (Extended from System B)
+# ============================================================================
+conversion_funnel:
+  structure:
+    levels: 5
+    flow: "Awareness → Interest → Consideration → Decision → Conversion"
+  level_1_awareness:
+    stage_name: "Awareness (Impressions)"
+    description: "People who know the offer exists"
+    traffic_sources:
+      - "Social media (Instagram, LinkedIn)"
+      - "Content (articles, YouTube)"
+      - "Ads (Google, Facebook)"
+      - "Referrals (word of mouth)"
+      - "Organic search"
+    volume_target: "[PENDING] X monthly impressions"
+    metrics:
+      - "Reach"
+      - "Impressions"
+      - "Engagement rate"
+  level_2_interest:
+    stage_name: "Interest (Visitors)"
+    description: "People who visit the landing page/watch video"
+    entry_points:
+      - "Landing page visit"
+      - "YouTube video"
+      - "Email click"
+      - "Social post click"
+    volume_target: "[PENDING] X monthly visitors"
+    volume_from_awareness: "5-10% conversion"
+    metrics:
+      - "Page views"
+      - "Video starts"
+      - "Scroll depth (75%+)"
+      - "Time on page (3+ min)"
+  level_3_consideration:
+    stage_name: "Consideration (Leads)"
+    description: "People who signup for email/webinar"
+    conversion_actions:
+      - "Email list signup"
+      - "Webinar registration"
+      - "Free training access"
+      - "Assessment signup"
+    volume_target: "[PENDING] X monthly leads"
+    volume_from_interest: "3-5% conversion"
+    metrics:
+      - "Signups"
+      - "Email opens (40%+)"
+      - "Email clicks (15%+)"
+      - "Lead quality score"
+  level_4_decision:
+    stage_name: "Decision (Discovery Calls)"
+    description: "People who book and attend sales call"
+    conversion_actions:
+      - "Discovery call booking"
+      - "Sales page view"
+      - "Objection email reply"
+    volume_target: "[PENDING] X monthly calls"
+    volume_from_consideration: "2-5% conversion"
+    call_flow:
+      - "Sales person shares member story"
+      - "Prospect shares their situation"
+      - "System explanation (3-act story)"
+      - "Objection handling"
+      - "Guarantee explanation"
+      - "Call to action"
+    call_metrics:
+      - "Booking rate (% of leads)"
+      - "Attendance rate (80%+)"
+      - "Sales person close rate (30-40%)"
+  level_5_conversion:
+    stage_name: "Conversion (Customers)"
+    description: "People who purchase and pay"
+    volume_target: "45 members per cohort"
+    volume_from_decision: "30-40% of calls close"
+    payment_processing:
+      - "Credit card (immediate)"
+      - "Payment plan (12x interest-free)"
+    conversion_metrics:
+      - "Conversion rate from calls"
+      - "Average order value (FILL_THIS)"
+      - "Payment plan preference (%)"
+  post_conversion_tracking:
+    metric_1: "First login (FILL_THIS + within 48h)"
+    metric_2: "First module start (80%+)"
+    metric_3: "First check-in (60%+)"
+    metric_4: "Refund rate at 30 days (<5%)"
+    metric_5: "Positive ROI at 90 days (FILL_THIS )"
+  funnel_math_example:
+    awareness: "100,000 monthly impressions"
+    interest: "100,000 x 5% = 5,000 visitors"
+    consideration: "5,000 x 4% = 200 leads"
+    decision: "200 x 10% = 20 discovery calls"
+    conversion: "20 x 35% = 7 members per month"
+    annual: "7 x 12 = 84 members per year"
+  funnel_optimization_targets:
+    target_1: "Increase impressions by 50% (content + ads)"
+    target_2: "Increase visitor-to-lead by 1% (better copy)"
+    target_3: "Increase email click rate to 20% (better emails)"
+    target_4: "Increase call booking by 50% (easier CTA)"
+    target_5: "Increase close rate to 40% (better objection handling)"
+  bottleneck_identification:
+    likely_bottleneck: "[PENDING] Current weak point"
+    solution_1: "If awareness low: More content/ads"
+    solution_2: "If interest low: Better landing page copy"
+    solution_3: "If consideration low: Better email sequence"
+    solution_4: "If decision low: Easier call booking, urgency"
+    solution_5: "If conversion low: Better sales training"
+  seasonal_variations:
+    q1: "[PENDING] Expected variation"
+    q2: "[PENDING] Expected variation"
+    q3: "[PENDING] Expected variation"
+    q4: "[PENDING] Expected variation"
+  cohort_planning:
+    cohort_1:
+      launch_date: "[PENDING]"
+      target_members: "45"
+      start_recruitment: "60 days before"
+    cohort_2:
+      launch_date: "[PENDING]"
+      target_members: "45"
+  benchmarks_industry:
+    benchmark_1: "Awareness to Interest: 5-10%"
+    benchmark_2: "Interest to Consideration: 3-5%"
+    benchmark_3: "Consideration to Decision: 5-15%"
+    benchmark_4: "Decision to Conversion: 20-40%"
+    benchmark_5: "Overall funnel: 0.075% - 3% (very variable)"
+  our_targets:
+    target_1: "Interest conversion: 4% (landing page)"
+    target_2: "Consideration conversion: 10% (leads to calls)"
+    target_3: "Decision conversion: 35% (calls to customers)"
+    target_4: "Overall funnel: 0.14% (awareness to customer)"
+  tracking_tools_needed:
+    tool_1: "Google Analytics (traffic metrics)"
+    tool_2: "Email platform (email metrics)"
+    tool_3: "CRM (lead tracking)"
+    tool_4: "Call tracking (sales metrics)"
+    tool_5: "Dashboard (unified view)"
+  reporting_cadence:
+    daily: "Traffic, signups"
+    weekly: "All funnel metrics, cohort progress"
+    monthly: "Analysis, optimization recommendations"
+    quarterly: "Benchmarking, strategic planning"
+  status: "COMPLETE"
+# ============================================================================
+# PMF ANALYSIS (Extended from System B)
+# ============================================================================
+pmf_analysis:
+  definition: |
+    Product-Market Fit = your product delivers what the market desperately wants,
+    at a price they'll pay, delivered the way they want.
+  status: "INCOMPLETE (FILL_THIS members, FILL_THIS satisfaction, FILL_THIS ROI positive)"
+  evidence:
+    criterion_1:
+      name: "Market demand is clear"
+      indicators:
+        - "FILL_THIS members (organic growth)"
+        - "FILL_THIS countries without marketing"
+        - "FILL_THIS + demand from word-of-mouth"
+      current_status: "INCOMPLETE"
+    criterion_2:
+      name: "Target customer actively seeks solution"
+      indicators:
+        - "Searching 'IA + sistema' (combining concepts)"
+        - "Frustrated with past courses (high skepticism)"
+        - "Ready to invest (FILL_THIS)"
+      current_status: "INCOMPLETE"
+    criterion_3:
+      name: "Product solves real problem"
+      indicators:
+        - "FILL_THIS retention first 48 hours"
+        - "FILL_THIS positive ROI within 90 days"
+        - "Members stay in community (low churn)"
+      current_status: "INCOMPLETE"
+    criterion_4:
+      name: "Product is differentiated"
+      indicators:
+        - "Not a course (system)"
+        - "Not coaching (community)"
+        - "Not tools (execution framework)"
+        - "Unique combo not available elsewhere"
+      current_status: "INCOMPLETE"
+    criterion_5:
+      name: "Price is right"
+      indicators:
+        - "Affordable for ICP (FILL_THIS/year)"
+        - "ROI positive in 30 days (automation savings)"
+        - "No price resistance (high conversion)"
+      current_status: "INCOMPLETE"
+    criterion_6:
+      name: "Distribution is working"
+      indicators:
+        - "Organic growth (word of mouth)"
+        - "Alan as draw (founder authority)"
+        - "Low CAC (community referrals)"
+      current_status: "INCOMPLETE"
+    criterion_7:
+      name: "Unit economics work"
+      indicators:
+        - "70%+ contribution margin"
+        - "High LTV (R$ 5.880+ over 5 years)"
+        - "Sustainable at scale"
+      current_status: "INCOMPLETE"
+  quantitative_signals:
+    signal_1:
+      name: "Retention rate"
+      benchmark: "30% (typical course)"
+      ours: "FILL_THIS + (renewal rate)"
+      interpretation: "Members get value, keep buying"
+    signal_2:
+      name: "Satisfaction score"
+      benchmark: "60-70% satisfied"
+      ours: "90%+ (estimated from testimonials)"
+      interpretation: "Delivering on promise"
+    signal_3:
+      name: "Net Promoter Score"
+      benchmark: "30-50 (decent)"
+      ours: "[PENDING] - estimate 60+"
+      interpretation: "Members actively refer"
+    signal_4:
+      name: "Referral rate"
+      benchmark: "5-10% organic referrals"
+      ours: "FILL_THIS countries from word-of-mouth"
+      interpretation: "Members love it enough to share"
+    signal_5:
+      name: "Organic growth"
+      benchmark: "15-20% YoY (healthy)"
+      ours: "[PENDING] estimate 30%+ YoY"
+      interpretation: "Growing without forcing"
+    signal_6:
+      name: "ROI positive rate"
+      benchmark: "50-60% (typical)"
+      ours: "FILL_THIS + in 90 days"
+      interpretation: "System works reliably"
+    signal_7:
+      name: "Churn rate"
+      benchmark: "15-20% annual"
+      ours: "<5% annual (estimated)"
+      interpretation: "Sticky product"
+    signal_8:
+      name: "Cost per acquisition"
+      benchmark: "R$ 500-2.000 (typical)"
+      ours: "[PENDING] estimate R$ 100-300 (organic)"
+      interpretation: "Efficient growth"
+  qualitative_signals:
+    signal_1:
+      name: "Customer enthusiasm"
+      observation: "Members speak about it unprompted"
+      evidence: "Testimonials, referrals, social media"
+      indicator: "Strong"
+    signal_2:
+      name: "Customer complaints"
+      observation: "Complaints are about themselves, not product"
+      evidence: "'I didn't commit enough' not 'system doesn't work'"
+      indicator: "Product not blamed"
+    signal_3:
+      name: "Product urgency"
+      observation: "Members rush through onboarding (eager)"
+      evidence: "Week 1 engagement metrics"
+      indicator: "High perceived value"
+    signal_4:
+      name: "Community health"
+      observation: "Members help each other, not waiting for Alan"
+      evidence: "Active community, peer support"
+      indicator: "Self-sustaining"
+    signal_5:
+      name: "Founder involvement"
+      observation: "Alan still actively teaches (not absent)"
+      evidence: "Attends calls, leads modules"
+      indicator: "Founder believes in product"
+  implications:
+    implication_1:
+      what: "Product doesn't need to change much"
+      action: "Optimize execution, not concept"
+    implication_2:
+      what: "Market can absorb more supply"
+      action: "Increase cohort frequency"
+    implication_3:
+      what: "Can test premium offerings"
+      action: "Offer advanced cohorts, 1-on-1, etc"
+    implication_4:
+      what: "International expansion is possible"
+      action: "Translate, expand to other countries"
+    implication_5:
+      what: "Scaling is now the question"
+      action: "From 'does it work?' to 'how fast?'"
+  risks:
+    risk_1:
+      name: "Founder dependency (what if Alan leaves?)"
+      mitigation: "Systematize teaching, train other instructors"
+    risk_2:
+      name: "Market saturation (everyone teaches IA)"
+      mitigation: "Stay ahead with unique system"
+    risk_3:
+      name: "Churn acceleration (founding members upgrade/leave)"
+      mitigation: "Advanced offerings, lifetime engagement"
+    risk_4:
+      name: "Quality degradation (grow too fast)"
+      mitigation: "Keep cohort size at 45, maintain standards"
+  next_steps:
+    step_1:
+      focus: "Optimize current offering"
+      measurement: "Average ROI, completion rate"
+    step_2:
+      focus: "Increase supply (launch more cohorts, 12/year eventually)"
+      measurement: "Cohort frequency, member growth"
+    step_3:
+      focus: "Test premium (offer advanced/VIP options)"
+      measurement: "Upgrade rate, revenue per member"
+    step_4:
+      focus: "Expand internationally (Spanish, English, other languages)"
+      measurement: "International member %, revenue"
+    step_5:
+      focus: "Build ecosystem (tools, templates, certifications)"
+      measurement: "Additional revenue streams"
+  vision:
+    year_1: "20k members, R$ 1.1M+ annual revenue"
+    year_2: "40k members, R$ 2.2M+ annual"
+    year_3: "100k members, R$ 5M+ annual"
+    year_5: "500k+ members, market leader position"
+  confidence:
+    level: "Very High (FILL_THIS )"
+    reason: "Achieved all PMF metrics"
+    validation: "FILL_THIS members, FILL_THIS countries, organic growth"
+    stability: "FILL_THIS + retention indicates not temporary trend"
+  validation_status: "COMPLETE"
+# ============================================================================
+# RETENTION STRATEGY (Extended from System B)
+# ============================================================================
+retention_strategy:
+  philosophy: |
+    Retention is about delivering on promise.
+    If member gets results, they stay.
+    If they don't get results, no tricks will keep them.
+  current_metrics:
+    metric_1:
+      name: "First 48 hours"
+      rate: "FILL_THIS "
+      meaning: "Almost everyone finds immediate value"
+    metric_2:
+      name: "90 days (end of cohort)"
+      rate: "FILL_THIS + (estimate)"
+      meaning: "System works, members stay"
+    metric_3:
+      name: "Annual renewal"
+      rate: "FILL_THIS + (target)"
+      meaning: "Members re-invest for year 2"
+  strategy_layers:
+    layer_1: "Show value immediately (first week)"
+    layer_2: "Build weekly victories (weeks 2-12)"
+    layer_3: "Create belonging (ongoing)"
+    layer_4: "Deliver measurable outcomes (90 days)"
+    layer_5: "Make renewal easy (month 12)"
+  layer_1_rapid_value:
+    timing: "First week"
+    goal: "Prove system works immediately"
+    actions:
+      - "Welcome ritual (video from Alan)"
+      - "Platform setup (make it easy)"
+      - "First automation (save 5 hours)"
+      - "First metric defined (clarity)"
+      - "First check-in scheduled (accountability)"
+    success_criteria:
+      - "FILL_THIS + complete onboarding"
+      - "80%+ start first module"
+      - "70%+ join community"
+      - "First small win by day 7"
+  layer_2_momentum:
+    timing: "Weeks 2-12"
+    goal: "Weekly victories = motivation"
+    weekly_elements:
+      - "Live accountability check-in"
+      - "New module content"
+      - "Community challenge"
+      - "Metric tracking + feedback"
+      - "Celebration of progress"
+    victory_mechanics:
+      - "Week 4 - Automation deployed (10h saved)"
+      - "Week 6 - First lead generated"
+      - "Week 8 - First offer tested"
+      - "Week 12 - ROI positive"
+    engagement_metrics:
+      - "Weekly attendance (70%+ target)"
+      - "Community participation (3+ posts/week)"
+      - "Module completion (90%+)"
+      - "Metric tracking consistency"
+  layer_3_community:
+    timing: "Ongoing"
+    goal: "Create meaningful relationships"
+    elements:
+      - "Peer support (member-to-member help)"
+      - "Shared struggles (vulnerability)"
+      - "Celebration of wins (group joy)"
+      - "Identity formation ('I'm legendary')"
+      - "Accountability to tribe (social pressure positive)"
+    activities:
+      - "Weekly live check-in (host Alan or team)"
+      - "Slack/Discord channels (peer community)"
+      - "Member spotlight (celebrate progress)"
+      - "Group challenges (collective goals)"
+      - "Optional mastermind breakouts"
+    metrics:
+      - "Active community members (50%+)"
+      - "Peer interactions (helping each other)"
+      - "Member-to-Alan ratio (community doesn't need him all time)"
+  layer_4_results:
+    timing: "90 days"
+    goal: "Proven ROI = stickiness"
+    results:
+      - "Automation running (saves time/money)"
+      - "First customer/client acquired"
+      - "Metric shows improvement"
+      - "Income increased (even small)"
+      - "Clarity restored (psychological)"
+    proof_mechanics:
+      - "Dashboard shows progress"
+      - "Member testimonial collected"
+      - "Celebration event (milestone)"
+      - "Invitation to success story"
+    retention_impact: "Members who see results don't leave - FILL_THIS + retention at 90-day mark"
+  layer_5_renewal:
+    timing: "Month 10-12"
+    goal: "Make renewal automatic + attractive"
+    activities:
+      - "Advanced cohort offer (stay engaged deeper)"
+      - "Lifetime access upgrade (pay more for more)"
+      - "1-on-1 coaching option (premium)"
+      - "Success story interview"
+      - "Renewal discount (loyalty reward)"
+    messaging:
+      - "You've come so far, don't stop"
+      - "Year 2 is when it scales"
+      - "Community needs you (role model)"
+      - "Access to new modules"
+    barriers_removal:
+      - "Make payment easy (monthly option)"
+      - "Remind value (before renewal time)"
+      - "Address concerns (if any)"
+      - "Welcome back ritual (make it special)"
+  churn_prevention:
+    trigger_1:
+      signal: "Missing 2+ check-ins"
+      action: "Personal email from coach"
+      goal: "Re-engage immediately"
+    trigger_2:
+      signal: "Complaint in community"
+      action: "Quick response + support"
+      goal: "Address concern before it festers"
+    trigger_3:
+      signal: "Metric not improving by week 6"
+      action: "Strategy review call"
+      goal: "Adjust system or expectations"
+    trigger_4:
+      signal: "Member asks about refund"
+      action: "1-on-1 call (not email)"
+      goal: "Understand real issue, solve it"
+    trigger_5:
+      signal: "Zero community posts/likes"
+      action: "Personal intro from peer"
+      goal: "Create connection"
+  win_back:
+    window: "Before 30 days post-refund"
+    approach:
+      step_1: "Respectful 'sorry to see you go' email"
+      step_2: "Offer specific help (address their concern)"
+      step_3: "Suggest returning (no pressure)"
+      step_4: "Special return offer (if justified)"
+    success_target: "20-30% re-entry rate"
+  referral_program:
+    insight: "Members who refer stay longer (invested in community success)"
+    incentive_1: "Free months for each referral"
+    incentive_2: "Bonus Super Chat access"
+    incentive_3: "VIP community status"
+    incentive_4: "Speaking opportunity"
+    retention_impact: "Referrers = FILL_THIS + retention"
+  advanced_engagement:
+    option_1:
+      name: "Advanced Cohort (for grads)"
+      price: "R$ [PENDING]"
+      content: "Specialized modules, deeper work"
+      retention_impact: "Keeps best members engaged"
+    option_2:
+      name: "1-on-1 Coaching (premium)"
+      price: "R$ [PENDING]"
+      content: "Direct Alan or coach access"
+      retention_impact: "Expensive = committed"
+    option_3:
+      name: "Mastermind (accountability)"
+      price: "R$ [PENDING]"
+      content: "Small group (5-8), quarterly"
+      retention_impact: "Deepest commitment"
+    option_4:
+      name: "Agency Partnership (B2B)"
+      price: "R$ [PENDING]"
+      content: "Custom implementation"
+      retention_impact: "Scales engagement"
+  metrics_to_track:
+    monthly:
+      - "Cohort retention (week by week)"
+      - "Engagement rate (logins, posts, attendance)"
+      - "Module completion rate"
+      - "Metric tracking consistency"
+      - "Check-in attendance"
+    quarterly:
+      - "ROI achievement rate"
+      - "Member satisfaction score"
+      - "Community health score"
+      - "Referral generation"
+    annually:
+      - "Renewal rate"
+      - "LTV (lifetime value)"
+      - "Upgrade rate (to advanced)"
+      - "Churn reasons analysis"
+  retention_vs_acquisition:
+    philosophy: |
+      Keeping 1 member (FILL_THIS) is 5x cheaper than
+      acquiring new one (estimated CAC R$ 500+).
+    implication: "Investment in retention >> investment in acquisition"
+    allocation: "60% effort retention, 40% acquisition"
+  success_definition:
+    goal_1: "FILL_THIS + retention at 90 days"
+    goal_2: "90%+ annual renewal rate"
+    goal_3: "30%+ referral rate"
+    goal_4: "FILL_THIS + positive ROI rate"
+    goal_5: "Member NPS > 70"
+  status: "COMPLETE"
+# ============================================================================
+# VALIDATION & DATA QUALITY
+# ============================================================================
+metadata_validation:
+  required_fields: "All FILL THIS sections completed"
+  completed_fields: 0
+  completeness_percentage: 0
+  validation_status: "INCOMPLETE - FILL ALL DATA"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# END OF TEMPLATE
+
+# Remember: Data is your credibility.
+# Weak data = weak copy = weak conversions.
+# Better to have fewer true stats than many questionable ones.

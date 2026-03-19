@@ -1,0 +1,31 @@
+---
+metadata:
+  schema: "etl.run_envelope"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  run_id: "FILL_THIS"
+  generated_at: "FILL_THIS"
+  business_slug: "FILL_THIS"
+contract:
+  status: "FILL_THIS"
+  mode: "FILL_THIS"
+  source_profile: "FILL_THIS"
+  desired_output: "FILL_THIS"
+artifacts:
+  - kind: "FILL_THIS"
+    path: "FILL_THIS"
+    format: "FILL_THIS"
+metrics:
+  duration_ms: "FILL_THIS"
+  chars_in: "FILL_THIS"
+  chars_out: "FILL_THIS"
+  words_in: "FILL_THIS"
+  words_out: "FILL_THIS"
+  chunks: "FILL_THIS"
+  fidelity_ratio: "FILL_THIS"
+checkpoints:
+  - phase: "FILL_THIS"
+    passed: "FILL_THIS"
+    timestamp: "FILL_THIS"
+warnings: []
+errors: []

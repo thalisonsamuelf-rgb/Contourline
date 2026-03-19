@@ -1,0 +1,431 @@
+# =============================================================================
+# Automation Infrastructure Template — N8N Workflow Patterns
+# =============================================================================
+# Generic templates for automating work delivery processes
+# Source: GESTAO-PROJETO-N8N-MAP.md
+# Version: 1.0
+# Date: 2026-02-14
+# =============================================================================
+
+---
+name: automation-infrastructure
+version: "1.0"
+description: "Standard N8N workflow patterns for work delivery automation"
+applicableTo:
+  - "Any company using N8N"
+  - "Work delivery, project management, operational workflows"
+  - "Event-driven automation"
+
+# =============================================================================
+# CORE AUTOMATION PATTERNS
+# =============================================================================
+
+automation_patterns:
+  # Pattern 1: Work Item Creation Automation
+  creation_automation:
+    name: "Work Item Creation & Setup"
+    trigger: "Webhook POST /create-work-item"
+    steps:
+      - step: 1
+        name: "Receive payload"
+        action: "N8N Webhook node receives ClickUp/form data"
+        inputs: "{name, description, deadline, owner}"
+
+      - step: 2
+        name: "Generate ID"
+        action: "Code node generates unique ID (e.g., [Pxx])"
+        logic: |
+          - Query Supabase for last ID
+          - Increment number
+          - Format: [Letter + 2-digit number]
+
+      - step: 3
+        name: "Create in ClickUp"
+        action: "ClickUp node creates task with ID in name"
+        outputs: "task_id, task_url"
+
+      - step: 4
+        name: "Create in storage"
+        action: "Google Drive node creates project folder"
+        folder_structure:
+          - "Research"
+          - "Documentation"
+          - "Deliverables"
+          - "Archive"
+
+      - step: 5
+        name: "Copy templates"
+        action: "Google Drive node copies template docs to folder"
+        templates:
+          - "Project Brief"
+          - "Requirements Doc"
+          - "Status Template"
+          - "Deliverables Checklist"
+
+      - step: 6
+        name: "Insert in database"
+        action: "Supabase node creates record"
+        fields: "id, name, owner_id, deadline, storage_folder_url"
+
+      - step: 7
+        name: "Link docs in ClickUp"
+        action: "ClickUp node updates custom fields with doc URLs"
+        custom_fields:
+          - "Brief Link"
+          - "Requirements Link"
+          - "Status Link"
+
+      - step: 8
+        name: "Set initial status"
+        action: "ClickUp node sets status = PLANNING"
+
+      - step: 9
+        name: "Notify stakeholders"
+        action: "Slack node sends notification to channel"
+        message: "✅ New work item [ID] created by [Owner]. Deadline: [Date]"
+
+    error_handling:
+      - "If ID generation fails: retry 3x with exponential backoff"
+      - "If ClickUp creation fails: rollback DB insert"
+      - "If Drive creation fails: log and alert ops team"
+
+  # Pattern 2: Status Change Automation
+  status_change_automation:
+    name: "Status Change & Checklist Validation"
+    trigger: "Webhook: ClickUp task status_updated event"
+    steps:
+      - step: 1
+        name: "Capture event"
+        action: "ClickUp webhook sends status change notification"
+        data: "{task_id, old_status, new_status, timestamp}"
+
+      - step: 2
+        name: "Validate transition"
+        action: "Code node checks if transition is allowed"
+        logic: |
+          allowed_transitions = {
+            "PLANNING": ["VALIDATION"],
+            "VALIDATION": ["EXECUTION", "BLOCKED"],
+            "EXECUTION": ["REVIEW", "BLOCKED"],
+            "REVIEW": ["EXECUTION", "COMPLETED"],
+            "BLOCKED": ["EXECUTION"],
+            "COMPLETED": ["ARCHIVED"]
+          }
+          if new_status NOT IN allowed_transitions[old_status]:
+            return ERROR
+
+      - step: 3
+        name: "Load checklist"
+        action: "Code node loads appropriate checklist for new_status"
+        logic: |
+          checklist_map = {
+            "PLANNING": "opening_checklist",
+            "VALIDATION": "pre_execution_checklist",
+            "REVIEW": "pre_delivery_checklist"
+          }
+
+      - step: 4
+        name: "Query checklist"
+        action: "Supabase node retrieves checklist items"
+        query: "SELECT items FROM checklists WHERE name = [checklist_name]"
+
+      - step: 5
+        name: "Check completion"
+        action: "Code node verifies required items"
+        logic: |
+          required_items = checklist.filter(item => item.required)
+          completed_items = required_items.filter(item => item.completed)
+          if completed_items.length < required_items.length:
+            return INCOMPLETE
+          return COMPLETE
+
+      - step: 6
+        name: "Decision: Block or Allow?"
+        action: "Switch node based on checklist status"
+        paths:
+          incomplete: "Send blocker notification"
+          complete: "Allow transition"
+
+      - step: 7
+        name: "Update ClickUp"
+        action: "ClickUp node updates status (if allowed)"
+
+      - step: 8
+        name: "Update database"
+        action: "Supabase node updates work item status & timestamp"
+
+      - step: 9
+        name: "Trigger domain workflows"
+        action: "Code node calls domain-specific N8N workflows"
+        examples:
+          - "On EXECUTION: Call 'Start Delivery' workflow"
+          - "On COMPLETED: Call 'Archive & Report' workflow"
+          - "On BLOCKED: Call 'Escalation' workflow"
+
+      - step: 10
+        name: "Notify"
+        action: "Slack node sends status update"
+        message: "📊 [WorkItem] → [NewStatus]. Checklist: [Items/Total]"
+
+  # Pattern 3: Daily Metrics & Reporting
+  daily_reporting:
+    name: "Daily Metrics Snapshot & Reporting"
+    trigger: "Cron: Daily at 8:00 AM"
+    steps:
+      - step: 1
+        name: "Query active items"
+        action: "Supabase node fetches all work items with status != ARCHIVED"
+
+      - step: 2
+        name: "Calculate velocity"
+        action: "Code node calculates completed items per time period"
+        formula: |
+          completed_this_week = COUNT(items WHERE status = COMPLETED AND created_date >= 7 days ago)
+          velocity = completed_this_week / 7
+
+      - step: 3
+        name: "Calculate burndown"
+        action: "Code node calculates completion %"
+        formula: |
+          completed = COUNT(items WHERE status = COMPLETED)
+          active = COUNT(items WHERE status IN [PLANNING, VALIDATION, EXECUTION, REVIEW, BLOCKED])
+          completion_pct = completed / (completed + active)
+
+      - step: 4
+        name: "Check deadlines"
+        action: "Code node identifies items due soon"
+        logic: |
+          overdue = items WHERE deadline < TODAY
+          due_soon = items WHERE deadline BETWEEN TODAY AND TODAY+3
+
+      - step: 5
+        name: "Insert metrics"
+        action: "Supabase node saves snapshot"
+        record: "{date, velocity, completion_pct, overdue_count, due_soon_count}"
+
+      - step: 6
+        name: "Build report"
+        action: "Code node formats HTML/text report"
+        sections:
+          - "Executive Summary (velocity, completion %)"
+          - "Overdue Items (with owners)"
+          - "Due Soon (next 3 days)"
+          - "On Track vs At Risk"
+
+      - step: 7
+        name: "Send to Slack"
+        action: "Slack node posts report to #operations channel"
+
+      - step: 8
+        name: "Send to email"
+        action: "Email node sends report to leadership"
+
+  # Pattern 4: Blocker Detection & Escalation
+  blocker_escalation:
+    name: "Blocker Detection & Escalation"
+    trigger: "Webhook: ClickUp task status = BLOCKED"
+    steps:
+      - step: 1
+        name: "Capture blocker"
+        action: "ClickUp webhook sends BLOCKED status notification"
+
+      - step: 2
+        name: "Record blocker"
+        action: "Supabase node inserts blocker record"
+        fields: "{task_id, blocker_description, reported_at, owner_id}"
+
+      - step: 3
+        name: "Set escalation timer"
+        action: "Code node calculates escalation deadline (T+2 days)"
+
+      - step: 4
+        name: "Schedule reminders"
+        action: "Delayed trigger nodes schedule notifications"
+        reminders:
+          - "+1 day: Slack reminder to owner"
+          - "+2 days: Escalate to manager"
+
+      - step: 5
+        name: "T+1: Send reminder"
+        action: "Slack node sends @mention to owner"
+        message: "⚠️ Blocker still open. Resolution deadline: [Date]"
+
+      - step: 6
+        name: "T+2: Escalate"
+        action: "Slack node alerts manager + owner"
+        message: "🚨 [Owner], your blocker on [Task] is overdue. [Manager], please review."
+
+      - step: 7
+        name: "On resolution"
+        action: "When status changes from BLOCKED → anything, auto-clear escalation"
+
+# =============================================================================
+# WEBHOOK ENDPOINTS
+# =============================================================================
+
+webhook_endpoints:
+  create_work_item:
+    path: "/n8n/webhook/create-work-item"
+    method: "POST"
+    triggered_by: "ClickUp task creation"
+    payload_fields: ["name", "description", "deadline", "owner_id", "priority"]
+
+  status_change:
+    path: "/n8n/webhook/status-change"
+    method: "POST"
+    triggered_by: "ClickUp status_updated event"
+    payload_fields: ["task_id", "old_status", "new_status", "timestamp"]
+
+  blocker_reported:
+    path: "/n8n/webhook/blocker-reported"
+    method: "POST"
+    triggered_by: "ClickUp task status = BLOCKED"
+    payload_fields: ["task_id", "blocker_description", "owner_id"]
+
+  external_notification:
+    path: "/n8n/webhook/external-notification"
+    method: "POST"
+    triggered_by: "External system (email, form, API)"
+    payload_fields: ["type", "data", "source"]
+
+# =============================================================================
+# CRON TRIGGERS
+# =============================================================================
+
+cron_jobs:
+  daily_metrics:
+    schedule: "0 8 * * *"  # 8:00 AM daily
+    workflow: "daily_reporting"
+    timezone: "America/Sao_Paulo"
+
+  weekly_summary:
+    schedule: "0 9 * * MON"  # Monday 9:00 AM
+    workflow: "weekly_summary"
+    timezone: "America/Sao_Paulo"
+
+  monthly_retrospective:
+    schedule: "0 10 1 * *"  # 1st of month, 10:00 AM
+    workflow: "monthly_retrospective"
+    timezone: "America/Sao_Paulo"
+
+  cleaner_archived:
+    schedule: "0 2 * * *"  # 2:00 AM daily
+    workflow: "cleanup_archived_items"
+    timezone: "America/Sao_Paulo"
+
+# =============================================================================
+# SKILL INTEGRATIONS (For Claude Code)
+# =============================================================================
+
+required_skills:
+  n8n_trigger:
+    description: "Trigger N8N workflows from Claude Code"
+    usage: |
+      trigger_workflow({
+        workflow_id: "hxWfv5NY9BD6W4Lq",
+        payload: {
+          task_id: "xxx",
+          name: "Project Alpha",
+          deadline: "2026-03-15"
+        }
+      })
+
+  n8n_list:
+    description: "List available N8N workflows"
+    usage: |
+      workflows = list_workflows()
+
+  n8n_status:
+    description: "Check execution status of workflow"
+    usage: |
+      status = get_workflow_status(execution_id: "xxx")
+
+# =============================================================================
+# ERROR HANDLING & RETRIES
+# =============================================================================
+
+error_handling:
+  retry_strategy:
+    max_attempts: 3
+    backoff: "exponential"
+    delay_start_ms: 1000
+    delay_max_ms: 30000
+
+  error_notifications:
+    critical:
+      messages:
+        - "ClickUp creation failed"
+        - "Database insert failed"
+        - "Webhook payload invalid"
+      sends_to: "ops-team@company.com"
+
+    warning:
+      messages:
+        - "Google Drive creation delayed"
+        - "Slack notification failed"
+        - "Metric calculation incomplete"
+      sends_to: "ops-alerts@company.com"
+
+# =============================================================================
+# MONITORING & ALERTING
+# =============================================================================
+
+monitoring:
+  metrics_to_track:
+    - "Workflow execution count (daily)"
+    - "Workflow success rate (%)"
+    - "Average execution time (ms)"
+    - "Error rate (%)"
+    - "Overdue resolutions (count)"
+    - "Escalation triggers (count)"
+
+  dashboards:
+    - "N8N Workflow Health"
+    - "Automation Error Log"
+    - "Blocker Escalation Tracking"
+    - "Work Item Creation Trend"
+
+  alerts:
+    - "If any workflow success rate < 95%: alert ops team"
+    - "If any workflow avg time > 30s: performance alert"
+    - "If blocker unresolved > 3 days: escalation alert"
+
+# =============================================================================
+# CUSTOMIZATION GUIDE
+# =============================================================================
+
+customization:
+  domain_specific_workflows:
+    description: "Each domain (projects, content, finance) can have custom workflows"
+    examples:
+      - "projects: When status = EXECUTION, trigger 'Assign Resources' workflow"
+      - "content: When status = REVIEW, trigger 'Schedule Publishing' workflow"
+      - "finance: When status = COMPLETED, trigger 'Invoice Generation' workflow"
+
+  custom_notifications:
+    description: "Override default notifications per domain"
+    options:
+      - "Send to different Slack channels"
+      - "Include domain-specific metrics"
+      - "Add custom approval steps"
+
+  additional_triggers:
+    description: "Domain-specific triggers beyond status changes"
+    examples:
+      - "Deadline approaching (< 48h)"
+      - "Budget threshold exceeded"
+      - "Quality score below threshold"
+
+# =============================================================================
+# REFERENCE
+# =============================================================================
+
+source: "Pedro Valério's GESTAO-PROJETO N8N architecture"
+authors:
+  - "@architect (The Architect)"
+  - "N8N team for workflow patterns"
+
+changelog:
+  - date: 2026-02-14
+    version: "1.0"
+    description: "Initial template extracted from GESTAO-PROJETO-N8N-MAP"

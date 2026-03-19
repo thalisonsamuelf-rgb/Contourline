@@ -1,0 +1,43 @@
+---
+metadata:
+  schema: "brand.naming_shortlist"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+context:
+  context_type: "FILL_THIS"
+  business_context: "FILL_THIS"
+  target_market: "FILL_THIS"
+  constraints: []
+scoring_model:
+  max_score: 60
+  criteria:
+    - memorability
+    - distinctiveness
+    - expressiveness
+    - adaptability
+    - longevity
+candidates:
+  - name: "FILL_THIS"
+    score: "FILL_THIS"
+    smile_score: "FILL_THIS"
+    scratch_score: "FILL_THIS"
+    notes: "FILL_THIS"
+  - name: "FILL_THIS"
+    score: "FILL_THIS"
+    smile_score: "FILL_THIS"
+    scratch_score: "FILL_THIS"
+    notes: "FILL_THIS"
+  - name: "FILL_THIS"
+    score: "FILL_THIS"
+    smile_score: "FILL_THIS"
+    scratch_score: "FILL_THIS"
+    notes: "FILL_THIS"
+handoff:
+  top_3_for_domain_check:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

@@ -1,0 +1,32 @@
+---
+# Template: cycle editorial calendar dataset (N6)
+
+metadata:
+  template_id: "movement.cycle_editorial_calendar"
+  version: "1.0.0"
+  lifecycle_stage: "cycle"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+editorial_calendar:
+  cycle_id: "<required>"
+  period:
+    start_date: "<yyyy-mm-dd>"
+    end_date: "<yyyy-mm-dd>"
+  cadence_profile: "<weekly|monthly|hybrid>"
+  entries:
+    - date: "<yyyy-mm-dd>"
+      channel: "<required>"
+      format: "<required>"
+      theme: "<required>"
+      angle: "<required>"
+      doctrine_id: "<required>"
+      myth_id: "<optional>"
+      flywheel_phase: "<know|trust|buy|propagate>"
+      objective: "<required>"
+      status: "<planned|ready|published|dropped>"
+  load_balance_rules:
+    max_posts_per_day: "<number>"
+    min_primary_channel_posts_per_week: "<number>"
+provenance:
+  source_docs: []

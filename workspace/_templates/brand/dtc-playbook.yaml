@@ -1,0 +1,20 @@
+---
+metadata:
+  schema: "brand.dtc_playbook"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+dtc_strategy:
+  acquisition_angles: []
+  retention_loops: []
+  channel_mix: []
+creative_direction:
+  hooks: []
+  offers: []
+measurement:
+  kpis:
+    - name: "FILL_THIS"
+      target: "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

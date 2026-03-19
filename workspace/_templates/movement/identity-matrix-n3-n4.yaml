@@ -1,0 +1,27 @@
+---
+# Template: N3 x N4 identity intersection matrix dataset
+
+metadata:
+  template_id: "movement.identity_matrix_n3_n4"
+  version: "1.0.0"
+  lifecycle_stage: "identity"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+matrix:
+  objective: "<required>"
+  intersections:
+    - n3_signal: "<required>"
+      n4_identity_signal: "<required>"
+      brand_implication: "<required>"
+      implication_for_n5: "<required>"
+      confidence: "<low|medium|high>"
+  founder_to_brand_mappings:
+    - founder_key: "<required>"
+      mappings:
+        - identity_trait: "<required>"
+          brand_expression: "<required>"
+          evidence_ref: "<optional>"
+  priority_decisions: []
+provenance:
+  source_docs: []

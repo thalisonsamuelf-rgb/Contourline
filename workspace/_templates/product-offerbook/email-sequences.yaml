@@ -1,0 +1,1145 @@
+---
+# EMAIL-SEQUENCES.YAML - Email funnels and automation sequences
+# Purpose: Map email campaigns that drive conversions
+# Guardian: Email Marketer / CMO / Copywriter
+# Timing: FILL BEFORE LAUNCHING - Map all email sequences
+
+metadata:
+  version: "2.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Email Marketer or CMO"
+  notes: |
+    This file maps ALL email sequences for the product.
+    Different sequences serve different purposes:
+    - Nurture (build awareness + trust)
+    - Presale (build desire)
+    - Sales (convert)
+    - Retention (keep customers happy)
+    - Upsell (sell more)
+
+    v2.0 UPGRADE: All subject lines now use Hormozi Hook Formulas.
+    Every email has 3 subject line alternatives tagged by hook type,
+    preview text, and A/B test fields. Reference: hooks.yaml for
+    the full 8-type taxonomy and platform-specific email rules.
+# ============================================================================
+# SUBJECT LINE RULES (Hormozi Hook Engineering — Email Platform)
+# ============================================================================
+subject_line_rules:
+  character_limit: "40-60 characters (truncates on mobile at 35-40)"
+  number_rule: "80% of subject lines must contain a specific number"
+  personalization: "Use [Name] in 30% of subject lines"
+  banned_patterns:
+    - "Generic questions without specificity ('Want to grow?')"
+    - "ALL CAPS (spam trigger)"
+    - "Multiple exclamation marks (!!!)"
+    - "Emoji in subject line (reduces deliverability in many ESPs)"
+    - "Re: or Fwd: fakes (trust destroyer)"
+    - "Spam words: 'FREE', 'ACT NOW', 'LIMITED TIME', 'GUARANTEED'"
+    - "Starting with brand name"
+  proven_patterns:
+    - "Counterintuitive statement: 'Why I stopped [common practice]'"
+    - "Specific number: '3 things I'd change about your [asset]'"
+    - "Pattern interrupt: 'Bad news about your [topic]'"
+    - "Open loop: '[Name], I noticed something about...'"
+    - "Parenthetical intrigue: 'Your offer (and what's wrong with it)'"
+    - "Direct value: 'The exact [framework] I used to [result]'"
+    - "Confession: 'I made a mistake with your [asset]'"
+    - "Binary choice: '2 types of [avatar]. Which one are you?'"
+  testing_requirement: "A/B test subject lines on every email. Track open rates. Rewrite any email with open rate < 20%."
+  preview_text_rules:
+    length: "40-90 characters"
+    purpose: "Extends the curiosity gap or adds specificity — never repeats the subject line"
+    best_practice: "Preview text should answer the implicit question the subject line creates, partially"
+# ============================================================================
+# SECTION 1: EMAIL STRATEGY OVERVIEW
+# ============================================================================
+email_strategy:
+  # What is the overall email strategy?
+  overall_goal: |
+    Example: "Build email list -> Nurture with value -> Convert with offer -> Retain with support"
+
+    Your goal:
+    [YOUR EMAIL STRATEGY GOAL]
+  list_segments:
+    # Different emails for different groups
+    segment_1: "Cold leads (recently opted in, no purchase)"
+    segment_2: "Warm leads (engaged, considering purchase)"
+    segment_3: "Customers (bought product)"
+    segment_4: "VIP (multiple purchases or high-value)"
+  email_frequency: |
+    Cold: 2-3x per week
+    Warm: 3-5x per week
+    Customers: 1-2x per week
+    VIP: 1x per week (or on-demand)
+
+    Your frequency: [YOUR FREQUENCY]
+  platform: |
+    Tool you're using: [ConvertKit, ActiveCampaign, Klaviyo, etc]
+  automation_vs_broadcast:
+    # Automated sequences vs manual broadcasts
+    automation: "Triggered by action (opt-in, purchase, etc)"
+    broadcast: "Sent manually to segment at specific time"
+# ============================================================================
+# SECTION 2: OPTIN SEQUENCES (Welcome Series)
+# ============================================================================
+optin_sequence:
+  # First emails after someone opts in
+  purpose: "Build relationship + set expectations + start nurturing"
+  email_1_welcome:
+    timing: "Immediately after opt-in"
+    subject_line:
+      option_a:
+        text: "Your training is ready (watch the first 5 min)"
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + qualifier"
+      option_b:
+        text: "[Name], 3 things inside your new training"
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + things + result"
+      option_c:
+        text: "47 people downloaded this today. You're next."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + social proof"
+    preview_text: "Step 1 takes 4 minutes. Here is where to start."
+    subject_line_test:
+      version_a: "Your training is ready (watch the first 5 min)"
+      version_b: "[Name], 3 things inside your new training"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    body_structure: |
+      - Warm greeting
+      - What they just got (deliverable)
+      - What to expect in next emails
+      - First value delivery
+      - Soft CTA (optional, not pushy)
+    cta: "Gentle introduction to what's coming"
+    length: "150-250 words"
+  email_2_value:
+    timing: "24 hours after email 1"
+    subject_line:
+      option_a:
+        text: "The 1 mistake 83% of [avatar] make first"
+        hook_type: "Statement"
+        hook_formula: "Formula #19 — Shocking statistic"
+      option_b:
+        text: "If you are doing [common practice], stop now"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [command]"
+      option_c:
+        text: "Why does [common approach] fail 9 out of 10 times?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Diagnostic question"
+    preview_text: "I spent 3 years figuring this out. Took me 1 paragraph to explain."
+    subject_line_test:
+      version_a: "The 1 mistake 83% of [avatar] make first"
+      version_b: "If you are doing [common practice], stop now"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    body_structure: |
+      - Reference previous email
+      - Share valuable insight
+      - Show you understand their problem
+      - Light education
+      - CTA: Read full post / watch video
+    cta: "Provide value before asking for anything"
+    length: "200-300 words"
+  email_3_story:
+    timing: "48 hours after email 1"
+    subject_line:
+      option_a:
+        text: "She lost R$10K. Then made R$47K in 30 days."
+        hook_type: "Narrative"
+        hook_formula: "Formula #3 — Transformation story (before/after with numbers)"
+      option_b:
+        text: "[Name], this R$10K mistake saved her business"
+        hook_type: "Statement"
+        hook_formula: "Formula #10 — Paradox"
+      option_c:
+        text: "If you have ever lost money on [topic], read this"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [command]"
+    preview_text: "Sarah almost gave up. Here is the 1 thing that changed everything."
+    subject_line_test:
+      version_a: "She lost R$10K. Then made R$47K in 30 days."
+      version_b: "[Name], this R$10K mistake saved her business"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    body_structure: |
+      - Tell story of student/client
+      - Problem -> transformation
+      - Insert their mechanism in the story
+      - CTA: Join the waiting list / get on calendar
+    cta: "Build desire through social proof story"
+    length: "300-400 words"
+  email_4_offer_intro:
+    timing: "72 hours after email 1"
+    subject_line:
+      option_a:
+        text: "12 spots open on [date]. Here is who qualifies."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + scarcity"
+      option_b:
+        text: "We are opening 12 spots (not for everyone)"
+        hook_type: "Command"
+        hook_formula: "Formula #14 — Exclusion"
+      option_c:
+        text: "If you want to [result] by [date], read this"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [command]"
+    preview_text: "Applications close when 12 slots fill. No waitlist after that."
+    subject_line_test:
+      version_a: "12 spots open on [date]. Here is who qualifies."
+      version_b: "We are opening 12 spots (not for everyone)"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    body_structure: |
+      - Mention upcoming offer
+      - Why they should apply
+      - Mention it's limited (deadline, spots, etc)
+      - Link to application or waiting list
+      - Create FOMO without being pushy
+    cta: "Introduction to the paid offer"
+    length: "200-300 words"
+  email_5_social_proof:
+    timing: "5 days after email 1"
+    subject_line:
+      option_a:
+        text: "47 [avatar] got results in 90 days. Data inside."
+        hook_type: "Statement"
+        hook_formula: "Formula #19 — Shocking statistic + proof"
+      option_b:
+        text: "Why did 47 people get results (and others did not)?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Diagnostic question"
+      option_c:
+        text: "[Name], 3 patterns I noticed in our top clients"
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + things + insight"
+    preview_text: "The difference is not talent or money. It is 1 specific behavior."
+    subject_line_test:
+      version_a: "47 [avatar] got results in 90 days. Data inside."
+      version_b: "Why did 47 people get results (and others did not)?"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    body_structure: |
+      - Share testimonial or case study
+      - Specific result + timeline
+      - Who is this framework for
+      - Soft CTA (if interested, here's how to apply)
+    cta: "Build trust through social proof"
+    length: "250-350 words"
+  total_sequence: "5-7 emails over 10-14 days"
+# ============================================================================
+# SECTION 3: NURTURE SEQUENCES (Build Trust Over Time)
+# ============================================================================
+nurture_sequence:
+  # Emails that build awareness + trust while you're deciding
+  purpose: "Provide value, build trust, position offer as solution"
+  email_1_awareness:
+    timing: "1 week after optin"
+    subject_line:
+      option_a:
+        text: "94% of [group] never reach [goal]. Here is why."
+        hook_type: "Statement"
+        hook_formula: "Formula #19 — Shocking statistic"
+      option_b:
+        text: "What if your biggest problem is not what you think?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Diagnostic question with curiosity gap"
+      option_c:
+        text: "If you are stuck below [revenue], the problem is this"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [reveal]"
+    preview_text: "I analyzed 200+ cases. The pattern is always the same."
+    subject_line_test:
+      version_a: "94% of [group] never reach [goal]. Here is why."
+      version_b: "What if your biggest problem is not what you think?"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Problem education + insight"
+    cta: "Awareness-level CTA"
+  email_2_mechanism:
+    timing: "1 week later"
+    subject_line:
+      option_a:
+        text: "The 3-step system that changed 847 businesses"
+        hook_type: "Statement"
+        hook_formula: "Formula #1 — Number + result + proof"
+      option_b:
+        text: "Everyone says 'scale your business.' Nobody shows how."
+        hook_type: "Statement"
+        hook_formula: "Formula #20 — Everyone says, nobody shows"
+      option_c:
+        text: "[Name], what if I showed you the exact framework?"
+        hook_type: "Question"
+        hook_formula: "Formula #7 — Curiosity gap + personalization"
+    preview_text: "It is not a hack. It is a system. 3 steps. 90 days. Documented results."
+    subject_line_test:
+      version_a: "The 3-step system that changed 847 businesses"
+      version_b: "Everyone says 'scale your business.' Nobody shows how."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Introduce unique mechanism"
+    cta: "Mild interest-building CTA"
+  email_3_results:
+    timing: "1 week later"
+    subject_line:
+      option_a:
+        text: "R$50K in 60 days. Real case. No theory."
+        hook_type: "Statement"
+        hook_formula: "Formula #1 — Number + result + time"
+      option_b:
+        text: "Would you invest R$2K to make R$50K in 60 days?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Yes question with ROI math"
+      option_c:
+        text: "I went from R$0 to R$50K. Here is the 1 change."
+        hook_type: "Narrative"
+        hook_formula: "Formula #3 — Transformation story"
+    preview_text: "Watch the 4-minute video. Then decide if this is for you."
+    subject_line_test:
+      version_a: "R$50K in 60 days. Real case. No theory."
+      version_b: "Would you invest R$2K to make R$50K in 60 days?"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Show proof + results"
+    cta: "Soft CTA to watch video testimonial"
+  email_4_objection:
+    timing: "1 week later"
+    subject_line:
+      option_a:
+        text: "Not ready? That is what 73% of our clients said."
+        hook_type: "Statement"
+        hook_formula: "Formula #10 — Paradox + statistic"
+      option_b:
+        text: "If you think you are not ready, read these 5 lines"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [objection], [command]"
+      option_c:
+        text: "[Name], 1 question before you decide"
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct + qualifier"
+    preview_text: "The 3 biggest fears. And the data that destroys each one."
+    subject_line_test:
+      version_a: "Not ready? That is what 73% of our clients said."
+      version_b: "If you think you are not ready, read these 5 lines"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Address main objection + overcome it"
+    cta: "Build confidence"
+  email_5_remind:
+    timing: "1 week later"
+    subject_line:
+      option_a:
+        text: "7 spots left. Applications close [day]."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + deadline"
+      option_b:
+        text: "Last week to apply (3 things you need to know)"
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + things + urgency"
+      option_c:
+        text: "If you are still thinking about it, read this first"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [command]"
+    preview_text: "I am closing applications on [day]. Here is what happens after."
+    subject_line_test:
+      version_a: "7 spots left. Applications close [day]."
+      version_b: "Last week to apply (3 things you need to know)"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Final reminder + limited time mention"
+    cta: "Apply or get notified when we reopen"
+  total_sequence: "1 email per week, 4-5 weeks total"
+# ============================================================================
+# SECTION 4: PRESALE SEQUENCE (Build Desire)
+# ============================================================================
+presale_sequence:
+  # Emails leading up to launch/enrollment opening
+  purpose: "Build hype + overcome objections + prepare for sales"
+  email_1_announcement:
+    timing: "2 weeks before launch"
+    subject_line:
+      option_a:
+        text: "14 days. Something changes for [avatar] on [date]."
+        hook_type: "Statement"
+        hook_formula: "Formula #8 — Time investment + curiosity gap"
+      option_b:
+        text: "[Name], mark [date] on your calendar. Here is why."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + qualifier"
+      option_c:
+        text: "If you want to [result] in Q[X], this is the window"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [desire], [consequence]"
+    preview_text: "I have been building this for 6 months. It is almost ready."
+    subject_line_test:
+      version_a: "14 days. Something changes for [avatar] on [date]."
+      version_b: "[Name], mark [date] on your calendar. Here is why."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: |
+      - What's coming
+      - Who it's for
+      - Why now
+      - Build curiosity
+    cta: "Mark calendar / waitlist"
+  email_2_why_now:
+    timing: "10 days before launch"
+    subject_line:
+      option_a:
+        text: "The market shifts in 90 days. Here are 3 signals."
+        hook_type: "Statement"
+        hook_formula: "Formula #1 — Number + result + time"
+      option_b:
+        text: "Why starting in 10 days beats starting in 6 months"
+        hook_type: "Statement"
+        hook_formula: "Formula #10 — Paradox (sooner beats later)"
+      option_c:
+        text: "If you wait until you are ready, the math gets worse"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [delay], [consequence]"
+    preview_text: "I ran the numbers on waiting. The cost is R$[X] per month of delay."
+    subject_line_test:
+      version_a: "The market shifts in 90 days. Here are 3 signals."
+      version_b: "Why starting in 10 days beats starting in 6 months"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Market timing + reason to act now"
+    cta: "Build urgency"
+  email_3_how_it_works:
+    timing: "7 days before launch"
+    subject_line:
+      option_a:
+        text: "4 steps. 90 days. Here is exactly how it works."
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + steps + result"
+      option_b:
+        text: "The exact framework behind R$2.3M in results"
+        hook_type: "Statement"
+        hook_formula: "Formula #7 — Curiosity gap + specific number"
+      option_c:
+        text: "[Name], I mapped the entire process (4 min read)"
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct + time qualifier"
+    preview_text: "Step 1 takes 15 minutes. Step 4 changes your revenue permanently."
+    subject_line_test:
+      version_a: "4 steps. 90 days. Here is exactly how it works."
+      version_b: "The exact framework behind R$2.3M in results"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Explain offer structure"
+    cta: "Build understanding"
+  email_4_objection_crushing:
+    timing: "5 days before launch"
+    subject_line:
+      option_a:
+        text: "Too expensive? The real ROI is 11x in 6 months."
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Diagnostic question + number"
+      option_b:
+        text: "The R$997 question everyone asks (and the math)"
+        hook_type: "Statement"
+        hook_formula: "Formula #7 — Curiosity gap with parenthetical"
+      option_c:
+        text: "If R$997 feels like a lot, you need to read this"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [objection], [command]"
+    preview_text: "I break down the investment per day. It is less than your coffee."
+    subject_line_test:
+      version_a: "Too expensive? The real ROI is 11x in 6 months."
+      version_b: "The R$997 question everyone asks (and the math)"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Address price + investment objection"
+    cta: "Overcome objection"
+  email_5_scarcity:
+    timing: "2 days before launch"
+    subject_line:
+      option_a:
+        text: "20 spots. First come, first served. No exceptions."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + scarcity"
+      option_b:
+        text: "48 hours until doors open (and close in 5 days)"
+        hook_type: "Statement"
+        hook_formula: "Formula #8 — Time investment + countdown"
+      option_c:
+        text: "[Name], I saved you a spot. Confirm in 48 hours."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + deadline"
+    preview_text: "Last cohort filled in 3 days. I am not adding more spots this time."
+    subject_line_test:
+      version_a: "20 spots. First come, first served. No exceptions."
+      version_b: "48 hours until doors open (and close in 5 days)"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Limited availability"
+    cta: "Create urgency"
+  email_6_launch_day:
+    timing: "Day of enrollment opening"
+    subject_line:
+      option_a:
+        text: "Doors are open. 20 spots. Closes [day]."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + deadline"
+      option_b:
+        text: "It is live. 7 people enrolled in the first hour."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + social proof"
+      option_c:
+        text: "[Name], your spot is available. Confirm now."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + personalization"
+    preview_text: "Enrollment page is open. Everything you need is on the page."
+    subject_line_test:
+      version_a: "Doors are open. 20 spots. Closes [day]."
+      version_b: "It is live. 7 people enrolled in the first hour."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Simple, direct CTA"
+    cta: "ENROLL NOW button"
+  total_sequence: "6 emails over 2 weeks"
+# ============================================================================
+# SECTION 5: SALES SEQUENCE (Convert)
+# ============================================================================
+sales_sequence:
+  # Emails during open enrollment pushing for conversions
+  purpose: "Convert interested prospects into customers"
+  email_1_application_reminder:
+    timing: "2 hours after enrollment opens"
+    subject_line:
+      option_a:
+        text: "20 spots. 4 taken in the first 2 hours."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + social proof velocity"
+      option_b:
+        text: "[Name], did you see the enrollment page?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Yes question + personalization"
+      option_c:
+        text: "If you were waiting for the right moment, it is now"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [reveal]"
+    preview_text: "I am not sending another reminder. This is your window."
+    subject_line_test:
+      version_a: "20 spots. 4 taken in the first 2 hours."
+      version_b: "[Name], did you see the enrollment page?"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Soft reminder, create light urgency"
+    cta: "Apply / Enroll"
+  email_2_testimonial:
+    timing: "1 day after email 1"
+    subject_line:
+      option_a:
+        text: "From stuck at R$8K to R$83K/month in 90 days"
+        hook_type: "Narrative"
+        hook_formula: "Formula #3 — Transformation story (before/after)"
+      option_b:
+        text: "Sarah's R$83K month (watch the 3-min video)"
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + proof format"
+      option_c:
+        text: "What did Sarah do differently? 1 framework. 90 days."
+        hook_type: "Question"
+        hook_formula: "Formula #9 — Open loop + number"
+    preview_text: "She was skeptical too. Then she saw the first results in week 2."
+    subject_line_test:
+      version_a: "From stuck at R$8K to R$83K/month in 90 days"
+      version_b: "Sarah's R$83K month (watch the 3-min video)"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Share strong testimonial"
+    cta: "Then apply"
+  email_3_objection:
+    timing: "2 days after email 1"
+    subject_line:
+      option_a:
+        text: "Still on the fence? Here are 3 things to consider."
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + things + decision framework"
+      option_b:
+        text: "The 2 questions every buyer asks before enrolling"
+        hook_type: "Statement"
+        hook_formula: "Formula #9 — Open loop + number"
+      option_c:
+        text: "If you are comparing options, read this 2-min breakdown"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [command]"
+    preview_text: "I listed every objection and answered each in 1 sentence."
+    subject_line_test:
+      version_a: "Still on the fence? Here are 3 things to consider."
+      version_b: "The 2 questions every buyer asks before enrolling"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Address remaining objections"
+    cta: "Apply now"
+  email_4_fomo:
+    timing: "4 days after email 1"
+    subject_line:
+      option_a:
+        text: "15 spots left. 3 filled today. Math is simple."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific numbers + scarcity velocity"
+      option_b:
+        text: "[Name], 15 of 20 spots remain. Not for long."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + personalization"
+      option_c:
+        text: "While you think about it, 5 people enrolled today"
+        hook_type: "Statement"
+        hook_formula: "Formula #10 — Paradox (thinking vs acting)"
+    preview_text: "I am showing you the enrollment dashboard. Numbers do not lie."
+    subject_line_test:
+      version_a: "15 spots left. 3 filled today. Math is simple."
+      version_b: "[Name], 15 of 20 spots remain. Not for long."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Social proof + scarcity"
+    cta: "Don't miss out - apply"
+  email_5_final_call:
+    timing: "1 day before close"
+    subject_line:
+      option_a:
+        text: "24 hours left. After that, price goes to R$1.497."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + consequence"
+      option_b:
+        text: "Tomorrow you will wish you had opened this today"
+        hook_type: "Statement"
+        hook_formula: "Formula #10 — Paradox (future regret)"
+      option_c:
+        text: "[Name], last call. Enrollment closes in 24 hours."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct + deadline + personalization"
+    preview_text: "I will not reopen at this price. The next cohort pays more."
+    subject_line_test:
+      version_a: "24 hours left. After that, price goes to R$1.497."
+      version_b: "Tomorrow you will wish you had opened this today"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Final urgency"
+    cta: "Apply today"
+  email_6_last_hours:
+    timing: "Last 6 hours"
+    subject_line:
+      option_a:
+        text: "6 hours. 4 spots. This is your final window."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific numbers + deadline"
+      option_b:
+        text: "Closing at midnight. 17 enrolled. 4 spots open."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + social proof"
+      option_c:
+        text: "[Name], I am closing this in 6 hours"
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + time + personalization"
+    preview_text: "No extensions. No exceptions. Doors close at midnight."
+    subject_line_test:
+      version_a: "6 hours. 4 spots. This is your final window."
+      version_b: "Closing at midnight. 17 enrolled. 4 spots open."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Final push"
+    cta: "Apply NOW"
+  total_sequence: "6 emails over 7-10 days of open enrollment"
+# ============================================================================
+# SECTION 6: POST-PURCHASE SEQUENCE (Retention + Onboarding)
+# ============================================================================
+post_purchase_sequence:
+  # Emails to customers who just bought
+  purpose: "Onboard quickly, set expectations, drive early results"
+  email_1_welcome:
+    timing: "Immediately after purchase"
+    subject_line:
+      option_a:
+        text: "You are in. 4 steps to start right now."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + number"
+      option_b:
+        text: "Welcome. Here is your Day 1 action plan (3 items)."
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + things + clarity"
+      option_c:
+        text: "[Name], Step 1 takes 4 minutes. Start here."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct + time qualifier + personalization"
+    preview_text: "Access link inside. Your first win happens today."
+    subject_line_test:
+      version_a: "You are in. 4 steps to start right now."
+      version_b: "[Name], Step 1 takes 4 minutes. Start here."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: |
+      - Congratulate them
+      - What they get
+      - Where to access it
+      - First action step
+      - Support info
+    cta: "Point them to first module/lesson"
+  email_2_expectation_setting:
+    timing: "24 hours after purchase"
+    subject_line:
+      option_a:
+        text: "Your 30-day roadmap (what to expect each week)"
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + steps + time structure"
+      option_b:
+        text: "Week 1 goal: complete these 3 things"
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + number"
+      option_c:
+        text: "87% of members who do this in Week 1 finish strong"
+        hook_type: "Statement"
+        hook_formula: "Formula #19 — Shocking statistic + behavior"
+    preview_text: "I mapped your first 30 days. Follow this and results compound."
+    subject_line_test:
+      version_a: "Your 30-day roadmap (what to expect each week)"
+      version_b: "87% of members who do this in Week 1 finish strong"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Timeline for results + what to expect"
+    cta: "Start first module"
+  email_3_first_win:
+    timing: "3 days after purchase"
+    subject_line:
+      option_a:
+        text: "1 task. 30 minutes. Your first win starts here."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + time + number"
+      option_b:
+        text: "The 30-minute assignment that unlocks everything"
+        hook_type: "Statement"
+        hook_formula: "Formula #7 — Curiosity gap + time"
+      option_c:
+        text: "[Name], have you completed your Day 1 assignment?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Diagnostic question + personalization"
+    preview_text: "This is the one thing that separates finishers from droppers."
+    subject_line_test:
+      version_a: "1 task. 30 minutes. Your first win starts here."
+      version_b: "The 30-minute assignment that unlocks everything"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Guide to first quick win"
+    cta: "Complete assignment"
+  email_4_community:
+    timing: "7 days after purchase"
+    subject_line:
+      option_a:
+        text: "847 members are inside. Introduce yourself here."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + social proof"
+      option_b:
+        text: "The 1 thing members say surprised them most"
+        hook_type: "Statement"
+        hook_formula: "Formula #9 — Open loop + number"
+      option_c:
+        text: "[Name], 3 members posted wins this week. Join them."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + number + personalization"
+    preview_text: "People inside are sharing results. Your network just upgraded."
+    subject_line_test:
+      version_a: "847 members are inside. Introduce yourself here."
+      version_b: "[Name], 3 members posted wins this week. Join them."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Introduce community/group"
+    cta: "Join community"
+  email_5_progress_check:
+    timing: "14 days after purchase"
+    subject_line:
+      option_a:
+        text: "Day 14 check-in: where are you in the 4 steps?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Diagnostic question + number"
+      option_b:
+        text: "[Name], quick question about your progress"
+        hook_type: "Statement"
+        hook_formula: "Formula #7 — Curiosity gap + personalization"
+      option_c:
+        text: "If you are stuck on Step 2, this 5-min fix helps"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [solution + time]"
+    preview_text: "Reply to this email. I read every single one."
+    subject_line_test:
+      version_a: "Day 14 check-in: where are you in the 4 steps?"
+      version_b: "If you are stuck on Step 2, this 5-min fix helps"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "See how they're doing, offer support"
+    cta: "Reply with questions/wins"
+  email_6_module_reminder:
+    timing: "30 days after purchase"
+    subject_line:
+      option_a:
+        text: "Day 30. You are 50% through. Here is what is next."
+        hook_type: "Statement"
+        hook_formula: "Formula #1 — Number + progress + clarity"
+      option_b:
+        text: "3 modules left. The best part starts now."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + curiosity gap"
+      option_c:
+        text: "[Name], your halfway milestone (and what changes)"
+        hook_type: "Statement"
+        hook_formula: "Formula #7 — Curiosity gap with parenthetical"
+    preview_text: "Module 4 is where results start compounding. Do not stop now."
+    subject_line_test:
+      version_a: "Day 30. You are 50% through. Here is what is next."
+      version_b: "3 modules left. The best part starts now."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Progress report + encouragement"
+    cta: "Next module"
+  total_sequence: "6 emails over 30 days"
+# ============================================================================
+# SECTION 7: UPSELL SEQUENCES (Sell More)
+# ============================================================================
+upsell_sequence:
+  # Emails to customers offering additional products/services
+  purpose: "Increase LTV by offering related/higher-tier products"
+  email_1_context_first:
+    timing: "14 days after purchase (when using main product)"
+    subject_line:
+      option_a:
+        text: "You finished Module 3. Here is what 80% miss next."
+        hook_type: "Statement"
+        hook_formula: "Formula #19 — Shocking statistic + progress"
+      option_b:
+        text: "Module 3 done? The next level is where the money is."
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [progress], [reveal]"
+      option_c:
+        text: "[Name], 1 thing to do before starting Module 4"
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + number + personalization"
+    preview_text: "Most people stop here. The ones who continue see 3x results."
+    subject_line_test:
+      version_a: "You finished Module 3. Here is what 80% miss next."
+      version_b: "Module 3 done? The next level is where the money is."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Provide value in main product first"
+    cta: "Soft mention of next level"
+  email_2_upsell_intro:
+    timing: "21 days after purchase"
+    subject_line:
+      option_a:
+        text: "There is a Level 2. 94% of Level 1 grads qualify."
+        hook_type: "Statement"
+        hook_formula: "Formula #19 — Statistic + exclusion signal"
+      option_b:
+        text: "If you want to go from R$50K to R$200K, this exists"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [desire], [reveal]"
+      option_c:
+        text: "[Name], I built something deeper (only for finishers)"
+        hook_type: "Statement"
+        hook_formula: "Formula #14 — Exclusion + parenthetical"
+    preview_text: "I was not going to offer this until I saw your progress."
+    subject_line_test:
+      version_a: "There is a Level 2. 94% of Level 1 grads qualify."
+      version_b: "If you want to go from R$50K to R$200K, this exists"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Introduce upsell casually"
+    cta: "Learn more"
+  email_3_upsell_value:
+    timing: "7 days later"
+    subject_line:
+      option_a:
+        text: "Level 2 includes 7 things Level 1 does not"
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + comparison"
+      option_b:
+        text: "The 3 tools inside Level 2 that accelerate results"
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + things + result"
+      option_c:
+        text: "Who is Level 2 for? (And who should NOT apply)"
+        hook_type: "Question"
+        hook_formula: "Formula #14 — Exclusion + curiosity gap"
+    preview_text: "I break down every component. Decide for yourself."
+    subject_line_test:
+      version_a: "Level 2 includes 7 things Level 1 does not"
+      version_b: "The 3 tools inside Level 2 that accelerate results"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Explain upsell offer"
+    cta: "Details"
+  email_4_upsell_push:
+    timing: "7 days later"
+    subject_line:
+      option_a:
+        text: "5 Level 2 slots open. Priority for Level 1 grads."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + scarcity + exclusion"
+      option_b:
+        text: "[Name], your Level 2 priority window closes in 48h"
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct + deadline + personalization"
+      option_c:
+        text: "Ready to 3x your results? 5 spots. 48 hours."
+        hook_type: "Question"
+        hook_formula: "Formula #5 — Multiplier + scarcity"
+    preview_text: "After 48 hours, these slots go to the general waitlist."
+    subject_line_test:
+      version_a: "5 Level 2 slots open. Priority for Level 1 grads."
+      version_b: "[Name], your Level 2 priority window closes in 48h"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Stronger ask with scarcity"
+    cta: "Enroll in next level"
+  total_sequence: "4 emails over 35 days (only if relevant)"
+# ============================================================================
+# SECTION 8: RE-ENGAGEMENT SEQUENCE (Win Back)
+# ============================================================================
+reengagement_sequence:
+  # Emails to inactive customers
+  purpose: "Recover inactive customers before losing them"
+  email_1_check_in:
+    timing: "30 days of inactivity"
+    subject_line:
+      option_a:
+        text: "It has been 30 days. Your progress paused at Step 2."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + progress data"
+      option_b:
+        text: "[Name], you stopped at 40%. Here is how to restart."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct + number + personalization"
+      option_c:
+        text: "Quick question: what got in the way?"
+        hook_type: "Question"
+        hook_formula: "Formula #2 — Diagnostic question"
+    preview_text: "No judgment. 60% of members pause at least once. Here is the fix."
+    subject_line_test:
+      version_a: "It has been 30 days. Your progress paused at Step 2."
+      version_b: "[Name], you stopped at 40%. Here is how to restart."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Gentle check-in"
+    cta: "Come back"
+  email_2_support:
+    timing: "14 days later"
+    subject_line:
+      option_a:
+        text: "Stuck? Book a 15-min call. I will unblock you."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct action + time + result"
+      option_b:
+        text: "3 reasons people get stuck (and 3 fixes that work)"
+        hook_type: "List"
+        hook_formula: "Formula #6 — Number + problem + number + solution"
+      option_c:
+        text: "If something is blocking you, tell me in 1 sentence"
+        hook_type: "Conditional"
+        hook_formula: "Formula #13 — If [situation], [simple action]"
+    preview_text: "Reply with what is blocking you. My team responds in 24 hours."
+    subject_line_test:
+      version_a: "Stuck? Book a 15-min call. I will unblock you."
+      version_b: "3 reasons people get stuck (and 3 fixes that work)"
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Offer help"
+    cta: "Book support call"
+  email_3_final_offer:
+    timing: "14 days later"
+    subject_line:
+      option_a:
+        text: "1 more chance. 30-day extension. No extra cost."
+        hook_type: "Statement"
+        hook_formula: "Formula #2 — Specific number + offer"
+      option_b:
+        text: "[Name], I extended your access by 30 days. Use it."
+        hook_type: "Command"
+        hook_formula: "Formula #4 — Direct + number + personalization"
+      option_c:
+        text: "Before I close your file, 1 last thing"
+        hook_type: "Statement"
+        hook_formula: "Formula #9 — Open loop + urgency"
+    preview_text: "This is the last email about this. After this, your file closes."
+    subject_line_test:
+      version_a: "1 more chance. 30-day extension. No extra cost."
+      version_b: "[Name], I extended your access by 30 days. Use it."
+      winner: "TBD"
+      open_rate_a: "TBD"
+      open_rate_b: "TBD"
+    structure: "Final offer (discount, support, etc)"
+    cta: "One more try"
+  total_sequence: "3 emails over 60 days"
+# ============================================================================
+# SECTION 9: EMAIL SEQUENCES SUMMARY
+# ============================================================================
+sequences_overview:
+  # Quick reference of all sequences
+  optin_sequence: "5-7 emails, 10-14 days, purpose: welcome + nurture"
+  nurture_sequence: "4-5 emails, 4-5 weeks, purpose: build trust"
+  presale_sequence: "6 emails, 2 weeks, purpose: build hype"
+  sales_sequence: "6 emails, 7-10 days, purpose: convert"
+  post_purchase_sequence: "6 emails, 30 days, purpose: onboard + succeed"
+  upsell_sequence: "4 emails, 35+ days, purpose: increase LTV"
+  reengagement_sequence: "3 emails, 60 days, purpose: win back"
+  total_emails_per_customer: "30-35 emails over 6 months"
+# ============================================================================
+# SECTION 10: EMAIL PERFORMANCE TRACKING
+# ============================================================================
+performance_metrics:
+  # What to measure for each sequence
+  optin_sequence_metrics:
+    - "Open rate target: 40%+"
+    - "Click rate target: 10%+"
+    - "Conversion to sales: X%"
+  nurture_sequence_metrics:
+    - "Open rate target: 35%+"
+    - "Click rate target: 8%+"
+    - "Application rate: X%"
+  presale_sequence_metrics:
+    - "Open rate target: 45%+"
+    - "Click rate target: 15%+"
+    - "Enrollment rate: X%"
+  sales_sequence_metrics:
+    - "Open rate target: 50%+"
+    - "Click rate target: 20%+"
+    - "Conversion rate: X%"
+  post_purchase_metrics:
+    - "Open rate target: 60%+"
+    - "Engagement rate: X%"
+    - "Module completion rate: X%"
+# ============================================================================
+# SECTION 11: EMAIL TEMPLATE DATABASE
+# ============================================================================
+email_templates:
+  # Store actual email copy
+  template_1_name: "[SEQUENCE NAME]"
+  template_1_email_1_subject: "[SUBJECT LINE]"
+  template_1_email_1_body: "[ACTUAL EMAIL COPY]"
+  template_1_email_1_cta: "[BUTTON TEXT]"
+  # Repeat for each email in each sequence
+# ============================================================================
+# CHECKLIST: EMAIL SEQUENCES COMPLETENESS
+# ============================================================================
+completion_checklist:
+  - "[ ] Optin sequence mapped (5-7 emails)"
+  - "[ ] Nurture sequence mapped (4-5 emails)"
+  - "[ ] Presale sequence mapped (6 emails)"
+  - "[ ] Sales sequence mapped (6 emails)"
+  - "[ ] Post-purchase sequence mapped (6 emails)"
+  - "[ ] Upsell sequence mapped (if applicable)"
+  - "[ ] Reengagement sequence mapped"
+  - "[ ] All email subjects written with 3 alternatives per email"
+  - "[ ] All subject lines tagged with hook type and formula"
+  - "[ ] Preview text added to every email"
+  - "[ ] A/B test fields configured for every email"
+  - "[ ] 80%+ of subject lines contain a specific number"
+  - "[ ] All email bodies drafted"
+  - "[ ] CTAs are specific and clear"
+  - "[ ] Performance targets set"
+  - "[ ] Email sequences loaded into platform (ConvertKit, etc)"
+  - "[ ] Automation triggers configured"
+  - "[ ] Tested on mobile (all emails)"
+# ============================================================================
+# TEMPLATE NOTES FOR USERS
+# ============================================================================
+template_notes: |
+  This file maps WHEN and WHY each email goes out.
+  It's a sequence blueprint, not final copy.
+
+  v2.0 SUBJECT LINE UPGRADE:
+  Every email now includes 3 subject line alternatives using Hormozi Hook Formulas.
+  Each alternative is tagged with:
+  - hook_type: Which of the 8 types (Question, Statement, Conditional, Command, Label, List, Narrative, Exclamation)
+  - hook_formula: Which formula from the 121 database or 20 Master Templates
+  - preview_text: Inbox preview that extends the curiosity gap
+  - subject_line_test: A/B test fields to track open rates
+
+  HOW TO USE SUBJECT LINES:
+  1. Pick 2 of the 3 alternatives for your A/B test
+  2. Set up the test in your ESP (equal split, 24h test window)
+  3. Track open rates in the subject_line_test fields
+  4. Winner becomes the control. Loser gets replaced with a new variation.
+  5. Rewrite any email with open rate < 20%.
+
+  PLACEHOLDER GUIDE:
+  [Name] = First name personalization token from your ESP
+  [avatar] = Replace with your specific avatar (e.g., "gym owners", "coaches", "SaaS founders")
+  [date] = Replace with your actual date
+  [day] = Replace with your actual day of week
+  [result] = Replace with your specific promised result
+  [topic] = Replace with your specific topic
+  [revenue] = Replace with relevant revenue number
+  R$X = Replace with your actual pricing
+
+  DO:
+  - Map all sequences before writing
+  - Write subject lines that match awareness level
+  - A/B test every subject line
+  - Include CTAs that match email purpose
+  - Test on mobile (most opens are mobile)
+  - Automate sequences (don't send manually if avoidable)
+  - Track open rates obsessively
+
+  DON'T:
+  - Skip sequences (each serves a purpose)
+  - Write without mapping first
+  - Use generic subject lines without numbers
+  - Forget CTAs
+  - Send all emails at same time
+  - Use ALL CAPS in subject lines
+  - Use emojis in subject lines
+  - Fake Re: or Fwd: prefixes
+
+  KEY PRINCIPLE:
+  Every email should move prospect closer to purchase.
+  No fluff. No "just checking in."
+  Every email = value or conversion push.
+  Every subject line = a hook. If the hook fails, the email dies unopened.
+
+  CROSS-REFERENCE:
+  See hooks.yaml for the full 8-type hook taxonomy, 70-20-10 framework,
+  platform-specific email rules, and the quality checklist.
+
+  Update: After launch, track metrics and optimize.
+  Change subject lines if open rate drops below 20%.
+  Remove emails that don't drive results.
+
+  This is your SYSTEM for email funnel success.

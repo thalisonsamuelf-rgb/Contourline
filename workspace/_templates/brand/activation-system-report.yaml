@@ -1,0 +1,17 @@
+---
+metadata:
+  schema: "brand.activation_system_report"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+activation_summary:
+  identity_system_status: "FILL_THIS"
+  culture_alignment_status: "FILL_THIS"
+  go_to_market_status: "FILL_THIS"
+segment_layers:
+  dtc_startup: []
+  smb_b2b: []
+operating_risks: []
+references:
+  source_doc: "FILL_THIS"

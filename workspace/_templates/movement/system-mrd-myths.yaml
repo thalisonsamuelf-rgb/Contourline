@@ -1,0 +1,19 @@
+---
+# Template: system MRD myths dataset
+
+metadata:
+  template_id: "movement.system_mrd_myths"
+  version: "1.0.0"
+  lifecycle_stage: "system"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+myths:
+  - id: "MY-001"
+    title: "<required>"
+    doctrine_refs: []
+    role: "<founder|leader|sustenance>"
+    source_type: "<lived_experience|case_study|data|authority|analogy|cultural_reference|social_proof|counter_narrative>"
+    content_summary: "<required>"
+provenance:
+  source_docs: []

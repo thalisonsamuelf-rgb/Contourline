@@ -1,0 +1,196 @@
+---
+# CONVERSION-FUNNEL.YAML - Funnel Metrics, Targets & Optimization Framework
+# Purpose: Map the complete conversion funnel with metrics and targets at every stage
+# Guardian: CMO / Growth Lead
+# Timing: FILL after analytics.yaml has initial data and monetization-strategy.yaml defines revenue targets
+# Framework: AARRR Pirate Metrics + 5-Stage Funnel Architecture
+# Dependency: analytics.yaml (data source), monetization-strategy.yaml (revenue targets)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Growth Lead"
+  framework: "AARRR Pirate Metrics + 5-Stage Conversion Funnel"
+  notes: |
+    A funnel without metrics is a hope. A funnel with metrics is a machine.
+
+    Every stage of the funnel has THREE things:
+    1. A VOLUME target (how many enter this stage)
+    2. A CONVERSION RATE target (% that move to next stage)
+    3. A BOTTLENECK diagnostic (what stops them from converting)
+
+    The funnel is read TOP-DOWN for diagnosis and BOTTOM-UP for optimization.
+    - Top-down: "Where are we losing people?"
+    - Bottom-up: "What is the highest-leverage fix?"
+
+    RULE: Always optimize from the BOTTOM of the funnel upward.
+    Fixing the CTA page before fixing traffic is inefficient.
+    A 2% improvement at the bottom compounds through every stage above.
+# ============================================================================
+# STEP 1: FUNNEL STRUCTURE OVERVIEW
+# ============================================================================
+funnel_overview:
+  total_stages: 5
+  flow: "Awareness → Interest → Consideration → Decision → Conversion"
+  primary_channel: "FILL — What is the primary acquisition channel?"
+  secondary_channels: "FILL — List 2-3 secondary channels"
+  funnel_type: "FILL — Webinar funnel / Sales page funnel / Application funnel / Call funnel / Hybrid"
+# ============================================================================
+# STEP 2: STAGE 1 — AWARENESS (Top of Funnel)
+# ============================================================================
+stage_1_awareness:
+  name: "Awareness (Impressions)"
+  description: "People who know the offer exists"
+  traffic_sources:
+    source_1:
+      name: "FILL — Source name (e.g., Instagram)"
+      type: "FILL — Organic / Paid / Referral"
+      estimated_volume: "FILL — Monthly impressions/reach"
+    source_2:
+      name: "FILL — Source name"
+      type: "FILL — Organic / Paid / Referral"
+      estimated_volume: "FILL — Monthly impressions/reach"
+    source_3:
+      name: "FILL — Source name"
+      type: "FILL — Organic / Paid / Referral"
+      estimated_volume: "FILL — Monthly impressions/reach"
+  volume_target: "FILL — X monthly impressions (total across all sources)"
+  key_metrics:
+    - "Reach"
+    - "Impressions"
+    - "Engagement rate"
+    - "FILL — Additional metric"
+  bottleneck_diagnostic: |
+    FILL — What is the #1 reason people at this stage do NOT move to Interest?
+    Common causes: low visibility, wrong audience targeting, weak hook,
+    poor channel selection, low ad spend.
+# ============================================================================
+# STEP 3: STAGE 2 — INTEREST (Visitors)
+# ============================================================================
+stage_2_interest:
+  name: "Interest (Visitors)"
+  description: "People who visit landing page, watch video, or click content"
+  entry_points:
+    entry_1: "FILL — Landing page visit"
+    entry_2: "FILL — Video view"
+    entry_3: "FILL — Email click"
+    entry_4: "FILL — Social post click"
+  volume_target: "FILL — X monthly visitors"
+  conversion_from_awareness: "FILL — Target % (typical: 2-10%)"
+  key_metrics:
+    - "Page views"
+    - "Video starts / completion rate"
+    - "Time on page"
+    - "Bounce rate"
+  bottleneck_diagnostic: |
+    FILL — What is the #1 reason visitors do NOT move to Consideration?
+    Common causes: weak headline, slow page, no clear value prop,
+    content does not match ad promise, mobile experience broken.
+# ============================================================================
+# STEP 4: STAGE 3 — CONSIDERATION (Leads)
+# ============================================================================
+stage_3_consideration:
+  name: "Consideration (Leads)"
+  description: "People who take a micro-commitment (opt-in, register, apply)"
+  lead_capture_mechanism: "FILL — What action converts a visitor to a lead? (email opt-in, webinar registration, application form)"
+  lead_magnet: "FILL — What do they receive in exchange? (free resource, webinar access, consultation)"
+  volume_target: "FILL — X monthly leads"
+  conversion_from_interest: "FILL — Target % (typical: 10-30%)"
+  key_metrics:
+    - "Opt-in rate"
+    - "Registration rate"
+    - "Lead quality score"
+    - "Cost per lead (CPL)"
+  bottleneck_diagnostic: |
+    FILL — What is the #1 reason visitors do NOT become leads?
+    Common causes: form too long, value prop unclear, no social proof
+    near CTA, trust barrier, lead magnet not compelling enough.
+# ============================================================================
+# STEP 5: STAGE 4 — DECISION (Qualified Leads)
+# ============================================================================
+stage_4_decision:
+  name: "Decision (Qualified Leads)"
+  description: "People actively evaluating your offer (watching sales content, on call, reading sales page)"
+  qualification_method: "FILL — How do leads become qualified? (Sales page visit, webinar attendance, discovery call, application approval)"
+  volume_target: "FILL — X monthly qualified leads"
+  conversion_from_consideration: "FILL — Target % (typical: 20-50%)"
+  key_metrics:
+    - "Sales page views / webinar attendance"
+    - "Show rate (if call-based)"
+    - "Time spent on sales content"
+    - "Objection patterns"
+  bottleneck_diagnostic: |
+    FILL — What is the #1 reason qualified leads do NOT convert?
+    Common causes: price objection, trust gap, timing issue,
+    competitor comparison, fear of commitment, unclear ROI.
+# ============================================================================
+# STEP 6: STAGE 5 — CONVERSION (Customers)
+# ============================================================================
+stage_5_conversion:
+  name: "Conversion (Customers)"
+  description: "People who purchase"
+  conversion_mechanism: "FILL — How do they buy? (checkout page, phone close, in-person, application + approval)"
+  payment_options: "FILL — What payment options are available?"
+  volume_target: "FILL — X monthly customers"
+  conversion_from_decision: "FILL — Target % (typical: 5-30% depending on model)"
+  key_metrics:
+    - "Conversion rate"
+    - "Average order value"
+    - "Cart abandonment rate"
+    - "Payment success rate"
+  bottleneck_diagnostic: |
+    FILL — What is the #1 reason decision-stage leads do NOT buy?
+    Common causes: checkout friction, payment issues, last-minute objection,
+    no urgency, guarantee not strong enough, price not justified.
+# ============================================================================
+# STEP 7: FUNNEL MATH (END-TO-END)
+# ============================================================================
+funnel_math:
+  total_awareness: "FILL — Monthly impressions"
+  awareness_to_interest: "FILL — %"
+  total_interest: "FILL — Monthly visitors"
+  interest_to_consideration: "FILL — %"
+  total_consideration: "FILL — Monthly leads"
+  consideration_to_decision: "FILL — %"
+  total_decision: "FILL — Monthly qualified leads"
+  decision_to_conversion: "FILL — %"
+  total_conversions: "FILL — Monthly customers"
+  overall_conversion_rate: "FILL — End-to-end (awareness to customer) %"
+  cost_per_acquisition: "FILL — Total marketing spend / total customers"
+  revenue_per_customer: "FILL — From monetization-strategy.yaml"
+  roas: "FILL — Return on Ad Spend (revenue / ad spend)"
+# ============================================================================
+# STEP 8: SCORING & DIAGNOSTIC
+# ============================================================================
+funnel_health_score:
+  volume_sufficiency: "FILL 1-10"
+  conversion_rates: "FILL 1-10"
+  bottleneck_clarity: "FILL 1-10"
+  measurement_quality: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "No clear funnel stages, no metrics being tracked, unknown conversion rates, no bottleneck analysis."
+    range_4_6: "Funnel stages defined but conversion rates are estimated, some metrics tracked, bottlenecks identified but not addressed."
+    range_7_8: "Clear funnel with measured conversion rates, active optimization on bottlenecks, ROAS positive, data-informed decisions."
+    range_9_10: "Precision funnel with real-time metrics, every bottleneck has an active experiment, strong ROAS (>3x), predictable revenue from funnel math."
+evidence:
+  data_points: "FILL — What actual data do you have for these metrics? (from analytics.yaml)"
+  benchmarks: "FILL — Industry benchmarks for comparison"
+  sources: "FILL — List verifiable sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  biggest_bottleneck: "FILL — Which stage has the worst conversion rate?"
+  highest_leverage_fix: "FILL — What single improvement would have the biggest impact?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "analytics.yaml"
+    - "monetization-strategy.yaml"
+  feeds_into:
+    - "ad-creative-brief.yaml"
+    - "email-sequences.yaml"
+  related:
+    - "sales-page.yaml"
+    - "headlines.yaml"
+    - "icp.yaml"

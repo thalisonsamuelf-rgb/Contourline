@@ -1,0 +1,21 @@
+---
+metadata:
+  schema: "etl.artifact_index"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  run_id: "FILL_THIS"
+  business_slug: "FILL_THIS"
+index:
+  root: "FILL_THIS"
+  canonical: "FILL_THIS"
+  custom: "FILL_THIS"
+  legacy: "FILL_THIS"
+artifacts:
+  raw: []
+  clean: []
+  filtered: []
+  chunks: []
+  transcript: []
+  keyframes: []
+  metadata: []
+  reports: []

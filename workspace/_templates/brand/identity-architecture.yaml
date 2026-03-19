@@ -1,0 +1,17 @@
+---
+metadata:
+  schema: "brand.identity_architecture"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+brand_vision:
+  core_identity: "FILL_THIS"
+  extended_identity: "FILL_THIS"
+  value_proposition: "FILL_THIS"
+architecture:
+  model: "<branded_house|endorsed|house_of_brands|hybrid>"
+  rationale: "FILL_THIS"
+proof_points: []
+references:
+  source_doc: "FILL_THIS"

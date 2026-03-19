@@ -1,0 +1,29 @@
+---
+# EVIDENCE/WORKSPACE-CONTEXT-SUMMARY.YAML - Snapshot operacional de contexto
+# Purpose: Registrar estado do workspace antes de handoffs entre agentes.
+# Guardian: COO
+# Timing: Gerar em cada execucao de load-workspace-context.
+
+workspace_context:
+  generated_at: "{iso_datetime}"
+  workspace_health: "pass|fail"
+  business_slug: "{slug|null}"
+  existing_assets:
+    company: []
+    operations: []
+    tech: []
+    ai: []
+    evidence: []
+  missing_inputs: []
+  handoff_readiness:
+    vision-chief: "ready|blocked"
+    cmo-architect: "ready|blocked"
+    cto-architect: "ready|blocked"
+    cio-engineer: "ready|blocked"
+    caio-architect: "ready|blocked"
+    coo-orchestrator: "ready|blocked"
+
+notes:
+  blockers: []
+  assumptions: []
+  next_actions: []

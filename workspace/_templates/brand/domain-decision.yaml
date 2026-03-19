@@ -1,0 +1,30 @@
+---
+metadata:
+  schema: "brand.domain_decision"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  approved_by: "FILL_THIS"
+  decision_date: "YYYY-MM-DD"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+naming:
+  official_name: "FILL_THIS"
+  slug: "FILL_THIS"
+  trueline: "FILL_THIS"
+domains:
+  primary:
+    domain: "FILL_THIS"
+    role: "FILL_THIS"
+    registrar: "FILL_THIS"
+  defensive:
+    - domain: "FILL_THIS"
+      role: "FILL_THIS"
+      registrar: "FILL_THIS"
+    - domain: "FILL_THIS"
+      role: "FILL_THIS"
+      registrar: "FILL_THIS"
+economics:
+  estimated_year_1_cost_usd: "FILL_THIS"
+  estimated_year_1_cost_brl: "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

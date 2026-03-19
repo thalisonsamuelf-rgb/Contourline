@@ -1,0 +1,339 @@
+# =============================================================================
+# Work Delivery Lifecycle Template — Operational Foundation
+# =============================================================================
+# Generic template for any company's work delivery process
+# Source: GESTAO-PROJETO-FULL-SPEC.md (Pedro Valério's operational model)
+# Version: 1.0
+# Date: 2026-02-14
+# =============================================================================
+
+---
+name: work-delivery-lifecycle
+version: "1.0"
+description: "Universal template for work delivery lifecycle (creation → completion)"
+applicableTo:
+  - "Any company that delivers projects/work"
+  - "Projects, sprints, campaigns, initiatives"
+  - "Operational delivery process"
+
+# =============================================================================
+# ENTITIES — What is being delivered
+# =============================================================================
+
+entities:
+  WorkItem:
+    description: "A unit of work being delivered (project, sprint, task, campaign)"
+    fields:
+      id: uuid
+      name: string
+      status: enum  # See STATUS_WORKFLOW below
+      owner: user_id
+      created_at: timestamp
+      deadline: date
+      priority: "P0|P1|P2|P3"
+
+  Checklist:
+    description: "Quality gate at critical delivery points"
+    fields:
+      phase: string  # D1, D2, D3, etc. or Phase 1, Phase 2, etc.
+      items: array   # {name, required, status, owner}
+      triggered_at_status: string  # Which status triggers this checklist
+      blocks_progression: boolean   # If incomplete, block moving to next status?
+
+  Metric:
+    description: "Daily/periodic snapshot of work progress"
+    fields:
+      work_item_id: uuid
+      snapshot_date: date
+      completed_percentage: float
+      velocity: float
+      on_time_probability: float
+
+# =============================================================================
+# STATUS WORKFLOW — How work moves through the system
+# =============================================================================
+
+status_workflow:
+  stages:
+    0_backlog:
+      name: "BACKLOG"
+      description: "Work approved but not started"
+      transitions_to: [1_planning]
+
+    1_planning:
+      name: "PLANNING / PESQUISA"
+      description: "Initial research, requirements gathering"
+      transitions_to: [2_validation]
+      checklist: ["requirements_defined", "resources_identified", "timeline_set"]
+
+    2_validation:
+      name: "VALIDATION / PRE-EXECUTION"
+      description: "Requirements validated, stakeholders aligned"
+      transitions_to: [3_execution]
+      checklist: ["stakeholder_approval", "resources_confirmed", "kick_off_scheduled"]
+
+    3_execution:
+      name: "EXECUTION / PRODUCTION"
+      description: "Active work happening"
+      transitions_to: [4_review, 5_blocked]
+      checklist: ["work_started", "tracking_active", "communication_established"]
+
+    4_review:
+      name: "REVIEW / QUALITY ASSURANCE"
+      description: "Work completed, waiting for approval"
+      transitions_to: [3_execution, 6_completed]
+      checklist: ["deliverables_complete", "quality_standards_met", "stakeholder_review"]
+
+    5_blocked:
+      name: "BLOCKED"
+      description: "Work temporarily halted due to blocker"
+      transitions_to: [3_execution]
+      checklist: ["blocker_documented", "owner_notified", "workaround_identified"]
+
+    6_completed:
+      name: "COMPLETED / DELIVERED"
+      description: "Work successfully delivered"
+      transitions_to: [7_archived]
+      checklist: ["delivery_confirmed", "stakeholder_accepted", "documentation_complete"]
+
+    7_archived:
+      name: "ARCHIVED"
+      description: "Work closed and archived for reference"
+      transitions_to: []
+
+# =============================================================================
+# CRITICAL CHECKLISTS — Quality Gates
+# =============================================================================
+
+checklists:
+  opening_checklist:
+    phase: "D1 / Opening"
+    triggered_when: "Status = PLANNING"
+    required_items:
+      - "Work item code generated (e.g., [Pxx], [Cxx])"
+      - "Project folder created (Google Drive / shared storage)"
+      - "Documentation templates copied"
+      - "Owner assigned"
+      - "Deadline set"
+    blocks_progression: true
+
+  pre_execution_checklist:
+    phase: "D2 / Pre-Execution"
+    triggered_when: "Status = VALIDATION"
+    required_items:
+      - "Stakeholder requirements signed off"
+      - "Resources (budget, team) confirmed"
+      - "Kick-off call scheduled"
+      - "Success criteria defined"
+    blocks_progression: true
+
+  pre_delivery_checklist:
+    phase: "D3 / Pre-Delivery"
+    triggered_when: "Status = REVIEW"
+    required_items:
+      - "All deliverables completed"
+      - "Quality standards met"
+      - "Stakeholder review scheduled"
+      - "Documentation finalized"
+    blocks_progression: true
+
+  delivery_checklist:
+    phase: "D4 / Delivery"
+    triggered_when: "Status = COMPLETED"
+    required_items:
+      - "Deliverables transferred to client"
+      - "Stakeholder sign-off obtained"
+      - "Lessons learned documented"
+      - "Archive completed"
+    blocks_progression: false  # Informational only
+
+# =============================================================================
+# SLAs & METRICS
+# =============================================================================
+
+slas:
+  on_time_delivery:
+    target: "≥ 90%"
+    definition: "% of work items delivered by deadline"
+
+  first_time_approval:
+    target: "≥ 80%"
+    definition: "% of deliverables approved on first review"
+
+  response_time:
+    target: "≤ 24h"
+    definition: "Max time for stakeholder to respond"
+
+  blocker_resolution:
+    target: "≤ 2 days"
+    definition: "Time from blocker reported to resolved"
+
+metrics_to_track:
+  - "Velocity (work items completed per sprint/week)"
+  - "Lead time (backlog → delivery)"
+  - "Cycle time (start → completion)"
+  - "Quality (% approved first review)"
+  - "On-time delivery rate"
+  - "Budget variance"
+  - "Resource utilization"
+  - "Blocker frequency & resolution time"
+
+# =============================================================================
+# BUSINESS RULES
+# =============================================================================
+
+business_rules:
+  status_sequencing:
+    description: "Statuses must follow the defined workflow (no skipping)"
+    enforcement: "System enforces - cannot move status out of order"
+
+  deadline_immutable:
+    description: "Deadline can only be extended by authorized parties"
+    enforcement: "Change requires approval from owner + manager"
+
+  blocker_escalation:
+    description: "If blocker not resolved within 2 days, auto-escalate"
+    enforcement: "N8N workflow triggers escalation alert"
+
+  checklist_blocking:
+    description: "Cannot move to next status if required checklist items incomplete"
+    enforcement: "UI blocks transition, N8N validates"
+
+  deletion_disabled:
+    description: "Cannot delete work items (only archive)"
+    enforcement: "Delete button hidden, soft delete only"
+
+# =============================================================================
+# TOOLS & INTEGRATIONS
+# =============================================================================
+
+required_integrations:
+  project_management:
+    tool: "ClickUp (or Jira, Asana, etc.)"
+    usage:
+      - "Create/read/update work items"
+      - "Track status changes"
+      - "Attach documentation"
+      - "Log comments & history"
+
+  persistence:
+    tool: "Supabase (or PostgreSQL, MySQL, etc.)"
+    usage:
+      - "Store work item data"
+      - "Persist metrics & snapshots"
+      - "Maintain history"
+      - "Support queries & reporting"
+
+  automation:
+    tool: "N8N (or Zapier, Make, etc.)"
+    usage:
+      - "Trigger workflows on status change"
+      - "Auto-generate checklist items"
+      - "Send notifications"
+      - "Sync data between tools"
+
+  storage:
+    tool: "Google Drive (or SharePoint, etc.)"
+    usage:
+      - "Store project documentation"
+      - "Share templates"
+      - "Archive deliverables"
+      - "Maintain audit trail"
+
+optional_integrations:
+  - "Slack - notifications"
+  - "Email - alerts"
+  - "Calendar - deadline sync"
+  - "Dashboards - metrics visualization"
+
+# =============================================================================
+# OPERATIONAL WORKFLOWS
+# =============================================================================
+
+workflows:
+  creation_flow:
+    trigger: "User creates new work item"
+    steps:
+      - "Generate unique ID ([Pxx], [Cxx])"
+      - "Create folder in shared storage"
+      - "Copy document templates"
+      - "Link templates in work item"
+      - "Set initial status = PLANNING"
+      - "Notify stakeholders"
+
+  status_change_flow:
+    trigger: "Work item status changes"
+    steps:
+      - "Validate new status (is it in workflow?)"
+      - "Load appropriate checklist"
+      - "Verify all required items complete"
+      - "If incomplete, block & notify owner"
+      - "If complete, allow transition"
+      - "Log status change in history"
+      - "Trigger N8N workflows for new status"
+      - "Update metrics"
+
+  daily_reporting:
+    trigger: "Daily cron (8am)"
+    steps:
+      - "Query all active work items"
+      - "Calculate metrics (velocity, completion %)"
+      - "Take snapshot for burndown"
+      - "Check for overdue items"
+      - "Alert owners of items due soon (<3 days)"
+      - "Generate daily report"
+      - "Send to team Slack channel"
+
+  blocker_resolution:
+    trigger: "Work item status = BLOCKED"
+    steps:
+      - "Record blocker details"
+      - "Notify owner"
+      - "Set resolution deadline (T+2 days)"
+      - "At T+1 day: send reminder"
+      - "At T+2 days: escalate to manager"
+      - "When resolved, auto-move back to EXECUTION"
+
+# =============================================================================
+# ADOPTION CHECKLIST
+# =============================================================================
+
+adoption_checklist:
+  planning:
+    - "[ ] Define work item types relevant to your company"
+    - "[ ] Customize status workflow"
+    - "[ ] Identify critical checklists"
+    - "[ ] Set SLAs for your context"
+
+  implementation:
+    - "[ ] Set up project management tool (ClickUp, Jira, etc.)"
+    - "[ ] Create database schema for metrics"
+    - "[ ] Build N8N workflows for automation"
+    - "[ ] Create document templates"
+    - "[ ] Set up notifications (Slack, email)"
+
+  validation:
+    - "[ ] Run 1-2 pilot work items"
+    - "[ ] Validate all checklists work"
+    - "[ ] Test all N8N workflows"
+    - "[ ] Verify reporting accuracy"
+    - "[ ] Get team feedback"
+
+  launch:
+    - "[ ] Train team on statuses & workflows"
+    - "[ ] Launch to entire team"
+    - "[ ] Monitor metrics for 2 weeks"
+    - "[ ] Adjust based on feedback"
+    - "[ ] Document any customizations"
+
+# =============================================================================
+# REFERENCE
+# =============================================================================
+
+source: "Pedro Valério's GESTAO-PROJETO operational model"
+authors:
+  - "@architect (The Architect)"
+changelog:
+  - date: 2026-02-14
+    version: "1.0"
+    description: "Initial template extracted from GESTAO-PROJETO-FULL-SPEC"

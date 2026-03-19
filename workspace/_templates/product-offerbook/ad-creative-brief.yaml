@@ -1,0 +1,160 @@
+---
+# AD-CREATIVE-BRIEF.YAML - Paid Advertising Creative Strategy & Testing Framework
+# Purpose: Structure ad creative strategy with hook testing, audience targeting, and performance optimization
+# Guardian: CMO / Media Buyer
+# Timing: FILL after icp.yaml, headlines.yaml, and hooks.yaml are complete
+# Framework: Jeremy Haynes Creative Testing (Hook Testing 28fw) + Client Accelerator (Hook Optimization)
+# Dependency: icp.yaml (audience), headlines.yaml (headline bank), hooks.yaml (hook library)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Media Buyer"
+  framework: "Haynes Creative Testing Framework + Client Accelerator Hook Optimization"
+  notes: |
+    Ads are not creative expression. They are EXPERIMENTS.
+
+    Jeremy Haynes' rule: Test the HOOK first, everything else second.
+    The hook (first 3 seconds of video / first line of text) determines
+    80% of ad performance. A bad hook kills a great offer.
+
+    Testing framework:
+    1. Test 5-10 hooks against the SAME body and CTA
+    2. Kill losers fast (24-48h)
+    3. Scale winners aggressively
+    4. Repeat with new hooks weekly
+
+    RULE: Never fall in love with a creative.
+    Data decides what works, not your opinion.
+# ============================================================================
+# STEP 1: CAMPAIGN OVERVIEW
+# ============================================================================
+campaign_overview:
+  campaign_objective: "FILL — Awareness / Traffic / Leads / Conversions / Retargeting"
+  primary_platform: "FILL — Facebook/Instagram / Google / YouTube / TikTok / LinkedIn"
+  secondary_platform: "FILL — Secondary platform (if any)"
+  daily_budget: "FILL — Daily ad spend budget"
+  target_cpa: "FILL — Target cost per acquisition"
+  target_roas: "FILL — Target return on ad spend"
+# ============================================================================
+# STEP 2: AUDIENCE TARGETING
+# ============================================================================
+audience_targeting:
+  cold_audience:
+    description: "FILL — Who are you targeting? (reference icp.yaml)"
+    interests: "FILL — Interest-based targeting options"
+    lookalikes: "FILL — Lookalike audiences available? (customer list, email list, engagement)"
+    exclusions: "FILL — Who to exclude?"
+  warm_audience:
+    description: "FILL — People who have interacted with your content"
+    sources: "FILL — Website visitors, video viewers, email subscribers, social engagement"
+    recency: "FILL — How recent? (7 days, 30 days, 90 days)"
+  hot_audience:
+    description: "FILL — People who have shown strong purchase intent"
+    sources: "FILL — Cart abandoners, sales page visitors, webinar attendees, past customers"
+# ============================================================================
+# STEP 3: HOOK TESTING BANK
+# ============================================================================
+hook_bank:
+  hook_1:
+    text: "FILL — Hook text (first line of ad or first 3 seconds of video)"
+    type: "FILL — Question / Bold statement / Stat / Story opener / Contrarian"
+    emotion_targeted: "FILL — What emotion does this trigger?"
+  hook_2:
+    text: "FILL — Hook 2"
+    type: "FILL — Type"
+    emotion_targeted: "FILL — Emotion"
+  hook_3:
+    text: "FILL — Hook 3"
+    type: "FILL — Type"
+    emotion_targeted: "FILL — Emotion"
+  hook_4:
+    text: "FILL — Hook 4"
+    type: "FILL — Type"
+    emotion_targeted: "FILL — Emotion"
+  hook_5:
+    text: "FILL — Hook 5"
+    type: "FILL — Type"
+    emotion_targeted: "FILL — Emotion"
+  testing_protocol:
+    hooks_per_test: "FILL — Number of hooks to test per round (recommended: 5-10)"
+    test_duration: "FILL — Hours/days per test (recommended: 24-48h)"
+    kill_threshold: "FILL — CPA threshold to kill a hook"
+    scale_threshold: "FILL — CPA threshold to scale a hook"
+# ============================================================================
+# STEP 4: AD CREATIVE FORMATS
+# ============================================================================
+creative_formats:
+  format_1:
+    type: "FILL — Static image / Carousel / Short video (15-30s) / Long video (60s+) / UGC"
+    description: "FILL — Brief description of the creative concept"
+    hook: "FILL — Which hook from the bank?"
+    body: "FILL — Key message in the body"
+    cta: "FILL — Call to action text"
+  format_2:
+    type: "FILL — Format type"
+    description: "FILL — Creative concept"
+    hook: "FILL — Which hook?"
+    body: "FILL — Body message"
+    cta: "FILL — CTA"
+  format_3:
+    type: "FILL — Format type"
+    description: "FILL — Creative concept"
+    hook: "FILL — Which hook?"
+    body: "FILL — Body message"
+    cta: "FILL — CTA"
+# ============================================================================
+# STEP 5: PERFORMANCE TRACKING
+# ============================================================================
+performance_tracking:
+  primary_metrics:
+    - "CTR (Click-Through Rate)"
+    - "CPC (Cost Per Click)"
+    - "CPL (Cost Per Lead)"
+    - "CPA (Cost Per Acquisition)"
+    - "ROAS (Return on Ad Spend)"
+  secondary_metrics:
+    - "Hook rate (3-second video views / impressions)"
+    - "Hold rate (video completion rate)"
+    - "Landing page conversion rate"
+    - "Frequency (ad fatigue indicator)"
+  optimization_rules:
+    rule_1: "FILL — When to increase budget (e.g., CPA < target for 3 days)"
+    rule_2: "FILL — When to decrease budget (e.g., CPA > 2x target)"
+    rule_3: "FILL — When to pause creative (e.g., frequency > 3, CTR declining)"
+    rule_4: "FILL — When to refresh creative (e.g., every 2-4 weeks)"
+# ============================================================================
+# STEP 6: SCORING & DIAGNOSTIC
+# ============================================================================
+ad_creative_strength_score:
+  hook_diversity: "FILL 1-10"
+  audience_precision: "FILL 1-10"
+  testing_rigor: "FILL 1-10"
+  performance_tracking: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "1-2 hooks, broad targeting, no testing protocol, no metrics tracked."
+    range_4_6: "3-5 hooks, basic targeting, some testing but inconsistent, basic metrics."
+    range_7_8: "5-10 hooks with variety, layered targeting, systematic testing with kill/scale rules, comprehensive metrics."
+    range_9_10: "10+ hooks tested weekly, precise targeting with lookalikes, automated testing protocol, real-time performance dashboard."
+evidence:
+  data_points: "FILL — Previous ad performance data (if any)"
+  sources: "FILL — List sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  best_performing_hook: "FILL — Which hook type historically performs best?"
+  biggest_optimization_opportunity: "FILL — Where can you improve most?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "icp.yaml"
+    - "headlines.yaml"
+    - "hooks.yaml"
+  feeds_into:
+    - "conversion-funnel.yaml"
+    - "analytics.yaml"
+  related:
+    - "copy-swipes.yaml"
+    - "launch-playbook.yaml"
+    - "competitor-analysis.yaml"

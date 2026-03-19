@@ -1,0 +1,184 @@
+---
+# FOLLOW-UP-SYSTEM.YAML - Multi-Touch Follow-Up Sequence Architecture
+# Purpose: Design a systematic follow-up system that converts prospects who did not buy on first contact
+# Guardian: Sales Lead / Sales Ops
+# Timing: FILL after call-script.yaml and email-sequences.yaml are complete
+# Framework: Multi-Touch Follow-Up Protocol + PLAYBOOK-FOLLOW-UP (177KB source material)
+# Dependency: call-script.yaml (initial contact), email-sequences.yaml (email infrastructure)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Sales Lead / Sales Ops"
+  framework: "Multi-Touch Follow-Up Protocol + PLAYBOOK-FOLLOW-UP"
+  notes: |
+    80% of sales happen between the 5th and 12th contact.
+    Most salespeople give up after 2.
+
+    This is not persistence for persistence's sake.
+    Each follow-up must ADD VALUE, not just ask "Have you decided?"
+
+    Three types of follow-up:
+    1. VALUE-ADD: Send something useful (case study, article, insight)
+    2. STATUS CHECK: Ask about their situation (not your sale)
+    3. URGENCY: Time-bound or scarcity-based nudge
+
+    The sequence mixes all three in a natural cadence.
+
+    RULE: If your follow-up sounds like "just checking in," delete it.
+    Every touchpoint must have a REASON that serves THEM, not you.
+
+# ============================================================================
+# STEP 1: FOLLOW-UP SEGMENTS
+# ============================================================================
+
+segments:
+  segment_1_no_show:
+    name: "No-Shows"
+    description: "Booked a call but did not attend"
+    priority: "High — they expressed intent"
+    goal: "Reschedule within 48 hours"
+    sequence_length: "FILL — Number of touchpoints"
+
+  segment_2_not_ready:
+    name: "Not Ready Yet"
+    description: "Had call but timing was not right"
+    priority: "Medium — nurture until ready"
+    goal: "Re-engage within 30-90 days"
+    sequence_length: "FILL — Number of touchpoints"
+
+  segment_3_objection:
+    name: "Objection-Based"
+    description: "Had call, interested but specific objection (price, spouse, timing)"
+    priority: "High — need targeted follow-up"
+    goal: "Resolve objection within 7 days"
+    sequence_length: "FILL — Number of touchpoints"
+
+  segment_4_ghosted:
+    name: "Ghosted"
+    description: "Stopped responding after initial engagement"
+    priority: "Low — re-activate periodically"
+    goal: "Re-engage or clean from pipeline"
+    sequence_length: "FILL — Number of touchpoints"
+
+# ============================================================================
+# STEP 2: FOLLOW-UP SEQUENCE (No-Show Example)
+# ============================================================================
+
+no_show_sequence:
+  touch_1:
+    timing: "FILL — 15 minutes after missed call"
+    channel: "FILL — SMS / Email"
+    type: "Status check"
+    message: |
+      FILL — Write the exact message.
+      Tone: concerned, not annoyed.
+      "Hey [name], I was looking forward to our call. Everything okay?"
+
+  touch_2:
+    timing: "FILL — 2 hours after"
+    channel: "FILL — SMS"
+    type: "Value-add"
+    message: |
+      FILL — Add value with a resource.
+      "While you reschedule, here is [resource] that addresses [their pain]."
+
+  touch_3:
+    timing: "FILL — Next day"
+    channel: "FILL — Email"
+    type: "Reschedule"
+    message: |
+      FILL — Direct reschedule offer with 2-3 specific time options.
+
+  touch_4:
+    timing: "FILL — 3 days after"
+    channel: "FILL — SMS"
+    type: "Last chance"
+    message: |
+      FILL — Final attempt. Light urgency.
+      "I have a few spots left this week. Want me to hold one?"
+
+# ============================================================================
+# STEP 3: FOLLOW-UP SEQUENCE (Not Ready Yet)
+# ============================================================================
+
+not_ready_sequence:
+  touch_1:
+    timing: "FILL — 1 week after call"
+    channel: "FILL — Email"
+    type: "Value-add"
+    message: "FILL — Send relevant case study or article"
+
+  touch_2:
+    timing: "FILL — 2 weeks after call"
+    channel: "FILL — SMS"
+    type: "Status check"
+    message: "FILL — Check in on their situation (not your sale)"
+
+  touch_3:
+    timing: "FILL — 1 month after call"
+    channel: "FILL — Email"
+    type: "Value-add"
+    message: "FILL — New testimonial or result that is relevant to their situation"
+
+  touch_4:
+    timing: "FILL — 2 months after call"
+    channel: "FILL — Email"
+    type: "Urgency"
+    message: "FILL — Time-bound offer or new cohort announcement"
+
+# ============================================================================
+# STEP 4: FOLLOW-UP RULES
+# ============================================================================
+
+rules:
+  rule_1: "FILL — Maximum touchpoints before moving to 'cold' (recommended: 8-12)"
+  rule_2: "FILL — Minimum gap between touchpoints (recommended: 24-48h for hot, 1-2 weeks for warm)"
+  rule_3: "FILL — When to stop following up (recommended: explicit 'no' or 90 days no response)"
+  rule_4: "FILL — Channel rotation pattern (e.g., SMS → Email → SMS → Call → Email)"
+  rule_5: "FILL — Personalization minimum (name, specific pain, specific reference from their call)"
+
+  forbidden_phrases:
+    - "'Just checking in' (no value)"
+    - "'Following up' (sounds salesy)"
+    - "'Any updates?' (puts burden on them)"
+    - "'Did you get my last message?' (passive aggressive)"
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+follow_up_strength_score:
+  sequence_completeness: "FILL 1-10"
+  value_per_touchpoint: "FILL 1-10"
+  channel_diversity: "FILL 1-10"
+  personalization: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "1-2 generic follow-ups, 'just checking in' messages, single channel, no personalization."
+    range_4_6: "3-5 touchpoints, some value-add content, 2 channels, basic personalization (name only)."
+    range_7_8: "6-10 touchpoints with value at each, multi-channel cadence, personalized to their specific situation and pain."
+    range_9_10: "12+ strategic touchpoints, every message adds genuine value, omni-channel with timing optimization, deeply personalized with specific references from their conversation."
+
+evidence:
+  data_points: "FILL — Follow-up conversion data, response rates by touchpoint, re-engagement rates"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  most_effective_touchpoint: "FILL — Which touchpoint gets the best response?"
+  biggest_gap: "FILL — Where is the follow-up system weakest?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "call-script.yaml"
+    - "email-sequences.yaml"
+  feeds_into:
+    - "analytics.yaml"
+    - "conversion-funnel.yaml"
+  related:
+    - "show-rate-optimization.yaml"
+    - "objections.yaml"

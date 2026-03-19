@@ -1,0 +1,205 @@
+---
+# SOLUTION-ARCHITECTURE.YAML - How Your Offer Actually Works (Unique Mechanism Design)
+# Purpose: Define the unique mechanism, differentiation layers, and solution structure that makes your offer different from everything else
+# Guardian: CMO / Offer Engineer
+# Timing: FILL after offerbook.yaml and value-equation.yaml are complete
+# Framework: Unique Mechanism Design (Todd Brown) + 3-Layer Solution Architecture (Hormozi)
+# Dependency: offerbook.yaml (offer structure), value-equation.yaml (perceived likelihood)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Offer Engineer"
+  framework: "Todd Brown Unique Mechanism + Hormozi 3-Layer Solution"
+  notes: |
+    Every offer that converts has a MECHANISM — a clear, proprietary explanation
+    of HOW it delivers results. Without a mechanism, your offer is just another
+    promise in a sea of promises.
+
+    The mechanism answers the question: "Why does THIS work when everything
+    else I tried did NOT?"
+
+    Todd Brown's insight: The mechanism is MORE important than the promise.
+    People have heard every promise. They have NOT heard YOUR mechanism.
+
+    Hormozi's insight: Structure the solution in layers so the client
+    sees a SYSTEM, not a collection of features.
+
+    This template combines both: Design the mechanism (WHY it works) +
+    Structure the delivery (HOW it is organized).
+
+    RULE: If you cannot explain your mechanism in 2 sentences,
+    you do not have one yet. Go back to value-equation.yaml.
+# ============================================================================
+# STEP 1: SOLUTION ESSENCE
+# ============================================================================
+# The one-paragraph summary of what your solution actually does.
+# Not features. Not benefits. The CORE TRANSFORMATION ENGINE.
+#
+# Good: "A 90-day operating system that uses AI to eliminate 80% of
+#        operational noise so you focus only on your zone of genius."
+# Bad:  "An online course with modules and community access."
+solution_essence:
+  core_statement: |
+    FILL — Describe your solution in one paragraph.
+    What does it DO (not what does it include)?
+    What TRANSFORMATION does it produce?
+    How is it FUNDAMENTALLY different from alternatives?
+  transformation_before: "FILL — What is the client's state BEFORE your solution?"
+  transformation_after: "FILL — What is the client's state AFTER your solution?"
+  transformation_timeframe: "FILL — How long does the core transformation take? (e.g., 90 days, 6 months)"
+# ============================================================================
+# STEP 2: UNIQUE MECHANISM
+# ============================================================================
+# The proprietary process, framework, or system that EXPLAINS why your
+# solution works when others do not.
+#
+# Todd Brown's 3 criteria for a strong mechanism:
+# 1. It must be NEW or presented in a new way
+# 2. It must be LOGICAL (makes sense when explained)
+# 3. It must be PROPRIETARY (feels like only YOU have it)
+unique_mechanism:
+  mechanism_name: "FILL — Give your mechanism a proprietary name (e.g., 'The Genius Zone Protocol')"
+  mechanism_steps:
+    step_1:
+      name: "FILL — Name of phase 1"
+      action: "FILL — What happens in this step?"
+      outcome: "FILL — What does the client achieve after this step?"
+    step_2:
+      name: "FILL — Name of phase 2"
+      action: "FILL — What happens in this step?"
+      outcome: "FILL — What does the client achieve after this step?"
+    step_3:
+      name: "FILL — Name of phase 3"
+      action: "FILL — What happens in this step?"
+      outcome: "FILL — What does the client achieve after this step?"
+    step_4:
+      name: "FILL — Name of phase 4 (if applicable)"
+      action: "FILL — What happens in this step?"
+      outcome: "FILL — What does the client achieve after this step?"
+    step_5:
+      name: "FILL — Name of phase 5 (if applicable)"
+      action: "FILL — What happens in this step?"
+      outcome: "FILL — What does the client achieve after this step?"
+  mechanism_in_two_sentences: |
+    FILL — Explain your mechanism in exactly 2 sentences.
+    Sentence 1: What it IS. Sentence 2: Why it WORKS.
+  why_it_works_when_others_fail: |
+    FILL — Explain the specific reason your mechanism produces results
+    when alternatives do not. Be specific about the STRUCTURAL difference,
+    not just "we are better."
+  novelty_check:
+    is_new_concept: "FILL — Yes/No. Is this mechanism genuinely new?"
+    is_new_presentation: "FILL — Yes/No. Is it a known concept presented in a new way?"
+    proprietary_element: "FILL — What makes this YOURS? (proprietary name, unique combination, original research)"
+# ============================================================================
+# STEP 3: DIFFERENTIATION
+# ============================================================================
+# Clear articulation of what you ARE vs what you ARE NOT.
+# This prevents mispositioned expectations and attracts the right buyers.
+differentiation:
+  what_we_are:
+    statement_1: "FILL — First 'we are' statement (be specific and concrete)"
+    statement_2: "FILL — Second 'we are' statement"
+    statement_3: "FILL — Third 'we are' statement"
+  what_we_are_not:
+    statement_1: "FILL — First 'we are NOT' statement (name the category you reject)"
+    statement_2: "FILL — Second 'we are NOT' statement"
+    statement_3: "FILL — Third 'we are NOT' statement"
+  key_differentiator: |
+    FILL — The single most important difference between your offer
+    and the top 3 alternatives in your market. Be brutally specific.
+  competitive_void: |
+    FILL — What gap in the market does your solution fill that
+    NO ONE ELSE is addressing? This is your blue ocean.
+# ============================================================================
+# STEP 4: THREE-LAYER SOLUTION STRUCTURE
+# ============================================================================
+# Hormozi's insight: Great offers have layers. Each layer serves a purpose.
+# Layer 1: The SYSTEM (what runs the transformation)
+# Layer 2: The ENVIRONMENT (what supports the transformation)
+# Layer 3: The ACCOUNTABILITY (what ensures the transformation happens)
+three_layer_solution:
+  layer_1_system:
+    name: "FILL — Name of your operational system layer"
+    purpose: "FILL — What does this layer DO?"
+    components:
+      component_1: "FILL — First component of the system"
+      component_2: "FILL — Second component"
+      component_3: "FILL — Third component"
+      component_4: "FILL — Fourth component (if applicable)"
+    client_outcome: "FILL — What does the client gain from this layer alone?"
+  layer_2_environment:
+    name: "FILL — Name of your environment/community layer"
+    purpose: "FILL — What does this layer DO?"
+    components:
+      component_1: "FILL — First component of the environment"
+      component_2: "FILL — Second component"
+      component_3: "FILL — Third component"
+    client_outcome: "FILL — What does the client gain from this layer alone?"
+  layer_3_accountability:
+    name: "FILL — Name of your accountability layer"
+    purpose: "FILL — What does this layer DO?"
+    components:
+      component_1: "FILL — First component of accountability"
+      component_2: "FILL — Second component"
+      component_3: "FILL — Third component"
+    client_outcome: "FILL — What does the client gain from this layer alone?"
+  combined_effect: |
+    FILL — How do the three layers work TOGETHER?
+    Why is the combination more powerful than any single layer?
+    What happens if you remove one layer?
+# ============================================================================
+# STEP 5: VETO CONDITIONS (Impossible to Fail)
+# ============================================================================
+# What structural elements make it IMPOSSIBLE (or very difficult) for
+# the client to fail? This is not willpower-based. This is system-based.
+veto_conditions:
+  condition_1:
+    wrong_path: "FILL — What wrong path does this condition prevent?"
+    mechanism: "FILL — How does the system prevent it? (automation, structure, rule)"
+  condition_2:
+    wrong_path: "FILL — What wrong path does this condition prevent?"
+    mechanism: "FILL — How does the system prevent it?"
+  condition_3:
+    wrong_path: "FILL — What wrong path does this condition prevent?"
+    mechanism: "FILL — How does the system prevent it?"
+  veto_philosophy: |
+    FILL — Explain your philosophy on veto conditions.
+    Is it "we make the wrong path impossible" or "we make the right path
+    so easy that choosing wrong requires deliberate effort"?
+# ============================================================================
+# STEP 6: SCORING & DIAGNOSTIC
+# ============================================================================
+solution_strength_score:
+  mechanism_clarity: "FILL 1-10"
+  differentiation_sharpness: "FILL 1-10"
+  layer_completeness: "FILL 1-10"
+  veto_robustness: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Mechanism is vague, no clear differentiation, layers overlap or are missing, no veto conditions."
+    range_4_6: "Mechanism exists but is not proprietary, differentiation is generic, layers are defined but weak, veto conditions are willpower-based."
+    range_7_8: "Mechanism is clear and somewhat unique, strong differentiation, layers are distinct and purposeful, veto conditions are structural."
+    range_9_10: "Mechanism is proprietary and compelling, differentiation creates a blue ocean, layers are synergistic, veto conditions make failure nearly impossible."
+evidence:
+  data_points: "FILL — What data supports your mechanism's effectiveness?"
+  case_studies: "FILL — Reference case studies or results from analytics.yaml"
+  sources: "FILL — List verifiable sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  strongest_element: "FILL — Which element (mechanism, differentiation, layers, veto) is your strongest?"
+  weakest_element: "FILL — Which element needs the most work?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "offerbook.yaml"
+    - "value-equation.yaml"
+  feeds_into:
+    - "narrative-architecture.yaml"
+    - "sales-page.yaml"
+    - "copy-swipes.yaml"
+  related:
+    - "problem-solution-matrix.yaml"
+    - "guarantee-design.yaml"

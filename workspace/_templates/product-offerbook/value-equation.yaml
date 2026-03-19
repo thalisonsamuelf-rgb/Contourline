@@ -1,0 +1,319 @@
+---
+# VALUE-EQUATION.YAML - Value Equation Diagnostic (Hormozi 4-Variable Model)
+# Purpose: Diagnose offer strength using the canonical Value Equation
+# Guardian: Offer Engineer / CMO
+# Timing: FILL after diagnosis.yaml and offerbook.yaml are complete
+# Framework: Alex Hormozi, $100M Offers — Value = (Dream Outcome x Perceived Likelihood) / (Time Delay x Effort & Sacrifice)
+# NOTE: This file stays SEPARATE per Alan's decision (v1.1)
+
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+# ============================================================================
+# VARIABLE 1: DREAM OUTCOME (Numerator — MAXIMIZE)
+# ============================================================================
+# The final, aspirational transformation your client experiences.
+# Not what they GET. What they BECOME.
+# Dream Outcome is fundamentally tied to perceived STATUS INCREASE.
+# Diagnostic question: "How does this result change how the client is PERCEIVED BY OTHERS?"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  # "Sell the vacation, not the airplane"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+# ============================================================================
+# VARIABLE 2: PERCEIVED LIKELIHOOD OF ACHIEVEMENT (Numerator — MAXIMIZE)
+# ============================================================================
+# The client's conviction that this offer "will really work for ME."
+# People pay for CERTAINTY. A bold promise without proof generates skepticism.
+# Proof > Promise. Always.
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    # See guarantee-design.yaml for the full guarantee engineering exercise
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+# ============================================================================
+# VARIABLE 3: TIME DELAY (Denominator — MINIMIZE)
+# ============================================================================
+# Time between purchase and receiving the promised benefit.
+# "Fast beats free." People pay a premium for speed.
+# The KEY insight: even if the REAL result takes time, you can engineer
+# QUICK WINS that make the client FEEL progress immediately.
+# Score: 10 = instant result, 1 = very slow result
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+# ============================================================================
+# VARIABLE 4: EFFORT & SACRIFICE (Denominator — MINIMIZE)
+# ============================================================================
+# All non-monetary costs: physical/mental effort, difficulty, inconvenience,
+# time commitment, things they must give up, embarrassment, confusion.
+# The less effort required, the more valuable the offer.
+# Score: 10 = zero effort (DFY), 1 = massive effort (complex DIY)
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: |-
+      FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+# ============================================================================
+# COMPOSITE DIAGNOSTIC
+# ============================================================================
+# This section synthesizes the 4 variables into actionable insights.
+# The goal is not a perfect score — it is to find and fix the WEAKEST variable.
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  # For calculation: Time Delay and Effort scores are INVERTED
+  # (10 = fast/easy is GOOD, but in the denominator, lower = better for value)
+  # So we invert: denominator_score = 11 - raw_score
+  # This means a raw score of 10 (fast) becomes 1 in denominator (low delay = high value)
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+# ============================================================================
+# COMPETITIVE VALUE EQUATION COMPARISON (Optional)
+# ============================================================================
+# Compare your offer against 1-2 direct competitors or alternatives
+# using the same 4 variables. This reveals your relative position.
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# FINANCIAL VALUE COMPARISON (Preserved from v1.0)
+# ============================================================================
+# This section is the PRICE JUSTIFICATION layer.
+# It sits BELOW the diagnostic because it only matters AFTER the 4 variables are strong.
+# A great financial comparison cannot save a weak Value Equation.
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+# ============================================================================
+# COMUNIDADE LENDARIA — FILLED DATA (Preserved from v1.0)
+# ============================================================================
+# Real data from the YOUR_PRODUCT product.
+# Kept here as reference and proof of template usage.
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+---
+FILL_THIS

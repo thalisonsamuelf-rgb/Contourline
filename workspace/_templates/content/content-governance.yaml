@@ -1,0 +1,46 @@
+version: "1.0.0"
+owner: "@content-squad-lead"
+status: active
+purpose: "Govern storage rules and boundaries for campaign planning templates"
+
+templates:
+  - campaign-brief.yaml
+  - message-architecture.yaml
+  - creative-brief.yaml
+  - asset-brief.yaml
+
+storage:
+  template_root: "workspace/_templates/content/"
+  planning_root: "workspace/businesses/{business}/copy/{campaign_slug}/"
+  planning_structure:
+    root_files:
+      - campaign-brief.yaml
+      - message-architecture.yaml
+      - creative-brief.yaml
+    assets_folder: "assets/"
+    asset_pattern: "asset-brief-*.yaml"
+  delivery_root: "outputs/copy/{business}/"
+
+campaign_slug_policy:
+  strategic_or_final_work: "campaign_slug required"
+  exploratory_or_draft_work: "campaign_slug optional"
+  promotion_rule: "Without a persisted campaign slug and Campaign Brief, work cannot be promoted to FINAL"
+
+stage_source_of_truth:
+  intake: "campaign-brief.yaml"
+  message_strategy: "message-architecture.yaml"
+  creative_direction: "creative-brief.yaml"
+  asset_planning: "assets/asset-brief-*.yaml"
+  delivery: "outputs/copy/{business}/..."
+
+boundary_rules:
+  - "Use product-offerbook/ for product definition, offer engineering, and proof structure"
+  - "Use product-narrative/ for reusable product story assets such as product-story, pitch-narrative, brandscript, and objection-destroyers"
+  - "Use content/ for campaign planning, creative direction, and asset scoping"
+  - "Do not store delivery-ready copy decks in workspace"
+
+source_of_truth_rule:
+  - "content/ adapts upstream truth; it does not replace it"
+  - "Positioning changes must reconcile with brand artifacts"
+  - "Support claims with product proof artifacts before promoting any campaign output"
+  - "Delivery-ready copy belongs in outputs/copy, not workspace"
