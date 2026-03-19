@@ -1,0 +1,291 @@
+# COMPANY DIAGNOSIS — Market Awareness & Sophistication
+#
+# CRITICAL: This template must be completed FIRST
+# Everything downstream (ICP, brand, offerbook) depends on these 2 decisions
+#
+# Author: @analyst
+# Template Version: 1.0
+# Status: FILLED (enriched from company-profile.yaml)
+metadata:
+  name: "Company Diagnosis"
+  version: "1.0"
+  template_type: "company-level"
+  description: "Eugene Schwartz 5-level framework x 5 sophistication stages"
+  required_for_governance: true
+  guardian: "CMO"
+  status: "FILLED"
+  created: "2026-02-14"
+  last_updated: "2026-03-19"
+  product_name: "Equipamentos Medicos e Esteticos - Contourline"
+# =============================================================================
+
+# SECTION 1: MARKET AWARENESS LEVEL (Choose ONE: 1-5)
+
+# =============================================================================
+
+# This determines positioning strategy for EVERYTHING downstream
+market_awareness_level:
+  description: "How aware is the market of the problem + solution category?"
+  level_1_unaware:
+    label: "Completely Unaware"
+    characteristics:
+      - "Don't know problem exists"
+      - "No existing solutions considered"
+      - "Think problem is normal/inevitable"
+      - "Not looking for alternatives"
+      - "Passive about status quo"
+    copy_implications:
+      headline_type: "Problem revelation"
+      headline_length: "Long (15-20 words)"
+      focus_area: "Problem exists and hurts"
+      difficulty: "Highest (must educate)"
+      length: "Long-form (5000+ words)"
+      example_opening: "Did you realize... [PROBLEM] costs you..."
+    when_to_use: "Breakthrough markets, new categories, B2B transformation"
+    status: "NOT_SELECTED"
+  level_2_problem_aware:
+    label: "Problem Aware"
+    characteristics:
+      - "Know problem exists"
+      - "Living with problem, not seeking solution"
+      - "Think problem is permanent"
+      - "Haven't considered solutions"
+      - "Skeptical solutions exist"
+    copy_implications:
+      headline_type: "Agitate the problem"
+      headline_length: "Medium (10-15 words)"
+      focus_area: "Problem pain + consequences"
+      difficulty: "High (must agitate)"
+      length: "Medium (2000-5000 words)"
+      example_opening: "If you're [PROBLEM], you know [PAIN]..."
+    when_to_use: "Market needs activation, awareness campaign"
+    status: "NOT_SELECTED"
+  level_3_solution_aware:
+    label: "Solution Aware (Most Common)"
+    characteristics:
+      - "Know problem + solution exists"
+      - "Considering multiple solutions"
+      - "Comparing products"
+      - "Looking for best choice"
+      - "Price/value sensitive"
+    copy_implications:
+      headline_type: "Differentiation"
+      headline_length: "Short (8-12 words)"
+      focus_area: "Why us vs competitors"
+      difficulty: "Medium (must differentiate)"
+      length: "Short (500-2000 words)"
+      example_opening: "Tired of [COMPETITOR]? Try [UNIQUE MECHANISM]..."
+    when_to_use: "Mature markets, crowded space, comparison shoppers"
+    status: "NOT_SELECTED"
+  level_4_product_aware:
+    label: "Product Aware"
+    characteristics:
+      - "Know our product exists"
+      - "Considering us specifically"
+      - "Evaluating fit + price"
+      - "Objection handling needed"
+      - "Close to buying decision"
+    copy_implications:
+      headline_type: "Social proof + results"
+      headline_length: "Short (5-8 words)"
+      focus_area: "Why they should buy now"
+      difficulty: "Low (overcome final objections)"
+      length: "Very short (100-500 words)"
+      example_opening: "[STAT]: [PROOF] clients switched to us because..."
+    when_to_use: "Retargeting, sales pages, existing audience"
+    status: "SELECTED"
+  level_5_most_aware:
+    label: "Most Aware"
+    characteristics:
+      - "Know our product + competitors"
+      - "Ready to buy"
+      - "Just checking final details"
+      - "Price + logistics only"
+      - "No education needed"
+    copy_implications:
+      headline_type: "CTA only"
+      headline_length: "Ultra-short (2-4 words)"
+      focus_area: "Take action now"
+      difficulty: "None (remove friction)"
+      length: "Minimal (0-100 words)"
+      example_opening: "Ready? Start here -> [BUTTON]"
+    when_to_use: "Existing members, email list, past customers"
+    status: "NOT_SELECTED"
+  # CRITICAL DECISION
+  identified_level: 4 # Product Aware / Most Aware
+  confidence_in_assessment: 85 # 0-100%
+  reasoning: |
+    O mercado-alvo da Contourline sao profissionais medicos (dermatologistas,
+    cirurgioes plasticos, medicos esteticos) que SABEM que precisam de
+    equipamentos de alta tecnologia. Eles conhecem o problema (necessidade de
+    tecnologia melhor para oferecer resultados superiores aos pacientes),
+    conhecem as solucoes que existem no mercado, e estao ativamente comparando
+    fornecedores (Contourline vs Fotona vs Alma vs Lutronic vs Candela vs Rennova).
+    Com 4000+ clientes e 15 anos de mercado, a Contourline e conhecida no
+    segmento. O mercado esta no nivel 4 — profissionais sabem que a Contourline
+    existe, estao avaliando fit e preco, e precisam de social proof e resultados
+    para fechar a decisao de compra.
+  status: "FILLED"
+# =============================================================================
+
+# SECTION 2: MARKET SOPHISTICATION STAGE (Choose ONE: 1-5)
+
+# =============================================================================
+
+# Combined with awareness level to determine copy mechanism
+market_sophistication_stage:
+  description: "How sophisticated is the market about solving this problem?"
+  stage_1_naive:
+    label: "Stage 1 — Naive/Uneducated"
+    characteristics:
+      - "Believe simple solutions exist"
+      - "One magic tactic will fix"
+      - "No understanding of systems"
+      - "Easily manipulated by promises"
+      - "Low barrier to belief"
+    copy_approach: "Simple solution narrative, magic bullet framing"
+    example_claim: "Earn $10K/month in 30 days guaranteed"
+    status: "NOT_SELECTED"
+  stage_2_learning:
+    label: "Stage 2 — Learning"
+    characteristics:
+      - "Learning there's no magic"
+      - "Discovering systems needed"
+      - "Trying multiple tactics"
+      - "Beginning to understand complexity"
+      - "Still believe in silver bullets but open to process"
+    copy_approach: "Framework + system narrative, logical progression"
+    example_claim: "Using our 3-step system, most members hit $5K/month within 6 months"
+    status: "NOT_SELECTED"
+  stage_3_experienced:
+    label: "Stage 3 — Experienced"
+    characteristics:
+      - "Know systems required"
+      - "Understand implementation difficulty"
+      - "Tried many approaches"
+      - "Respect the hard work"
+      - "Want shortcuts but realistic about them"
+    copy_approach: "Mechanism-focused narrative, system depth"
+    example_claim: "Our automation reduces implementation time from 6 months to 6 weeks"
+    status: "NOT_SELECTED"
+  stage_4_master:
+    label: "Stage 4 — Master"
+    characteristics:
+      - "Built successful systems"
+      - "Know what works"
+      - "Judge offers on mechanism quality"
+      - "Want optimization, not basics"
+      - "High standards for proof"
+    copy_approach: "Technical depth, mechanism precision, advanced benefits"
+    example_claim: "Proprietary micro-segmentation increases conversion from 2.3% to 7.8%"
+    status: "SELECTED"
+  stage_5_elite:
+    label: "Stage 5 — Elite"
+    characteristics:
+      - "Mastered domain"
+      - "Only learn from peers"
+      - "Want cutting-edge methods"
+      - "Judge by quantified ROI"
+      - "Zero tolerance for fluff"
+    copy_approach: "Peer authority, quantified mechanisms, elite community framing"
+    example_claim: "Join 47 founders building $100M+ companies using our method"
+    status: "NOT_SELECTED"
+  # CRITICAL DECISION
+  identified_stage: 4 # Master / Elite stage
+  confidence_in_assessment: 80 # 0-100%
+  reasoning: |
+    O mercado de equipamentos medicos e esteticos no Brasil esta altamente
+    sofisticado (Stage 4). Multiplos competidores globais atuam no segmento
+    (Fotona, Alma, Lutronic, Candela, Rennova), o que cria um ambiente de
+    alta competicao e comoditizacao tecnologica — ameaca identificada no SWOT
+    da Contourline. Os profissionais medicos ja conhecem as tecnologias
+    disponiveis (RF, ultrassom, laser, energia), ja experimentaram equipamentos
+    de diferentes fabricantes, e julgam ofertas pela qualidade do mecanismo,
+    evidencia cientifica e ROI comprovado. Nao ha espaco para promessas
+    superficiais — o mercado exige profundidade tecnica, estudos publicados
+    e resultados mensuráveis. A diferenciacao requer ciencia, P&D proprio
+    e posicionamento premium, nao features basicas ou guerra de precos.
+  status: "FILLED"
+# =============================================================================
+
+# SECTION 3: STRATEGIC IMPLICATIONS
+
+# =============================================================================
+
+# This section auto-populates once level + stage are chosen
+strategic_implications:
+  description: "How awareness + sophistication determine positioning strategy"
+  awareness_level_selected: 4 # Product Aware
+  sophistication_stage_selected: 4 # Master
+  messaging_strategy: |
+    Combinacao Level 4 (Product Aware) + Stage 4 (Master) = Mercado sofisticado
+    que conhece a Contourline e esta avaliando entre opcoes premium.
+
+    Estrategia: Diferenciar atraves de ciencia, P&D proprio e posicionamento
+    premium. Nao competir por features basicas ou preco. O mercado exige
+    evidencia cientifica, resultados comprovados e mecanismos proprietarios.
+
+    A Contourline deve se posicionar como a unica empresa nacional com
+    fabrica propria, P&D, estudos publicados e parcerias premium globais
+    (Lumenis, Indiba, Visbody) — combinacao que nenhum concorrente oferece.
+
+  headline_approach: |
+    Social proof + resultados quantificados + mecanismo proprietario.
+    Exemplos: "4000+ medicos confiam na Contourline", "P&D proprio com
+    estudos cientificos publicados", "A unica fabrica nacional de equipamentos
+    medicos esteticos com parcerias premium globais".
+  body_copy_approach: |
+    Profundidade tecnica com foco em mecanismos proprietarios. Demonstrar
+    como o P&D proprio e a Lei da Informatica criam vantagem competitiva
+    real. Estudos cientificos como prova. ROI demonstravel para o medico.
+    Curto e direto — sem fluff, sem promessas vagas.
+  proof_requirements: |
+    - Estudos cientificos publicados (programa Ciencia que Conecta)
+    - Casos de sucesso com ROI quantificado de clientes reais
+    - 4000+ clientes como social proof massivo
+    - 15+ anos de mercado como prova de estabilidade
+    - Parcerias com Lumenis (lider global) como validacao de qualidade
+    - Auditoria externa independente como prova de governanca
+  objection_handling: |
+    Principais objecoes do mercado sofisticado:
+    - "Por que nacional e nao importado?" → P&D proprio + Lei da Informatica + suporte local
+    - "Como sei que funciona?" → Estudos publicados + programa Ciencia que Conecta
+    - "E muito caro?" → ROI demonstravel + margem para o medico + financiamento
+    - "E se precisar de suporte?" → AT estruturada + sede propria + 15 anos de mercado
+    - "Por que nao Fotona/Alma?" → Unica nacional com fabrica + P&D + parcerias globais
+  pricing_positioning: |
+    Posicionamento premium justificado por ciencia e inovacao. Nao competir
+    por preco — competir por valor, ROI e diferencial tecnologico. Margem
+    bruta de 67% na linha medica valida o posicionamento premium.
+    Financiamento estruturado (FIDC R$50M) como facilitador de compra.
+  status: "FILLED"
+# =============================================================================
+
+# SECTION 4: VALIDATION
+
+# =============================================================================
+validation:
+  required_decisions:
+    - "identified_level: 4 (Product Aware)"
+    - "identified_stage: 4 (Master)"
+  validation_checks:
+    - "[x] Level and stage both selected (no null values)"
+    - "[x] Confidence assessments provided (85% and 80%)"
+    - "[x] Reasoning explains the assessment with market evidence"
+  status: "VALIDATED"
+# =============================================================================
+
+# METADATA
+
+# =============================================================================
+metadata_final:
+  last_updated: "2026-03-19"
+  updated_by: "ETL Enrichment (from company-profile.yaml)"
+  validated_by: null # Awaiting CMO validation
+  validation_date: null
+  # This gates everything
+  completeness_percentage: 100
+  required_fields: 2 # Level + Stage
+  completed_fields: 2
+  status: "FILLED"
+  next_step: "Once diagnosis complete, fill: icp.yaml, brand.yaml"

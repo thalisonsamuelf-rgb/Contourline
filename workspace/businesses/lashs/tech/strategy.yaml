@@ -1,0 +1,22 @@
+# Tech Strategy for Lashs
+metadata:
+  status: TEMPLATE
+  business: lashs
+  version: "1.0"
+  last_updated: FILL_THIS
+  owner: CTO
+  notes: |
+    Define the technology strategy, platform choices,
+    and technical roadmap for the business.
+
+technology_vision: FILL_THIS
+platform_strategy: FILL_THIS
+build_vs_buy: FILL_THIS
+technical_debt_policy: FILL_THIS
+innovation_budget: FILL_THIS
+
+cross_references:
+  related:
+    - "tech/stack.yaml"
+    - "tech/infra.yaml"
+    - "ai/strategy.yaml"

@@ -1,0 +1,351 @@
+---
+# Contourline - Analytics & Research Data
+# Master source for validating all claims made in offerbook.yaml
+# Guardian: Data Officer / CMO
+# Required: ALL claims in offerbook must have supporting data here
+
+metadata:
+  analysis_date: "2026-03-19"
+  total_sample_size: "4.000+ clientes analisados"
+  methodology: "Planejamento Estrategico 2026 - dados financeiros e operacionais"
+  confidence_level: "High"
+  refresh_cycle: "Annually (aligned with strategic planning)"
+  status: "PARTIALLY_FILLED"
+  last_updated: "2026-03-19"
+  product_name: "Equipamentos Medicos e Esteticos"
+# ============================================================================
+# FINANCIAL ANALYTICS
+# ============================================================================
+financial_analytics:
+  revenue:
+    total_projected_2026: "R$ 200M+"
+    receita_liquida: "R$ 158M"
+    year_over_year_growth: "40%"
+    growth_base: "vs 2025"
+  profitability:
+    margem_bruta: "48%"
+    lucro_liquido: "R$ 24M"
+    margem_liquida: "15%"
+    ebitda: "R$ 51M"
+    margem_ebitda: "33%"
+  revenue_by_product_line:
+    linha_medica:
+      revenue: "R$ 99M"
+      share: "50%"
+      margin: "67%"
+      positioning: "Lider em rentabilidade"
+    linha_estetica:
+      revenue: "R$ 44.3M"
+      share: "22%"
+      margin: "60%"
+      positioning: "Performance solida"
+    lumenis:
+      revenue: "R$ 47M"
+      share: "24%"
+      margin: "9%"
+      positioning: "Alto faturamento, desafio de margem"
+      notes: "Meta R$ 40M - necessidade de revisao estrategica de precificacao"
+    visbody:
+      revenue: "R$ 7.1M"
+      share: "3.5%"
+      margin: "62%"
+      positioning: "Crescimento com rentabilidade"
+      status: "Lancamento oficial Brasil 2026"
+    assistencia_tecnica:
+      revenue: "R$ 1.4M"
+      share: "0.5%"
+      margin: "17%"
+      positioning: "Receita de servicos - intensivo em mao de obra"
+  funding_structure:
+    fidc: "R$ 50M (47%)"
+    finimp: "R$ 36M (34%)"
+    capital_giro: "R$ 20M (19%)"
+    total_captacoes: "R$ 106M"
+    divida_liquida_ebitda: "1.97x"
+    caixa_minimo_mensal: "R$ 10M"
+    dividendos: "R$ 7.2M"
+  investments:
+    marketing: "8% da receita liquida"
+    pd: "3% da receita liquida"
+    capacitacao: "R$ 200K (Fundacao Dom Cabral)"
+    erp: "R$ 250K (Protheus TOTVS)"
+# ============================================================================
+# CUSTOMER ANALYTICS
+# ============================================================================
+customer_analytics:
+  total_customers: "4.000+"
+  customer_type: "Medicos, clinicas de estetica e centros medicos"
+  geographic_reach: "Todo o Brasil"
+  customer_segments:
+    primary: "Profissionais de medicina estetica"
+    secondary: "Clinicas que buscam equipamentos de alta tecnologia com respaldo cientifico"
+# ============================================================================
+# PRODUCT ANALYTICS
+# ============================================================================
+product_analytics:
+  linha_medica:
+    total_units: "303+"
+    sub_products:
+      unyque_pro: "133 unidades"
+      unyque_pro_enyma: "66 unidades"
+      hipro_med: "57 unidades"
+      supreme_pro: "47 unidades"
+  linha_estetica:
+    total_units: "272+"
+    sub_products:
+      hipro: "215 unidades (78% do volume)"
+      focuskin: "28 unidades"
+      multshape: "15 unidades"
+      hive_pro: "9 unidades"
+      laser_crystal_3d_plus: "5 unidades"
+  visbody:
+    total_units: "54+"
+    sub_products:
+      scanner_m30: "16 unidades"
+      scanner_s30: "16 unidades"
+      esteira_a600: "12 unidades"
+      r_explorer: "10 unidades"
+# ============================================================================
+# TEAM ANALYTICS
+# ============================================================================
+team_analytics:
+  current_headcount: 118
+  projected_headcount: 165
+  new_hires: 47
+  growth_percentage: "40%"
+  expansion_by_area:
+    comercial:
+      new_positions: 13
+      share_of_growth: "28%"
+    producao_at:
+      new_positions: 8
+      share_of_growth: "17%"
+    consultoria:
+      new_positions: 6
+      share_of_growth: "13%"
+    backoffice:
+      new_positions: 5
+      share_of_growth: "11%"
+  leadership_structure:
+    ceo: "Egio Roberto"
+    diretoria_comercial: "Glaucia Moura (transicao para Gabriel Carpello)"
+    cfo: "Claudio Kaizer"
+    diretoria_operacoes: "Filipe Ferreira"
+    diretoria_consultoria: "Andreia Almeida"
+    diretoria_marketing: "Helaine Hohendorff"
+# ============================================================================
+# DEMOGRAPHIC STATISTICS
+# ============================================================================
+demographics:
+  age_distribution:
+    "18-25": "REQUIRES_ELICITATION"
+    "26-35": "REQUIRES_ELICITATION"
+    "36-45": "REQUIRES_ELICITATION"
+    "46-55": "REQUIRES_ELICITATION"
+    "56-69": "REQUIRES_ELICITATION"
+    median_age: "REQUIRES_ELICITATION"
+    core_segment: "REQUIRES_ELICITATION"
+  geography:
+    "Primary_City": "REQUIRES_ELICITATION"
+    "Secondary_Cities": "REQUIRES_ELICITATION"
+    international: "REQUIRES_ELICITATION"
+  education:
+    "University_Degree": "REQUIRES_ELICITATION"
+    "Postgraduate_MBA": "REQUIRES_ELICITATION"
+    fields: ["REQUIRES_ELICITATION"]
+# ============================================================================
+# ARCHETYPE DISTRIBUTION
+# ============================================================================
+archetypes:
+  "Archetype_1_Name": "REQUIRES_ELICITATION"
+  "Archetype_2_Name": "REQUIRES_ELICITATION"
+  detailed_breakdown:
+    archetype_1:
+      percentage: "REQUIRES_ELICITATION"
+      age_range: "REQUIRES_ELICITATION"
+      avg_monthly_income: "REQUIRES_ELICITATION"
+      biggest_pain: "REQUIRES_ELICITATION"
+# ============================================================================
+# PAIN STATISTICS
+# ============================================================================
+pain_analysis:
+  primary_pains:
+    "Pain 1 description": "REQUIRES_ELICITATION"
+    "Pain 2 description": "REQUIRES_ELICITATION"
+    "Pain 3 description": "REQUIRES_ELICITATION"
+  hidden_pains_not_verbalized:
+    "Hidden Pain 1": "REQUIRES_ELICITATION"
+    "Hidden Pain 2": "REQUIRES_ELICITATION"
+# ============================================================================
+# FEARS
+# ============================================================================
+fears:
+  explicit_fears:
+    "Fear 1": "REQUIRES_ELICITATION"
+    "Fear 2": "REQUIRES_ELICITATION"
+  implicit_fears:
+    "Fear 1": "REQUIRES_ELICITATION"
+  existential_fears:
+    "Fear 1": "REQUIRES_ELICITATION"
+# ============================================================================
+# BEHAVIOR PATTERNS
+# ============================================================================
+behavior_patterns:
+  content_consumption_ratio:
+    hours_per_week: "REQUIRES_ELICITATION"
+    consumption_percentage: "REQUIRES_ELICITATION"
+    execution_percentage: "REQUIRES_ELICITATION"
+  course_purchasing:
+    courses_per_year: "REQUIRES_ELICITATION"
+    completion_rate: "REQUIRES_ELICITATION"
+    implementation_rate: "REQUIRES_ELICITATION"
+  projects_in_progress:
+    average_wip: "REQUIRES_ELICITATION"
+    abandonment_rate: "REQUIRES_ELICITATION"
+# ============================================================================
+# MARKET ANALYTICS
+# ============================================================================
+market_analytics:
+  total_addressable_market: "Mercado de medicina estetica no Brasil - um dos que mais cresce no mundo"
+  market_segment: "Equipamentos medicos e esteticos de alta tecnologia"
+  market_growth_rate: "Crescimento acelerado com projecoes otimistas ate 2033"
+  company_stage: "SCALE"
+  valuation_target: "R$ 500M ate 2027"
+  emerging_trends:
+    - "Procedimentos nao-invasivos com menos downtime"
+    - "Pos-farmacos emagrecedores (busca por firmeza e contorno corporal)"
+    - "Envelhecimento populacional com maior poder aquisitivo"
+    - "Avanco tecnologico em RF, ultrassom e energia"
+    - "Automacao e IA aplicadas"
+  competitive_landscape:
+    main_competitors:
+      - "Fotona"
+      - "Alma"
+      - "Lutronic"
+      - "Candela"
+      - "Rennova"
+    competitive_advantage: |
+      P&D proprio nacional, fabrica de 2.000m2, parcerias premium
+      globais (Lumenis, Indiba, Visbody), Lei da Informatica,
+      auditoria externa e governanca forte.
+# ============================================================================
+# SWOT ANALYTICS
+# ============================================================================
+swot_analytics:
+  strengths:
+    - "Portfolio robusto e diversificado (Med, Est, Lumenis)"
+    - "Fabrica propria com controle de qualidade"
+    - "Equipes qualificadas (comercial, tecnico, P&D)"
+    - "Assistencia tecnica diferenciada"
+    - "Cultura forte e alto engajamento"
+    - "Compliance estruturado"
+  weaknesses:
+    - "Processos manuais e baixa automatizacao"
+    - "Dependencia de pessoas-chave"
+    - "Capacidade operacional no limite"
+    - "Ruidos entre areas (comercial, backoffice, marketing)"
+    - "Baixa maturidade em dados e indicadores"
+    - "Dependencia de fornecedores internacionais (Body Health)"
+  opportunities:
+    - "Boom da estetica no Brasil e LATAM"
+    - "Pos-farmacos emagrecedores (firmeza e contorno corporal)"
+    - "Tecnologia e IA para automacao"
+    - "Certificacoes cientificas como diferencial"
+  threats:
+    - "Competicao global (Fotona, Alma, Lutronic, Candela, Rennova)"
+    - "Saturacao e comoditizacao tecnologica"
+    - "Instabilidade economica e cambial"
+    - "Riscos regulatorios (reforma tributaria, ANVISA/INMETRO)"
+    - "Escassez de profissionais especializados"
+# ============================================================================
+# MEMBER OUTCOMES
+# ============================================================================
+member_outcomes:
+  business_results:
+    average_income_increase: "REQUIRES_ELICITATION"
+    timeframe:
+      "30_days": "REQUIRES_ELICITATION"
+      "60_days": "REQUIRES_ELICITATION"
+      "90_days": "REQUIRES_ELICITATION"
+      "180_days": "REQUIRES_ELICITATION"
+      "365_days": "REQUIRES_ELICITATION"
+  lifestyle_changes:
+    "Work reduced to X hours/day": "REQUIRES_ELICITATION"
+    "Geographic freedom": "REQUIRES_ELICITATION"
+    "Family satisfaction improvement": "REQUIRES_ELICITATION"
+  psychological_outcomes:
+    "Clarity about direction": "REQUIRES_ELICITATION"
+    "Burnout relief": "REQUIRES_ELICITATION"
+    "Belonging to tribe": "REQUIRES_ELICITATION"
+# ============================================================================
+# RETENTION & CHURN
+# ============================================================================
+retention_analytics:
+  first_30_days: "REQUIRES_ELICITATION"
+  first_90_days: "REQUIRES_ELICITATION"
+  first_year: "REQUIRES_ELICITATION"
+  churn_reasons:
+    "Reason 1": "REQUIRES_ELICITATION"
+    "Reason 2": "REQUIRES_ELICITATION"
+# ============================================================================
+# CONVERSION FUNNEL
+# ============================================================================
+conversion_funnel:
+  awareness_to_consideration: "REQUIRES_ELICITATION"
+  consideration_to_decision: "REQUIRES_ELICITATION"
+  decision_to_purchase: "REQUIRES_ELICITATION"
+  purchase_to_activation: "REQUIRES_ELICITATION"
+# ============================================================================
+# KEY INSIGHTS
+# ============================================================================
+key_insights:
+  insight_1: |
+    Linha Medica e o motor de rentabilidade da empresa com 67% de margem
+    bruta e R$ 99M de receita (50% do total), demonstrando forte posicionamento
+    premium no segmento de alta tecnologia medica.
+  insight_2: |
+    Lumenis representa 24% da receita (R$ 47M) mas com margem de apenas 9%,
+    sinalizando necessidade de revisao estrategica de precificacao para
+    equilibrar volume e rentabilidade.
+  insight_3: |
+    Visbody apresenta a combinacao ideal de crescimento com rentabilidade
+    (62% de margem) no seu lancamento oficial no Brasil, representando
+    oportunidade significativa de expansao.
+  insight_4: |
+    Empresa em crescimento acelerado (40% YoY) com divida controlada
+    (1.97x Divida Liquida/EBITDA) e EBITDA robusto de R$ 51M (33% de margem).
+  insight_5: |
+    Fraquezas identificadas em processos manuais, baixa automatizacao e
+    dependencia de pessoas-chave representam riscos ao crescimento de 40%
+    projetado, requerendo investimento em tecnologia e gestao.
+# ============================================================================
+# DATA VALIDATION
+# ============================================================================
+data_validation:
+  sample_size: "4.000+ clientes, 118 colaboradores"
+  confidence_level: "High - based on strategic planning data"
+  margin_of_error: "REQUIRES_ELICITATION"
+  methodology: "Planejamento Estrategico 2026 - dados consolidados"
+  bias_controls: "REQUIRES_ELICITATION"
+  last_validation: "2026-03-19"
+# ============================================================================
+# CRITICAL RULE: NO CLAIMS WITHOUT DATA
+# ============================================================================
+validation_rule: |
+  BEFORE any marketing claim in offerbook.yaml:
+    1. Find supporting data in THIS file
+    2. Include [SOURCE: analytics.yaml] if citing
+    3. Never extrapolate beyond data
+    4. When uncertain, caveat with "approximately"
+
+  Example:
+    OK "Faturamento projetado acima de R$ 200M em 2026" [SOURCE: financial_analytics]
+    NOT OK "A maior empresa do setor" (unverified superlative)
+metadata_final:
+  version: "1.0"
+  last_updated: "2026-03-19"
+  next_update_due: "2027-Q1 (next strategic planning cycle)"
+  data_guardian: "Claudio Kaizer (CFO)"
+  access_level: "Internal (CEO, CFO, CMO, Data)"
+  status: "PARTIALLY_FILLED - Financial and operational data complete, customer research REQUIRES_ELICITATION"
+next_step: "Customer demographics, pain analysis, behavior patterns, and conversion funnel require primary research data"

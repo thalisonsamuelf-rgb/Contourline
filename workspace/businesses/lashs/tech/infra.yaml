@@ -1,0 +1,22 @@
+# Infrastructure for Lashs
+metadata:
+  status: TEMPLATE
+  business: lashs
+  version: "1.0"
+  last_updated: FILL_THIS
+  owner: CTO
+  notes: |
+    Define infrastructure architecture, deployment
+    strategy, and operational requirements.
+
+cloud_provider: FILL_THIS
+environments: FILL_THIS
+deployment_strategy: FILL_THIS
+scaling_policy: FILL_THIS
+backup_and_recovery: FILL_THIS
+security_requirements: FILL_THIS
+
+cross_references:
+  related:
+    - "tech/stack.yaml"
+    - "tech/strategy.yaml"

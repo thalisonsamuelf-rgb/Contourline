@@ -1,0 +1,380 @@
+---
+# FOUNDER-DNA.YAML - Quem e o fundador/especialista
+# Purpose: Document the founder's background, expertise, philosophy, teaching style
+# Guardian: Founder / CEO / Head of Marketing
+# Timing: FILL ONCE (detailed) - Update when major milestones happen
+
+metadata:
+  version: "1.0"
+  company_name: "Contourline"
+  founder_name: "Egio Roberto"
+  status: "PARTIALLY_FILLED"
+  last_updated: "2026-03-19"
+  owner: "Egio Roberto (CEO)"
+  notes: |
+    This file answers: "Who is Egio Roberto?"
+    Enriched from company-profile.yaml data.
+    Fields without source data marked REQUIRES_ELICITATION.
+  product_name: "Equipamentos Medicos e Esteticos"
+# ============================================================================
+# SECTION 1: FOUNDER ESSENCE
+# ============================================================================
+founder_essence:
+  legal_name: "REQUIRES_ELICITATION"
+  professional_name: "Egio Roberto"
+  age: "REQUIRES_ELICITATION"
+  location: "Sete Lagoas, MG, Brasil"
+  nationality: "Brasileiro"
+  one_liner: |
+    Egio Roberto e o CEO da Contourline, com mais de 15 anos de experiencia
+    no mercado de equipamentos medicos e esteticos, liderando a "Fabrica de
+    Autoestima" que atende 4.000+ clientes em todo o Brasil com faturamento
+    projetado acima de R$ 200M em 2026.
+  archetype: |
+    "O Inovador Premium / O Mentor Cientifico" - Lider que combina ciencia,
+    inovacao e autoestima para transformar o mercado de medicina estetica.
+# ============================================================================
+# SECTION 2: THE ORIGIN STORY (Personal Journey)
+# ============================================================================
+origin_story:
+  act_1_before:
+    timeline: "REQUIRES_ELICITATION"
+    situation: "REQUIRES_ELICITATION"
+    challenge: "REQUIRES_ELICITATION"
+    emotional_state: "REQUIRES_ELICITATION"
+  act_2_turning_point:
+    timeline: "~2011"
+    insight: |
+      Fundacao da Contourline em Sete Lagoas (MG) com a missao de
+      democratizar o acesso a tecnologia de ponta para medicina estetica
+      no Brasil.
+    action: |
+      Iniciou a fabricacao e comercializacao de equipamentos proprios e
+      representacao de marcas globais como Body Health, Lumenis e Indiba.
+    result: "Criacao da Contourline como Fabrica de Autoestima"
+  act_3_breakthrough:
+    timeline: "REQUIRES_ELICITATION"
+    breakthrough: |
+      Construcao de sede propria de 2.000m2 com P&D, consolidacao de
+      parcerias premium globais (Lumenis, Indiba, Visbody) e alcance
+      de 4.000+ clientes em todo o Brasil.
+    proof: |
+      Projecao de faturamento acima de R$ 200M em 2026, estudos cientificos
+      publicados, 15 anos de operacao continua.
+    transformation: "De empresa regional para lider nacional em equipamentos medicos e esteticos"
+  act_4_present:
+    timeline: "2024-Present"
+    current_role: |
+      CEO da Contourline. Lidera todas as areas da empresa com reporte direto
+      de RH e TI, e reporte pontilhado de CS, CX e Juridico. Conduz a
+      profissionalizacao e transformacao da empresa rumo ao valuation de
+      R$ 500M ate 2027.
+    legacy_building: |
+      Construindo a Contourline como lider do segmento de estetica medica
+      no Brasil. Investindo em profissionalizacao (Fundacao Dom Cabral),
+      governanca (auditoria externa) e expansao (LATAM/EUA).
+# ============================================================================
+# SECTION 3: PROFESSIONAL BACKGROUND & EXPERTISE
+# ============================================================================
+professional_background:
+  starting_point:
+    year: "REQUIRES_ELICITATION"
+    role: "REQUIRES_ELICITATION"
+    company: "REQUIRES_ELICITATION"
+    duration: "REQUIRES_ELICITATION"
+    key_learnings: "REQUIRES_ELICITATION"
+  career_milestones:
+    milestone_1:
+      year: 2011
+      event: "Fundacao da Contourline"
+      significance: "Inicio da jornada como fabricante de equipamentos medicos e esteticos"
+      skills_gained: "Empreendedorismo, gestao industrial, regulatorio ANVISA/INMETRO"
+    milestone_2:
+      year: "REQUIRES_ELICITATION"
+      event: "Parceria com Lumenis (lider global)"
+      significance: "Posicionamento premium e acesso a tecnologia de ponta global"
+      skills_gained: "Gestao de parcerias internacionais, distribuicao premium"
+    milestone_3:
+      year: "REQUIRES_ELICITATION"
+      event: "Construcao da sede propria de 2.000m2 com P&D"
+      significance: "Autonomia em inovacao e controle de qualidade"
+      skills_gained: "Gestao de P&D, inovacao tecnologica, Lei da Informatica"
+  years_of_experience:
+    total_years: 15
+    in_consulting: "REQUIRES_ELICITATION"
+    in_entrepreneurship: 15
+    in_teaching: "REQUIRES_ELICITATION"
+  expertise_areas:
+    area_1: "Equipamentos medicos e esteticos de alta tecnologia"
+    area_2: "Gestao empresarial e escalabilidade"
+    area_3: "Parcerias internacionais e distribuicao premium"
+  deepest_expertise: |
+    Mercado de equipamentos medicos e esteticos no Brasil. Com 15+ anos
+    de experiencia, Egio construiu a unica empresa nacional com P&D proprio,
+    fabrica de 2.000m2, parcerias premium globais e operacao sob Lei da
+    Informatica. Portfolio diversificado com 5 linhas de produto e
+    faturamento projetado acima de R$ 200M.
+# ============================================================================
+# SECTION 4: CREDIBILITY PROOF POINTS
+# ============================================================================
+credibility_foundation:
+  proof_1:
+    category: "RESULTS PROOF"
+    claim: "15+ anos construindo e escalando empresa no setor de equipamentos medicos"
+    evidence:
+      - "Contourline - de startup a R$ 200M+ de faturamento projetado"
+      - "4.000+ clientes em todo o Brasil"
+      - "Sede propria de 2.000m2 com P&D"
+    quantifiable: "15+ anos, R$ 200M+ faturamento, 4.000+ clientes"
+  proof_2:
+    category: "INNOVATION PROOF"
+    claim: "P&D proprio com estudos cientificos publicados"
+    evidence:
+      - "Laboratorio e centro de P&D proprio"
+      - "Programa Ciencia que Conecta"
+      - "Operacao sob Lei da Informatica"
+    quantifiable: "2.000m2 de fabrica, estudos cientificos publicados"
+  proof_3:
+    category: "PARTNERSHIP PROOF"
+    claim: "Parcerias premium com lideres globais"
+    evidence:
+      - "Lumenis - lider global em equipamentos a laser (R$ 47M)"
+      - "Indiba - presenca global em radiofrequencia"
+      - "Visbody - body scanners inovadores"
+    quantifiable: "3+ parcerias internacionais premium"
+  proof_4:
+    category: "PRACTITIONER PROOF"
+    claim: "CEO ativo liderando a transformacao e profissionalizacao"
+    evidence:
+      - "Parceria com Fundacao Dom Cabral para capacitacao executiva"
+      - "Implementacao de auditoria externa independente em 2026"
+      - "Investimento de R$ 250K em ERP Protheus TOTVS"
+    quantifiable: "118 colaboradores, meta de 165, crescimento de 40%"
+# ============================================================================
+# SECTION 5: FOUNDER PHILOSOPHY & WORLDVIEW
+# ============================================================================
+philosophy:
+  core_belief_1:
+    belief: "Ciencia e inovacao transformam autoestima"
+    why_believes_this: |
+      A missao da Contourline e ser uma "Fabrica de Autoestima", revelando
+      em todas as pessoas a sua melhor versao atraves de tecnologia medica
+      de ponta com respaldo cientifico.
+    how_it_shapes_teaching: |
+      Investimento continuo em P&D, estudos cientificos publicados,
+      programa "Ciencia que Conecta" e marketing baseado em evidencias.
+  core_belief_2:
+    belief: "Excelencia e profissionalizacao sao o caminho para lideranca"
+    why_believes_this: |
+      Investimento em Fundacao Dom Cabral, auditoria externa, ERP Protheus,
+      compliance e governanca demonstram crenca na profissionalizacao
+      como diferencial competitivo.
+    how_it_shapes_teaching: |
+      Valores corporativos de Lealdade, Excelencia, Postura de Dono,
+      Alegria em Servir e Seguranca permeiam toda a organizacao.
+  core_belief_3:
+    belief: "REQUIRES_ELICITATION"
+    why_believes_this: "REQUIRES_ELICITATION"
+    how_it_shapes_teaching: "REQUIRES_ELICITATION"
+  worldview: |
+    O mercado de estetica medica no Brasil esta pronto para uma empresa
+    nacional assumir a lideranca premium com ciencia, inovacao e
+    profissionalizacao. A Contourline existe para preencher esse espaco,
+    combinando P&D proprio com parcerias globais para transformar a
+    autoestima das pessoas.
+  contrarian_view: |
+    REQUIRES_ELICITATION
+# ============================================================================
+# SECTION 6: TEACHING PHILOSOPHY & STYLE
+# ============================================================================
+teaching_philosophy:
+  core_teaching_principle: "REQUIRES_ELICITATION"
+  approach:
+    method_1: "REQUIRES_ELICITATION"
+    method_2: "REQUIRES_ELICITATION"
+    method_3: "REQUIRES_ELICITATION"
+  what_they_emphasize:
+    - "Ciencia e evidencia sobre promessas"
+    - "Inovacao com respaldo cientifico"
+    - "Excelencia no atendimento"
+  what_they_avoid:
+    - "Amadorismo"
+    - "Promessas sem evidencia"
+    - "Linguagem excessivamente tecnica"
+  student_transformation:
+    from_state: "REQUIRES_ELICITATION"
+    to_state: "REQUIRES_ELICITATION"
+    timeline: "REQUIRES_ELICITATION"
+  teaching_intensity: "REQUIRES_ELICITATION"
+# ============================================================================
+# SECTION 7: FOUNDER STORY (FOR MARKETING USE)
+# ============================================================================
+founder_narrative:
+  headline: |
+    Como Egio Roberto construiu a Fabrica de Autoestima que revolucionou
+    o mercado de equipamentos medicos e esteticos no Brasil
+  narrative_structure:
+    hook:
+      opening: |
+        Com mais de 15 anos de dedicacao ao mercado de equipamentos medicos
+        e esteticos, Egio Roberto viu uma oportunidade que poucos enxergaram:
+        o Brasil precisava de uma empresa nacional capaz de competir com
+        gigantes globais em tecnologia, ciencia e resultado.
+      emotional_hook: "A busca por revelar a melhor versao em cada pessoa"
+    problem_he_saw:
+      description: |
+        O mercado brasileiro de estetica medica era dominado por empresas
+        estrangeiras, sem uma opcao nacional premium com P&D proprio e
+        respaldo cientifico genuino.
+    his_insight:
+      insight: |
+        Egio percebeu que combinando fabricacao propria, P&D com estudos
+        cientificos publicados e parcerias premium globais, era possivel
+        criar uma empresa nacional que liderasse o segmento com ciencia
+        e inovacao.
+    his_action:
+      action: |
+        Fundou a Contourline em Sete Lagoas (MG), construiu uma fabrica
+        de 2.000m2 com P&D proprio, estabeleceu parcerias com Lumenis,
+        Indiba e Visbody, e investiu em profissionalizacao com Fundacao
+        Dom Cabral e governanca corporativa.
+    the_result:
+      result: |
+        Hoje a Contourline atende 4.000+ clientes em todo o Brasil,
+        projeta faturamento acima de R$ 200M em 2026, e busca valuation
+        de R$ 500M ate 2027. E reconhecida como a Fabrica de Autoestima
+        que revela a melhor versao em cada pessoa.
+    the_promise:
+      promise: |
+        Tecnologia medica de ponta com ciencia, inovacao e resultado
+        comprovado, revelando a melhor versao em cada pessoa.
+        #SomosAFabricaDeAltoEstima
+# ============================================================================
+# SECTION 8: FOUNDER PERSONALITY & COMMUNICATION STYLE
+# ============================================================================
+personality:
+  communication_style: "REQUIRES_ELICITATION"
+  tone:
+    primary: "Inovador, cientifico, profissional"
+    secondary: "Acolhedor e focado em autoestima"
+    avoid: "Amadorismo, promessas sem evidencia, linguagem excessivamente tecnica"
+  signature_phrases:
+    - "Fabrica de Autoestima"
+    - "Melhor versao"
+    - "Ciencia que Conecta"
+  personality_traits:
+    - "REQUIRES_ELICITATION"
+  how_they_interact:
+    with_students: "REQUIRES_ELICITATION"
+    with_team: "REQUIRES_ELICITATION"
+    with_media: "REQUIRES_ELICITATION"
+# ============================================================================
+# SECTION 9: FOUNDER'S UNIQUE POSITIONING (vs other educators)
+# ============================================================================
+unique_positioning:
+  vs_traditional_educators:
+    their_approach: "REQUIRES_ELICITATION"
+    founder_approach: "REQUIRES_ELICITATION"
+    unique_advantage: "REQUIRES_ELICITATION"
+  vs_hype_gurus:
+    their_approach: "REQUIRES_ELICITATION"
+    founder_approach: "REQUIRES_ELICITATION"
+    unique_advantage: "REQUIRES_ELICITATION"
+  vs_other_practitioners:
+    their_approach: "Empresas estrangeiras sem P&D local"
+    founder_approach: "P&D proprio nacional com parcerias premium globais"
+    unique_advantage: "Unica empresa nacional com fabrica, P&D e parcerias premium (Lumenis, Indiba, Visbody)"
+  founder_unfair_advantage: |
+    15+ anos no mercado de equipamentos medicos, fabrica propria de 2.000m2,
+    P&D com estudos cientificos publicados, parcerias com lideres globais
+    (Lumenis, Indiba, Visbody), operacao sob Lei da Informatica.
+    Unico player nacional posicionado como premium com ciencia e inovacao.
+# ============================================================================
+# SECTION 10: FOUNDER WISDOM & QUOTES
+# ============================================================================
+signature_insights:
+  insight_1:
+    quote: |
+      "Somos a Fabrica de Autoestima - revelamos em todas as pessoas
+      a sua melhor versao."
+    meaning: "A missao vai alem de vender equipamentos - e sobre transformar vidas"
+    application: "Permeia toda a comunicacao e cultura da empresa"
+  insight_2:
+    quote: "REQUIRES_ELICITATION"
+    meaning: "REQUIRES_ELICITATION"
+    application: "REQUIRES_ELICITATION"
+  insight_3:
+    quote: "REQUIRES_ELICITATION"
+    meaning: "REQUIRES_ELICITATION"
+    application: "REQUIRES_ELICITATION"
+# ============================================================================
+# SECTION 11: FOUNDER'S ONGOING LEARNING & EVOLUTION
+# ============================================================================
+continuous_evolution:
+  what_they_study: |
+    Parceria ativa com Fundacao Dom Cabral para capacitacao executiva
+    (investimento de R$ 200K). Foco em profissionalizacao da gestao
+    e preparacao para auditoria externa.
+  how_they_test_ideas: "REQUIRES_ELICITATION"
+  recent_evolution: |
+    Processo avancado de transformacao e profissionalizacao da empresa:
+    implementacao de ERP Protheus TOTVS, auditoria externa independente,
+    compliance e ESG, expansao para LATAM/EUA.
+  future_focus: |
+    Meta de R$ 500M de valuation ate 2027. Expansao LATAM/EUA.
+    Reposicionamento de marca premium. Lancamento de novos equipamentos
+    (2 medicos + 1 estetico ate dez/2026). Contourline Experience
+    (evento anual).
+# ============================================================================
+# SECTION 12: FOUNDER REFERENCES & SOURCES
+# ============================================================================
+references:
+  company_file:
+    - "company-profile.yaml"
+  credentials_file:
+    - "credentials.yaml"
+  authority_story:
+    - "authority-story.yaml"
+  media_appearances:
+    - "REQUIRES_ELICITATION"
+  published_work:
+    - "Estudos cientificos publicados (Programa Ciencia que Conecta)"
+# ============================================================================
+# CHECKLIST: FOUNDER-DNA COMPLETENESS
+# ============================================================================
+completion_checklist:
+  - "[x] Founder name, background, and location documented"
+  - "[~] Origin story (4 acts) - partially filled from company-profile"
+  - "[~] Professional background shows credibility - partially filled"
+  - "[x] Expertise areas are clear and specific"
+  - "[~] Core beliefs are documented with 'why' - partially filled"
+  - "[ ] Teaching philosophy is distinctive - REQUIRES_ELICITATION"
+  - "[x] Founder narrative is compelling (for marketing)"
+  - "[~] Unique positioning vs others is clear - partially filled"
+  - "[~] Signature insights/quotes documented - partially filled"
+  - "[x] Continuous evolution is apparent"
+  - "[x] All references to other files are updated"
+# ============================================================================
+# TEMPLATE NOTES FOR USERS
+# ============================================================================
+template_notes: |
+  This file is about the FOUNDER as a person.
+
+  DO put here:
+  ├─ Personal journey and origin story
+  ├─ Professional expertise and proof points
+  ├─ Teaching philosophy and style
+  ├─ Founder worldview and beliefs
+  ├─ How founder communicates
+  ├─ Founder's unique positioning
+
+  DO NOT put here (use credentials.yaml instead):
+  ├─ Specific educational credentials
+  ├─ Award lists
+  ├─ Certification details
+  ├─ Media appearance lists (brief mentions ok, details in credentials.yaml)
+
+  This file should answer: "Who IS this person and why should I trust them?"
+  Not: "What are their 47 credentials?"
+
+  Fill deeply once. Update when major life/business milestones happen.

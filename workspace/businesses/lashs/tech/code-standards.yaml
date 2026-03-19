@@ -1,0 +1,22 @@
+# Code Standards for Lashs
+metadata:
+  status: TEMPLATE
+  business: lashs
+  version: "1.0"
+  last_updated: FILL_THIS
+  owner: CTO
+  notes: |
+    Define coding standards, conventions, and quality
+    requirements for the development team.
+
+language_standards: FILL_THIS
+naming_conventions: FILL_THIS
+testing_requirements: FILL_THIS
+code_review_process: FILL_THIS
+documentation_standards: FILL_THIS
+linting_and_formatting: FILL_THIS
+
+cross_references:
+  related:
+    - "tech/stack.yaml"
+    - "tech/strategy.yaml"

@@ -1,0 +1,733 @@
+# Diagnostic Backlog — Contourline 2026
+# Path: workspace/businesses/lashs/operations/diagnostic-backlog.yaml
+# Owner: COO (Operations)
+# Source: Planejamento Estrategico 2026 + Analise COO
+# Gerado: 2026-03-19
+
+metadata:
+  version: "1.0"
+  business: contourline-lashs
+  last_diagnostic: "2026-03-19"
+  total_items: 32
+  completed_items: 0
+  status: ACTIVE
+
+# ============================================================================
+# LEGENDA DE PRIORIDADE
+# ============================================================================
+# CRITICO  → Bloqueia crescimento ou gera risco imediato. Resolver em 30 dias.
+# ALTO     → Impacto direto em receita ou operacao. Resolver em 60 dias.
+# MEDIO    → Melhoria significativa. Resolver em 90 dias.
+# BAIXO    → Nice-to-have. Planejar para proximo trimestre.
+#
+# DIMENSOES: financial | commercial | operations | people | brand | tech | governance | innovation | customer | risk
+# ============================================================================
+
+items:
+
+  # ==========================================================================
+  # PILAR 1: INOVACAO E CIENCIA (4 projetos estrategicos)
+  # ==========================================================================
+
+  - id: "DIAG-2026-03-19-01"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "innovation"
+    pillar: "1-inovacao-ciencia"
+    priority: "ALTO"
+    gap_description: |
+      Programa 'Ciencia que Conecta' precisa de estruturacao formal.
+      Producao cientifica e conexao com mercado sao diferenciais competitivos
+      criticos para posicionamento premium vs Fotona, Alma, Candela.
+    action: "Estruturar programa Ciencia que Conecta com cronograma de publicacoes, parcerias academicas e pipeline de estudos"
+    owner: "Andreia Almeida (Consultoria/P&D)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route inovacao"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "3% da receita liquida alocada para P&D"
+
+  - id: "DIAG-2026-03-19-02"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "governance"
+    pillar: "1-inovacao-ciencia"
+    priority: "CRITICO"
+    gap_description: |
+      Lei da Informatica deve iniciar operacao em fevereiro/2026.
+      Beneficios fiscais significativos e aceleracao do P&D dependem
+      desta estruturacao. Atraso impacta competitividade e custos.
+    action: "Garantir operacao sob Lei da Informatica com toda documentacao e compliance necessarios"
+    owner: "Claudio Kaizer (CFO)"
+    deadline: "2026-02 (JA DEVERIA ESTAR ATIVO)"
+    recommended_squad: "c-level"
+    recommended_command: "*route governanca"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Verificar status atual - prazo original era fev/2026"
+
+  - id: "DIAG-2026-03-19-03"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "innovation"
+    pillar: "1-inovacao-ciencia"
+    priority: "ALTO"
+    gap_description: |
+      Meta de lancar 2 equipamentos medicos + 1 estetico ate dezembro/2026.
+      Pipeline de desenvolvimento precisa de marco claro e go/no-go gates.
+    action: "Definir roadmap de lancamento com milestones, testes clinicos, aprovacoes regulatorias e go-to-market"
+    owner: "Andreia Almeida (P&D) + Filipe Ferreira (Operacoes)"
+    deadline: "2026-12"
+    recommended_squad: "c-level"
+    recommended_command: "*route inovacao"
+    prerequisite: "DIAG-2026-03-19-02"
+    status: "pending"
+    completed_at: null
+    notes: "Depende da Lei da Informatica para viabilidade fiscal"
+
+  - id: "DIAG-2026-03-19-04"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "brand"
+    pillar: "1-inovacao-ciencia"
+    priority: "MEDIO"
+    gap_description: |
+      Marketing cientifico (posicionamento baseado em evidencias) ainda nao
+      tem framework estruturado. Diferencial competitivo vs concorrentes globais.
+    action: "Criar framework de marketing cientifico: publicacoes, white papers, cases clinicos, speakers program"
+    owner: "Helaine Hohendorff (Marketing) + Andreia Almeida (P&D)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*marketing"
+    prerequisite: "DIAG-2026-03-19-01"
+    status: "pending"
+    completed_at: null
+    notes: "8% da receita liquida em marketing"
+
+  # ==========================================================================
+  # PILAR 2: EXPANSAO COMERCIAL (4 projetos estrategicos)
+  # ==========================================================================
+
+  - id: "DIAG-2026-03-19-05"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "commercial"
+    pillar: "2-expansao-comercial"
+    priority: "ALTO"
+    gap_description: |
+      Convencao de Revendedores e evento critico para engajamento e
+      alinhamento da rede. Sem data definida no planejamento.
+    action: "Planejar e executar Convencao de Revendedores 2026 com agenda, metas e programa de incentivos"
+    owner: "Gabriel Carpello (Comercial)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route expansao"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: ""
+
+  - id: "DIAG-2026-03-19-06"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "commercial"
+    pillar: "2-expansao-comercial"
+    priority: "CRITICO"
+    gap_description: |
+      Expansao nacional requer regionalizacao comercial estruturada.
+      Com +13 novas posicoes comerciais (28% do headcount novo), e
+      preciso definir territorios, metas por regiao e modelo de gestao.
+    action: "Criar plano de regionalizacao comercial: territorios, metas, hiring plan, onboarding e KPIs por regiao"
+    owner: "Gabriel Carpello (Comercial)"
+    deadline: "2026-Q1-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route expansao"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Linha Medica deve crescer 30% vs 2025"
+
+  - id: "DIAG-2026-03-19-07"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "commercial"
+    pillar: "2-expansao-comercial"
+    priority: "CRITICO"
+    gap_description: |
+      Meta Lumenis R$ 40M com margem bruta de apenas 9%.
+      Custo dos produtos consome 91% da receita liquida.
+      URGENTE: Revisao estrategica de precificacao e custos.
+    action: "Audit completo da operacao Lumenis: renegociar custos com fornecedor, revisar pricing, avaliar mix de produtos e margem por SKU"
+    owner: "Claudio Kaizer (CFO) + Gabriel Carpello (Comercial)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route financeiro"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "ALERTA: 9% de margem e insustentavel em escala. Alto faturamento mascarando baixa rentabilidade."
+
+  - id: "DIAG-2026-03-19-08"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "commercial"
+    pillar: "2-expansao-comercial"
+    priority: "ALTO"
+    gap_description: |
+      Visbody em lancamento oficial no Brasil com margem de 62%.
+      Produto com excelente rentabilidade mas volume ainda baixo (R$ 7.1M).
+      Oportunidade de escalar com estrategia dedicada.
+    action: "Estruturar go-to-market Visbody: equipe dedicada, pricing, treinamento de vendas, materiais e meta Q1-Q4"
+    owner: "Gabriel Carpello (Comercial)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route expansao"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Margem 62% - melhor rentabilidade apos Linha Medica"
+
+  # ==========================================================================
+  # PILAR 3: PROFISSIONALIZACAO (4 projetos estrategicos)
+  # ==========================================================================
+
+  - id: "DIAG-2026-03-19-09"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "governance"
+    pillar: "3-profissionalizacao"
+    priority: "ALTO"
+    gap_description: |
+      Auditoria externa independente deve iniciar em 2026.
+      Fundamental para credibilidade, governanca e futuro valuation de R$ 500M.
+    action: "Contratar firma de auditoria externa e iniciar processo de auditoria das demonstracoes financeiras"
+    owner: "Claudio Kaizer (CFO)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route governanca"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Pre-requisito para meta de valuation R$ 500M ate 2027"
+
+  - id: "DIAG-2026-03-19-10"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "governance"
+    pillar: "3-profissionalizacao"
+    priority: "MEDIO"
+    gap_description: |
+      Compliance & ESG precisa de politicas robustas estruturadas.
+      Iniciativas existem mas falta framework formal e metricas.
+    action: "Estruturar framework ESG com politicas, metricas, relatorio anual e responsaveis por dimensao"
+    owner: "Filipe Ferreira (Operacoes) + Claudio Kaizer (CFO)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route governanca"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "OKR de ESG sob responsabilidade de Felipe Ferreira"
+
+  - id: "DIAG-2026-03-19-11"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "tech"
+    pillar: "3-profissionalizacao"
+    priority: "CRITICO"
+    gap_description: |
+      Novo ERP Protheus com go-live em janeiro/2026. Investimento de R$ 250K.
+      Transformacao digital critica para eliminar processos manuais
+      (fraqueza SWOT) e habilitar gestao por indicadores.
+    action: "Acompanhar implantacao ERP Protheus: validar go-live, treinar usuarios, migrar dados, estabilizar operacao"
+    owner: "Claudio Kaizer (CFO) + TI"
+    deadline: "2026-Q1 (go-live jan/2026)"
+    recommended_squad: "c-level"
+    recommended_command: "*tech-ops"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "VERIFICAR: Go-live era jan/2026 - confirmar status atual"
+
+  - id: "DIAG-2026-03-19-12"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "operations"
+    pillar: "3-profissionalizacao"
+    priority: "ALTO"
+    gap_description: |
+      Revisao e padronizacao de processos e fraqueza SWOT critica.
+      Varios setores com baixa automatizacao e padronizacao.
+      Capacidade operacional no limite.
+    action: "Mapear processos criticos, identificar gargalos, padronizar e automatizar fluxos prioritarios"
+    owner: "Filipe Ferreira (Operacoes)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route operacoes"
+    prerequisite: "DIAG-2026-03-19-11"
+    status: "pending"
+    completed_at: null
+    notes: "Depende do ERP estabilizado para automatizacao efetiva"
+
+  # ==========================================================================
+  # PILAR 4: EXPERIENCIA DO CLIENTE (3 projetos estrategicos)
+  # ==========================================================================
+
+  - id: "DIAG-2026-03-19-13"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "customer"
+    pillar: "4-experiencia-cliente"
+    priority: "ALTO"
+    gap_description: |
+      CX Excellence: centralizacao e modernizacao do pos-venda.
+      Zero cancelamentos na linha estetica indica satisfacao, mas
+      falta sistema estruturado de CX para escalar.
+    action: "Implementar programa CX Excellence: NPS, jornada do cliente unificada, SLAs de atendimento, dashboard de satisfacao"
+    owner: "Gabriel Carpello (Comercial) + Helaine Hohendorff (Marketing)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route experiencia"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "OKR Experiencia do Cliente sob Gabriel e Helaine"
+
+  - id: "DIAG-2026-03-19-14"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "customer"
+    pillar: "4-experiencia-cliente"
+    priority: "MEDIO"
+    gap_description: |
+      Universidade Contourline (academy) para clientes e parceiros.
+      Treinamento e educacao sao diferenciais mas nao ha plataforma
+      digital estruturada.
+    action: "Criar Universidade Contourline: plataforma LMS, conteudo online/presencial, certificacoes, trilhas por produto"
+    owner: "Andreia Almeida (Consultoria/P&D)"
+    deadline: "2026-Q3"
+    recommended_squad: "c-level"
+    recommended_command: "*route inovacao"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Pode gerar receita recorrente adicional"
+
+  - id: "DIAG-2026-03-19-15"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "customer"
+    pillar: "4-experiencia-cliente"
+    priority: "MEDIO"
+    gap_description: |
+      Programa de fidelizacao nao existe formalmente.
+      Com 4 mil clientes, cross-sell e upsell sao oportunidades
+      significativas de receita incremental.
+    action: "Estruturar programa de fidelizacao: tiers, beneficios, cross-sell engine, referral program"
+    owner: "Gabriel Carpello + Helaine Hohendorff"
+    deadline: "2026-Q3"
+    recommended_squad: "c-level"
+    recommended_command: "*marketing"
+    prerequisite: "DIAG-2026-03-19-13"
+    status: "pending"
+    completed_at: null
+    notes: "4 mil clientes = base enorme para monetizar via fidelizacao"
+
+  # ==========================================================================
+  # PILAR 5: FORCA DA MARCA (3 projetos estrategicos)
+  # ==========================================================================
+
+  - id: "DIAG-2026-03-19-16"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "brand"
+    pillar: "5-forca-marca"
+    priority: "ALTO"
+    gap_description: |
+      Reposicionamento de marca com nova identidade visual premium.
+      Essencial para sustentar posicionamento de lider premium nacional.
+    action: "Executar projeto de rebranding: nova identidade visual, narrativa premium, guidelines, rollout em todos os touchpoints"
+    owner: "Helaine Hohendorff (Marketing)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*marketing"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "8% da receita liquida em marketing sustenta este investimento"
+
+  - id: "DIAG-2026-03-19-17"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "brand"
+    pillar: "5-forca-marca"
+    priority: "MEDIO"
+    gap_description: |
+      Contourline Experience - grande evento anual para medicos e
+      representantes. Nao ha planejamento estruturado.
+    action: "Planejar Contourline Experience 2026: data, local, agenda, speakers, patrocinadores, metas de participacao"
+    owner: "Helaine Hohendorff (Marketing) + Gabriel Carpello (Comercial)"
+    deadline: "2026-Q3"
+    recommended_squad: "c-level"
+    recommended_command: "*marketing"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Evento consolida posicionamento premium e gera pipeline comercial"
+
+  - id: "DIAG-2026-03-19-18"
+    created_at: "2026-03-19"
+    source_diagnostic: "planejamento-estrategico-2026"
+    dimension: "brand"
+    pillar: "5-forca-marca"
+    priority: "MEDIO"
+    gap_description: |
+      Producao cientifica como sustentacao de autoridade.
+      Publicacoes e estudos existem mas faltam cadencia e pipeline.
+    action: "Criar pipeline de producao cientifica: meta de publicacoes/ano, parcerias com universidades, KOL program"
+    owner: "Andreia Almeida (P&D)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route inovacao"
+    prerequisite: "DIAG-2026-03-19-01"
+    status: "pending"
+    completed_at: null
+    notes: "Diferencial competitivo vs concorrentes globais"
+
+  # ==========================================================================
+  # GAPS IDENTIFICADOS PELO COO (Analise propria baseada no SWOT e metricas)
+  # ==========================================================================
+
+  - id: "DIAG-2026-03-19-19"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "risk"
+    pillar: "risk-management"
+    priority: "CRITICO"
+    gap_description: |
+      RISCO CRITICO: Dependencia de fornecedor exclusivo Body Health.
+      Se fornecimento for interrompido, impacto direto na producao.
+      Fraqueza SWOT sem plano de mitigacao explicito no planejamento.
+    action: "Criar plano de mitigacao: identificar fornecedores alternativos, negociar contratos de longo prazo, manter estoque estrategico"
+    owner: "Filipe Ferreira (Operacoes) + Claudio Kaizer (CFO)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route operacoes"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "SWOT: fraqueza identificada mas sem acao definida no planejamento"
+
+  - id: "DIAG-2026-03-19-20"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "people"
+    pillar: "risk-management"
+    priority: "CRITICO"
+    gap_description: |
+      RISCO CRITICO: Dependencia de pessoas-chave em areas criticas.
+      SWOT identifica mas o planejamento nao detalha plano de backup.
+      Com crescimento de 40% no headcount, risco de diluicao cultural.
+    action: "Implementar programa de sucessao: documentar processos criticos, treinar backups, criar knowledge base por area"
+    owner: "RH + Todos os Diretores"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route pessoas"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Perspectiva Aprendizado: A2 Reduzir Dependencias"
+
+  - id: "DIAG-2026-03-19-21"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "financial"
+    pillar: "risk-management"
+    priority: "CRITICO"
+    gap_description: |
+      Resultado financeiro NEGATIVO de R$ 10M. Consumo de caixa de
+      R$ 50M no ano. Divida bruta R$ 113M com alavancagem de 1.97x EBITDA.
+      Embora controlada, necessidade de revisao da estrutura de capital
+      e sustentabilidade de receitas nao recorrentes.
+    action: "Revisar estrutura de capital: otimizar mix de funding, reduzir custo financeiro, monitorar covenant EBITDA < 2.5x"
+    owner: "Claudio Kaizer (CFO)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route financeiro"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Funding R$ 106M planejado. Monitorar de perto."
+
+  - id: "DIAG-2026-03-19-22"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "operations"
+    pillar: "risk-management"
+    priority: "ALTO"
+    gap_description: |
+      Ruidos entre areas (comercial, backoffice, marketing) identificados
+      no SWOT. Com 5 diretorias e crescimento acelerado, comunicacao
+      interna pode se tornar gargalo critico.
+    action: "Implementar rituais de gestao: reunioes semanais cross-area, dashboard compartilhado, OKRs vissiveis, cadencia de review"
+    owner: "Egio Roberto (CEO)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route operacoes"
+    prerequisite: "DIAG-2026-03-19-11"
+    status: "pending"
+    completed_at: null
+    notes: "ERP Protheus pode resolver parte com dados integrados"
+
+  - id: "DIAG-2026-03-19-23"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "tech"
+    pillar: "risk-management"
+    priority: "ALTO"
+    gap_description: |
+      Baixa maturidade em dados (fraqueza SWOT). Uso limitado de
+      indicadores para gestao estrategica. Com R$ 200M de receita,
+      decisoes precisam ser data-driven.
+    action: "Implementar cultura data-driven: BI/dashboards por diretoria, KPIs automatizados via ERP, data governance basico"
+    owner: "TI + Claudio Kaizer (CFO)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*tech-ops"
+    prerequisite: "DIAG-2026-03-19-11"
+    status: "pending"
+    completed_at: null
+    notes: "A4: Tecnologia como Acelerador - IA aplicada e governanca de dados"
+
+  - id: "DIAG-2026-03-19-24"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "commercial"
+    pillar: "growth-opportunities"
+    priority: "ALTO"
+    gap_description: |
+      Oportunidade pos-farmacos emagrecedores nao tem estrategia dedicada.
+      Aumento na busca por firmeza e contorno corporal e tendencia forte.
+      Portfolio tem produtos para isso (HIPRO, MULTSHAPE) mas falta
+      campanha e posicionamento especifico.
+    action: "Criar campanha e posicionamento especifico para mercado pos-farmacos emagrecedores: messaging, targeting, cases clinicos"
+    owner: "Helaine Hohendorff (Marketing) + Gabriel Carpello (Comercial)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*marketing"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "HIPRO lidera linha estetica com 215 unidades (78% do volume)"
+
+  - id: "DIAG-2026-03-19-25"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "commercial"
+    pillar: "growth-opportunities"
+    priority: "MEDIO"
+    gap_description: |
+      Expansao LATAM/EUA mencionada como oportunidade mas sem plano
+      concreto. Diversificacao de receitas e pilar financeiro F3.
+    action: "Estudo de viabilidade LATAM/EUA: mercados prioritarios, modelo de entrada (distribuidor/filial), regulatorio, investimento necessario"
+    owner: "Gabriel Carpello (Comercial) + Claudio Kaizer (CFO)"
+    deadline: "2026-Q3"
+    recommended_squad: "c-level"
+    recommended_command: "*route expansao"
+    prerequisite: "DIAG-2026-03-19-06"
+    status: "pending"
+    completed_at: null
+    notes: "Precisa consolidar expansao nacional antes"
+
+  - id: "DIAG-2026-03-19-26"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "commercial"
+    pillar: "growth-opportunities"
+    priority: "MEDIO"
+    gap_description: |
+      Modelo de rental/assinaturas mencionado em F3 (Diversificar Receitas)
+      mas sem detalhamento. Receita recorrente e fundamental para
+      valuation de R$ 500M.
+    action: "Desenvolver modelo de rental/assinatura: pricing, termos, equipamentos elegiveis, projecao financeira, piloto"
+    owner: "Claudio Kaizer (CFO) + Gabriel Carpello (Comercial)"
+    deadline: "2026-Q3"
+    recommended_squad: "c-level"
+    recommended_command: "*route financeiro"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Receita recorrente multiplica valuation significativamente"
+
+  - id: "DIAG-2026-03-19-27"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "people"
+    pillar: "growth-opportunities"
+    priority: "ALTO"
+    gap_description: |
+      47 novas contratacoes planejadas (40% crescimento) sem hiring
+      plan detalhado. Risco de contratacoes desalinhadas com cultura
+      e demora no ramp-up.
+    action: "Criar hiring plan detalhado: perfis por vaga, timeline, processo seletivo, programa de onboarding, metricas de ramp-up"
+    owner: "RH + Diretores de cada area"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route pessoas"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Maior expansao: Comercial +13, Producao/AT +8, Consultoria +6"
+
+  - id: "DIAG-2026-03-19-28"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "risk"
+    pillar: "risk-management"
+    priority: "ALTO"
+    gap_description: |
+      Volatilidade cambial e risco real com importacoes de R$ 66M.
+      Estrategia de hedge mencionada em F2 mas sem detalhamento.
+      Impacto direto na margem da Lumenis (ja em 9%).
+    action: "Estruturar politica de hedge cambial: instrumentos financeiros, % de cobertura, limites de exposicao, cenarios"
+    owner: "Claudio Kaizer (CFO)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route financeiro"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "FINIMP R$ 36M em financiamento de importacao ja planejado"
+
+  - id: "DIAG-2026-03-19-29"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "tech"
+    pillar: "growth-opportunities"
+    priority: "MEDIO"
+    gap_description: |
+      IA aplicada mencionada como oportunidade (SWOT) e acelerador
+      (A4) mas sem roadmap especifico. Automacao de fluxos,
+      atendimento, previsoes e analises podem ser game-changers.
+    action: "Criar roadmap de IA: use cases prioritarios, POCs, ferramentas, investimento, quick wins vs transformacoes"
+    owner: "TI + Andreia Almeida (Inovacao)"
+    deadline: "2026-Q3"
+    recommended_squad: "c-level"
+    recommended_command: "*ai"
+    prerequisite: "DIAG-2026-03-19-11"
+    status: "pending"
+    completed_at: null
+    notes: "Depende de dados estruturados via ERP"
+
+  - id: "DIAG-2026-03-19-30"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "governance"
+    pillar: "risk-management"
+    priority: "ALTO"
+    gap_description: |
+      Transicao da Diretoria Comercial de Glaucia Moura para Gabriel
+      Carpello sem timeline ou plano de transicao detalhado.
+      Area comercial e a maior da empresa e maior expansao.
+    action: "Estruturar plano de transicao comercial: timeline, transferencia de clientes-chave, mentoring, comunicacao interna/externa"
+    owner: "Egio Roberto (CEO)"
+    deadline: "2026-Q1"
+    recommended_squad: "c-level"
+    recommended_command: "*route pessoas"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "Risco operacional se transicao nao for bem gerida"
+
+  - id: "DIAG-2026-03-19-31"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "risk"
+    pillar: "risk-management"
+    priority: "MEDIO"
+    gap_description: |
+      Seguranca da informacao listada como ameaca regulatoria mas
+      sem iniciativa especifica no planejamento. Com ERP novo e
+      crescimento digital, superficie de ataque aumenta.
+    action: "Avaliar postura de seguranca da informacao: assessment, politicas basicas, backup, LGPD compliance, awareness"
+    owner: "TI"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*tech-ops"
+    prerequisite: "DIAG-2026-03-19-11"
+    status: "pending"
+    completed_at: null
+    notes: "LGPD e dados de pacientes exigem atencao especial"
+
+  - id: "DIAG-2026-03-19-32"
+    created_at: "2026-03-19"
+    source_diagnostic: "coo-analysis"
+    dimension: "financial"
+    pillar: "growth-opportunities"
+    priority: "ALTO"
+    gap_description: |
+      Assistencia Tecnica com margem de apenas 17% e receita de R$ 1.4M.
+      Servicos tecnicos especializados tem potencial de receita recorrente
+      muito maior. Contratos de manutencao preventiva podem gerar
+      previsibilidade e fidelizacao.
+    action: "Reestruturar AT como centro de receita: contratos de manutencao preventiva, SLAs premium, pricing por tier, upsell de pecas"
+    owner: "Filipe Ferreira (Operacoes) + Gabriel Carpello (Comercial)"
+    deadline: "2026-Q2"
+    recommended_squad: "c-level"
+    recommended_command: "*route operacoes"
+    prerequisite: null
+    status: "pending"
+    completed_at: null
+    notes: "4 mil clientes = base enorme para contratos recorrentes de AT"
+
+# ============================================================================
+# RESUMO EXECUTIVO
+# ============================================================================
+summary:
+  total_items: 32
+  by_priority:
+    critico: 6
+    alto: 15
+    medio: 11
+    baixo: 0
+  by_dimension:
+    commercial: 7
+    governance: 4
+    innovation: 3
+    brand: 4
+    customer: 3
+    operations: 2
+    people: 2
+    risk: 3
+    tech: 3
+    financial: 1
+  by_pillar:
+    "1-inovacao-ciencia": 4
+    "2-expansao-comercial": 4
+    "3-profissionalizacao": 4
+    "4-experiencia-cliente": 3
+    "5-forca-marca": 3
+    "risk-management": 8
+    "growth-opportunities": 6
+  criticos_imediatos:
+    - "DIAG-02: Lei da Informatica (prazo vencido?)"
+    - "DIAG-07: Margem Lumenis 9% (insustentavel)"
+    - "DIAG-11: ERP Protheus go-live (verificar status)"
+    - "DIAG-19: Dependencia Body Health (sem plano B)"
+    - "DIAG-20: Dependencia pessoas-chave (sem backup)"
+    - "DIAG-21: Resultado financeiro negativo R$ 10M"
+  nota_coo: |
+    O Planejamento Estrategico 2026 e robusto e bem estruturado.
+    Os 18 projetos estrategicos estao bem definidos nos 5 pilares.
+
+    POREM, identifiquei 14 gaps adicionais (DIAG-19 a DIAG-32) que
+    o planejamento menciona como riscos ou oportunidades mas NAO
+    detalha em acoes concretas. Estes gaps sao onde mora o risco
+    de execucao - "o desafio nao e o que fazer, mas COMO executar
+    com disciplina, alinhamento e consistencia" (citacao do proprio PE).
+
+    Recomendacao: Priorizar os 6 CRITICOS imediatamente e montar
+    war room mensal para acompanhamento dos 32 itens.
