@@ -1,10 +1,6 @@
----
-# DOCTRINES.YAML — Conta Magic
-# Status: SKELETON
 metadata:
-  schema: "contamagic.doctrines"
-  version: "1.0"
-  status: "SKELETON"
-  updated_at: "2026-03-14"
-
-doctrines: [] # A PREENCHER NA IMERSAO
+  schema: contamagic.doctrines
+  version: '1.0'
+  status: SKELETON
+  updated_at: '2026-03-14'
+doctrines: []

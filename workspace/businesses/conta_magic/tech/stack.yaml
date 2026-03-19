@@ -1,31 +1,25 @@
----
-# TECH/STACK.YAML — Conta Magic — Stack operacional
-# Guardian: CIO / Egio Roberto
-# Status: SKELETON
 metadata:
-  version: "1.0"
-  company_name: "Conta Magic"
-  product_name: "conta_magic"
-  status: "SKELETON"
-  last_updated: "2026-03-14"
-  owner: "CIO / Egio Roberto"
-
+  version: '1.0'
+  company_name: Conta Magic
+  product_name: egio_roberto
+  status: SKELETON
+  last_updated: '2026-03-14'
+  owner: CIO / Egio Roberto
 stack:
-  erp: "Totvs"
+  erp: Totvs
   ai_tools:
-    video_generation: "IA (ferramenta nao especificada)"
-    animation: "IA (ferramenta nao especificada)"
-    audio: "Eleven Labs"
-    document_analysis: "Chat PDF (compliance Anvisa)"
-    orchestration: "AIOX (instalado, em teste)"
+    video_generation: IA (ferramenta nao especificada)
+    animation: IA (ferramenta nao especificada)
+    audio: Eleven Labs
+    document_analysis: Chat PDF (compliance Anvisa)
+    orchestration: AIOX (instalado, em teste)
   marketing:
     team_size: 14
-    channels: "Instagram @onlinemag, trafego pago"
+    channels: Instagram @onlinemag, trafego pago
   infrastructure:
-    work_model: "100% home office nacional"
+    work_model: 100% home office nacional
     project_management: FILL_THIS
-
 cross_references:
   related_templates:
-    - "tech/strategy.yaml"
-    - "ai/strategy.yaml"
+  - tech/strategy.yaml
+  - ai/strategy.yaml

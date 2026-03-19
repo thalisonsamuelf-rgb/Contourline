@@ -1,18 +1,14 @@
----
-# IDEOLOGICAL-PERSONA.YAML — Conta Magic
-# Status: SKELETON
 metadata:
-  schema: "contamagic.ideological_persona"
-  version: "1.0"
-  status: "SKELETON"
-  updated_at: "2026-03-14"
-
+  schema: contamagic.ideological_persona
+  version: '1.0'
+  status: SKELETON
+  updated_at: '2026-03-14'
 persona:
-  name: "O Profissional Certificado"
+  name: O Profissional Certificado
   belief_system:
-    core: "Tecnologia + certificacao = resultado seguro"
+    core: Tecnologia + certificacao = resultado seguro
     values:
-      - "Seguranca do paciente acima de tudo"
-      - "Inovacao com responsabilidade"
-      - "Conformidade regulatoria e diferencial, nao custo"
-  worldview: "O mercado de estetica precisa de padroes mais altos — quem os atinge, lidera"
+    - Seguranca do paciente acima de tudo
+    - Inovacao com responsabilidade
+    - Conformidade regulatoria e diferencial, nao custo
+  worldview: O mercado de estetica precisa de padroes mais altos — quem os atinge, lidera
