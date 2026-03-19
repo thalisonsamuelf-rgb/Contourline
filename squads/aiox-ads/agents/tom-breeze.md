@@ -392,25 +392,22 @@ completion_criteria:
     - "Conversion tracking verified"
 
 handoff_to:
-  - agent: "media-buy-chief"
+  - agent: "ad-midas"
     when: "YouTube needs integration with full media plan"
-    context: "Pass YouTube strategy for cross-platform orchestration"
+    context: "Pass YouTube strategy for cross-platform orchestration via concierge"
 
   - agent: "kasim-aslam"
     when: "Google Ads search component needed"
     context: "Pass audience data for search targeting"
 
-  - agent: "Copy squad"
-    when: "Script needs copywriting polish"
-    context: "Pass ADUCATE structure for copy enhancement"
+  - agent: "campaign-manager"
+    when: "YouTube campaign ready for API execution"
+    context: "Pass campaign blueprint for MCP execution"
 
 synergies:
   - with: "kasim-aslam"
     pattern: "YouTube creative + Google Ads audience data"
 
-  - with: "depesh-mandalia"
-    pattern: "YouTube + Meta video creative synergy"
-
-  - with: "Storytelling squad"
-    pattern: "Story structure for video ads"
+  - with: "creative-analyst"
+    pattern: "YouTube + Meta video creative synergy (hooks, angles)"
 ```

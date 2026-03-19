@@ -440,21 +440,21 @@ completion_criteria:
     - "Backup creative ready"
 
 handoff_to:
-  - agent: "media-buy-chief"
+  - agent: "ad-midas"
     when: "Scaling needs cross-platform coordination"
-    context: "Pass scaling insights for portfolio strategy"
+    context: "Pass scaling insights for portfolio strategy via concierge"
 
-  - agent: "depesh-mandalia"
-    when: "Meta Ads strategic optimization needed"
-    context: "Pass winning creative for BPM integration"
+  - agent: "campaign-manager"
+    when: "Scaling structure ready for API execution"
+    context: "Pass Forester 6-campaign blueprint for MCP execution"
 
   - agent: "br-traffic-operator"
     when: "Operational execution needed"
     context: "Pass creative brief for production"
 
 synergies:
-  - with: "depesh-mandalia"
-    pattern: "Creative Lab + Graduation Framework = systematic scaling"
+  - with: "ad-midas"
+    pattern: "Creative Lab insights inform Midas scaling decisions"
 
   - with: "tom-breeze"
     pattern: "Video creative insights transfer to YouTube"

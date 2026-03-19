@@ -1,9 +1,9 @@
 # Task: Compare Model Outputs
 
 **Command:** `*compare-outputs`
-**Version:** 1.0.0
 **Execution Type:** Agent (Opus ONLY - evaluator must be most capable model)
 **Model:** `Opus` (REQUIRED - evaluator cannot be same tier as test subject)
+**Haiku Eligible:** NO
 **Purpose:** Systematic comparison of Opus baseline vs Haiku test outputs for Model Tier Qualification
 
 ---
@@ -347,8 +347,3 @@ squads/squad-creator-pro/test-cases/{task_name}/qualification-report.yaml
 
 ---
 
-## Changelog
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0.0 | 2026-02-11 | Initial version with 4-dimension rubric |

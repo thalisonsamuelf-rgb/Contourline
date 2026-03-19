@@ -9,10 +9,10 @@
 
 ## Overview
 
-Gera briefs completos para produção de criativos de anúncios, incluindo direção visual, copy, especificações técnicas e referências. Alinha expectativas entre estrategista e designer/editor.
+Generates complete briefs for ad creative production, including visual direction, copy, technical specs and references. Aligns expectations between strategist and designer/editor.
 
 **Activation Command:** `*create-brief {product}`
-**Announce:** "Ativando Creative Brief com frameworks Jordan Stupar e Jeremy Haynes."
+**Announce:** "Activating Creative Brief with Jordan Stupar and Jeremy Haynes frameworks."
 
 ---
 
@@ -20,10 +20,10 @@ Gera briefs completos para produção de criativos de anúncios, incluindo dire�
 
 | Expert         | Framework         | Weight | Focus                 |
 | -------------- | ----------------- | ------ | --------------------- |
-| Jordan Stupar  | Creative Strategy | 0.85   | Conceito criativo     |
-| Jeremy Haynes  | DSL Revolution    | 0.95   | Estrutura de conteúdo |
-| Jeremy Haynes  | Ad Science        | 0.93   | Teste de variáveis    |
-| Brandon Carter | Hook Methodology  | 0.88   | Primeiros segundos    |
+| Jordan Stupar  | Creative Strategy | 0.85   | Creative concept      |
+| Jeremy Haynes  | DSL Revolution    | 0.95   | Content structure     |
+| Jeremy Haynes  | Ad Science        | 0.93   | Variable testing      |
+| Brandon Carter | Hook Methodology  | 0.88   | First seconds         |
 
 ---
 
@@ -64,8 +64,8 @@ audience:
     type: 'unaware|problem_aware|solution_aware|product_aware|most_aware'
     implications: ''
 
-  current_state: 'O que estão fazendo agora?'
-  desired_state: 'Onde querem chegar?'
+  current_state: 'What are they doing now?'
+  desired_state: 'Where do they want to get?'
 ```
 
 ### 3. Creative Direction
@@ -73,18 +73,18 @@ audience:
 ```yaml
 creative_direction:
   tone:
-    primary: 'educativo|inspirador|urgente|provocativo|empático'
+    primary: 'educational|inspirational|urgent|provocative|empathetic'
     secondary: ''
 
   visual_style:
-    aesthetic: 'clean|bold|minimal|luxo|casual|profissional'
+    aesthetic: 'clean|bold|minimal|luxury|casual|professional'
     colors:
       primary: ''
       secondary: ''
       accent: ''
     typography: 'serif|sans-serif|script|bold'
 
-  mood: 'aspiracional|urgente|confiável|exclusivo|acessível'
+  mood: 'aspirational|urgent|trustworthy|exclusive|accessible'
 
   references:
     - url: ''
@@ -102,44 +102,44 @@ content_structure:
   video_structure:
     hook:
       duration: '0-3 seconds'
-      goal: 'Parar o scroll'
-      type: 'problema|resultado|curiosidade|controverso'
+      goal: 'Stop the scroll'
+      type: 'problem|outcome|curiosity|contrarian'
       script: ''
 
     problem:
       duration: '3-10 seconds'
-      goal: 'Identificar a dor'
+      goal: 'Identify the pain'
       script: ''
 
     solution:
       duration: '10-25 seconds'
-      goal: 'Apresentar produto'
+      goal: 'Present the product'
       script: ''
 
     proof:
       duration: '25-40 seconds'
-      goal: 'Mostrar resultados'
-      elements: ['depoimentos', 'números', 'demonstração']
+      goal: 'Show results'
+      elements: ['testimonials', 'numbers', 'demonstration']
 
     cta:
       duration: '40-60 seconds'
-      goal: 'Chamar para ação'
+      goal: 'Call to action'
       script: ''
       urgency: ''
 
   dsl_structure: # Jeremy Haynes
     slide_1:
-      content: 'Introdução + oferta'
-      text_limit: '50 palavras'
+      content: 'Introduction + offer'
+      text_limit: '50 words'
 
     slide_2_3:
-      content: 'Por que é uma boa oferta'
-      text_limit: '100 palavras'
+      content: 'Why it is a good offer'
+      text_limit: '100 words'
 
     slide_4_5:
-      content: 'FAQ / Objeções'
-      text_limit: '100 palavras'
-      note: '77% chega aqui - conteúdo essencial'
+      content: 'FAQ / Objections'
+      text_limit: '100 words'
+      note: '77% reach here - essential content'
 
     arrow_prompt:
       text: 'Press to continue'
@@ -151,20 +151,20 @@ content_structure:
 ```yaml
 copy:
   primary_text:
-    max_length: '125 caracteres visíveis + expandido'
+    max_length: '125 visible characters + expanded'
     hook: ''
     body: ''
     cta: ''
 
   headline:
-    max_length: '40 caracteres'
+    max_length: '40 characters'
     options:
       - ''
       - ''
       - ''
 
   description:
-    max_length: '30 caracteres'
+    max_length: '30 characters'
     text: ''
 
   cta_button: 'Saiba Mais|Comprar|Inscreva-se|Baixar'
@@ -191,10 +191,10 @@ technical_specs:
       file_size: 'Max 4GB'
 
   requirements:
-    - 'Texto em vídeo: máx 20% da imagem'
-    - 'Legendas obrigatórias'
-    - 'Logo nos últimos 3s'
-    - 'Safe zones respeitadas'
+    - 'Text in video: max 20% of image'
+    - 'Subtitles mandatory'
+    - 'Logo in last 3s'
+    - 'Safe zones respected'
 
   file_format: 'MP4 H.264'
   audio: 'AAC stereo'
@@ -205,7 +205,7 @@ technical_specs:
 ```yaml
 variations:
   hook_variations: 5
-  reason: 'Teste científico (Brandon Carter)'
+  reason: 'Scientific testing (Brandon Carter)'
 
   a_b_tests:
     - element: 'Hook'
@@ -219,7 +219,7 @@ variations:
   deliverables:
     - '5x Video Feed 1:1'
     - '5x Video Stories 9:16'
-    - '1x Thumbnail por vídeo'
+    - '1x Thumbnail per video'
 ```
 
 ---
@@ -263,7 +263,7 @@ creative_brief:
     - type: 'controverso'
       script: 'Esqueça tudo sobre CBO...'
 
-    - type: 'prova_social'
+    - type: 'social_proof'
       script: '+500 alunos já dominam isso'
 
   body_constant:
@@ -310,14 +310,14 @@ creative_brief:
 
 ### Triggered By
 
-- `hook-generator` - após gerar hooks
-- `creative-fatigue-detector` - para novos criativos
+- `hook-generator` - after generating hooks
+- `creative-fatigue-detector` - for new creatives
 - User command - `*create-brief`
 
 ### Dispatches To
 
-- Designer/Editor (externo)
-- `copy-generator` - para variações de copy
+- Designer/Editor (external)
+- `copy-generator` - for copy variations
 
 ### Agent Assignment
 

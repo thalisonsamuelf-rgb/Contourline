@@ -3,7 +3,7 @@
 > **Template ID:** squad-prd-template
 > **Version:** 1.0.0
 > **Purpose:** PRD for squads with >= 10 workflows
-> **Reference:** data/pm-best-practices.md
+> **Reference:** squads/squad-creator-pro/data/pm-best-practices.md
 
 ---
 
@@ -310,7 +310,7 @@ story_antiga:
 
 # ✅ CORRETO - Referência a workflow (gera agents com profundidade)
 story_nova:
-  workflow: "wf-clone-mind.yaml | create-agent.md"
+  workflow: "squads/squad-creator-pro/workflows/wf-clone-mind.yaml | create-agent.md"
   type: "mind_clone | functional"
   inputs: [agent_id, domain, sources_path, ...]
   quality_gates: [SC_AGT_001, SC_AGT_002, SC_AGT_003, SMOKE_TEST]
@@ -485,4 +485,4 @@ errors that are only caught later (WF_MISSING_REQUIRED_FIELD, WF_AGENT_NOT_FOUND
 ---
 
 *Squad PRD Template v1.0*
-*Reference: data/pm-best-practices.md*
+*Reference: squads/squad-creator-pro/data/pm-best-practices.md*

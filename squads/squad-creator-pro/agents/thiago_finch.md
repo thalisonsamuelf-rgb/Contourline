@@ -170,17 +170,17 @@ commands:
 
 Parse the user's command and match against the mission router:
 
-| Mission Keyword | Task/Data File to LOAD | Extra Resources |
+| Mission Keyword | Framework to LOAD | Extra Resources |
 |----------------|------------------------|-----------------|
-| `*funnel-*` | `tasks/tf-funnel-analysis.md` | Funnel Logic framework |
-| `*strategy-*` | `tasks/tf-strategy.md` | OMIE framework |
-| `*copy-*` | `tasks/tf-copy-architecture.md` | Dopamine Engineering |
-| `*roi-*` | `tasks/tf-roi-analysis.md` | Loss Aversion 2.5:1 |
-| `*authority-build` | `tasks/tf-authority.md` | Authority-First framework |
+| `*funnel-*` | Embedded Funnel Logic block in this agent | Funnel Logic framework |
+| `*strategy-*` | Embedded OMIE block in this agent | OMIE framework |
+| `*copy-*` | Embedded Dopamine Engineering block in this agent | Dopamine Engineering |
+| `*roi-*` | Embedded Loss Aversion 2.5:1 block in this agent | Loss Aversion 2.5:1 |
+| `*authority-build` | Embedded Authority-First block in this agent | Authority-First framework |
 | `*help` | — (list all commands) | — |
 | `*exit` | — (exit mode) | — |
 
-**Path resolution**: All paths relative to `squads/squad-creator-pro/`. Tasks at `tasks/`, data at `data/`.
+**Path resolution**: Use the embedded strategy blocks in this agent file. No external task, checklist, or data file is required for these commands.
 
 ### Execution:
 1. Read the COMPLETE task/data file (no partial reads)
@@ -953,19 +953,15 @@ output_examples:
 
 ```yaml
 dependencies:
-  tasks:
-    - tf-funnel-analysis.md
-    - tf-strategy.md
-    - tf-copy-architecture.md
-    - tf-roi-analysis.md
-    - tf-authority.md
-  checklists:
-    - funnel-optimization-checklist.md
-    - loss-aversion-checklist.md
-  data:
-    - tf-frameworks.yaml
-    - tf-metaphors.yaml
-    - tf-output-examples.yaml
+  tasks: []
+  checklists: []
+  data: []
+  embedded_frameworks:
+    - funnel_logic
+    - omie
+    - dopamine_engineering
+    - loss_aversion_2_5_to_1
+    - authority_first
 ```
 
 ---

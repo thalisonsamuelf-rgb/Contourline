@@ -221,7 +221,7 @@ Minimum competencies required per role before executing this SOP. Operators who 
 | **File name** | `vsl-diagnostic-optimization-sop.md` |
 | **Access** | All Copy Squad agents have read access. Write access (updates, corrections) requires Copy Chief review and version increment. |
 | **Notification of updates** | When a new version is published, update the Revision History table and notify the Copy Squad via the team's primary communication channel within 48 hours. |
-| **Record storage** | Completed Phase 1 execution records (audit trail) are stored in `outputs/gerador-pop/vsl-diagnostic/` with the naming convention: `SOP-COPY-VSL-DIAG-001-YYYYMMDD-{funnel-name}.md` |
+| **Record storage** | Completed Phase 1 execution records (audit trail) are stored in `outputs/aiox-sop/vsl-diagnostic/` with the naming convention: `SOP-COPY-VSL-DIAG-001-YYYYMMDD-{funnel-name}.md` |
 
 ---
 
@@ -283,7 +283,7 @@ START: Trigger condition met (Section 1.4)
   → Append Phase 8 decision to audit trail
         |
         v
-END: Close diagnostic session. Audit trail saved to outputs/gerador-pop/vsl-diagnostic/
+END: Close diagnostic session. Audit trail saved to outputs/aiox-sop/vsl-diagnostic/
 ```
 
 ---
@@ -305,7 +305,7 @@ END: Close diagnostic session. Audit trail saved to outputs/gerador-pop/vsl-diag
 | Data source — Payment platform | ___ |
 | Data window used (start → end date) | ___ |
 
-Save this completed table as: `SOP-COPY-VSL-DIAG-001-YYYYMMDD-{funnel-name}.md` in `outputs/gerador-pop/vsl-diagnostic/`. The completed Phase 1 table (Step 1.3) must be appended to this same file before Phase 2 begins.
+Save this completed table as: `SOP-COPY-VSL-DIAG-001-YYYYMMDD-{funnel-name}.md` in `outputs/aiox-sop/vsl-diagnostic/`. The completed Phase 1 table (Step 1.3) must be appended to this same file before Phase 2 begins.
 
 **1.1** Pull retention curve data from the VSL platform. Record exact % at the following checkpoints:
 
@@ -1188,8 +1188,8 @@ No direct conflicts found between the source files. All sources are from the sam
 | Modelo 731, recovery webinar | @todd-brown enrichment | `thiagoroas-copy-analysis.yaml → brown_enrichment` |
 | Funnel structure, metrics, traffic phases | Direct practitioner framework | `thiagoroas-vsl-funnel-and-traffic-framework.yaml` |
 | Benchmarks, micro-funnel method | Direct practitioner framework | `thiagoroas-vsl-funnel-and-traffic-framework.yaml → funnel_health_metrics` |
-| Upsell/downsell benchmarks, checkout instant triage, checkout A/B protocol, clean checkout priority, contextual benchmarks, CTA position case, CPA = suicídio, checkout stability | Hotmart Cast (~40min, YouTube ID: RENU3kEns0E) | `outputs/gerador-pop/extractions/hotmart-cast-gold-extraction.md` |
-| 72h attribution window, CPM context rule, custom metric setup, all-creatives diagnostic, infinite creative loop, boleto pixel corruption, redline priority, survey qualification, perpetuo recovery case | Kiwicast #213 (~1h25min, YouTube ID: hnw1pGcc3_A) | `outputs/gerador-pop/extractions/kiwicast-213-gold-extraction.md` |
+| Upsell/downsell benchmarks, checkout instant triage, checkout A/B protocol, clean checkout priority, contextual benchmarks, CTA position case, CPA = suicídio, checkout stability | Hotmart Cast (~40min, YouTube ID: RENU3kEns0E) | `outputs/aiox-sop/extractions/hotmart-cast-gold-extraction.md` |
+| 72h attribution window, CPM context rule, custom metric setup, all-creatives diagnostic, infinite creative loop, boleto pixel corruption, redline priority, survey qualification, perpetuo recovery case | Kiwicast #213 (~1h25min, YouTube ID: hnw1pGcc3_A) | `outputs/aiox-sop/extractions/kiwicast-213-gold-extraction.md` |
 
 ---
 
@@ -1279,7 +1279,7 @@ RETENÇÃO BAIXA  Formato ruim     Nova VSL → exit SOP
 | 0.1-DRAFT | 2026-03-11 | Ohno / SOP Extractor | Initial extraction from @thiagoroas source files |
 | 0.2.0-DRAFT-REMEDIATED | 2026-03-11 | SOP Creator / SOP Factory Squad | Remediation per audit AUDIT-VSL-DIAG-001-v0.1-20260311. Changes: (F-02) Approver field updated with governance policy note. (F-01) Appendix C "as of 2025" annotated with source recording date. (F-03) Phase 7 Step 7.3 rewritten in imperative voice. (F-04) "Meaningful traffic" threshold defined in Section 4.2. (F-05) SOP IDs added for cross-referenced SOPs in Section 1.2. (F-06) Phase 5 Step 5.2 [INF] confidence retained but explicit uncertainty note added with source evidence analysis. (F-07) Step 1.0 added to Phase 1 with audit trail record and naming convention. (F-08) Section 4.3 Executor Qualifications added. (F-09) Section 4.4 Access and Distribution added. |
 | 0.3.0 | 2026-03-11 | SOP Creator / SOP Factory Squad | Remediation per re-audit AUDIT-VSL-DIAG-001-v0.2-20260311. Status upgraded to CERTIFIED. (NF-01) Approver updated to "Squad Chief (independent of document owner — per ISO 9001:2015 Clause 7.5.2(c))"; `Governance Policy` field added pointing to `.claude/rules/aiox-rules.md`. (NF-02) Phase 5 Step 5.2 inline 140-word uncertainty note replaced with 1-line indicator; full evidence analysis consolidated into GAP-01 in Section 10. (NF-03) Audit trail checkpoints added to Phase 3 (matrix verdict) and Phase 8 (kill/fix decision). (BOOST-01) Section 3 expanded with formal RACI legend and role definitions table. (BOOST-02) Process flowchart added as ASCII diagram at start of Section 5. (BOOST-03) Quick-Reference Card section added before Revision History. |
-| 0.4.0 | 2026-03-12 | SOP Creator / SOP Factory Squad | Enrichment from Hotmart Cast (RENU3kEns0E) + Kiwicast #213 (hnw1pGcc3_A). APPEND-ONLY — no existing content removed. Additions: (1) Section 1.1 — DIAG-01 purpose enrichment: diagnostic vs. resolution scope. (2) Section 1.4 — ARCH-04 upsell/downsell benchmarks; METRICS-01 contextual benchmark caveat. (3) Phase 1.3 — M-01 full metric hierarchy; click-to-page-view metric; M-02 CTR/CPC danger warning for beginners. (4) Phase 4.7 — ARCH-07 instant triage (115 checkouts case); ARCH-09 "limpar checkout first" protocol; METRICS-03 A/B statistical validity; F-10 boleto pixel corruption rule (critical). (5) Phase 4.8 — benchmark updated to 10–20% range per Hotmart Cast. (6) Phase 4.9 NEW — D-02 redline as first intervention; S-04 pandemic case study; D-04 infinite creative loop anti-pattern; D-03 lead qualification via survey. (7) Phase 5 — DIAG-03 CTA position case added to priority table; row 6 redline testing added; row 5 boleto removal added. (8) Phase 6 — 6.0 custom metric setup (M-07); TRAFFIC-04 checkout stability rationale; PRICING-04 CPA scaling alert; 6.2a 72h attribution window (M-05, critical); 6.2b all-creatives diagnostic (M-08); 6.2c CPM context rule (M-06). (9) Phase 5.2 — GAP-01 confidence upgraded [INF]→[REP] with cross-source corroboration. (10) Section 7 — failure modes 8–11 added. (11) Section 11 — two new conflict resolutions. (12) Section 12 — two new source entries. Sources: `outputs/gerador-pop/extractions/hotmart-cast-gold-extraction.md`, `outputs/gerador-pop/extractions/kiwicast-213-gold-extraction.md`. |
+| 0.4.0 | 2026-03-12 | SOP Creator / SOP Factory Squad | Enrichment from Hotmart Cast (RENU3kEns0E) + Kiwicast #213 (hnw1pGcc3_A). APPEND-ONLY — no existing content removed. Additions: (1) Section 1.1 — DIAG-01 purpose enrichment: diagnostic vs. resolution scope. (2) Section 1.4 — ARCH-04 upsell/downsell benchmarks; METRICS-01 contextual benchmark caveat. (3) Phase 1.3 — M-01 full metric hierarchy; click-to-page-view metric; M-02 CTR/CPC danger warning for beginners. (4) Phase 4.7 — ARCH-07 instant triage (115 checkouts case); ARCH-09 "limpar checkout first" protocol; METRICS-03 A/B statistical validity; F-10 boleto pixel corruption rule (critical). (5) Phase 4.8 — benchmark updated to 10–20% range per Hotmart Cast. (6) Phase 4.9 NEW — D-02 redline as first intervention; S-04 pandemic case study; D-04 infinite creative loop anti-pattern; D-03 lead qualification via survey. (7) Phase 5 — DIAG-03 CTA position case added to priority table; row 6 redline testing added; row 5 boleto removal added. (8) Phase 6 — 6.0 custom metric setup (M-07); TRAFFIC-04 checkout stability rationale; PRICING-04 CPA scaling alert; 6.2a 72h attribution window (M-05, critical); 6.2b all-creatives diagnostic (M-08); 6.2c CPM context rule (M-06). (9) Phase 5.2 — GAP-01 confidence upgraded [INF]→[REP] with cross-source corroboration. (10) Section 7 — failure modes 8–11 added. (11) Section 11 — two new conflict resolutions. (12) Section 12 — two new source entries. Sources: `outputs/aiox-sop/extractions/hotmart-cast-gold-extraction.md`, `outputs/aiox-sop/extractions/kiwicast-213-gold-extraction.md`. |
 
 ---
 

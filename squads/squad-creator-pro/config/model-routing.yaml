@@ -382,6 +382,12 @@ tasks:
     reason: "Creative persona synthesis with voice consistency"
     downgrade_risk: "Generic agent without depth"
 
+  create-from-sop.md:
+    tier: opus
+    confidence: high
+    reason: "Cross-file synthesis from canonical workspace YAML into executable artifacts"
+    downgrade_risk: "Process drift, wrong task decomposition, or invented flows"
+
   an-design-clone.md:
     tier: opus
     confidence: high
@@ -474,7 +480,7 @@ metrics:
     - quality_score  # If available
     - fallback_triggered
 
-  report_location: "outputs/metrics/model-routing-{date}.yaml"
+  report_location: ".aiox/squad-runtime/metrics/model-routing-{date}.yaml"
 
 # ============================================================================
 # EXTERNAL ALTERNATIVES (Opus Tasks with Qualified External Options)
@@ -540,7 +546,7 @@ external_alternatives:
         - "Batch processing minds"
       avoid_when:
         - "Need attention_triggers detail"
-    evidence: "outputs/llm-tests/extract-thinking-dna/glm5/"
+    evidence: ".aiox/squad-runtime/llm-tests/extract-thinking-dna/glm5/"
     notes: "GLM-5 matched Opus exactly. 19s vs 66s latency. $0.007 vs $0.50 cost."
 
   # Candidates for future testing
@@ -559,7 +565,7 @@ external_alternatives:
         - "Cost-sensitive research pipelines"
       avoid_when:
         - "Need GOLD/SILVER/BRONZE confidence naming"
-    evidence: "outputs/llm-tests/deep-research-pre-agent/glm5/"
+    evidence: ".aiox/squad-runtime/llm-tests/deep-research-pre-agent/glm5/"
     notes: "GLM-5 produced identical 7-component structure. 45.5s latency. $0.0098 cost."
 
   create-agent.md:
@@ -577,7 +583,7 @@ external_alternatives:
         - "Production agents"
       avoid_when:
         - "Runner v1 still in use"
-    evidence: "outputs/llm-tests/create-agent/glm5/"
+    evidence: ".aiox/squad-runtime/llm-tests/create-agent/glm5/"
     notes: |
       GLM-5 QUALIFIED after runner v2.0 (full task content).
       Output: 718 lines, all sections complete.

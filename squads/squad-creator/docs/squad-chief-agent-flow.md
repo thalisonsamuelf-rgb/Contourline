@@ -164,9 +164,9 @@ Estes tasks so estao disponiveis quando `squads/squad-creator-pro/config.yaml` e
 
 | Arquivo | Proposito |
 |---------|-----------|
+| `workflows/create-squad.yaml` | Criacao basica de squad |
 | `workflows/wf-create-squad.yaml` | Orquestrar criacao completa de squad (6 phases) |
 | `workflows/validate-squad.yaml` | Validacao granular de squad |
-| `workflows/wf-extraction-pipeline.yaml` | Pipeline de extracao |
 
 #### PRO Workflows (15) [PRO]
 
@@ -193,7 +193,6 @@ Estes tasks so estao disponiveis quando `squads/squad-creator-pro/config.yaml` e
 | Arquivo | Proposito |
 |---------|-----------|
 | `{registry_path}` | Ecosystem awareness - all squads |
-| `data/tool-registry.yaml` | Global tool catalog (MCPs, APIs, CLIs) |
 | `data/squad-analytics-guide.md` | Guide for *squad-analytics |
 | `data/squad-kb.md` | Knowledge base for squad creation |
 | `data/best-practices.md` | Best practices reference |
@@ -204,33 +203,34 @@ Estes tasks so estao disponiveis quando `squads/squad-creator-pro/config.yaml` e
 | `data/executor-decision-tree.md` | Executor assignment via 6-question elicitation |
 | `data/pipeline-patterns.md` | Pipeline patterns (state, progress, runner) |
 | `data/core-heuristics.md` | Core heuristics reference |
-| `data/tool-evaluation-framework.md` | Tool evaluation criteria |
 | `data/squad-type-definitions.yaml` | Squad type definitions |
-| `data/fusion-decision-points-analysis.md` | Fusion decision analysis |
-| `data/fusion-executor-analysis.md` | Fusion executor analysis |
-| `data/pm-best-practices.md` | PM best practices |
+| `squad-creator-pro/data/tool-registry.yaml` | Global tool catalog (MCPs, APIs, CLIs) [PRO] |
+| `squad-creator-pro/data/tool-evaluation-framework.md` | Tool evaluation criteria [PRO] |
+| `squad-creator-pro/data/fusion-decision-points-analysis.md` | Fusion decision analysis [PRO] |
+| `squad-creator-pro/data/fusion-executor-analysis.md` | Fusion executor analysis [PRO] |
+| `squad-creator-pro/data/pm-best-practices.md` | PM best practices [PRO] |
 
 ### Arquivos de Data (@oalanicolas) [PRO]
 
 | Arquivo | Proposito |
 |---------|-----------|
-| `data/an-source-tiers.yaml` | Source quality tiers |
-| `data/an-clone-validation.yaml` | Clone validation rules |
-| `data/an-output-examples.yaml` | Output examples reference |
-| `data/an-clone-anti-patterns.yaml` | Clone anti-patterns |
-| `data/an-anchor-words.yaml` | Anchor words for extraction |
-| `data/an-source-signals.yaml` | Source quality signals |
-| `data/an-diagnostic-framework.yaml` | Diagnostic framework |
+| `squad-creator-pro/data/an-source-tiers.yaml` | Source quality tiers |
+| `squad-creator-pro/data/an-clone-validation.yaml` | Clone validation rules |
+| `squad-creator-pro/data/an-output-examples.yaml` | Output examples reference |
+| `squad-creator-pro/data/an-clone-anti-patterns.yaml` | Clone anti-patterns |
+| `squad-creator-pro/data/an-anchor-words.yaml` | Anchor words for extraction |
+| `squad-creator-pro/data/an-source-signals.yaml` | Source quality signals |
+| `squad-creator-pro/data/an-diagnostic-framework.yaml` | Diagnostic framework |
 
 ### Arquivos de Data (@pedro-valerio) [PRO]
 
 | Arquivo | Proposito |
 |---------|-----------|
-| `data/pv-workflow-validation.yaml` | Workflow validation rules |
-| `data/pv-anchor-words.yaml` | Anchor words for validation |
-| `data/pv-authenticity-markers.yaml` | Authenticity markers |
-| `data/pv-output-examples.yaml` | Output examples |
-| `data/pv-meta-axiomas.yaml` | Meta axiomas de processo |
+| `squad-creator-pro/data/pv-workflow-validation.yaml` | Workflow validation rules |
+| `squad-creator-pro/data/pv-anchor-words.yaml` | Anchor words for validation |
+| `squad-creator-pro/data/pv-authenticity-markers.yaml` | Authenticity markers |
+| `squad-creator-pro/data/pv-output-examples.yaml` | Output examples |
+| `squad-creator-pro/data/pv-meta-axiomas.yaml` | Meta axiomas de processo |
 
 ### Arquivos de Checklists
 
@@ -492,15 +492,15 @@ flowchart TB
 
 | Comando | Task/Workflow | Operacao |
 |---------|---------------|----------|
-| `*audit` | `pv-audit.md` [PRO] | Auditar workflow |
-| `*axioma-assessment` | `pv-axioma-assessment.md` [PRO] | Avaliar axiomas de processo |
-| `*modernization-score` | `pv-modernization-score.md` [PRO] | Score de modernizacao |
+| `*audit` | `squad-creator-pro/tasks/pv-audit.md` [PRO] | Auditar workflow |
+| `*axioma-assessment` | `squad-creator-pro/tasks/pv-axioma-assessment.md` [PRO] | Avaliar axiomas de processo |
+| `*modernization-score` | `squad-creator-pro/tasks/pv-modernization-score.md` [PRO] | Score de modernizacao |
 
 ### Comandos de Tool Discovery (Base)
 
 | Comando | Task/Workflow | Operacao |
 |---------|---------------|----------|
-| `*discover-tools` | `discover-tools.md` (base) / `wf-discover-tools.yaml` [PRO] | Deep discovery |
+| `*discover-tools` | `discover-tools.md` (base) / `squad-creator-pro/workflows/wf-discover-tools.yaml` [PRO] | Deep discovery |
 | `*show-tools` | inline | Display tool-registry.yaml |
 | `*add-tool` | inline | Add tool to squad dependencies |
 
@@ -710,7 +710,7 @@ never_do:
 | `squads/squad-creator/config.yaml` | Squad configuration |
 | `squads/squad-creator/agents/squad-chief.md` | Agent definition |
 | `{registry_path}` | Ecosystem awareness |
-| `squads/squad-creator/data/tool-registry.yaml` | Tool catalog |
+| `squads/squad-creator-pro/data/tool-registry.yaml` | Tool catalog [PRO] |
 | `squads/squad-creator-pro/config.yaml` | PRO mode detection (existence = pro_mode=true) |
 
 ### Mission Router
@@ -750,8 +750,8 @@ data_loading:
     - "data/quality-dimensions-framework.md"
     - "data/decision-heuristics-framework.md"
   "*discover-tools":
-    - "data/tool-registry.yaml"
-    - "data/tool-evaluation-framework.md"
+    - "squad-creator-pro/data/tool-registry.yaml"
+    - "squad-creator-pro/data/tool-evaluation-framework.md"
 ```
 
 ### Lazy Loading Strategy

@@ -13,8 +13,8 @@ source_material:
   - "Captura/análise: 2026-03-11"
   - "Hotmart Cast — 'Como Criar FUNIL DE VENDAS EFICIENTE para PÚBLICO FRIO | Thiago Roas' (Video ID: RENU3kEns0E, ~40 min)"
   - "Kiwicast #213 — 'Ele Fez Mais De R$7 Milhões No Digital Como Gestor De Tráfego' (Video ID: hnw1pGcc3_A, ~1h25min)"
-  - "Extração Hotmart Cast: outputs/gerador-pop/extractions/hotmart-cast-gold-extraction.md"
-  - "Extração Kiwicast #213: outputs/gerador-pop/extractions/kiwicast-213-gold-extraction.md"
+  - "Extração Hotmart Cast: outputs/aiox-sop/extractions/hotmart-cast-gold-extraction.md"
+  - "Extração Kiwicast #213: outputs/aiox-sop/extractions/kiwicast-213-gold-extraction.md"
 track_record_source: "200M+ gastos em tráfego, 8 nichos escalados (3 acima de 200k/dia, 5 acima de 100k/dia)"
 owner: "Copy Chief"
 approver: "Squad Chief (or designated SME independent of document owner)"
@@ -43,8 +43,8 @@ notes: >
   É um framework aplicável a qualquer perpétuo VSL de tráfego frio.
 reviewed_by:
   - "Ohno (sop-extractor) — extração inicial, 2026-03-11"
-  - "Crosby (pop-auditor) — audit CONDITIONAL (score 64), 2026-03-11"
-  - "Crosby (pop-auditor) — re-audit APPROVED (score 81), 2026-03-11"
+  - "Crosby (sop-auditor) — audit CONDITIONAL (score 64), 2026-03-11"
+  - "Crosby (sop-auditor) — re-audit APPROVED (score 81), 2026-03-11"
   - "SOP Creator — remediação v0.3.0, 2026-03-11"
   - "SOP Creator — enriquecimento v0.4.0 com Hotmart Cast + Kiwicast #213, 2026-03-12"
 ---
@@ -1378,8 +1378,8 @@ Devem ser preenchidos antes de uso em produção como decisão de arquitetura.
 | KC213 | Kiwicast #213 — "Ele Fez Mais De R$7 Milhões No Digital Como Gestor De Tráfego" (hnw1pGcc3_A) | Entrevista em podcast | ~1h25min | Thiago Roas | ~2025/2026 |
 
 **Extração e análise de HC e KC213:**
-- Extração HC: `outputs/gerador-pop/extractions/hotmart-cast-gold-extraction.md`
-- Extração KC213: `outputs/gerador-pop/extractions/kiwicast-213-gold-extraction.md`
+- Extração HC: `outputs/aiox-sop/extractions/hotmart-cast-gold-extraction.md`
+- Extração KC213: `outputs/aiox-sop/extractions/kiwicast-213-gold-extraction.md`
 - Transcrições originais: `outputs/etl/thiago-roas-interviews/`
 
 ---
@@ -1389,9 +1389,9 @@ Devem ser preenchidos antes de uso em produção como decisão de arquitetura.
 | Versão | Data | Autor | Alterações |
 |--------|------|-------|-----------|
 | 0.1.0-draft | 2026-03-11 | Ohno (sop-extractor) | Extração inicial de @thiagoroas — palestra ao vivo e podcast Segredos da Escala #122 |
-| 0.2.0 | 2026-03-11 | SOP Creator (pop-criador) | Remediação estrutural baseada em Audit AUDIT-2026-001 (Crosby, score 64, CONDITIONAL). Adicionado: document control block no YAML (F-01, F-08, F-11), seção de Pré-Requisitos (F-03), Fase 7 de Gestão de Desvios com evidência da fonte (F-02), critérios de saída por fase (F-05), owners e datas para GAPs (F-07), Glossário com definições baseadas na fonte (F-20), campos location/feedback (F-04/F-10/F-14), referência SOP-COPY-VSL-ARCH-001 (F-13), histórico de revisões (F-01). |
-| 0.3.0 | 2026-03-11 | SOP Creator (pop-criador) | Remediação de qualidade baseada em re-audit (score 81, APPROVED → alvo CERTIFIED 90+). RF-01: adicionadas seções de anti-padrão em Fase 5 (5.7) e Fase 6 (6.7) com evidência da fonte. RF-02: approver corrigido para independência do owner, nota ISO 9001:2015 Clause 7.5.2(c) adicionada. RF-03: campo training_requirements adicionado ao YAML. RF-04: stub IDs SOP-COPY-LT-001 e SOP-COPY-LANC-001 adicionados nas referências adjacentes. RF-05: período mínimo de histórico de checkout [INF] adicionado nos pré-requisitos. F-15: seção 5.6 de cadência de monitoramento operacional adicionada. F-16: callouts de aplicação prática adicionados a todas as fases. F-18: callouts "Risco de pular" adicionados a todas as fases. Propósito: seção dedicada extraída do scope para bloco próprio. Índice atualizado. |
-| 0.4.0 | 2026-03-12 | SOP Creator (pop-criador) | Enriquecimento com evidências de 2 novas fontes: Hotmart Cast (HC) e Kiwicast #213 (KC213). APPEND-ONLY — nenhum conteúdo existente removido. Adições: (1) Premissa estrutural: lei do custo crescente + distinção oferta vs produto. (2) Fase 1: framework ticket alto vs volume, distinção R$100k/mês (qualquer nicho) vs R$100k/dia (big nicho), big nicho nunca morre, pequeno nicho como 1o degrau, corroboração de dor latente como escalável. (3) Fase 2: teto R$1.500 incompatível com público frio, teto R$500+ para não-celebridades, configuração base Front R$297 + Upsell R$500-600. (4) Fase 3: princípio upsell-first (design de trás para frente), threshold de ticket R$37 para posição de botão, caso dobrou conversão ao mover CTA, headlines de upsell validadas, warm buyer psychology para vídeo de upsell, UX botão de recusa, mecanismo de confusão do order bump, seção 3.8 coexistência perpétuo × lançamento (2 modos de falha + design saudável). (5) Fase 6: peso 80-20 do criativo, reframing criativo como início de venda, inteligência Meta no ad set + regra 10-20%/dia. (6) Upgrades de confiança: [INF] → [REP] em OCU e anti-padrão de dor articulada. (7) Seção de Fontes adicionada. (8) Tabela de resumo de confiança expandida. (9) GAPs: 3 novos adicionados, coluna Status adicionada. |
+| 0.2.0 | 2026-03-11 | SOP Creator (sop-creator) | Remediação estrutural baseada em Audit AUDIT-2026-001 (Crosby, score 64, CONDITIONAL). Adicionado: document control block no YAML (F-01, F-08, F-11), seção de Pré-Requisitos (F-03), Fase 7 de Gestão de Desvios com evidência da fonte (F-02), critérios de saída por fase (F-05), owners e datas para GAPs (F-07), Glossário com definições baseadas na fonte (F-20), campos location/feedback (F-04/F-10/F-14), referência SOP-COPY-VSL-ARCH-001 (F-13), histórico de revisões (F-01). |
+| 0.3.0 | 2026-03-11 | SOP Creator (sop-creator) | Remediação de qualidade baseada em re-audit (score 81, APPROVED → alvo CERTIFIED 90+). RF-01: adicionadas seções de anti-padrão em Fase 5 (5.7) e Fase 6 (6.7) com evidência da fonte. RF-02: approver corrigido para independência do owner, nota ISO 9001:2015 Clause 7.5.2(c) adicionada. RF-03: campo training_requirements adicionado ao YAML. RF-04: stub IDs SOP-COPY-LT-001 e SOP-COPY-LANC-001 adicionados nas referências adjacentes. RF-05: período mínimo de histórico de checkout [INF] adicionado nos pré-requisitos. F-15: seção 5.6 de cadência de monitoramento operacional adicionada. F-16: callouts de aplicação prática adicionados a todas as fases. F-18: callouts "Risco de pular" adicionados a todas as fases. Propósito: seção dedicada extraída do scope para bloco próprio. Índice atualizado. |
+| 0.4.0 | 2026-03-12 | SOP Creator (sop-creator) | Enriquecimento com evidências de 2 novas fontes: Hotmart Cast (HC) e Kiwicast #213 (KC213). APPEND-ONLY — nenhum conteúdo existente removido. Adições: (1) Premissa estrutural: lei do custo crescente + distinção oferta vs produto. (2) Fase 1: framework ticket alto vs volume, distinção R$100k/mês (qualquer nicho) vs R$100k/dia (big nicho), big nicho nunca morre, pequeno nicho como 1o degrau, corroboração de dor latente como escalável. (3) Fase 2: teto R$1.500 incompatível com público frio, teto R$500+ para não-celebridades, configuração base Front R$297 + Upsell R$500-600. (4) Fase 3: princípio upsell-first (design de trás para frente), threshold de ticket R$37 para posição de botão, caso dobrou conversão ao mover CTA, headlines de upsell validadas, warm buyer psychology para vídeo de upsell, UX botão de recusa, mecanismo de confusão do order bump, seção 3.8 coexistência perpétuo × lançamento (2 modos de falha + design saudável). (5) Fase 6: peso 80-20 do criativo, reframing criativo como início de venda, inteligência Meta no ad set + regra 10-20%/dia. (6) Upgrades de confiança: [INF] → [REP] em OCU e anti-padrão de dor articulada. (7) Seção de Fontes adicionada. (8) Tabela de resumo de confiança expandida. (9) GAPs: 3 novos adicionados, coluna Status adicionada. |
 
 ---
 
@@ -1399,6 +1399,6 @@ Devem ser preenchidos antes de uso em produção como decisão de arquitetura.
 *SOP ID: SOP-COPY-VSL-ARCH-001*
 *Versão: 0.4.0 — DRAFT-ENRICHED*
 *Gerado: 2026-03-11 | Remediado (v0.2.0): 2026-03-11 | Remediado (v0.3.0): 2026-03-11 | Enriquecido (v0.4.0): 2026-03-12*
-*Extrator: Ohno (sop-extractor) | Auditor: Crosby (pop-auditor) | Remediador/Enriquecedor: SOP Creator*
+*Extrator: Ohno (sop-extractor) | Auditor: Crosby (sop-auditor) | Remediador/Enriquecedor: SOP Creator*
 *Status: DRAFT-ENRICHED — pronto para re-audit. Não usar como referência final sem re-audit.*
 *Próximo review: 2027-03-11*

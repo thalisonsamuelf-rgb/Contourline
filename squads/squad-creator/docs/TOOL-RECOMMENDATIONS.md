@@ -373,7 +373,7 @@ O squad-creator já tem acesso a:
 - [MCP Servers Registry](https://github.com/modelcontextprotocol/servers)
 - [Glama MCP Directory](https://glama.ai/mcp/servers)
 - [Firecrawl Documentation](https://firecrawl.dev/docs)
-- [tool-registry.yaml](../data/tool-registry.yaml) - Registro completo
+- [tool-registry.yaml](../../squad-creator-pro/data/tool-registry.yaml) - Registro completo [PRO]
 
 ---
 

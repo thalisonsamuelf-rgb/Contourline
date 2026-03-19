@@ -3,7 +3,7 @@
 **ID:** `tracking-audit`
 **Category:** diagnostic
 **Domain:** media-buyer
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 ---
 
@@ -23,6 +23,125 @@ Auditoria completa do setup de tracking incluindo Pixel, CAPI, eventos, deduplic
 | Jeremy Haynes | CAPI Optimization       | 0.95   | Server-side tracking  |
 | Jeremy Haynes | Pixel Funnel Validation | 0.93   | Hierarquia de eventos |
 | Jeremy Haynes | Tracking Validation     | 0.92   | Discrepâncias         |
+
+---
+
+## v5.0 Addition: Page Analyzer Integration
+
+The tracking audit now integrates with the page-analyzer skill for comprehensive landing page + tracking validation.
+
+```yaml
+page_analyzer_integration:
+  skill_reference: "skills/diagnostic/page-analyzer/SKILL.md"
+  relationship: "tracking-audit validates Pixel/CAPI technical setup; page-analyzer evaluates the full landing page experience including Pixel presence"
+
+  integration_flow: |
+    When tracking-audit is executed:
+    1. Run standard tracking checks (Pixel, CAPI, events, deduplication, match rate)
+    2. ADDITIONALLY dispatch page-analyzer for EMQ score
+    3. Include EMQ score in tracking audit output as supplementary data
+    4. If page-analyzer Pixel dimension < 6.0: flag as tracking concern
+
+  cross_reference: |
+    page-analyzer Pixel dimension (weight 20%) checks:
+    - Meta Pixel base code present in HTML
+    - Pixel ID matches account configuration
+    - Standard events configured (PageView, ViewContent, etc.)
+    - CAPI signals detected (server-side tracking)
+    - Events firing correctly (fbq("track") calls present)
+
+    tracking-audit goes DEEPER into each of these with technical validation.
+    page-analyzer provides the SURFACE check + landing page quality context.
+```
+
+---
+
+## v5.0 Addition: EMQ Threshold as Hard Gate (NON-NEGOTIABLE)
+
+```yaml
+emq_hard_gate:
+  threshold: 6.0
+  action_if_below: BLOCK
+  scope: "Campaign launch is BLOCKED if landing page EMQ < 6.0"
+
+  enforcement: |
+    This threshold is enforced at two levels:
+    1. page-analyzer skill (primary enforcement)
+    2. launch-dod.md Gate 3 (checklist enforcement by @fiscal)
+    3. tracking-audit now ALSO checks and reports EMQ status
+
+  tracking_audit_responsibility: |
+    During tracking audit:
+    - IF EMQ score is available (page-analyzer already ran): include in report
+    - IF EMQ score is NOT available: dispatch page-analyzer to generate it
+    - IF EMQ < 6.0: add BLOCK recommendation to tracking audit output:
+      "EMQ {score}/10.0 -- ABAIXO DO MINIMO. Lancamento BLOQUEADO ate landing page
+      ser corrigida. Top melhorias listadas no page-analyzer report."
+
+  reference:
+    page_analyzer: "skills/diagnostic/page-analyzer/SKILL.md"
+    launch_dod: "checklists/launch-dod.md -- Gate 3"
+```
+
+---
+
+## v5.0 Addition: CAPI Verification Step (Browser + Server-Side)
+
+```yaml
+capi_verification:
+  rule: "Tracking audit must verify BOTH browser-side (Pixel) AND server-side (CAPI) tracking"
+  rationale: |
+    With iOS 14.5+ privacy changes, browser-only tracking loses approximately 40% of
+    attribution data. A complete tracking setup REQUIRES both:
+    1. Browser-side: Meta Pixel firing events on the page
+    2. Server-side: Conversions API (CAPI) sending events from the server
+
+    Verifying only Pixel is insufficient. CAPI is now a CRITICAL requirement for
+    accurate attribution and algorithm optimization.
+
+  verification_process:
+    browser_side:
+      checks:
+        - "Meta Pixel base code present (fbq init)"
+        - "PageView event firing on load"
+        - "Conversion events configured (Lead, Purchase, AddToCart, etc.)"
+        - "Advanced Matching enabled (em, ph, fn, ln, etc.)"
+        - "Event parameters complete (value, currency, content_ids)"
+      tool: "WebFetch page analysis + MCP get_pixels"
+
+    server_side:
+      checks:
+        - "CAPI endpoint configured and receiving events"
+        - "Deduplication active (event_id matching between Pixel and CAPI)"
+        - "Event Match Quality (EMQ) >= 6.0"
+        - "Required user data parameters sent (external_id OR fbp/fbc, client_ip, user_agent)"
+        - "High-priority parameters included (em, ph hashed SHA-256)"
+        - "Events arriving within acceptable latency (< 1 hour of browser event)"
+      tool: "MCP API diagnostics + Events Manager data"
+
+  combined_score: |
+    The tracking audit score now weights browser + server separately:
+    - Browser-side (Pixel): 40% of total score
+    - Server-side (CAPI): 40% of total score
+    - Match rate & deduplication: 20% of total score
+
+    A campaign with Pixel-only tracking (no CAPI) has a MAXIMUM possible score of
+    60/100 -- which falls below the 80% "good" threshold and triggers a WARNING.
+
+  emq_integration: |
+    Event Match Quality (EMQ) is the Meta-provided quality score for CAPI data.
+    - EMQ >= 8.0: Excellent (all user data params, low latency)
+    - EMQ 6.0-7.9: Good (core params present, acceptable matching)
+    - EMQ < 6.0: BLOCK -- tracking quality insufficient for campaign optimization
+
+    EMQ < 6.0 is a hard gate that BLOCKS campaign launch (aligned with launch-dod.md Gate 2
+    and page-analyzer EMQ threshold).
+
+  reference:
+    knowledge: "data/knowledge/meta/core_concepts.md (Pixel + CAPI section)"
+    launch_dod: "checklists/launch-dod.md -- Gate 2"
+    page_analyzer: "skills/diagnostic/page-analyzer/SKILL.md"
+```
 
 ---
 
@@ -333,5 +452,5 @@ triggers:
 
 ---
 
-_Tracking Audit Skill v1.0.0_
+_Tracking Audit Skill v1.1.0_
 _Media Buyer Squad - AIOS Synkra_

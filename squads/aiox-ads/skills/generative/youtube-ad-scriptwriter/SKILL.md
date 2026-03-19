@@ -9,10 +9,10 @@
 
 ## Overview
 
-Gera scripts completos para YouTube Ads com timing por secao (7 partes), aplica a 5-Second Hook Formula especifica para YouTube e valida o Relevance Triangle entre ad group, conteudo do ad e landing page.
+Generates complete YouTube Ads scripts with per-section timing (7 parts), applies the YouTube-specific 5-Second Hook Formula and validates the Relevance Triangle between ad group, ad content and landing page.
 
 **Activation Command:** `*youtube-script`
-**Announce:** "Ativando YouTube Ad Scriptwriter com 7-Part Script Structure e 5-Second Hook Formula."
+**Announce:** "Activating YouTube Ad Scriptwriter with 7-Part Script Structure and 5-Second Hook Formula."
 
 ---
 
@@ -20,9 +20,9 @@ Gera scripts completos para YouTube Ads com timing por secao (7 partes), aplica 
 
 | Expert        | Framework                   | Weight | Focus                         |
 | ------------- | --------------------------- | ------ | ----------------------------- |
-| Brian Moncada | 7-Part YouTube Ad Script    | 0.95   | Script completo com timing    |
-| Brian Moncada | 5-Second Hook Formula       | 0.92   | Hook especifico YouTube       |
-| Brian Moncada | YouTube Relevance Triangle  | 0.88   | Alinhamento ad-audience       |
+| Brian Moncada | 7-Part YouTube Ad Script    | 0.95   | Complete script with timing   |
+| Brian Moncada | 5-Second Hook Formula       | 0.92   | YouTube-specific hook         |
+| Brian Moncada | YouTube Relevance Triangle  | 0.88   | Ad-audience alignment         |
 
 ---
 
@@ -38,11 +38,11 @@ YOUTUBE AD SCRIPT TIMELINE
 |   HOOK    | PROBLEM  | SOLUTION  |CREDIBILITY|   PROOF   |   OFFER   |   CTA    |
 | (0-5s)    | (5-15s)  | (15-30s)  | (30-45s)  | (45-60s)  | (60-90s)  | (90-120s)|
 |           |          |           |           |           |           |          |
-| Captura   | Amplifica| Apresenta | Estabelece| Mostra    | Detalha   | Acao     |
-| atencao   | a dor    | saida     | autoridade| resultados| a oferta  | clara    |
+| Capture   | Amplify  | Present   | Establish | Show      | Detail    | Clear    |
+| attention | the pain | way out   | authority | results   | the offer | action   |
 |-----------|----------|-----------|-----------|-----------|-----------|----------|
 
-NOTA: Timing ajusta conforme objetivo (ver SE/ENTAO rules)
+NOTE: Timing adjusts based on objective (see IF/THEN rules)
 ```
 
 ### Part-by-Part Breakdown
@@ -50,114 +50,114 @@ NOTA: Timing ajusta conforme objetivo (ver SE/ENTAO rules)
 ```yaml
 script_parts:
   1_hook:
-    timing: '0-5 segundos'
-    purpose: 'Capturar atencao antes do SKIP'
-    format: 'Verbal + Visual (YouTube hooks sao multimodais)'
+    timing: '0-5 seconds'
+    purpose: 'Capture attention before SKIP'
+    format: 'Verbal + Visual (YouTube hooks are multimodal)'
     critical: true
-    note: 'O viewer decide em 5s se vai assistir ou pular'
+    note: 'Viewer decides in 5s whether to watch or skip'
     elements:
-      verbal: 'Frase de impacto ou pergunta'
-      visual: 'Corte rapido, texto na tela, movimento'
-      audio: 'Tom energetico, musica de impacto'
+      verbal: 'Impact phrase or question'
+      visual: 'Quick cut, text on screen, movement'
+      audio: 'Energetic tone, impact music'
 
   2_problem:
-    timing: '5-15 segundos'
-    purpose: 'Amplificar a dor que o viewer sente'
-    format: 'Descrever situacao dolorosa com especificidade'
+    timing: '5-15 seconds'
+    purpose: 'Amplify the pain the viewer feels'
+    format: 'Describe painful situation with specificity'
     elements:
-      verbal: 'Voce provavelmente esta [situacao]...'
-      visual: 'B-roll de frustacao, graficos negativos'
-      connection: 'O viewer precisa pensar "isso sou eu"'
+      verbal: 'You are probably [situation]...'
+      visual: 'B-roll of frustration, negative graphs'
+      connection: 'Viewer needs to think "that is me"'
 
   3_solution:
-    timing: '15-30 segundos'
-    purpose: 'Apresentar a saida (mecanismo unico)'
-    format: 'Introduzir metodo/framework/sistema'
+    timing: '15-30 seconds'
+    purpose: 'Present the way out (unique mechanism)'
+    format: 'Introduce method/framework/system'
     elements:
-      verbal: 'Existe um metodo que [resolve]...'
-      visual: 'Diagrama, framework visual, transicao positiva'
-      note: 'Nao vender ainda, apenas apresentar que existe uma saida'
+      verbal: 'There is a method that [solves]...'
+      visual: 'Diagram, visual framework, positive transition'
+      note: 'Do not sell yet, just present that a way out exists'
 
   4_credibility:
-    timing: '30-45 segundos'
-    purpose: 'Estabelecer autoridade e confianca'
-    format: 'Quem voce e, porque devem ouvir voce'
+    timing: '30-45 seconds'
+    purpose: 'Establish authority and trust'
+    format: 'Who you are, why they should listen to you'
     elements:
-      verbal: 'Meu nome e [X], nos ultimos [Y] anos...'
-      visual: 'Logos de clientes, screenshots, certificacoes'
+      verbal: 'My name is [X], in the last [Y] years...'
+      visual: 'Client logos, screenshots, certifications'
       variants:
-        - 'Resultados pessoais'
-        - 'Resultados de clientes'
-        - 'Credenciais e experiencia'
+        - 'Personal results'
+        - 'Client results'
+        - 'Credentials and experience'
         - 'Media mentions'
 
   5_proof:
-    timing: '45-60 segundos'
-    purpose: 'Mostrar resultados concretos (prova social)'
-    format: 'Numeros, depoimentos, cases'
+    timing: '45-60 seconds'
+    purpose: 'Show concrete results (social proof)'
+    format: 'Numbers, testimonials, case studies'
     elements:
-      verbal: '[Numero] de [pessoas] conseguiram [resultado]...'
-      visual: 'Screenshots, graficos, video depoimentos'
+      verbal: '[Number] of [people] achieved [result]...'
+      visual: 'Screenshots, graphs, video testimonials'
       types:
-        - 'Numeros agregados (500+ alunos, R$10M gerenciados)'
-        - 'Case study especifico (de X para Y em Z tempo)'
-        - 'Depoimento (video ou texto com foto)'
+        - 'Aggregate numbers (500+ students, R$10M managed)'
+        - 'Specific case study (from X to Y in Z time)'
+        - 'Testimonial (video or text with photo)'
 
   6_offer:
-    timing: '60-90 segundos'
-    purpose: 'Detalhar o que estao recebendo'
-    format: 'Stack de valor com preco'
+    timing: '60-90 seconds'
+    purpose: 'Detail what they are getting'
+    format: 'Value stack with price'
     elements:
-      verbal: 'Quando voce entra, voce recebe...'
-      visual: 'Lista de beneficios, mockups, valor vs preco'
+      verbal: 'When you join, you get...'
+      visual: 'Benefits list, mockups, value vs price'
       structure:
-        - 'Beneficio 1 (valor R$X)'
-        - 'Beneficio 2 (valor R$X)'
-        - 'Beneficio 3 (valor R$X)'
-        - 'Bonus (valor R$X)'
-        - 'Total: R$XX.XXX por apenas R$X.XXX'
+        - 'Benefit 1 (value R$X)'
+        - 'Benefit 2 (value R$X)'
+        - 'Benefit 3 (value R$X)'
+        - 'Bonus (value R$X)'
+        - 'Total: R$XX.XXX for only R$X.XXX'
 
   7_cta:
-    timing: '90-120 segundos'
-    purpose: 'Acao clara e urgencia'
-    format: 'O que fazer agora + porque agora'
+    timing: '90-120 seconds'
+    purpose: 'Clear action and urgency'
+    format: 'What to do now + why now'
     elements:
-      verbal: 'Clica no link abaixo/no botao agora...'
-      visual: 'Seta para link, botao destacado, countdown'
+      verbal: 'Click the link below/the button now...'
+      visual: 'Arrow to link, highlighted button, countdown'
       urgency:
-        - 'Vagas limitadas'
-        - 'Preco sobe em [data]'
-        - 'Bonus exclusivo para quem entra hoje'
-      note: 'Repetir CTA 2x (inicio e fim da secao)'
+        - 'Limited spots'
+        - 'Price goes up on [date]'
+        - 'Exclusive bonus for those who join today'
+      note: 'Repeat CTA 2x (start and end of section)'
 ```
 
 ---
 
-## SE/ENTAO Rules
+## IF/THEN Rules
 
 ```
-SE objetivo = awareness
-  ENTAO script 30-60s (TrueView InStream)
-  ESTRUTURA: Hook (5s) + Problem (10s) + Solution (15s) + CTA (10s)
-  PULAR: Credibility e Proof (nao ha tempo)
+IF objective = awareness
+  THEN script 30-60s (TrueView InStream)
+  STRUCTURE: Hook (5s) + Problem (10s) + Solution (15s) + CTA (10s)
+  SKIP: Credibility and Proof (no time)
 
-SE objetivo = conversao
-  ENTAO script 90-120s (formato completo, 7 partes)
-  ESTRUTURA: Todas as 7 partes com timing padrao
+IF objective = conversion
+  THEN script 90-120s (complete format, 7 parts)
+  STRUCTURE: All 7 parts with standard timing
 
-SE produto high-ticket (>R$2000)
-  ENTAO incluir secao Proof estendida (+30s)
-  RAZAO: High-ticket exige mais prova social para converter
-  TIMING: Proof vira 45-90s (ao inves de 45-60s)
+IF product high-ticket (>R$2000)
+  THEN include extended Proof section (+30s)
+  REASON: High-ticket requires more social proof to convert
+  TIMING: Proof becomes 45-90s (instead of 45-60s)
 
-SE remarketing (viewer ja conhece)
-  ENTAO skip Problem, direto para Offer
-  ESTRUTURA: Hook (5s) + Offer (15s) + CTA (10s) = 30s total
-  RAZAO: Viewer ja conhece o problema e a solucao
+IF remarketing (viewer already knows)
+  THEN skip Problem, go straight to Offer
+  STRUCTURE: Hook (5s) + Offer (15s) + CTA (10s) = 30s total
+  REASON: Viewer already knows the problem and the solution
 
-SE Relevance Triangle quebrado (ad != LP)
-  ENTAO reescrever script antes de publicar
-  RAZAO: Mismatch ad-LP destroi Quality Score e conversao
+IF Relevance Triangle broken (ad != LP)
+  THEN rewrite script before publishing
+  REASON: Ad-LP mismatch destroys Quality Score and conversion
 ```
 
 ---
@@ -169,40 +169,40 @@ SE Relevance Triangle quebrado (ad != LP)
 ```yaml
 hook_types:
   1_question:
-    format: 'Pergunta direta sobre a dor'
-    example: 'Voce ainda luta para conseguir clientes online?'
-    best_for: 'Audiencia consciente do problema'
-    visual: 'Close-up no rosto, expressao de curiosidade'
+    format: 'Direct question about the pain'
+    example: 'Are you still struggling to get clients online?'
+    best_for: 'Problem-aware audience'
+    visual: 'Close-up on face, curiosity expression'
 
   2_statistic:
-    format: 'Numero impactante + implicacao'
-    example: '97% dos anuncios no YouTube sao ignorados. Aqui esta o porque...'
-    best_for: 'Audiencia analitica, B2B'
-    visual: 'Numero grande na tela, animacao'
+    format: 'Impactful number + implication'
+    example: '97% of YouTube ads are ignored. Here is why...'
+    best_for: 'Analytical audience, B2B'
+    visual: 'Large number on screen, animation'
 
   3_contrarian:
-    format: 'Desafiar crenca comum'
-    example: 'Pare de gastar com Google Ads agora mesmo. Serio.'
-    best_for: 'Audiencia experiente, pattern interrupt'
-    visual: 'Gesto de "pare", expressao seria'
+    format: 'Challenge common belief'
+    example: 'Stop spending on Google Ads right now. Seriously.'
+    best_for: 'Experienced audience, pattern interrupt'
+    visual: '"Stop" gesture, serious expression'
 
   4_story:
-    format: 'Inicio de narrativa pessoal'
-    example: 'Eu estava quebrado, com R$47 na conta, quando descobri...'
+    format: 'Start of personal narrative'
+    example: 'I was broke, with R$47 in my account, when I discovered...'
     best_for: 'Personal branding, high-ticket'
-    visual: 'Ambiente informal, olhar na camera'
+    visual: 'Informal setting, looking at camera'
 
   5_curiosity:
-    format: 'Revelar algo inesperado'
-    example: 'O truque estranho que triplicou minhas vendas em 30 dias...'
+    format: 'Reveal something unexpected'
+    example: 'The weird trick that tripled my sales in 30 days...'
     best_for: 'Broad audience, cold traffic'
-    visual: 'Expressao de surpresa, tela com resultado'
+    visual: 'Surprise expression, screen with result'
 
   6_direct:
-    format: 'Ir direto ao ponto'
-    example: 'Se voce quer escalar seu negocio para 7 digitos, assista isto.'
-    best_for: 'Audiencia com alta intent, remarketing'
-    visual: 'Olhar direto na camera, tom confiante'
+    format: 'Get straight to the point'
+    example: 'If you want to scale your business to 7 figures, watch this.'
+    best_for: 'High-intent audience, remarketing'
+    visual: 'Direct look at camera, confident tone'
 ```
 
 ### Hook Variant Generation
@@ -210,21 +210,21 @@ hook_types:
 ```
 HOOK VARIANT GENERATION FLOW
 
-Para cada script body:
+For each script body:
     |
-    +-- Gerar 3-5 hooks diferentes
+    +-- Generate 3-5 different hooks
     |   |
-    |   +-- Hook 1: Question (mais seguro)
+    |   +-- Hook 1: Question (safest)
     |   +-- Hook 2: Contrarian (pattern interrupt)
-    |   +-- Hook 3: Statistic (credibilidade)
-    |   +-- Hook 4: Story (conexao emocional)
+    |   +-- Hook 3: Statistic (credibility)
+    |   +-- Hook 4: Story (emotional connection)
     |   +-- Hook 5: Direct (high-intent)
     |
-    +-- Testar todos com mesmo body
+    +-- Test all with same body
     |
-    +-- Medir View Rate por hook (>20% = bom)
+    +-- Measure View Rate per hook (>20% = good)
     |
-    +-- Escalar winner, matar losers em 24-48h
+    +-- Scale winner, kill losers in 24-48h
 ```
 
 ---
@@ -245,19 +245,19 @@ YOUTUBE RELEVANCE TRIANGLE (Brian Moncada)
             /________________\
     Ad Content ----MATCH---- Landing Page
 
-REGRA: Os tres vertices DEVEM estar alinhados.
+RULE: All three vertices MUST be aligned.
 
-Exemplo CORRETO:
-  Keywords: "mentoria para empresarios"
-  Ad Script: Fala sobre mentoria para empresarios
-  LP: Headline = "Mentoria para Empresarios"
+CORRECT example:
+  Keywords: "business mentorship"
+  Ad Script: Talks about business mentorship
+  LP: Headline = "Business Mentorship"
 
-Exemplo INCORRETO:
-  Keywords: "mentoria para empresarios"
-  Ad Script: Fala sobre curso de marketing digital
-  LP: Pagina generica de servicos
+INCORRECT example:
+  Keywords: "business mentorship"
+  Ad Script: Talks about digital marketing course
+  LP: Generic services page
 
-SE qualquer par esta desalinhado --> REESCREVER antes de publicar
+IF any pair is misaligned --> REWRITE before publishing
 ```
 
 ---
@@ -291,38 +291,38 @@ hook_selection:
   cold_traffic:
     recommended: ['question', 'curiosity', 'statistic']
     avoid: ['direct']
-    reason: 'Cold precisa de pattern interrupt'
+    reason: 'Cold needs pattern interrupt'
 
   warm_traffic:
     recommended: ['story', 'contrarian', 'statistic']
     avoid: []
-    reason: 'Warm ja tem alguma familiaridade'
+    reason: 'Warm already has some familiarity'
 
   hot_traffic:
     recommended: ['direct', 'story']
     avoid: ['question']
-    reason: 'Hot ja sabe o problema, quer solucao'
+    reason: 'Hot already knows the problem, wants solution'
 ```
 
 ### Step 3: Write 7-Part Script
 
 ```yaml
 writing_process:
-  1: 'Escrever Section 2 (Problem) primeiro -- ancora todo o script'
-  2: 'Escrever Section 3 (Solution) -- resposta direta ao problema'
-  3: 'Escrever Sections 4-5 (Credibility + Proof) -- build trust'
-  4: 'Escrever Section 6 (Offer) -- stack de valor'
-  5: 'Escrever Section 7 (CTA) -- acao clara'
-  6: 'Escrever Section 1 (Hook) POR ULTIMO -- hook e derivado do script'
-  note: 'Escrever hook por ultimo garante que ele conecta com o corpo'
+  1: 'Write Section 2 (Problem) first -- anchors the entire script'
+  2: 'Write Section 3 (Solution) -- direct answer to the problem'
+  3: 'Write Sections 4-5 (Credibility + Proof) -- build trust'
+  4: 'Write Section 6 (Offer) -- value stack'
+  5: 'Write Section 7 (CTA) -- clear action'
+  6: 'Write Section 1 (Hook) LAST -- hook is derived from the script'
+  note: 'Writing hook last ensures it connects with the body'
 ```
 
 ### Step 4: Generate Hook Variants
 
 ```yaml
 variant_generation:
-  quantity: '3-5 hooks por script'
-  types: 'Usar pelo menos 3 tipos diferentes'
+  quantity: '3-5 hooks per script'
+  types: 'Use at least 3 different types'
   format:
     per_variant:
       verbal: 'O que o presenter fala'
@@ -339,20 +339,20 @@ variant_generation:
 ```yaml
 validation_checklist:
   keyword_to_ad:
-    check: 'Keywords do ad group aparecem no script?'
-    fix: 'Incluir keywords primarios no hook e problem sections'
+    check: 'Do ad group keywords appear in the script?'
+    fix: 'Include primary keywords in hook and problem sections'
 
   ad_to_lp:
-    check: 'Promessa do script = headline da LP?'
-    fix: 'Alinhar LP headline com offer section do script'
+    check: 'Does script promise = LP headline?'
+    fix: 'Align LP headline with offer section of script'
 
   keyword_to_lp:
-    check: 'Keywords do ad group aparecem na LP?'
-    fix: 'Incluir keywords no H1, meta title e body da LP'
+    check: 'Do ad group keywords appear on the LP?'
+    fix: 'Include keywords in H1, meta title and LP body'
 
   verdict:
-    pass: 'Todos os tres pares alinhados'
-    fail: 'Qualquer par desalinhado -> reescrever antes de publicar'
+    pass: 'All three pairs aligned'
+    fail: 'Any pair misaligned -> rewrite before publishing'
 ```
 
 ---
@@ -363,7 +363,7 @@ validation_checklist:
 youtube_ad_script:
   product: 'Mentoria Empresarial'
   objective: 'conversion'
-  total_duration: '120 segundos'
+  total_duration: '120 seconds'
   format: 'TrueView InStream'
   generation_date: '2026-03-16'
 
@@ -397,7 +397,7 @@ youtube_ad_script:
     offer:
       timing: '60-90s'
       verbal: 'Quando voce entra na Mentoria Escala Inteligente, voce recebe: diagnostico completo do seu negocio, plano de acao personalizado, 12 sessoes 1:1 comigo, acesso a comunidade de empresarios e garantia incondicional de 30 dias.'
-      visual: 'Stack visual de beneficios, mockup do material, preco com ancora'
+      visual: 'Visual benefit stack, material mockup, price with anchor'
 
     cta:
       timing: '90-120s'
@@ -451,20 +451,20 @@ youtube_ad_script:
 ### Triggered By
 
 - User command - `*youtube-script`
-- `creative-brief` - quando platform=youtube
-- `youtube-campaign-launcher` - quando precisa de scripts para campanhas
+- `creative-brief` - when platform=youtube
+- `youtube-campaign-launcher` - when scripts are needed for campaigns
 
 ### Dispatches To
 
-- `creative-brief` - para producao do video
-- `youtube-campaign-launcher` - script pronto para campanha
-- `ad-compliance-gate` - validacao pre-publish
+- `creative-brief` - for video production
+- `youtube-campaign-launcher` - script ready for campaign
+- `ad-compliance-gate` - pre-publish validation
 
 ### Agent Assignment
 
 - **Primary:** @tom-breeze
-- **Support:** @creative-analyst (revisao de copy)
-- **Escalation:** @ad-midas (decisoes de posicionamento)
+- **Support:** @creative-analyst (copy review)
+- **Escalation:** @ad-midas (positioning decisions)
 
 ---
 

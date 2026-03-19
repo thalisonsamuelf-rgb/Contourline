@@ -9,8 +9,8 @@ source: "EXTRACTED FROM @thiagoroas (Thiago Roas)"
 source_material:
   - "Hotmart Cast — 'Como Criar FUNIL DE VENDAS EFICIENTE para PÚBLICO FRIO | Thiago Roas' (Video ID: RENU3kEns0E, ~40 min)"
   - "Kiwicast #213 — 'Ele Fez Mais De R$7 Milhões No Digital Como Gestor De Tráfego' (Video ID: hnw1pGcc3_A, ~1h25min)"
-  - "Extração Hotmart Cast: outputs/gerador-pop/extractions/hotmart-cast-gold-extraction.md"
-  - "Extração Kiwicast #213: outputs/gerador-pop/extractions/kiwicast-213-gold-extraction.md"
+  - "Extração Hotmart Cast: outputs/aiox-sop/extractions/hotmart-cast-gold-extraction.md"
+  - "Extração Kiwicast #213: outputs/aiox-sop/extractions/kiwicast-213-gold-extraction.md"
 track_record_source: "200M+ gastos em tráfego, 8 nichos escalados (3 acima de 200k/dia, 5 acima de 100k/dia)"
 owner: "Copy Chief"
 approver: "Squad Chief (independent of document owner — per ISO 9001:2015 Clause 7.5.2(c))"
@@ -743,8 +743,8 @@ Revisar o modelo escolhido se, após 60 dias de operação e diagnóstico ativo 
 
 | Arquivo | Conteúdo |
 |---------|---------|
-| `outputs/gerador-pop/extractions/hotmart-cast-gold-extraction.md` | Extração completa Hotmart Cast |
-| `outputs/gerador-pop/extractions/kiwicast-213-gold-extraction.md` | Extração completa Kiwicast #213 |
+| `outputs/aiox-sop/extractions/hotmart-cast-gold-extraction.md` | Extração completa Hotmart Cast |
+| `outputs/aiox-sop/extractions/kiwicast-213-gold-extraction.md` | Extração completa Kiwicast #213 |
 
 ### 9.4 Localização e Retenção
 

@@ -3,7 +3,7 @@
 **ID:** `kill-scale-rules`
 **Category:** optimization
 **Domain:** media-buyer
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 ---
 
@@ -24,6 +24,95 @@ Regras sistemáticas para pausar (kill) ou escalar ads/adsets/campanhas baseado 
 | Jeremy Haynes | Scaling Rules    | 0.93   | Regras de escala      |
 | Brian Moncada | Andromeda Method | 0.90   | Thresholds otimizados |
 | Alex Hormozi  | Hydra Strategy   | 0.85   | Escala agressiva      |
+
+---
+
+## v5.0 Addition: Learning Phase Gate (FIRST STEP -- NON-NEGOTIABLE)
+
+Before evaluating ANY kill or scale rule, the agent MUST check Learning Phase status.
+
+```yaml
+learning_phase_gate:
+  step: 0  # Executes BEFORE all kill/scale rules
+  check: "Run learning-phase-detector OR read campaign-state.yaml learning_phase section"
+  if_active: "BLOCK ALL kill/scale actions. Return message: 'Learning Phase active -- no modifications allowed.'"
+  sole_exception: "Campaign violating policy OR burning budget with ZERO results after 2x expected learning period"
+  exception_tier: Human
+
+  rationale: |
+    During Learning Phase, Meta's algorithm is exploring optimal delivery.
+    Performance metrics (CPA, ROAS, CTR) are artificially volatile and NOT representative
+    of steady-state performance. Kill/scale decisions based on Learning Phase data
+    will waste budget and reset the learning counter, compounding the damage.
+
+  reference: "data/knowledge/meta/learning_phase.md"
+  skill_reference: "skills/diagnostic/learning-phase-detector/SKILL.md"
+```
+
+---
+
+## v5.0 Addition: Breakdown Effect Disclaimer (NON-NEGOTIABLE)
+
+```yaml
+breakdown_effect_disclaimer:
+  rule: "NEVER make kill/scale decisions based solely on breakdown data"
+  applies_to: "All kill rules AND all scale rules below"
+
+  context: |
+    Meta's breakdown metrics (by age, gender, placement, device) do NOT sum to the
+    campaign/ad set total. Breakdowns are diagnostic tools for directional insight,
+    NOT decision-making anchors. An age group showing high CPA in breakdowns may
+    not reflect reality due to cross-device attribution and statistical sampling.
+
+  agent_instruction: |
+    When evaluating kill/scale triggers:
+    1. ALWAYS use aggregate (total) metrics as the primary decision input
+    2. Breakdowns may be used as SUPPORTING evidence only
+    3. NEVER kill an ad set because one breakdown dimension looks bad
+    4. NEVER scale based on a single breakdown showing good results
+    5. If breakdown data contradicts aggregate data, aggregate wins
+
+  reference: "data/knowledge/meta/breakdown_effect.md"
+```
+
+---
+
+## v5.0 Addition: Auction Overlap Check (Pre-Scale Gate)
+
+Before executing any SCALE action, verify no self-competition exists between ad sets.
+
+```yaml
+auction_overlap_pre_scale:
+  step: 0.5  # After Learning Phase gate, before scale rules
+  applies_to: "All scale rules (vertical, horizontal, hydra)"
+  check: "Run auction-overlap-detector OR review last overlap report"
+
+  if_overlap_above_30_percent:
+    action: "BLOCK scale action for the overlapping ad sets"
+    message: "Auction overlap > 30% detected between ad sets. Scaling will amplify self-competition and waste budget."
+    recommendation: "Consolidate overlapping ad sets or apply mutual exclusions BEFORE scaling"
+    tier: HITL
+
+  if_overlap_15_to_30_percent:
+    action: "WARN -- scale allowed with caution"
+    message: "Moderate overlap (15-30%) detected. Monitor CPM and delivery after scaling."
+
+  if_overlap_below_15_percent:
+    action: "PASS -- proceed with scale"
+
+  reference: "data/knowledge/meta/auction_overlap.md"
+  skill_reference: "skills/diagnostic/auction-overlap-detector/SKILL.md"
+```
+
+---
+
+## Knowledge Base References
+
+| Document | Path | Relevance |
+|----------|------|-----------|
+| Learning Phase | `data/knowledge/meta/learning_phase.md` | MUST check before any kill/scale decision |
+| Breakdown Effect | `data/knowledge/meta/breakdown_effect.md` | NEVER decide from breakdown data alone |
+| Auction Overlap | `data/knowledge/meta/auction_overlap.md` | MUST check overlap before scaling |
 
 ---
 
@@ -320,5 +409,5 @@ kill_scale_analysis:
 
 ---
 
-_Kill Scale Rules Skill v1.0.0_
+_Kill Scale Rules Skill v1.1.0_
 _Media Buyer Squad - AIOS Synkra_

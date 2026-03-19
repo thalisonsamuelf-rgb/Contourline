@@ -3,7 +3,7 @@
 **ID:** `campaign-structure`
 **Category:** strategic
 **Domain:** media-buyer
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 ---
 
@@ -23,6 +23,137 @@ Define estrutura otimizada de campanhas, adsets e ads para diferentes objetivos 
 | Jeremy Haynes | CBO vs ABO Strategy   | 0.95   | Estrutura de budget        |
 | Jeremy Haynes | Campaign Organization | 0.93   | Nomenclatura e organização |
 | Brian Moncada | Andromeda Structure   | 0.90   | Testing structure          |
+
+---
+
+## v5.0 Addition: Bidding Strategy Decision Tree Reference
+
+Before configuring campaign structure, consult the bidding-strategy skill for optimal bid strategy selection. The bid strategy directly impacts structure decisions (CBO vs ABO, budget allocation).
+
+```yaml
+bidding_strategy_integration:
+  skill_reference: "skills/strategic/bidding-strategy/SKILL.md"
+  when_to_consult: "ALWAYS before finalizing campaign structure"
+  decision_flow: |
+    1. Run *bidding {campaign_slug} to get strategy recommendation
+    2. Use recommended bid strategy as input for structure decision:
+       - Lowest Cost (new account) --> Testing Structure (ABO) preferred
+       - Cost Cap (mature account) --> Scaling Structure (CBO) preferred
+       - ROAS Goal (e-commerce) --> CBO with value optimization
+       - Bid Cap (brand) --> Dedicated brand campaign structure
+    3. Bid strategy parameters (Cost Cap amount, ROAS target) feed into adset configuration
+```
+
+---
+
+## v5.0 Addition: Advantage+ as Default for Meta Campaigns
+
+```yaml
+advantage_plus_default:
+  rule: "Advantage+ is the DEFAULT campaign type for Meta campaigns"
+  rationale: |
+    Meta's Andromeda ranking system (Brian Moncada insight) prioritizes creative quality
+    over manual targeting precision. Advantage+ leverages Meta's full signal graph to find
+    the best audiences, outperforming manual targeting in most cases. Creative quality is
+    now the primary lever -- not audience selection.
+
+  when_to_use_advantage_plus:
+    - "New campaigns with broad appeal products/services"
+    - "E-commerce campaigns (Advantage+ Shopping is Meta's recommended default)"
+    - "Lead gen campaigns where audience is not hyper-niche"
+    - "Any campaign where creative volume >= 5 variations available"
+
+  when_NOT_to_use:
+    - "Hyper-local campaigns with geographic restrictions"
+    - "B2B campaigns targeting < 100k audience with specific job titles"
+    - "Retargeting campaigns with known Custom Audiences"
+    - "Brand campaigns with strict audience control requirements"
+
+  expert: "Brian Moncada -- Andromeda Method"
+  weight: 0.90
+```
+
+---
+
+## v5.0 Addition: Budget Minimum Rule
+
+```yaml
+budget_minimum_rule:
+  rule: "Budget >= 5x target CPA per ad set per day"
+  source: "Meta Learning Phase requirement"
+  rationale: |
+    For an ad set to exit Learning Phase, it needs approximately 50 optimization events
+    within 7 days. This means roughly 7 events per day. To achieve 7 conversions/day
+    at your target CPA, the daily budget must be at least 5x (conservative) to 10x
+    (recommended) the target CPA.
+
+    Budget below this threshold leads to Learning Limited status, which means the
+    algorithm cannot optimize effectively and performance will be subpar.
+
+  calculation: |
+    Minimum daily budget = Target CPA x 5
+    Recommended daily budget = Target CPA x 7-10
+
+    Example:
+      Target CPA = R$50
+      Minimum budget per ad set = R$250/day
+      Recommended budget per ad set = R$350-500/day
+
+  enforcement:
+    - "ad-compliance-gate validates budget against this minimum"
+    - "If budget < 5x target CPA: WARN (campaign may enter Learning Limited)"
+    - "If budget < 3x target CPA: BLOCK (Learning Phase exit is mathematically unlikely)"
+
+  reference: "data/knowledge/meta/learning_phase.md"
+```
+
+---
+
+## v5.0 Addition: Naming Convention Enforcement
+
+```yaml
+naming_convention_enforcement:
+  rule: "ALL campaigns, ad sets, and ads MUST follow the naming convention below"
+  enforcement: "ad-compliance-gate checks naming on every compliance scan"
+
+  format:
+    campaign: "[TYPE] {Product/Service} - {Audience Segment} - {MMDD}"
+    adset: "{Audience Type} - {Audience Detail} - {Placement}"
+    ad: "{Creative Type} - {Hook Type} - {Version}"
+
+  full_example:
+    campaign: "[SCALE] Mentoria Ads Pro - LAL Purchase 3% - 0318"
+    adset: "LAL - Purchase 3% - Auto Placements"
+    ad: "VID - Hook Resultado - V2"
+
+  type_prefixes:
+    TEST: "Campanhas de teste (ABO, validacao de criativos/audiencias)"
+    SCALE: "Campanhas de escala (CBO, winners comprovados)"
+    COLD: "Prospeccao (publico frio, awareness)"
+    WARM: "Nurturing (publico morno, consideration)"
+    HOT: "Remarketing (publico quente, conversao)"
+    LAUNCH: "Campanhas de lancamento (fases)"
+    EVERGREEN: "Campanhas perpetuas (always-on)"
+    ADV: "Advantage+ campaigns (Meta automated)"
+
+  audience_type_codes:
+    LAL: "Lookalike audience"
+    INT: "Interest targeting"
+    BROAD: "Broad targeting (age + gender only)"
+    RMK: "Remarketing / Custom Audience"
+    ADV: "Advantage+ audience (Meta decides)"
+
+  creative_type_codes:
+    VID: "Video"
+    IMG: "Image (static)"
+    CAR: "Carousel"
+    COL: "Collection"
+    DPA: "Dynamic Product Ad"
+
+  validation: |
+    Regex pattern for campaign name:
+    ^\[(TEST|SCALE|COLD|WARM|HOT|LAUNCH|EVERGREEN|ADV)\]\s.+\s-\s.+\s-\s\d{4}$
+```
 
 ---
 
@@ -379,5 +510,5 @@ campaign_structure:
 
 ---
 
-_Campaign Structure Skill v1.0.0_
+_Campaign Structure Skill v1.1.0_
 _Media Buyer Squad - AIOS Synkra_

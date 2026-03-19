@@ -240,9 +240,9 @@ Comparação:
 | Arquivo | Descrição | Modo |
 |---------|-----------|------|
 | `tasks/discover-tools.md` | Task de descoberta de ferramentas MCP | Base |
-| `workflows/wf-discover-tools.yaml` | Workflow completo multi-source (900+ linhas) | [PRO] |
-| `data/tool-registry.yaml` | Catálogo global de tools | [PRO] |
-| `data/tool-evaluation-framework.md` | Framework RICE/WSJF/Security | [PRO] |
+| `squad-creator-pro/workflows/wf-discover-tools.yaml` | Workflow completo multi-source (900+ linhas) | [PRO] |
+| `squad-creator-pro/data/tool-registry.yaml` | Catálogo global de tools | [PRO] |
+| `squad-creator-pro/data/tool-evaluation-framework.md` | Framework RICE/WSJF/Security | [PRO] |
 
 ### Outputs por Squad
 

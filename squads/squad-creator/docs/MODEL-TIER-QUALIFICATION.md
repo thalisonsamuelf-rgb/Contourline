@@ -2,9 +2,12 @@
 
 > Squad Creator Token Economy - Validação Empírica de Tasks por Modelo
 
-**Status:** Active
+**Status:** Pro Only Reference
 **Created:** 2026-02-11
 **Owner:** @pedro-valerio + @oalanicolas
+
+> Desde 2026-03-18, os artefatos operacionais de model routing vivem apenas em `squads/squad-creator-pro/`.
+> Este documento continua como referencia conceitual. Caminhos e comandos abaixo devem ser lidos como assets do Pro.
 
 ---
 
@@ -178,7 +181,7 @@ test_case:
 ### Localização
 
 ```
-squads/squad-creator/
+squads/squad-creator-pro/
 ├── test-cases/
 │   ├── _template.yaml              # Template para novos test cases
 │   │
@@ -242,7 +245,7 @@ squads/squad-creator/
 │                    ↓                                            │
 │  5. DOCUMENTAR resultado + padrão aprendido                     │
 │                    ↓                                            │
-│  6. ATUALIZAR config/model-routing.yaml                         │
+│  6. ATUALIZAR squads/squad-creator-pro/config/model-routing.yaml│
 │                    ↓                                            │
 │  7. PRÓXIMA TASK                                                │
 │                                                                 │
@@ -289,23 +292,23 @@ Documentar padrões conforme testamos:
 
 ```bash
 # Listar test cases disponíveis
-node squads/squad-creator/scripts/model-tier-validator.cjs list
+node squads/squad-creator-pro/scripts/model-tier-validator.cjs list
 
 # Validar uma task específica
-node squads/squad-creator/scripts/model-tier-validator.cjs validate pv-axioma-assessment
+node squads/squad-creator-pro/scripts/model-tier-validator.cjs validate pv-axioma-assessment
 
 # Gerar relatório consolidado
-node squads/squad-creator/scripts/model-tier-validator.cjs report
+node squads/squad-creator-pro/scripts/model-tier-validator.cjs report
 
 # Atualizar routing config após validação
-node squads/squad-creator/scripts/model-tier-validator.cjs update-routing pv-axioma-assessment haiku "Scoring determinístico"
+node squads/squad-creator-pro/scripts/model-tier-validator.cjs update-routing pv-axioma-assessment haiku "Scoring deterministico"
 ```
 
 ### Logar Resultado Manual
 
 ```bash
-node scripts/model-usage-logger.cjs log {task} {model} {tokens_in} {tokens_out} {latency}
-node scripts/model-usage-logger.cjs report
+node squads/squad-creator-pro/scripts/model-usage-logger.cjs log {task} {model} {tokens_in} {tokens_out} {latency}
+node squads/squad-creator-pro/scripts/model-usage-logger.cjs report
 ```
 
 ---
@@ -330,6 +333,7 @@ node scripts/model-usage-logger.cjs report
 |------|---------|
 | 2026-02-11 | Framework criado |
 | 2026-02-11 | pv-axioma-assessment validado (Haiku OK) |
+| 2026-03-18 | Paths operacionais movidos para `squad-creator-pro/` e removidos do base |
 
 ---
 

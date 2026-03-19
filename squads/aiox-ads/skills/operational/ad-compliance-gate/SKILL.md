@@ -3,7 +3,7 @@
 **ID:** `ad-compliance-gate`
 **Category:** operational
 **Domain:** aiox-ads
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 ---
 
@@ -23,6 +23,145 @@ Gate de compliance pre-publicacao que valida 15+ itens antes de uma campanha ir 
 | Ryan Deiss  | Accountability Loop      | 0.90   | Ciclo de responsabilizacao   |
 | Ryan Deiss  | Mistake Response Protocol| 0.88   | Resposta a erros             |
 | Ryan Deiss  | Traffic Light Leadership | 0.85   | Sistema de status semaforo   |
+
+---
+
+## v5.0 Addition: Launch DoD Enforcement (NON-NEGOTIABLE)
+
+This compliance gate now enforces the Launch Definition of Done checklist as a mandatory pre-condition for campaign activation. ALL 8 gates from launch-dod.md must pass.
+
+```yaml
+launch_dod_enforcement:
+  checklist_reference: "checklists/launch-dod.md"
+  enforcement: "ALL 8 gates must be BLOCK-free before campaign activation"
+  enforced_by: "@fiscal (Safety Officer)"
+
+  gates:
+    1: "Campaign Status == PAUSED (API read-back)"
+    2: "Pixel/CAPI validated and firing"
+    3: "Landing Page EMQ Score >= 6.0 (via page-analyzer skill)"
+    4: "Budget within safety-rules.yaml limits"
+    5: "Audience exclusions configured (purchasers 30d excluded from cold)"
+    6: "Creatives passed compliance check (this skill)"
+    7: "Action ledger completely registered (WAL no gaps)"
+    8: "Campaign state YAML updated (all IDs + config)"
+
+  process: |
+    When *compliance-check is run in "strict" mode (pre-launch):
+    1. Execute all 7 existing compliance checks (copy, tracking, economics, creative, audience, budget, naming)
+    2. ADDITIONALLY execute the 8-gate Launch DoD checklist
+    3. Both sets of checks must pass for PASS verdict
+    4. Any failure in either set = BLOCK
+
+  result_format: |
+    COMPLIANCE GATE verdict now includes a "Launch DoD" section:
+
+    Launch DoD: 8/8 PASS  --> Campaign eligible for activation
+    Launch DoD: 7/8 FAIL  --> BLOCK: Gate X failed (details)
+```
+
+---
+
+## v5.0 Addition: Anti-Hallucination Validation Layer
+
+```yaml
+anti_hallucination_validation:
+  rule: "Cross-check ALL declared data against real API data before approving compliance"
+  rationale: |
+    Agents may receive or generate data that doesn't match the actual campaign state
+    in the platform. This validation layer ensures compliance decisions are based on
+    REAL data from the Meta API, not locally cached or hallucinated values.
+
+  process: |
+    For every compliance check:
+    1. READ campaign data from API (via MCP) -- this is the source of truth
+    2. COMPARE declared values (from campaign-state.yaml, briefing, etc.) against API values
+    3. If discrepancy detected:
+       a. Log: "DISCREPANCY: {field} -- local: {local_value}, API: {api_value}"
+       b. Use API value for compliance evaluation (API is always source of truth)
+       c. Update local state file to match API
+       d. If critical discrepancy (budget, status, targeting): BLOCK + investigate
+
+  cross_checks:
+    - field: "campaign_status"
+      local: "campaign-state.yaml > status"
+      api: "get_campaigns > status"
+      on_mismatch: "BLOCK -- status mismatch is critical"
+
+    - field: "daily_budget"
+      local: "campaign-briefing.yaml > budget_diario"
+      api: "get_campaigns > daily_budget"
+      on_mismatch: "WARN -- update local to match API"
+
+    - field: "targeting"
+      local: "campaign-state.yaml > targeting_snapshot"
+      api: "get_adsets > targeting"
+      on_mismatch: "WARN -- targeting may have been edited outside agent control"
+
+    - field: "creative_ids"
+      local: "campaign-state.yaml > ad_ids"
+      api: "get_ads > creative IDs"
+      on_mismatch: "WARN -- creatives may have changed"
+```
+
+---
+
+## v5.0 Addition: PAUSED Verification Post-Creation
+
+```yaml
+paused_verification:
+  rule: "After campaign creation via API, perform a read-back to CONFIRM status == PAUSED"
+  enforcement: "BLOCK activation if read-back fails or status != PAUSED"
+
+  process: |
+    After any create-campaign-api call:
+    1. WAIT 2-3 seconds (API propagation)
+    2. Execute GET campaign via API (read-back)
+    3. Verify response.status == "PAUSED"
+    4. If status == "PAUSED": log confirmation in action-ledger, proceed
+    5. If status != "PAUSED":
+       a. IMMEDIATELY execute pause-campaign (HITL)
+       b. Log incident: "Campaign created with non-PAUSED status -- auto-corrected"
+       c. Investigate cause (template error? API parameter issue?)
+       d. BLOCK any further operations until root cause identified
+
+  reference:
+    safety_rules: "safety-rules.yaml -- paused_by_default: true"
+    autonomy_tiers: "autonomy-tiers.yaml -- create-campaign-api constraints"
+    ban_prevention: "checklists/ban-prevention.md -- check 2.4"
+```
+
+---
+
+## v5.0 Addition: Ban Prevention Rules Check
+
+```yaml
+ban_prevention_enforcement:
+  checklist_reference: "checklists/ban-prevention.md"
+  enforcement: "Pre-automation checks (Section 1) must ALL pass before any API operation"
+
+  integration: |
+    The compliance gate now includes ban prevention validation:
+    1. Pre-automation (Section 1, 5 checks): validated ONCE per account setup
+       - BM verified + identity confirmed
+       - 2FA on all connected accounts
+       - Fixed IP for API calls
+       - No VPN/proxy in use
+       - Account age >= 30 days of manual activity
+    2. During operation (Section 2, 6 checks): validated CONTINUOUSLY
+       - Budget increases <= 20%/day
+       - Max 5 campaigns/day (accounts < 90 days)
+       - No API call spikes
+       - PAUSED-by-default respected
+       - Learning Phase not interrupted
+       - Action ledger up to date
+
+  compliance_gate_addition: |
+    A new check item "ban_prevention" is added to the compliance gate output:
+    - item: "ban_prevention"
+      status: "PASS | WARN | BLOCK"
+      details: "Pre-automation: 5/5 PASS, Operation: 6/6 PASS"
+```
 
 ---
 
@@ -334,5 +473,5 @@ Action: Corrigir tracking. Dispatch tracking-audit iniciado.
 
 ---
 
-_Ad Compliance Gate Skill v1.0.0_
+_Ad Compliance Gate Skill v1.1.0_
 _AIOX Ads Squad - AIOS Synkra_

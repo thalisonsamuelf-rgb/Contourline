@@ -1,17 +1,18 @@
 # AIOX Ads Skills Registry
-# Registro central de todas as skills do domínio aiox-ads
-# Total: 18 skills (operational) + pending (5 agents need skills)
-# Fusion: media-buyer-squad v2.0 + traffic-masters v3.0 → aiox-ads v4.0
+# Registro central de todas as skills do dominio aiox-ads
+# Total: 38 skills (29 original + 9 new from Sprint 3)
+# v5.0.0: All paths migrated to squads/aiox-ads/skills/, 9 new skills, updated agent matrix
+# Previous: v4.0.0 (Fusion: media-buyer-squad v2.0 + traffic-masters v3.0 -> aiox-ads v4.0)
 
 metadata:
-  version: "4.0.0"
+  version: "5.0.0"
   domain: "aiox-ads"
   squad: "aiox-ads"
   managed_by: "@ad-midas"
   created_at: "2026-03-16"
-  updated_at: "2026-03-16"
-  total_skills: 18
-  total_frameworks: 47
+  updated_at: "2026-03-18"
+  total_skills: 38
+  total_frameworks: 65
   canonical_location: "squads/aiox-ads/skills/"
 
 # =============================================================================
@@ -70,35 +71,78 @@ experts:
     specialties:
       - "Creative Strategy"
 
+  kasim-aslam:
+    name: "Kasim Aslam"
+    source: "traffic-masters v3.0"
+    frameworks_count: 5
+    weight: 0.92
+    specialties:
+      - "Google Ads PMax"
+      - "Quality Score Optimization"
+      - "Search Term Analysis"
+
+  ryan-deiss:
+    name: "Ryan Deiss"
+    source: "traffic-masters v3.0"
+    frameworks_count: 8
+    weight: 0.90
+    specialties:
+      - "Accountability Loop"
+      - "Traffic Light Leadership"
+      - "Scorecard Methodology"
+
+  pedro-sobral:
+    name: "Pedro Sobral"
+    source: "traffic-masters v3.0"
+    frameworks_count: 3
+    weight: 0.92
+    specialties:
+      - "4 Fases PAF"
+      - "Funil Perpetuo Brasil"
+
+  nick-theriot:
+    name: "Nick Theriot"
+    source: "traffic-masters v3.0"
+    frameworks_count: 2
+    weight: 0.88
+    specialties:
+      - "BFCM System"
+      - "Seasonal Campaigns"
+
 # =============================================================================
 # CATEGORIES
 # =============================================================================
 
 categories:
   diagnostic:
-    description: "Análise de problemas, diagnóstico de métricas, identificação de issues"
-    skills_count: 5
-    icon: "🔍"
+    description: "Analise de problemas, diagnostico de metricas, identificacao de issues"
+    skills_count: 9
+    icon: "diagnostic"
 
   generative:
-    description: "Criação de conteúdo, hooks, copy, scripts, DSL"
-    skills_count: 5
-    icon: "✨"
+    description: "Criacao de conteudo, hooks, copy, scripts, DSL"
+    skills_count: 6
+    icon: "generative"
 
   optimization:
-    description: "Otimização de campanhas, regras de pausar/escalar, budget, audiências"
-    skills_count: 3
-    icon: "⚡"
+    description: "Otimizacao de campanhas, regras de pausar/escalar, budget, audiencias"
+    skills_count: 5
+    icon: "optimization"
 
   strategic:
-    description: "Planejamento de alto nível, funis, economia, scaling, estrutura"
-    skills_count: 4
-    icon: "🎯"
+    description: "Planejamento de alto nivel, funis, economia, scaling, estrutura, pesquisa"
+    skills_count: 11
+    icon: "strategic"
 
   automation:
-    description: "Orquestração autônoma, monitoramento contínuo"
+    description: "Orquestracao autonoma, monitoramento continuo"
     skills_count: 1
-    icon: "🤖"
+    icon: "automation"
+
+  operational:
+    description: "Compliance, resiliencia, monitoramento, setup, operacoes regionais"
+    skills_count: 6
+    icon: "operational"
 
 # =============================================================================
 # SKILLS REGISTRY
@@ -106,15 +150,15 @@ categories:
 
 skills:
   # ---------------------------------------------------------------------------
-  # DIAGNOSTIC (5 skills)
+  # DIAGNOSTIC (9 skills)
   # ---------------------------------------------------------------------------
 
   metric-diagnosis:
     id: "metric-diagnosis"
     name: "Metric Diagnosis"
     category: "diagnostic"
-    location: ".aios-core/development/skills/media-buyer/diagnostic/metric-diagnosis/SKILL.md"
-    description: "Diagnóstico completo de métricas (CTR, CPA, ROAS, CPM)"
+    location: "squads/aiox-ads/skills/diagnostic/metric-diagnosis/SKILL.md"
+    description: "Diagnostico completo de metricas (CTR, CPA, ROAS, CPM)"
     version: "1.0.0"
     activation_command: "*diagnose-metrics"
     frameworks:
@@ -131,7 +175,7 @@ skills:
       primary: ["@performance-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["diagnóstico", "por que não converte", "CPA alto", "ROAS baixo", "CTR baixo"]
+      semantic: ["diagnostico", "por que nao converte", "CPA alto", "ROAS baixo", "CTR baixo"]
       metric: ["cpa > target * 1.5", "roas < 1.5", "ctr < 0.5%"]
     token_estimate: "~1200 tokens"
 
@@ -139,9 +183,9 @@ skills:
     id: "tracking-audit"
     name: "Tracking Audit"
     category: "diagnostic"
-    location: ".aios-core/development/skills/media-buyer/diagnostic/tracking-audit/SKILL.md"
+    location: "squads/aiox-ads/skills/diagnostic/tracking-audit/SKILL.md"
     description: "Auditoria completa de pixel, CAPI e eventos"
-    version: "1.0.0"
+    version: "1.1.0"
     activation_command: "*audit-tracking"
     frameworks:
       - name: "CAPI Priority Framework"
@@ -157,7 +201,7 @@ skills:
       primary: ["@pixel-specialist"]
       consumers: ["@ad-midas", "@performance-analyst"]
     triggers:
-      semantic: ["pixel", "tracking", "conversões não aparecem", "CAPI", "match rate"]
+      semantic: ["pixel", "tracking", "conversoes nao aparecem", "CAPI", "match rate"]
       metric: ["conversions == 0 for 6h", "match_rate < 60%"]
     token_estimate: "~1000 tokens"
 
@@ -165,8 +209,8 @@ skills:
     id: "creative-fatigue-detector"
     name: "Creative Fatigue Detector"
     category: "diagnostic"
-    location: ".aios-core/development/skills/media-buyer/diagnostic/creative-fatigue-detector/SKILL.md"
-    description: "Detecta fadiga de criativos e saturação de audiência"
+    location: "squads/aiox-ads/skills/diagnostic/creative-fatigue-detector/SKILL.md"
+    description: "Detecta fadiga de criativos e saturacao de audiencia"
     version: "1.0.0"
     activation_command: "*detect-fatigue"
     frameworks:
@@ -183,7 +227,7 @@ skills:
       primary: ["@creative-analyst", "@performance-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["fadiga", "saturação", "criativo cansou", "frequência alta"]
+      semantic: ["fadiga", "saturacao", "criativo cansou", "frequencia alta"]
       metric: ["frequency > 3", "ctr_drop > 30%", "hook_rate < 15%"]
     token_estimate: "~800 tokens"
 
@@ -191,8 +235,8 @@ skills:
     id: "funnel-analysis"
     name: "Funnel Analysis"
     category: "diagnostic"
-    location: ".aios-core/development/skills/media-buyer/diagnostic/funnel-analysis/SKILL.md"
-    description: "Análise completa de funil de conversão e drop-offs"
+    location: "squads/aiox-ads/skills/diagnostic/funnel-analysis/SKILL.md"
+    description: "Analise completa de funil de conversao e drop-offs"
     version: "1.0.0"
     activation_command: "*analyze-funnel"
     frameworks:
@@ -209,7 +253,7 @@ skills:
       primary: ["@performance-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["funil", "drop-off", "conversão por etapa", "gargalo"]
+      semantic: ["funil", "drop-off", "conversao por etapa", "gargalo"]
       metric: ["atc_to_purchase < 20%", "overall_cvr < benchmark * 0.5"]
     token_estimate: "~1000 tokens"
 
@@ -217,8 +261,8 @@ skills:
     id: "attribution-analysis"
     name: "Attribution Analysis"
     category: "diagnostic"
-    location: ".aios-core/development/skills/media-buyer/diagnostic/attribution-analysis/SKILL.md"
-    description: "Análise de atribuição e reconciliação entre plataformas"
+    location: "squads/aiox-ads/skills/diagnostic/attribution-analysis/SKILL.md"
+    description: "Analise de atribuicao e reconciliacao entre plataformas"
     version: "1.0.0"
     activation_command: "*analyze-attribution"
     frameworks:
@@ -235,20 +279,116 @@ skills:
       primary: ["@pixel-specialist"]
       consumers: ["@performance-analyst", "@ad-midas"]
     triggers:
-      semantic: ["atribuição", "janela de conversão", "iOS14", "CAPI"]
+      semantic: ["atribuicao", "janela de conversao", "iOS14", "CAPI"]
       metric: ["meta_vs_backend > 30%", "ios_percentage > 60%"]
     token_estimate: "~1100 tokens"
 
+  # --- NEW (Sprint 3 — Story 3.2) ---
+
+  learning-phase-detector:
+    id: "learning-phase-detector"
+    name: "Learning Phase Detector"
+    category: "diagnostic"
+    location: "squads/aiox-ads/skills/diagnostic/learning-phase-detector/SKILL.md"
+    description: "Detecta Learning Phase e BLOQUEIA kill/scale durante aprendizado (<50 conversoes)"
+    version: "1.0.0"
+    activation_command: "*detect-learning-phase"
+    frameworks:
+      - name: "Learning Phase Threshold (50 conversions)"
+        expert: "meta-official"
+        weight: 1.0
+      - name: "8 Reset Triggers"
+        expert: "meta-official"
+        weight: 1.0
+    agents:
+      primary: ["@performance-analyst"]
+      consumers: ["@ad-midas", "@campaign-manager"]
+    triggers:
+      semantic: ["learning phase", "fase de aprendizado", "aprendizado", "50 conversoes"]
+      metric: ["conversions < 50 since last edit", "ad_set_status == LEARNING"]
+    token_estimate: "~800 tokens"
+
+  auction-overlap-detector:
+    id: "auction-overlap-detector"
+    name: "Auction Overlap Detector"
+    category: "diagnostic"
+    location: "squads/aiox-ads/skills/diagnostic/auction-overlap-detector/SKILL.md"
+    description: "Detecta sobreposicao >30% de audiencia entre ad sets (auto-competicao)"
+    version: "1.0.0"
+    activation_command: "*detect-overlap"
+    frameworks:
+      - name: "Audience Overlap Matrix"
+        expert: "meta-official"
+        weight: 1.0
+      - name: "4-Tier Severity Scale"
+        expert: "native"
+        weight: 1.0
+    agents:
+      primary: ["@performance-analyst"]
+      consumers: ["@ad-midas"]
+    triggers:
+      semantic: ["overlap", "sobreposicao", "auto-competicao", "audiencia duplicada"]
+      metric: ["overlap_rate > 30%", "cpm_rising without audience_change"]
+    token_estimate: "~900 tokens"
+
+  creative-evaluator:
+    id: "creative-evaluator"
+    name: "Creative Evaluator"
+    category: "diagnostic"
+    location: "squads/aiox-ads/skills/diagnostic/creative-evaluator/SKILL.md"
+    description: "Avalia criativos por NUMEROS (100-point scoring, keep/test/replace)"
+    version: "1.0.0"
+    activation_command: "*evaluate-creatives"
+    frameworks:
+      - name: "100-Point Scoring System"
+        expert: "native"
+        weight: 1.0
+      - name: "Campaign Memory Pattern Match"
+        expert: "native"
+        weight: 0.90
+    agents:
+      primary: ["@performance-analyst"]
+      consumers: ["@ad-midas", "@creative-analyst"]
+    triggers:
+      semantic: ["avaliar criativo", "criativo performance", "evaluate creative", "scoring"]
+      metric: ["creative_age > 14d", "ctr_declining 3 consecutive days"]
+    token_estimate: "~1000 tokens"
+    notes: "NUMBERS ONLY scope — content evaluation is @creative-analyst domain"
+
+  page-analyzer:
+    id: "page-analyzer"
+    name: "Page Analyzer"
+    category: "diagnostic"
+    location: "squads/aiox-ads/skills/diagnostic/page-analyzer/SKILL.md"
+    description: "Analisa landing pages via WebFetch, gera EMQ score 1-10 (< 6.0 = BLOCK)"
+    version: "1.0.0"
+    activation_command: "*analyze-page"
+    frameworks:
+      - name: "Experience Media Quality (EMQ) Scoring"
+        expert: "native"
+        weight: 1.0
+      - name: "6-Dimension LP Analysis"
+        expert: "native"
+        weight: 1.0
+    agents:
+      primary: ["@pixel-specialist"]
+      consumers: ["@ad-midas", "@fiscal"]
+    triggers:
+      semantic: ["landing page", "LP", "pagina", "EMQ", "analyze page"]
+      metric: ["emq_score < 6.0"]
+    token_estimate: "~1200 tokens"
+    notes: "EMQ < 6.0 is hard gate per launch-dod.md Gate 3"
+
   # ---------------------------------------------------------------------------
-  # GENERATIVE (5 skills)
+  # GENERATIVE (6 skills)
   # ---------------------------------------------------------------------------
 
   hook-generator:
     id: "hook-generator"
     name: "Hook Generator"
     category: "generative"
-    location: ".aios-core/development/skills/media-buyer/generative/hook-generator/SKILL.md"
-    description: "Gera 10+ variações de hooks usando DSL Revolution"
+    location: "squads/aiox-ads/skills/generative/hook-generator/SKILL.md"
+    description: "Gera 10+ variacoes de hooks usando DSL Revolution"
     version: "1.0.0"
     activation_command: "*generate-hooks"
     frameworks:
@@ -271,7 +411,7 @@ skills:
       primary: ["@creative-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["hook", "gancho", "headline", "atenção", "DSL", "variações"]
+      semantic: ["hook", "gancho", "headline", "atencao", "DSL", "variacoes"]
       metric: ["hook_rate < 15%", "ctr < 0.5%"]
     token_estimate: "~1500 tokens"
 
@@ -279,7 +419,7 @@ skills:
     id: "copy-generator"
     name: "Copy Generator"
     category: "generative"
-    location: ".aios-core/development/skills/media-buyer/generative/copy-generator/SKILL.md"
+    location: "squads/aiox-ads/skills/generative/copy-generator/SKILL.md"
     description: "Gera copy usando frameworks PAS, AIDA, BAB e Story"
     version: "1.0.0"
     activation_command: "*generate-copy"
@@ -307,7 +447,7 @@ skills:
     id: "creative-brief"
     name: "Creative Brief"
     category: "generative"
-    location: ".aios-core/development/skills/media-buyer/generative/creative-brief/SKILL.md"
+    location: "squads/aiox-ads/skills/generative/creative-brief/SKILL.md"
     description: "Gera briefs completos para criativos"
     version: "1.0.0"
     activation_command: "*create-brief"
@@ -322,15 +462,15 @@ skills:
       primary: ["@creative-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["brief", "briefing", "orientação para designer"]
+      semantic: ["brief", "briefing", "orientacao para designer"]
     token_estimate: "~1000 tokens"
 
   angle-generator:
     id: "angle-generator"
     name: "Angle Generator"
     category: "generative"
-    location: ".aios-core/development/skills/media-buyer/generative/angle-generator/SKILL.md"
-    description: "Gera ângulos criativos diferentes para mesma oferta"
+    location: "squads/aiox-ads/skills/generative/angle-generator/SKILL.md"
+    description: "Gera angulos criativos diferentes para mesma oferta"
     version: "1.0.0"
     activation_command: "*generate-angles"
     frameworks:
@@ -347,14 +487,14 @@ skills:
       primary: ["@creative-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["ângulo", "abordagem", "perspectiva", "creative angle"]
+      semantic: ["angulo", "abordagem", "perspectiva", "creative angle"]
     token_estimate: "~1000 tokens"
 
   dsl-structure:
     id: "dsl-structure"
     name: "DSL Structure"
     category: "generative"
-    location: ".aios-core/development/skills/media-buyer/generative/dsl-structure/SKILL.md"
+    location: "squads/aiox-ads/skills/generative/dsl-structure/SKILL.md"
     description: "Cria estruturas de Deck Sales Letter (DSL Revolution)"
     version: "1.0.0"
     activation_command: "*create-dsl"
@@ -375,17 +515,42 @@ skills:
       semantic: ["DSL", "deck sales letter", "slides", "webinar", "high-ticket"]
     token_estimate: "~1300 tokens"
 
+  youtube-ad-scriptwriter:
+    id: "youtube-ad-scriptwriter"
+    name: "YouTube Ad Scriptwriter"
+    category: "generative"
+    location: "squads/aiox-ads/skills/generative/youtube-ad-scriptwriter/SKILL.md"
+    description: "Gera scripts completos para YouTube Ads com 7-Part Script e 5-Second Hook"
+    version: "1.0.0"
+    activation_command: "*youtube-script"
+    frameworks:
+      - name: "7-Part YouTube Ad Script"
+        expert: "brian-moncada"
+        weight: 0.95
+      - name: "5-Second Hook Formula"
+        expert: "brian-moncada"
+        weight: 0.92
+      - name: "YouTube Relevance Triangle"
+        expert: "brian-moncada"
+        weight: 0.88
+    agents:
+      primary: ["@tom-breeze"]
+      consumers: ["@ad-midas", "@creative-analyst"]
+    triggers:
+      semantic: ["youtube script", "script youtube", "7 partes", "video ad script"]
+    token_estimate: "~1400 tokens"
+
   # ---------------------------------------------------------------------------
-  # OPTIMIZATION (3 skills)
+  # OPTIMIZATION (5 skills)
   # ---------------------------------------------------------------------------
 
   kill-scale-rules:
     id: "kill-scale-rules"
     name: "Kill & Scale Rules"
     category: "optimization"
-    location: ".aios-core/development/skills/media-buyer/optimization/kill-scale-rules/SKILL.md"
+    location: "squads/aiox-ads/skills/optimization/kill-scale-rules/SKILL.md"
     description: "Regras de quando pausar ou escalar campanhas"
-    version: "1.0.0"
+    version: "1.1.0"
     activation_command: "*evaluate-kill-scale"
     frameworks:
       - name: "24-Hour Kill Threshold"
@@ -415,8 +580,8 @@ skills:
     id: "budget-allocation"
     name: "Budget Allocation"
     category: "optimization"
-    location: ".aios-core/development/skills/media-buyer/optimization/budget-allocation/SKILL.md"
-    description: "Otimiza alocação de budget entre campanhas"
+    location: "squads/aiox-ads/skills/optimization/budget-allocation/SKILL.md"
+    description: "Otimiza alocacao de budget entre campanhas"
     version: "1.0.0"
     activation_command: "*allocate-budget"
     frameworks:
@@ -433,15 +598,15 @@ skills:
       primary: ["@performance-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["budget", "orçamento", "realocar", "redistribuir"]
+      semantic: ["budget", "orcamento", "realocar", "redistribuir"]
     token_estimate: "~900 tokens"
 
   audience-expansion:
     id: "audience-expansion"
     name: "Audience Expansion"
     category: "optimization"
-    location: ".aios-core/development/skills/media-buyer/optimization/audience-expansion/SKILL.md"
-    description: "Estratégias para expandir audiências saturadas"
+    location: "squads/aiox-ads/skills/optimization/audience-expansion/SKILL.md"
+    description: "Estrategias para expandir audiencias saturadas"
     version: "1.0.0"
     activation_command: "*expand-audience"
     frameworks:
@@ -458,48 +623,98 @@ skills:
       primary: ["@performance-analyst"]
       consumers: ["@ad-midas"]
     triggers:
-      semantic: ["expandir audiência", "LAL", "lookalike", "broad", "saturação"]
+      semantic: ["expandir audiencia", "LAL", "lookalike", "broad", "saturacao"]
       metric: ["frequency > 3", "audience_saturation > 60%"]
     token_estimate: "~1000 tokens"
 
+  creative-bombardment:
+    id: "creative-bombardment"
+    name: "Creative Bombardment"
+    category: "optimization"
+    location: "squads/aiox-ads/skills/optimization/creative-bombardment/SKILL.md"
+    description: "Bombardeio multi-criativo: 10-20 criativos, mata underperformers em 48h"
+    version: "1.0.0"
+    activation_command: "*bombardment"
+    frameworks:
+      - name: "Hammer Them Bombardment System"
+        expert: "jeremy-haynes"
+        weight: 0.95
+      - name: "Creative Lab Protocol"
+        expert: "jeremy-haynes"
+        weight: 0.90
+      - name: "Constants vs Variables"
+        expert: "brandon-carter"
+        weight: 0.88
+    agents:
+      primary: ["@ralph-burns"]
+      consumers: ["@ad-midas", "@creative-analyst"]
+    triggers:
+      semantic: ["bombardeio", "bombardment", "creative lab", "volume de criativos"]
+    token_estimate: "~1100 tokens"
+
+  google-search-optimizer:
+    id: "google-search-optimizer"
+    name: "Google Search Optimizer"
+    category: "optimization"
+    location: "squads/aiox-ads/skills/optimization/google-search-optimizer/SKILL.md"
+    description: "Search Terms Report, negative keywords, Quality Score optimization"
+    version: "1.0.0"
+    activation_command: "*google-optimize"
+    frameworks:
+      - name: "Quality Score Optimization"
+        expert: "kasim-aslam"
+        weight: 0.92
+      - name: "Negative Keyword Strategy"
+        expert: "kasim-aslam"
+        weight: 0.90
+      - name: "Search Term Analysis"
+        expert: "kasim-aslam"
+        weight: 0.88
+    agents:
+      primary: ["@kasim-aslam"]
+      consumers: ["@ad-midas", "@performance-analyst"]
+    triggers:
+      semantic: ["search terms", "negative keywords", "quality score", "google search"]
+    token_estimate: "~1000 tokens"
+
   # ---------------------------------------------------------------------------
-  # STRATEGIC (4 skills)
+  # STRATEGIC (10 skills)
   # ---------------------------------------------------------------------------
 
   funnel-selection:
     id: "funnel-selection"
     name: "Funnel Selection"
     category: "strategic"
-    location: ".aios-core/development/skills/media-buyer/strategic/funnel-selection/SKILL.md"
-    description: "Seleção estratégica do tipo de funil ideal"
+    location: "squads/aiox-ads/skills/strategic/funnel-selection/SKILL.md"
+    description: "Selecao estrategica do tipo de funil ideal"
     version: "1.0.0"
     activation_command: "*select-funnel"
     frameworks:
       - name: "Funil de 1 Real"
         expert: "jeremy-haynes"
         weight: 0.95
-      - name: "Tráfego Direto"
+      - name: "Trafego Direto"
         expert: "jeremy-haynes"
         weight: 0.90
       - name: "Aula no Zoom"
         expert: "jeremy-haynes"
         weight: 0.90
-      - name: "Perpétuo vs Lançamento"
+      - name: "Perpetuo vs Lancamento"
         expert: "jeremy-haynes"
         weight: 0.85
     agents:
       primary: ["@ad-midas"]
       consumers: ["@creative-analyst"]
     triggers:
-      semantic: ["funil", "qual funil", "tráfego direto", "zoom", "perpétuo", "lançamento"]
+      semantic: ["funil", "qual funil", "trafego direto", "zoom", "perpetuo", "lancamento"]
     token_estimate: "~1100 tokens"
 
   unit-economics:
     id: "unit-economics"
     name: "Unit Economics"
     category: "strategic"
-    location: ".aios-core/development/skills/media-buyer/strategic/unit-economics/SKILL.md"
-    description: "Cálculo de CAC, LTV, payback e decisão de scaling"
+    location: "squads/aiox-ads/skills/strategic/unit-economics/SKILL.md"
+    description: "Calculo de CAC, LTV, payback e decisao de scaling"
     version: "1.0.0"
     activation_command: "*calculate-economics"
     frameworks:
@@ -523,8 +738,8 @@ skills:
     id: "scale-readiness-check"
     name: "Scale Readiness Check"
     category: "strategic"
-    location: ".aios-core/development/skills/media-buyer/strategic/scale-readiness-check/SKILL.md"
-    description: "Avaliação completa de prontidão para escalar"
+    location: "squads/aiox-ads/skills/strategic/scale-readiness-check/SKILL.md"
+    description: "Avaliacao completa de prontidao para escalar"
     version: "1.0.0"
     activation_command: "*check-scale-readiness"
     frameworks:
@@ -548,9 +763,9 @@ skills:
     id: "campaign-structure"
     name: "Campaign Structure"
     category: "strategic"
-    location: ".aios-core/development/skills/media-buyer/strategic/campaign-structure/SKILL.md"
+    location: "squads/aiox-ads/skills/strategic/campaign-structure/SKILL.md"
     description: "Define estrutura otimizada de campanhas, adsets e ads"
-    version: "1.0.0"
+    version: "1.1.0"
     activation_command: "*structure-campaign"
     frameworks:
       - name: "CBO vs ABO Strategy"
@@ -564,10 +779,183 @@ skills:
         weight: 0.90
     agents:
       primary: ["@ad-midas"]
-      consumers: ["@performance-analyst"]
+      consumers: ["@performance-analyst", "@campaign-manager"]
     triggers:
       semantic: ["estrutura", "campanha", "adset", "CBO", "ABO", "nomenclatura"]
     token_estimate: "~1100 tokens"
+
+  google-campaign-architect:
+    id: "google-campaign-architect"
+    name: "Google Campaign Architect"
+    category: "strategic"
+    location: "squads/aiox-ads/skills/strategic/google-campaign-architect/SKILL.md"
+    description: "Arquiteta campanhas Google Ads: PMax, Search, Display, YouTube"
+    version: "1.0.0"
+    activation_command: "*google-campaign"
+    frameworks:
+      - name: "PMax Architecture"
+        expert: "kasim-aslam"
+        weight: 0.95
+      - name: "Search/Display Segmentation"
+        expert: "kasim-aslam"
+        weight: 0.90
+      - name: "5 Categories for Rich People"
+        expert: "jeremy-haynes"
+        weight: 0.88
+    agents:
+      primary: ["@kasim-aslam"]
+      consumers: ["@ad-midas", "@campaign-manager"]
+    triggers:
+      semantic: ["google ads", "PMax", "performance max", "search campaign", "display"]
+    token_estimate: "~1200 tokens"
+
+  youtube-campaign-launcher:
+    id: "youtube-campaign-launcher"
+    name: "YouTube Campaign Launcher"
+    category: "strategic"
+    location: "squads/aiox-ads/skills/strategic/youtube-campaign-launcher/SKILL.md"
+    description: "Protocolo de lancamento de YouTube Ads em 6 etapas"
+    version: "1.0.0"
+    activation_command: "*youtube-launch"
+    frameworks:
+      - name: "YouTube Ads Launch Protocol"
+        expert: "brian-moncada"
+        weight: 0.93
+      - name: "Targeting Timeline Pyramid"
+        expert: "brian-moncada"
+        weight: 0.90
+      - name: "YouTube Targeting Priority Order"
+        expert: "brian-moncada"
+        weight: 0.87
+    agents:
+      primary: ["@tom-breeze"]
+      consumers: ["@ad-midas", "@campaign-manager"]
+    triggers:
+      semantic: ["youtube launch", "lancar youtube", "targeting pyramid", "youtube protocol"]
+    token_estimate: "~1100 tokens"
+
+  forester-scaling-system:
+    id: "forester-scaling-system"
+    name: "Forester Scaling System"
+    category: "strategic"
+    location: "squads/aiox-ads/skills/strategic/forester-scaling-system/SKILL.md"
+    description: "6 campanhas paralelas para escala agressiva (Testing -> Winner -> Scale)"
+    version: "1.0.0"
+    activation_command: "*forester-scale"
+    frameworks:
+      - name: "Forester Strategy Upgraded (6-Camp)"
+        expert: "jeremy-haynes"
+        weight: 0.95
+      - name: "Scaling Operations Protocol"
+        expert: "jeremy-haynes"
+        weight: 0.90
+      - name: "Hydra Strategy"
+        expert: "alex-hormozi"
+        weight: 0.88
+    agents:
+      primary: ["@ralph-burns"]
+      consumers: ["@ad-midas", "@campaign-manager"]
+    triggers:
+      semantic: ["forester", "6 campanhas", "escala agressiva", "testing to scale"]
+    token_estimate: "~1200 tokens"
+
+  scorecard-builder:
+    id: "scorecard-builder"
+    name: "Scorecard Builder"
+    category: "strategic"
+    location: "squads/aiox-ads/skills/strategic/scorecard-builder/SKILL.md"
+    description: "Scorecards semanais/mensais com thresholds semaforo e backtesting"
+    version: "1.0.0"
+    activation_command: "*build-scorecard"
+    frameworks:
+      - name: "3-Step Scorecard Build"
+        expert: "ryan-deiss"
+        weight: 0.92
+      - name: "Beach Vacation Question"
+        expert: "ryan-deiss"
+        weight: 0.85
+      - name: "Backtesting Methodology"
+        expert: "ryan-deiss"
+        weight: 0.88
+      - name: "Traffic Light Leadership"
+        expert: "ryan-deiss"
+        weight: 0.85
+    agents:
+      primary: ["@fiscal"]
+      consumers: ["@ad-midas", "@performance-analyst"]
+    triggers:
+      semantic: ["scorecard", "relatorio semanal", "dashboard", "metricas resumo"]
+    token_estimate: "~1100 tokens"
+
+  # --- NEW (Sprint 3 — Story 3.1) ---
+
+  research-protocol:
+    id: "research-protocol"
+    name: "Research Protocol"
+    category: "strategic"
+    location: "squads/aiox-ads/skills/strategic/research-protocol/SKILL.md"
+    description: "Protocolo de pesquisa 5 fases — ENTRY POINT obrigatorio antes de qualquer campanha"
+    version: "1.0.0"
+    activation_command: "*research {business_slug}"
+    frameworks:
+      - name: "5-Phase Research Protocol"
+        expert: "native"
+        weight: 1.0
+      - name: "Brand Crawl via WebFetch"
+        expert: "native"
+        weight: 0.95
+    agents:
+      primary: ["@ad-midas"]
+      consumers: ["@performance-analyst", "@creative-analyst"]
+    triggers:
+      semantic: ["research", "pesquisa", "pesquisar", "inteligencia", "antes de lancar"]
+    token_estimate: "~1500 tokens"
+    notes: "ENTRY POINT — nenhuma campanha inicia sem research-brief completo"
+
+  competitive-intel:
+    id: "competitive-intel"
+    name: "Competitive Intel"
+    category: "strategic"
+    location: "squads/aiox-ads/skills/strategic/competitive-intel/SKILL.md"
+    description: "Analise de anuncios de concorrentes via Facebook Ad Library"
+    version: "1.0.0"
+    activation_command: "*spy-ads {competitor_name}"
+    frameworks:
+      - name: "Facebook Ad Library Analysis"
+        expert: "native"
+        weight: 1.0
+      - name: "Competitor Pattern Matrix"
+        expert: "native"
+        weight: 0.95
+    agents:
+      primary: ["@ad-midas"]
+      consumers: ["@creative-analyst"]
+    triggers:
+      semantic: ["concorrente", "competitor", "spy", "ad library", "espionar anuncios"]
+    token_estimate: "~1300 tokens"
+    notes: "Dual-use: standalone (*spy-ads) AND embedded in research-protocol Phase 3"
+
+  bidding-strategy:
+    id: "bidding-strategy"
+    name: "Bidding Strategy"
+    category: "strategic"
+    location: "squads/aiox-ads/skills/strategic/bidding-strategy/SKILL.md"
+    description: "Decision tree para estrategia de lance: Lowest Cost -> Cost Cap -> ROAS Goal"
+    version: "1.0.0"
+    activation_command: "*bidding {campaign_slug}"
+    frameworks:
+      - name: "Bid Strategy Decision Tree"
+        expert: "meta-official"
+        weight: 1.0
+      - name: "Migration Path (3 stages)"
+        expert: "native"
+        weight: 0.95
+    agents:
+      primary: ["@ad-midas"]
+      consumers: ["@campaign-manager"]
+    triggers:
+      semantic: ["bidding", "lance", "bid strategy", "cost cap", "roas goal", "bid cap"]
+    token_estimate: "~1000 tokens"
 
   # ---------------------------------------------------------------------------
   # AUTOMATION (1 skill)
@@ -577,9 +965,9 @@ skills:
     id: "campaign-monitor"
     name: "Campaign Monitor"
     category: "automation"
-    location: ".aios-core/development/skills/media-buyer/automation/campaign-monitor/SKILL.md"
-    description: "Orquestração autônoma de campanhas com monitoramento contínuo"
-    version: "1.0.0"
+    location: "squads/aiox-ads/skills/automation/campaign-monitor/SKILL.md"
+    description: "Orquestracao autonoma de campanhas com monitoramento continuo"
+    version: "1.1.0"
     activation_command: "*monitor-campaigns"
     frameworks:
       - name: "AIOS Autonomous Loop Pattern"
@@ -592,60 +980,279 @@ skills:
       primary: ["@ad-midas"]
       consumers: ["@performance-analyst", "@creative-analyst", "@pixel-specialist"]
     triggers:
-      semantic: ["monitorar", "autônomo", "autonomous", "orquestrar"]
+      semantic: ["monitorar", "autonomo", "autonomous", "orquestrar"]
     components:
       rules: "rules/decision-rules.yaml"
       loop: "scripts/campaign-monitor-loop.js"
       templates: "templates/decision-report.md"
     token_estimate: "~2000 tokens"
+    notes: "Depends on monitoring-setup for persistent thresholds"
+
+  # ---------------------------------------------------------------------------
+  # OPERATIONAL (7 skills)
+  # ---------------------------------------------------------------------------
+
+  ad-compliance-gate:
+    id: "ad-compliance-gate"
+    name: "Ad Compliance Gate"
+    category: "operational"
+    location: "squads/aiox-ads/skills/operational/ad-compliance-gate/SKILL.md"
+    description: "Gate de compliance pre-publicacao com 15+ checks e Launch DoD enforcement"
+    version: "1.1.0"
+    activation_command: "*compliance-check"
+    frameworks:
+      - name: "Accountability Loop"
+        expert: "ryan-deiss"
+        weight: 0.90
+      - name: "Mistake Response Protocol"
+        expert: "ryan-deiss"
+        weight: 0.88
+      - name: "Traffic Light Leadership"
+        expert: "ryan-deiss"
+        weight: 0.85
+    agents:
+      primary: ["@fiscal"]
+      consumers: ["@ad-midas", "@campaign-manager"]
+    triggers:
+      semantic: ["compliance", "verificar", "gate", "pre-publish", "pode publicar"]
+    token_estimate: "~1000 tokens"
+
+  accountability-loop:
+    id: "accountability-loop"
+    name: "Accountability Loop"
+    category: "operational"
+    location: "squads/aiox-ads/skills/operational/accountability-loop/SKILL.md"
+    description: "Rastreamento de decisoes com feedback loop 48h e Accountability Reports"
+    version: "1.0.0"
+    activation_command: "*accountability-report"
+    frameworks:
+      - name: "Accountability Loop"
+        expert: "ryan-deiss"
+        weight: 0.92
+      - name: "Mistake Response Protocol"
+        expert: "ryan-deiss"
+        weight: 0.90
+      - name: "Traffic Light Leadership"
+        expert: "ryan-deiss"
+        weight: 0.85
+    agents:
+      primary: ["@fiscal"]
+      consumers: ["@ad-midas"]
+    triggers:
+      semantic: ["accountability", "prestacao de contas", "erro", "decisao errada", "hit rate"]
+    token_estimate: "~900 tokens"
+
+  pixel-setup:
+    id: "pixel-setup"
+    name: "Pixel Setup"
+    category: "operational"
+    location: "squads/aiox-ads/skills/operational/pixel-setup/SKILL.md"
+    description: "Instalacao e configuracao completa de pixel, CAPI e eventos do zero"
+    version: "1.0.0"
+    activation_command: "*setup-pixel"
+    frameworks:
+      - name: "CAPI Priority Framework"
+        expert: "jeremy-haynes"
+        weight: 0.95
+      - name: "Event Hierarchy Standard"
+        expert: "jeremy-haynes"
+        weight: 0.92
+      - name: "Match Rate Optimization"
+        expert: "jeremy-haynes"
+        weight: 0.88
+    agents:
+      primary: ["@pixel-specialist"]
+      consumers: ["@ad-midas", "@campaign-manager"]
+    triggers:
+      semantic: ["setup pixel", "instalar pixel", "configurar CAPI", "criar eventos"]
+    token_estimate: "~1100 tokens"
+    notes: "CRIA tracking do zero (vs tracking-audit que AUDITA existente)"
+
+  br-campaign-ops:
+    id: "br-campaign-ops"
+    name: "BR Campaign Ops"
+    category: "operational"
+    location: "squads/aiox-ads/skills/operational/br-campaign-ops/SKILL.md"
+    description: "Operacoes adaptadas ao Brasil: PAF 4 fases, calendario sazonal, WhatsApp"
+    version: "1.0.0"
+    activation_command: "*br-ops"
+    frameworks:
+      - name: "4 Fases PAF (KLT)"
+        expert: "pedro-sobral"
+        weight: 0.92
+      - name: "5-Phase BFCM System"
+        expert: "nick-theriot"
+        weight: 0.88
+      - name: "3D Playbook Process"
+        expert: "ryan-deiss"
+        weight: 0.85
+    agents:
+      primary: ["@br-traffic-operator"]
+      consumers: ["@ad-midas"]
+    triggers:
+      semantic: ["brasil", "br", "sobral", "PAF", "whatsapp funnel", "pix"]
+    token_estimate: "~1000 tokens"
+
+  # --- NEW (Sprint 3 — Story 3.3) ---
+
+  api-resilience:
+    id: "api-resilience"
+    name: "API Resilience"
+    category: "operational"
+    location: "squads/aiox-ads/skills/operational/api-resilience/SKILL.md"
+    description: "Circuit breaker, backoff, quota monitoring, idempotencia (system-embedded)"
+    version: "1.0.0"
+    activation_command: "N/A (automatic — embedded in all API-calling agents)"
+    frameworks:
+      - name: "Circuit Breaker Pattern"
+        expert: "native"
+        weight: 1.0
+      - name: "Exponential Backoff"
+        expert: "native"
+        weight: 1.0
+      - name: "Idempotency UUID Protocol"
+        expert: "native"
+        weight: 1.0
+    agents:
+      primary: ["@campaign-manager"]
+      consumers: ["all agents with API access"]
+    triggers:
+      semantic: []
+      metric: ["http_429", "http_5xx", "token_expired", "quota_exceeded"]
+    token_estimate: "~800 tokens"
+    notes: "System-embedded — not manually activated. Infrastructure skill."
+
+  monitoring-setup:
+    id: "monitoring-setup"
+    name: "Monitoring Setup"
+    category: "operational"
+    location: "squads/aiox-ads/skills/operational/monitoring-setup/SKILL.md"
+    description: "Configura thresholds persistentes e schedule adaptativo por campanha"
+    version: "1.0.0"
+    activation_command: "*setup-monitoring"
+    frameworks:
+      - name: "Persistent Threshold Configuration"
+        expert: "native"
+        weight: 1.0
+      - name: "Adaptive Schedule (3-tier)"
+        expert: "native"
+        weight: 1.0
+    agents:
+      primary: ["@ad-midas"]
+      consumers: ["@campaign-manager", "@performance-analyst"]
+    triggers:
+      semantic: ["monitoramento", "setup monitoring", "thresholds", "alertas", "schedule"]
+    token_estimate: "~900 tokens"
+    notes: "CONFIGURES thresholds; campaign-monitor EXECUTES the loop"
 
 # =============================================================================
-# AGENT-SKILL MATRIX
+# AGENT-SKILL MATRIX (v5.0 — 10 agents)
 # =============================================================================
 
 agent_skills:
+  # -- Tier 0 --
   "@ad-midas":
-    role: "Lead - Campaign Monitor Owner"
+    role: "Strategist & Concierge (Tier 0)"
     primary_skills:
       - campaign-monitor
       - funnel-selection
       - campaign-structure
+      - scale-readiness-check
+      - unit-economics
+      - research-protocol
+      - competitive-intel
+      - bidding-strategy
+      - monitoring-setup
     can_invoke:
       - all
     can_delegate:
-      - hook-generator → @creative-analyst
-      - tracking-audit → @pixel-specialist
-      - metric-diagnosis → @performance-analyst
+      - hook-generator -> @creative-analyst
+      - tracking-audit -> @pixel-specialist
+      - metric-diagnosis -> @performance-analyst
+      - google-campaign-architect -> @kasim-aslam
+      - youtube-campaign-launcher -> @tom-breeze
+      - creative-bombardment -> @ralph-burns
+      - br-campaign-ops -> @br-traffic-operator
     receives_escalations: true
 
-  "@creative-analyst":
-    role: "Specialist - Creative Skills"
+  # -- Tier 1 --
+  "@campaign-manager":
+    role: "API Executor (Tier 1)"
     primary_skills:
-      - hook-generator
-      - copy-generator
-      - creative-brief
-      - angle-generator
-      - dsl-structure
-    reports_to: "@ad-midas"
-
-  "@pixel-specialist":
-    role: "Specialist - Tracking Skills"
-    primary_skills:
-      - tracking-audit
-      - attribution-analysis
+      - campaign-monitor
+      - campaign-structure
+    system_skills:
+      - api-resilience
     reports_to: "@ad-midas"
 
   "@performance-analyst":
-    role: "Specialist - Analysis Skills"
+    role: "Analyst (Tier 1)"
     primary_skills:
       - metric-diagnosis
-      - creative-fatigue-detector
-      - funnel-analysis
       - kill-scale-rules
       - budget-allocation
       - audience-expansion
-      - unit-economics
-      - scale-readiness-check
+      - funnel-analysis
+      - attribution-analysis
+      - learning-phase-detector
+      - auction-overlap-detector
+      - creative-evaluator
+    reports_to: "@ad-midas"
+
+  "@creative-analyst":
+    role: "Creator (Tier 1)"
+    primary_skills:
+      - hook-generator
+      - creative-brief
+      - copy-generator
+      - angle-generator
+      - dsl-structure
+      - creative-fatigue-detector
+    reports_to: "@ad-midas"
+
+  "@pixel-specialist":
+    role: "Tracker (Tier 1)"
+    primary_skills:
+      - tracking-audit
+      - attribution-analysis
+      - pixel-setup
+      - page-analyzer
+    reports_to: "@ad-midas"
+
+  "@fiscal":
+    role: "Quality Gate & Safety Officer (Tier 1)"
+    primary_skills:
+      - ad-compliance-gate
+      - scorecard-builder
+      - accountability-loop
+    reports_to: "@ad-midas"
+
+  # -- Tier 2 --
+  "@kasim-aslam":
+    role: "Platform Master — Google (Tier 2)"
+    primary_skills:
+      - google-campaign-architect
+      - google-search-optimizer
+    reports_to: "@ad-midas"
+
+  "@tom-breeze":
+    role: "Platform Master — YouTube (Tier 2)"
+    primary_skills:
+      - youtube-ad-scriptwriter
+      - youtube-campaign-launcher
+    reports_to: "@ad-midas"
+
+  "@ralph-burns":
+    role: "Scaling Master (Tier 2)"
+    primary_skills:
+      - creative-bombardment
+      - forester-scaling-system
+    reports_to: "@ad-midas"
+
+  "@br-traffic-operator":
+    role: "Market Master — Brasil (Tier 2)"
+    primary_skills:
+      - br-campaign-ops
     reports_to: "@ad-midas"
 
 # =============================================================================
@@ -653,39 +1260,57 @@ agent_skills:
 # =============================================================================
 
 statistics:
-  total_skills: 18
+  total_skills: 38
   by_category:
-    diagnostic: 5
-    generative: 5
-    optimization: 3
-    strategic: 4
+    diagnostic: 9
+    generative: 6
+    optimization: 5
+    strategic: 11
     automation: 1
-  total_frameworks: 47
+    operational: 6
+  total_frameworks: 65
   by_expert:
     jeremy-haynes: 28
     brian-moncada: 10
     alex-hormozi: 5
     brandon-carter: 3
     jordan-stupar: 1
-  total_token_estimate: "~19000 tokens"
+    kasim-aslam: 5
+    ryan-deiss: 8
+    pedro-sobral: 1
+    nick-theriot: 1
+    meta-official: 3
+    native: ~10
+  total_token_estimate: "~42000 tokens"
 
 # =============================================================================
 # CHANGELOG
 # =============================================================================
 
 changelog:
+  - version: "5.0.0"
+    date: "2026-03-18"
+    changes:
+      - "ALL 38 skill paths migrated from .aios-core/development/skills/media-buyer/ to squads/aiox-ads/skills/"
+      - "9 NEW skills registered: research-protocol, competitive-intel, bidding-strategy, page-analyzer, learning-phase-detector, auction-overlap-detector, creative-evaluator, api-resilience, monitoring-setup"
+      - "11 pre-existing skills added to registry: youtube-ad-scriptwriter, accountability-loop, ad-compliance-gate, br-campaign-ops, pixel-setup, creative-bombardment, google-search-optimizer, forester-scaling-system, google-campaign-architect, scorecard-builder, youtube-campaign-launcher"
+      - "Added operational category (7 skills)"
+      - "Added experts: kasim-aslam, ryan-deiss, pedro-sobral, nick-theriot"
+      - "Agent-skill matrix updated to v5 10-agent structure (Tier 0/1/2)"
+      - "Statistics updated: 38 skills, 65 frameworks, ~42000 tokens"
+      - "Version bumped: kill-scale-rules v1.1.0, tracking-audit v1.1.0, campaign-structure v1.1.0, ad-compliance-gate v1.1.0, campaign-monitor v1.1.0"
   - version: "1.1.0"
     date: "2026-02-01"
     changes:
       - "Synchronized skill IDs with actual SKILL.md files"
-      - "audience-analyzer → funnel-analysis"
-      - "youtube-relevance-audit → attribution-analysis"
-      - "copy-frameworks → copy-generator"
-      - "youtube-script-builder → angle-generator"
-      - "email-sequence-builder → dsl-structure"
-      - "budget-optimizer → budget-allocation"
-      - "creative-refresh → audience-expansion"
-      - "hydra-multi-funnel → scale-readiness-check"
-      - "youtube-launch-protocol → campaign-structure"
+      - "audience-analyzer -> funnel-analysis"
+      - "youtube-relevance-audit -> attribution-analysis"
+      - "copy-frameworks -> copy-generator"
+      - "youtube-script-builder -> angle-generator"
+      - "email-sequence-builder -> dsl-structure"
+      - "budget-optimizer -> budget-allocation"
+      - "creative-refresh -> audience-expansion"
+      - "hydra-multi-funnel -> scale-readiness-check"
+      - "youtube-launch-protocol -> campaign-structure"
       - "Added activation_command to all skills"
       - "Updated agent-skill matrix"

@@ -2,7 +2,7 @@
 
 **Template ID:** research-output-template-v1
 **Purpose:** Standardized structure for deep research documents
-**Validates Against:** `checklists/deep-research-quality.md`
+**Validates Against:** `squads/squad-creator-pro/checklists/deep-research-quality.md`
 
 ---
 
@@ -622,4 +622,4 @@ Based on this research:
 **Template Version:** 1.0.0
 **Created:** 2026-01-22
 **Part of:** squads/squad-creator
-**Validates Against:** checklists/deep-research-quality.md
+**Validates Against:** squads/squad-creator-pro/checklists/deep-research-quality.md

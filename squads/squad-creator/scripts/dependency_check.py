@@ -114,6 +114,56 @@ def is_external_squad_reference(content: str, match: re.Match, squad_name: str) 
     return False
 
 
+def is_external_tooling_reference(content: str, match_pos: int) -> bool:
+    """Check if the matched ref belongs to tooling/runtime paths outside the squad."""
+    start = max(0, match_pos - 40)
+    context_before = content[start:match_pos]
+
+    tooling_prefixes = (
+        ".claude/",
+        ".codex/",
+        ".gemini/",
+        ".aiox-core/",
+        ".aiox/",
+        "workspace/",
+        "outputs/",
+        "docs/",
+    )
+
+    return any(context_before.endswith(prefix) for prefix in tooling_prefixes)
+
+
+def load_inheritance_chain(squad_path: str) -> List[Path]:
+    """Return squad root plus inherited upgrade-pack parents, if any."""
+    chain = []
+    visited = set()
+    current = Path(squad_path).resolve()
+
+    while current.exists() and current not in visited:
+        visited.add(current)
+        chain.append(current)
+
+        config_path = current / "config.yaml"
+        if not config_path.exists():
+            break
+
+        try:
+            raw = config_path.read_text(encoding="utf-8")
+        except Exception:
+            break
+
+        match = re.search(r'^\s*enhances:\s*["\']?([a-z0-9_-]+)["\']?\s*$', raw, re.MULTILINE)
+        if not match:
+            break
+
+        next_path = (current.parent / match.group(1)).resolve()
+        if not next_path.exists():
+            break
+        current = next_path
+
+    return chain
+
+
 def extract_references(content: str, file_path: str, squad_name: str) -> Tuple[Dict[str, List[str]], Dict[str, List[str]]]:
     """
     Extract file references from markdown/yaml content.
@@ -165,6 +215,11 @@ def extract_references(content: str, file_path: str, squad_name: str) -> Tuple[D
                 external[ref_type].append(filename)
                 continue
 
+            # Skip if pointing to tooling/runtime paths outside the squad
+            if is_external_tooling_reference(content, match.start()):
+                external[ref_type].append(filename)
+                continue
+
             # This appears to be an internal reference
             if filename not in internal[ref_type]:
                 internal[ref_type].append(filename)
@@ -172,15 +227,26 @@ def extract_references(content: str, file_path: str, squad_name: str) -> Tuple[D
     return internal, external
 
 
-def check_references(squad_path: str, references: Dict[str, List[str]], source_file: str) -> List[Dict]:
+def check_references(
+    squad_path: str,
+    references: Dict[str, List[str]],
+    source_file: str,
+    candidate_squad_paths: List[str] = None,
+) -> List[Dict]:
     """Check if referenced files exist."""
     issues = []
+    search_roots = candidate_squad_paths or [squad_path]
 
     for ref_type, files in references.items():
-        ref_dir = os.path.join(squad_path, ref_type)
         for file in files:
-            file_path = os.path.join(ref_dir, file)
-            if not os.path.exists(file_path):
+            exists = False
+            for root in search_roots:
+                file_path = os.path.join(root, ref_type, file)
+                if os.path.exists(file_path):
+                    exists = True
+                    break
+
+            if not exists:
                 issues.append({
                     "type": "MISSING_REFERENCE",
                     "code": f"DEP-{ref_type.upper()}-001",
@@ -195,7 +261,13 @@ def check_references(squad_path: str, references: Dict[str, List[str]], source_f
     return issues
 
 
-def scan_file(file_path: str, squad_path: str, squad_name: str, strict: bool = False) -> Dict[str, Any]:
+def scan_file(
+    file_path: str,
+    squad_path: str,
+    squad_name: str,
+    strict: bool = False,
+    candidate_squad_paths: List[str] = None,
+) -> Dict[str, Any]:
     """Scan a single file for references."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -218,7 +290,7 @@ def scan_file(file_path: str, squad_path: str, squad_name: str, strict: bool = F
         for k, v in external_refs.items():
             refs_to_check[k] = list(set(refs_to_check[k] + v))
 
-    issues = check_references(squad_path, refs_to_check, file_path)
+    issues = check_references(squad_path, refs_to_check, file_path, candidate_squad_paths)
 
     return {
         "file": os.path.basename(file_path),
@@ -247,6 +319,7 @@ def scan_squad(squad_path: str, strict: bool = False) -> Dict[str, Any]:
         "squad_path": squad_path,
         "exists": True,
         "strict_mode": strict,
+        "inheritance_chain": [],
         "files_scanned": 0,
         "total_references": 0,
         "external_references": 0,
@@ -254,6 +327,10 @@ def scan_squad(squad_path: str, strict: bool = False) -> Dict[str, Any]:
         "issues": [],
         "by_directory": {}
     }
+
+    inheritance_chain = load_inheritance_chain(squad_path)
+    candidate_squad_paths = [str(path_obj) for path_obj in inheritance_chain]
+    results["inheritance_chain"] = [os.path.basename(path_obj) for path_obj in inheritance_chain]
 
     # Directories to scan
     scan_dirs = ["agents", "tasks", "workflows", "templates"]
@@ -267,7 +344,13 @@ def scan_squad(squad_path: str, strict: bool = False) -> Dict[str, Any]:
         for file in os.listdir(dir_path):
             if file.endswith('.md') or file.endswith('.yaml'):
                 file_path = os.path.join(dir_path, file)
-                scan_result = scan_file(file_path, squad_path, squad_name, strict)
+                scan_result = scan_file(
+                    file_path,
+                    squad_path,
+                    squad_name,
+                    strict,
+                    candidate_squad_paths,
+                )
                 dir_results.append(scan_result)
                 results["files_scanned"] += 1
                 results["total_references"] += scan_result["reference_count"]

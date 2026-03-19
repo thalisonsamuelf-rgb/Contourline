@@ -588,7 +588,7 @@ phases:
               ═══════════════════════════════════════════════════════════════════
             next_action: Create PRD using templates/squad-prd-tmpl.md
             reference_files:
-              - data/pm-best-practices.md
+              - squads/squad-creator-pro/data/pm-best-practices.md
               - templates/squad-prd-tmpl.md
             story_generation_rules:
               agent_stories:
@@ -601,7 +601,7 @@ phases:
                   # Executor apenas copia → Agent genérico/fraco
                 correct_pattern: |
                   # Story referencia workflow
-                  workflow: "wf-clone-mind.yaml" | "create-agent.md"
+                  workflow: "squads/squad-creator-pro/workflows/wf-clone-mind.yaml" | "create-agent.md"
                   inputs: [agent_id, domain, sources_path]
                   quality_gates: [SC_AGT_001, SC_AGT_002, SC_AGT_003]
                   # Executor EXECUTA workflow → Agent com profundidade
@@ -700,7 +700,7 @@ phases:
       Each agent performs DEEP SEARCH in its category, then results are
       synthesized into a decision matrix (Impact vs Effort).
     execute:
-      workflow: workflows/wf-discover-tools.yaml
+      task: tasks/discover-tools.md
       inputs:
         domain: "{domain}"
         use_cases: "{use_cases}"
@@ -799,7 +799,7 @@ phases:
         name: Execute Mind Research Loop
         action: Run iterative research workflow
         execute:
-          workflow: workflows/wf-mind-research-loop.yaml
+          workflow: squads/squad-creator-pro/workflows/wf-mind-research-loop.yaml
           inputs:
             domain: "{domain}"
             min_minds: 5
@@ -952,7 +952,7 @@ phases:
           Extract Playbook + Framework + Swipe File trinity.
           Validate fidelity 85%+ for quality mode.
         execute:
-          workflow: workflows/wf-clone-mind.yaml
+          workflow: squads/squad-creator-pro/workflows/wf-clone-mind.yaml
           for_each: minds_list
           inputs_per_mind:
             mind_name: "{mind.name}"
@@ -1087,6 +1087,21 @@ phases:
           - all_components_listed: true
           - entry_agent_defined: true
           - version_correct: true
+      - id: step_4_5
+        name: Generate Greeting Script (CONDITIONAL)
+        condition: "workspace_integration.level IN [workspace_first, controlled_runtime_consumer] OR runtime_dir exists"
+        skip_if: "workspace_integration.level IN [none, read_only] AND no runtime_dir"
+        action: Create deterministic greeting script with Next Action (GREETING-CONTINUITY-001)
+        task: create-greeting-script.md
+        template: templates/greeting-script-tmpl.cjs
+        checklist: checklists/greeting-script-checklist.md
+        output:
+          file: scripts/generate-{squad_name}-greeting.cjs
+        integration:
+          - update_entry_agent_activation_instructions: "Add STEP 3.5 for greeting script execution"
+          - register_in_config: "Add to scripts section with trigger on_activation"
+        on_skip:
+          message: "Squad stateless (no workspace integration or runtime). Greeting script not needed."
     checkpoint:
       id: CP_PHASE_4
       name: Integration Complete
@@ -1095,6 +1110,7 @@ phases:
         - all_dependencies_wired: true
         - readme_complete: true
         - config_valid: true
+        - greeting_script_exists: true
   - id: phase_5
     name: VALIDATION
     purpose: Validate squad meets quality standards

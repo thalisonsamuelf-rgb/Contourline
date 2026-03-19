@@ -9,10 +9,10 @@
 
 ## Overview
 
-Gera variações de hooks para anúncios usando o DSL Revolution Framework de Jeremy Haynes e o método Constants vs Variables de Brandon Carter. Foco nos primeiros 3 segundos que determinam o sucesso do criativo.
+Generates hook variations for ads using Jeremy Haynes' DSL Revolution Framework and Brandon Carter's Constants vs Variables method. Focus on the first 3 seconds that determine creative success.
 
 **Activation Command:** `*generate-hooks {product}`
-**Announce:** "Ativando Hook Generator com DSL Revolution e Constants vs Variables."
+**Announce:** "Activating Hook Generator with DSL Revolution and Constants vs Variables."
 
 ---
 
@@ -20,10 +20,10 @@ Gera variações de hooks para anúncios usando o DSL Revolution Framework de Je
 
 | Expert         | Framework                | Weight | Focus               |
 | -------------- | ------------------------ | ------ | ------------------- |
-| Jeremy Haynes  | DSL Revolution Framework | 0.95   | Estrutura de hooks  |
-| Brandon Carter | Constants vs Variables   | 0.88   | Teste científico    |
-| Jeremy Haynes  | Thumb Stop Metrics       | 0.90   | Métricas de atenção |
-| Jordan Stupar  | Creative Concepts        | 0.85   | Ângulos criativos   |
+| Jeremy Haynes  | DSL Revolution Framework | 0.95   | Hook structure      |
+| Brandon Carter | Constants vs Variables   | 0.88   | Scientific testing  |
+| Jeremy Haynes  | Thumb Stop Metrics       | 0.90   | Attention metrics   |
+| Jordan Stupar  | Creative Concepts        | 0.85   | Creative angles     |
 
 ---
 
@@ -32,8 +32,8 @@ Gera variações de hooks para anúncios usando o DSL Revolution Framework de Je
 ### 1. Problema (Pain Point)
 
 ```yaml
-description: 'Começa com a dor do público'
-effectiveness: 'Alta para público consciente do problema'
+description: 'Starts with audience pain point'
+effectiveness: 'High for problem-aware audience'
 examples:
   - 'Cansado de gastar com ads que não convertem?'
   - 'Frustrado com resultados inconsistentes?'
@@ -44,8 +44,8 @@ structure: '[Emoção negativa] + [Problema específico] + ?'
 ### 2. Resultado (Outcome)
 
 ```yaml
-description: 'Mostra transformação ou resultado'
-effectiveness: 'Alta para prova social'
+description: 'Shows transformation or outcome'
+effectiveness: 'High for social proof'
 examples:
   - 'Faturei R$100k em 30 dias usando isso...'
   - 'De R$0 a R$50k/mês em 90 dias'
@@ -56,8 +56,8 @@ structure: '[Resultado específico] + [Timeframe] + [Método implícito]'
 ### 3. Curiosidade (Open Loop)
 
 ```yaml
-description: 'Gera curiosidade com loop aberto'
-effectiveness: 'Alta para scroll-stopping'
+description: 'Generates curiosity with open loop'
+effectiveness: 'High for scroll-stopping'
 examples:
   - 'O segredo que ninguém te conta sobre Meta Ads...'
   - 'Descobri isso depois de perder R$50k...'
@@ -68,8 +68,8 @@ structure: '[Promessa de segredo/descoberta] + [Tema] + ...'
 ### 4. Controverso (Pattern Interrupt)
 
 ```yaml
-description: 'Vai contra crença comum'
-effectiveness: 'Muito alta para pattern interrupt'
+description: 'Goes against common belief'
+effectiveness: 'Very high for pattern interrupt'
 examples:
   - 'Esqueça tudo que te ensinaram sobre tráfego...'
   - 'Lookalike é furada. Aqui está o porquê...'
@@ -80,8 +80,8 @@ structure: '[Negação de crença comum] + [Promessa de alternativa]'
 ### 5. Prova Social
 
 ```yaml
-description: 'Usa prova social como gancho'
-effectiveness: 'Alta para credibilidade'
+description: 'Uses social proof as hook'
+effectiveness: 'High for credibility'
 examples:
   - '3.247 alunos já aplicaram esse método...'
   - 'Depois de ajudar +500 empresas, descobri...'
@@ -92,8 +92,8 @@ structure: '[Número impressionante] + [Resultado/Ação]'
 ### 6. Tutorial (How-To)
 
 ```yaml
-description: 'Promete ensinar algo específico'
-effectiveness: 'Alta para conteúdo educativo'
+description: 'Promises to teach something specific'
+effectiveness: 'High for educational content'
 examples:
   - 'Como criar anúncios que vendem em 3 passos...'
   - 'O passo a passo para escalar para R$10k/dia...'
@@ -131,9 +131,9 @@ inputs:
 
 ```yaml
 generation_rules:
-  per_category: 2 # Hooks por categoria
-  total_hooks: 12 # Mínimo
-  variation_per_winner: 5 # Se tiver winner
+  per_category: 2 # Hooks per category
+  total_hooks: 12 # Minimum
+  variation_per_winner: 5 # If there is a winner
 
   priority_by_stage:
     cold:
@@ -142,18 +142,18 @@ generation_rules:
       - controverso
     warm:
       - resultado
-      - prova_social
+      - social_proof
       - tutorial
     hot:
       - resultado
-      - prova_social
+      - social_proof
 ```
 
 ### Step 3: Scientific Testing Setup (Brandon Carter)
 
 ```yaml
 testing_methodology:
-  principle: 'Hook é VARIÁVEL, Body/CTA são CONSTANTES'
+  principle: 'Hook is the VARIABLE, Body/CTA are CONSTANTS'
 
   test_structure:
     variable: 'Hook (primeiros 3 seg)'
@@ -191,19 +191,19 @@ hook_generation:
     problema:
       - hook: 'Cansado de gastar com ads que não convertem?'
         length: 8
-        emotion: 'frustração'
+        emotion: 'frustration'
         cta_implicit: false
 
       - hook: 'Já perdeu dinheiro com tráfego pago?'
         length: 6
-        emotion: 'medo'
+        emotion: 'fear'
         cta_implicit: false
 
     resultado:
       - hook: 'De R$0 a R$50k/mês em 90 dias com Meta Ads'
         length: 10
-        specificity: 'alta'
-        credibility: 'média'
+        specificity: 'high'
+        credibility: 'medium'
 
       - hook: 'Meus alunos faturam +R$1M/mês juntos'
         length: 6
@@ -227,7 +227,7 @@ hook_generation:
         length: 7
         challenge: true
 
-    prova_social:
+    social_proof:
       - hook: '+500 alunos já dominam Meta Ads com esse método'
         length: 8
         number: 500
@@ -239,7 +239,7 @@ hook_generation:
     tutorial:
       - hook: 'Como criar ads lucrativos em 3 passos simples'
         length: 8
-        simplicity: '3 passos'
+        simplicity: '3 steps'
 
       - hook: 'O passo a passo que uso para escalar todo dia'
         length: 9
@@ -262,15 +262,15 @@ hook_generation:
 
 ### Triggered By
 
-- `creative-fatigue-detector` - quando detecta fadiga
-- `metric-diagnosis` - quando CTR baixo
-- `campaign-monitor` - quando hook_rate < 15%
+- `creative-fatigue-detector` - when fatigue is detected
+- `metric-diagnosis` - when CTR is low
+- `campaign-monitor` - when hook_rate < 15%
 - User command - `*generate-hooks`
 
 ### Dispatches To
 
-- `creative-brief` - para brief completo ao designer
-- `copy-generator` - para body text
+- `creative-brief` - for complete brief to designer
+- `copy-generator` - for body text
 
 ### Agent Assignment
 
@@ -284,7 +284,7 @@ hook_generation:
 ```
 *generate-hooks "Curso de Meta Ads"
 
-*generate-hooks "Mentoria High Ticket" --categories resultado,prova_social
+*generate-hooks "Mentoria High Ticket" --categories resultado,social_proof
 
 *generate-hooks --from-winner "Hook atual que funciona" --variations 10
 ```

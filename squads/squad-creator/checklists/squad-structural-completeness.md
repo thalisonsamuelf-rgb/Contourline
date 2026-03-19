@@ -92,6 +92,8 @@ detect_expert:
 | `CHANGELOG.md` existe | Histórico de versões | WARNING |
 | `ARCHITECTURE.md` existe | Pipeline flow | WARNING |
 | Campo `tested` presente | true/false no config | WARNING |
+| Greeting script existe (se stateful) | `scripts/generate-{squad}-greeting.cjs` — ONLY if workspace_integration != none/read_only OR runtime exists | WARNING |
+| Greeting tem Next Action (se stateful) | Script output contém `**Next Action:**` — skip for stateless squads | WARNING |
 
 ### Para squads EXPERT/PIPELINE (WARNING se faltando)
 

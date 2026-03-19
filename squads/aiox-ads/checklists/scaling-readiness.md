@@ -34,6 +34,89 @@
 
 ---
 
+## v5.0 Addition: Auction Overlap Check
+
+> **Severity:** BLOCK
+> **Reference:** `data/knowledge/meta/auction_overlap.md`, skill `auction-overlap-detector`
+
+- [ ] **Verificar audience overlap < 30% entre ad sets antes de escalar**
+
+**Descricao:** Auction overlap ocorre quando seus proprios ad sets competem entre si no mesmo leilao da Meta. Isso fragmenta learning, desperdicea budget e infla CPMs. Overlap acima de 30% indica auto-competicao ativa que deve ser resolvida ANTES de qualquer decisao de escala.
+
+**Verificacao:** Usar skill `auction-overlap-detector` para analisar overlap entre TODOS os ad sets ativos da campanha. Resultado esperado:
+- < 15%: LOW (monitorar, sem acao)
+- 15-30%: MEDIUM (revisar, planejar consolidacao)
+- > 30%: HIGH (BLOCK escala ate resolver)
+- > 50%: CRITICAL (consolidacao imediata obrigatoria)
+
+**Remediacao (se > 30%):**
+1. Consolidar ad sets com audiencias sobrepostas
+2. Adicionar exclusoes mutuas entre ad sets
+3. Diferenciar creative/messaging por ad set
+4. Migrar para CBO para que Meta resolva alocacao automaticamente
+
+---
+
+## v5.0 Addition: Breakdown Effect Disclaimer
+
+> **Severity:** WARN
+> **Reference:** `data/knowledge/meta/breakdown_effect.md`
+
+- [ ] **Disclaimer de Breakdown Effect reconhecido**
+
+**Descricao:** Metricas de breakdown da Meta (por idade, genero, posicionamento, device, etc.) NAO somam ao total da campanha/ad set. Isso ocorre porque o sistema de delivery otimiza holisticamente, e a segmentacao retroativa cria discrepancias. Breakdowns sao ferramentas de DIAGNOSTICO, nao ancoras de decisao.
+
+**Regra:** NAO basear decisoes de escala exclusivamente em dados de breakdown. Sempre usar metricas AGREGADAS (campaign-level ou ad-set-level) como base para decisoes de escala. Breakdowns servem apenas para identificar tendencias e diagnosticar problemas.
+
+**Verificacao:** Antes de aprovar escala, confirmar que a recomendacao e baseada em metricas agregadas (ROAS total, CPA total, volume total) e NAO em performance de um segmento especifico de breakdown.
+
+---
+
+## v5.0 Addition: Learning Phase Complete Verification
+
+> **Severity:** BLOCK
+> **Reference:** `data/knowledge/meta/learning_phase.md`
+
+- [ ] **Confirmar que campanha saiu da Learning Phase: 7+ dias E 50+ conversoes**
+
+**Descricao:** Escalar uma campanha que ainda esta em Learning Phase e contraproducente -- o algoritmo ainda esta explorando e a performance e volatil. O ad set precisa de aproximadamente 50 eventos de otimizacao dentro de uma janela de 7 dias para estabilizar delivery. Escalar antes disso amplifica a instabilidade.
+
+**Verificacao:** Checar AMBOS os criterios:
+1. **Tempo:** Campanha tem 7+ dias desde criacao ou ultimo reset significativo
+2. **Volume:** 50+ conversoes acumuladas no ad set (verificar via API ou Ads Manager)
+
+Se qualquer criterio nao for atendido, escala BLOQUEADA.
+
+**Excecao:** Se ad set esta em "Learning Limited" (nao consegue 50 conversoes em 7 dias), avaliar causas (budget muito baixo, audiencia muito restrita, evento de otimizacao muito raro) e resolver ANTES de tentar escalar.
+
+---
+
+## v5.0 Addition: Rampagem Gradual Rule
+
+> **Severity:** BLOCK
+> **Reference:** `config/safety-rules.yaml` -- `budget_thresholds.max_daily_increase_pct: 20`
+
+- [ ] **Max +20% aumento de budget por ajuste respeitado**
+
+**Descricao:** Spike de ad spend e o trigger #1 (ALTO) de ban na moderacao AI da Meta. Qualquer aumento de budget deve respeitar o limite maximo de +20% sobre o valor atual por ajuste. Aumentos maiores devem ser feitos em etapas com intervalos de 24-48h entre cada ajuste.
+
+**Verificacao:** Antes de qualquer ajuste de budget, calcular: `(novo_budget - budget_atual) / budget_atual * 100`. Se resultado > 20%, bloquear e reformular plano de rampagem.
+
+**Limites completos (ref: `safety-rules.yaml`):**
+- Max aumento diario: +20% sobre valor atual
+- Max acumulo semanal: +50% sobre valor de inicio da semana
+- Rampagem para budget novo: Day 1 = 25% do target, Day 3 = 50%, Day 7 = 100%
+
+**Remediacao:** Se aumento desejado > 20%, criar plano de rampagem escalonado:
+1. Dia 1: +20% (maximo)
+2. Dia 2-3: Aguardar estabilizacao
+3. Dia 3-4: +20% adicional
+4. Repetir ate atingir target
+
+Registrar plano no WAL com aprovacao HITL.
+
+---
+
 ## Tipos de Escala
 
 ### Escala Vertical (Mesmo Adset)

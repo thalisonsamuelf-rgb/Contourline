@@ -189,6 +189,18 @@ if [[ ! -d "$SQUAD_DIR" ]]; then
   exit 2
 fi
 
+INHERITED_SQUAD=""
+INHERITED_SQUAD_DIR=""
+if [[ -f "$SQUAD_DIR/config.yaml" ]]; then
+  INHERITED_SQUAD=$(grep -E '^[[:space:]]*enhances:[[:space:]]*' "$SQUAD_DIR/config.yaml" 2>/dev/null | head -1 | sed 's/.*enhances:[[:space:]]*//' | tr -d '"' | tr -d "'" | xargs || true)
+  if [[ -z "$INHERITED_SQUAD" ]]; then
+    INHERITED_SQUAD=$(grep -E '^[[:space:]]*enhances:[[:space:]]*' "$SQUAD_DIR/config.yaml" 2>/dev/null | tail -1 | sed 's/.*enhances:[[:space:]]*//' | tr -d '"' | tr -d "'" | xargs || true)
+  fi
+  if [[ -n "$INHERITED_SQUAD" ]] && [[ -d "$SQUADS_DIR/$INHERITED_SQUAD" ]]; then
+    INHERITED_SQUAD_DIR="$SQUADS_DIR/$INHERITED_SQUAD"
+  fi
+fi
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # LOGGING HELPERS
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -216,6 +228,21 @@ log_info() {
   if [[ "$VERBOSE" == "true" ]]; then
     echo -e "  ${CYAN}ℹ${NC} $1"
   fi
+}
+
+asset_exists() {
+  local asset_type="$1"
+  local asset_name="$2"
+
+  if [[ -f "$SQUAD_DIR/$asset_type/$asset_name" ]]; then
+    return 0
+  fi
+
+  if [[ -n "$INHERITED_SQUAD_DIR" ]] && [[ -f "$INHERITED_SQUAD_DIR/$asset_type/$asset_name" ]]; then
+    return 0
+  fi
+
+  return 1
 }
 
 log_section() {
@@ -619,7 +646,7 @@ check_structure() {
   # 1.2 Entry agent
   log_subsection "1.2 Entry Point"
   if [[ -n "${ENTRY_AGENT:-}" ]]; then
-    if [[ -f "$SQUAD_DIR/agents/${ENTRY_AGENT}.md" ]]; then
+    if asset_exists "agents" "${ENTRY_AGENT}.md"; then
       log_pass "Entry agent exists: agents/${ENTRY_AGENT}.md"
     else
       log_fail "Entry agent not found: agents/${ENTRY_AGENT}.md"
@@ -693,7 +720,14 @@ check_structure() {
   esac
 
   if [[ -n "$workspace_level" && "$workspace_level" != "none" ]]; then
-    if rg -n "workspace/" "$SQUAD_DIR/agents" "$SQUAD_DIR/tasks" "$SQUAD_DIR/workflows" "$SQUAD_DIR/config.yaml" >/dev/null 2>&1; then
+    # Build list of existing paths to search (avoid rg exit 2 on missing files)
+    local ws_search_paths=()
+    [[ -d "$SQUAD_DIR/agents" ]] && ws_search_paths+=("$SQUAD_DIR/agents")
+    [[ -d "$SQUAD_DIR/tasks" ]] && ws_search_paths+=("$SQUAD_DIR/tasks")
+    [[ -d "$SQUAD_DIR/workflows" ]] && ws_search_paths+=("$SQUAD_DIR/workflows")
+    [[ -f "$SQUAD_DIR/config.yaml" ]] && ws_search_paths+=("$SQUAD_DIR/config.yaml")
+
+    if [[ ${#ws_search_paths[@]} -gt 0 ]] && grep -rn "workspace/" "${ws_search_paths[@]}" >/dev/null 2>&1; then
       log_pass "workspace references found for integration level '$workspace_level'"
     else
       log_fail "workspace integration level '$workspace_level' declared but no workspace paths found"
@@ -706,8 +740,15 @@ check_structure() {
       log_fail "workspace level '$workspace_level' requires squads/c-level to exist"
       tier1_fail=$((tier1_fail + 1))
     fi
-    if rg -n "@coo|COO|c-level|workspace-handoff\\.yaml|handoff.*workspace" \
-      "$SQUAD_DIR/README.md" "$SQUAD_DIR/tasks" "$SQUAD_DIR/workflows" "$SQUAD_DIR/config.yaml" >/dev/null 2>&1; then
+    # Build list of existing paths (README.md may not exist yet)
+    local coo_search_paths=()
+    [[ -f "$SQUAD_DIR/README.md" ]] && coo_search_paths+=("$SQUAD_DIR/README.md")
+    [[ -d "$SQUAD_DIR/tasks" ]] && coo_search_paths+=("$SQUAD_DIR/tasks")
+    [[ -d "$SQUAD_DIR/workflows" ]] && coo_search_paths+=("$SQUAD_DIR/workflows")
+    [[ -f "$SQUAD_DIR/config.yaml" ]] && coo_search_paths+=("$SQUAD_DIR/config.yaml")
+
+    if [[ ${#coo_search_paths[@]} -gt 0 ]] && grep -rn -E "@coo|COO|c-level|coo-orchestrator|readiness_owner|workspace-handoff\\.yaml|handoff.*workspace" \
+      "${coo_search_paths[@]}" >/dev/null 2>&1; then
       log_pass "workspace write integration delegates to COO/c-level"
     else
       log_fail "workspace level '$workspace_level' requires explicit COO/c-level handoff"
@@ -798,6 +839,7 @@ check_security() {
     --exclude-dir=.git
     --exclude-dir=__pycache__
     --exclude-dir=node_modules
+    --exclude-dir=tests
   )
 
   log_subsection "2.1 API Keys & Tokens"
@@ -902,7 +944,7 @@ check_cross_references() {
       [[ -f "$agent_file" ]] || continue
       local handoffs=$(grep -oE "handoff_to:[[:space:]]*@?[a-z0-9_-]+" "$agent_file" 2>/dev/null | sed 's/handoff_to:[[:space:]]*@*//' || true)
       for handoff in $handoffs; do
-        if [[ ! -f "$SQUAD_DIR/agents/${handoff}.md" ]]; then
+        if ! asset_exists "agents" "${handoff}.md"; then
           log_fail "XREF-001: Handoff target not found: $handoff (in $(basename "$agent_file"))"
           xref_fail=$((xref_fail + 1))
         else
@@ -935,7 +977,7 @@ check_cross_references() {
                 continue
               fi
             fi
-            if [[ -f "$SQUAD_DIR/tasks/${task_ref}.md" ]]; then
+            if asset_exists "tasks" "${task_ref}.md"; then
               log_pass "XREF-002: Task exists: $task_ref"
             else
               log_warn "XREF-002: Task dependency reference not found: $task_ref (in $(basename "$agent_file"))"

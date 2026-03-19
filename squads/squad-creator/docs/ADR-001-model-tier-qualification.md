@@ -1,9 +1,12 @@
 # ADR-001: Model Tier Qualification Framework para Token Economy
 
-**Status:** Accepted
+**Status:** Accepted [PRO]
 **Date:** 2026-02-11
 **Deciders:** Alan Nicolas, Pedro Valério (agent), The Architect Architect (agent)
 **Technical Area:** Squad Creator Token Optimization
+
+> Desde 2026-03-18, os artefatos operacionais desta ADR vivem apenas em `squads/squad-creator-pro/`.
+> O base mantém esta ADR como historico arquitetural, nao como inventario de arquivos locais.
 
 ---
 
@@ -191,20 +194,20 @@ Hook que intercepta todas as chamadas Task() e valida/injeta modelo.
 ### Configuração
 | Arquivo | Propósito |
 |---------|-----------|
-| [config/model-routing.yaml](../config/model-routing.yaml) | Mapeamento task → tier (41 tasks) |
-| [config/scoring-rubric.yaml](../config/scoring-rubric.yaml) | Rubric de avaliação (5 dimensões) |
+| [../../squad-creator-pro/config/model-routing.yaml](../../squad-creator-pro/config/model-routing.yaml) | Mapeamento task → tier (41 tasks) |
+| [../../squad-creator-pro/config/scoring-rubric.yaml](../../squad-creator-pro/config/scoring-rubric.yaml) | Rubric de avaliação (5 dimensões) |
 
 ### Scripts
 | Arquivo | Propósito |
 |---------|-----------|
-| [scripts/model-tier-validator.cjs](../scripts/model-tier-validator.cjs) | CLI: validate, list, report |
-| [scripts/model-usage-logger.cjs](../scripts/model-usage-logger.cjs) | CLI: log, report (tracking) |
+| [../../squad-creator-pro/scripts/model-tier-validator.cjs](../../squad-creator-pro/scripts/model-tier-validator.cjs) | CLI: validate, list, report |
+| [../../squad-creator-pro/scripts/model-usage-logger.cjs](../../squad-creator-pro/scripts/model-usage-logger.cjs) | CLI: log, report (tracking) |
 
 ### Test Cases
 | Arquivo | Propósito |
 |---------|-----------|
-| [test-cases/_template.yaml](../test-cases/_template.yaml) | Template para novos testes |
-| [test-cases/pv-axioma-assessment/](../test-cases/pv-axioma-assessment/) | Primeiro test case validado |
+| [../../squad-creator-pro/test-cases/_template.yaml](../../squad-creator-pro/test-cases/_template.yaml) | Template para novos testes |
+| [../../squad-creator-pro/test-cases/pv-axioma-assessment/](../../squad-creator-pro/test-cases/pv-axioma-assessment/) | Primeiro test case validado |
 
 ### Skills
 | Arquivo | Propósito |
@@ -223,16 +226,16 @@ Hook que intercepta todas as chamadas Task() e valida/injeta modelo.
 
 ```bash
 # Listar test cases
-node squads/squad-creator/scripts/model-tier-validator.cjs list
+node squads/squad-creator-pro/scripts/model-tier-validator.cjs list
 
 # Validar test case
-node squads/squad-creator/scripts/model-tier-validator.cjs validate pv-axioma-assessment
+node squads/squad-creator-pro/scripts/model-tier-validator.cjs validate pv-axioma-assessment
 
 # Relatório geral
-node squads/squad-creator/scripts/model-tier-validator.cjs report
+node squads/squad-creator-pro/scripts/model-tier-validator.cjs report
 
 # Logar uso
-node squads/squad-creator/scripts/model-usage-logger.cjs log <task> <model> <tokens_in> <tokens_out> <latency>
+node squads/squad-creator-pro/scripts/model-usage-logger.cjs log <task> <model> <tokens_in> <tokens_out> <latency>
 
 # Testar skill
 /pv-axioma-assessment <target>

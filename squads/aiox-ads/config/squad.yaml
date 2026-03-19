@@ -1,5 +1,21 @@
+# ═══════════════════════════════════════════════════════════════
+# DEPRECATED — DO NOT USE
+# ═══════════════════════════════════════════════════════════════
+# Este arquivo foi substituido por: squads/aiox-ads/squad.yaml (v5.0.0)
+#
+# Historico:
+#   - v2.0.0 (media-buyer-squad) → fusionado em v4.0.0 (aiox-ads)
+#   - v4.0.0 → reestruturado em v5.0.0 (10 agentes, MCP, safety)
+#
+# O arquivo canonico da squad e: squads/aiox-ads/squad.yaml
+# Este arquivo permanece apenas para referencia historica.
+# Qualquer modificacao deve ser feita no arquivo raiz.
+#
+# Deprecated em: 2026-03-17 (Story SAIOX-ADS-V5-1.3)
+# ═══════════════════════════════════════════════════════════════
+
 # Media Buyer Squad - Multi-Agent Paid Traffic System
-# Version: 2.0.0 (Officialized with custom names)
+# Version: 2.0.0 (Officialized with custom names) [DEPRECATED]
 # Author: Thiago Finch (BILHON) + SynkraAI Base
 # License: MIT
 

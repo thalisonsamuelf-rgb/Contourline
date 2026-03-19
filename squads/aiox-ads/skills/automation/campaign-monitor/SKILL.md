@@ -3,7 +3,7 @@
 **ID:** `campaign-monitor`
 **Category:** automation
 **Domain:** media-buyer
-**Version:** 1.0.0
+**Version:** 1.1.0
 
 ---
 
@@ -25,6 +25,136 @@ Sistema autônomo de monitoramento contínuo de campanhas que detecta triggers, 
 | Alex Hormozi   | 5          | 0.92   | Unit Economics, LTV/CAC              |
 | Brandon Carter | 3          | 0.88   | Constants vs Variables, Hook Testing |
 | Jordan Stupar  | 1          | 0.85   | Creative Strategy                    |
+
+---
+
+## v5.0 Addition: monitoring-setup Dependency
+
+The campaign-monitor skill now REQUIRES the monitoring-setup skill to be configured before executing monitoring loops. monitoring-setup CONFIGURES thresholds; campaign-monitor EXECUTES the loop.
+
+```yaml
+monitoring_setup_dependency:
+  skill_reference: "skills/operational/monitoring-setup/SKILL.md"
+  relationship: "monitoring-setup produces campaign-monitors.yaml --> campaign-monitor consumes it"
+  config_file: "workspace/businesses/{slug}/ads/{platform}/campaign-monitors.yaml"
+
+  pre_requisite: |
+    Before starting a monitoring loop for any campaign:
+    1. Verify campaign-monitors.yaml exists for the campaign
+    2. If not configured, dispatch: *setup-monitoring {campaign_slug}
+    3. Only proceed with monitoring loop AFTER thresholds are persisted
+
+  what_monitoring_setup_provides:
+    - "Persistent thresholds per campaign (CPA spike, CTR drop, budget overspend, frequency)"
+    - "Schedule tier assignment (first_72h, standard, stable)"
+    - "Learning Phase check configuration"
+    - "Integration with campaign-state.yaml and pulse-report.md"
+```
+
+---
+
+## v5.0 Addition: Persistent Thresholds (from campaign-monitors.yaml)
+
+The monitoring loop now reads thresholds from `campaign-monitors.yaml` instead of using hardcoded defaults. This allows per-campaign customization by @performance-analyst.
+
+```yaml
+persistent_thresholds:
+  source: "workspace/businesses/{slug}/ads/{platform}/campaign-monitors.yaml"
+  managed_by: "@performance-analyst via monitoring-setup skill"
+
+  default_thresholds:
+    cpa_spike:
+      warn: "CPA > target * 1.5"
+      alert: "CPA > target * 3.0"
+    ctr_drop:
+      warn: "CTR < rolling_7d_avg * 0.80"
+      alert: "CTR < rolling_7d_avg * 0.50"
+    budget_overspend:
+      warn: "daily_spend > daily_budget * 1.10"
+      alert: "daily_spend > daily_budget * 1.20"
+    frequency:
+      warn: "frequency > 2.5"
+      alert: "frequency > 3.0"
+    learning_phase:
+      check: "every_monitoring_cycle"
+      ref: "config/safety-rules.yaml > learning_phase"
+
+  customization: |
+    @performance-analyst can adjust thresholds per campaign based on:
+    - Industry benchmarks (from industry-templates/)
+    - Historical performance (from campaign-state.yaml rolling data)
+    - Business model specifics (e-commerce vs lead gen vs SaaS)
+
+  fallback: |
+    If campaign-monitors.yaml is missing or has no entry for a campaign,
+    use the default_thresholds above. Log WARN: "No custom thresholds found,
+    using defaults. Run *setup-monitoring to configure."
+```
+
+---
+
+## v5.0 Addition: Report Schedule
+
+```yaml
+report_schedule:
+  pulse_daily:
+    frequency: "Daily"
+    format: "templates/pulse-report.md"
+    output_path: "workspace/businesses/{slug}/ads/{platform}/{campaign_slug}/reports/daily/pulse-{date}.md"
+    content: |
+      # Pulse -- {campaign_name} -- {date}
+      Spend: R${spend} | CPA: R${cpa} ({trend} vs 7d avg) | ROAS: {roas}
+      Top Winner: {best_ad_name} (CTR {ctr}%)
+      Alert: {alert_or_none}
+      Action: {auto_action_taken_or_none} | Tier: {Auto/HITL/Human}
+    note: "5 lines, scannable in 15 seconds. Generated at end of each monitoring cycle."
+
+  digest_weekly:
+    frequency: "Weekly (every Monday)"
+    format: "templates/digest-report.md"
+    output_path: "workspace/businesses/{slug}/ads/{platform}/{campaign_slug}/reports/weekly/digest-{week}.md"
+    content: |
+      6 fixed sections:
+      1. 7-day performance table (daily metrics)
+      2. Top 3 insights (patterns, anomalies, trends)
+      3. Recommendations with autonomy tier (Auto/HITL/Human)
+      4. Decision log summary (actions taken this week)
+      5. Creative fatigue assessment (3 tiers: OK/FADIGA/CRITICO)
+      6. Next week priorities
+    note: "3-minute read. Aggregates pulse data into strategic overview."
+
+  templates_reference:
+    pulse: "templates/pulse-report.md"
+    digest: "templates/digest-report.md"
+    error: "templates/error-notification.md"
+```
+
+---
+
+## v5.0 Addition: Learning Phase Awareness in Monitoring Cycle
+
+```yaml
+learning_phase_monitoring:
+  check: "EVERY monitoring cycle"
+  position: "FIRST check in the cycle, before threshold evaluation"
+
+  process: |
+    1. Read campaign-state.yaml > learning_phase section
+    2. If learning_phase.status == "active":
+       a. Include in pulse-report: "Campanha em Learning Phase (dia N/7, X/50 conversoes)"
+       b. BLOCK all kill/scale recommendations for this cycle
+       c. If N > 14 (stuck in learning): escalate to HITL with restructuring recommendation
+    3. If learning_phase.status == "reset":
+       a. ALERT: "Learning Phase reiniciado -- instabilidade detectada"
+       b. Increment reset counter in campaign-state.yaml
+       c. Investigate cause (budget change > 20%? targeting edit? creative swap?)
+    4. If learning_phase.status == "complete":
+       a. Proceed with normal threshold evaluation
+       b. Note in pulse: "Learning Phase complete -- full optimization active"
+
+  skill_reference: "skills/diagnostic/learning-phase-detector/SKILL.md"
+  knowledge_reference: "data/knowledge/meta/learning_phase.md"
+```
 
 ---
 
@@ -383,5 +513,5 @@ requires:
 
 ---
 
-_Campaign Monitor Skill v1.0.0_
+_Campaign Monitor Skill v1.1.0_
 _Part of Media Buyer Squad Skills System_

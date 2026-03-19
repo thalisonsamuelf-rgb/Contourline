@@ -160,6 +160,15 @@ workflow:
       phase: handoff
       decision: READY_FOR_PRE_EXISTING_BRIEF_FLOW
       blocking: true
+  handoff_prompts:
+    - from: squad-chief
+      to: pedro-valerio
+      when: roadmap phase starts
+      prompt: Share `planning_contract`, `workflow_inventory`, and `governance_contract` so roadmap and quality gates stay aligned with the PRD scope.
+    - from: pedro-valerio
+      to: squad-chief
+      when: PRD assembly resumes
+      prompt: Return `roadmap` and `quality_gate_matrix` with explicit vetoes, gaps, and dependencies so final assembly stays execution-ready.
   handoff:
     downstream_mode: pre_existing_brief
     next_command: "*create-squad {domain}"

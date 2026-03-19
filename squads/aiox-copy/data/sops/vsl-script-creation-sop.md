@@ -1108,9 +1108,9 @@ Os seguintes itens estão abaixo de 0.8 de confiança e devem ser verificados:
 | `outputs/etl/etl-20260311-qj04/qj04cUeaRAw-diarized.md` | Transcrição diarizada do Podcast "Segredos da Escala #122" | Fonte primária de timestamps e citações diretas de @thiagoroas |
 | `squads/copy/tasks/vsl-script.md` | Task existente (referência de contexto) | Framework Benson 9 passos, formatos de VSL, duração por ticket — não duplicado aqui |
 | `outputs/etl/thiago-roas-interviews/hotmart-cast-diarized.md` | Transcrição diarizada — Hotmart Cast (YouTube: RENU3kEns0E, ~40min) | Regra CTA pós-desejo (ARCH-06, case dobrou conversão), Paradigma Andromeda — segmentação por criativo (CREATIVE-03/04) |
-| `outputs/gerador-pop/extractions/hotmart-cast-gold-extraction.md` | Gold extraction processada por Ohno (SOP Extractor) — 2026-03-12 | Mapa de enrichments ARCH-06, CREATIVE-03, CREATIVE-04 para este SOP |
+| `outputs/aiox-sop/extractions/hotmart-cast-gold-extraction.md` | Gold extraction processada por Ohno (SOP Extractor) — 2026-03-12 | Mapa de enrichments ARCH-06, CREATIVE-03, CREATIVE-04 para este SOP |
 | `outputs/etl/thiago-roas-interviews/kiwicast-213-diarized.md` | Transcrição diarizada — Kiwicast #213 (YouTube: hnw1pGcc3_A, ~1h25min) | Primeira objeção = golpe (F-04), VSL não obrigatório (F-08), preço visível (F-03), moment-hijacking (C-01), progressão de ângulo (C-03), exceção de celebridade (MM-01) |
-| `outputs/gerador-pop/extractions/kiwicast-213-gold-extraction.md` | Gold extraction processada por Ohno (SOP Extractor) — 2026-03-12 | Mapa de enrichments F-04, F-08, F-03, C-01, C-03, MM-01 para este SOP |
+| `outputs/aiox-sop/extractions/kiwicast-213-gold-extraction.md` | Gold extraction processada por Ohno (SOP Extractor) — 2026-03-12 | Mapa de enrichments F-04, F-08, F-03, C-01, C-03, MM-01 para este SOP |
 
 ---
 

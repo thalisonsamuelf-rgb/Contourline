@@ -298,13 +298,13 @@ completion_criteria:
 
 ```yaml
 handoff_to:
-  - agent: "traffic-masters-chief"
+  - agent: "ad-midas"
     when: "Precisa de orquestração multi-plataforma"
-    context: "Passar plano BR para coordenação"
+    context: "Passar plano BR para coordenação via concierge"
 
-  - agent: "depesh-mandalia"
-    when: "Meta Ads precisa de arquitetura e otimização estratégica"
-    context: "Passar dados operacionais para BPM"
+  - agent: "campaign-manager"
+    when: "Campanha Brasil pronta para execução via API"
+    context: "Passar blueprint da campanha para execução MCP"
 
   - agent: "ralph-burns"
     when: "Escala e criativos precisam de sistema de produção"
@@ -315,9 +315,9 @@ handoff_to:
 
 ```yaml
 synergies:
-  - with: "depesh-mandalia"
-    pattern: "Framework ABC + BPM para Meta com disciplina operacional"
+  - with: "ad-midas"
+    pattern: "Framework ABC + estratégia Meta via concierge com disciplina operacional"
 
-  - with: "molly-pittman"
-    pattern: "ABC alimenta o diagnóstico e a lógica de funil"
+  - with: "performance-analyst"
+    pattern: "ABC alimenta o diagnóstico de métricas e a lógica de funil"
 ```

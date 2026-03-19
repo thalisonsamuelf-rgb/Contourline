@@ -343,22 +343,27 @@ completion_criteria:
     - "Measurement/attribution clarified"
 
 handoff_to:
-  - agent: "media-buy-chief"
+  - agent: "ad-midas"
     when: "Strategy needs cross-platform integration"
-    context: "Pass Google Ads plan for multi-channel orchestration"
+    context: "Pass Google Ads plan for multi-channel orchestration via concierge"
 
   - agent: "tom-breeze"
     when: "YouTube Ads creative strategy needed"
     context: "Pass audience data for YouTube targeting"
 
-  - agent: "depesh-mandalia"
-    when: "Meta Ads strategy needed"
-    context: "Pass customer insights for cross-platform expansion"
+  - agent: "campaign-manager"
+    when: "Google campaign structure ready for API execution"
+    context: "Pass campaign blueprint for MCP execution"
+
+# NOTE: Future ads-mcp Google tools access planned.
+# When Google Ads MCP becomes available, kasim-aslam will gain
+# read-only access for campaign data collection (Auto tier).
+# Write operations will remain delegated to @campaign-manager.
 
 synergies:
   - with: "tom-breeze"
     pattern: "Google Ads data informs YouTube creative targeting"
 
-  - with: "depesh-mandalia"
-    pattern: "Search intent data helps Meta audience building"
+  - with: "ad-midas"
+    pattern: "Search intent data informs Meta audience strategy via concierge"
 ```

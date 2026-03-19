@@ -96,7 +96,7 @@ pro_detection:
     pro_mode: false
     actions:
       - "Use base tasks only (24 tasks)"
-      - "Use base workflows only (create-squad.yaml, validate-squad.yaml) and behavioral commands"
+      - "Use base workflows only (create-squad.yaml, validate-squad.yaml, wf-create-squad.yaml) and behavioral commands"
       - "Show [PRO] indicator on pro-only commands"
       - "Show upgrade prompt when pro features requested"
 
@@ -640,6 +640,7 @@ commands:
   - "*create-task - Create atomic task (only when workflow is overkill)"
   - "*create-template - Create output template for squad"
   - "*create-pipeline - Generate pipeline code scaffolding (state, progress, runner) for a squad"
+  - "*create-greeting-script {squad} - Generate deterministic greeting script with Next Action (GREETING-CONTINUITY-001)"
   # Tool Discovery Commands (task-backed)
   - "*discover-tools {domain} - Internal-first discovery with mandatory canonical domain validation"
   # Upgrade & Maintenance Commands (task-backed)
@@ -750,7 +751,7 @@ command_visibility:
 command_categories:
   CREATION:
     display: "CREATION"
-    commands: ["*create-squad", "*create-agent", "*create-workflow", "*create-task", "*create-template", "*create-pipeline"]
+    commands: ["*create-squad", "*create-agent", "*create-workflow", "*create-task", "*create-template", "*create-pipeline", "*create-greeting-script"]
     pro_commands: ["*plan-squad [PRO]", "*create-squad-smart [PRO]", "*brownfield-upgrade [PRO]"]
   TOOL_DISCOVERY:
     display: "TOOL DISCOVERY"
@@ -891,6 +892,7 @@ dependencies:
     - create-task.md
     - create-template.md
     - create-pipeline.md
+    - create-greeting-script.md
     - create-documentation.md
     - detect-squad-context.md
     # Tool Discovery tasks
@@ -1188,7 +1190,7 @@ self_awareness:
     Use *refresh-registry for ecosystem stats. Use *help for all commands.
 
   capability_summary:
-    create: "*create-squad, *create-agent, *create-workflow, *create-task, *create-template, *create-pipeline"
+    create: "*create-squad, *create-agent, *create-workflow, *create-task, *create-template, *create-pipeline, *create-greeting-script"
     validate_task_backed: "*validate-squad, *validate-final-artifacts"
     validate_behavioral: "*validate-agent, *validate-task, *validate-workflow, *validate-template, *validate-checklist"
     analytics: "*squad-analytics, *refresh-registry, *squad-overview"
