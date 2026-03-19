@@ -1,22 +1,19 @@
----
-# OBJECTION-DESTROYERS.YAML — Conta Magic / Equipamentos para Medicina Estetica
-# Status: SKELETON — inferido do posicionamento
 metadata:
-  version: "1.0"
-  product_name: "Equipamentos para Medicina Estetica"
-  status: "SKELETON"
-  last_updated: "2026-03-14"
-
+  version: '1.0'
+  product_name: Equipamentos para Medicina Estetica
+  status: SKELETON
+  last_updated: '2026-03-14'
 objections:
   objection_1:
-    what_they_say: "O investimento e muito alto"
-    what_they_mean: "Nao sei se o retorno justifica"
-    destroyer: FILL_THIS # A PREENCHER NA IMERSAO — ROI dos equipamentos
+    what_they_say: O investimento e muito alto
+    what_they_mean: Nao sei se o retorno justifica
+    destroyer: FILL_THIS
   objection_2:
-    what_they_say: "Posso comprar equipamento mais barato"
-    what_they_mean: "Sera que a certificacao Anvisa faz tanta diferenca?"
-    destroyer: "Equipamento sem certificacao = risco de multa, interdicao, e resultado inconsistente. Certificacao Anvisa e o custo da seguranca."
+    what_they_say: Posso comprar equipamento mais barato
+    what_they_mean: Sera que a certificacao Anvisa faz tanta diferenca?
+    destroyer: Equipamento sem certificacao = risco de multa, interdicao, e resultado inconsistente. Certificacao Anvisa e
+      o custo da seguranca.
   objection_3:
-    what_they_say: "Preciso ver o resultado antes de comprar"
-    what_they_mean: "Quero prova de que funciona"
-    destroyer: FILL_THIS # A PREENCHER NA IMERSAO — demos, cases
+    what_they_say: Preciso ver o resultado antes de comprar
+    what_they_mean: Quero prova de que funciona
+    destroyer: FILL_THIS

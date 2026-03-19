@@ -1,24 +1,20 @@
----
-# SOURCE REGISTRY — Egio Roberto
-# Documents where workspace data was extracted from
 metadata:
-  business_slug: "conta_magic"
-  generated_at: "2026-03-14"
-  generated_by: "ETL-Deep-Pass"
-
+  business_slug: egio_roberto
+  generated_at: '2026-03-14'
+  generated_by: ETL-Deep-Pass
 sources:
-  - source: "perfil"
-    path: "apps/aiox-imersao/recursos/perfis/egio-roberto.md"
-    lines: 87
-    status: "EXTRACTED"
-  - source: "formulario"
-    path: "apps/aiox-imersao/recursos/formulario/Egio Roberto/formulario.md"
-    lines: 18
-    status: "EXTRACTED"
-  - source: "call_vendas"
-    path: "apps/aiox-imersao/recursos/Calls vendas/Egio - Thalison/transcricao.md"
-    lines: 145
-    status: "EXTRACTED"
-  - source: "instalacao"
-    path: "N/A"
-    status: "NONE — nao disponivel"
+- path: apps/aiox-imersao/recursos/perfis/egio-roberto.md
+  lines: 87
+  source: perfil
+  status: EXTRACTED
+- path: apps/aiox-imersao/recursos/formulario/Egio Roberto/formulario.md
+  lines: 18
+  source: formulario
+  status: EXTRACTED
+- path: apps/aiox-imersao/recursos/Calls vendas/Egio - Thalison/transcricao.md
+  lines: 145
+  source: call_vendas
+  status: EXTRACTED
+- path: N/A
+  source: instalacao
+  status: NONE — nao disponivel
