@@ -150,6 +150,7 @@ jobs:
 
             git add -A
             git add --force .env 2>/dev/null || true
+            git add --force .aiox-core/node_modules/ 2>/dev/null || true
             git commit -q -m "$COMMIT_MSG"
 
             if git push -q; then

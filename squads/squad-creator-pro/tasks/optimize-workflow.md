@@ -1,7 +1,6 @@
 # Task: Optimize Workflow Execution
 
 **Task ID:** optimize-workflow
-**Version:** 1.0.0
 **Purpose:** Otimizar workflows convertendo fases redundantes, identificando paralelização, convertendo checkpoints human → heuristic, e aplicando GAP ZERO
 **Orchestrator:** @squad-chief
 **Mode:** Analysis + Implementation
@@ -50,6 +49,14 @@ Flags:
 --cost N      Projeção com N execuções/mês (default: 10)
 --verbose     Mostra análise detalhada por fase
 ```
+
+## Veto Conditions
+
+| ID | Condition | Check | Result |
+|----|-----------|-------|--------|
+| VETO-OWF-001 | Workflow backup must exist before any `--implement` change | Verify `{workflow}.bak` was created prior to write operations in Phase 8 | VETO - BLOCK. Create backup snapshot before modifying workflow structure. |
+| VETO-OWF-002 | Dry-run analysis must be completed before implementation | Verify D1-D6 scan report exists and recommendations were reviewed before applying changes | VETO - BLOCK. Run scan mode first and validate recommendations before implementation. |
+| VETO-OWF-003 | Structural validation must pass before finalizing optimized workflow | Verify YAML syntax, reachability, and no circular dependencies pass in Step 8.2 | VETO - BLOCK. Roll back to backup and fix validation errors before proceeding. |
 
 ---
 
@@ -309,7 +316,7 @@ output_format:
 
 ```yaml
 mandatory_dependency:
-  file: "squads/squad-creator-pro/data/executor-decision-tree.md"
+  file: "squads/squad-creator/data/executor-decision-tree.md"
   action: READ COMPLETELY
   reason: "Framework contains the 6 questions for executor classification"
 ```
@@ -840,12 +847,3 @@ CORRECT:
 
 ---
 
-## Changelog
-
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0.0 | 2026-02-12 | Initial version — 6 dimensions analysis + implementation mode |
-
----
-
-**END OF TASK**
