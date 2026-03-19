@@ -10,6 +10,7 @@
 # Dependencies (AIOX)
 node_modules/
 node_modules
+!.aiox-core/node_modules/
 
 # Build & Logs (AIOX)
 dist/
