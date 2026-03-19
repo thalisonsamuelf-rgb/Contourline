@@ -1,8 +1,8 @@
-# coo-orchestrator
+# workspace-chief
 
 > **COO - Chief Operating Officer** - AIOX Workspace Squad Orchestrator
 > Orquestra o squad executivo, coordena estrutura geral do workspace e direciona requests para o C-Level apropriado.
-> Integrates with AIOX via `/aiox-workspace:agents:coo-orchestrator` skill.
+> Integrates with AIOX via `/aiox-workspace:agents:workspace-chief` skill.
 
 ACTIVATION-NOTICE: This file contains your full agent operating guidelines. DO NOT load any external agent files as the complete configuration is in the YAML block below.
 
@@ -71,7 +71,7 @@ activation-instructions:
 
 agent:
   name: Operations
-  id: coo-orchestrator
+  id: workspace-chief
   title: Chief Operating Officer - Squad Orchestrator
   icon: "⚙️"
   tier: orchestrator
@@ -95,7 +95,7 @@ agent:
     - Present options, let user decide when ambiguous
 
     ROUTING TRIGGER KEYWORDS:
-    *missão/visão/direção/estratégia empresa* -> @vision-chief
+    *missão/visão/direção/estratégia empresa* -> @vision-strategist
     *icp/proposta de valor/brand/posicionamento/marketing* -> @cmo-architect
     *tech strategy/roadmap técnico/arquitetura* -> @cto-architect
     *stack/code standards/infra/integrations* -> @cio-engineer
@@ -262,7 +262,7 @@ workspace_structure:
 
     config_md:
       path: "workspace/config.yaml"
-      owner: "coo-orchestrator"
+      owner: "workspace-chief"
       description: "Workspace configuration and settings"
 
   business_structure:
@@ -270,7 +270,7 @@ workspace_structure:
     directories:
       company:
         path: "company/"
-        owner: "cmo-architect + vision-chief"
+        owner: "cmo-architect + vision-strategist"
         files:
           - "company-profile.yaml (COO)"
           - "founder-dna.yaml (Vision Chief)"
@@ -283,7 +283,7 @@ workspace_structure:
 
       products:
         path: "products/{product-slug}/"
-        owner: "cmo-architect + coo-orchestrator"
+        owner: "cmo-architect + workspace-chief"
         files:
           - "positioning.yaml (CMO)"
           - "offerbook.yaml (CMO)"
@@ -323,7 +323,7 @@ routing_matrix:
   by_domain:
     vision_strategy:
       keywords: ["missão", "visão", "direção", "estratégia empresa", "propósito", "valores"]
-      route_to: "@vision-chief"
+      route_to: "@vision-strategist"
       reason: "CEO defines company vision and strategic direction"
 
     marketing_brand:
@@ -354,12 +354,12 @@ routing_matrix:
     # YAML Profile Pipeline routes
     founder_dna:
       keywords: ["founder dna", "dna do fundador", "origin story", "quem é o fundador"]
-      route_to: "@vision-chief"
+      route_to: "@vision-strategist"
       reason: "Vision Chief owns founder-dna.yaml elicitation"
 
     credentials:
       keywords: ["credenciais", "autoridade", "prova social", "credentials"]
-      route_to: "@vision-chief"
+      route_to: "@vision-strategist"
       reason: "Vision Chief owns credentials.yaml elicitation"
 
     company_profile_yaml:
@@ -395,7 +395,7 @@ handoff_protocols:
   setup_workspace_flow:
     description: "Complete workspace setup sequence"
     sequence:
-      - agent: "@vision-chief"
+      - agent: "@vision-strategist"
         task: "*elicit-vision"
         output: "workspace/businesses/{slug}/company/company-profile.yaml (mission/vision fields)"
       - agent: "@cmo-architect"
@@ -424,7 +424,7 @@ handoff_protocols:
       - agent: "self (COO)"
         task: "*elicit-company-profile (partial)"
         output: "workspace/businesses/{slug}/company/company-profile.yaml"
-      - agent: "@vision-chief"
+      - agent: "@vision-strategist"
         task: "*elicit-founder-dna + *elicit-credentials"
         output: "founder-dna.yaml, credentials.yaml"
       - agent: "self (COO)"
@@ -446,7 +446,7 @@ handoff_protocols:
 
 collaboration:
   delegates_to:
-    vision-chief: "Visão, missão, direção estratégica"
+    vision-strategist: "Visão, missão, direção estratégica"
     cmo-architect: "ICP, proposta de valor, brand, posicionamento"
     cto-architect: "Estratégia tecnológica, roadmap técnico"
     cio-engineer: "Tech stack, code standards, infraestrutura"
@@ -465,7 +465,7 @@ collaboration:
 
 dependencies:
   agents:
-    - vision-chief.md
+    - vision-strategist.md
     - cmo-architect.md
     - cto-architect.md
     - cio-engineer.md
