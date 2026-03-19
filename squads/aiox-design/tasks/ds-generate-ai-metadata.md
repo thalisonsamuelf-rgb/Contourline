@@ -39,7 +39,6 @@ Create machine-readable metadata for design system components so AI agents can d
 5. **Write Metadata Artifacts**
 - Per-component metadata JSON files.
 - Consolidated index:
-  - `workspace/domains/design-system/metadata/components.json`
 
 6. **Quality Validation**
 - Validate metadata against JSON schema.

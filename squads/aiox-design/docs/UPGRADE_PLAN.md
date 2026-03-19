@@ -20,13 +20,13 @@ Upgrade do squad Design para **Agentic Design System** baseado na pesquisa de Br
 | **Sync Registry** | ✅ DONE | `squads/aiox-design/tasks/ds-sync-registry.md` | — |
 | **Token System** | ✅ DONE | `tokens/primitives/` + `semantic/` + `component/` (7 CSS files, 3 tiers) | — |
 | **WCAG Quality Gates** | ⚠️ PARCIAL | `ds-accessibility-wcag-checklist.md` | Contrast validation runtime |
-| **Workspace Integration** | ✅ DONE | `workspace/system/` + `workspace/ui/` (6 categorias) | — |
+| **Workspace Integration** | ✅ DONE | `workspace/design/` + `workspace/design/` (6 categorias) | — |
 | **Machine-Readable** | ✅ DONE | `metadata/` (6 components, 47 tokens, guidelines) | — |
 | **MCP Server** | ✅ DONE | `mcp/server.ts` + 4 handlers + 8 tools | — |
-| **Registry System** | ✅ DONE | `workspace/ui/registry.json` (5 items, Shadcn v4) | — |
+| **Registry System** | ✅ DONE | `workspace/design/registry.json` (5 items, Shadcn v4) | — |
 | **Brad Frost Agent** | ✅ DONE | `brad-frost.md` v4.0.0 (42 commands, 6 DS+AI) | — |
 | **IDE Rules** | ✅ DONE | `rules/.cursorrules` + `.claude-rules.md` + `.vscode-settings.json` | — |
-| **Figma Extraction** | ✅ DONE | `extraction/figma-tokens-raw.json` → `workspace/ui/clickmax/` (11 files) | — |
+| **Figma Extraction** | ✅ DONE | `extraction/figma-tokens-raw.json` → `workspace/design/clickmax/` (11 files) | — |
 
 ---
 
@@ -51,7 +51,6 @@ Upgrade do squad Design para **Agentic Design System** baseado na pesquisa de Br
 **Objetivo:** Validar estrutura existente e mapear integração.
 
 **Entregáveis:**
-- [x] Audit de `workspace/domains/design-system/` e `workspace/system/`
 - [x] Mapeamento de dependências entre structures
 - [x] Identificação de componentes para migração
 
@@ -65,7 +64,6 @@ Upgrade do squad Design para **Agentic Design System** baseado na pesquisa de Br
 
 **Estrutura Implementada:**
 ```
-workspace/domains/design-system/tokens/
 ├── primitives/          # Layer 1: Raw OKLCH values
 │   ├── colors.css       # 21 OKLCH colors
 │   ├── spacing.css      # 8 spacing tokens
@@ -112,7 +110,6 @@ workspace/
 
 **Estrutura Implementada:**
 ```
-workspace/domains/design-system/metadata/
 ├── components.json          # 6 components aggregated
 ├── components/              # 6 individual JSONs (button, input, textarea, badge, card, form-field)
 ├── tokens/index.json        # 47 tokens, 3 tiers, 6 categorias
@@ -131,7 +128,6 @@ workspace/domains/design-system/metadata/
 
 **Estrutura Implementada:**
 ```
-workspace/domains/design-system/mcp/
 ├── server.ts               # Factory function, 8 tool definitions, handleToolCall
 ├── config.json             # Data sources + tool catalog
 ├── handlers/
@@ -166,7 +162,7 @@ workspace/domains/design-system/mcp/
 **Objetivo:** Registry Shadcn v4 com validação.
 
 **Implementado:**
-- `workspace/ui/registry.json` — 5 items (button, input, textarea, badge, form-field)
+- `workspace/design/registry.json` — 5 items (button, input, textarea, badge, form-field)
 - Campos Shadcn v4: `registryDependencies`, `cssVars`, `categories`
 - File types: `registry:ui`, `registry:lib` (corrigido para Shadcn v4)
 - form-field com `registryDependencies: ["input", "textarea"]`
@@ -212,7 +208,6 @@ workspace/domains/design-system/mcp/
 
 **Implementado:**
 ```
-workspace/domains/design-system/rules/
 ├── .cursorrules          # 165 linhas — tokens, componentes, a11y, anti-patterns
 ├── .claude-rules.md      # 89 linhas — 8 MCP tools, token rules, validation scripts
 └── .vscode-settings.json # 41 linhas — Tailwind CVA regex, CSS var files, formatter
@@ -252,7 +247,6 @@ scripts/
 | Deep Scan (node 7081:22278) | ✅ DONE | 31.193 nodes, 43 frames extraídos |
 | Token Extraction | ✅ DONE | JSON com 146 cores, 76 text styles, 52 shadows |
 
-**Extração Salva:** `workspace/domains/design-system/extraction/figma-tokens-raw.json` (117 KB)
 
 **Dados Extraídos da Página "0.0 Estrutura Base Geral":**
 
@@ -297,18 +291,18 @@ scripts/
 - [x] Normalizar spacing scale (16-step 4px-based, outliers removidos)
 
 **9.3 Clickmax DS Creation** ✅
-- [x] `workspace/ui/clickmax/brand.json` — manifesto de identidade
-- [x] `workspace/ui/clickmax/tokens/primitives/colors.css` — 24 OKLCH colors + 11 grays + 3 gradients
-- [x] `workspace/ui/clickmax/tokens/primitives/spacing.css` — 16 steps (0-96px)
-- [x] `workspace/ui/clickmax/tokens/primitives/typography.css` — fonts, sizes, weights, radii, shadows, motion
-- [x] `workspace/ui/clickmax/tokens/semantic/colors.css` — 38 semantic aliases
-- [x] `workspace/ui/clickmax/tokens/semantic/surfaces.css` — 3 elevation levels
-- [x] `workspace/ui/clickmax/tokens/component/button.css` — 6 variants + icon buttons
-- [x] `workspace/ui/clickmax/tokens/component/card.css` — 3 padding sizes + shadows
-- [x] `workspace/ui/clickmax/themes/light.css` — default theme (imports all)
-- [x] `workspace/ui/clickmax/themes/dark.css` — dark overrides (inverted grays/text/borders)
-- [x] `workspace/ui/clickmax/tailwind.theme.css` — @theme directive for Tailwind v4
-- [x] `workspace/ui/catalog.json` atualizado: clickmax status → "complete"
+- [x] `workspace/design/clickmax/brand.json` — manifesto de identidade
+- [x] `workspace/design/clickmax/tokens/primitives/colors.css` — 24 OKLCH colors + 11 grays + 3 gradients
+- [x] `workspace/design/clickmax/tokens/primitives/spacing.css` — 16 steps (0-96px)
+- [x] `workspace/design/clickmax/tokens/primitives/typography.css` — fonts, sizes, weights, radii, shadows, motion
+- [x] `workspace/design/clickmax/tokens/semantic/colors.css` — 38 semantic aliases
+- [x] `workspace/design/clickmax/tokens/semantic/surfaces.css` — 3 elevation levels
+- [x] `workspace/design/clickmax/tokens/component/button.css` — 6 variants + icon buttons
+- [x] `workspace/design/clickmax/tokens/component/card.css` — 3 padding sizes + shadows
+- [x] `workspace/design/clickmax/themes/light.css` — default theme (imports all)
+- [x] `workspace/design/clickmax/themes/dark.css` — dark overrides (inverted grays/text/borders)
+- [x] `workspace/design/clickmax/tailwind.theme.css` — @theme directive for Tailwind v4
+- [x] `workspace/design/catalog.json` atualizado: clickmax status → "complete"
 
 **9.4 Metadata Sync** ⏳ FUTURO
 - [ ] Gerar `metadata/tokens/clickmax-index.json` (quando metadata multi-brand necessário)
@@ -472,7 +466,7 @@ FASE 9 (Figma Extraction) ✅ ◀── DEPENDE DE: Fase 2 (tokens), Fase 4 (met
 
 ### 2026-02-17 - Fase 9 Completa: Clickmax DS Criado
 
-**DS Clickmax 2025:** `workspace/ui/clickmax/` — 11 arquivos, 143 tokens
+**DS Clickmax 2025:** `workspace/design/clickmax/` — 11 arquivos, 143 tokens
 - [x] `brand.json` — Neon Lime (#D4FF00), Plus Jakarta Sans display, Inter body, light-first
 - [x] `tokens/primitives/colors.css` — 24 OKLCH colors + 11 grays + 3 gradients (convertidos do Figma hex)
 - [x] `tokens/primitives/spacing.css` — 16 steps (0-96px, base 4px)
@@ -503,19 +497,19 @@ FASE 9 (Figma Extraction) ✅ ◀── DEPENDE DE: Fase 2 (tokens), Fase 4 (met
 ### 2026-02-17 - Reorganização Multi-Brand + Fase 9
 
 **Arquitetura Multi-Brand:**
-- [x] Tokens Lendário movidos: `domains/design-system/tokens/` → `workspace/ui/lendario/tokens/`
-- [x] Themes Lendário movidos: `domains/design-system/themes/` → `workspace/ui/lendario/themes/`
-- [x] Tailwind theme movido: `domains/design-system/tailwind.theme.css` → `workspace/ui/lendario/`
-- [x] Componentes movidos: `workspace/system/primitives/` → `workspace/ui/components/forms/` e `data-display/`
-- [x] `workspace/ui/lendario/brand.json` criado (manifesto de identidade)
-- [x] `workspace/ui/catalog.json` criado (índice de DS brands)
+- [x] Tokens Lendário movidos: `domains/design-system/tokens/` → `workspace/design/lendario/tokens/`
+- [x] Themes Lendário movidos: `domains/design-system/themes/` → `workspace/design/lendario/themes/`
+- [x] Tailwind theme movido: `domains/design-system/tailwind.theme.css` → `workspace/design/lendario/`
+- [x] Componentes movidos: `workspace/design/primitives/` → `workspace/design/components/forms/` e `data-display/`
+- [x] `workspace/design/lendario/brand.json` criado (manifesto de identidade)
+- [x] `workspace/design/catalog.json` criado (índice de DS brands)
 - [x] `workspace/business/comunidade-lendaria/` e `clickmax/` criados
 - [x] Todas referências atualizadas: registry.json, metadata, IDE rules, MCP config, componentes
-- [x] Pastas vazias removidas: `workspace/system/`, `workspace/ui/styles/`, `workspace/ui/tokens/`
+- [x] Pastas vazias removidas: `workspace/design/`, `workspace/design/styles/`, `workspace/design/tokens/`
 
 **Nova estrutura:**
 ```
-workspace/ui/              — Domínio visual (catálogo de DS)
+workspace/design/              — Domínio visual (catálogo de DS)
 ├── lendario/              — DS Comunidade Lendária (tokens, themes, brand.json)
 ├── clickmax/              — DS Clickmax (a ser criado)
 ├── components/            — Componentes React brand-agnostic
@@ -581,7 +575,7 @@ workspace/business/        — Domínio negócio (operacional)
 - [x] Tailwind v4 `@theme` directive em `tailwind.theme.css`
 
 **Fase 3: Workspace Structure**
-- [x] Button component com CVA (6 variants, 4 sizes) em `workspace/system/primitives/button/`
+- [x] Button component com CVA (6 variants, 4 sizes) em `workspace/design/primitives/button/`
 - [x] Registry.json com shadcn schema
 - [x] Directory structure: ui/components/ com 6 categorias
 

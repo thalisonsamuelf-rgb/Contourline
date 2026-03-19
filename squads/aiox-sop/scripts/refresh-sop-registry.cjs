@@ -3,7 +3,7 @@
  * refresh-sop-registry.cjs
  *
  * Scans workspace/businesses/{name}/sops/{file}.yaml and docs/sops/{file}.md
- * to populate workspace/config/sop-registry.yaml deterministically.
+ * to populate squads/aiox-sop/data/sop-registry.yaml deterministically.
  *
  * Usage:
  *   node squads/aiox-sop/scripts/refresh-sop-registry.cjs           # dry-run (stdout)
@@ -18,7 +18,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..', '..');
-const REGISTRY_PATH = path.join(ROOT, 'workspace', 'config', 'sop-registry.yaml');
+const REGISTRY_PATH = path.join(ROOT, 'squads', 'aiox-sop', 'data', 'sop-registry.yaml');
 const BUSINESSES_DIR = path.join(ROOT, 'workspace', 'businesses');
 const SHARED_SOPS_DIR = path.join(ROOT, 'docs', 'sops');
 

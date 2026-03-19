@@ -72,7 +72,7 @@ workspace_integration:
     remains the default whenever readiness is not proven or the command has no
     business context.
   read_paths:
-    - workspace/workspace.yaml
+    - workspace/config.yaml
     - workspace/businesses/
     - workspace/_templates/operations/
     - workspace/_templates/company/
@@ -83,7 +83,7 @@ workspace_integration:
   canonical_outputs_root: workspace/businesses/{business}/sops/
   custom_outputs_root: docs/sops/
   readiness_owner: coo-orchestrator
-  readiness_resolver: squads/c-level/scripts/resolve-squad-workspace-readiness.cjs
+  readiness_resolver: squads/aiox-workspace/scripts/resolve-squad-workspace-readiness.cjs
   readiness_context_type: operations
 
 distribution_contract:

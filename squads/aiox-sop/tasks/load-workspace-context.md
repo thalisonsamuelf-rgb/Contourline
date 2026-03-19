@@ -52,7 +52,7 @@ node squads/aiox-sop/scripts/load-workspace-context.cjs --business={slug} --incl
 
 ### Workspace registration
 
-- `workspace/workspace.yaml`
+- `workspace/config.yaml`
 
 ### Business company context
 

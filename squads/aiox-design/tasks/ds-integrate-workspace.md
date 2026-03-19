@@ -8,7 +8,6 @@
 
 Align the design system with the workspace topology:
 
-- `workspace/domains/design-system`
 - `workspace/system`
 - `workspace/ui`
 
@@ -28,15 +27,10 @@ This task creates clear boundaries for tokens, primitives, patterns, and product
 - Classify by role: token source, primitive, product UI.
 
 2. **Create Target Workspace Structure**
-- `workspace/domains/design-system/tokens/primitives`
-- `workspace/domains/design-system/tokens/semantic`
-- `workspace/domains/design-system/tokens/component`
-- `workspace/domains/design-system/themes`
-- `workspace/domains/design-system/metadata`
-- `workspace/system/primitives`
-- `workspace/system/patterns`
-- `workspace/ui/components`
-- `workspace/ui/blocks`
+- `workspace/design/primitives`
+- `workspace/design/patterns`
+- `workspace/design/components`
+- `workspace/design/blocks`
 
 3. **Define Ownership Boundaries**
 - `domains/design-system`: token truth and themes.
@@ -51,7 +45,7 @@ This task creates clear boundaries for tokens, primitives, patterns, and product
 - Ensure mappings are generated from tokens, not hardcoded.
 
 5. **Integrate with Registry Flow**
-- Place `registry.json` in `workspace/ui/`.
+- Place `registry.json` in `workspace/design/`.
 - Ensure component metadata references source paths and dependencies.
 
 6. **Validation**
@@ -71,7 +65,7 @@ This task creates clear boundaries for tokens, primitives, patterns, and product
 - Workspace-aligned folder topology
 - Token ownership boundaries documented
 - Mapping config files added/updated
-- `workspace/ui/registry.json` strategy in place
+- `workspace/design/registry.json` strategy in place
 - Migration report with file move matrix
 
 ## Success Criteria

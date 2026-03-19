@@ -45,11 +45,11 @@ workspace_integration:
     não é owner da integração com workspace. O gate de readiness vem do COO e o
     squad só expande contexto local depois de receber liberação.
   read_paths:
-    - workspace/workspace.yaml
+    - workspace/config.yaml
     - workspace/businesses/
   write_paths: []
   readiness_owner: coo-orchestrator
-  readiness_resolver: squads/c-level/scripts/resolve-squad-workspace-readiness.cjs
+  readiness_resolver: squads/aiox-workspace/scripts/resolve-squad-workspace-readiness.cjs
 
 tier_system:
   orchestrator:

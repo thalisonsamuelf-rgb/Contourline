@@ -154,7 +154,7 @@ Consolidation (reduce redundancy) → Critical Eye (select canonical)
 - **Critical Eye** = across all sources, select the best variant per category
 
 **Scoring reference:** `squads/aiox-design/data/critical-eye-scoring-rules.yaml`
-**Pattern catalog:** `workspace/ui/pattern-catalog.json`
+**Pattern catalog:** `workspace/design/pattern-catalog.json`
 **Lifecycle:** CANDIDATE → EXPERIMENTAL → STABLE → CANONICAL
 
 ---

@@ -10,7 +10,6 @@ Report the current status of the Design System MCP server: tools available, data
 
 ## Prerequisites
 
-- MCP server exists at `workspace/domains/design-system/mcp/`
 
 ## Workflow
 

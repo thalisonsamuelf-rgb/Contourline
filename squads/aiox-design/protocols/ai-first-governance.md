@@ -7,9 +7,8 @@ Prevent research drift, contradictory claims, and non-canonical references by en
 ## Mandatory Rules
 
 1. Canonical Source Hierarchy
-- `workspace/system/*` for global policy/governance.
-- `workspace/ui/registry.json` for component distribution truth.
-- `workspace/domains/design-system/*` for DS metadata and glossary.
+- `workspace/design/*` for global policy/governance.
+- `workspace/design/registry.json` for component distribution truth.
 - `squads/aiox-design/data/*` for squad-local knowledge and guides.
 - `docs/research/*` is supporting evidence, never final source of truth.
 

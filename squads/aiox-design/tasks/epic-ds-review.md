@@ -27,7 +27,7 @@ Review an epic that includes UI/frontend work to validate it correctly reference
 
 The task resolves DS configuration through the squad-local BU/app resolver:
 
-- `workspace/workspace.yaml` — declares whether the BU DS is `configured`, `not_configured`, or `not_applicable`
+- `workspace/config.yaml` — declares whether the BU DS is `configured`, `not_configured`, or `not_applicable`
 - `workspace/businesses/{bu}/design-system/config.yaml` — canonical DS config for configured BUs
 - `node squads/aiox-design/scripts/design-system/resolve_business_design_system.cjs` — deterministic resolver used by the design squad
 - `node squads/aiox-design/scripts/load-context.cjs --task=epic-ds-review ...` — task-level loader that wraps the resolver and expands app/theme paths
@@ -68,7 +68,7 @@ The task resolves DS configuration through the squad-local BU/app resolver:
 ## Inputs
 
 - `epic_path`: Path to the EPIC.md file (required)
-- `business_slug`: Business unit slug matching `workspace/workspace.yaml` → `businesses.{slug}` (optional — preferred)
+- `business_slug`: Business unit slug matching `workspace/config.yaml` → `businesses.{slug}` (optional — preferred)
 - `app_id`: App identifier declared inside `workspace/businesses/{bu}/design-system/config.yaml` (optional — auto-resolves all paths)
 - `codebase_path`: Path to the target app's component directory (optional legacy fallback if `business_slug`/`app_id` are unavailable)
 - `reference_path`: Path to reference implementation being ported (optional)

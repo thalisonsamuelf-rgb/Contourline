@@ -132,7 +132,7 @@ dependencies:
 rules:
   - "Always classify request as IN_SCOPE or OUT_OF_SCOPE first"
   - "Start every session with an active Design System context loaded from `.aiox/squad-runtime/design/design-chief/session-context.yaml`"
-  - "Before any DS triage, routing, epic review, theme decision, or architecture recommendation, resolve readiness via `node squads/c-level/scripts/resolve-squad-workspace-readiness.cjs --squad=design --business={slug}` or `--app={id}`"
+  - "Before any DS triage, routing, epic review, theme decision, or architecture recommendation, resolve readiness via `node squads/aiox-workspace/scripts/resolve-squad-workspace-readiness.cjs --squad=design --business={slug}` or `--app={id}`"
   - "After COO readiness returns `ready`, expand DS details locally with `node squads/aiox-design/scripts/design-system/resolve_business_design_system.cjs --bu={slug}` or `--app={id}`"
   - "If resolver returns `not_applicable`, do not request DS creation and do not classify the BU as missing setup"
   - "If resolver returns `configured`, load `workspace/businesses/{bu}/design-system/config.yaml` before routing or judging reuse/theme constraints"

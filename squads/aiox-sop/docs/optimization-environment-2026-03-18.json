@@ -6,8 +6,8 @@
   "reason": "Pro pack detected; enterprise not proven. explicit business/product/app context missing, remaining in portable_docs_mode.",
   "evidence_paths": [
     "squads/squad-creator-pro/config.yaml",
-    "squads/c-level",
-    "workspace/workspace.yaml",
+    "squads/aiox-workspace",
+    "workspace/config.yaml",
     "workspace/businesses",
     "workspace/domains",
     "workspace/_templates",

@@ -20,7 +20,6 @@ Antes de finalizar, executar protocolo:
 - `squads/aiox-design/protocols/ai-first-governance.md`
 
 Checklist mínimo:
-- [ ] Validou fontes canônicas (`workspace/system/*`, `workspace/ui/registry.json`, `workspace/domains/design-system/*`)
 - [ ] Classificou cada claim como `Implemented`, `Partially implemented` ou `Concept only`
 - [ ] Não há contradição entre relatório e artefatos reais
 - [ ] Itens não resolvidos foram explicitados
@@ -43,7 +42,7 @@ Execute esta task quando:
 
 ### 1. Registry (Obrigatório)
 
-**Arquivo:** `workspace/ui/registry.json`
+**Arquivo:** `workspace/design/registry.json`
 
 ```json
 {
@@ -63,7 +62,6 @@ Execute esta task quando:
 
 ### 2. AI Metadata (Obrigatório)
 
-**Arquivo:** `workspace/domains/design-system/metadata/components/[name].json`
 
 ```json
 {
@@ -215,8 +213,8 @@ Adicionada story "Loading State"
 on:
   push:
     paths:
-      - 'workspace/ui/components/**'
-      - 'workspace/system/**'
+      - 'workspace/design/components/**'
+      - 'workspace/design/**'
 
 jobs:
   validate-sync:

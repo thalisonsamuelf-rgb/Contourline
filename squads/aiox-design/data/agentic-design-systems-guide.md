@@ -18,7 +18,6 @@ Define how the Design Squad evolves from human-readable documentation into machi
 - Include props, variants, accessibility, and token dependencies.
 
 4. **Workspace boundaries are explicit**
-- `workspace/domains/design-system`: token source and metadata.
 - `workspace/system`: primitives and reusable patterns.
 - `workspace/ui`: final components and blocks.
 
@@ -28,10 +27,7 @@ Define how the Design Squad evolves from human-readable documentation into machi
 
 ## Minimal Artifact Set
 
-- `workspace/domains/design-system/tokens/**`
-- `workspace/domains/design-system/metadata/components.json`
-- `workspace/ui/registry.json`
-- `workspace/domains/design-system/mcp/server.ts`
+- `workspace/design/registry.json`
 
 ## Governance
 

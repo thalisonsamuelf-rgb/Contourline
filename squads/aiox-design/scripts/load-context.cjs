@@ -446,7 +446,7 @@ function buildOutput(args) {
       },
       config_path: result.config_path,
       design_system: null,
-      remediation: `Create ${result.config_path} or mark the BU as not_applicable in workspace/workspace.yaml.`,
+      remediation: `Create ${result.config_path} or mark the BU as not_applicable in workspace/config.yaml.`,
     };
   }
 

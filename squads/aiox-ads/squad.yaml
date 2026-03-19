@@ -50,12 +50,12 @@ workspace_integration:
     ads platforms and operational artifacts external to the workspace. The COO
     resolves readiness before operational execution.
   read_paths:
-    - workspace/workspace.yaml
+    - workspace/config.yaml
     - workspace/businesses/{business}/ads/
   write_paths:
     - workspace/businesses/{business}/ads/campaigns/
   readiness_owner: coo-orchestrator
-  readiness_resolver: squads/c-level/scripts/resolve-squad-workspace-readiness.cjs
+  readiness_resolver: squads/aiox-workspace/scripts/resolve-squad-workspace-readiness.cjs
 
 # ═══════════════════════════════════════════════════════════════
 # SQUAD CONFIGURATION

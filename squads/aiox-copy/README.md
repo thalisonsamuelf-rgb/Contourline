@@ -289,10 +289,8 @@ bash squads/copy/scripts/validate-copy-essentials.sh
 
 Ordem de leitura de dados (obrigatória):
 
-1. `workspace/domains/content/copy-governance.yaml`
-2. `workspace/domains/content/copy-information-architecture.yaml`
-3. `workspace/domains/content/entities.yaml`
-4. `workspace/domains/content/workflows.yaml`
+1. `squads/aiox-copy/data/copy-governance.yaml`
+2. `squads/aiox-copy/data/copy-information-architecture.yaml`
 5. `workspace/_templates/product-offerbook/*`
 6. `workspace/_templates/content/*.yaml`
 7. `workspace/_templates/sales-process/*`

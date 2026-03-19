@@ -165,7 +165,7 @@ inputs:
     validation: Must be valid file path ending in .md
   business_slug:
     type: string
-    description: Business slug matching workspace/workspace.yaml -> businesses.{slug}. Preferred.
+    description: Business slug matching workspace/config.yaml -> businesses.{slug}. Preferred.
     required: false
     default: null
     examples:

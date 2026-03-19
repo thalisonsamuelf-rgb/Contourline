@@ -31,13 +31,11 @@ Core data exposed:
 
 2. **Implement Server Skeleton**
 - Create:
-  - `workspace/domains/design-system/mcp/server.ts`
-  - `workspace/domains/design-system/mcp/handlers/*`
 - Keep handlers deterministic and stateless.
 
 3. **Connect Data Sources**
 - `metadata/components.json`
-- `workspace/ui/registry.json`
+- `workspace/design/registry.json`
 - token files under `domains/design-system/tokens`
 
 4. **Add Query Guards**

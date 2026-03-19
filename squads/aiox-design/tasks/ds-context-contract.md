@@ -74,7 +74,7 @@ Este task requer o seguinte contexto:
 | project.name | ✅ | — |
 | project.type | ✅ | — |
 | design_system.tokens_path | ✅ | `squads/aiox-design/data/design-tokens-spec.yaml` |
-| design_system.registry_path | ✅ | `workspace/ui/registry.json` |
+| design_system.registry_path | ✅ | `workspace/design/registry.json` |
 | scope.components | ✅ | — |
 | constraints.wcag_level | ❌ | "AA" |
 ```
@@ -89,7 +89,7 @@ module.exports = {
       design_system: {
         loader_path: 'squads/aiox-design/scripts/load-context.cjs',
         resolver_path: 'squads/aiox-design/scripts/design-system/resolve_business_design_system.cjs',
-        workspace_config_path: 'workspace/workspace.yaml'
+        workspace_config_path: 'workspace/config.yaml'
       },
       defaults: {
         wcag_level: 'AA',
@@ -138,7 +138,7 @@ validation:
 Criar arquivo de contexto padrão por projeto:
 
 ```yaml
-# workspace/workspace.yaml + workspace/businesses/{bu}/design-system/config.yaml
+# workspace/config.yaml + workspace/businesses/{bu}/design-system/config.yaml
 businesses:
   aiox:
     capabilities:
@@ -157,7 +157,7 @@ businesses:
 
 ## Output
 
-- `workspace/workspace.yaml` + `workspace/businesses/{bu}/design-system/config.yaml` validados contra o contrato
+- `workspace/config.yaml` + `workspace/businesses/{bu}/design-system/config.yaml` validados contra o contrato
 - Matriz de campos obrigatórios/opcionais por task (`Context Requirements`) atualizada
 - Relatório de conformidade de contexto por task (pass/fail + gaps)
 

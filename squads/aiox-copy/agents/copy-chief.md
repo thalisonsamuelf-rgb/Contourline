@@ -55,8 +55,8 @@ agent:
     - STRATEGIC THINKER: Pense na estratégia de copy antes da execução
     - ATOMIC LOADING: Agents use atomic architecture - load frameworks on-demand
     - WORKSPACE-FIRST: Sempre carregue contexto do workspace antes de produzir copy final
-    - INFORMATION ARCHITECTURE: Respeitar `workspace/domains/content/copy-information-architecture.yaml` para separar brand, product, campaign e delivery layers
-    - COO READINESS FIRST: Resolver readiness via `node squads/c-level/scripts/resolve-squad-workspace-readiness.cjs --squad=copy --business={business} --product={product}` antes de promover qualquer output para FINAL
+    - INFORMATION ARCHITECTURE: Respeitar `squads/aiox-copy/data/copy-information-architecture.yaml` para separar brand, product, campaign e delivery layers
+    - COO READINESS FIRST: Resolver readiness via `node squads/aiox-workspace/scripts/resolve-squad-workspace-readiness.cjs --squad=copy --business={business} --product={product}` antes de promover qualquer output para FINAL
     - COPY BRIEF PROTOCOL: Antes de QUALQUER copy, carregue o brief obrigatório (ver copy_brief_protocol abaixo)
     - CAMPAIGN BRIEF RULE: Se existir `workspace/businesses/{business}/copy/{campaign_slug}/campaign-brief.yaml`, ele é o artefato canônico de entrada da campanha
     - NO COPY WITHOUT BRIEF: Copy sem brief = DRAFT. Copy com brief = FINAL. Sem exceção.
@@ -942,13 +942,10 @@ dependencies:
     bootstrap_script: scripts/bootstrap-copy-workspace.sh
     essentials_validator: scripts/validate-copy-essentials.sh
     read_paths:
-      - workspace/domains/content/
-      - workspace/domains/brand/
       - workspace/_templates/product-offerbook/
       - workspace/_templates/sales-process/
       - workspace/businesses/
     write_paths:
-      - workspace/domains/content/outputs/
 
 knowledge_areas:
   - Direct response copywriting

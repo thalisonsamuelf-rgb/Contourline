@@ -12,8 +12,8 @@ task:
   category: research
   estimated_time: "10-20 min"
   dependencies:
-    - workspace/domains/content/copy-governance.yaml
-    - workspace/domains/content/copy-information-architecture.yaml
+    - squads/aiox-copy/data/copy-governance.yaml
+    - squads/aiox-copy/data/copy-information-architecture.yaml
     - workspace/_templates/product-offerbook/
     - workspace/_templates/content/
     - workspace/_templates/sales-process/
@@ -31,8 +31,8 @@ Garantir que o squad de copy use dados reais e regras vigentes do workspace.
 
 ## Phase 1: Governance Snapshot
 
-1. Ler `workspace/domains/content/copy-governance.yaml`.
-2. Ler `workspace/domains/content/copy-information-architecture.yaml`.
+1. Ler `squads/aiox-copy/data/copy-governance.yaml`.
+2. Ler `squads/aiox-copy/data/copy-information-architecture.yaml`.
 3. Extrair:
    - princípios obrigatórios
    - rules por superfície (`S1`, `S2`, `S3`)

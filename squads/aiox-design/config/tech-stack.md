@@ -25,15 +25,14 @@
 |---|---|---|
 | `metadata/components.json` | AI-readable component catalog | @brad-frost |
 | MCP server skeleton | tool-ready DS artifacts exposure | @brad-frost |
-| `workspace/ui/registry.json` | registry sync source | @design-chief |
+| `workspace/design/registry.json` | registry sync source | @design-chief |
 
 ## Output Paths
 
 ```yaml
 output_paths:
-  domains_design_system: workspace/domains/design-system/
-  system_foundations: workspace/system/foundations/
-  ui_registry: workspace/ui/registry.json
+  system_foundations: workspace/design/foundations/
+  ui_registry: workspace/design/registry.json
   squad_artifacts: squads/aiox-design/
 ```
 

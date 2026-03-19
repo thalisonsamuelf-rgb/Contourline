@@ -8,9 +8,8 @@ type: legacy
 triggers:
   - on_push:
       paths:
-        - workspace/ui/**
-        - workspace/system/**
-        - workspace/domains/design-system/**
+        - workspace/design/**
+        - workspace/design/**
   - on_pr:
       paths:
         - "**/*.tsx"

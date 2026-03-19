@@ -60,7 +60,6 @@ and Workspace (source of truth for governance, metadata, and cross-squad integra
 - **workspace_metadata_path** (string)
   - Description: Path to workspace component metadata
   - Required: Yes
-  - Default: `workspace/domains/design-system/metadata/components.json`
 - **sync_direction** (enum)
   - Description: Which direction to sync
   - Required: No
@@ -71,7 +70,6 @@ and Workspace (source of truth for governance, metadata, and cross-squad integra
 
 - **synced_metadata** (JSON)
   - Description: Updated component metadata reflecting both sources
-  - Destination: `workspace/domains/design-system/metadata/components.json`
 - **drift_report** (Markdown)
   - Description: Report of discrepancies between Storybook and Workspace
   - Destination: `outputs/design-system/{project}/sync/drift-report.md`
@@ -110,7 +108,6 @@ For each story file:
 ### Step 2: Read Workspace Metadata
 
 Read existing workspace component metadata:
-- [ ] `workspace/domains/design-system/metadata/components.json`
 - [ ] Any domain-specific component registries
 - [ ] Governance rules (deprecation, ownership)
 

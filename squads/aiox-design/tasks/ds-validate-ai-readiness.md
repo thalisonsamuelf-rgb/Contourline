@@ -10,8 +10,6 @@ Validate that the design system has all required artifacts for AI agent consumpt
 
 ## Prerequisites
 
-- MCP server exists at `workspace/domains/design-system/mcp/`
-- Metadata exists at `workspace/domains/design-system/metadata/`
 
 ## Workflow
 

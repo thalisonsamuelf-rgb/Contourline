@@ -258,19 +258,17 @@ steps:
       tokens_source: "{{step_3_tokenize.tokens_yaml}}"
       components_source: outputs/design-system/{{project_name}}/components/
     outputs:
-      tokens_promoted: workspace/system/tokens/
-      registry_updated: workspace/ui/registry.json
-      metadata_updated: workspace/domains/design-system/metadata/components.json
+      tokens_promoted: workspace/design/tokens/
+      registry_updated: workspace/design/registry.json
     promotion_map:
       - from: outputs/design-system/{{project_name}}/tokens/tokens.json
-        to: workspace/system/tokens/primitive.tokens.json
+        to: workspace/design/tokens/primitive.tokens.json
       - from: outputs/design-system/{{project_name}}/tokens/tokens.yaml
         to: squads/aiox-design/data/design-tokens-spec.yaml
       - from: outputs/design-system/{{project_name}}/components/
-        to: workspace/ui/components/
+        to: workspace/design/components/
     validation:
-      - workspace/ui/registry.json updated with new components
-      - workspace/domains/design-system/metadata/components.json reflects changes
+      - workspace/design/registry.json updated with new components
       - squads/aiox-design/scripts/design-system/validate_components_metadata.cjs passes
     error_handling:
       strategy: fail
@@ -281,11 +279,11 @@ steps:
     workflow: critical-eye
     description: Evaluate all promoted patterns through the Critical Eye scoring engine. Scores variants (0-100), applies lifecycle transitions, generates proposals for canonical promotion. Non-blocking — brownfield completes even if curation is skipped.
     inputs:
-      catalog: workspace/ui/pattern-catalog.json
+      catalog: workspace/design/pattern-catalog.json
       scoring_rules: squads/aiox-design/data/critical-eye-scoring-rules.yaml
-      decisions_log: workspace/ui/canonical-decisions.json
+      decisions_log: workspace/design/canonical-decisions.json
     outputs:
-      catalog_updated: workspace/ui/pattern-catalog.json
+      catalog_updated: workspace/design/pattern-catalog.json
       cycle_report: outputs/design-system/critical-eye/cycle-{{cycle_number}}/report.md
     error_handling:
       strategy: skip

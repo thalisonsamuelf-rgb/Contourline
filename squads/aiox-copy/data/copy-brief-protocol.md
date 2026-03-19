@@ -219,7 +219,7 @@ REQUIRED para offerbook existir:
 - Campaign layer define o recorte estratégico da campanha
 - Delivery layer guarda a copy pronta
 
-Referência canônica: `workspace/domains/content/copy-information-architecture.yaml`
+Referência canônica: `squads/aiox-copy/data/copy-information-architecture.yaml`
 
 ---
 

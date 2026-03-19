@@ -1256,10 +1256,8 @@ workspace_integration:
     before executing workflows, ensuring context-first copy decisions and
     reproducible setup from zero.
   readiness_owner: coo-orchestrator
-  readiness_resolver: squads/c-level/scripts/resolve-squad-workspace-readiness.cjs
+  readiness_resolver: squads/aiox-workspace/scripts/resolve-squad-workspace-readiness.cjs
   read_paths:
-    - workspace/domains/content/
-    - workspace/domains/brand/
     - workspace/_templates/product-offerbook/
     - workspace/_templates/product-narrative/
     - workspace/_templates/sales-process/

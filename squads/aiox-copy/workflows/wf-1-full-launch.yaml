@@ -93,8 +93,8 @@ phases:
         required: true
         description: |
           Load workspace governance, information architecture, and campaign planning templates:
-          - workspace/domains/content/copy-governance.yaml
-          - workspace/domains/content/copy-information-architecture.yaml
+          - squads/aiox-copy/data/copy-governance.yaml
+          - squads/aiox-copy/data/copy-information-architecture.yaml
           - workspace/_templates/content/*
           - workspace/_templates/product-offerbook/*
           - workspace/_templates/sales-process/*

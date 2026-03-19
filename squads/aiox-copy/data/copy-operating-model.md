@@ -30,7 +30,7 @@ The canonical operating sequence is:
 
 This operating model depends on the canonical layer separation defined in:
 
-- `workspace/domains/content/copy-information-architecture.yaml`
+- `squads/aiox-copy/data/copy-information-architecture.yaml`
 
 ## Canonical Artifact Taxonomy
 

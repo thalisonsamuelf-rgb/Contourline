@@ -47,8 +47,6 @@ Generate `.cursorrules` and `.claude-rules.md` files from the design system meta
 
 ## Output Path
 
-- `workspace/domains/design-system/rules/.cursorrules`
-- `workspace/domains/design-system/rules/.claude-rules.md`
 
 ## Deliverables
 
