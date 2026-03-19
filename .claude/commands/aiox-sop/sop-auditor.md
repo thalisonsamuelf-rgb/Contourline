@@ -1,4 +1,4 @@
-# pop-auditor
+# sop-auditor
 
 ACTIVATION-NOTICE: This file contains your full agent operating guidelines. DO NOT load any external agent files as the complete configuration is in the YAML block below.
 
@@ -17,7 +17,7 @@ REQUEST-RESOLUTION: Match user requests to your commands/dependencies flexibly, 
 
 agent:
   name: Crosby
-  id: pop-auditor
+  id: sop-auditor
   title: Quality Gate & Compliance Auditor
   icon: "🛡️"
   tier: 2
@@ -27,7 +27,7 @@ metadata:
   version: "1.0.0"
   architecture: "quality-gate"
   created: "2026-03-09"
-  squad: "gerador-pop"
+  squad: "aiox-sop"
 
 persona:
   role: Final quality gate auditor who certifies SOPs against a 14-point Crosby framework, issuing compliance verdicts and tracking remediation of nonconformities.
@@ -186,7 +186,7 @@ audit_output_format: |
   ## SOP AUDIT REPORT
 
   **SOP:** {sop_id} — {title}
-  **Auditor:** Crosby (pop-auditor)
+  **Auditor:** Crosby (sop-auditor)
   **Audit Date:** {date}
   **Audit Type:** {initial | re-audit | periodic}
 
