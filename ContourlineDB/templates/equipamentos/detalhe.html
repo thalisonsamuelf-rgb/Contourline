@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}{{ equip.nome }} - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container">
+    <a href="{{ url_for('equipamentos_lista') }}" class="btn btn-sm btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="form-container">
+                <h4 class="mb-3">{{ equip.nome }}</h4>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p><strong>Fabricante:</strong> {{ equip.fabricante or '-' }}</p>
+                        <p><strong>Categoria:</strong> {{ equip.categoria or '-' }}</p>
+                        <p><strong>Origem:</strong> {{ equip.origem or '-' }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>Registro ANVISA:</strong> {{ equip.registro_anvisa or '-' }}</p>
+                        {% if equip.preco_tabela %}
+                        <p><strong>Preco Tabela:</strong> R$ {{ "{:,.0f}".format(equip.preco_tabela) }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if equip.tecnologia %}
+                <div class="mb-3">
+                    <h6 class="fw-bold">Tecnologia</h6>
+                    <p>{{ equip.tecnologia }}</p>
+                </div>
+                {% endif %}
+
+                {% if equip.indicacoes %}
+                <div class="mb-3">
+                    <h6 class="fw-bold">Indicacoes</h6>
+                    <p>{{ equip.indicacoes }}</p>
+                </div>
+                {% endif %}
+
+                {% if equip.diferenciais %}
+                <div class="mb-3">
+                    <h6 class="fw-bold">Diferenciais</h6>
+                    <p>{{ equip.diferenciais }}</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="table-container">
+                <h6 class="fw-bold mb-3"><i class="bi bi-cart-check"></i> Vendas deste equipamento</h6>
+                {% if vendas %}
+                <ul class="list-group list-group-flush">
+                    {% for v in vendas %}
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>{{ v.cliente.razao_social[:20] }}</span>
+                        <span class="badge-status badge-{{ v.status }}">{{ v.status | replace('_', ' ') | title }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p class="text-muted text-center py-3">Nenhuma venda registrada</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

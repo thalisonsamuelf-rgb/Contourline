@@ -1,0 +1,6291 @@
+{
+  "criterio": "Manter contato com mais campos preenchidos",
+  "total_to_keep": 289,
+  "total_to_delete": 402,
+  "details": [
+    {
+      "email": "ac.passoni@uol.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689e3f923c084e0019253727",
+        "name": "Dra. Ana Carolina Natera Passoni",
+        "score": 24,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68a38035d5117b001907d308",
+          "name": "Ana Passoni",
+          "score": 23,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "adm@altostimaestetica.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63d047de6d700017477e9",
+        "name": "MARCIO",
+        "score": 29,
+        "deals": 8
+      },
+      "deleting": [
+        {
+          "id": "699d96aa5e509e001d051198",
+          "name": "MARIO",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "admcamilapetrillidermato@gmail.com",
+      "total_duplicates": 10,
+      "kept": {
+        "id": "68cd92a601182800144ce61e",
+        "name": "Amanda",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68cd92b7cd30b2001f2c5893",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd92cc249724001b319d36",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd932597009b0021cc9fee",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd936db4b47600140cca1f",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd979106dfba00141baab9",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d195924c451a0021b337f9",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d19592e960c40016522c52",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d1961d51459b00185701c2",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d1967151459b002156fe22",
+          "name": "Amanda",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "adriacon65@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "693d393f56be8b0001f99d0e",
+        "name": "ADRIANA A",
+        "score": 14,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "694570209bd3f7001871be94",
+          "name": "ADRIANA APARECIDA",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "adriana.isaac@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b83b84dc83f800173c81e7",
+        "name": "ADRIANA RABELO ISAAC",
+        "score": 26,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68b83b2cd5c1640014f10a88",
+          "name": "ADRIANA",
+          "score": 11,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "adrianaarruda18@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488d1f636dd000175e218",
+        "name": "ADRIANA PAULA ROSA DE ARRUDA",
+        "score": 14,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "698f7c80cc968a001b3e07f1",
+          "name": "ADRIANA ARRUDA",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "adriano@serderma.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68e554eab53af300190d0f37",
+        "name": "Adriano Carvalho",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b8dbe0e80800001e692e2",
+          "name": "ADRIANO CARVALHO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "alanadavila.cirurgiaplastica@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68efe0d344f05d00190e6cb3",
+        "name": "Alana D’Avila Rebelo",
+        "score": 10,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a310326b36b80001e8819f",
+          "name": "Alana Dávila",
+          "score": 5,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "alexandreengell@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "691c6755ac8e3c0016e38ee4",
+        "name": "ALEXANDRE ENGELL SANTOS",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6917ccfa21d46a00012a0a47",
+          "name": "Alexandre Santos",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "alinecml1@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "697764dc235f940019362a0e",
+        "name": "ALINE CAMILO",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "693d700f1c9b8a00016bc669",
+          "name": "ALINE CAMILO",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "almeidapet@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68e525f778525b00146ae1a9",
+        "name": "DIANA CARVALHO",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68c01e1b93563800217213ae",
+          "name": "Diana Carvalho",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "amirnialmeida@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a98ab448da2b00018999fe",
+        "name": "Amirni Vieira",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69b15bf9ba95550017093bef",
+          "name": "AMIRNI ALMEIDA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "anapuppe.m@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6965148034d86e001c7e68f1",
+        "name": "Ana Luiza Puppe Magalhães",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "6964fef1bdef0d001efa4be9",
+          "name": "Bruna Caroline Gomes de Lima",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "andradnathalia@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6902c7f01bdfa9000173f402",
+        "name": "Nathália",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69037220a7d2760018bdb9d7",
+          "name": "Nathália Martins Ferreira de Andrade Maia",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "andreia_m_pamplona@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6867e9ff106c90001a138ad7",
+        "name": "Andreia Pamplona",
+        "score": 32,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689a8b384ef17f0001dfb753",
+          "name": "Andreia Pamplona",
+          "score": 15,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "andressadalcin@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6969261b778436001c5d46c9",
+        "name": "ANDRESSA DALCIN",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69273e755b596a00139e1e88",
+          "name": "ANDRESSA DALCIN",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "andreyanovazzi@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "689a9553c104660001a5b8c5",
+        "name": "Andreya da Cruz Novazzi",
+        "score": 9,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68fa1d7a8744830019e6830a",
+          "name": "Andreya",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "68bad490631a34001474992e",
+          "name": "ANDREYA NOVAZZI",
+          "score": 5,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "annapborchardt@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69148e4dab23ae0013d75bed",
+        "name": "Anna Paula Borchardt",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "694560fcce0ee70013a7619a",
+          "name": "ANNA PAULA BORCHARDT",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "antoniocrjr1983@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "692ed7bacf80a9001f883b91",
+        "name": "ANTÔNIO CARLOS RIBEIRO JUNIOR  ( FRANCHISE DI ARMONIZZAZIONE FACCIALE GESTAO DE NEGOCIOS LTDA_",
+        "score": 16,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689dff94ce53e400018237fb",
+          "name": "ANTONIO CARLOS RIBEIRO JUNIOR",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "antoniojuliobarreto@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6904eee0a5b6c10013b444d6",
+        "name": "Antônio Júlio de Araújo Barreto",
+        "score": 19,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e69300",
+          "name": "ANTÔNIO JÚLIO DE ARAÚJO BARRETO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "anuska.lima@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682346d56a350001fb5f99",
+        "name": "Anuska",
+        "score": 33,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f7835c07bc4e0018e9f42c",
+          "name": "ANUSKA APARECIDA MARQUES LIMA",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "ari.araldi@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6868233ed56a350001fb5b97",
+        "name": "ARIANE",
+        "score": 33,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f77e13793d4400167b5e63",
+          "name": "ARIANE ARALDI SILVEIRA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "arthurdubberstein@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6908fba74edc4e0022c162b4",
+        "name": "Arthur",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690782e9aa84dd0001c477e8",
+          "name": "Arthur",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "asiudhui@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6931a8f91a5e8a00012b93d3",
+        "name": "ricardo Amado",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6931a8f9afd3030001f18a27",
+          "name": "ricardo Amado",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "atendimento.cassiaaraujo@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690d07655a1e9f001319063c",
+        "name": "RITA",
+        "score": 26,
+        "deals": 4
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e69336",
+          "name": "RITA DE CASSIA RODRIGUES ARAUJO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "atendimento@stimadermatologia.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a312386b36b80001e91b55",
+        "name": "Margareth Zanatta",
+        "score": 7,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68a312386b36b80001e91b55",
+          "name": "Margareth Zanatta",
+          "score": 7,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "atendimentodrbenjamim@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68efe4c3c44c90001a350733",
+        "name": "Benjamim Gonçalves Rodrigues Dos Santos",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68efeb5c006d7000149b7e8b",
+          "name": "Benjamin Gonçalves Rodrigues Dos Santos",
+          "score": 9,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "awada@adrianaawada.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689baf84f0ef8f000167b8ad",
+        "name": "NEGÓCIO ADRIANA CHEDID AWADA",
+        "score": 19,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68a3104f6b36b80001e88a08",
+          "name": "Adriana Chedid Awada Tarcha",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "barbara.kelly@contourline.com.br",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "689f52c63c084e00142589fe",
+        "name": "BARBARA KELLY CUNHA E SILVA",
+        "score": 13,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "689f52c63c084e00142589fe",
+          "name": "BARBARA KELLY CUNHA E SILVA",
+          "score": 13,
+          "deals": 3
+        },
+        {
+          "id": "68811c06190f95001ee8efc4",
+          "name": "LORENA",
+          "score": 5,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "barbarafcs@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68b99b1040b0ad001a0f5d51",
+        "name": "BARBARA FERNANDES CARRASCO DA SILVA",
+        "score": 24,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68b99aaf0e5fd100188a7c9a",
+          "name": "BARBARA FERNANDES CARRASCO DA SILVA",
+          "score": 23,
+          "deals": 3
+        },
+        {
+          "id": "68c096f00e9e2200242c8c99",
+          "name": "BÁRBARA FERNANDES CAMPOS",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "belinda.roriz@terra.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68bf45bf67049b001ec3ada0",
+        "name": "Belinda Raiz",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68c1c625ad0ef9001e6041d4",
+          "name": "Belinda Roriz",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "bruhdias09@gmail.com",
+      "total_duplicates": 15,
+      "kept": {
+        "id": "68f784f623047a00251d9640",
+        "name": "Bruno",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f7850fe51a1900145a7ac7",
+          "name": "Bruno",
+          "score": 7,
+          "deals": 1
+        },
+        {
+          "id": "68d1d80abbc85e0019cf5bca",
+          "name": "Bruno",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "692dac391985d6001a9946dc",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ee91bae0e04a0019fc9a5d",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ee964128ad69001b2590de",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ee964271a4e40019052a90",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ee9690175dde0014286393",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68f783c087f2700014d1d175",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68f784044ab42000188c8773",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68f784dd6bcb8f00164faea6",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "690162284ce885001da4c8f1",
+          "name": "Bruno",
+          "score": 3,
+          "deals": 0
+        },
+        {
+          "id": "6901625d887e3100136d8d81",
+          "name": "Bruno",
+          "score": 3,
+          "deals": 0
+        },
+        {
+          "id": "68db179791697c00141b1084",
+          "name": "Bruno",
+          "score": 2,
+          "deals": 0
+        },
+        {
+          "id": "68dbdbc45a2757001e5b1fe2",
+          "name": "Bruno",
+          "score": 2,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "bruna.staico@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c01f6bad855a0024d31a95",
+        "name": "Bruna Machado Staico",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b9e0785fcdf7001453b791",
+          "name": "BRUNA MACHADO",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "brunamascarellon@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68fb69315c0cf5001b313654",
+        "name": "Bruna Mascarello",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f94930eda76200018e5606",
+          "name": "Bruna",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "brunobastosorofacial@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68682346d56a350001fb5f8e",
+        "name": "DÉBORA (BRUNO BASTOS FARIA)",
+        "score": 23,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689b316c120ec10001dcb488",
+          "name": "Bruno Bastos Faria",
+          "score": 13,
+          "deals": 3
+        },
+        {
+          "id": "68f7837298ccbd0026320c80",
+          "name": "DÉBORA (BRUNO BASTOS FARIA)",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "brunomagalhaesp.adv@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68cd6e75c8846900234407da",
+        "name": "Bruno",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68cd6e4a803ca600179c98fe",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd77c03f129500145605b9",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "cadastrobrunomagalhaes@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68cd6a513f66440014c42c44",
+        "name": "Bruno",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68cd6b063f6644001ec43014",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd6e05b4b4760014025ce8",
+          "name": "Bruno",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "camila.fernanda@terra.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dffecce53e4000182537b",
+        "name": "Camila",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a91347d16460001e37da6",
+          "name": "CAMILA PIMENTA",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "camilabertolim@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682345d56a350001fb5f15",
+        "name": "Camila",
+        "score": 18,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f7830e199149001471bc35",
+          "name": "CAMILA TEIXEIRA BERTOLIM",
+          "score": 12,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "camilareisestetica@icloud.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488f5f636dd000175f2e1",
+        "name": "Camila",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f780a4bb75f4001b5eb79c",
+          "name": "CAMILA (C. C DOS REIS COSTA ESTETICA)",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "camislote@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b825fc3db705002696b717",
+        "name": "Camila Simon",
+        "score": 20,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b823afd5c1640019f0f84d",
+          "name": "Camila Simon",
+          "score": 18,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "candicesalvador@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682344d56a350001fb5e46",
+        "name": "Candice",
+        "score": 26,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f7814e5259d600160b4046",
+          "name": "CANDICE SCHIMITI BALLALAI",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "candidaantunes@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dffdece53e40001824efc",
+        "name": "Candida F.",
+        "score": 16,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a9682c104660001a611e8",
+          "name": "CÂNDIDA DOMECG",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "carinacamarana@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690df6b30da1bf0025322e14",
+        "name": "CARINA CAMARANA",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69b4326d2f84ca0013fbf8ce",
+          "name": "Carina",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "carlalfpisani@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "6866664cb648aa0014bda781",
+        "name": "CARLA DE LOUREIRO FRACARI PISANI LTDA",
+        "score": 28,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a310516b36b80001e88a90",
+          "name": "Carla De Fracari Pisani",
+          "score": 12,
+          "deals": 0
+        },
+        {
+          "id": "68c03cf0b0f2fa001bf784c8",
+          "name": "Carla L Filacari Pisani",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "carlareginazanchettin@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69aeb92fe6c3c4001f423148",
+        "name": "CARLA REGINA ZANCHETTIN",
+        "score": 9,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68c03dd6b1f9ac0014cae8b9",
+          "name": "Carla Zanchettin",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "carol_scarpa@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c9f82c2ea47c001f8d89e1",
+        "name": "CAROLINA DOS S. SCARPA",
+        "score": 23,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68b73c87519245001f039dd1",
+          "name": "Dra. Carolina Scarpola",
+          "score": 13,
+          "deals": 3
+        }
+      ]
+    },
+    {
+      "email": "carolinarvazquez03@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "694b5a5d8228ee0001ed85ed",
+        "name": "CAROLINA",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6989cb62c361a40015ea1bf8",
+          "name": "CAROLINA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "caroline_berger@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6866f68dd8d39700177ee8eb",
+        "name": "CB SERVICOS MEDICOS E HOSPITALARES LTDA",
+        "score": 27,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "689a8b364ef17f0001dfb655",
+          "name": "Caroline Mercele Maciel Berger",
+          "score": 18,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "carolinefantacini@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "699e123d52ed6b0014953820",
+        "name": "Caroline Fantacini",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b1a8387d431d00177ca263",
+          "name": "Caroline famtacini palomino",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "carvalho_breno@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "686669e2eded370014ebb5cd",
+        "name": "BCV CLINIC LTDA",
+        "score": 30,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "69a57920b5c5b10013fe11bf",
+          "name": "BRENO MARQUES CARVALHO (CONSIDERAR ESTE)",
+          "score": 16,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "cassiajunqueira2009@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f61bdaaef583001bc141f3",
+        "name": "ANDRÉ LUIZ COSTA ARANTES",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691b8dbe0e80800001e692ee",
+          "name": "ANDRÉ LUIZ COSTA ARANTES",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "centromedicocomedic@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68d047c64e45320018cdddf8",
+        "name": "Alanna Carvalho",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68d047db5055090016075d43",
+          "name": "Alanna Carvalho",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d0480006dfba001466d1e7",
+          "name": "Alanna Carvalho",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "cesar.aug.ferreira@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69035e8ce2213a0015010e8a",
+        "name": "César Augusto Ferreira",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68ea478f2eef4a000185e998",
+          "name": "César Ferreira |",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "charodonto@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dff93ce53e400018237c5",
+        "name": "Charline",
+        "score": 15,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f781dd140e4f001ae33530",
+          "name": "CHARLINE ODONTOLOGIA LTDA",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "clinica.nucleo.s2024@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c2d52cd5c50e0018cda127",
+        "name": "MARCOS SANTANA",
+        "score": 20,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a90c37d16460001e34fe2",
+          "name": "Dr Marcos Santana - GOLD INCISION RJ",
+          "score": 9,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "clinicadeo@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6900b50043f96a00139c057a",
+        "name": "Fernanda",
+        "score": 16,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68fc1e23d59cd100011cd223",
+          "name": "Fernanda",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "clinicamaktub@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a48451f636dd00017530e9",
+        "name": "Ana Luiza",
+        "score": 16,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a311246b36b80001e8ca67",
+          "name": "ANA LUIZA PERES MARTINS GODOY",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "clinicamedicaharmoniarj@fmmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "691208ffaf1f77001a2a8426",
+        "name": "fernanda fernandes da silva",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69120334fa58c90001674842",
+          "name": "fernanda fernandes da silva",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "clinicavolpato@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690cbad2561483001d3ba921",
+        "name": "GABRIELA M.",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690b992fa169b3001629c779",
+          "name": "GABRIELA M.",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "compras@leticiananci.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b608123a7dda000142bdc8",
+        "name": "LETICIA NANCI",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69a70a00622871001a609d3c",
+          "name": "LETICIA NANCI",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "compraswspa@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "688bc8889c37da000144cca8",
+        "name": "Johnny Rogers",
+        "score": 13,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "697bc4bea207810023b10602",
+          "name": "Johnny Rogers",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "conchitateixeira1@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f77ee934fe5c0014379ff3",
+        "name": "BRENDA (MARIA CONCEIÇÃO SARMENTO TEIXEIRA)",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a488f2f636dd000175f17e",
+          "name": "Dra. Brenda",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "consultorio@drmarcosgomes.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69036eafca2d8d0013c0faaf",
+        "name": "Marcos Gomes",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69027a1b222bab0001a98a3c",
+          "name": "Marcos Gomes",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "contato.fabricioalam@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690b8e50bc0c2200138f1d10",
+        "name": "Juliana Maciel",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690b501c39de830001c710e7",
+          "name": "Juliana Maciel",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "contato@linadepil.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a966ec104660001a60b60",
+        "name": "Manoelina Rosana Santos",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68cc14cc8756310014f31c48",
+          "name": "MANOELINA ROSANA",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "contato@marcellaaraujo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c067b581fe2c00197bd5b4",
+        "name": "Marcella Santos Araújo.",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b8a4adb441810021e37567",
+          "name": "MARCELLA SANTOS",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "cribarifrann@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f78406411e92001aabda43",
+        "name": "FRANCIELLI CRIBARI",
+        "score": 12,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a488fbf636dd000175f4e3",
+          "name": "Francielli",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "cris.pavanivb@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "69611734ea009d0016930f0c",
+        "name": "CRISTIANE PAVANI VILAS BOAS",
+        "score": 20,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68aca96d7f2fbf0019c1916c",
+          "name": "Cristiane Pavani",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "689de4b2dce5e300226bece8",
+          "name": "Cristiane Pavani",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "crisprata.jeans@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ec8eb21277750001af960d",
+        "name": "Cris",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68ec8eb21277750001af960d",
+          "name": "Cris",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "daisyodonto@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488f9f636dd000175f439",
+        "name": "DELANO",
+        "score": 25,
+        "deals": 4
+      },
+      "deleting": [
+        {
+          "id": "68f7833031d130001ebf970b",
+          "name": "CAMILA (CLINICA TF SP LTDA (TRANSFORMANDO FACES )",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "daniela.costa@gmail.com",
+      "total_duplicates": 4,
+      "kept": {
+        "id": "6865b417736cdb001ffd7014",
+        "name": "Daniela Aidar",
+        "score": 34,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689dffdfce53e40001824f4a",
+          "name": "Daniela Aidar Costa Dias",
+          "score": 28,
+          "deals": 4
+        },
+        {
+          "id": "68a310526b36b80001e88ac6",
+          "name": "Daniela Aidar Costa Dias",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "689a91297d16460001e378a7",
+          "name": "Daniela Aidar Costa Dias",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "debora.azenha@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689baf82f0ef8f000167b7b0",
+        "name": "Debora Azenha",
+        "score": 17,
+        "deals": 4
+      },
+      "deleting": [
+        {
+          "id": "68a310766b36b80001e8941a",
+          "name": "Debora Azenha",
+          "score": 9,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "ded_odonto2012@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690b89eda1cc960015541e06",
+        "name": "Deborah de Freitas Cordeiro",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e69306",
+          "name": "DEBORAH DE FREITAS CORDEIRO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "deiaherculano@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6911da0797c3e200183924a0",
+        "name": "Andréia Herculano",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691b8dc00e80800001e69354",
+          "name": "ANDRÉIA HERCULANO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "dentalmacuva@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "694e78391de8ec000139b8a1",
+        "name": "JANE MAC CORMICK",
+        "score": 13,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "695295e758b09f00131356ca",
+          "name": "JANE",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "6978ac1f4be96e0013f9e01c",
+          "name": "JANE MAC CORMICK",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "dermaalmeida@uol.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689baf80f0ef8f000167b6e5",
+        "name": "Guilherme Almeida",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68a310376b36b80001e88306",
+          "name": "Guilherme Almeida",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "diegoandreiaguiar@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6912314b815107001abff93c",
+        "name": "Diego",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691088779bcc940001b67522",
+          "name": "Diego",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "diegoeduardo2@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ee289ff9fec3000156ebb3",
+        "name": "Diego",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "693806720d99a1001e2028bc",
+          "name": "Diego eduarda",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "diretoria@dermabr.com.br",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "689dfe75ce53e4000181d40a",
+        "name": "LUCIANO",
+        "score": 34,
+        "deals": 7
+      },
+      "deleting": [
+        {
+          "id": "689dfe75ce53e4000181d40a",
+          "name": "LUCIANO",
+          "score": 34,
+          "deals": 7
+        },
+        {
+          "id": "689dfe75ce53e4000181d40a",
+          "name": "LUCIANO",
+          "score": 34,
+          "deals": 7
+        }
+      ]
+    },
+    {
+      "email": "douglasresende22@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f8c8e9db1ce10014017d56",
+        "name": "DOUGLAS RESENDE",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691376bac87a3c0013a05689",
+          "name": "DOUGLAS RESENDE",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "doutormarcofischer@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6866e0d827ceb100197a41d4",
+        "name": "MARCO AURELIO FISCHER DE LIMA",
+        "score": 25,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a8b444ef17f0001dfbd92",
+          "name": "MARCO AURELIO FISCHER DE LIMA",
+          "score": 13,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "dr.alessandroalarcao@uol.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a3105e6b36b80001e88e0b",
+        "name": "Alessandro Louza Alarcao",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68fb9873489b72001fb072db",
+          "name": "Alessandro Louza Alarcao",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "dr.maldonado.cirurgiao@gmail.com",
+      "total_duplicates": 6,
+      "kept": {
+        "id": "68cefdb54a4942001cf546b6",
+        "name": "César Manuel Maldonado Benitez",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68cefd8f3f6644001dff9df5",
+          "name": "César Manuel Maldonado Benitez",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cefda70f137e00170ebffb",
+          "name": "César Manuel Maldonado Benitez",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cefdbeb4b4760014b76923",
+          "name": "César Manuel Maldonado Benitez",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cefddd76179e00146e52e5",
+          "name": "César Manuel Maldonado Benitez",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cefde88c7a9d001df2f8e7",
+          "name": "César Manuel Maldonado Benitez",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "dr.ricardoaraujo@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68e81a6d83c7e1001ebfbef0",
+        "name": "Ricardo",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6937065d2753dd001cb4df49",
+          "name": "Ricardo Correia de Araújo",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "68e817e35222060001f4669d",
+          "name": "Ricardo",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "dra.anabarbara@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6964fdf7eb2cc80013881f22",
+        "name": "Ana Bárbara Lage Silva",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "696500dac678b2001dc68dfa",
+          "name": "Ana Bárbara Lage Silva",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "dra.pamelacapitanio@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6902776f1863f600137cb0b2",
+        "name": "Pamela Capitanio",
+        "score": 17,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68fab14596c10d0001878a33",
+          "name": "Pamela Capitanio",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "dra.patriciazanella@icloud.com",
+      "total_duplicates": 4,
+      "kept": {
+        "id": "68659264eded37001eeb8e13",
+        "name": "PZ CLINICA E ESTETICA LTDA",
+        "score": 23,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "689a9669c104660001a609f3",
+          "name": "PATRICIA SILVIA MOUTINHO ZANELLA",
+          "score": 10,
+          "deals": 2
+        },
+        {
+          "id": "689a9532c104660001a5ae07",
+          "name": "Patricia Silvia Moutinho Zanella",
+          "score": 10,
+          "deals": 2
+        },
+        {
+          "id": "689a9675c104660001a60dc3",
+          "name": "Patricia Silvia Moutinho Zanella",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "dra_larissafaria@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a962cc104660001a5f7b3",
+        "name": "Larissa",
+        "score": 9,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69247d9edb758c0020520cd6",
+          "name": "Larissa Indicação",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "draanaluizamachado@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6980b1c3b4d368001d4f8aa8",
+        "name": "Ana Luiza Machado",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "692dd36f4e498c0001555f90",
+          "name": "Ana Luiza Machado",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "drabiancagrechi@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690a67e16e0bb70013e13d9b",
+        "name": "Bianca",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6907caec714b5f0001cd044d",
+          "name": "Bianca",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "dracristianedemetrio@gmail.com",
+      "total_duplicates": 12,
+      "kept": {
+        "id": "68d2eaeba5ac12001976b461",
+        "name": "Cristiane Demetrio",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68ce8b67a7ad270022bef3b0",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ce8b9b621277001a4a1515",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ce8ba84e4532001f1f8302",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ce8bd05055090016524b07",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ce8be6d3594a001c97313c",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ce8bfb5385aa0020751f03",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ce8c0a4a4942001941f7fa",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ce8c2b249724001f6315a0",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ceda7c2497240014056955",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68ceda9e87a7080017fca108",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cedaa4f4863900144677f6",
+          "name": "Cristiane Demetrio",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "dradanielamrocha@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f77fe6723a59001853a55d",
+        "name": "DANIELA DE MORAIS ROCHA",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a488f4f636dd000175f25d",
+          "name": "Daniela De Paula",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "draemilyruiz@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c06c87914cd10022766e20",
+        "name": "Emely Ruiz Cavalcante.",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b89d0623ca000020850e48",
+          "name": "EMILY CAVALCANTE",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "dragiorgiadebortoli@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "689dff0ece53e40001820abe",
+        "name": "Giorgia Soares",
+        "score": 16,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f77dc82902f40024650f3d",
+          "name": "GIORGIA SOARES MOURA DE BORTOLI LTDA",
+          "score": 11,
+          "deals": 1
+        },
+        {
+          "id": "689a8b474ef17f0001dfbf2b",
+          "name": "Dra Giorgia bortoli",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "drajhromano@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "6866fc8d07ce11001485f3bd",
+        "name": "Juliana Helena Romano",
+        "score": 43,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "689b319f120ec10001dcc1f6",
+          "name": "Juliana Helena Romano",
+          "score": 19,
+          "deals": 2
+        },
+        {
+          "id": "689a8b524ef17f0001dfc447",
+          "name": "Juliana Helena Romano",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "drajucostaprado@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "691b0f5822cd420013139143",
+        "name": "Juliana Costa Prado",
+        "score": 14,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68c08c294557180014c62f55",
+          "name": "Juliane Costa Prado",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "dralarissaff@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a735faa5c5c800195b6f9d",
+        "name": "LARISSA",
+        "score": 13,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689dff0cce53e400018209a7",
+          "name": "Larissa S F",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "drallicebastos@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b8a3e20f5eed001ed05f62",
+        "name": "ALLICE DE VASCONCELOS R.",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b8a3e2c6e881002076dd20",
+          "name": "Allice de Vasconcelos R.",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "dranakanishicarla@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6866faf7010a3f0014f3a799",
+        "name": "Carla",
+        "score": 41,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a8b414ef17f0001dfbbf0",
+          "name": "CARLA NAKANISHI",
+          "score": 12,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "draulofernandes@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "689dfea2ce53e4000181e3c4",
+        "name": "ANDRE ACIÓLI FERNANDES JUNIOR",
+        "score": 21,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68a488d2f636dd000175e2d0",
+          "name": "AULO ANDRE ACIOLI FERNANDES JUNIOR",
+          "score": 15,
+          "deals": 2
+        },
+        {
+          "id": "692ed872d4330d0013e29ab8",
+          "name": "Michele Aparecida",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "drmarcellcominato@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b895ebb42149001909b057",
+        "name": "Marcell Cominato",
+        "score": 23,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "694157388aea1e0016434e54",
+          "name": "MARCELL CAIRRÃO COMINATO",
+          "score": 22,
+          "deals": 3
+        }
+      ]
+    },
+    {
+      "email": "drmauroarguello@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68682351d56a350001fb63f1",
+        "name": "Dr. Mauro e Dra. Fabiana",
+        "score": 23,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689a8b574ef17f0001dfc6da",
+          "name": "Mauro André Arguello",
+          "score": 16,
+          "deals": 2
+        },
+        {
+          "id": "68a3105a6b36b80001e88cc0",
+          "name": "Mauro Andre Arguello",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "drmomairi@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f79218a9edcb0019ddd4b4",
+        "name": "MOHAMAD OMAIRI",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68ec3a905b44b800015d0315",
+          "name": "Mohamad omairi",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "drnelsonfrota@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dffecce53e40001825345",
+        "name": "Nelson Frota",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e69312",
+          "name": "NELSON FROTA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "ebercorrea@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "6865ad4e8bbe890014541100",
+        "name": "EBER DE AZEVEDO CORREA",
+        "score": 37,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689b316f120ec10001dcb575",
+          "name": "Eber de Azevedo Correa",
+          "score": 23,
+          "deals": 3
+        },
+        {
+          "id": "68a310536b36b80001e88ae1",
+          "name": "Eber Correa",
+          "score": 9,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "eduardonicolosi@icloud.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "692595fd7d33d80013e33f0b",
+        "name": "EDUARDO PIMENTEL NICOLOSI",
+        "score": 19,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68ff72e4112610001554730b",
+          "name": "EDUARDO PIMENTEL NICOLOSI",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "eikitakemura@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690c8abff8427a00171f9d72",
+        "name": "Rafael Eiki",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690a8ebdc4300200013d6699",
+          "name": "Rafael Eiki",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "eliana@oestesolarenergia.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488d6f636dd000175e492",
+        "name": "ELIANA",
+        "score": 15,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69693ea4d6d1380013077ed2",
+          "name": "MERCEDES",
+          "score": 8,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "elisasoul7@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690bb4e78d023600015da424",
+        "name": "Elizângela",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69149f25f3c5fa001cd3d240",
+          "name": "Elizângela",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "elisinhasugohara@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69663f9c1d6c8e0001a798a3",
+        "name": "ELISIA",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69679a7d3cf27f0024eaf59d",
+          "name": "ELISIA",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "elizangelacintra@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "694ac5a915d7a10022a841ee",
+        "name": "ELIZANGELA CINTRA",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6924434b52dcfd001dc008f9",
+          "name": "ELIZANGELA FLORINDO CINTRA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "emiliana.carvalho@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488ecf636dd000175eebb",
+        "name": "EMILIANA CAMILO CARVALHO",
+        "score": 14,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69822e8a8639130013f44bef",
+          "name": "Emiliana Carvalho",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "ericacbigon@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68cdcb04a7ad27001ee1b938",
+        "name": "Érica Bigon",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68cdcb4c0118280014fc0910",
+          "name": "Érica Bigon",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd547e0276e60016f7f6ce",
+          "name": "Érica Bigon",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "ericafabiulacanutto@gmail.com",
+      "total_duplicates": 5,
+      "kept": {
+        "id": "68a31d25bb1d130020e5e46a",
+        "name": "Erica Fabiula Canutto Teixeira",
+        "score": 21,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689dff49ce53e40001821e5c",
+          "name": "Erica Canutto",
+          "score": 17,
+          "deals": 0
+        },
+        {
+          "id": "689a8b5a4ef17f0001dfc84b",
+          "name": "Erica Canutto",
+          "score": 13,
+          "deals": 3
+        },
+        {
+          "id": "69089076b256af0013ea7d17",
+          "name": "Erica",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "68a31c415c1dc7001d4d70bc",
+          "name": "Erica Fabiula Canutto Teixeira",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "escritoriofb@terra.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b1b4dc1ff5c8001f61eacd",
+        "name": "AIRTO VALANDRO",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e69324",
+          "name": "AIRTO VALANDRO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "espacodoglamour.rj@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6940547d9552cd0016e18825",
+        "name": "JORGE CARLOS SANTOS JUNIOR",
+        "score": 22,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "693314a6913fec00131dc5db",
+          "name": "ANGILBERTO SABINO DE FREITAS",
+          "score": 12,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "esteticamendonca@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63cff7de6d70001747644",
+        "name": "ELBA/SIMONE",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69a63cff7de6d70001747644",
+          "name": "ELBA/SIMONE",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "eulercarneiro@locaderm.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68cc00091e06ed00228257d4",
+        "name": "EULER DE SOUZA CARNEIRO JUNIOR",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e6933c",
+          "name": "EULER DE SOUZA CARNEIRO JUNIOR",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "fableal@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a4842ff636dd00017524fd",
+        "name": "Fabiano",
+        "score": 24,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689a97af1fdea00001c27196",
+          "name": "FABIANO ROBERTO PEREIRA DE CARVALHO LEAL",
+          "score": 12,
+          "deals": 3
+        }
+      ]
+    },
+    {
+      "email": "fabricia.lelis@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a965fc104660001a60733",
+        "name": "Fabricia Lelis",
+        "score": 19,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a488ccf636dd000175df95",
+          "name": "FABRICIA DA SILVA LELIS",
+          "score": 12,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "fabriciocbarbosa988566@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "691c86e10413c800133664dc",
+        "name": "FABRICIO CAMPOS BARBOSA",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b2298a600e1001bc95450",
+          "name": "FABRICIO CAMPOS BARBOSA",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "fabriciocristofer@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488eaf636dd000175ed2c",
+        "name": "Fabrício C.",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "697915b51882af001315c9ed",
+          "name": "FABRÍCIO CRISTOFER DE OLIVEIRA",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "fabyanavc@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488f2f636dd000175f144",
+        "name": "Fabyana",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f77eaf771542001400ed49",
+          "name": "FABYANA VIEIRA CORREA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "felipeg_santana@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690bbbb48036030013710f30",
+        "name": "Felipe",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69094ff164355c0001f7dde9",
+          "name": "Felipe",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "ferfontao@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a35dba5826930024c6b696",
+        "name": "FERNANDA FONTÃO",
+        "score": 15,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e6931e",
+          "name": "FERNANDA FONTAO LUPINO",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "fernanda@bolodqmadre.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690de58a145d4e00173734aa",
+        "name": "Fernanda",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690790ce4fcc1900018941da",
+          "name": "Fernanda",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "fernandabrcarneiro@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6866cbc6c4176200145d5539",
+        "name": "FERNANDA BUFAICAL RASSI CARNEIRO",
+        "score": 30,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a953bc104660001a5b12e",
+          "name": "Fernanda Rassi",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "fernandasilvafreitas@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "691494c8fd4bfc00197c2c42",
+        "name": "FERNANDA SILVA FREITAS",
+        "score": 15,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e69342",
+          "name": "FERNANDA SILVA FREITAS",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "fernandoadccosta2@yahoo.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "6868234bd56a350001fb61b7",
+        "name": "Dra. Fayruss",
+        "score": 36,
+        "deals": 4
+      },
+      "deleting": [
+        {
+          "id": "689b316a120ec10001dcb414",
+          "name": "Fernando Antônio David Craveiro Costa",
+          "score": 10,
+          "deals": 2
+        },
+        {
+          "id": "691b8dbf0e80800001e69330",
+          "name": "DRA. FAYRUSS",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "financeiro2@fabiolatasca.com.br",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68a3107e6b36b80001e89669",
+        "name": "Fabiola Menegoti Tasca",
+        "score": 22,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689dfef1ce53e400018200b7",
+          "name": "Fabiola Menegoti Tasca",
+          "score": 13,
+          "deals": 3
+        },
+        {
+          "id": "68a310556b36b80001e88b4d",
+          "name": "Fabiola Menegoti Tasca",
+          "score": 5,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "financeiroclinicals@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a48433f636dd0001752670",
+        "name": "Dra. Lívia",
+        "score": 22,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "696a7786b0843a001d43ef08",
+          "name": "FRANCIELE ( DRA. LIVIA)",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "fisio.anavericia@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68cf163fb4b4760014d4035a",
+        "name": "Ana Vericia",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68cf1665011828001d25e216",
+          "name": "Ana Vericia",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "flaviabarbosabritotp@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a8544d56f214001b53d143",
+        "name": "Flávia Lúcia Barbosa de Brito",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a854058acc7f00201b2c09",
+          "name": "Flávia Lúcia",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "flaviopiquet@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a225721f8d2b00133d3f28",
+        "name": "FLAVIO PIQUET",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a310306b36b80001e880fa",
+          "name": "Juliana Piquet",
+          "score": 5,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "franciellesramos@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "698260d26903f40013bbeb87",
+        "name": "FRANCIELE",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689c9f94a295a90014bcbf78",
+          "name": "FRANCIELLE",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "fredz_cavalcante@me.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682343d56a350001fb5dd9",
+        "name": "Frederico Lucas Lima Paiva Cavalcante",
+        "score": 14,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a90cb7d16460001e35389",
+          "name": "Frederico Lucas Lima Paiva Cavalcante",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "gabrielacapareli@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a95bfc104660001a5d949",
+        "name": "Gabriela Cunha Capareli",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69a813bef62ab500011aa680",
+          "name": "Gabriela Cunha Capareli",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "gabrielasassiarouca@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "696500ea53bcdc001370304a",
+        "name": "Gabriela Sassi Arouca Ferreira",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6964fe1a7e99e200165429a4",
+          "name": "Gabriela Sassi Arouca Ferreira",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "gbsela@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6908147e4fcc19000189efd5",
+        "name": "Gustavo",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "6908cbeb08ce7a0019b3268d",
+          "name": "Gustavo",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "ggmdermato@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c06677944005001808f6a3",
+        "name": "Gisely Garcia Miguel.",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b8a5546ea0a600189bc67f",
+          "name": "GISELE GARCIA MIGUEL",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "ghfachini@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f23b967370d2001ac870a2",
+        "name": "Gabriel hernandes",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f1218a409ef60001ba1e6a",
+          "name": "Gabriel hernandes",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "gilsondermato@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c036e19b5acf002257cd2e",
+        "name": "GILSON ANTONIO GONCALVES",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689dfee9ce53e4000181fd06",
+          "name": "Gilson A P Gonçalves",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "giovanellakarine@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488f2f636dd000175f19e",
+        "name": "Karine",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f77f1b40cba800140b83b1",
+          "name": "KARINE DANIELE GIOVANELLA CANO",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "gjcappato@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6904131a4fff7f00013f862f",
+        "name": "Guilherme",
+        "score": 13,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "6915d599e4aceb001d533a0a",
+          "name": "Guilherme",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "glaucegaziri@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f8d244eda66200188354e9",
+        "name": "Glauce",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f8b37326f3230001811681",
+          "name": "Glauce",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "gleidsson.santos@contourline.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690b392c05b1600015e33ea1",
+        "name": "Gleidsson",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690b412910de55001395e962",
+          "name": "Gleidsson",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "guscuryterapeuta@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "6868233fd56a350001fb5be9",
+        "name": "LARISSA ( GUSTAVO CURY)",
+        "score": 18,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f77ec8a73893001ff5736c",
+          "name": "LARISSA MENDES DA CRUZ",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "697a6e9a182d83001550c0b0",
+          "name": "GUSTAVO CURY",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "gustavoluizbevilaqua@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a35d7805077c0017434c0a",
+        "name": "GUSTAVO LUIZ BEVILAQUA",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689dff7dce53e40001822f7b",
+          "name": "Gustavo Luiz Bevilaqua",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "hauagge@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6908b87303f7b200210c6c43",
+        "name": "Georgen",
+        "score": 10,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69056118b368a20001b75d61",
+          "name": "Georgen",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "hazelmed@me.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6904c300ea56cb0019b97f88",
+        "name": "Hazel",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6904259c67c02e0001a5f85c",
+          "name": "Hazel",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "hcr@grupohcr.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63d247de6d700017482a7",
+        "name": "LUCIANA",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "699ddb3bcdca550015e8f3bb",
+          "name": "HUGO CORDOVA RAMOS",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "hellen_guimaraes@hotmil.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6867dd5e74274b0014533c04",
+        "name": "Helen Sampaio",
+        "score": 28,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "689a90357d16460001e313da",
+          "name": "Hellen Guimarães Sampaio",
+          "score": 13,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "hilde_jr@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488eaf636dd000175edc7",
+        "name": "LIDIANE (HILDEBRANDO DE AZEVEDO JUNIOR)",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "696f8ff181a3a70020662e10",
+          "name": "HILDEBRANDO DE AZEVEDO JUNIOR",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "hugoinstitutoprado@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6865ac80aa66e500144d21a4",
+        "name": "Hugo do Prado e Silva",
+        "score": 42,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689a8b404ef17f0001dfbb92",
+          "name": "Hugo do Prado e Silva",
+          "score": 13,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "inandiara@hotmail.com",
+      "total_duplicates": 4,
+      "kept": {
+        "id": "68a488d9f636dd000175e62a",
+        "name": "FRANCISLAINE (INANDIARA RAFAELA)",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a94f5c104660001a59b92",
+          "name": "Inandiara Granado",
+          "score": 7,
+          "deals": 1
+        },
+        {
+          "id": "68c0407b99fe75001d2963cd",
+          "name": "Inandiara Oliveira Granado",
+          "score": 7,
+          "deals": 1
+        },
+        {
+          "id": "689a954bc104660001a5b61e",
+          "name": "INANDIARA RAFAELA MARCO DE OLIVEIRA GRANADO",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "info@bodhidharma.es",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68cfecac87a70800200ea5be",
+        "name": "Jorge",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68cfecee06dfba0019724202",
+          "name": "Jorge",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cfecf9cd30b200147c389a",
+          "name": "Jorge",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "irisprof10@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6868233fd56a350001fb5bd3",
+        "name": "JÚLIO ODIZIO (IRIS CRISTINE ODIZIO)",
+        "score": 20,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f77e91ff3feb001639827e",
+          "name": "JÚLIO ODIZIO (IRIS CRISTINE ODIZIO)",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "isabela.arp.adv@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "69a63d6e5bf1c50001523c08",
+        "name": "ISABELA",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69a63d6e5bf1c50001523c08",
+          "name": "ISABELA",
+          "score": 10,
+          "deals": 2
+        },
+        {
+          "id": "69a63d9c8c41b100018be6b0",
+          "name": "ISABELA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "isabellabarros@odaralifestyle.com",
+      "total_duplicates": 6,
+      "kept": {
+        "id": "68da9fa5d2a8e40025e6e1f1",
+        "name": "Isabella",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68cd4c97c5d903001f1bdd73",
+          "name": "Isabella",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd4cefdd563f00210e9f38",
+          "name": "Isabella",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd4d9a6617820019e87552",
+          "name": "Isabella",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd4d9fd6f44800172cb771",
+          "name": "Isabella",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68cd50ab5659900019a53e6f",
+          "name": "Isabella",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "isabellewu97@gmail.com",
+      "total_duplicates": 4,
+      "kept": {
+        "id": "686d74fafeb489001484c91f",
+        "name": "Isabelle I Hue Wu",
+        "score": 37,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a8b384ef17f0001dfb73b",
+          "name": "Isabelle I Hue Wu",
+          "score": 10,
+          "deals": 2
+        },
+        {
+          "id": "689a8fe77d16460001e2f26b",
+          "name": "Isabelle I Hue Wu",
+          "score": 10,
+          "deals": 1
+        },
+        {
+          "id": "68b9d307bcf79e00211231cd",
+          "name": "Isabelle Wu",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "isabelsaraivasc@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dff05ce53e40001820730",
+        "name": "Maria Isabel",
+        "score": 21,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68c32af32d1d170017229b8d",
+          "name": "Maria Isabel Ramos Saraiva Rocha",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "isagabreu@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dff34ce53e400018217c9",
+        "name": "Isabela",
+        "score": 16,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f77f37c292bc001f34fd4f",
+          "name": "ISABELA GUIEIRO DE ABREU",
+          "score": 9,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "ittbiomedic@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "692a01b6edd5ed001741ff2f",
+        "name": "RICARDO  LOPES DURÃES",
+        "score": 18,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "692dc2811627ae0013cf68f7",
+          "name": "REGINALDO LOPES DURÃES",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jacquespedro76@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63d5f5bf1c50001523634",
+        "name": "PEDRO",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69a63d5f5bf1c50001523634",
+          "name": "PEDRO",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "janainabissani@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488cdf636dd000175dfb4",
+        "name": "JANAINA THAIS BISSANI",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69694083bf3ea40017a6ed8e",
+          "name": "JANAINA TAIS BISSANI",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jandiraiuchemafederizzi@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6924484687c5590016936750",
+        "name": "Jandira Federizzi",
+        "score": 9,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "692447ca74f2df001c6c8753",
+          "name": "Jandira Federizzi",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jaquelineferrazdermato@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6865a05d68811d0018e330f0",
+        "name": "FERRAZ & CARDOSO DERMATOLOGISTAS LTDA",
+        "score": 27,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "689a8b3c4ef17f0001dfb970",
+          "name": "Jaqueline",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "jcharmonizacaofacial@outlook.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ee3a5ea62cd300145749aa",
+        "name": "Jaqueline Carvalho",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68ed9b8b0a23330001d0c136",
+          "name": "Jaqueline Carvalho",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jeangneves04@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6865a442b648aa001fbd9028",
+        "name": "INSTITUTO SCULPT LTDA",
+        "score": 24,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "689a8b3c4ef17f0001dfb9e4",
+          "name": "Jean Guilherme Neves",
+          "score": 20,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "jeffersonderma@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b8388a81eb0f00147a567e",
+        "name": "JEFFERSON ALFREDO DE BARROS",
+        "score": 23,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68c096aeaddc9d00208675c1",
+          "name": "JEFFERSON ALFREDO DE BARROS",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "jenifferoleastro@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "696500d24c57340013b9a9dd",
+        "name": "Jeniffer Oleastro Sotelo de Mesquita",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6964fdef651dfb00161c4857",
+          "name": "Jeniffer Oleastro Sotelo de Mesquita",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "jessicachen1993@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "692f563373007e0014dd603e",
+        "name": "JESSICA CHEN",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b88c6694b0cc001438295b",
+          "name": "JESSICA CHIA SIN CHEN",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jessicagoncalves_20@hotmail.com",
+      "total_duplicates": 4,
+      "kept": {
+        "id": "6868233fd56a350001fb5c20",
+        "name": "JESSICA AMORIM G P CORREA",
+        "score": 13,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a488f3f636dd000175f1d9",
+          "name": "Jéssica Amorim",
+          "score": 11,
+          "deals": 1
+        },
+        {
+          "id": "68f77f5c2ee3fc00168d4f36",
+          "name": "JESSICA AMORIM GONÇALVES PRUDENTE CORREA",
+          "score": 10,
+          "deals": 1
+        },
+        {
+          "id": "68f77f5c2ee3fc00168d4f36",
+          "name": "JESSICA AMORIM GONÇALVES PRUDENTE CORREA",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jessyka.alisxandra@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63cdd7de6d70001746a84",
+        "name": "JESSYCA",
+        "score": 13,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "69a63cdd7de6d70001746a84",
+          "name": "JESSYCA",
+          "score": 13,
+          "deals": 3
+        }
+      ]
+    },
+    {
+      "email": "jjtfv@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c08f641c0a2b00188b95fd",
+        "name": "João José Tadeu",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689dfeface53e4000182037a",
+          "name": "João José Tadeu",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jordana.guiscem@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f783b9fce83c001586a928",
+        "name": "JORDANA HELENA GUISCEM LEITE",
+        "score": 12,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a488faf636dd000175f496",
+          "name": "Jordana",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "josiel_keila@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63d375bf1c500015220fb",
+        "name": "JOSIEL",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69a63d375bf1c500015220fb",
+          "name": "JOSIEL",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "jpinho3@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f4101e52d734000124019f",
+        "name": "jorge",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "6903ae7765a64400141a9bcb",
+          "name": "jorge",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jrllozano@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6904f70c9570cc0020ef7366",
+        "name": "Jose Roberto",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69004aa9931ca400014bce80",
+          "name": "Jose Roberto",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "jubonella@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6984b46930bd050015751fa7",
+        "name": "JULIANA BONELLA",
+        "score": 21,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689a960dc104660001a5ee9e",
+          "name": "Juliana Bonella",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "julianabelatti@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6960e8f69555ef00180d8468",
+        "name": "Juliana",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690f8e96f41876000145cd27",
+          "name": "Juliana",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "julianasaboia.dermatologia@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a48423f636dd0001752127",
+        "name": "JULIANA SABOIA",
+        "score": 19,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69397b1069086e001bb94ade",
+          "name": "JULIANA SABOIA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "juliocesarnp@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68e7990ab8f32b0001ad251f",
+        "name": "JULIO",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68e7b72f165c5c0014380b97",
+          "name": "JULIO CESAR NOGUEIRA",
+          "score": 6,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "julyanahey@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "697a014e5ea34300213e092a",
+        "name": "JULIANA",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69662d385f1b660001593216",
+          "name": "JULIANA",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "karinagnunes@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69b95a049948a8001ae7f33c",
+        "name": "JACQUELINE",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "699dddc8c6e6bc001710ce9a",
+          "name": "INNOVE CLINIC LTDA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "karolinagp@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68682347d56a350001fb603e",
+        "name": "CAROLINA GONÇALVES PEREIRA",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "695fc44781fbbb001dda551a",
+          "name": "CAROLINA GONÇALVES PEREIRA",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "68f784880c11700019c45dbd",
+          "name": "CAROLINA GONÇALVES PEREIRA",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "karystula@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6865a2105430d2001f8fb600",
+        "name": "MONTANHA E SIQUEIRA LTDA",
+        "score": 34,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "689a950ec104660001a5a322",
+          "name": "Karystula Montanha",
+          "score": 19,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "laruete@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68b9f9c5c9484f0014e835f2",
+        "name": "LARA RUETE",
+        "score": 24,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68a310dc6b36b80001e8b47d",
+          "name": "CLINICA MEDICA RUETE E NOBRE SOCIEDADE S",
+          "score": 14,
+          "deals": 3
+        },
+        {
+          "id": "68b9e73ac2b5560022ac0eee",
+          "name": "LARA CASSEB RUETE",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "laura.w.m@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "691dbb3030183f0016b7c067",
+        "name": "Laura ( LAUCH ODONTOLOGIA LTDA)",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6973bf412b4b19001cb11957",
+          "name": "LAURA WEBER ( LAUCH ODONTOLOGIA LTDA)",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "lauvivone@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "696e8ded5167d700134b33ad",
+        "name": "Laura Vivone",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "693bfb6f52698200011cf717",
+          "name": "Laura Vivone",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "laysafor@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b835344c2d4500207e7977",
+        "name": "Laysa Fortuna De Oliveira Rebouças",
+        "score": 24,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "689dffeace53e4000182527f",
+          "name": "LAYZA FORTUNA DE OLIVEIRA REBOUCAS",
+          "score": 20,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "ldlcabral@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68efed264109ab001aa4b10c",
+        "name": "Laura Dias Lustosa Cabral",
+        "score": 12,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68eff647dd64f600172550bb",
+          "name": "Laura Dias Lustoza Cabral",
+          "score": 7,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "leandrosergiodasilva@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68baee0d3ce9890024c39ab7",
+        "name": "Leandro Sérgio da Silva",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e692fa",
+          "name": "LEANDRO SÉRGIO DA SILVA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "lemottta951@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6967d071efe44e00135e3476",
+        "name": "ELENICE MOTTA",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69638168965d59000167a1ea",
+          "name": "ELENICE MOTTA",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "leticiagbelchior@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "697a70868c1bac0013612a89",
+        "name": "LETÍCIA BELCHIOR",
+        "score": 17,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69ab68cbf519020013b1a8b5",
+          "name": "LETÍCIA BELCHIOR",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "lianny010202@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6900ce506247d10019e6e0ef",
+        "name": "Lianny",
+        "score": 12,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b7397589ed40025ed5e21",
+          "name": "Lianny",
+          "score": 9,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "lima.0456_@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ffdcfc43f96a0013f71f12",
+        "name": "Alexandre",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68fadeef5820d10001886a16",
+          "name": "Alexandre",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "lisi.freitas@icloud.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a8b3a4ef17f0001dfb883",
+        "name": "ELISIANE DE FREITAS BARBOSA",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689dfeb7ce53e4000181eacc",
+          "name": "Elisiane de Freitas Barbosa",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "livinhaninno@gmail.com",
+      "total_duplicates": 4,
+      "kept": {
+        "id": "68682347d56a350001fb601d",
+        "name": "LNAMED SERVICOS MEDICOS LTDA",
+        "score": 12,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a9654c104660001a603bd",
+          "name": "Lívia Cristina Cardoso Ninno Andraus",
+          "score": 10,
+          "deals": 2
+        },
+        {
+          "id": "6997753379336900138d3cec",
+          "name": "Lívia Cristina Cardoso Ninno Andraus",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "68bf3db00890e5001aeff807",
+          "name": "LNAMED SERVICOS MEDICOS LTDA",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "loamaralcosta@terra.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6866d547268e80001948e263",
+        "name": "AMARAL COSTA GONCALVES SERVICOS MEDICOS LTDA",
+        "score": 32,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b9f05b7633ec00216e35ad",
+          "name": "LORENA AMARAL COSTA GONÇALVES",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "loanda.decrudis@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ae126b52b098001de55c56",
+        "name": "Dra Loanda",
+        "score": 13,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689dffafce53e40001823e0c",
+          "name": "LOANDA COTTAS DE CRUDIS",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "lopes.roberta7@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dfed7ce53e4000181f630",
+        "name": "Roberta Lopes",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68c09649c0a6ad0014041273",
+          "name": "ROBERTA SIMÃO LOPES CURY",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "lorenafasouza22@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ce8cac5385aa00147520fc",
+        "name": "Lorena Furtado Alves de Souza",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68d13d94c235c80014cd2ebd",
+          "name": "Lorena Furtado Alves de Souza",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "lorenalacerdac@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "698dd43deba96a00158e47f6",
+        "name": "Lorena lacerda",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "698dd43deba96a00158e47f6",
+          "name": "Lorena lacerda",
+          "score": 11,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "lu.bardales@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68e80ed7faa05d001ea237f9",
+        "name": "Lucilene do Nascimento Bardales",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a969dc104660001a619c8",
+          "name": "Lucilene do Nascimento Bardales",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "lucasnicolau1@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6908b5b77622230013961029",
+        "name": "Lucas nicolau",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6905124480601c00011a52f5",
+          "name": "LUCAS NICOLAU",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "lucianalourenco@lucianalourenco.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689b3187120ec10001dcbb4e",
+        "name": "Luciana de Matos Lourenço",
+        "score": 16,
+        "deals": 4
+      },
+      "deleting": [
+        {
+          "id": "68a48432f636dd000175260c",
+          "name": "Dra.Luciana",
+          "score": 14,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "lucilalargura@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682345d56a350001fb5eca",
+        "name": "Lucila",
+        "score": 17,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f782eb770f110014745604",
+          "name": "LUCILA Z. LARGURA TREINAMENTO E CONSULTORIA LTDA",
+          "score": 12,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "ludmillafrangel@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6977a8c7c3f15000168b3890",
+        "name": "LUDMILLA F RANGEL",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "699f62971284e1001e93e125",
+          "name": "INSTITUTO BORTOLAN LTDA",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "luizamplopes@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68b0ae3a136601001be48f7a",
+        "name": "Luiza Lopes",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a310206b36b80001e87c16",
+          "name": "Luiza Maria Neves De Paiva Lopes",
+          "score": 5,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "machado.fernanda2012@gmail.com",
+      "total_duplicates": 5,
+      "kept": {
+        "id": "68d142a89d6a260014e4fd09",
+        "name": "Fernanda",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68d143a660a9930017b2f739",
+          "name": "Fernanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d143b1ea95050014132434",
+          "name": "Fernanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d1440dd3f1f2001d899140",
+          "name": "Fernanda",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d14431b4a8e6001a635872",
+          "name": "Fernanda",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "maissaudemedpm@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69650c7c84f84d00170c237e",
+        "name": "Ana Paula Viana Pederiva (Adriana)",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6964fe7b940c2f00151d3a87",
+          "name": "Ana Paula Viana Pederiva",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "manoelaso@yahoo.com",
+      "total_duplicates": 4,
+      "kept": {
+        "id": "689a8b574ef17f0001dfc70a",
+        "name": "MANOELA OLIVEIRA DE SOUZA",
+        "score": 13,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689a8b574ef17f0001dfc721",
+          "name": "MANOELA OLIVEIRA DE SOUZA",
+          "score": 7,
+          "deals": 1
+        },
+        {
+          "id": "689a91237d16460001e37632",
+          "name": "MANOELA OLIVEIRA DE SOUZA",
+          "score": 7,
+          "deals": 1
+        },
+        {
+          "id": "689a91237d16460001e37612",
+          "name": "MANOELA OLIVEIRA DE SOUZA",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "maraclaudia_cintra@icloud.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488e0f636dd000175e937",
+        "name": "CRISTIANO (CINTRA MOURÃO E MENDONÇA LTDA)",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "697a0e674ba45700139491fb",
+          "name": "MARA (CINTRA MOURÃO E MENDONÇA LTDA)",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "marcelarmdeallbuquerque@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "696500e2bdef0d0017fa5027",
+        "name": "Marcela Ribeiro Montenegro Albuquerque de Araújo",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6964fe10f575d20013071566",
+          "name": "Marcela Ribeiro Montenegro Albuquerque de Araújo",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "marcelatinocomed@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68fa4394500e2d001aae61ed",
+        "name": "Marcela",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f9748f4af54900018b181b",
+          "name": "Marcela",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "marcelinhomello@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c06ab919aeea0019b70419",
+        "name": "Marcelo F. C. de Mello J.",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b89f5c9ac78d001f2f1958",
+          "name": "MARCELO DE MELLO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "marcellanascimento.dermato@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ffaf9d8ffcd10018dff01d",
+        "name": "Marcella Nascimento",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68c430abd9e6300001d55a0f",
+          "name": "Marcella",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "marcelo@mybeleza.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a4844df636dd0001753014",
+        "name": "Marcelo",
+        "score": 17,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a95aac104660001a5d2fa",
+          "name": "Marcelo Augusto Mourao de Oliveira",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "marciasilvaduarte@hotmail.com",
+      "total_duplicates": 6,
+      "kept": {
+        "id": "68d022deb4b4760017c41ec7",
+        "name": "Marcia",
+        "score": 4,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "68d0243987a7080017805841",
+          "name": "Marcia",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d0243eed6b17001e43b56d",
+          "name": "Marcia",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d19624fa526a0018328767",
+          "name": "Marcia",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d1978576fe080023e9b41d",
+          "name": "Marcia",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d19780446fac001c4f69e6",
+          "name": "Marcia",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "marcio@giovanamoraes.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a48446f636dd0001752d35",
+        "name": "Márcio Menezes",
+        "score": 19,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68a311c76b36b80001e8fa15",
+          "name": "REBELO DE MORAES SERVICOS MEDICOS LTDA",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "maria.silva@email.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68efe5573bb6b70018ca6935",
+        "name": "Bruna de Oliveira Silva",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68efe55df7e014001876fd55",
+          "name": "Carlos Eduardo Santos",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "maria@mariabussade.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6866d988fcc8d6001a425c48",
+        "name": "MARIA BUSSADE DERMATOLOGIA LTDA",
+        "score": 25,
+        "deals": 0
+      },
+      "deleting": [
+        {
+          "id": "689a8b364ef17f0001dfb63d",
+          "name": "Paula Montefusco",
+          "score": 13,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "mariabetniam@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488ebf636dd000175ee1b",
+        "name": "MARIA BETANIA MORAIS DE PAIVA",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68a488ebf636dd000175ee1b",
+          "name": "MARIA BETANIA MORAIS DE PAIVA",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "mayaracarvalho447@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689ccb4f3cad720024f836e5",
+        "name": "Mayara Piccini",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a96acc104660001a61ea5",
+          "name": "Mayara Piccini",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "med.angelimsp@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "698dd87a90c8d00014cb48ea",
+        "name": "Renato Angelim",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "698ccffba5e888001c74dd28",
+          "name": "Renato Angelim",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "melinaquintella@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68fb82d094ed5300187a51d1",
+        "name": "MELINA",
+        "score": 12,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "6902c215da5585000136d84d",
+          "name": "melina",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "melinaquintella@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68fb82d094ed5300187a51d1",
+        "name": "MELINA",
+        "score": 12,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68fb81a1e619b6000136b2de",
+          "name": "Melina",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "mibarsilva@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68c06d1852fcc1001e784790",
+        "name": "Milena Barriera.",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68b89b18065d8c001cf5ee29",
+          "name": "MILENA BARRERA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "monica.malves12@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "698dd6151d1319001755d935",
+        "name": "MÔNICA",
+        "score": 11,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "698ceaf5e7b1f90013eff5dc",
+          "name": "Mônica Alves",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "mylenagomes021@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f67784f3ee330014dee1e2",
+        "name": "MYLENA GOMES DA SILVEIRA",
+        "score": 20,
+        "deals": 5
+      },
+      "deleting": [
+        {
+          "id": "69b07fb825f28b0013ba5195",
+          "name": "MYLENA GOMES DA SILVEIRA",
+          "score": 14,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "narjaramontefusco@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "689a908a7d16460001e33873",
+        "name": "Narjara Montefusco",
+        "score": 13,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69985ac8d1b6510013b0dc5d",
+          "name": "Narjara Montefusco Florindo Duarte Montefusco",
+          "score": 11,
+          "deals": 1
+        },
+        {
+          "id": "68f61da85c298100014992ab",
+          "name": "Narjara Montefusco",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "nataliaguedesnascimento@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "695bc1924ca2740023dcba49",
+        "name": "NATALIA",
+        "score": 14,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "695bc23258aafb0015bf5289",
+          "name": "NATÁLIA GUEDES NASCIMENTO",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "natasha.vieiraesteticista@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a9601c104660001a5ebd2",
+        "name": "NATASHA VIEIRA",
+        "score": 12,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e6932a",
+          "name": "NATASHA VIEIRA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "natmenezesmartins@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "696500f3449a74001391a012",
+        "name": "Natália de Menezes Martins",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6965094ed322540013245251",
+          "name": "Natália de Menezes Martins",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "6964fe319615f90013c60b48",
+          "name": "Natália de Menezes Martins",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "naudim@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682340d56a350001fb5c62",
+        "name": "LEONARDO (ARNALDO FLAVIO PEREIRA DE SOUZA)",
+        "score": 34,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f77fb540cba800160b84d5",
+          "name": "ARNALDO.",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "nayanebraga@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "699ca0ec3e16130001cb6e74",
+        "name": "NAYANE",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "699cc042bb0b9300176dd499",
+          "name": "Nayane",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "neos.gerencia@outlook.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dffe2ce53e40001824fe9",
+        "name": "LIGIA BORGES NOVAIS BRAGA",
+        "score": 13,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68a310216b36b80001e87c32",
+          "name": "Ligia Novais",
+          "score": 5,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "nestorvasconcelos@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ffb7482e3f8d0015a5caf9",
+        "name": "Luiz Nestor",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68fc9cedac11fa00015cc3e6",
+          "name": "Luiz Nestor",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "neto_sanches@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6908e4844f93fa001376804e",
+        "name": "José",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6907dff4f0a8b60001bcc0cb",
+          "name": "José",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "nubiamacedo_@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682343d56a350001fb5de4",
+        "name": "NUBIA VEDOVATTO DE MACEDO",
+        "score": 24,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689dff75ce53e40001822bf1",
+          "name": "NUBIA VEDOVATTO DE MACEDO",
+          "score": 23,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "nydiadipaula@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f27dea71475600246f6ced",
+        "name": "Nydia Di Paula Oliveira",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68ec48c7340ab200017f7f95",
+          "name": "NYDIA DI PAULA OLIVEIRA",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "odudufavato@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68a39551099a8c0014ec8673",
+        "name": "EDUARDO FAVATO FILHO",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68c189bd1841590021fbf4c4",
+          "name": "EDUARDO FAVATO FILHO",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "68c189bac94446001cf78aca",
+          "name": "EDUARDO FAVATO FILHO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "olivia.caxias@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dffe9ce53e40001825200",
+        "name": "Olívia",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a91307d16460001e37ba6",
+          "name": "Olívia Caxias",
+          "score": 8,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "osmanyrf98461@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a040a073912c0017fb5021",
+        "name": "Osmany Rodriguez Frometa",
+        "score": 9,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "694061e830eb3300166f58ed",
+          "name": "Osmany Rodriguez Frometa",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "pamellasilva.pbs@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a488d2f636dd000175e251",
+        "name": "PAMELLA DA SILVA PEREIRA",
+        "score": 11,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a9652c104660001a602e4",
+          "name": "Dra Pamella Silva",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "patty_mattos@outlook.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a9649c104660001a5fffe",
+        "name": "Patricia Matos",
+        "score": 23,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "68eeb268ef69800014430f5e",
+          "name": "Patricia Matos",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "patyletheia@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "69650a1ef5c148001af61722",
+        "name": "Patrícia Aletheia Alves da Silva Raquel (Raquel)",
+        "score": 6,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6964fe3ec4731e001e4a2622",
+          "name": "Patrícia Aletheia Alves da Silva Raquel",
+          "score": 3,
+          "deals": 0
+        },
+        {
+          "id": "69650103359766001cc949cd",
+          "name": "Patrícia Aletheia Alves da Silva Raquel",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "paula@metodocamilaser.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dff61ce53e400018224f0",
+        "name": "PAULA ROBERTA PEREIRA DO NASCIMENTO",
+        "score": 14,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "695fad2b20f6fb001f21aee9",
+          "name": "PAULA NASCIMENTO",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "paulaggcamara@gmail.com",
+      "total_duplicates": 7,
+      "kept": {
+        "id": "68d1a7b62e11500018cee7f7",
+        "name": "Paula gouveia gomes camara",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68d16615f07c070020342558",
+          "name": "Paula gouveia gomes camara",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d1664db0666a001d40ad96",
+          "name": "Paula Gouveia Gomes Camara",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d16664dfb41b001eea73cb",
+          "name": "Paula Gouveia Gomes Camara",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d166ab12b95b0017af40b9",
+          "name": "Paula Gouveia Gomes Camara",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d165b8ec8c660017d438a0",
+          "name": "Paula gouveia gomes camara",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "68d165ecb49b0a001fd368c1",
+          "name": "Paula gouveia gomes camara",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "pcjdias7@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68f7cb41932423001674a4cd",
+        "name": "Paulo cesar de jesus dias",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f7c472789c3b0001b57c11",
+          "name": "Paulo cesar de jesus dias",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "pcmatielo@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "699dd77b41759800186b6bac",
+        "name": "PAULO CESAR MATIELO",
+        "score": 34,
+        "deals": 10
+      },
+      "deleting": [
+        {
+          "id": "699e070dc400550017ece077",
+          "name": "PAULO CESAR MATIELO",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "pollyanna_coelho@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682341d56a350001fb5d33",
+        "name": "Pollyanna",
+        "score": 17,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f7810c62fa2d001ee9c389",
+          "name": "POLLYANNA COELHO DE SOUSA FONSECA",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "pribaracat@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "691b266b2db0ab001ef5ae77",
+        "name": "PRISCILLA BARACAT CAMPOS",
+        "score": 16,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "698df041fb40a40018c92409",
+          "name": "Priscilla Baracat Campos",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "691b8dbf0e80800001e69348",
+          "name": "PRISCILLA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "r.derma@uol.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68ebfc834fbf28000104fdac",
+        "name": "Rita de Cassia",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f792db43ada000140f11fc",
+          "name": "DRA RITA SANTOS",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rafael@vitaforma.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63d595bf1c50001523390",
+        "name": "RAFAEL",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69a63d595bf1c50001523390",
+          "name": "RAFAEL",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "rafaela.moreschi@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a96a3c104660001a61b6b",
+        "name": "Rafaela Moreschi de Quadros Moura",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a97c21fdea00001c27b0a",
+          "name": "Rafaela Moreschi de Quadros Moura",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rafaelceconi2014@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68fe102fb6c27300013fab5f",
+        "name": "Rafael",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68ff85b746422f00135bcc5d",
+          "name": "Rafael",
+          "score": 8,
+          "deals": 1
+        },
+        {
+          "id": "690e2b47523e950013eb9a8d",
+          "name": "Rafael",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rafaellamarinhomoura@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a4844ff636dd000175307f",
+        "name": "Rafaella M",
+        "score": 16,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "698f80d8b9450000132a2ef6",
+          "name": "RAFAELLA MARINHO",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rafamignoli@icloud.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6977d34603f73c0013c36a31",
+        "name": "RAFAELA MIGNOLI",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6926132801b82e0015f8f7eb",
+          "name": "RAFAELA MINGOLI",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rasesso@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6868233ed56a350001fb5b81",
+        "name": "Raquel",
+        "score": 18,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f77e31ada6b8001dce1433",
+          "name": "RAQUEL SESSO PERCHES HANSEN",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rayane_neri@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "6941a1cbe30979001cb51301",
+        "name": "RAYANE NAYARA DE OLIVEIRA NÉRI CABRAL",
+        "score": 18,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689dff68ce53e40001822781",
+          "name": "RAYANE NAYARA DE OLIVEIRA NERI CABRAL",
+          "score": 17,
+          "deals": 3
+        },
+        {
+          "id": "68c05d1ca72c1c0023b31fe9",
+          "name": "Rayane Néri Cobral.",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rbogea15@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68a310396b36b80001e883d5",
+        "name": "Renata Bogea",
+        "score": 12,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68a310396b36b80001e883d5",
+          "name": "Renata Bogea",
+          "score": 12,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "rebeca.fontoura@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "6868234cd56a350001fb6205",
+        "name": "REBECA FONTOURA ABREU FILIPPI",
+        "score": 14,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a903d7d16460001e31712",
+          "name": "REBECA FONTOURA ABREU FILIPPI",
+          "score": 10,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "regis.med53@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68de6219b9e2ce0023c6219e",
+        "name": "REGIS AUGUSTO SILVA",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "69388cbd70374100137848a2",
+          "name": "REGIS AUGUSTO SILVA",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "renan.br2@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682345d56a350001fb5ebf",
+        "name": "Renan",
+        "score": 18,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f782a92b3b6000146c1cfa",
+          "name": "RENAN SOUZA OLIVEIRA ANDRADE",
+          "score": 11,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "renatarodriguessansao@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dff65ce53e400018226be",
+        "name": "Renata",
+        "score": 16,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f780522ee3fc00168d50b3",
+          "name": "RENATA ALVES RODRIGUES SANSAO",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "renatoferreira1506@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68deaa5a51658d0014595d68",
+        "name": "RENATO JOSÉ FERREIRA",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "6931d96e85e97b001af64cfc",
+          "name": "RENATA KELLY",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rennyermenandro@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "696e7d62f0a43e0016e5af2a",
+        "name": "RENNYER",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "696c15700560fb00013b367e",
+          "name": "RENNYER",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "ricardoligjon@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68682346d56a350001fb5fba",
+        "name": "Ricardo",
+        "score": 18,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689a96a0c104660001a61a6a",
+          "name": "RICARDO ALVES COELHO",
+          "score": 16,
+          "deals": 4
+        },
+        {
+          "id": "68f783dd750616001472dc48",
+          "name": "RICARDO ALVES COELHO",
+          "score": 12,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rivalinovaz@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "690948010d5c070001fecbb8",
+        "name": "Rivalino",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "690a5b6ffd5cf100218b0f2b",
+          "name": "Rivalino",
+          "score": 8,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rlinharesteixeira@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689a913a7d16460001e37fb8",
+        "name": "Raila Linhares Teixeira",
+        "score": 22,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "689dfff1ce53e40001825551",
+          "name": "Dra  RAILA LINHARES TEIXEIRA",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "roberta-fd@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "6924ba5018fa2c0013906858",
+        "name": "ROBERTA FERREIRA DIAS",
+        "score": 18,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "6983946d500b47001fa13796",
+          "name": "ROBERTA FERREIRA DIAS (R.F DIAS SOLUÇÕES)",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "6984f5f97a32e400143e8309",
+          "name": "ROBERTA FERREIRA DIAS (R.F DIAS SOLUÇÕES)",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "rodrigues.representacoes2014@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "69a63d5a5bf1c500015233a9",
+        "name": "OLAVO",
+        "score": 14,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "69a63d5a5bf1c500015233a9",
+          "name": "OLAVO",
+          "score": 14,
+          "deals": 3
+        },
+        {
+          "id": "69a63d5a5bf1c500015233a9",
+          "name": "OLAVO",
+          "score": 14,
+          "deals": 3
+        }
+      ]
+    },
+    {
+      "email": "rsilvager@gmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "68fa86d89b53ae0001ba9c77",
+        "name": "RAMON FELIPE",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "695bb2206d01250013238e17",
+          "name": "Ramon",
+          "score": 6,
+          "deals": 1
+        },
+        {
+          "id": "697a670c2ba616001ee32840",
+          "name": "Ramon",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "rspdermato@icloud.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dfec0ce53e4000181ee01",
+        "name": "Dr. Renato Soriani e Rodrigo Leite",
+        "score": 23,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "689a8b3b4ef17f0001dfb910",
+          "name": "Renato Soriani",
+          "score": 11,
+          "deals": 2
+        }
+      ]
+    },
+    {
+      "email": "saldanhacmnina@hotmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68adc670774af80019810c08",
+        "name": "Nina coelho de moura saldanha",
+        "score": 8,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "691b8dbf0e80800001e6930c",
+          "name": "NINA COELHO DE MOURA SALDANHA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "sallescarlos@hotmail.com",
+      "total_duplicates": 3,
+      "kept": {
+        "id": "689dffc4ce53e400018244f8",
+        "name": "Carlos Henrique",
+        "score": 10,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "689dffc4ce53e400018244f8",
+          "name": "Carlos Henrique",
+          "score": 10,
+          "deals": 1
+        },
+        {
+          "id": "689dffc4ce53e400018244f8",
+          "name": "Carlos Henrique",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "silvanaaparecidasiqueira@yahoo.com.br",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69a63ce47de6d70001746cf1",
+        "name": "GERSON",
+        "score": 17,
+        "deals": 4
+      },
+      "deleting": [
+        {
+          "id": "69a63ce47de6d70001746cf1",
+          "name": "GERSON",
+          "score": 17,
+          "deals": 4
+        }
+      ]
+    },
+    {
+      "email": "spazziocorpus@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69386532ed789d0015a131d0",
+        "name": "FABIO",
+        "score": 10,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "699de29b3dfa22001509f948",
+          "name": "LIG CHINA RESTAURANTE (GILSON ALBERICI)",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "suicideshake@gmail.com",
+      "total_duplicates": 10,
+      "kept": {
+        "id": "69014725771d6f001c9dfe56",
+        "name": "Bruno de OIiveira",
+        "score": 7,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "690146e8df700a001491f469",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "690006ad238f3d00133a4e96",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "6900076f8d4f5200131bbe07",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "690007ad5fa3860013cbd7c3",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "6900061e238f3d00163a4e5c",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "690007daf4a3b800131bc040",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "690007ccf233410013855ba4",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "690007cfc6401a001d8f85f5",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        },
+        {
+          "id": "690007d28cc4f7001371ef11",
+          "name": "Bruno de OIiveira",
+          "score": 4,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "susana.m.endres@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682342d56a350001fb5d8c",
+        "name": "Bruna",
+        "score": 26,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f780755e1d5a0017d0477d",
+          "name": "BRUNA COIMBRA ( SUSANA MARIA ENDRES)",
+          "score": 12,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "talyssajunqueira@icloud.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68e7b97c942304001a81d940",
+        "name": "Dra Talyssa Junqueira",
+        "score": 12,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b8dbe0e80800001e692e8",
+          "name": "DRA TALYSSA JUNQUEIRA",
+          "score": 3,
+          "deals": 0
+        }
+      ]
+    },
+    {
+      "email": "univittae.estetica@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "691b0671d8933e00139bf7e7",
+        "name": "Alessandra de Freitas Oliveir",
+        "score": 9,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "691b067192d73f001cdb935f",
+          "name": "Alessandra de Freitas Oliveir",
+          "score": 5,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "vitalocacoeseea@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68dfc8b1527896001a4a8bc4",
+        "name": "GUSTAVO JOSÉ RIBEIRO RIOS",
+        "score": 13,
+        "deals": 3
+      },
+      "deleting": [
+        {
+          "id": "6985e5d48cdda900166c7091",
+          "name": "GUSTAVO JOSÉ RIBEIRO RIOS",
+          "score": 6,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "vivasaudeeestetica@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "68682343d56a350001fb5e05",
+        "name": "Andrea",
+        "score": 29,
+        "deals": 1
+      },
+      "deleting": [
+        {
+          "id": "68f7812ed56d5c0017ad44de",
+          "name": "ANDREA SANTOS SANTANA",
+          "score": 12,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "vivianesperge@me.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "69b0226123ae68001a120a06",
+        "name": "VIVIANE SPERGE DA SILVA",
+        "score": 12,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "69b04c92f1a38a001df24d73",
+          "name": "PAULO (NEOTOX MED PRODUTOS MÉDICOS LTDA)",
+          "score": 7,
+          "deals": 1
+        }
+      ]
+    },
+    {
+      "email": "wearestetic@gmail.com",
+      "total_duplicates": 2,
+      "kept": {
+        "id": "689dff53ce53e40001822123",
+        "name": "Leticia",
+        "score": 15,
+        "deals": 2
+      },
+      "deleting": [
+        {
+          "id": "68f77f93ca36da001f86a7b2",
+          "name": "LETICIA MANTOVANI FRANCO",
+          "score": 10,
+          "deals": 1
+        }
+      ]
+    }
+  ],
+  "delete_ids": [
+    "68a38035d5117b001907d308",
+    "699d96aa5e509e001d051198",
+    "68cd92b7cd30b2001f2c5893",
+    "68cd92cc249724001b319d36",
+    "68cd932597009b0021cc9fee",
+    "68cd936db4b47600140cca1f",
+    "68cd979106dfba00141baab9",
+    "68d195924c451a0021b337f9",
+    "68d19592e960c40016522c52",
+    "68d1961d51459b00185701c2",
+    "68d1967151459b002156fe22",
+    "694570209bd3f7001871be94",
+    "68b83b2cd5c1640014f10a88",
+    "698f7c80cc968a001b3e07f1",
+    "691b8dbe0e80800001e692e2",
+    "68a310326b36b80001e8819f",
+    "6917ccfa21d46a00012a0a47",
+    "693d700f1c9b8a00016bc669",
+    "68c01e1b93563800217213ae",
+    "69b15bf9ba95550017093bef",
+    "6964fef1bdef0d001efa4be9",
+    "69037220a7d2760018bdb9d7",
+    "689a8b384ef17f0001dfb753",
+    "69273e755b596a00139e1e88",
+    "68fa1d7a8744830019e6830a",
+    "68bad490631a34001474992e",
+    "694560fcce0ee70013a7619a",
+    "689dff94ce53e400018237fb",
+    "691b8dbf0e80800001e69300",
+    "68f7835c07bc4e0018e9f42c",
+    "68f77e13793d4400167b5e63",
+    "690782e9aa84dd0001c477e8",
+    "6931a8f9afd3030001f18a27",
+    "691b8dbf0e80800001e69336",
+    "68a312386b36b80001e91b55",
+    "68efeb5c006d7000149b7e8b",
+    "68a3104f6b36b80001e88a08",
+    "689f52c63c084e00142589fe",
+    "68811c06190f95001ee8efc4",
+    "68b99aaf0e5fd100188a7c9a",
+    "68c096f00e9e2200242c8c99",
+    "68c1c625ad0ef9001e6041d4",
+    "68f7850fe51a1900145a7ac7",
+    "68d1d80abbc85e0019cf5bca",
+    "692dac391985d6001a9946dc",
+    "68ee91bae0e04a0019fc9a5d",
+    "68ee964128ad69001b2590de",
+    "68ee964271a4e40019052a90",
+    "68ee9690175dde0014286393",
+    "68f783c087f2700014d1d175",
+    "68f784044ab42000188c8773",
+    "68f784dd6bcb8f00164faea6",
+    "690162284ce885001da4c8f1",
+    "6901625d887e3100136d8d81",
+    "68db179791697c00141b1084",
+    "68dbdbc45a2757001e5b1fe2",
+    "68b9e0785fcdf7001453b791",
+    "68f94930eda76200018e5606",
+    "689b316c120ec10001dcb488",
+    "68f7837298ccbd0026320c80",
+    "68cd6e4a803ca600179c98fe",
+    "68cd77c03f129500145605b9",
+    "68cd6b063f6644001ec43014",
+    "68cd6e05b4b4760014025ce8",
+    "689a91347d16460001e37da6",
+    "68f7830e199149001471bc35",
+    "68f780a4bb75f4001b5eb79c",
+    "68b823afd5c1640019f0f84d",
+    "68f7814e5259d600160b4046",
+    "689a9682c104660001a611e8",
+    "69b4326d2f84ca0013fbf8ce",
+    "68a310516b36b80001e88a90",
+    "68c03cf0b0f2fa001bf784c8",
+    "68c03dd6b1f9ac0014cae8b9",
+    "68b73c87519245001f039dd1",
+    "6989cb62c361a40015ea1bf8",
+    "689a8b364ef17f0001dfb655",
+    "68b1a8387d431d00177ca263",
+    "69a57920b5c5b10013fe11bf",
+    "691b8dbe0e80800001e692ee",
+    "68d047db5055090016075d43",
+    "68d0480006dfba001466d1e7",
+    "68ea478f2eef4a000185e998",
+    "68f781dd140e4f001ae33530",
+    "689a90c37d16460001e34fe2",
+    "68fc1e23d59cd100011cd223",
+    "68a311246b36b80001e8ca67",
+    "69120334fa58c90001674842",
+    "690b992fa169b3001629c779",
+    "69a70a00622871001a609d3c",
+    "697bc4bea207810023b10602",
+    "68a488f2f636dd000175f17e",
+    "69027a1b222bab0001a98a3c",
+    "690b501c39de830001c710e7",
+    "68cc14cc8756310014f31c48",
+    "68b8a4adb441810021e37567",
+    "68a488fbf636dd000175f4e3",
+    "68aca96d7f2fbf0019c1916c",
+    "689de4b2dce5e300226bece8",
+    "68ec8eb21277750001af960d",
+    "68f7833031d130001ebf970b",
+    "689dffdfce53e40001824f4a",
+    "68a310526b36b80001e88ac6",
+    "689a91297d16460001e378a7",
+    "68a310766b36b80001e8941a",
+    "691b8dbf0e80800001e69306",
+    "691b8dc00e80800001e69354",
+    "695295e758b09f00131356ca",
+    "6978ac1f4be96e0013f9e01c",
+    "68a310376b36b80001e88306",
+    "691088779bcc940001b67522",
+    "693806720d99a1001e2028bc",
+    "689dfe75ce53e4000181d40a",
+    "689dfe75ce53e4000181d40a",
+    "691376bac87a3c0013a05689",
+    "689a8b444ef17f0001dfbd92",
+    "68fb9873489b72001fb072db",
+    "68cefd8f3f6644001dff9df5",
+    "68cefda70f137e00170ebffb",
+    "68cefdbeb4b4760014b76923",
+    "68cefddd76179e00146e52e5",
+    "68cefde88c7a9d001df2f8e7",
+    "6937065d2753dd001cb4df49",
+    "68e817e35222060001f4669d",
+    "696500dac678b2001dc68dfa",
+    "68fab14596c10d0001878a33",
+    "689a9669c104660001a609f3",
+    "689a9532c104660001a5ae07",
+    "689a9675c104660001a60dc3",
+    "69247d9edb758c0020520cd6",
+    "692dd36f4e498c0001555f90",
+    "6907caec714b5f0001cd044d",
+    "68ce8b67a7ad270022bef3b0",
+    "68ce8b9b621277001a4a1515",
+    "68ce8ba84e4532001f1f8302",
+    "68ce8bd05055090016524b07",
+    "68ce8be6d3594a001c97313c",
+    "68ce8bfb5385aa0020751f03",
+    "68ce8c0a4a4942001941f7fa",
+    "68ce8c2b249724001f6315a0",
+    "68ceda7c2497240014056955",
+    "68ceda9e87a7080017fca108",
+    "68cedaa4f4863900144677f6",
+    "68a488f4f636dd000175f25d",
+    "68b89d0623ca000020850e48",
+    "68f77dc82902f40024650f3d",
+    "689a8b474ef17f0001dfbf2b",
+    "689b319f120ec10001dcc1f6",
+    "689a8b524ef17f0001dfc447",
+    "68c08c294557180014c62f55",
+    "689dff0cce53e400018209a7",
+    "68b8a3e2c6e881002076dd20",
+    "689a8b414ef17f0001dfbbf0",
+    "68a488d2f636dd000175e2d0",
+    "692ed872d4330d0013e29ab8",
+    "694157388aea1e0016434e54",
+    "689a8b574ef17f0001dfc6da",
+    "68a3105a6b36b80001e88cc0",
+    "68ec3a905b44b800015d0315",
+    "691b8dbf0e80800001e69312",
+    "689b316f120ec10001dcb575",
+    "68a310536b36b80001e88ae1",
+    "68ff72e4112610001554730b",
+    "690a8ebdc4300200013d6699",
+    "69693ea4d6d1380013077ed2",
+    "69149f25f3c5fa001cd3d240",
+    "69679a7d3cf27f0024eaf59d",
+    "6924434b52dcfd001dc008f9",
+    "69822e8a8639130013f44bef",
+    "68cdcb4c0118280014fc0910",
+    "68cd547e0276e60016f7f6ce",
+    "689dff49ce53e40001821e5c",
+    "689a8b5a4ef17f0001dfc84b",
+    "69089076b256af0013ea7d17",
+    "68a31c415c1dc7001d4d70bc",
+    "691b8dbf0e80800001e69324",
+    "693314a6913fec00131dc5db",
+    "69a63cff7de6d70001747644",
+    "691b8dbf0e80800001e6933c",
+    "689a97af1fdea00001c27196",
+    "68a488ccf636dd000175df95",
+    "691b2298a600e1001bc95450",
+    "697915b51882af001315c9ed",
+    "68f77eaf771542001400ed49",
+    "69094ff164355c0001f7dde9",
+    "691b8dbf0e80800001e6931e",
+    "690790ce4fcc1900018941da",
+    "689a953bc104660001a5b12e",
+    "691b8dbf0e80800001e69342",
+    "689b316a120ec10001dcb414",
+    "691b8dbf0e80800001e69330",
+    "689dfef1ce53e400018200b7",
+    "68a310556b36b80001e88b4d",
+    "696a7786b0843a001d43ef08",
+    "68cf1665011828001d25e216",
+    "68a854058acc7f00201b2c09",
+    "68a310306b36b80001e880fa",
+    "689c9f94a295a90014bcbf78",
+    "689a90cb7d16460001e35389",
+    "69a813bef62ab500011aa680",
+    "6964fe1a7e99e200165429a4",
+    "6908cbeb08ce7a0019b3268d",
+    "68b8a5546ea0a600189bc67f",
+    "68f1218a409ef60001ba1e6a",
+    "689dfee9ce53e4000181fd06",
+    "68f77f1b40cba800140b83b1",
+    "6915d599e4aceb001d533a0a",
+    "68f8b37326f3230001811681",
+    "690b412910de55001395e962",
+    "68f77ec8a73893001ff5736c",
+    "697a6e9a182d83001550c0b0",
+    "689dff7dce53e40001822f7b",
+    "69056118b368a20001b75d61",
+    "6904259c67c02e0001a5f85c",
+    "699ddb3bcdca550015e8f3bb",
+    "689a90357d16460001e313da",
+    "696f8ff181a3a70020662e10",
+    "689a8b404ef17f0001dfbb92",
+    "689a94f5c104660001a59b92",
+    "68c0407b99fe75001d2963cd",
+    "689a954bc104660001a5b61e",
+    "68cfecee06dfba0019724202",
+    "68cfecf9cd30b200147c389a",
+    "68f77e91ff3feb001639827e",
+    "69a63d6e5bf1c50001523c08",
+    "69a63d9c8c41b100018be6b0",
+    "68cd4c97c5d903001f1bdd73",
+    "68cd4cefdd563f00210e9f38",
+    "68cd4d9a6617820019e87552",
+    "68cd4d9fd6f44800172cb771",
+    "68cd50ab5659900019a53e6f",
+    "689a8b384ef17f0001dfb73b",
+    "689a8fe77d16460001e2f26b",
+    "68b9d307bcf79e00211231cd",
+    "68c32af32d1d170017229b8d",
+    "68f77f37c292bc001f34fd4f",
+    "692dc2811627ae0013cf68f7",
+    "69a63d5f5bf1c50001523634",
+    "69694083bf3ea40017a6ed8e",
+    "692447ca74f2df001c6c8753",
+    "689a8b3c4ef17f0001dfb970",
+    "68ed9b8b0a23330001d0c136",
+    "689a8b3c4ef17f0001dfb9e4",
+    "68c096aeaddc9d00208675c1",
+    "6964fdef651dfb00161c4857",
+    "68b88c6694b0cc001438295b",
+    "68a488f3f636dd000175f1d9",
+    "68f77f5c2ee3fc00168d4f36",
+    "68f77f5c2ee3fc00168d4f36",
+    "69a63cdd7de6d70001746a84",
+    "689dfeface53e4000182037a",
+    "68a488faf636dd000175f496",
+    "69a63d375bf1c500015220fb",
+    "6903ae7765a64400141a9bcb",
+    "69004aa9931ca400014bce80",
+    "689a960dc104660001a5ee9e",
+    "690f8e96f41876000145cd27",
+    "69397b1069086e001bb94ade",
+    "68e7b72f165c5c0014380b97",
+    "69662d385f1b660001593216",
+    "699dddc8c6e6bc001710ce9a",
+    "695fc44781fbbb001dda551a",
+    "68f784880c11700019c45dbd",
+    "689a950ec104660001a5a322",
+    "68a310dc6b36b80001e8b47d",
+    "68b9e73ac2b5560022ac0eee",
+    "6973bf412b4b19001cb11957",
+    "693bfb6f52698200011cf717",
+    "689dffeace53e4000182527f",
+    "68eff647dd64f600172550bb",
+    "691b8dbf0e80800001e692fa",
+    "69638168965d59000167a1ea",
+    "69ab68cbf519020013b1a8b5",
+    "691b7397589ed40025ed5e21",
+    "68fadeef5820d10001886a16",
+    "689dfeb7ce53e4000181eacc",
+    "689a9654c104660001a603bd",
+    "6997753379336900138d3cec",
+    "68bf3db00890e5001aeff807",
+    "68b9f05b7633ec00216e35ad",
+    "689dffafce53e40001823e0c",
+    "68c09649c0a6ad0014041273",
+    "68d13d94c235c80014cd2ebd",
+    "698dd43deba96a00158e47f6",
+    "689a969dc104660001a619c8",
+    "6905124480601c00011a52f5",
+    "68a48432f636dd000175260c",
+    "68f782eb770f110014745604",
+    "699f62971284e1001e93e125",
+    "68a310206b36b80001e87c16",
+    "68d143a660a9930017b2f739",
+    "68d143b1ea95050014132434",
+    "68d1440dd3f1f2001d899140",
+    "68d14431b4a8e6001a635872",
+    "6964fe7b940c2f00151d3a87",
+    "689a8b574ef17f0001dfc721",
+    "689a91237d16460001e37632",
+    "689a91237d16460001e37612",
+    "697a0e674ba45700139491fb",
+    "6964fe10f575d20013071566",
+    "68f9748f4af54900018b181b",
+    "68b89f5c9ac78d001f2f1958",
+    "68c430abd9e6300001d55a0f",
+    "689a95aac104660001a5d2fa",
+    "68d0243987a7080017805841",
+    "68d0243eed6b17001e43b56d",
+    "68d19624fa526a0018328767",
+    "68d1978576fe080023e9b41d",
+    "68d19780446fac001c4f69e6",
+    "68a311c76b36b80001e8fa15",
+    "68efe55df7e014001876fd55",
+    "689a8b364ef17f0001dfb63d",
+    "68a488ebf636dd000175ee1b",
+    "689a96acc104660001a61ea5",
+    "698ccffba5e888001c74dd28",
+    "6902c215da5585000136d84d",
+    "68fb81a1e619b6000136b2de",
+    "68b89b18065d8c001cf5ee29",
+    "698ceaf5e7b1f90013eff5dc",
+    "69b07fb825f28b0013ba5195",
+    "69985ac8d1b6510013b0dc5d",
+    "68f61da85c298100014992ab",
+    "695bc23258aafb0015bf5289",
+    "691b8dbf0e80800001e6932a",
+    "6965094ed322540013245251",
+    "6964fe319615f90013c60b48",
+    "68f77fb540cba800160b84d5",
+    "699cc042bb0b9300176dd499",
+    "68a310216b36b80001e87c32",
+    "68fc9cedac11fa00015cc3e6",
+    "6907dff4f0a8b60001bcc0cb",
+    "689dff75ce53e40001822bf1",
+    "68ec48c7340ab200017f7f95",
+    "68c189bd1841590021fbf4c4",
+    "68c189bac94446001cf78aca",
+    "689a91307d16460001e37ba6",
+    "694061e830eb3300166f58ed",
+    "689a9652c104660001a602e4",
+    "68eeb268ef69800014430f5e",
+    "6964fe3ec4731e001e4a2622",
+    "69650103359766001cc949cd",
+    "695fad2b20f6fb001f21aee9",
+    "68d16615f07c070020342558",
+    "68d1664db0666a001d40ad96",
+    "68d16664dfb41b001eea73cb",
+    "68d166ab12b95b0017af40b9",
+    "68d165b8ec8c660017d438a0",
+    "68d165ecb49b0a001fd368c1",
+    "68f7c472789c3b0001b57c11",
+    "699e070dc400550017ece077",
+    "68f7810c62fa2d001ee9c389",
+    "698df041fb40a40018c92409",
+    "691b8dbf0e80800001e69348",
+    "68f792db43ada000140f11fc",
+    "69a63d595bf1c50001523390",
+    "689a97c21fdea00001c27b0a",
+    "68ff85b746422f00135bcc5d",
+    "690e2b47523e950013eb9a8d",
+    "698f80d8b9450000132a2ef6",
+    "6926132801b82e0015f8f7eb",
+    "68f77e31ada6b8001dce1433",
+    "689dff68ce53e40001822781",
+    "68c05d1ca72c1c0023b31fe9",
+    "68a310396b36b80001e883d5",
+    "689a903d7d16460001e31712",
+    "69388cbd70374100137848a2",
+    "68f782a92b3b6000146c1cfa",
+    "68f780522ee3fc00168d50b3",
+    "6931d96e85e97b001af64cfc",
+    "696c15700560fb00013b367e",
+    "689a96a0c104660001a61a6a",
+    "68f783dd750616001472dc48",
+    "690a5b6ffd5cf100218b0f2b",
+    "689dfff1ce53e40001825551",
+    "6983946d500b47001fa13796",
+    "6984f5f97a32e400143e8309",
+    "69a63d5a5bf1c500015233a9",
+    "69a63d5a5bf1c500015233a9",
+    "695bb2206d01250013238e17",
+    "697a670c2ba616001ee32840",
+    "689a8b3b4ef17f0001dfb910",
+    "691b8dbf0e80800001e6930c",
+    "689dffc4ce53e400018244f8",
+    "689dffc4ce53e400018244f8",
+    "69a63ce47de6d70001746cf1",
+    "699de29b3dfa22001509f948",
+    "690146e8df700a001491f469",
+    "690006ad238f3d00133a4e96",
+    "6900076f8d4f5200131bbe07",
+    "690007ad5fa3860013cbd7c3",
+    "6900061e238f3d00163a4e5c",
+    "690007daf4a3b800131bc040",
+    "690007ccf233410013855ba4",
+    "690007cfc6401a001d8f85f5",
+    "690007d28cc4f7001371ef11",
+    "68f780755e1d5a0017d0477d",
+    "691b8dbe0e80800001e692e8",
+    "691b067192d73f001cdb935f",
+    "6985e5d48cdda900166c7091",
+    "68f7812ed56d5c0017ad44de",
+    "69b04c92f1a38a001df24d73",
+    "68f77f93ca36da001f86a7b2"
+  ]
+}
