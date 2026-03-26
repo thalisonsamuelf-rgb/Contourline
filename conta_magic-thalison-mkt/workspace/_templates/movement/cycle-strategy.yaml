@@ -1,0 +1,38 @@
+---
+# Template: cycle strategy dataset (N6)
+
+metadata:
+  template_id: "movement.cycle_strategy"
+  version: "1.0.0"
+  lifecycle_stage: "cycle"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+cycle_strategy:
+  cycle_id: "<required>"
+  cycle_type: "<operational|campaign|seasonal|hybrid>"
+  objective:
+    primary_metric: "<required>"
+    target_delta: "<required>"
+    rationale: "<required>"
+  flywheel_phase_priority:
+    - "<know|trust|buy|propagate>"
+  doctrine_prioritization:
+    - doctrine_id: "<required>"
+      reason: "<required>"
+      priority_score: "<0-100>"
+  campaign_decision:
+    active: "<true|false>"
+    type: "<continuous|launch|seasonal|community_action>"
+  channel_strategy:
+    - channel: "<required>"
+      role: "<discovery|depth|conversion|advocacy>"
+      rationale: "<required>"
+  editorial_line:
+    themes: []
+    angles: []
+    slot_rules: []
+  guardrails:
+    - "<required>"
+provenance:
+  source_docs: []

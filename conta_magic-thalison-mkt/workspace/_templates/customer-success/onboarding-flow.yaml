@@ -1,0 +1,161 @@
+---
+# ONBOARDING-FLOW.YAML - Customer Onboarding & Rapid Value Activation
+# Purpose: Design the onboarding experience that delivers value in the first week and sets up long-term success
+# Guardian: Customer Success Lead / COO
+# Timing: FILL after deliverables.yaml defines what the customer receives
+# Framework: Rapid Value Activation + First-Week Protocol + Scalable Company Onboarding
+# Dependency: deliverables.yaml (what they get), retention-strategy.yaml (retention goals)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Customer Success Lead / COO"
+  framework: "Rapid Value Activation + First-Week Protocol"
+  notes: |
+    The first 48 hours determine whether a customer stays or leaves.
+
+    Onboarding is NOT setup. It is the FIRST EXPERIENCE of value.
+    If the customer does not feel value in week 1, no amount of
+    content, features, or community saves them.
+
+    Three onboarding principles:
+    1. SPEED TO VALUE: How fast can they achieve their first win?
+    2. CLARITY: Do they know exactly what to do next at every moment?
+    3. SUPPORT: Do they feel supported (not abandoned) during setup?
+
+    RULE: The best onboarding makes the customer feel SMART,
+    not overwhelmed. Reduce options, increase clarity, celebrate wins.
+
+# ============================================================================
+# STEP 1: ONBOARDING OVERVIEW
+# ============================================================================
+
+onboarding_overview:
+  total_duration: "FILL — Total onboarding period (recommended: 7-30 days)"
+  phases: "FILL — Number of phases (recommended: 3-4)"
+  first_value_moment: "FILL — When does the customer experience their FIRST value? (target: <48 hours)"
+  success_metric: "FILL — How do you measure onboarding success? (activation rate, completion rate, NPS)"
+
+# ============================================================================
+# STEP 2: DAY 0 — WELCOME (Immediate Post-Purchase)
+# ============================================================================
+
+day_0_welcome:
+  trigger: "Purchase completed"
+  timing: "Immediately (automated)"
+
+  actions:
+    action_1:
+      name: "Welcome email/message"
+      content: "FILL — What does the welcome message say? (congratulate, set expectations, give ONE next step)"
+      channel: "FILL — Email / SMS / In-app"
+    action_2:
+      name: "Account/platform access"
+      content: "FILL — How do they access the product? (login link, credentials, app download)"
+      channel: "FILL — Email"
+    action_3:
+      name: "Welcome video"
+      content: "FILL — Personal welcome from founder/team? (recommended: <3 min, warm, sets tone)"
+      channel: "FILL — Email / In-app"
+
+  one_next_step: "FILL — What is the ONE thing they should do right now? (not 5 things — ONE)"
+
+# ============================================================================
+# STEP 3: WEEK 1 — FIRST WIN (Rapid Value Activation)
+# ============================================================================
+
+week_1_first_win:
+  goal: "Customer achieves their first tangible win"
+
+  day_1:
+    milestone: "FILL — What should they accomplish on day 1?"
+    actions: "FILL — Specific actions to take"
+    support: "FILL — What support is available? (live chat, onboarding call, guide)"
+
+  day_2_3:
+    milestone: "FILL — Day 2-3 milestone"
+    actions: "FILL — Specific actions"
+    support: "FILL — Support available"
+
+  day_4_5:
+    milestone: "FILL — Day 4-5 milestone"
+    actions: "FILL — Specific actions"
+    support: "FILL — Support available"
+
+  day_6_7:
+    milestone: "FILL — End of week 1 milestone (THE FIRST WIN)"
+    celebration: "FILL — How do you celebrate their first win? (badge, message, public recognition)"
+
+  first_win_definition: |
+    FILL — What specifically counts as a "first win"?
+    Be concrete: "Completed first automation" not "Started using the platform."
+
+# ============================================================================
+# STEP 4: WEEK 2-4 — MOMENTUM (Building Habits)
+# ============================================================================
+
+week_2_4_momentum:
+  goal: "Customer develops regular usage habits"
+
+  weekly_check_ins:
+    method: "FILL — Automated email / Personal check-in / Community post"
+    content: "FILL — What do check-ins cover? (progress, obstacles, next steps)"
+    frequency: "FILL — Weekly / Bi-weekly"
+
+  milestones:
+    week_2: "FILL — Week 2 milestone"
+    week_3: "FILL — Week 3 milestone"
+    week_4: "FILL — Week 4 milestone (should demonstrate clear ROI)"
+
+  engagement_triggers:
+    if_active: "FILL — What happens if they are actively engaged? (advanced content, community features)"
+    if_inactive: "FILL — What happens if they go silent? (re-engagement email, personal outreach, support offer)"
+    inactivity_threshold: "FILL — How many days of inactivity triggers intervention?"
+
+# ============================================================================
+# STEP 5: ONBOARDING COMPLETION
+# ============================================================================
+
+onboarding_completion:
+  completion_criteria: "FILL — What defines onboarding as COMPLETE? (specific milestones, not time-based)"
+  graduation_moment: "FILL — How do you mark the transition from 'onboarding' to 'active customer'?"
+  handoff: "FILL — Does the customer move from onboarding team to ongoing support? How?"
+  feedback_collection: "FILL — Do you collect feedback at the end of onboarding? How?"
+
+# ============================================================================
+# STEP 6: SCORING & DIAGNOSTIC
+# ============================================================================
+
+onboarding_strength_score:
+  speed_to_value: "FILL 1-10"
+  clarity_of_path: "FILL 1-10"
+  support_quality: "FILL 1-10"
+  completion_rate: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "No structured onboarding, customer left to figure it out, no check-ins, high drop-off."
+    range_4_6: "Basic onboarding flow, some guidance, occasional check-ins, moderate completion rate."
+    range_7_8: "Structured onboarding with clear milestones, proactive support, first win in <48h, high completion rate."
+    range_9_10: "Personalized onboarding journey, automated + human support, first win guaranteed in 24h, 90%+ completion, feedback loop improves the process."
+
+evidence:
+  data_points: "FILL — Onboarding completion rate, time to first value, early churn data"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  biggest_drop_off_point: "FILL — Where do most customers get stuck or leave?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "deliverables.yaml"
+  feeds_into:
+    - "retention-strategy.yaml"
+    - "nps-feedback-loop.yaml"
+    - "analytics.yaml"
+  related:
+    - "churn-prevention.yaml"
+    - "email-sequences.yaml"

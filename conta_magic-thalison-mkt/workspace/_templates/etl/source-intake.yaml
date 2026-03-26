@@ -1,0 +1,23 @@
+---
+metadata:
+  schema: "etl.source_intake"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  collected_at: "FILL_THIS"
+  business_slug: "FILL_THIS"
+source:
+  kind: "FILL_THIS"
+  value: "FILL_THIS"
+mode: "FILL_THIS"
+desired_output: "FILL_THIS"
+constraints:
+  business_slug: "FILL_THIS"
+  chunk_strategy: "FILL_THIS"
+  language: "FILL_THIS"
+routing:
+  selected_profile: "FILL_THIS"
+  extractor: "FILL_THIS"
+  transformer: "FILL_THIS"
+notes:
+  assumptions: []
+  blockers: []

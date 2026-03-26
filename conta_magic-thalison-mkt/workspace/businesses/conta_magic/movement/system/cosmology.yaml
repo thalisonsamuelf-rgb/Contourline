@@ -1,0 +1,11 @@
+metadata:
+  schema: contamagic.cosmology
+  version: '1.0'
+  status: SKELETON
+  updated_at: '2026-03-14'
+central_cause: Elevar o padrao de seguranca e resultado na medicina estetica brasileira
+trueline: FILL_THIS
+core_tension: Equipamento certificado de alta tecnologia vs equipamento generico sem garantia
+hierarchy:
+  parent_movement: null
+  child_movements: []

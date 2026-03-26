@@ -1,0 +1,331 @@
+metadata:
+  version: '3.0'
+  company_name: Body Health Brasil / Contourline
+  founder_name: Egio Roberto
+  status: 75% Complete
+  last_updated: '2026-03-14'
+  owner: Egio Roberto
+  source: ETL Deep Pass v2 + RADLA + LinkedIn + Instagram + CNPJ
+  notes: 'Egio ocupa posicao dual: CEO da Body Health Brasil E CEO da Contourline
+
+    (estetica medica). Background de programacao — CEO tecnico raro no setor
+
+    de equipamentos medicos. Apresentou resultados no 40o RADLA Brasil.
+
+    Empresa de tecnologia associada: EUFORIA TECNOLOGIA E PUBLICIDADE.
+
+    '
+founder_essence:
+  legal_name: Egio Roberto
+  professional_name: Egio Roberto
+  age: 45
+  location: Sete Lagoas, MG
+  nationality: Brasileiro
+  origin: Nascido em Sao Paulo, SP — mudou para Sete Lagoas, MG com 17 anos
+  one_liner: 'CEO dual da Body Health Brasil e da Contourline, empresa de equipamentos medicos
+
+    que fatura R$115-120M/ano com 120 pessoas. Background de programacao, apresentou
+
+    resultados no 40o RADLA Brasil (maior congresso de dermatologia da America Latina).
+
+    '
+  archetype: The Technologist-CEO / The Optimizer
+  psychological_profile:
+    mbti: FILL_THIS
+    enneagram: FILL_THIS
+    dominant_traits:
+    - Analitico e estrategico (background de programacao)
+    - Cetico saudavel ('parece bom demais para ser verdade')
+    - ROI-driven (toda decisao passa por calculo de retorno)
+    active_modes:
+      primary: Analista estrategico — avalia custo-beneficio antes de agir
+      secondary: Tecnologista pragmatico — se funciona na pratica, implementa
+      shadow: Paradoxo do ferreiro — empresa de tech que nao automatiza ('espeto de pau')
+  city: Sete Lagoas
+  name: Egio Roberto
+  role: CEO / Socio-fundador
+  education: Superior Completo
+origin_story:
+  act_1_before:
+    timeline: Infancia e juventude
+    situation: 'Nascido em Sao Paulo, SP. Pais eram de Minas Gerais, voltaram quando
+
+      Egio tinha 17 anos. Instalou-se em Sete Lagoas, MG. Construiu familia
+
+      (casado, 3 filhos).
+
+      '
+    challenge: FILL_THIS
+    emotional_state: FILL_THIS
+  act_2_turning_point:
+    timeline: FILL_THIS
+    insight: 'Com background de programacao, fundou empresa no cruzamento de tecnologia
+
+      e medicina estetica. Percebeu que o setor de equipamentos medicos carecia
+
+      de inovacao tecnologica real.
+
+      '
+    action: 'Fundou/liderou Body Health Brasil e Contourline. Construiu operacao de
+
+      R$115-120M/ano com 120 pessoas. Empresa associada: EUFORIA TECNOLOGIA
+
+      E PUBLICIDADE (CNPJ 62.727.948/0001-09, Sao Paulo).
+
+      '
+    result: Uma das maiores empresas de equipamentos de estetica medica do Brasil
+  act_3_breakthrough:
+    timeline: 2024-2025
+    breakthrough: 'Apresentou resultados da Contourline no 40o RADLA Brasil — o maior
+
+      congresso de dermatologia da America Latina. Validacao cientifica
+
+      perante a comunidade medica. Consolidacao como player serio no mercado
+
+      de estetica medica.
+
+      '
+    proof: 'Apresentacao no 40o RADLA Brasil (maior congresso dermatologico LATAM).
+
+      Faturamento R$115-120M/ano. 120 colaboradores. Compliance Anvisa.
+
+      '
+    transformation: De tecnologo para CEO de empresa de equipamentos medicos com validacao cientifica
+  act_4_present:
+    timeline: '2026'
+    current_role: CEO dual — Body Health Brasil + Contourline
+    legacy_building: 'Implementar IA coordenada para tornar a empresa mais eficiente e estar
+
+      na vanguarda. Resolver o paradoxo do ferreiro: empresa de tecnologia que
+
+      finalmente automatiza internamente. Reduzir folha de R$700-800K/mes em 30%+.
+
+      '
+professional_background:
+  years_of_experience:
+    total_years: FILL_THIS
+    in_technology: FILL_THIS
+    in_medical_devices: FILL_THIS
+    in_management: FILL_THIS
+  formal_education:
+  - FILL_THIS
+  expertise_areas:
+    area_1: Programacao e tecnologia (background tecnico)
+    area_2: Equipamentos medicos para medicina estetica
+    area_3: Gestao empresarial (120 pessoas, R$115-120M)
+    area_4: Compliance regulatorio (Anvisa)
+    area_5: Inovacao em estetica medica
+  deepest_expertise: 'Cruzamento unico de tecnologia e medicina estetica. Raro CEO com background
+
+    de programacao liderando empresa de equipamentos medicos. Entende tanto o
+
+    lado tecnico quanto o regulatorio (Anvisa). Capacidade de traduzir tecnologia
+
+    em solucoes clinicas validadas (RADLA).
+
+    '
+  companies:
+  - name: Body Health Brasil
+    role: CEO
+    sector: Equipamentos medicos — estetica
+    revenue: R$115-120M/ano
+    employees: 120
+  - name: Contourline
+    role: CEO
+    sector: Estetica medica
+    notable: Resultados apresentados no 40o RADLA Brasil
+  - cnpj: 62.727.948/0001-09
+    name: EUFORIA TECNOLOGIA E PUBLICIDADE
+    role: Empresa de tecnologia associada
+    location: Sao Paulo, SP
+credibility_foundation:
+  proof_1:
+    category: REVENUE PROOF
+    claim: Empresa faturando R$115-120M/ano
+    evidence:
+    - Body Health Brasil — equipamentos medicos para estetica
+    - 120 colaboradores
+    - Folha de R$700-800K/mes
+    quantifiable: R$115-120M/ano, 120 pessoas, folha R$700-800K/mes
+  proof_2:
+    category: SCIENTIFIC PROOF
+    claim: Resultados apresentados no 40o RADLA Brasil
+    evidence:
+    - RADLA = maior congresso de dermatologia da America Latina
+    - Apresentacao de resultados da Contourline
+    - Validacao perante comunidade medica
+    quantifiable: 40o RADLA Brasil (maior congresso dermatologico LATAM)
+  proof_3:
+    category: TECHNICAL PROOF
+    claim: CEO com background de programacao em setor de equipamentos medicos
+    evidence:
+    - Background de programacao confirmado em perfil e call
+    - EUFORIA TECNOLOGIA E PUBLICIDADE (CNPJ verificado)
+    - Ja usa IA para videos, animacoes, Chat PDF (Anvisa)
+    quantifiable: CNPJ 62.727.948/0001-09 verificado
+  proof_4:
+    category: REGULATORY PROOF
+    claim: Compliance com Anvisa em equipamentos medicos
+    evidence:
+    - Chat PDF para areas juridicas e normativas (Anvisa)
+    - Operacao regulada no setor de saude
+    quantifiable: Compliance Anvisa ativo
+philosophy:
+  core_beliefs:
+  - belief: IA vai transformar tudo — quem nao se adaptar vai ficar para tras
+    why_believes_this: Acompanha IA diariamente (feed Instagram + YouTube 100% IA), ve a velocidade de mudanca
+    how_it_shapes_business: Quer estar na vanguarda para ter vantagem competitiva antes que concorrencia alcance
+  - belief: Tecnologia precisa de coordenacao, nao de acoes isoladas
+    why_believes_this: Time ja usa IA mas cada um por conta — sem coordenacao, sem resultado exponencial
+    how_it_shapes_business: Busca sistema integrado de IA, nao ferramentas avulsas
+  - belief: Em casa de ferreiro, o espeto nao pode ser de pau
+    why_believes_this: Como CEO de empresa de tecnologia, sente vergonha de nao automatizar internamente
+    how_it_shapes_business: Motivacao principal para investir em IA coordenada
+  worldview: 'Pragmatico-tecnologico. Se funciona na pratica, implementa. Cetico saudavel
+
+    (''parece bom demais para ser verdade'') mas aberto quando ve evidencia.
+
+    Pensa em ROI antes de investir. Acredita que a maior mudanca da nossa era
+
+    esta acontecendo agora e quem nao se posicionar vai ficar para tras.
+
+    '
+  contrarian_view: 'Enquanto outros CEOs de equipamentos medicos focam apenas em vendas e regulatorio,
+
+    Egio ve o futuro na convergencia de tecnologia + IA + estetica medica. O background
+
+    de programacao permite enxergar automacoes que outros líderes do setor nao veem.
+
+    '
+founder_narrative:
+  headline: 'O CEO com background de programacao que construiu uma empresa de R$120M/ano
+
+    em equipamentos medicos, apresentou no maior congresso de dermatologia da
+
+    America Latina, e agora quer resolver o paradoxo: a empresa de tecnologia
+
+    que finalmente vai automatizar a si mesma.
+
+    '
+  narrative_structure:
+    hook:
+      opening: 'Uma empresa de tecnologia que fatura R$120M/ano e tem 120 pessoas.
+
+        O CEO sabe programar. Mas internamente? ''Em casa de ferreiro, o espeto
+
+        e de pau.''
+
+        '
+      emotional_hook: O paradoxo do tecnologo que nao automatiza a propria casa
+    problem_they_saw:
+      description: 'Time usando IA de forma isolada. Cada area com suas ferramentas.
+
+        Nenhuma coordenacao. O potencial de 30% de reducao na folha de
+
+        R$700-800K/mes nao realizado.
+
+        '
+    their_insight:
+      insight: 'Nao basta ter ferramentas de IA — precisa de orquestracao. Acoes
+
+        individuais do time nao geram resultado exponencial. O sistema
+
+        precisa ser coordenado.
+
+        '
+    their_action:
+      action: 'Assistiu 7h de lives do AIOX (4h + 3h). Instalou o sistema pessoalmente.
+
+        Testou antes de investir. Decidiu levar diretor/head para a imersao.
+
+        Cetico que se convenceu pela evidencia.
+
+        '
+    the_result:
+      result: FILL_THIS
+    the_promise:
+      promise: 'Transformar a empresa de tecnologia em empresa de tecnologia COM
+
+        tecnologia. IA coordenada. Sistema integrado. O ferreiro que
+
+        finalmente faz o espeto de aco.
+
+        '
+personality:
+  communication_style: 'Direto, pragmatico, cetico saudavel. Faz perguntas estrategicas antes
+
+    de decidir. Pensa em ROI. Background tecnico se manifesta na forma
+
+    analitica de avaliar propostas. Nao se empolga facil — precisa de evidencia.
+
+    '
+  tone:
+    primary: Analitico e estrategico
+    secondary: Pragmatico com ceticismo saudavel
+    avoid: Emocional, impulsivo, hypado
+  signature_phrases:
+  - Em Casa de Ferreiro, o espeto e de pau
+  - Ate quando isso vai ser uma vantagem?
+  - Se reduzir 30% da folha, ja vale
+  - Parece bom demais para ser verdade
+  - Faz sentido
+  - Acoes individuais do time, mas nada coordenado
+  personality_traits:
+  - Analitico (background de programacao)
+  - Cetico saudavel (precisa de prova)
+  - ROI-driven (calcula antes de agir)
+  - Estrategico (pensa em vantagem competitiva temporal)
+  - Familiar (casado, 3 filhos, equilibrio vida-trabalho)
+personal_details:
+  family: Casado, 3 filhos
+  origin: Nascido em SP, criado em Sete Lagoas, MG desde os 17 anos
+  instagram: '@onlinemag'
+  linkedin: Egio Roberto Body Health Brasil. CEO na Contourline
+second_chair:
+  bringing_to_immersion: true
+  role: Diretor / Head
+  reason: Vai levar quem vai tocar a implementacao no dia a dia
+ai_engagement:
+  current_usage:
+  - Videos criados com IA para Instagram (@onlinemag)
+  - Animacoes com IA
+  - Chat PDF para areas juridicas e normativas (Anvisa)
+  - Trafego usa IA para analise (humanos + IA para insights)
+  - Eleven Labs para audio
+  - Ja instalou AIOX e testou pessoalmente
+  problem: Forma muito isolada, nao tem coordenacao entre areas
+  ai_consumption: Feed de Instagram e YouTube 100% IA — acompanha lancamentos diariamente
+  past_learning: Aluno antigo da Formacao Lendaria (socio vitalicio)
+references:
+  company_file: company-profile.yaml
+  credentials_file: credentials.yaml
+  external_sources:
+  - 40o RADLA Brasil — apresentacao de resultados Contourline
+  - 'LinkedIn: Egio Roberto Body Health Brasil, CEO na Contourline'
+  - 'Instagram: @onlinemag'
+  - CNPJ 62.727.948/0001-09 — EUFORIA TECNOLOGIA E PUBLICIDADE
+completion_checklist:
+- '[x] Founder name, background, and location documented'
+- '[x] Origin story (4 acts) — acts 1/3 partial, enriched with available data'
+- '[x] Professional background with companies and roles'
+- '[x] Expertise areas clear and specific'
+- '[x] Core beliefs documented with ''why'' (3 beliefs)'
+- '[x] Credibility proof points with evidence (4 proofs)'
+- '[x] Founder narrative compelling (for marketing)'
+- '[x] Personality and communication style defined'
+- '[x] Signature phrases extracted (6)'
+- '[x] AI engagement documented'
+- '[x] References updated'
+- '[ ] Age — REQUIRES FOUNDER INPUT'
+- '[ ] Formal education details — REQUIRES FOUNDER INPUT'
+- '[ ] Years of experience — REQUIRES FOUNDER INPUT'
+- '[ ] MBTI/Enneagram — REQUIRES FOUNDER INPUT'
+- '[ ] Origin story act 1 challenge/emotional state — REQUIRES FOUNDER INPUT'
+completeness:
+  percentage: 75
+  gaps:
+  - Age — requires founder input
+  - Formal education details — background de programacao confirmed but specifics unknown
+  - Years of experience breakdown — requires founder input
+  - MBTI/Enneagram psychological profile — requires assessment
+  - Origin story early acts — requires founder input

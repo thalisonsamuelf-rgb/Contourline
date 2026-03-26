@@ -1,0 +1,11 @@
+business_slug: "{{business_slug}}"
+status: draft
+ideal_franchisee_profile:
+  demographics: {}
+  professional_background: {}
+  disqualifiers: []
+lead_generation_channels: []
+sales_process_stages: []
+collateral: []
+crm: {}
+territory_strategy: {}

@@ -1,0 +1,69 @@
+metadata:
+  version: "1.0"
+  template_type: culture_values
+  status: PARTIAL
+  last_updated: "2026-03-19"
+  owner: vision-chief
+  source: "company-profile.yaml (values section)"
+  description: >
+    Valores operacionais da cultura Contourline. Baseados nos 5 Disney Keys
+    do Planejamento Estrategico 2026. Guiam decisoes, contratacoes e demissoes.
+
+values_intro: "REQUIRES_ELICITATION"
+
+values:
+  - name: "Lealdade"
+    definition: "Compromisso genuino com clientes, parceiros e equipe"
+    quote: "REQUIRES_ELICITATION"
+    quote_author: "REQUIRES_ELICITATION"
+    guiding_questions: "REQUIRES_ELICITATION"
+    references: "REQUIRES_ELICITATION"
+    legendary_behavior: "Relacoes de longo prazo com clientes e parceiros estrategicos"
+    mediocre_behavior: "Priorizar ganho de curto prazo sobre relacao de confianca"
+
+  - name: "Excelencia"
+    definition: "Busca constante pelo mais alto padrao em tudo que fazemos"
+    quote: "REQUIRES_ELICITATION"
+    quote_author: "REQUIRES_ELICITATION"
+    guiding_questions: "REQUIRES_ELICITATION"
+    references: "REQUIRES_ELICITATION"
+    legendary_behavior: "Investimento em P&D, certificacoes cientificas, parceria Fundacao Dom Cabral"
+    mediocre_behavior: "Entregar produto ou servico sem validacao cientifica"
+
+  - name: "Postura de Dono"
+    definition: "Cada colaborador age como se a empresa fosse sua"
+    quote: "REQUIRES_ELICITATION"
+    quote_author: "REQUIRES_ELICITATION"
+    guiding_questions: "REQUIRES_ELICITATION"
+    references: "REQUIRES_ELICITATION"
+    legendary_behavior: "Autonomia com responsabilidade, gestao por indicadores"
+    mediocre_behavior: "Delegar sem acompanhar resultados"
+
+  - name: "Alegria em Servir"
+    definition: "Atender com prazer e genuino interesse no sucesso do cliente"
+    quote: "REQUIRES_ELICITATION"
+    quote_author: "REQUIRES_ELICITATION"
+    guiding_questions: "REQUIRES_ELICITATION"
+    references: "REQUIRES_ELICITATION"
+    legendary_behavior: "Programa de Excelencia no Atendimento, CX Excellence"
+    mediocre_behavior: "Tratar atendimento como obrigacao e nao como missao"
+
+  - name: "Seguranca"
+    definition: "Garantir seguranca em produtos, processos e relacoes"
+    quote: "REQUIRES_ELICITATION"
+    quote_author: "REQUIRES_ELICITATION"
+    guiding_questions: "REQUIRES_ELICITATION"
+    references: "REQUIRES_ELICITATION"
+    legendary_behavior: "Conformidade ANVISA/Inmetro, rastreabilidade, compliance"
+    mediocre_behavior: "Lancar produto sem validacao regulatoria completa"
+
+closing_statement: "REQUIRES_ELICITATION"
+
+cross_references:
+  depends_on:
+    - culture/pillars.yaml
+    - culture/manifesto.yaml
+  feeds_into:
+    - culture/commandments.yaml
+    - culture/hiring-criteria.yaml
+    - culture/decision-frameworks.yaml

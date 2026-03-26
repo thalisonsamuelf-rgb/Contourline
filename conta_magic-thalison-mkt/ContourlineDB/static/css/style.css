@@ -1,0 +1,166 @@
+/* ── CONTOURLINE DB THEME ─────────────────────────────── */
+:root {
+    --cl-primary: #1a237e;
+    --cl-secondary: #0d47a1;
+    --cl-accent: #00bcd4;
+    --cl-success: #2e7d32;
+    --cl-warning: #f57f17;
+    --cl-danger: #c62828;
+    --cl-light: #f5f7fa;
+    --cl-dark: #1a1a2e;
+}
+
+body {
+    background-color: var(--cl-light);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.bg-contourline {
+    background: linear-gradient(135deg, var(--cl-primary), var(--cl-secondary)) !important;
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+/* ── LOGIN ──────────────────────────────────────────── */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--cl-primary), var(--cl-secondary));
+}
+
+.login-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-card h2 {
+    color: var(--cl-primary);
+    font-weight: 700;
+}
+
+/* ── CARDS DASHBOARD ──────────────────────────────────── */
+.stat-card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-card .stat-icon {
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stat-card .stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.stat-card.bg-primary-gradient { background: linear-gradient(135deg, #1a237e, #3949ab); }
+.stat-card.bg-success-gradient { background: linear-gradient(135deg, #2e7d32, #43a047); }
+.stat-card.bg-info-gradient { background: linear-gradient(135deg, #00838f, #00bcd4); }
+.stat-card.bg-warning-gradient { background: linear-gradient(135deg, #e65100, #f57c00); }
+.stat-card.bg-danger-gradient { background: linear-gradient(135deg, #b71c1c, #e53935); }
+.stat-card.bg-purple-gradient { background: linear-gradient(135deg, #4a148c, #7b1fa2); }
+
+/* ── TABELAS ──────────────────────────────────────────── */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.table th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #495057;
+}
+
+/* ── BADGES DE STATUS ─────────────────────────────────── */
+.badge-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-aberto { background-color: #e3f2fd; color: #1565c0; }
+.badge-em_andamento { background-color: #fff3e0; color: #e65100; }
+.badge-aguardando_peca { background-color: #fce4ec; color: #c62828; }
+.badge-resolvido { background-color: #e8f5e9; color: #2e7d32; }
+.badge-fechado { background-color: #f5f5f5; color: #616161; }
+.badge-em_negociacao { background-color: #e3f2fd; color: #1565c0; }
+.badge-proposta_enviada { background-color: #fff3e0; color: #e65100; }
+.badge-fechada { background-color: #e8f5e9; color: #2e7d32; }
+.badge-perdida { background-color: #ffebee; color: #c62828; }
+
+.badge-baixa { background-color: #e8f5e9; color: #2e7d32; }
+.badge-media { background-color: #fff3e0; color: #e65100; }
+.badge-alta { background-color: #ffebee; color: #c62828; }
+.badge-urgente { background-color: #c62828; color: white; }
+
+/* ── FORMULÁRIOS ──────────────────────────────────────── */
+.form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ── EQUIPAMENTO CARD ─────────────────────────────────── */
+.equip-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.equip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.equip-card .card-header {
+    background: linear-gradient(135deg, var(--cl-primary), var(--cl-secondary));
+    color: white;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 1rem 1.25rem;
+}
+
+/* ── RESPONSIVO ───────────────────────────────────────── */
+@media (max-width: 768px) {
+    .stat-card .stat-number { font-size: 1.5rem; }
+    .stat-card .stat-icon { font-size: 2rem; }
+    main { padding: 1rem !important; }
+}

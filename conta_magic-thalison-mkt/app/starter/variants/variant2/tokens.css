@@ -1,0 +1,40 @@
+/* Auto-generated starter variant tokens for Orbit Flow */
+
+@layer brandbook-bridge {
+  .brandbook-root {
+    --bb-accent: #46D6FF;
+    --bb-dark: #08111A;
+    --bg-void: #08111A;
+    --bb-surface: #0F1B29;
+    --bb-surface-alt: #162739;
+    --bb-cream: #ECF7FF;
+    --bb-cream-alt: #ECF7FF;
+    --bb-warm-white: #ECF7FF;
+    --bb-dim: rgba(236, 247, 255, 0.48);
+    --bb-border: rgba(236, 247, 255, 0.14);
+    --bb-border-hover: rgba(236, 247, 255, 0.24);
+    --bb-gray-charcoal: #35516A;
+    --bb-gray-dim: #5E7E98;
+    --bb-gray-muted: #89A6BA;
+    --bb-gray-silver: #B7D0E1;
+    --bb-gray-light: #D8EAF6;
+    --bb-blue: #46D6FF;
+    --bb-flare: #FFB36B;
+    --bb-error: #EF5A5A;
+    --bb-warning: #F7B955;
+    --bb-accent-02: rgba(70, 214, 255, 0.02);
+    --bb-accent-04: rgba(70, 214, 255, 0.04);
+    --bb-accent-06: rgba(70, 214, 255, 0.06);
+    --bb-accent-08: rgba(70, 214, 255, 0.08);
+    --bb-accent-10: rgba(70, 214, 255, 0.10);
+    --bb-accent-12: rgba(70, 214, 255, 0.12);
+    --bb-accent-15: rgba(70, 214, 255, 0.15);
+    --bb-accent-20: rgba(70, 214, 255, 0.20);
+    --bb-accent-25: rgba(70, 214, 255, 0.25);
+    --bb-accent-40: rgba(70, 214, 255, 0.40);
+    --bb-map-land: #162739;
+    --bb-map-water: #08111A;
+    --bb-map-marker: #46D6FF;
+    --bb-map-land-hover: rgba(70, 214, 255, 0.12);
+  }
+}

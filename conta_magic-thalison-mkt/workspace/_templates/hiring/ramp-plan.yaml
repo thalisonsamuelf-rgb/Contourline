@@ -1,0 +1,189 @@
+---
+# RAMP-PLAN.YAML - 30-60-90 Day Ramp-Up & Performance Milestones
+# Purpose: Structure the new hire's first 90 days with clear milestones and support
+# Guardian: Hiring Manager / Team Lead
+# Timing: FILL after hiring-playbook.yaml and interview-framework.yaml — before the new hire starts
+# Framework: Cole Gordon PTMA Training + Scalable Company 30-60-90 Onboarding
+# Dependency: hiring-playbook.yaml (role definition), kpi-scorecards.yaml (performance metrics)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Hiring Manager / Team Lead"
+  framework: "Cole Gordon PTMA Training + Scalable Company 30-60-90"
+  notes: |
+    The first 90 days determine whether a new hire becomes an A-player
+    or another failed hire.
+
+    Cole Gordon's PTMA (Process, Training, Management, Accountability):
+    - PROCESS: Clear steps for how to do the job
+    - TRAINING: Structured learning with practice
+    - MANAGEMENT: Regular check-ins and coaching
+    - ACCOUNTABILITY: Clear metrics and expectations
+
+    RULE: If a new hire fails in the first 90 days, it is usually
+    a management failure, not a hiring failure. The ramp plan
+    prevents this by providing clarity at every step.
+
+    Each 30-day block has:
+    - LEARNING goals (what they should KNOW)
+    - DOING goals (what they should PRODUCE)
+    - BEING goals (how they should BEHAVE)
+
+# ============================================================================
+# STEP 1: PRE-START PREPARATION
+# ============================================================================
+
+pre_start:
+  before_day_1:
+    admin_setup:
+      - "FILL — Equipment/hardware ready"
+      - "FILL — Software accounts created"
+      - "FILL — Email/communication access"
+      - "FILL — Welcome package sent"
+    documentation:
+      - "FILL — Role description shared"
+      - "FILL — Company handbook/culture doc"
+      - "FILL — Product overview materials"
+      - "FILL — Team introductions scheduled"
+    manager_prep:
+      - "FILL — Ramp plan finalized"
+      - "FILL — Buddy/mentor assigned"
+      - "FILL — First week calendar blocked"
+
+# ============================================================================
+# STEP 2: DAYS 1-30 — LEARN (Foundation)
+# ============================================================================
+
+days_1_30:
+  theme: "Learn the Business"
+  goal: "Understand the product, customers, team, and processes"
+
+  week_1:
+    focus: "Orientation and immersion"
+    learning:
+      - "FILL — Company vision, mission, values"
+      - "FILL — Product deep dive"
+      - "FILL — Meet all team members"
+      - "FILL — Shadow top performers"
+    doing:
+      - "FILL — Complete onboarding checklist"
+      - "FILL — First small deliverable"
+    check_in: "FILL — Daily check-in with manager (15 min)"
+
+  week_2_3:
+    focus: "Process training"
+    learning:
+      - "FILL — Core processes for this role"
+      - "FILL — Tools and systems training"
+      - "FILL — Customer/market understanding"
+    doing:
+      - "FILL — Practice tasks with guidance"
+      - "FILL — First independent deliverable"
+    check_in: "FILL — Twice-weekly check-in (30 min)"
+
+  week_4:
+    focus: "Independent execution begins"
+    learning:
+      - "FILL — Advanced topics"
+      - "FILL — Edge cases and exceptions"
+    doing:
+      - "FILL — Independent work at 50% capacity"
+      - "FILL — First measurable output"
+    check_in: "FILL — Weekly check-in (30 min)"
+
+  day_30_milestone:
+    knowledge_check: "FILL — Can they explain the product, process, and their role clearly?"
+    performance_metric: "FILL — Specific measurable output expected by day 30"
+    decision: "FILL — On track / Needs support / Concern"
+
+# ============================================================================
+# STEP 3: DAYS 31-60 — DO (Execution)
+# ============================================================================
+
+days_31_60:
+  theme: "Execute with Increasing Independence"
+  goal: "Produce measurable results with decreasing supervision"
+
+  focus_areas:
+    - "FILL — Primary responsibility at 75% capacity"
+    - "FILL — Cross-functional collaboration"
+    - "FILL — Problem-solving with guidance"
+
+  milestones:
+    day_45: "FILL — Mid-period milestone (specific metric)"
+    day_60: "FILL — End-of-period milestone (specific metric)"
+
+  support:
+    coaching_cadence: "FILL — Weekly 1-on-1 (30 min)"
+    peer_support: "FILL — Buddy/mentor continues"
+    training: "FILL — Advanced training topics"
+
+  day_60_milestone:
+    performance_metric: "FILL — Specific output at 75% of full capacity"
+    quality_metric: "FILL — Quality standards being met?"
+    decision: "FILL — On track / Needs support / Performance Improvement Plan"
+
+# ============================================================================
+# STEP 4: DAYS 61-90 — OWN (Mastery)
+# ============================================================================
+
+days_61_90:
+  theme: "Own the Role Fully"
+  goal: "Perform at full capacity with minimal supervision"
+
+  expectations:
+    - "FILL — Full responsibility for role outcomes"
+    - "FILL — Proactive problem-solving"
+    - "FILL — Contributing ideas for improvement"
+    - "FILL — Mentoring newer team members (if applicable)"
+
+  milestones:
+    day_75: "FILL — Operating at 90%+ capacity"
+    day_90: "FILL — Full performance evaluation"
+
+  day_90_review:
+    performance_vs_kpis: "FILL — How do they measure against the KPIs from hiring-playbook.yaml?"
+    cultural_fit_confirmed: "FILL — Yes/No with evidence"
+    manager_assessment: "FILL — Exceeds / Meets / Below expectations"
+    employee_feedback: "FILL — What feedback does the new hire have about the process?"
+    decision: "FILL — Confirm / Extend probation / Exit"
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+ramp_effectiveness_score:
+  clarity_of_expectations: "FILL 1-10"
+  support_quality: "FILL 1-10"
+  milestone_progression: "FILL 1-10"
+  time_to_productivity: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "No ramp plan, new hire figures it out alone, no milestones, unclear expectations."
+    range_4_6: "Basic ramp plan, some support, vague milestones, takes 4-6 months to full productivity."
+    range_7_8: "Structured 30-60-90 plan, regular check-ins, clear milestones, productive by day 60."
+    range_9_10: "Comprehensive PTMA plan, daily→weekly coaching cadence, measurable milestones at each stage, productive by day 30, fully autonomous by day 90."
+
+evidence:
+  data_points: "FILL — Time to productivity, ramp completion rate, 90-day retention of new hires"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  most_critical_phase: "FILL — Which 30-day block needs the most improvement?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "hiring-playbook.yaml"
+    - "kpi-scorecards.yaml"
+  feeds_into:
+    - "team-structure.yaml"
+    - "analytics.yaml"
+  related:
+    - "interview-framework.yaml"
+    - "commission-design.yaml"
+    - "onboarding-flow.yaml"

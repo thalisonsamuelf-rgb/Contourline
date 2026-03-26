@@ -1,0 +1,24 @@
+---
+# Template: reading cyclical update dataset (N3 cyclical)
+
+metadata:
+  template_id: "movement.reading_cyclical_update"
+  version: "1.0.0"
+  lifecycle_stage: "reading"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+cyclical_update:
+  cycle_id: "<required>"
+  compared_with_cycle_id: "<required>"
+  cultural_delta: []
+  persona_updates:
+    changed_dimensions: []
+    unchanged_dimensions: []
+  new_trends: []
+  signals_classification:
+    facts: []
+    trends: []
+    noise: []
+provenance:
+  source_docs: []

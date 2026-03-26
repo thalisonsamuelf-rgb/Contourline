@@ -1,0 +1,634 @@
+# ============================================================================
+# CANONICAL-SOURCES.YAML — AIOX Workspace Ontology Registry
+# ============================================================================
+# Versão: 0.1
+# Data: 2026-03-15
+# Status: APPROVED — 9 decisões consolidadas
+#
+# O QUE É ESTE ARQUIVO:
+#   O registro central de quem é DONO de cada tipo de dado no workspace.
+#   Quando um dado aparece em mais de um lugar, este arquivo diz qual vence.
+#   ETL consulta antes de escrever. Squads consultam antes de ler.
+#
+# REGRAS INVIOLÁVEIS:
+#   1. Todo dado tem UM dono. Sem exceções.
+#   2. Entidades nunca duplicam dados de outras entidades.
+#   3. Artefatos PODEM duplicar — mas declaram de quais entidades derivam.
+#   4. Se um path muda, atualizar AQUI primeiro — este é o registro central.
+#   5. _refs no company-profile é conveniência local, NÃO substitui este arquivo.
+# ============================================================================
+
+schema_version: "0.1"
+last_updated: "2026-03-15"
+
+# ============================================================================
+# DECISÕES ARQUITETURAIS (log de decisões que geraram este registry)
+# ============================================================================
+decisions:
+  D1:
+    decision: "Eliminar company/brand.yaml"
+    rationale: "Warmth 8 vs 5 conflita com brandbook. 60% preenchido vs 92%. Brandbook absorve."
+    action: "Remover arquivo. Atualizar config.yaml dos squads."
+
+  D2:
+    decision: "Absorver brand/strategic-positioning.yaml no brandbook"
+    rationale: "90% coberto pelo brandbook. 10% restante (quotes William, diferenciação granular) migra."
+    action: "Mover conteúdo único pro brandbook > competitive_positioning. Remover arquivo."
+
+  D3:
+    decision: "Pricing dividido por domínio"
+    rationale: "Preço do produto ≠ filosofia de preço ≠ números históricos."
+    action: "Preço → offerbook. Filosofia → pricing-strategy. Revenue → proof."
+
+  D4:
+    decision: "Company-profile podado (234→105 linhas)"
+    rationale: "Remover tudo que tem dono canônico em outro arquivo."
+    action: "Template validado com migration map."
+
+  D5:
+    decision: "_refs só no company-profile"
+    rationale: "Company-profile é o lobby do workspace. Outros arquivos não precisam."
+    action: "9 linhas de mapa de navegação. Não virar padrão."
+
+  D6:
+    decision: "canonical_scope em TODOS os arquivos"
+    rationale: "Elimina ambiguidade ontológica. 3-5 linhas por arquivo."
+    action: "Adicionar metadata.canonical_scope em cada arquivo na limpeza."
+
+  D7:
+    decision: "Mission/vision/values → brandbook é dono"
+    rationale: "Pra 0→1 e 1→10, mission/vision/values e brand_values são a mesma coisa."
+    action: "Company-profile sem esses campos. Brandbook canônico."
+
+  D8:
+    decision: "Contact vs Channels — separado"
+    rationale: "Contact = como falar com a empresa (company-profile). Channels = onde a marca publica (brandbook)."
+    action: "Manter nos dois, perspectivas diferentes."
+
+  D9:
+    decision: "Eliminar company/message-hierarchy.yaml"
+    rationale: "Cópia exata de brandbook > positioning > message_hierarchy."
+    action: "Remover arquivo."
+
+# ============================================================================
+# ARQUIVOS ELIMINADOS (não devem existir no workspace)
+# ============================================================================
+eliminated_files:
+  - file: "company/brand.yaml"
+    absorbed_by: "brand/brandbook.yaml"
+    decision: D1
+
+  - file: "company/message-hierarchy.yaml"
+    absorbed_by: "brand/brandbook.yaml"
+    decision: D9
+
+  - file: "brand/strategic-positioning.yaml"
+    absorbed_by: "brand/brandbook.yaml"
+    decision: D2
+
+# ============================================================================
+# ENTIDADES — Fontes de verdade (27 arquivos)
+# ============================================================================
+entities:
+
+  # ────────────────────────────────────────────────────────────────
+  # DOMÍNIO: IDENTIDADE
+  # ────────────────────────────────────────────────────────────────
+
+  company_profile:
+    canonical_file: "company/company-profile.yaml"
+    domain: identity
+    owns:
+      - legal_name
+      - trade_name
+      - abbreviation
+      - year_founded
+      - headquarters
+      - one_liner
+      - origin_story_short
+      - contact_info
+      - company_stage
+      - strategic_roadmap
+    does_not_own:
+      - revenue: "→ products/{slug}/proof.yaml"
+      - team: "→ operations/team-structure.yaml"
+      - brand: "→ brand/brandbook.yaml"
+      - positioning: "→ brand/brandbook.yaml"
+      - mission_vision_values: "→ brand/brandbook.yaml"
+      - product_details: "→ products/{slug}/offerbook.yaml"
+      - metrics: "→ products/{slug}/proof.yaml"
+    consumed_by: [all_squads]
+
+  founder_dna:
+    canonical_file: "company/founder-dna.yaml"
+    domain: identity
+    owns:
+      - founder_personality
+      - origin_story_full
+      - founder_quotes_call
+      - psychological_profile
+      - founder_archetype
+    does_not_own:
+      - credentials_formais: "→ company/credentials.yaml"
+      - media_appearances: "→ company/credentials.yaml"
+      - founder_quotes_media: "→ brand/brandbook.yaml (real_founder_quotes)"
+    consumed_by: [copy, movement]
+
+  credentials:
+    canonical_file: "company/credentials.yaml"
+    domain: identity
+    owns:
+      - formal_education
+      - certifications
+      - awards
+      - media_appearances
+      - speaking_engagements
+      - notable_partners
+      - credential_summary
+    does_not_own:
+      - founder_personality: "→ company/founder-dna.yaml"
+      - revenue_numbers: "→ products/{slug}/proof.yaml"
+    consumed_by: [copy, hormozi]
+
+  brandbook:
+    canonical_file: "brand/brandbook.yaml"
+    domain: identity
+    owns:
+      - brand_name
+      - brand_purpose
+      - brand_essence
+      - brand_trueline
+      - brand_category
+      - owned_word
+      - origin_myth
+      - mission_statement
+      - vision_statement
+      - brand_values
+      - positioning
+      - message_hierarchy
+      - archetype_mix
+      - voice
+      - visual_identity
+      - competitive_positioning
+      - brand_channels
+      - social_proof_summary
+      - founder_narrative
+      - brand_evolution
+      - real_founder_quotes
+    does_not_own:
+      - contact_info: "→ company/company-profile.yaml"
+      - proof_numbers: "→ products/{slug}/proof.yaml"
+      - team_structure: "→ operations/team-structure.yaml"
+      - founder_personality: "→ company/founder-dna.yaml"
+    consumed_by: [copy, traffic, design, hormozi, movement]
+    note: "Arquivo mais denso (~700+ linhas). Considerar quebra futura se ultrapassar 1000 linhas."
+
+  # ────────────────────────────────────────────────────────────────
+  # DOMÍNIO: MERCADO
+  # ────────────────────────────────────────────────────────────────
+
+  icp:
+    canonical_file: "company/icp.yaml"
+    domain: market
+    owns:
+      - core_icp_definition
+      - demographics
+      - psychographics
+      - pain_stack
+      - archetypes
+      - motivations
+      - acquisition_channels
+      - flags
+    does_not_own:
+      - brand_voice: "→ brand/brandbook.yaml"
+      - revenue: "→ products/{slug}/proof.yaml"
+      - pricing: "→ products/{slug}/offerbook.yaml"
+    consumed_by: [copy, traffic, hormozi]
+
+  diagnosis:
+    canonical_file: "company/diagnosis.yaml"
+    domain: market
+    owns:
+      - market_awareness_level
+      - market_sophistication_stage
+      - strategic_implications
+    does_not_own:
+      - messaging_execution: "→ brand/brandbook.yaml"
+    consumed_by: [copy, hormozi]
+
+  analytics:
+    canonical_file: "company/analytics.yaml"
+    domain: market
+    owns:
+      - primary_research_data
+      - pain_statistics
+      - behavior_patterns
+      - member_outcomes
+      - retention_analytics
+      - conversion_funnel
+    does_not_own:
+      - revenue: "→ products/{slug}/proof.yaml"
+    consumed_by: [copy, traffic]
+    note: "Template na maioria dos workspaces. Status: pending_collection até ter dados."
+
+  # ────────────────────────────────────────────────────────────────
+  # DOMÍNIO: VALOR (por produto)
+  # ────────────────────────────────────────────────────────────────
+
+  offerbook:
+    canonical_file: "products/{slug}/offerbook.yaml"
+    domain: value
+    owns:
+      - product_name
+      - promessa
+      - unique_selling_proposition
+      - mecanismo_unico
+      - pricing
+      - garantia
+      - go_to_market
+      - narrativa_oferta
+      - avatar_oferta
+    does_not_own:
+      - revenue: "→ products/{slug}/proof.yaml"
+      - testimonials: "→ products/{slug}/testimonials.yaml"
+      - brand_positioning: "→ brand/brandbook.yaml"
+    consumed_by: [copy, traffic, hormozi]
+
+  proof:
+    canonical_file: "products/{slug}/proof.yaml"
+    domain: value
+    owns:
+      - financial_results
+      - statistics
+      - media_coverage
+      - revenue_trajectory
+      - partner_impact
+    does_not_own:
+      - pricing: "→ products/{slug}/offerbook.yaml"
+      - testimonials: "→ products/{slug}/testimonials.yaml"
+    consumed_by: [copy, traffic, hormozi]
+    rule: "NENHUM outro arquivo deve conter números de revenue, clientes ou crescimento."
+
+  testimonials:
+    canonical_file: "products/{slug}/testimonials.yaml"
+    domain: value
+    owns:
+      - consumer_testimonials
+      - partner_testimonials
+      - ceo_quotes_testimonial
+      - testimonial_strategy
+    consumed_by: [copy]
+
+  cities_map:
+    canonical_file: "products/{slug}/cities-map.yaml"
+    domain: value
+    owns:
+      - cities_active
+      - cities_count
+      - city_details
+      - expansion_pipeline
+    does_not_own:
+      - revenue_by_city: "→ products/{slug}/proof.yaml"
+    consumed_by: [copy, traffic]
+    rule: "NENHUM outro arquivo deve conter contagem de cidades."
+
+  # ────────────────────────────────────────────────────────────────
+  # DOMÍNIO: MOVIMENTO
+  # ────────────────────────────────────────────────────────────────
+
+  cosmology:
+    canonical_file: "movement/system/cosmology.yaml"
+    domain: movement
+    owns: [central_cause, core_tension, axioms, hierarchy]
+    consumed_by: [movement, copy]
+
+  doctrines:
+    canonical_file: "movement/system/mrd-bank/doctrines.yaml"
+    domain: movement
+    owns: [doctrine_statements, doctrine_evidence, doctrine_functions]
+    consumed_by: [movement, copy]
+
+  vocabulary:
+    canonical_file: "movement/system/mrd-bank/vocabulary.yaml"
+    domain: movement
+    owns: [tribal_terms, term_tiers, term_categories]
+    consumed_by: [movement, copy]
+
+  myths:
+    canonical_file: "movement/system/mrd-bank/myths.yaml"
+    domain: movement
+    owns: [foundational_narratives, myth_structures]
+    consumed_by: [movement]
+
+  rites:
+    canonical_file: "movement/system/mrd-bank/rites.yaml"
+    domain: movement
+    owns: [rituals, ritual_functions, ritual_cadence]
+    consumed_by: [movement]
+
+  tribe_identity:
+    canonical_file: "movement/foundation/tribe-identity.yaml"
+    domain: movement
+    owns: [tribe_archetypes, transformation_arcs]
+    consumed_by: [movement, copy]
+
+  leaders:
+    canonical_file: "movement/identity/leaders.yaml"
+    domain: movement
+    owns: [leader_profiles, leader_values, leader_expressions]
+    consumed_by: [movement]
+
+  fenomenologia:
+    canonical_file: "movement/reading/fenomenologia-cultural.yaml"
+    domain: movement
+    owns: [worldview_before_after, core_beliefs, cultural_tensions]
+    consumed_by: [movement]
+
+  ideological_persona:
+    canonical_file: "movement/reading/persona/ideological-persona.yaml"
+    domain: movement
+    owns: [consolidated_persona, cluster_dimensions, behavioral_signals]
+    consumed_by: [movement, copy]
+
+  # ────────────────────────────────────────────────────────────────
+  # DOMÍNIO: OPERAÇÕES
+  # ────────────────────────────────────────────────────────────────
+
+  team_structure:
+    canonical_file: "operations/team-structure.yaml"
+    domain: operations
+    owns:
+      - total_headcount
+      - leadership_team
+      - departments
+      - influencer_partners
+      - city_leaders
+      - key_tools
+    does_not_own:
+      - founder_personality: "→ company/founder-dna.yaml"
+      - revenue: "→ products/{slug}/proof.yaml"
+    consumed_by: [copy, operations]
+    rule: "Quando outro arquivo mencionar uma pessoa, usar apenas nome. Dados completos aqui."
+
+  pricing_strategy:
+    canonical_file: "operations/pricing-strategy.yaml"
+    domain: operations
+    owns:
+      - pricing_philosophy
+      - pricing_psychology
+      - price_framing
+      - competitive_position
+      - revenue_model
+    does_not_own:
+      - product_price: "→ products/{slug}/offerbook.yaml"
+      - revenue_numbers: "→ products/{slug}/proof.yaml"
+    consumed_by: [copy, hormozi]
+
+  kpi_scorecards:
+    canonical_file: "operations/kpi-scorecards.yaml"
+    domain: operations
+    owns: [north_star, revenue_metrics, acquisition_metrics, retention_metrics, operational_metrics, review_cadence]
+    consumed_by: [operations]
+
+  commission_design:
+    canonical_file: "operations/commission-design.yaml"
+    domain: operations
+    owns: [compensation_philosophy, commission_structure, bonus_structure, guardrails]
+    consumed_by: [operations]
+
+  # ────────────────────────────────────────────────────────────────
+  # DOMÍNIO: TECNOLOGIA
+  # ────────────────────────────────────────────────────────────────
+
+  tech_strategy:
+    canonical_file: "tech/strategy.yaml"
+    domain: technology
+    owns: [architecture_principles, trade_offs, tech_roadmap, constraints]
+    consumed_by: [tech]
+
+  tech_stack:
+    canonical_file: "tech/stack.yaml"
+    domain: technology
+    owns: [backend, frontend, data, developer_tooling, code_standards, infrastructure]
+    consumed_by: [tech]
+
+  ai_strategy:
+    canonical_file: "ai/strategy.yaml"
+    domain: technology
+    owns: [ai_objectives, model_policy, agent_topology, escalation_rules]
+    consumed_by: [tech, ai]
+
+# ============================================================================
+# ARTEFATOS — Derivados que PODEM duplicar dados
+# ============================================================================
+artifacts:
+
+  authority_story:
+    file: "company/authority-story.yaml"
+    type: derived
+    sources:
+      - "company/founder-dna.yaml"
+      - "products/{slug}/proof.yaml"
+      - "company/credentials.yaml"
+    rebuild_trigger: "Quando founder-dna, proof ou credentials atualizar"
+
+  brandscript:
+    file: "products/{slug}/narrative/brandscript.yaml"
+    type: derived
+    sources:
+      - "brand/brandbook.yaml"
+      - "company/icp.yaml"
+      - "products/{slug}/offerbook.yaml"
+      - "products/{slug}/proof.yaml"
+    rebuild_trigger: "Quando brandbook, icp, offerbook ou proof atualizar"
+
+  pitch_narrative:
+    file: "products/{slug}/narrative/pitch-narrative.yaml"
+    type: derived
+    sources:
+      - "company/company-profile.yaml"
+      - "products/{slug}/proof.yaml"
+      - "brand/brandbook.yaml"
+    rebuild_trigger: "Quando company-profile, proof ou brandbook atualizar"
+
+  product_story:
+    file: "products/{slug}/narrative/product-story.yaml"
+    type: derived
+    sources:
+      - "company/company-profile.yaml"
+      - "products/{slug}/proof.yaml"
+      - "products/{slug}/offerbook.yaml"
+    rebuild_trigger: "Quando company-profile, proof ou offerbook atualizar"
+
+  objection_destroyers:
+    file: "products/{slug}/narrative/objection-destroyers.yaml"
+    type: derived
+    sources:
+      - "company/icp.yaml"
+      - "products/{slug}/proof.yaml"
+      - "products/{slug}/testimonials.yaml"
+    rebuild_trigger: "Quando icp, proof ou testimonials atualizar"
+
+  biblia_movimento:
+    file: "movement/system/biblia-movimento.yaml"
+    type: derived
+    sources:
+      - "movement/system/cosmology.yaml"
+      - "movement/system/mrd-bank/doctrines.yaml"
+      - "movement/system/mrd-bank/myths.yaml"
+      - "movement/system/mrd-bank/rites.yaml"
+      - "movement/system/mrd-bank/vocabulary.yaml"
+      - "movement/foundation/tribe-identity.yaml"
+      - "movement/identity/leaders.yaml"
+      - "movement/reading/fenomenologia-cultural.yaml"
+      - "brand/brandbook.yaml"
+    rebuild_trigger: "Quando qualquer entidade do movement/ ou brandbook atualizar"
+
+# ============================================================================
+# GOVERNANCE — Arquivos de controle
+# ============================================================================
+governance:
+  completeness_manifest:
+    file: "evidence/completeness-manifest.yaml"
+    owns: [squad_readiness, file_completeness, delta_report]
+
+  source_registry:
+    file: "evidence/source-registry.yaml"
+    owns: [source_paths, extraction_status]
+
+  workspace_context:
+    file: "evidence/workspace-context-summary.yaml"
+    owns: [overall_status, handoff_readiness]
+
+  etl_envelope:
+    file: "etl/etl-run-envelope.yaml"
+    owns: [run_metadata, artifacts_generated, checkpoints, metrics]
+
+# ============================================================================
+# FIELD-LEVEL CANONICAL RULES
+# ============================================================================
+field_rules:
+
+  # --- NÚMEROS ---
+  revenue:
+    canonical: "products/{slug}/proof.yaml#financial_results"
+    violators:
+      - { file: "company/company-profile.yaml", status: PODADO }
+      - { file: "products/{slug}/offerbook.yaml", status: PODADO, note: "resultados_somados e numeros.faturamento removidos" }
+      - { file: "operations/pricing-strategy.yaml", status: PODADO, note: "revenue_history block removido" }
+      - { file: "brand/brandbook.yaml", status: ACCEPTED, note: "Social proof summary — cita números, proof é canônico" }
+      - { file: "company/credentials.yaml", status: ACCEPTED, note: "credential_bullets — resumo narrativo, proof é canônico" }
+    rule: "Proof é o ÚNICO dono. PODADO = já limpo. PENDING = precisa limpar. ACCEPTED = menção narrativa permitida."
+
+  customer_count:
+    canonical: "products/{slug}/proof.yaml#statistics"
+    rule: "Idem revenue."
+
+  cities_count:
+    canonical: "products/{slug}/cities-map.yaml#metadata.total_cities_active"
+    rule: "Cities-map é dono. Nenhum outro arquivo contém contagem de cidades."
+
+  team_size:
+    canonical: "operations/team-structure.yaml#current_team.total_headcount"
+    rule: "Team-structure é dono."
+
+  # --- MARCA ---
+  brand_purpose:
+    canonical: "brand/brandbook.yaml#core.purpose"
+    violators:
+      - { file: "company/brand.yaml", status: ELIMINADO }
+      - { file: "company/company-profile.yaml", status: PODADO }
+
+  brand_voice_tone:
+    canonical: "brand/brandbook.yaml#voice"
+    violators:
+      - { file: "company/brand.yaml", status: ELIMINADO, note: "warmth 8 vs brandbook 5 — conflito resolvido" }
+
+  message_hierarchy:
+    canonical: "brand/brandbook.yaml#positioning.message_hierarchy"
+    violators:
+      - { file: "company/message-hierarchy.yaml", status: ELIMINADO }
+      - { file: "brand/strategic-positioning.yaml", status: ELIMINADO }
+
+  onlyness:
+    canonical: "brand/brandbook.yaml#positioning.onlyness"
+    violators:
+      - { file: "brand/strategic-positioning.yaml", status: ELIMINADO }
+
+  competitive_moat:
+    canonical: "brand/brandbook.yaml#competitive_positioning.competitive_moat"
+    violators:
+      - { file: "company/company-profile.yaml", status: PODADO }
+      - { file: "brand/strategic-positioning.yaml", status: ELIMINADO }
+
+  mission_vision_values:
+    canonical: "brand/brandbook.yaml"
+    paths:
+      mission: "core.mission_statement"
+      vision: "core.vision_statement"
+      values: "brand_values"
+    rule: "DECISÃO D7 — brandbook é dono único. Company-profile NÃO contém esses campos."
+
+  # --- PESSOAS ---
+  leadership_team:
+    canonical: "operations/team-structure.yaml#current_team.leadership"
+    rule: "Quando outro arquivo menciona líderes, usar apenas nome. Dados completos em team-structure."
+
+  influencer_partners:
+    canonical: "operations/team-structure.yaml#current_team.influencer_partners_not_employees"
+    violators:
+      - { file: "company/company-profile.yaml", status: PODADO }
+      - { file: "company/credentials.yaml", status: ACCEPTED, note: "Lista nomes como credencial" }
+      - { file: "company/icp.yaml", status: ACCEPTED, note: "Cita handles em acquisition_channels" }
+      - { file: "products/{slug}/offerbook.yaml", status: ACCEPTED, note: "Lista handles em go_to_market" }
+      - { file: "brand/brandbook.yaml", status: ACCEPTED, note: "Social proof + founder narrative" }
+    rule: "Team-structure é dono das entidades. ACCEPTED = menção por nome permitida."
+
+  # --- PREÇO ---
+  product_price:
+    canonical: "products/{slug}/offerbook.yaml#pricing"
+    violators:
+      - { file: "operations/pricing-strategy.yaml", status: ACCEPTED, note: "R$129,90 mencionado em contexto de filosofia/psicologia de pricing — legítimo" }
+    rule: "DECISÃO D3 — preço do produto mora no offerbook."
+
+  pricing_philosophy:
+    canonical: "operations/pricing-strategy.yaml"
+    rule: "DECISÃO D3 — filosofia de preço mora aqui."
+
+  revenue_trajectory:
+    canonical: "products/{slug}/proof.yaml#financial_results"
+    violators:
+      - { file: "operations/pricing-strategy.yaml", status: PODADO, note: "revenue_history block removido" }
+    rule: "DECISÃO D3 — números históricos de revenue moram no proof."
+
+  # --- CONTATO vs CANAIS ---
+  contact_info:
+    canonical: "company/company-profile.yaml#contact"
+    scope: "Email, telefone, Instagram/Facebook como ENDEREÇO"
+    rule: "DECISÃO D8 — contact é perspectiva de endereço."
+
+  brand_channels:
+    canonical: "brand/brandbook.yaml#channels"
+    scope: "Instagram, Facebook, YouTube como CANAIS DE PUBLICAÇÃO"
+    rule: "DECISÃO D8 — channels é perspectiva de presença."
+
+  # --- FOUNDER ---
+  founder_origin_story:
+    canonical: "company/founder-dna.yaml#origin_story"
+    derived_versions:
+      - { file: "company/company-profile.yaml#origin_story_short", type: "resumo", status: OK, note: "2-3 frases — legítimo como resumo de lobby" }
+      - { file: "company/authority-story.yaml", type: ARTEFATO, status: OK, note: "Narrativa completa — deriva de founder-dna + proof + credentials" }
+      - { file: "brand/brandbook.yaml#core.origin_myth", type: ARTEFATO, status: OK, note: "Versão narrativa pra contexto de marca" }
+      - { file: "brand/brandbook.yaml#founder_narrative", type: ARTEFATO, status: OK, note: "Perfil narrativo — deriva de founder-dna" }
+    rule: "Founder-dna é canônico. Company-profile pode ter resumo. Brandbook e authority-story são derivados."
+
+  # --- VOZ ---
+  forbidden_words:
+    canonical: "brand/brandbook.yaml#voice.avoid_use"
+    violators:
+      - { file: "company/brand.yaml", status: ELIMINADO, note: "Tinha forbidden_words VAZIO" }
+    rule: "Brandbook é dono único de palavras proibidas."
+
+  signature_phrases:
+    canonical: "brand/brandbook.yaml#voice.signature_phrases"
+    rule: "Brandbook é dono único de frases assinatura da marca."

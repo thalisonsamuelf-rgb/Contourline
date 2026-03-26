@@ -1,0 +1,22 @@
+---
+# Template: movement leaders identity dataset (multi-leader)
+
+metadata:
+  template_id: "movement.identity_leaders"
+  version: "1.0.0"
+  lifecycle_stage: "identity"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+leaders:
+  - key: "<required>"
+    name: "<required>"
+    role_in_movement: "<required>"
+    top_values:
+      - name: "<required>"
+        score: "<0-10>"
+    vulnerabilities: []
+    signature_phrases: []
+    strategic_focus: []
+provenance:
+  source_docs: []

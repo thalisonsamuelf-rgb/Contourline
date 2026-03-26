@@ -1,0 +1,21 @@
+---
+# Template: reading trend relevance dataset (N3)
+
+metadata:
+  template_id: "movement.reading_trend_relevance"
+  version: "1.0.0"
+  lifecycle_stage: "reading"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+trend_relevance:
+  market_scope: "<required>"
+  trends:
+    - trend_key: "<required>"
+      description: "<required>"
+      relevance_score: "<0-100>"
+      alignment_with_cause: "<low|medium|high>"
+      risk_level: "<low|medium|high>"
+      recommendation: "<adopt|watch|ignore>"
+provenance:
+  source_docs: []

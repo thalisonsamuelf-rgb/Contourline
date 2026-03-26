@@ -1,0 +1,445 @@
+---
+# ICP - YOUR_PRODUCT
+# Source: target-avatar.yaml (System B) + icp.yaml template (System A)
+# Guardian: CMO
+# Status: TEMPLATE BASELINE (UNFILLED)
+
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: 55
+  FILL_THIS: 55
+  FILL_THIS: 100
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# AWARENESS LEVEL (FROM diagnosis.yaml)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# CORE ICP DEFINITION (3 fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# DEMOGRAPHIC PROFILE (6 fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: ["FILL_THIS", "FILL_THIS", "FILL_THIS", "FILL_THIS"]
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: ["FILL_THIS"]
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# PSYCHOGRAPHIC PROFILE (5 fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# PAIN STACK (3 fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# FEARS (3 fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+# ============================================================================
+# AVATARS / ARCHETYPES (5 archetypes)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      - "FILL_THIS"
+      - "FILL_THIS"
+      - "FILL_THIS"
+    FILL_THIS: ["FILL_THIS", "FILL_THIS"]
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      - "FILL_THIS"
+      - "FILL_THIS"
+      - "FILL_THIS"
+    FILL_THIS: ["FILL_THIS", "FILL_THIS"]
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      - "FILL_THIS"
+      - "FILL_THIS"
+      - "FILL_THIS"
+    FILL_THIS: ["FILL_THIS", "FILL_THIS"]
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      - "FILL_THIS"
+      - "FILL_THIS"
+      - "FILL_THIS"
+    FILL_THIS: ["FILL_THIS", "FILL_THIS"]
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      - "FILL_THIS"
+      - "FILL_THIS"
+      - "FILL_THIS"
+    FILL_THIS: ["FILL_THIS", "FILL_THIS"]
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# COMMUNICATION PREFERENCES (from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# VALUES HIERARCHY (from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# MOTIVATIONS (2 fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# RED FLAGS vs GREEN FLAGS (2 fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# BEHAVIORAL PATTERNS (3 sub-fields)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# PSYCHOLOGICAL NEEDS (from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# WHAT THEY REALLY SEEK (from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# VALIDATION (Auto-calculated)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: 55
+  FILL_THIS: 55
+  FILL_THIS: 100
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+---
+FILL_THIS

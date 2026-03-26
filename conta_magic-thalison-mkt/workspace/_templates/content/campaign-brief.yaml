@@ -1,0 +1,134 @@
+metadata:
+  artifact: campaign_brief
+  version: "2.0.0"
+  status: draft
+  campaign_slug: FILL_THIS
+  campaign_name: FILL_THIS
+  business: FILL_THIS
+  product: FILL_THIS
+  owner: FILL_THIS
+  created_at: YYYY-MM-DD
+  updated_at: YYYY-MM-DD
+
+routing:
+  execution_track: FILL_THIS
+  strategic_or_final_work: true
+  promotion_rule: "Without this persisted Campaign Brief, strategic or FINAL work cannot be promoted"
+
+# --- CONTEXT ---
+context:
+  business_situation: FILL_THIS
+  reason_this_campaign_exists: FILL_THIS
+  triggering_event: FILL_THIS
+  campaign_period:
+    start: YYYY-MM-DD
+    end: YYYY-MM-DD
+
+# --- OBJECTIVE ---
+objective:
+  primary_outcome: FILL_THIS
+  secondary_outcomes:
+    - FILL_THIS
+  success_metric: FILL_THIS
+  time_horizon: FILL_THIS
+  targets:
+    # Fill only what applies
+    cpl: null       # R$ target
+    cpa: null       # R$ target
+    roas: null      # multiplier target
+    ctr: null       # % target
+    conversions: null  # absolute number
+
+# --- AUDIENCE ---
+audience:
+  primary_segment: FILL_THIS
+  secondary_segment: FILL_THIS
+  awareness_stage: FILL_THIS   # unaware | problem_aware | solution_aware | product_aware | most_aware
+  market_sophistication: FILL_THIS  # 1-5 (Schwartz scale)
+  traffic_temperature: FILL_THIS   # cold | warm | hot
+  archetype_focus:
+    - FILL_THIS  # Which ICP archetypes to prioritize for this campaign
+  major_objections:
+    - FILL_THIS
+
+# --- OFFER ---
+offer:
+  name: FILL_THIS
+  price_point: FILL_THIS
+  payment_options: FILL_THIS   # e.g., "12x R$1.888" or "a vista R$X"
+  delivery_model: FILL_THIS
+  mechanism_or_onlyness: FILL_THIS
+  primary_cta: FILL_THIS
+  cta_destination: FILL_THIS   # URL, WhatsApp link, form, etc.
+  scarcity:
+    type: FILL_THIS      # real | artificial | none
+    details: FILL_THIS   # e.g., "50 vagas", "encerra dia X"
+
+# --- CHANNELS & ASSETS ---
+channels:
+  in_scope:
+    - FILL_THIS    # meta_ads | google_ads | tiktok_ads | email | whatsapp | organic | landing_page | webinar | vsl
+  asset_types:
+    - FILL_THIS    # ads | sales_page | email_sequence | vsl | headlines | whatsapp_messages
+  out_of_scope:
+    - FILL_THIS
+
+# --- MOOD & TONE ---
+# Inspired by TTCX v3.0 mood taxonomy
+mood:
+  primary: FILL_THIS     # urgent | inspirational | proof_heavy | provocative | educational | emotional
+  secondary: null
+  tone_notes: FILL_THIS  # Additional tone guidance specific to this campaign
+
+# --- PROOF & CREDIBILITY ---
+proof:
+  proof_sources:
+    - FILL_THIS    # paths to proof.yaml, testimonials.yaml
+  testimonial_sources:
+    - FILL_THIS
+  allowed_claims:
+    - FILL_THIS    # claims backed by proof files
+  restricted_claims:
+    - FILL_THIS    # claims that CANNOT be made (legal, unverified, etc.)
+  priority_testimonials:
+    - FILL_THIS    # specific testimonial IDs to feature (e.g., testimonial_fp_02)
+
+# --- CONSTRAINTS ---
+constraints:
+  brand_constraints:
+    - FILL_THIS    # auto-fill from brand.yaml forbidden_words
+  compliance_constraints:
+    - FILL_THIS
+  timeline_constraints:
+    - FILL_THIS
+  production_constraints:
+    - FILL_THIS
+  dos:
+    - FILL_THIS    # what MUST appear/be said
+  donts:
+    - FILL_THIS    # what MUST NOT appear/be said (beyond brand forbidden words)
+
+# --- REFERENCES ---
+references:
+  visual_references:
+    - FILL_THIS    # links to reference ads, pages, videos
+  copy_references:
+    - FILL_THIS    # links to reference copy, swipe files
+  previous_campaigns:
+    - FILL_THIS    # paths to prior campaign briefs if any
+
+# --- SOURCE OF TRUTH ---
+source_of_truth:
+  icp: FILL_THIS
+  brand: FILL_THIS
+  positioning: FILL_THIS
+  proof: FILL_THIS
+  offer: FILL_THIS
+  pricing: FILL_THIS
+
+# --- APPROVAL ---
+approval:
+  must_be_true:
+    - FILL_THIS
+  blockers:
+    - FILL_THIS

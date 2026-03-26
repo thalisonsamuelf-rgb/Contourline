@@ -1,0 +1,475 @@
+---
+# DIAGNOSIS.YAML - Eugene Schwartz Framework
+# THIS FILE GOES FIRST - Before filling anything else
+# Purpose: Diagnose market awareness level & sophistication stage
+# Guardian: Chief Strategist (CMO/Founder)
+# Timing: FILL THIS BEFORE icp.yaml, brand.yaml, offerbook.yaml
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  diagnosis_date: "FILL THIS"
+  diagnostician: "FILL THIS (who did this analysis?)"
+  framework: "Eugene Schwartz - 5 Levels of Awareness + 5 Stages of Sophistication"
+# ============================================================================
+# SECTION 1: MARKET AWARENESS LEVEL (CRITICAL)
+# ============================================================================
+# Eugene Schwartz's core insight: Copy must MATCH awareness level or fail
+# Every headline, every lead, every sentence changes based on this ONE decision
+market_awareness_level:
+  level_identified: "FILL THIS (choose 1-5 below, then explain why)"
+  # ========================================================================
+  # LEVEL 1: UNAWARE
+  # ========================================================================
+  level_1_unaware:
+    description: |
+      Prospects don't know they have the problem.
+      They live their life unaware of any gap.
+      Example: Someone unaware they need a "second brain" before IA made it obvious.
+    characteristics:
+      - "They don't search for solutions"
+      - "They don't read ads about this topic"
+      - "They don't know competitors exist"
+      - "They don't know your product exists"
+      - "They need EDUCATION about the problem first"
+    copy_implications:
+      headline_type: "Problem-establishment headline"
+      headline_length: "Long (50+ words, story-driven)"
+      lead_focus: "Prove the problem is REAL and URGENT"
+      body_focus: "Education (why this matters, consequences)"
+      cta_difficulty: "HARDEST - must overcome inertia + disbelief"
+      example_headline: |
+        "Why 87% of professionals earning 5-30k/month never escape
+        the content trap — and what the top 2% are doing instead
+        (that your competition hides)"
+      copy_length: "Very long (3,000-5,000+ words) — need education"
+    when_to_use_unaware: |
+      - Brand new problem category
+      - You invented the category
+      - Market hasn't discovered the pain yet
+      - Example: "Second brain with IA" when IA was new
+  level_1_if_this_is_you: "FILL THIS - Is this your market? Y/N - If yes, explain why"
+  # ========================================================================
+  # LEVEL 2: PROBLEM AWARE
+  # ========================================================================
+  level_2_problem_aware:
+    description: |
+      Prospects know they have the problem.
+      They search for solutions.
+      They read content about it.
+      But they don't yet know that YOUR TYPE of solution exists.
+    characteristics:
+      - "They feel the pain"
+      - "They search 'how to solve X'"
+      - "They read blogs, watch videos about the problem"
+      - "They don't know solutions exist yet (or think none work)"
+      - "They need SOLUTION TYPES explained"
+    copy_implications:
+      headline_type: "Solution-introduction headline"
+      headline_length: "Medium-long (30-50 words)"
+      lead_focus: "Validate the problem + introduce solution TYPE"
+      body_focus: "How solutions work, why they work, why others failed"
+      cta_difficulty: "Medium - they're ready to try something"
+      example_headline: |
+        "The System That Transforms Overwhelmed Digital Entrepreneurs
+        From 5-10 Projects to 1 Laser-Focused Offer
+        (Without Working Harder)"
+      copy_length: "Long (2,000-3,500 words) — need education on HOW"
+    when_to_use_problem_aware: |
+      - Market exists, problem is known
+      - People are searching for solutions
+      - But your specific approach is new/different
+      - Example: "Curso de emagrecimento" when people know they need to lose weight
+  level_2_if_this_is_you: "FILL THIS - Is this your market? Y/N - If yes, explain why"
+  # ========================================================================
+  # LEVEL 3: SOLUTION AWARE
+  # ========================================================================
+  level_3_solution_aware:
+    description: |
+      Prospects know the problem AND know solutions exist.
+      They may have tried some solutions.
+      They don't know YOUR solution or why it's different.
+      This is the MOST COMMON level for new products.
+    characteristics:
+      - "They know the problem exists"
+      - "They know solutions exist"
+      - "They may have tried 1-3 solutions already"
+      - "They don't know YOU yet"
+      - "They're comparing your solution to others"
+      - "They need DIFFERENTIATION (why yours is better/different)"
+    copy_implications:
+      headline_type: "Differentiation-focused headline"
+      headline_length: "Medium (25-40 words)"
+      lead_focus: "Problem validation + YOUR unique approach"
+      body_focus: "Why other solutions fail + your mechanism works"
+      cta_difficulty: "Low-Medium - they're actively looking"
+      example_headline: |
+        "The Only Emagrecimento System That Works
+        Because It Fixes the ROOT CAUSE (Not Just Symptoms)
+        — See Results in 30 Days or 100% Refund"
+      copy_length: "Medium (1,500-2,500 words) — focus on differentiation"
+    when_to_use_solution_aware: |
+      - Market is competitive/established
+      - People know solutions exist
+      - Your job is to prove you're DIFFERENT
+      - Example: FILL_THIS of digital products target this level
+      - IMPORTANT: If market is saturated here, you NEED a unique mechanism
+  level_3_if_this_is_you: "FILL THIS - Is this your market? Y/N - If yes, explain why"
+  # ========================================================================
+  # LEVEL 4: PRODUCT AWARE
+  # ========================================================================
+  level_4_product_aware:
+    description: |
+      Prospects know about YOUR product specifically.
+      They've heard of you, seen you, maybe looked at your page.
+      They're not sure if it's for them OR they have objections.
+      Your job is to overcome objections + confirm fit.
+    characteristics:
+      - "They know you exist"
+      - "They may have visited your page"
+      - "They have questions/objections"
+      - "They're comparing you to specific competitors"
+      - "They need OBJECTION HANDLING + social proof"
+    copy_implications:
+      headline_type: "Objection-crushing headline"
+      headline_length: "Short-Medium (15-30 words)"
+      lead_focus: "Address biggest objection immediately"
+      body_focus: "Social proof, case studies, FAQ, guarantees"
+      cta_difficulty: "Low - they're deciding between YOU and 1-2 others"
+      example_headline: |
+        "Still Worried This Won't Work for You?
+        Here's Why 847 Members in Your Exact Situation
+        Got Results (Even After Failing Everywhere Else)"
+      copy_length: "Short-Medium (800-1,500 words) — focus on proof + CTA"
+    when_to_use_product_aware: |
+      - You have traffic/audience already
+      - They've heard of you (ads, referral, blog)
+      - Conversion rate is your problem, not awareness
+      - You're selling to warm list/existing audience
+  level_4_if_this_is_you: "FILL THIS - Is this your market? Y/N - If yes, explain why"
+  # ========================================================================
+  # LEVEL 5: MOST AWARE
+  # ========================================================================
+  level_5_most_aware:
+    description: |
+      Prospects already want what you're selling.
+      They're decided. They just need a reason to act NOW.
+      Your job is NOT to convince — it's to FACILITATE + create urgency.
+    characteristics:
+      - "They know they need it"
+      - "They know you're the solution"
+      - "They're ready to buy"
+      - "They just need a push (urgency, scarcity, ease)"
+      - "Your job is to REMOVE friction, add urgency"
+    copy_implications:
+      headline_type: "Urgency/reason-to-act headline"
+      headline_length: "Very short (5-15 words)"
+      lead_focus: "Reason to act NOW (deadline, scarcity, bonus)"
+      body_focus: "What they get, quick FAQ, scarcity, CTA"
+      cta_difficulty: "EASIEST - just need to say yes"
+      example_headline: |
+        "Spots Close Friday. Last Chance to Lock In
+        Founding Price ($1,176/year - rises to $3,600 after)"
+      copy_length: "Short (300-800 words) — clear offer + CTA"
+    when_to_use_most_aware: |
+      - Selling to existing list/community
+      - They've already consumed your content
+      - Past customers (upsell/upgrade)
+      - Referral sales
+      - Your job is to remove friction
+  level_5_if_this_is_you: "FILL THIS - Is this your market? Y/N - If yes, explain why"
+  # FINAL DECISION
+  status: "INCOMPLETE"
+# ============================================================================
+# SECTION 2: MARKET SOPHISTICATION LEVEL (SECONDARY)
+# ============================================================================
+# Eugene Schwartz's second insight: As markets evolve, copy strategy must evolve
+# Early markets reward simple promises. Mature markets demand unique mechanisms
+market_sophistication_stage:
+  stage_identified: "FILL THIS (choose 1-5 below, then explain why)"
+  # ========================================================================
+  # STAGE 1: EARLY MARKET (NEW CATEGORY)
+  # ========================================================================
+  stage_1_early:
+    description: |
+      Market is brand new. No one talks about it.
+      First movers. Simple promises win.
+      Copy formula: "Here's what this does" (benefits suffice)
+    characteristics:
+      - "Promises are simple and work"
+      - "No competitive saturation"
+      - "People are hungry for solution"
+      - "Speed to market > perfection"
+      - "First-mover advantage huge"
+    copy_implications:
+      promise_type: "Simple benefits"
+      differentiation_needed: "No (you ARE the difference)"
+      mechanism_required: "No (benefits = enough)"
+      proof_required: "Minimal"
+      objections: "Few (novelty covers objections)"
+      example: |
+        "Chatbot that answers customer support in seconds
+        (Without hiring expensive staff)"
+        → Simple benefit works because category is new
+    when_stage_1: |
+      - You invented the category
+      - No competitors exist
+      - Market hasn't seen this before
+  stage_1_if_this_is_you: "FILL THIS - Is this your market? Y/N"
+  # ========================================================================
+  # STAGE 2: GROWTH MARKET (EARLY COMPETITORS)
+  # ========================================================================
+  stage_2_growth:
+    description: |
+      Market is growing. First competitors appear.
+      Simple promises still work, but need better positioning.
+      Copy formula: "Here's what this does + why ours is best"
+    characteristics:
+      - "Multiple solutions exist but differ significantly"
+      - "Market is expanding rapidly"
+      - "Benefits still matter more than mechanism"
+      - "Competition based on results/quality"
+    copy_implications:
+      promise_type: "Benefits + differentiation"
+      differentiation_needed: "Yes (results-based)"
+      mechanism_required: "Optional (good results = enough)"
+      proof_required: "Growing importance"
+      objections: "Growing (more choices = more doubt)"
+      example: |
+        "Chatbot that answers customer support in seconds
+        — with 94% accuracy (vs industry standard 67%)"
+        → Added differentiation through proof
+  stage_2_if_this_is_you: "FILL THIS - Is this your market? Y/N"
+  # ========================================================================
+  # STAGE 3: ESTABLISHED MARKET (COMMODITIZATION RISK)
+  # ========================================================================
+  stage_3_established:
+    description: |
+      Market is mature. Many competitors. Promises are saturated.
+      "Faster", "cheaper", "better" don't work anymore.
+      Copy formula: "Here's what this does + HOW it works + PROOF"
+    characteristics:
+      - "10+ competitors with similar promises"
+      - "All promise same basic result"
+      - "Promises are becoming commoditized"
+      - "Mechanism/approach starts mattering"
+      - "Price alone can't differentiate"
+    copy_implications:
+      promise_type: "Benefits + unique mechanism"
+      differentiation_needed: "CRITICAL (mechanism is differentiator)"
+      mechanism_required: "YES (how you do it is the difference)"
+      proof_required: "High (need case studies, not just claims)"
+      objections: "High (skepticism of claims)"
+      example: |
+        "Chatbot powered by [Proprietary Neural Network Architecture]
+        that understands context (not just keywords)
+        — 94% accuracy, 3x faster than competitors
+        — See live demo with your data"
+        → Added mechanism + proof = differentiation
+    action_if_stage_3: |
+      CRITICAL: If you're in Stage 3 market, you MUST develop a Unique Mechanism.
+      Without it, you're commodity. Without mechanism, copy can't save you.
+  stage_3_if_this_is_you: "FILL THIS - Is this your market? Y/N"
+  # ========================================================================
+  # STAGE 4: MATURE MARKET (MECHANISM-DEPENDENT)
+  # ========================================================================
+  stage_4_mature:
+    description: |
+      Market is very competitive. All basic benefits promised by everyone.
+      Only differentiation is UNIQUE MECHANISM or unique application.
+      Copy formula: "Here's why other solutions fail + our mechanism + PROOF"
+    characteristics:
+      - "50+ competitors, mostly the same"
+      - "All promise same benefits"
+      - "Market share warfare"
+      - "Mechanism/innovation = only differentiator"
+      - "Copy is about explaining why others fail"
+    copy_implications:
+      promise_type: "Results + unique mechanism required"
+      differentiation_needed: "ABSOLUTE REQUIREMENT"
+      mechanism_required: "MUST HAVE (non-negotiable)"
+      proof_required: "Extensive (case studies, data, testimonials)"
+      objections: "Very high (cynical market)"
+      example: |
+        "Why traditional chatbots fail at context
+        — and our [Mechanism Name] solves it
+        → 94% accuracy vs 67% industry average
+        → Trusted by [100+ enterprises]
+        → Live demo with your actual data"
+        → Added: problem with competitors, mechanism, extensive proof
+    action_if_stage_4: |
+      CRITICAL: Without unique mechanism, don't compete here.
+      You'll lose. Mechanism is non-negotiable in Stage 4.
+  stage_4_if_this_is_you: "FILL THIS - Is this your market? Y/N"
+  # ========================================================================
+  # STAGE 5: ULTRA-SOPHISTICATED (INNOVATION-DEPENDENT)
+  # ========================================================================
+  stage_5_ultra:
+    description: |
+      Market has seen everything. All mechanisms copied.
+      Only radical innovation wins.
+      Copy formula: "New paradigm that changes everything + proof + invitation to future"
+    characteristics:
+      - "100+ competitors, mechanisms copied"
+      - "Only radical innovation wins"
+      - "Market is cynical, jaded"
+      - "Needs new framework/paradigm shift"
+      - "Authority and tribe matter more than copy"
+    copy_implications:
+      promise_type: "Paradigm shift + proof + tribe"
+      differentiation_needed: "MUST BE RADICAL"
+      mechanism_required: "Must be proprietary innovation"
+      proof_required: "Scientific/documented"
+      objections: "Extreme (they've tried everything)"
+      example: |
+        "Everything you know about customer support is wrong.
+
+        The reason every chatbot fails: They're built on conversation model.
+        Real support needs [New Framework].
+
+        [Explain new framework with data]
+
+        [Show proof from enterprises using it]
+
+        [Invitation to paradigm shift]"
+        → Completely new framework, not incremental improvement
+    action_if_stage_5: |
+      CRITICAL: If you're in Stage 5, copy alone WON'T win.
+      You need: radical innovation + tribe + authority + proof.
+      Mechanism is table stakes (already copied by others).
+      Innovation is your only weapon.
+  stage_5_if_this_is_you: "FILL THIS - Is this your market? Y/N"
+  # FINAL DECISION
+  status: "INCOMPLETE"
+# ============================================================================
+# SECTION 3: COMBINED DIAGNOSIS (AWARENESS + SOPHISTICATION)
+# ============================================================================
+# The magic: Understanding BOTH dimensions together
+combined_diagnosis:
+  awareness_level: "FILL THIS (level 1-5)"
+  sophistication_stage: "FILL THIS (stage 1-5)"
+  # This combination determines EVERYTHING about copy strategy
+  diagnosis_result: |
+    FILL THIS - What does this combination mean?
+
+    Example combinations:
+
+    Level 1 + Stage 1: Unaware market, brand new category
+    → Long, educational, big picture, build credibility
+    → Examples: "What is IA?", "Why second brain matters"
+
+    Level 3 + Stage 4: Solution-aware market, very competitive
+    → Medium copy, lead with mechanism/differentiation
+    → Examples: Most modern products (coaching, courses, SaaS)
+
+    Level 5 + Stage 5: Most aware, ultra-competitive
+    → Short copy, assume they know everything
+    → Job = remove friction, add urgency, facilitate decision
+    → Examples: Limited-time offers, upsells, cart-close campaigns
+  status: "INCOMPLETE"
+# ============================================================================
+# SECTION 4: STRATEGIC IMPLICATIONS
+# ============================================================================
+strategic_implications:
+  headline_approach: |
+    FILL THIS - Based on diagnosis, what's your headline approach?
+    (Will be copied into offerbook.yaml)
+  copy_length: |
+    FILL THIS - How long should copy be?
+    Reference: Unaware=3-5k words, Most Aware=300-800 words
+  lead_type: |
+    FILL THIS - What type of lead to use?
+    Reference: Unaware=big picture, Most Aware=urgency/scarcity
+  proof_required: |
+    FILL THIS - What type/amount of proof needed?
+    Reference: Unaware=minimal, Stage 5=scientific + social proof
+  mechanism_critical: |
+    FILL THIS - Is unique mechanism critical?
+    (Yes if Stage 3+, No if Stage 1-2)
+  objection_handling_required: |
+    FILL THIS - How much objection handling needed?
+    Reference: Unaware=none, Most Aware=extensive FAQ + guarantee
+  key_copy_focus: |
+    FILL THIS - What's the single most important copy element?
+    Examples:
+    - Unaware: Problem establishment
+    - Problem aware: Solution type
+    - Solution aware: Why yours is different (mechanism)
+    - Product aware: Objection crushing + proof
+    - Most aware: Urgency/reason to act
+  status: "INCOMPLETE"
+# ============================================================================
+# SECTION 5: NEXT STEPS
+# ============================================================================
+next_steps:
+  after_diagnosis_complete:
+    step_1: "Review diagnosis above — Is it accurate? (Ask founder/CMO)"
+    step_2: "Handoff to Todd Brown IF mechanism needs developing (Stage 3+)"
+    step_3: "Fill offerbook.yaml using diagnosis results"
+    step_4: "Fill icp.yaml with awareness level of YOUR ICP"
+    step_5: "Fill brand.yaml with positioning for this awareness level"
+    step_6: "Fill analytics.yaml with market data"
+    step_7: "Final review: Does everything align with diagnosis?"
+  validation_checklist:
+    - "[ ] Awareness level identified (1-5)"
+    - "[ ] Sophistication stage identified (1-5)"
+    - "[ ] Strategic implications written"
+    - "[ ] Headline approach clear"
+    - "[ ] Copy length decided"
+    - "[ ] Next owner identified (Todd Brown? Stefan Georgi?)"
+  status: "INCOMPLETE"
+# ============================================================================
+# VALIDATION
+# ============================================================================
+validation:
+  status: "COMPLETE THIS FIRST before filling other YAML files"
+  why_first: |
+    Every field in icp.yaml, brand.yaml, offerbook.yaml, analytics.yaml
+    changes based on awareness level + sophistication stage.
+
+    Getting this wrong = wasting 50+ hours on wrong strategy.
+    Getting this right = crystal-clear direction for copywriter.
+  quality_check: |
+    - Is diagnosis based on MARKET RESEARCH or just guessing?
+    - Can you defend each decision with data?
+    - Have you talked to actual customers?
+    - Does diagnosis match product reality?
+---
+# INSTRUCTIONS FOR FILLING
+instructions: |
+  1. READ this entire file first (15 min)
+  2. ANSWER: Which awareness level is YOUR market? (1-5)
+  3. ANSWER: Which sophistication stage is YOUR market? (1-5)
+  4. FILL Section 3 (combined diagnosis)
+  5. FILL Section 4 (strategic implications)
+  6. VALIDATE with founder/CMO
+  7. ONLY THEN fill other YAML files (they all reference diagnosis)
+
+  KEY INSIGHT FROM EUGENE SCHWARTZ:
+  "If you don't know your market's awareness level,
+  you're shooting in the dark. Copy is 80% diagnosis,
+  20% writing. Get diagnosis right, writing is easy."
+reference_example: |
+  See: workspace/businesses/{business_slug}/products/{product_slug}/
+
+  Awareness Level: Level 3 (Solution Aware)
+  - Professionals know they need IA + know courses exist
+  - Don't know about YOUR_PRODUCT specifically
+
+  Sophistication Stage: Stage 4 (Mature)
+  - IA courses are competitive, saturated
+  - UNIQUE MECHANISM (Segundo Cérebro + Community) is differentiator
+
+  Result: Medium-long copy, lead with mechanism + proof,
+  focus on "why other courses fail" before offering solution
+template_footer:
+  version: "1.0"
+  framework: "Eugene Schwartz - 5 Levels + 5 Stages"
+  created: "2026-02-14"
+  usage: "ALWAYS fill this FIRST, before any other YAML"
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS

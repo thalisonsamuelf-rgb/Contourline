@@ -1,0 +1,4011 @@
+{
+  "total_contacts": 10000,
+  "dup_emails": {
+    "bruhdias09@gmail.com": [
+      {
+        "id": "68db179791697c00141b1084",
+        "name": "Bruno",
+        "created_at": "2025-09-29T20:34:47.570-03:00"
+      },
+      {
+        "id": "68dbdbc45a2757001e5b1fe2",
+        "name": "Bruno",
+        "created_at": "2025-09-30T10:31:48.832-03:00"
+      },
+      {
+        "id": "6901625d887e3100136d8d81",
+        "name": "Bruno",
+        "created_at": "2025-10-28T21:39:57.827-03:00"
+      },
+      {
+        "id": "690162284ce885001da4c8f1",
+        "name": "Bruno",
+        "created_at": "2025-10-28T21:39:05.050-03:00"
+      },
+      {
+        "id": "68f783c087f2700014d1d175",
+        "name": "Bruno",
+        "created_at": "2025-10-21T09:59:44.807-03:00"
+      },
+      {
+        "id": "68f784044ab42000188c8773",
+        "name": "Bruno",
+        "created_at": "2025-10-21T10:00:52.473-03:00"
+      },
+      {
+        "id": "68f784dd6bcb8f00164faea6",
+        "name": "Bruno",
+        "created_at": "2025-10-21T10:04:30.032-03:00"
+      },
+      {
+        "id": "68f784f623047a00251d9640",
+        "name": "Bruno",
+        "created_at": "2025-10-21T10:04:54.841-03:00"
+      },
+      {
+        "id": "68f7850fe51a1900145a7ac7",
+        "name": "Bruno",
+        "created_at": "2025-10-21T10:05:20.221-03:00"
+      },
+      {
+        "id": "68d1d80abbc85e0019cf5bca",
+        "name": "Bruno",
+        "created_at": "2025-09-22T20:13:14.541-03:00"
+      },
+      {
+        "id": "68ee91bae0e04a0019fc9a5d",
+        "name": "Bruno",
+        "created_at": "2025-10-14T15:08:58.867-03:00"
+      },
+      {
+        "id": "68ee964128ad69001b2590de",
+        "name": "Bruno",
+        "created_at": "2025-10-14T15:28:18.285-03:00"
+      },
+      {
+        "id": "68ee964271a4e40019052a90",
+        "name": "Bruno",
+        "created_at": "2025-10-14T15:28:18.760-03:00"
+      },
+      {
+        "id": "68ee9690175dde0014286393",
+        "name": "Bruno",
+        "created_at": "2025-10-14T15:29:36.291-03:00"
+      },
+      {
+        "id": "692dac391985d6001a9946dc",
+        "name": "Bruno",
+        "created_at": "2025-12-01T11:54:50.006-03:00"
+      }
+    ],
+    "dracristianedemetrio@gmail.com": [
+      {
+        "id": "68ce8b67a7ad270022bef3b0",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:09:28.029-03:00"
+      },
+      {
+        "id": "68ce8b9b621277001a4a1515",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:10:19.778-03:00"
+      },
+      {
+        "id": "68ce8ba84e4532001f1f8302",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:10:32.483-03:00"
+      },
+      {
+        "id": "68ce8bd05055090016524b07",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:11:12.934-03:00"
+      },
+      {
+        "id": "68ce8be6d3594a001c97313c",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:11:34.701-03:00"
+      },
+      {
+        "id": "68ce8bfb5385aa0020751f03",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:11:55.395-03:00"
+      },
+      {
+        "id": "68ce8c0a4a4942001941f7fa",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:12:10.727-03:00"
+      },
+      {
+        "id": "68ce8c2b249724001f6315a0",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T08:12:43.318-03:00"
+      },
+      {
+        "id": "68ceda7c2497240014056955",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T13:46:52.156-03:00"
+      },
+      {
+        "id": "68ceda9e87a7080017fca108",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T13:47:27.496-03:00"
+      },
+      {
+        "id": "68cedaa4f4863900144677f6",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-20T13:47:32.859-03:00"
+      },
+      {
+        "id": "68d2eaeba5ac12001976b461",
+        "name": "Cristiane Demetrio",
+        "created_at": "2025-09-23T15:46:03.698-03:00"
+      }
+    ],
+    "admcamilapetrillidermato@gmail.com": [
+      {
+        "id": "68cd92a601182800144ce61e",
+        "name": "Amanda",
+        "created_at": "2025-09-19T14:28:06.451-03:00"
+      },
+      {
+        "id": "68cd92b7cd30b2001f2c5893",
+        "name": "Amanda",
+        "created_at": "2025-09-19T14:28:24.410-03:00"
+      },
+      {
+        "id": "68cd92cc249724001b319d36",
+        "name": "Amanda",
+        "created_at": "2025-09-19T14:28:44.814-03:00"
+      },
+      {
+        "id": "68cd932597009b0021cc9fee",
+        "name": "Amanda",
+        "created_at": "2025-09-19T14:30:13.774-03:00"
+      },
+      {
+        "id": "68cd936db4b47600140cca1f",
+        "name": "Amanda",
+        "created_at": "2025-09-19T14:31:26.043-03:00"
+      },
+      {
+        "id": "68cd979106dfba00141baab9",
+        "name": "Amanda",
+        "created_at": "2025-09-19T14:49:05.512-03:00"
+      },
+      {
+        "id": "68d195924c451a0021b337f9",
+        "name": "Amanda",
+        "created_at": "2025-09-22T15:29:38.767-03:00"
+      },
+      {
+        "id": "68d19592e960c40016522c52",
+        "name": "Amanda",
+        "created_at": "2025-09-22T15:29:38.508-03:00"
+      },
+      {
+        "id": "68d1961d51459b00185701c2",
+        "name": "Amanda",
+        "created_at": "2025-09-22T15:31:57.297-03:00"
+      },
+      {
+        "id": "68d1967151459b002156fe22",
+        "name": "Amanda",
+        "created_at": "2025-09-22T15:33:22.177-03:00"
+      }
+    ],
+    "suicideshake@gmail.com": [
+      {
+        "id": "6900076f8d4f5200131bbe07",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T20:59:43.874-03:00"
+      },
+      {
+        "id": "690007ad5fa3860013cbd7c3",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T21:00:45.684-03:00"
+      },
+      {
+        "id": "690007ccf233410013855ba4",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T21:01:16.420-03:00"
+      },
+      {
+        "id": "690007cfc6401a001d8f85f5",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T21:01:19.361-03:00"
+      },
+      {
+        "id": "690007d28cc4f7001371ef11",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T21:01:22.571-03:00"
+      },
+      {
+        "id": "690007daf4a3b800131bc040",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T21:01:30.956-03:00"
+      },
+      {
+        "id": "690006ad238f3d00133a4e96",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T20:56:29.547-03:00"
+      },
+      {
+        "id": "6900061e238f3d00163a4e5c",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-27T20:54:06.706-03:00"
+      },
+      {
+        "id": "690146e8df700a001491f469",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-28T19:42:48.787-03:00"
+      },
+      {
+        "id": "69014725771d6f001c9dfe56",
+        "name": "Bruno de OIiveira",
+        "created_at": "2025-10-28T19:43:49.753-03:00"
+      }
+    ],
+    "paulaggcamara@gmail.com": [
+      {
+        "id": "68d1a7b62e11500018cee7f7",
+        "name": "Paula gouveia gomes camara",
+        "created_at": "2025-09-22T16:47:02.779-03:00"
+      },
+      {
+        "id": "68d16615f07c070020342558",
+        "name": "Paula gouveia gomes camara",
+        "created_at": "2025-09-22T12:07:02.010-03:00"
+      },
+      {
+        "id": "68d1664db0666a001d40ad96",
+        "name": "Paula Gouveia Gomes Camara",
+        "created_at": "2025-09-22T12:07:57.514-03:00"
+      },
+      {
+        "id": "68d16664dfb41b001eea73cb",
+        "name": "Paula Gouveia Gomes Camara",
+        "created_at": "2025-09-22T12:08:20.842-03:00"
+      },
+      {
+        "id": "68d166ab12b95b0017af40b9",
+        "name": "Paula Gouveia Gomes Camara",
+        "created_at": "2025-09-22T12:09:31.692-03:00"
+      },
+      {
+        "id": "68d165b8ec8c660017d438a0",
+        "name": "Paula gouveia gomes camara",
+        "created_at": "2025-09-22T12:05:28.136-03:00"
+      },
+      {
+        "id": "68d165ecb49b0a001fd368c1",
+        "name": "Paula gouveia gomes camara",
+        "created_at": "2025-09-22T12:06:20.645-03:00"
+      }
+    ],
+    "dr.maldonado.cirurgiao@gmail.com": [
+      {
+        "id": "68cefdb54a4942001cf546b6",
+        "name": "César Manuel Maldonado Benitez",
+        "created_at": "2025-09-20T16:17:10.017-03:00"
+      },
+      {
+        "id": "68cefd8f3f6644001dff9df5",
+        "name": "César Manuel Maldonado Benitez",
+        "created_at": "2025-09-20T16:16:31.397-03:00"
+      },
+      {
+        "id": "68cefda70f137e00170ebffb",
+        "name": "César Manuel Maldonado Benitez",
+        "created_at": "2025-09-20T16:16:55.885-03:00"
+      },
+      {
+        "id": "68cefdbeb4b4760014b76923",
+        "name": "César Manuel Maldonado Benitez",
+        "created_at": "2025-09-20T16:17:18.658-03:00"
+      },
+      {
+        "id": "68cefddd76179e00146e52e5",
+        "name": "César Manuel Maldonado Benitez",
+        "created_at": "2025-09-20T16:17:49.205-03:00"
+      },
+      {
+        "id": "68cefde88c7a9d001df2f8e7",
+        "name": "César Manuel Maldonado Benitez",
+        "created_at": "2025-09-20T16:18:00.331-03:00"
+      }
+    ],
+    "isabellabarros@odaralifestyle.com": [
+      {
+        "id": "68cd4c97c5d903001f1bdd73",
+        "name": "Isabella",
+        "created_at": "2025-09-19T09:29:11.819-03:00"
+      },
+      {
+        "id": "68cd4cefdd563f00210e9f38",
+        "name": "Isabella",
+        "created_at": "2025-09-19T09:30:40.094-03:00"
+      },
+      {
+        "id": "68cd4d9a6617820019e87552",
+        "name": "Isabella",
+        "created_at": "2025-09-19T09:33:30.866-03:00"
+      },
+      {
+        "id": "68cd4d9fd6f44800172cb771",
+        "name": "Isabella",
+        "created_at": "2025-09-19T09:33:35.436-03:00"
+      },
+      {
+        "id": "68cd50ab5659900019a53e6f",
+        "name": "Isabella",
+        "created_at": "2025-09-19T09:46:35.413-03:00"
+      },
+      {
+        "id": "68da9fa5d2a8e40025e6e1f1",
+        "name": "Isabella",
+        "created_at": "2025-09-29T12:03:01.424-03:00"
+      }
+    ],
+    "marciasilvaduarte@hotmail.com": [
+      {
+        "id": "68d022deb4b4760017c41ec7",
+        "name": "Marcia",
+        "created_at": "2025-09-21T13:07:58.479-03:00"
+      },
+      {
+        "id": "68d0243987a7080017805841",
+        "name": "Marcia",
+        "created_at": "2025-09-21T13:13:45.325-03:00"
+      },
+      {
+        "id": "68d0243eed6b17001e43b56d",
+        "name": "Marcia",
+        "created_at": "2025-09-21T13:13:50.611-03:00"
+      },
+      {
+        "id": "68d19624fa526a0018328767",
+        "name": "Marcia",
+        "created_at": "2025-09-22T15:32:04.663-03:00"
+      },
+      {
+        "id": "68d1978576fe080023e9b41d",
+        "name": "Marcia",
+        "created_at": "2025-09-22T15:37:57.713-03:00"
+      },
+      {
+        "id": "68d19780446fac001c4f69e6",
+        "name": "Marcia",
+        "created_at": "2025-09-22T15:37:52.551-03:00"
+      }
+    ],
+    "ericafabiulacanutto@gmail.com": [
+      {
+        "id": "69089076b256af0013ea7d17",
+        "name": "Erica",
+        "created_at": "2025-11-03T08:22:30.433-03:00"
+      },
+      {
+        "id": "689dff49ce53e40001821e5c",
+        "name": "Erica Canutto",
+        "created_at": "2025-08-14T12:22:49.975-03:00"
+      },
+      {
+        "id": "689a8b5a4ef17f0001dfc84b",
+        "name": "Erica Canutto",
+        "created_at": "2025-08-11T21:31:22.314-03:00"
+      },
+      {
+        "id": "68a31d25bb1d130020e5e46a",
+        "name": "Erica Fabiula Canutto Teixeira",
+        "created_at": "2025-08-18T09:31:34.269-03:00"
+      },
+      {
+        "id": "68a31c415c1dc7001d4d70bc",
+        "name": "Erica Fabiula Canutto Teixeira",
+        "created_at": "2025-08-18T09:27:45.549-03:00"
+      }
+    ],
+    "machado.fernanda2012@gmail.com": [
+      {
+        "id": "68d142a89d6a260014e4fd09",
+        "name": "Fernanda",
+        "created_at": "2025-09-22T09:35:53.414-03:00"
+      },
+      {
+        "id": "68d143a660a9930017b2f739",
+        "name": "Fernanda",
+        "created_at": "2025-09-22T09:40:06.789-03:00"
+      },
+      {
+        "id": "68d143b1ea95050014132434",
+        "name": "Fernanda",
+        "created_at": "2025-09-22T09:40:17.720-03:00"
+      },
+      {
+        "id": "68d1440dd3f1f2001d899140",
+        "name": "Fernanda",
+        "created_at": "2025-09-22T09:41:49.237-03:00"
+      },
+      {
+        "id": "68d14431b4a8e6001a635872",
+        "name": "Fernanda",
+        "created_at": "2025-09-22T09:42:25.805-03:00"
+      }
+    ],
+    "daniela.costa@gmail.com": [
+      {
+        "id": "6865b417736cdb001ffd7014",
+        "name": "Daniela Aidar",
+        "created_at": "2025-07-02T19:35:03.063-03:00"
+      },
+      {
+        "id": "689dffdfce53e40001824f4a",
+        "name": "Daniela Aidar Costa Dias",
+        "created_at": "2025-08-14T12:25:19.106-03:00"
+      },
+      {
+        "id": "68a310526b36b80001e88ac6",
+        "name": "Daniela Aidar Costa Dias",
+        "created_at": "2025-08-18T08:36:50.579-03:00"
+      },
+      {
+        "id": "689a91297d16460001e378a7",
+        "name": "Daniela Aidar Costa Dias",
+        "created_at": "2025-08-11T21:56:09.360-03:00"
+      }
+    ],
+    "inandiara@hotmail.com": [
+      {
+        "id": "68a488d9f636dd000175e62a",
+        "name": "FRANCISLAINE (INANDIARA RAFAELA)",
+        "created_at": "2025-08-19T11:23:21.698-03:00"
+      },
+      {
+        "id": "689a94f5c104660001a59b92",
+        "name": "Inandiara Granado",
+        "created_at": "2025-08-11T22:12:21.263-03:00"
+      },
+      {
+        "id": "68c0407b99fe75001d2963cd",
+        "name": "Inandiara Oliveira Granado",
+        "created_at": "2025-09-09T11:58:04.096-03:00"
+      },
+      {
+        "id": "689a954bc104660001a5b61e",
+        "name": "INANDIARA RAFAELA MARCO DE OLIVEIRA GRANADO",
+        "created_at": "2025-08-11T22:13:47.518-03:00"
+      }
+    ],
+    "isabellewu97@gmail.com": [
+      {
+        "id": "689a8b384ef17f0001dfb73b",
+        "name": "Isabelle I Hue Wu",
+        "created_at": "2025-08-11T21:30:48.036-03:00"
+      },
+      {
+        "id": "689a8fe77d16460001e2f26b",
+        "name": "Isabelle I Hue Wu",
+        "created_at": "2025-08-11T21:50:47.836-03:00"
+      },
+      {
+        "id": "686d74fafeb489001484c91f",
+        "name": "Isabelle I Hue Wu",
+        "created_at": "2025-07-08T16:43:54.648-03:00"
+      },
+      {
+        "id": "68b9d307bcf79e00211231cd",
+        "name": "Isabelle Wu",
+        "created_at": "2025-09-04T14:57:27.400-03:00"
+      }
+    ],
+    "livinhaninno@gmail.com": [
+      {
+        "id": "689a9654c104660001a603bd",
+        "name": "Lívia Cristina Cardoso Ninno Andraus",
+        "created_at": "2025-08-11T22:18:12.982-03:00"
+      },
+      {
+        "id": "6997753379336900138d3cec",
+        "name": "Lívia Cristina Cardoso Ninno Andraus",
+        "created_at": "2026-02-19T17:40:19.707-03:00"
+      },
+      {
+        "id": "68bf3db00890e5001aeff807",
+        "name": "LNAMED SERVICOS MEDICOS LTDA",
+        "created_at": "2025-09-08T17:33:52.821-03:00"
+      },
+      {
+        "id": "68682347d56a350001fb601d",
+        "name": "LNAMED SERVICOS MEDICOS LTDA",
+        "created_at": "2025-07-04T15:53:59.663-03:00"
+      }
+    ],
+    "manoelaso@yahoo.com": [
+      {
+        "id": "689a8b574ef17f0001dfc70a",
+        "name": "MANOELA OLIVEIRA DE SOUZA",
+        "created_at": "2025-08-11T21:31:19.824-03:00"
+      },
+      {
+        "id": "689a91237d16460001e37612",
+        "name": "MANOELA OLIVEIRA DE SOUZA",
+        "created_at": "2025-08-11T21:56:03.217-03:00"
+      },
+      {
+        "id": "689a8b574ef17f0001dfc721",
+        "name": "MANOELA OLIVEIRA DE SOUZA",
+        "created_at": "2025-08-11T21:31:20.007-03:00"
+      },
+      {
+        "id": "689a91237d16460001e37632",
+        "name": "MANOELA OLIVEIRA DE SOUZA",
+        "created_at": "2025-08-11T21:56:03.511-03:00"
+      }
+    ],
+    "dra.patriciazanella@icloud.com": [
+      {
+        "id": "689a9669c104660001a609f3",
+        "name": "PATRICIA SILVIA MOUTINHO ZANELLA",
+        "created_at": "2025-08-11T22:18:33.810-03:00"
+      },
+      {
+        "id": "689a9675c104660001a60dc3",
+        "name": "Patricia Silvia Moutinho Zanella",
+        "created_at": "2025-08-11T22:18:45.636-03:00"
+      },
+      {
+        "id": "689a9532c104660001a5ae07",
+        "name": "Patricia Silvia Moutinho Zanella",
+        "created_at": "2025-08-11T22:13:22.432-03:00"
+      },
+      {
+        "id": "68659264eded37001eeb8e13",
+        "name": "PZ CLINICA E ESTETICA LTDA",
+        "created_at": "2025-07-02T17:11:16.120-03:00"
+      }
+    ],
+    "guscuryterapeuta@gmail.com": [
+      {
+        "id": "697a6e9a182d83001550c0b0",
+        "name": "GUSTAVO CURY",
+        "created_at": "2026-01-28T17:16:26.598-03:00"
+      },
+      {
+        "id": "6868233fd56a350001fb5be9",
+        "name": "LARISSA ( GUSTAVO CURY)",
+        "created_at": "2025-07-04T15:53:51.232-03:00"
+      },
+      {
+        "id": "68f77ec8a73893001ff5736c",
+        "name": "LARISSA MENDES DA CRUZ",
+        "created_at": "2025-10-21T09:38:32.726-03:00"
+      }
+    ],
+    "centromedicocomedic@gmail.com": [
+      {
+        "id": "68d047c64e45320018cdddf8",
+        "name": "Alanna Carvalho",
+        "created_at": "2025-09-21T15:45:26.633-03:00"
+      },
+      {
+        "id": "68d047db5055090016075d43",
+        "name": "Alanna Carvalho",
+        "created_at": "2025-09-21T15:45:47.815-03:00"
+      },
+      {
+        "id": "68d0480006dfba001466d1e7",
+        "name": "Alanna Carvalho",
+        "created_at": "2025-09-21T15:46:24.398-03:00"
+      }
+    ],
+    "draulofernandes@gmail.com": [
+      {
+        "id": "689dfea2ce53e4000181e3c4",
+        "name": "ANDRE ACIÓLI FERNANDES JUNIOR",
+        "created_at": "2025-08-14T12:20:02.783-03:00"
+      },
+      {
+        "id": "68a488d2f636dd000175e2d0",
+        "name": "AULO ANDRE ACIOLI FERNANDES JUNIOR",
+        "created_at": "2025-08-19T11:23:14.804-03:00"
+      },
+      {
+        "id": "692ed872d4330d0013e29ab8",
+        "name": "Michele Aparecida",
+        "created_at": "2025-12-02T09:15:46.792-03:00"
+      }
+    ],
+    "andreyanovazzi@hotmail.com": [
+      {
+        "id": "68fa1d7a8744830019e6830a",
+        "name": "Andreya",
+        "created_at": "2025-10-23T09:20:10.842-03:00"
+      },
+      {
+        "id": "689a9553c104660001a5b8c5",
+        "name": "Andreya da Cruz Novazzi",
+        "created_at": "2025-08-11T22:13:55.065-03:00"
+      },
+      {
+        "id": "68bad490631a34001474992e",
+        "name": "ANDREYA NOVAZZI",
+        "created_at": "2025-09-05T09:16:16.604-03:00"
+      }
+    ],
+    "barbarafcs@gmail.com": [
+      {
+        "id": "68c096f00e9e2200242c8c99",
+        "name": "BÁRBARA FERNANDES CAMPOS",
+        "created_at": "2025-09-09T18:06:56.556-03:00"
+      },
+      {
+        "id": "68b99aaf0e5fd100188a7c9a",
+        "name": "BARBARA FERNANDES CARRASCO DA SILVA",
+        "created_at": "2025-09-04T10:57:03.405-03:00"
+      },
+      {
+        "id": "68b99b1040b0ad001a0f5d51",
+        "name": "BARBARA FERNANDES CARRASCO DA SILVA",
+        "created_at": "2025-09-04T10:58:40.895-03:00"
+      }
+    ],
+    "barbara.kelly@contourline.com.br": [
+      {
+        "id": "689f52c63c084e00142589fe",
+        "name": "BARBARA KELLY CUNHA E SILVA",
+        "created_at": "2025-08-15T12:31:19.458-03:00"
+      },
+      {
+        "id": "689f52c63c084e00142589fe",
+        "name": "BARBARA KELLY CUNHA E SILVA",
+        "created_at": "2025-08-15T12:31:19.458-03:00"
+      },
+      {
+        "id": "68811c06190f95001ee8efc4",
+        "name": "LORENA",
+        "created_at": "2025-07-23T14:29:42.948-03:00"
+      }
+    ],
+    "cadastrobrunomagalhaes@gmail.com": [
+      {
+        "id": "68cd6a513f66440014c42c44",
+        "name": "Bruno",
+        "created_at": "2025-09-19T11:36:01.637-03:00"
+      },
+      {
+        "id": "68cd6b063f6644001ec43014",
+        "name": "Bruno",
+        "created_at": "2025-09-19T11:39:02.201-03:00"
+      },
+      {
+        "id": "68cd6e05b4b4760014025ce8",
+        "name": "Bruno",
+        "created_at": "2025-09-19T11:51:49.160-03:00"
+      }
+    ],
+    "brunomagalhaesp.adv@gmail.com": [
+      {
+        "id": "68cd6e75c8846900234407da",
+        "name": "Bruno",
+        "created_at": "2025-09-19T11:53:41.200-03:00"
+      },
+      {
+        "id": "68cd6e4a803ca600179c98fe",
+        "name": "Bruno",
+        "created_at": "2025-09-19T11:52:58.643-03:00"
+      },
+      {
+        "id": "68cd77c03f129500145605b9",
+        "name": "Bruno",
+        "created_at": "2025-09-19T12:33:20.371-03:00"
+      }
+    ],
+    "brunobastosorofacial@gmail.com": [
+      {
+        "id": "689b316c120ec10001dcb488",
+        "name": "Bruno Bastos Faria",
+        "created_at": "2025-08-12T09:19:56.145-03:00"
+      },
+      {
+        "id": "68682346d56a350001fb5f8e",
+        "name": "DÉBORA (BRUNO BASTOS FARIA)",
+        "created_at": "2025-07-04T15:53:58.446-03:00"
+      },
+      {
+        "id": "68f7837298ccbd0026320c80",
+        "name": "DÉBORA (BRUNO BASTOS FARIA)",
+        "created_at": "2025-10-21T09:58:26.682-03:00"
+      }
+    ],
+    "carlalfpisani@gmail.com": [
+      {
+        "id": "68a310516b36b80001e88a90",
+        "name": "Carla De Fracari Pisani",
+        "created_at": "2025-08-18T08:36:49.975-03:00"
+      },
+      {
+        "id": "6866664cb648aa0014bda781",
+        "name": "CARLA DE LOUREIRO FRACARI PISANI LTDA",
+        "created_at": "2025-07-03T08:15:24.153-03:00"
+      },
+      {
+        "id": "68c03cf0b0f2fa001bf784c8",
+        "name": "Carla L Filacari Pisani",
+        "created_at": "2025-09-09T11:42:56.591-03:00"
+      }
+    ],
+    "sallescarlos@hotmail.com": [
+      {
+        "id": "689dffc4ce53e400018244f8",
+        "name": "Carlos Henrique",
+        "created_at": "2025-08-14T12:24:52.888-03:00"
+      },
+      {
+        "id": "689dffc4ce53e400018244f8",
+        "name": "Carlos Henrique",
+        "created_at": "2025-08-14T12:24:52.888-03:00"
+      },
+      {
+        "id": "689dffc4ce53e400018244f8",
+        "name": "Carlos Henrique",
+        "created_at": "2025-08-14T12:24:52.888-03:00"
+      }
+    ],
+    "karolinagp@gmail.com": [
+      {
+        "id": "695fc44781fbbb001dda551a",
+        "name": "CAROLINA GONÇALVES PEREIRA",
+        "created_at": "2026-01-08T11:50:47.350-03:00"
+      },
+      {
+        "id": "68682347d56a350001fb603e",
+        "name": "CAROLINA GONÇALVES PEREIRA",
+        "created_at": "2025-07-04T15:53:59.847-03:00"
+      },
+      {
+        "id": "68f784880c11700019c45dbd",
+        "name": "CAROLINA GONÇALVES PEREIRA",
+        "created_at": "2025-10-21T10:03:04.923-03:00"
+      }
+    ],
+    "laruete@gmail.com": [
+      {
+        "id": "68a310dc6b36b80001e8b47d",
+        "name": "CLINICA MEDICA RUETE E NOBRE SOCIEDADE S",
+        "created_at": "2025-08-18T08:39:08.960-03:00"
+      },
+      {
+        "id": "68b9e73ac2b5560022ac0eee",
+        "name": "LARA CASSEB RUETE",
+        "created_at": "2025-09-04T16:23:38.670-03:00"
+      },
+      {
+        "id": "68b9f9c5c9484f0014e835f2",
+        "name": "LARA RUETE",
+        "created_at": "2025-09-04T17:42:45.070-03:00"
+      }
+    ],
+    "cris.pavanivb@hotmail.com": [
+      {
+        "id": "68aca96d7f2fbf0019c1916c",
+        "name": "Cristiane Pavani",
+        "created_at": "2025-08-25T15:20:29.379-03:00"
+      },
+      {
+        "id": "689de4b2dce5e300226bece8",
+        "name": "Cristiane Pavani",
+        "created_at": "2025-08-14T10:29:22.220-03:00"
+      },
+      {
+        "id": "69611734ea009d0016930f0c",
+        "name": "CRISTIANE PAVANI VILAS BOAS",
+        "created_at": "2026-01-09T11:56:52.464-03:00"
+      }
+    ],
+    "drmauroarguello@hotmail.com": [
+      {
+        "id": "68682351d56a350001fb63f1",
+        "name": "Dr. Mauro e Dra. Fabiana",
+        "created_at": "2025-07-04T15:54:09.112-03:00"
+      },
+      {
+        "id": "68a3105a6b36b80001e88cc0",
+        "name": "Mauro Andre Arguello",
+        "created_at": "2025-08-18T08:36:58.905-03:00"
+      },
+      {
+        "id": "689a8b574ef17f0001dfc6da",
+        "name": "Mauro André Arguello",
+        "created_at": "2025-08-11T21:31:19.428-03:00"
+      }
+    ],
+    "dragiorgiadebortoli@gmail.com": [
+      {
+        "id": "689a8b474ef17f0001dfbf2b",
+        "name": "Dra Giorgia bortoli",
+        "created_at": "2025-08-11T21:31:03.701-03:00"
+      },
+      {
+        "id": "689dff0ece53e40001820abe",
+        "name": "Giorgia Soares",
+        "created_at": "2025-08-14T12:21:50.753-03:00"
+      },
+      {
+        "id": "68f77dc82902f40024650f3d",
+        "name": "GIORGIA SOARES MOURA DE BORTOLI LTDA",
+        "created_at": "2025-10-21T09:34:16.439-03:00"
+      }
+    ],
+    "fernandoadccosta2@yahoo.com": [
+      {
+        "id": "691b8dbf0e80800001e69330",
+        "name": "DRA. FAYRUSS",
+        "created_at": "2025-11-17T18:03:59.710-03:00"
+      },
+      {
+        "id": "6868234bd56a350001fb61b7",
+        "name": "Dra. Fayruss",
+        "created_at": "2025-07-04T15:54:03.518-03:00"
+      },
+      {
+        "id": "689b316a120ec10001dcb414",
+        "name": "Fernando Antônio David Craveiro Costa",
+        "created_at": "2025-08-12T09:19:54.802-03:00"
+      }
+    ],
+    "ebercorrea@hotmail.com": [
+      {
+        "id": "68a310536b36b80001e88ae1",
+        "name": "Eber Correa",
+        "created_at": "2025-08-18T08:36:51.094-03:00"
+      },
+      {
+        "id": "6865ad4e8bbe890014541100",
+        "name": "EBER DE AZEVEDO CORREA",
+        "created_at": "2025-07-02T19:06:06.955-03:00"
+      },
+      {
+        "id": "689b316f120ec10001dcb575",
+        "name": "Eber de Azevedo Correa",
+        "created_at": "2025-08-12T09:19:59.138-03:00"
+      }
+    ],
+    "odudufavato@gmail.com": [
+      {
+        "id": "68c189bac94446001cf78aca",
+        "name": "EDUARDO FAVATO FILHO",
+        "created_at": "2025-09-10T11:22:50.150-03:00"
+      },
+      {
+        "id": "68c189bd1841590021fbf4c4",
+        "name": "EDUARDO FAVATO FILHO",
+        "created_at": "2025-09-10T11:22:53.258-03:00"
+      },
+      {
+        "id": "68a39551099a8c0014ec8673",
+        "name": "EDUARDO FAVATO FILHO",
+        "created_at": "2025-08-18T18:04:17.517-03:00"
+      }
+    ],
+    "ericacbigon@gmail.com": [
+      {
+        "id": "68cdcb04a7ad27001ee1b938",
+        "name": "Érica Bigon",
+        "created_at": "2025-09-19T18:28:37.000-03:00"
+      },
+      {
+        "id": "68cdcb4c0118280014fc0910",
+        "name": "Érica Bigon",
+        "created_at": "2025-09-19T18:29:48.208-03:00"
+      },
+      {
+        "id": "68cd547e0276e60016f7f6ce",
+        "name": "Érica Bigon",
+        "created_at": "2025-09-19T10:02:55.048-03:00"
+      }
+    ],
+    "financeiro2@fabiolatasca.com.br": [
+      {
+        "id": "689dfef1ce53e400018200b7",
+        "name": "Fabiola Menegoti Tasca",
+        "created_at": "2025-08-14T12:21:21.983-03:00"
+      },
+      {
+        "id": "68a310556b36b80001e88b4d",
+        "name": "Fabiola Menegoti Tasca",
+        "created_at": "2025-08-18T08:36:53.264-03:00"
+      },
+      {
+        "id": "68a3107e6b36b80001e89669",
+        "name": "Fabiola Menegoti Tasca",
+        "created_at": "2025-08-18T08:37:34.822-03:00"
+      }
+    ],
+    "isabela.arp.adv@gmail.com": [
+      {
+        "id": "69a63d9c8c41b100018be6b0",
+        "name": "ISABELA",
+        "created_at": "2026-03-02T22:47:08.612-03:00"
+      },
+      {
+        "id": "69a63d6e5bf1c50001523c08",
+        "name": "ISABELA",
+        "created_at": "2026-03-02T22:46:22.752-03:00"
+      },
+      {
+        "id": "69a63d6e5bf1c50001523c08",
+        "name": "ISABELA",
+        "created_at": "2026-03-02T22:46:22.752-03:00"
+      }
+    ],
+    "dentalmacuva@gmail.com": [
+      {
+        "id": "695295e758b09f00131356ca",
+        "name": "JANE",
+        "created_at": "2025-12-29T11:53:27.855-03:00"
+      },
+      {
+        "id": "694e78391de8ec000139b8a1",
+        "name": "JANE MAC CORMICK",
+        "created_at": "2025-12-26T08:57:45.310-03:00"
+      },
+      {
+        "id": "6978ac1f4be96e0013f9e01c",
+        "name": "JANE MAC CORMICK",
+        "created_at": "2026-01-27T09:14:23.846-03:00"
+      }
+    ],
+    "jessicagoncalves_20@hotmail.com": [
+      {
+        "id": "68a488f3f636dd000175f1d9",
+        "name": "Jéssica Amorim",
+        "created_at": "2025-08-19T11:23:47.395-03:00"
+      },
+      {
+        "id": "6868233fd56a350001fb5c20",
+        "name": "JESSICA AMORIM G P CORREA",
+        "created_at": "2025-07-04T15:53:51.657-03:00"
+      },
+      {
+        "id": "68f77f5c2ee3fc00168d4f36",
+        "name": "JESSICA AMORIM GONÇALVES PRUDENTE CORREA",
+        "created_at": "2025-10-21T09:41:00.791-03:00"
+      }
+    ],
+    "info@bodhidharma.es": [
+      {
+        "id": "68cfecac87a70800200ea5be",
+        "name": "Jorge",
+        "created_at": "2025-09-21T09:16:44.353-03:00"
+      },
+      {
+        "id": "68cfecee06dfba0019724202",
+        "name": "Jorge",
+        "created_at": "2025-09-21T09:17:50.734-03:00"
+      },
+      {
+        "id": "68cfecf9cd30b200147c389a",
+        "name": "Jorge",
+        "created_at": "2025-09-21T09:18:01.213-03:00"
+      }
+    ],
+    "drajhromano@gmail.com": [
+      {
+        "id": "6866fc8d07ce11001485f3bd",
+        "name": "Juliana Helena Romano",
+        "created_at": "2025-07-03T18:56:29.133-03:00"
+      },
+      {
+        "id": "689a8b524ef17f0001dfc447",
+        "name": "Juliana Helena Romano",
+        "created_at": "2025-08-11T21:31:14.342-03:00"
+      },
+      {
+        "id": "689b319f120ec10001dcc1f6",
+        "name": "Juliana Helena Romano",
+        "created_at": "2025-08-12T09:20:47.597-03:00"
+      }
+    ],
+    "diretoria@dermabr.com.br": [
+      {
+        "id": "689dfe75ce53e4000181d40a",
+        "name": "LUCIANO",
+        "created_at": "2025-08-14T12:19:17.725-03:00"
+      },
+      {
+        "id": "689dfe75ce53e4000181d40a",
+        "name": "LUCIANO",
+        "created_at": "2025-08-14T12:19:17.725-03:00"
+      },
+      {
+        "id": "689dfe75ce53e4000181d40a",
+        "name": "LUCIANO",
+        "created_at": "2025-08-14T12:19:17.725-03:00"
+      }
+    ],
+    "narjaramontefusco@gmail.com": [
+      {
+        "id": "689a908a7d16460001e33873",
+        "name": "Narjara Montefusco",
+        "created_at": "2025-08-11T21:53:30.127-03:00"
+      },
+      {
+        "id": "68f61da85c298100014992ab",
+        "name": "Narjara Montefusco",
+        "created_at": "2025-10-20T08:31:52.300-03:00"
+      },
+      {
+        "id": "69985ac8d1b6510013b0dc5d",
+        "name": "Narjara Montefusco Florindo Duarte Montefusco",
+        "created_at": "2026-02-20T09:59:52.860-03:00"
+      }
+    ],
+    "natmenezesmartins@hotmail.com": [
+      {
+        "id": "6964fe319615f90013c60b48",
+        "name": "Natália de Menezes Martins",
+        "created_at": "2026-01-12T10:59:14.012-03:00"
+      },
+      {
+        "id": "696500f3449a74001391a012",
+        "name": "Natália de Menezes Martins",
+        "created_at": "2026-01-12T11:11:00.490-03:00"
+      },
+      {
+        "id": "6965094ed322540013245251",
+        "name": "Natália de Menezes Martins",
+        "created_at": "2026-01-12T11:46:39.129-03:00"
+      }
+    ],
+    "rodrigues.representacoes2014@gmail.com": [
+      {
+        "id": "69a63d5a5bf1c500015233a9",
+        "name": "OLAVO",
+        "created_at": "2026-03-02T22:46:02.068-03:00"
+      },
+      {
+        "id": "69a63d5a5bf1c500015233a9",
+        "name": "OLAVO",
+        "created_at": "2026-03-02T22:46:02.068-03:00"
+      },
+      {
+        "id": "69a63d5a5bf1c500015233a9",
+        "name": "OLAVO",
+        "created_at": "2026-03-02T22:46:02.068-03:00"
+      }
+    ],
+    "patyletheia@hotmail.com": [
+      {
+        "id": "6964fe3ec4731e001e4a2622",
+        "name": "Patrícia Aletheia Alves da Silva Raquel",
+        "created_at": "2026-01-12T10:59:26.761-03:00"
+      },
+      {
+        "id": "69650103359766001cc949cd",
+        "name": "Patrícia Aletheia Alves da Silva Raquel",
+        "created_at": "2026-01-12T11:11:15.600-03:00"
+      },
+      {
+        "id": "69650a1ef5c148001af61722",
+        "name": "Patrícia Aletheia Alves da Silva Raquel (Raquel)",
+        "created_at": "2026-01-12T11:50:07.178-03:00"
+      }
+    ],
+    "pribaracat@hotmail.com": [
+      {
+        "id": "691b8dbf0e80800001e69348",
+        "name": "PRISCILLA",
+        "created_at": "2025-11-17T18:04:00.010-03:00"
+      },
+      {
+        "id": "691b266b2db0ab001ef5ae77",
+        "name": "PRISCILLA BARACAT CAMPOS",
+        "created_at": "2025-11-17T10:43:07.314-03:00"
+      },
+      {
+        "id": "698df041fb40a40018c92409",
+        "name": "Priscilla Baracat Campos",
+        "created_at": "2026-02-12T12:22:41.577-03:00"
+      }
+    ],
+    "rafaelceconi2014@gmail.com": [
+      {
+        "id": "68ff85b746422f00135bcc5d",
+        "name": "Rafael",
+        "created_at": "2025-10-27T11:46:15.212-03:00"
+      },
+      {
+        "id": "690e2b47523e950013eb9a8d",
+        "name": "Rafael",
+        "created_at": "2025-11-07T14:24:23.543-03:00"
+      },
+      {
+        "id": "68fe102fb6c27300013fab5f",
+        "name": "Rafael",
+        "created_at": "2025-10-26T09:12:31.958-03:00"
+      }
+    ],
+    "rsilvager@gmail.com": [
+      {
+        "id": "697a670c2ba616001ee32840",
+        "name": "Ramon",
+        "created_at": "2026-01-28T16:44:12.387-03:00"
+      },
+      {
+        "id": "695bb2206d01250013238e17",
+        "name": "Ramon",
+        "created_at": "2026-01-05T09:44:17.066-03:00"
+      },
+      {
+        "id": "68fa86d89b53ae0001ba9c77",
+        "name": "RAMON FELIPE",
+        "created_at": "2025-10-23T16:49:45.217-03:00"
+      }
+    ],
+    "rayane_neri@hotmail.com": [
+      {
+        "id": "6941a1cbe30979001cb51301",
+        "name": "RAYANE NAYARA DE OLIVEIRA NÉRI CABRAL",
+        "created_at": "2025-12-16T15:15:39.729-03:00"
+      },
+      {
+        "id": "689dff68ce53e40001822781",
+        "name": "RAYANE NAYARA DE OLIVEIRA NERI CABRAL",
+        "created_at": "2025-08-14T12:23:20.391-03:00"
+      },
+      {
+        "id": "68c05d1ca72c1c0023b31fe9",
+        "name": "Rayane Néri Cobral.",
+        "created_at": "2025-09-09T14:00:12.128-03:00"
+      }
+    ],
+    "ricardoligjon@hotmail.com": [
+      {
+        "id": "68682346d56a350001fb5fba",
+        "name": "Ricardo",
+        "created_at": "2025-07-04T15:53:58.932-03:00"
+      },
+      {
+        "id": "68f783dd750616001472dc48",
+        "name": "RICARDO ALVES COELHO",
+        "created_at": "2025-10-21T10:00:13.377-03:00"
+      },
+      {
+        "id": "689a96a0c104660001a61a6a",
+        "name": "RICARDO ALVES COELHO",
+        "created_at": "2025-08-11T22:19:28.131-03:00"
+      }
+    ],
+    "dr.ricardoaraujo@hotmail.com": [
+      {
+        "id": "68e817e35222060001f4669d",
+        "name": "Ricardo",
+        "created_at": "2025-10-09T17:15:31.854-03:00"
+      },
+      {
+        "id": "68e81a6d83c7e1001ebfbef0",
+        "name": "Ricardo",
+        "created_at": "2025-10-09T17:26:21.917-03:00"
+      },
+      {
+        "id": "6937065d2753dd001cb4df49",
+        "name": "Ricardo Correia de Araújo",
+        "created_at": "2025-12-08T14:09:49.285-03:00"
+      }
+    ],
+    "roberta-fd@hotmail.com": [
+      {
+        "id": "6924ba5018fa2c0013906858",
+        "name": "ROBERTA FERREIRA DIAS",
+        "created_at": "2025-11-24T17:04:32.293-03:00"
+      },
+      {
+        "id": "6983946d500b47001fa13796",
+        "name": "ROBERTA FERREIRA DIAS (R.F DIAS SOLUÇÕES)",
+        "created_at": "2026-02-04T15:48:13.450-03:00"
+      },
+      {
+        "id": "6984f5f97a32e400143e8309",
+        "name": "ROBERTA FERREIRA DIAS (R.F DIAS SOLUÇÕES)",
+        "created_at": "2026-02-05T16:56:41.544-03:00"
+      }
+    ],
+    "ittbiomedic@gmail.com": [
+      {
+        "id": "692dc2811627ae0013cf68f7",
+        "name": "REGINALDO LOPES DURÃES",
+        "created_at": "2025-12-01T13:29:53.762-03:00"
+      },
+      {
+        "id": "692a01b6edd5ed001741ff2f",
+        "name": "RICARDO  LOPES DURÃES",
+        "created_at": "2025-11-28T17:10:30.789-03:00"
+      }
+    ],
+    "vivianesperge@me.com": [
+      {
+        "id": "69b0226123ae68001a120a06",
+        "name": "VIVIANE SPERGE DA SILVA",
+        "created_at": "2026-03-10T10:53:37.184-03:00"
+      },
+      {
+        "id": "69b04c92f1a38a001df24d73",
+        "name": "PAULO (NEOTOX MED PRODUTOS MÉDICOS LTDA)",
+        "created_at": "2026-03-10T13:53:38.863-03:00"
+      }
+    ],
+    "adriana.isaac@gmail.com": [
+      {
+        "id": "68b83b2cd5c1640014f10a88",
+        "name": "ADRIANA",
+        "created_at": "2025-09-03T09:57:16.475-03:00"
+      },
+      {
+        "id": "68b83b84dc83f800173c81e7",
+        "name": "ADRIANA RABELO ISAAC",
+        "created_at": "2025-09-03T09:58:45.219-03:00"
+      }
+    ],
+    "adriacon65@gmail.com": [
+      {
+        "id": "693d393f56be8b0001f99d0e",
+        "name": "ADRIANA A",
+        "created_at": "2025-12-13T07:00:31.845-03:00"
+      },
+      {
+        "id": "694570209bd3f7001871be94",
+        "name": "ADRIANA APARECIDA",
+        "created_at": "2025-12-19T12:32:48.488-03:00"
+      }
+    ],
+    "adrianaarruda18@gmail.com": [
+      {
+        "id": "698f7c80cc968a001b3e07f1",
+        "name": "ADRIANA ARRUDA",
+        "created_at": "2026-02-13T16:33:20.913-03:00"
+      },
+      {
+        "id": "68a488d1f636dd000175e218",
+        "name": "ADRIANA PAULA ROSA DE ARRUDA",
+        "created_at": "2025-08-19T11:23:13.714-03:00"
+      }
+    ],
+    "awada@adrianaawada.com.br": [
+      {
+        "id": "68a3104f6b36b80001e88a08",
+        "name": "Adriana Chedid Awada Tarcha",
+        "created_at": "2025-08-18T08:36:47.474-03:00"
+      },
+      {
+        "id": "689baf84f0ef8f000167b8ad",
+        "name": "NEGÓCIO ADRIANA CHEDID AWADA",
+        "created_at": "2025-08-12T18:17:56.216-03:00"
+      }
+    ],
+    "adriano@serderma.com.br": [
+      {
+        "id": "691b8dbe0e80800001e692e2",
+        "name": "ADRIANO CARVALHO",
+        "created_at": "2025-11-17T18:03:58.499-03:00"
+      },
+      {
+        "id": "68e554eab53af300190d0f37",
+        "name": "Adriano Carvalho",
+        "created_at": "2025-10-07T14:59:06.195-03:00"
+      }
+    ],
+    "escritoriofb@terra.com.br": [
+      {
+        "id": "691b8dbf0e80800001e69324",
+        "name": "AIRTO VALANDRO",
+        "created_at": "2025-11-17T18:03:59.574-03:00"
+      },
+      {
+        "id": "68b1b4dc1ff5c8001f61eacd",
+        "name": "AIRTO VALANDRO",
+        "created_at": "2025-08-29T11:10:36.926-03:00"
+      }
+    ],
+    "alanadavila.cirurgiaplastica@gmail.com": [
+      {
+        "id": "68efe0d344f05d00190e6cb3",
+        "name": "Alana D’Avila Rebelo",
+        "created_at": "2025-10-15T14:58:43.903-03:00"
+      },
+      {
+        "id": "68a310326b36b80001e8819f",
+        "name": "Alana Dávila",
+        "created_at": "2025-08-18T08:36:18.563-03:00"
+      }
+    ],
+    "univittae.estetica@gmail.com": [
+      {
+        "id": "691b067192d73f001cdb935f",
+        "name": "Alessandra de Freitas Oliveir",
+        "created_at": "2025-11-17T08:26:41.186-03:00"
+      },
+      {
+        "id": "691b0671d8933e00139bf7e7",
+        "name": "Alessandra de Freitas Oliveir",
+        "created_at": "2025-11-17T08:26:41.166-03:00"
+      }
+    ],
+    "dr.alessandroalarcao@uol.com.br": [
+      {
+        "id": "68a3105e6b36b80001e88e0b",
+        "name": "Alessandro Louza Alarcao",
+        "created_at": "2025-08-18T08:37:02.980-03:00"
+      },
+      {
+        "id": "68fb9873489b72001fb072db",
+        "name": "Alessandro Louza Alarcao",
+        "created_at": "2025-10-24T12:17:07.750-03:00"
+      }
+    ],
+    "lima.0456_@hotmail.com": [
+      {
+        "id": "68ffdcfc43f96a0013f71f12",
+        "name": "Alexandre",
+        "created_at": "2025-10-27T17:58:36.333-03:00"
+      },
+      {
+        "id": "68fadeef5820d10001886a16",
+        "name": "Alexandre",
+        "created_at": "2025-10-23T23:05:35.739-03:00"
+      }
+    ],
+    "alexandreengell@gmail.com": [
+      {
+        "id": "691c6755ac8e3c0016e38ee4",
+        "name": "ALEXANDRE ENGELL SANTOS",
+        "created_at": "2025-11-18T09:32:21.879-03:00"
+      },
+      {
+        "id": "6917ccfa21d46a00012a0a47",
+        "name": "Alexandre Santos",
+        "created_at": "2025-11-14T21:44:42.417-03:00"
+      }
+    ],
+    "alinecml1@gmail.com": [
+      {
+        "id": "697764dc235f940019362a0e",
+        "name": "ALINE CAMILO",
+        "created_at": "2026-01-26T09:58:04.538-03:00"
+      },
+      {
+        "id": "693d700f1c9b8a00016bc669",
+        "name": "ALINE CAMILO",
+        "created_at": "2025-12-13T10:54:23.558-03:00"
+      }
+    ],
+    "drallicebastos@gmail.com": [
+      {
+        "id": "68b8a3e20f5eed001ed05f62",
+        "name": "ALLICE DE VASCONCELOS R.",
+        "created_at": "2025-09-03T17:24:02.058-03:00"
+      },
+      {
+        "id": "68b8a3e2c6e881002076dd20",
+        "name": "Allice de Vasconcelos R.",
+        "created_at": "2025-09-03T17:24:02.076-03:00"
+      }
+    ],
+    "loamaralcosta@terra.com.br": [
+      {
+        "id": "6866d547268e80001948e263",
+        "name": "AMARAL COSTA GONCALVES SERVICOS MEDICOS LTDA",
+        "created_at": "2025-07-03T16:08:55.401-03:00"
+      },
+      {
+        "id": "68b9f05b7633ec00216e35ad",
+        "name": "LORENA AMARAL COSTA GONÇALVES",
+        "created_at": "2025-09-04T17:02:35.632-03:00"
+      }
+    ],
+    "amirnialmeida@gmail.com": [
+      {
+        "id": "69b15bf9ba95550017093bef",
+        "name": "AMIRNI ALMEIDA",
+        "created_at": "2026-03-11T09:11:37.158-03:00"
+      },
+      {
+        "id": "69a98ab448da2b00018999fe",
+        "name": "Amirni Vieira",
+        "created_at": "2026-03-05T10:52:53.382-03:00"
+      }
+    ],
+    "dra.anabarbara@gmail.com": [
+      {
+        "id": "6964fdf7eb2cc80013881f22",
+        "name": "Ana Bárbara Lage Silva",
+        "created_at": "2026-01-12T10:58:15.752-03:00"
+      },
+      {
+        "id": "696500dac678b2001dc68dfa",
+        "name": "Ana Bárbara Lage Silva",
+        "created_at": "2026-01-12T11:10:35.042-03:00"
+      }
+    ],
+    "clinicamaktub@gmail.com": [
+      {
+        "id": "68a48451f636dd00017530e9",
+        "name": "Ana Luiza",
+        "created_at": "2025-08-19T11:04:01.450-03:00"
+      },
+      {
+        "id": "68a311246b36b80001e8ca67",
+        "name": "ANA LUIZA PERES MARTINS GODOY",
+        "created_at": "2025-08-18T08:40:20.721-03:00"
+      }
+    ],
+    "draanaluizamachado@hotmail.com": [
+      {
+        "id": "692dd36f4e498c0001555f90",
+        "name": "Ana Luiza Machado",
+        "created_at": "2025-12-01T14:42:07.405-03:00"
+      },
+      {
+        "id": "6980b1c3b4d368001d4f8aa8",
+        "name": "Ana Luiza Machado",
+        "created_at": "2026-02-02T11:16:35.554-03:00"
+      }
+    ],
+    "anapuppe.m@gmail.com": [
+      {
+        "id": "6965148034d86e001c7e68f1",
+        "name": "Ana Luiza Puppe Magalhães",
+        "created_at": "2026-01-12T12:34:24.391-03:00"
+      },
+      {
+        "id": "6964fef1bdef0d001efa4be9",
+        "name": "Bruna Caroline Gomes de Lima",
+        "created_at": "2026-01-12T11:02:25.140-03:00"
+      }
+    ],
+    "ac.passoni@uol.com.br": [
+      {
+        "id": "68a38035d5117b001907d308",
+        "name": "Ana Passoni",
+        "created_at": "2025-08-18T16:34:13.037-03:00"
+      },
+      {
+        "id": "689e3f923c084e0019253727",
+        "name": "Dra. Ana Carolina Natera Passoni",
+        "created_at": "2025-08-14T16:57:07.178-03:00"
+      }
+    ],
+    "maissaudemedpm@gmail.com": [
+      {
+        "id": "6964fe7b940c2f00151d3a87",
+        "name": "Ana Paula Viana Pederiva",
+        "created_at": "2026-01-12T11:00:27.972-03:00"
+      },
+      {
+        "id": "69650c7c84f84d00170c237e",
+        "name": "Ana Paula Viana Pederiva (Adriana)",
+        "created_at": "2026-01-12T12:00:13.184-03:00"
+      }
+    ],
+    "fisio.anavericia@gmail.com": [
+      {
+        "id": "68cf163fb4b4760014d4035a",
+        "name": "Ana Vericia",
+        "created_at": "2025-09-20T18:01:51.188-03:00"
+      },
+      {
+        "id": "68cf1665011828001d25e216",
+        "name": "Ana Vericia",
+        "created_at": "2025-09-20T18:02:29.848-03:00"
+      }
+    ],
+    "cassiajunqueira2009@hotmail.com": [
+      {
+        "id": "68f61bdaaef583001bc141f3",
+        "name": "ANDRÉ LUIZ COSTA ARANTES",
+        "created_at": "2025-10-20T08:24:10.283-03:00"
+      },
+      {
+        "id": "691b8dbe0e80800001e692ee",
+        "name": "ANDRÉ LUIZ COSTA ARANTES",
+        "created_at": "2025-11-17T18:03:58.817-03:00"
+      }
+    ],
+    "vivasaudeeestetica@gmail.com": [
+      {
+        "id": "68682343d56a350001fb5e05",
+        "name": "Andrea",
+        "created_at": "2025-07-04T15:53:55.787-03:00"
+      },
+      {
+        "id": "68f7812ed56d5c0017ad44de",
+        "name": "ANDREA SANTOS SANTANA",
+        "created_at": "2025-10-21T09:48:47.007-03:00"
+      }
+    ],
+    "deiaherculano@hotmail.com": [
+      {
+        "id": "6911da0797c3e200183924a0",
+        "name": "Andréia Herculano",
+        "created_at": "2025-11-10T09:26:47.096-03:00"
+      },
+      {
+        "id": "691b8dc00e80800001e69354",
+        "name": "ANDRÉIA HERCULANO",
+        "created_at": "2025-11-17T18:04:00.143-03:00"
+      }
+    ],
+    "andreia_m_pamplona@yahoo.com.br": [
+      {
+        "id": "6867e9ff106c90001a138ad7",
+        "name": "Andreia Pamplona",
+        "created_at": "2025-07-04T11:49:35.470-03:00"
+      },
+      {
+        "id": "689a8b384ef17f0001dfb753",
+        "name": "Andreia Pamplona",
+        "created_at": "2025-08-11T21:30:48.195-03:00"
+      }
+    ],
+    "andressadalcin@hotmail.com": [
+      {
+        "id": "6969261b778436001c5d46c9",
+        "name": "ANDRESSA DALCIN",
+        "created_at": "2026-01-15T14:38:35.984-03:00"
+      },
+      {
+        "id": "69273e755b596a00139e1e88",
+        "name": "ANDRESSA DALCIN",
+        "created_at": "2025-11-26T14:52:53.280-03:00"
+      }
+    ],
+    "espacodoglamour.rj@gmail.com": [
+      {
+        "id": "693314a6913fec00131dc5db",
+        "name": "ANGILBERTO SABINO DE FREITAS",
+        "created_at": "2025-12-05T14:21:42.967-03:00"
+      },
+      {
+        "id": "6940547d9552cd0016e18825",
+        "name": "JORGE CARLOS SANTOS JUNIOR",
+        "created_at": "2025-12-15T15:33:33.985-03:00"
+      }
+    ],
+    "annapborchardt@gmail.com": [
+      {
+        "id": "69148e4dab23ae0013d75bed",
+        "name": "Anna Paula Borchardt",
+        "created_at": "2025-11-12T10:40:29.645-03:00"
+      },
+      {
+        "id": "694560fcce0ee70013a7619a",
+        "name": "ANNA PAULA BORCHARDT",
+        "created_at": "2025-12-19T11:28:12.070-03:00"
+      }
+    ],
+    "antoniocrjr1983@gmail.com": [
+      {
+        "id": "689dff94ce53e400018237fb",
+        "name": "ANTONIO CARLOS RIBEIRO JUNIOR",
+        "created_at": "2025-08-14T12:24:04.537-03:00"
+      },
+      {
+        "id": "692ed7bacf80a9001f883b91",
+        "name": "ANTÔNIO CARLOS RIBEIRO JUNIOR  ( FRANCHISE DI ARMONIZZAZIONE FACCIALE GESTAO DE NEGOCIOS LTDA_",
+        "created_at": "2025-12-02T09:12:42.849-03:00"
+      }
+    ],
+    "antoniojuliobarreto@hotmail.com": [
+      {
+        "id": "691b8dbf0e80800001e69300",
+        "name": "ANTÔNIO JÚLIO DE ARAÚJO BARRETO",
+        "created_at": "2025-11-17T18:03:59.163-03:00"
+      },
+      {
+        "id": "6904eee0a5b6c10013b444d6",
+        "name": "Antônio Júlio de Araújo Barreto",
+        "created_at": "2025-10-31T14:16:16.224-03:00"
+      }
+    ],
+    "anuska.lima@hotmail.com": [
+      {
+        "id": "68682346d56a350001fb5f99",
+        "name": "Anuska",
+        "created_at": "2025-07-04T15:53:58.590-03:00"
+      },
+      {
+        "id": "68f7835c07bc4e0018e9f42c",
+        "name": "ANUSKA APARECIDA MARQUES LIMA",
+        "created_at": "2025-10-21T09:58:04.271-03:00"
+      }
+    ],
+    "ari.araldi@gmail.com": [
+      {
+        "id": "6868233ed56a350001fb5b97",
+        "name": "ARIANE",
+        "created_at": "2025-07-04T15:53:50.591-03:00"
+      },
+      {
+        "id": "68f77e13793d4400167b5e63",
+        "name": "ARIANE ARALDI SILVEIRA",
+        "created_at": "2025-10-21T09:35:31.257-03:00"
+      }
+    ],
+    "naudim@gmail.com": [
+      {
+        "id": "68f77fb540cba800160b84d5",
+        "name": "ARNALDO.",
+        "created_at": "2025-10-21T09:42:29.222-03:00"
+      },
+      {
+        "id": "68682340d56a350001fb5c62",
+        "name": "LEONARDO (ARNALDO FLAVIO PEREIRA DE SOUZA)",
+        "created_at": "2025-07-04T15:53:52.277-03:00"
+      }
+    ],
+    "arthurdubberstein@yahoo.com.br": [
+      {
+        "id": "6908fba74edc4e0022c162b4",
+        "name": "Arthur",
+        "created_at": "2025-11-03T15:59:51.320-03:00"
+      },
+      {
+        "id": "690782e9aa84dd0001c477e8",
+        "name": "Arthur",
+        "created_at": "2025-11-02T13:12:25.198-03:00"
+      }
+    ],
+    "carvalho_breno@hotmail.com": [
+      {
+        "id": "686669e2eded370014ebb5cd",
+        "name": "BCV CLINIC LTDA",
+        "created_at": "2025-07-03T08:30:42.396-03:00"
+      },
+      {
+        "id": "69a57920b5c5b10013fe11bf",
+        "name": "BRENO MARQUES CARVALHO (CONSIDERAR ESTE)",
+        "created_at": "2026-03-02T08:48:49.044-03:00"
+      }
+    ],
+    "belinda.roriz@terra.com.br": [
+      {
+        "id": "68bf45bf67049b001ec3ada0",
+        "name": "Belinda Raiz",
+        "created_at": "2025-09-08T18:08:15.348-03:00"
+      },
+      {
+        "id": "68c1c625ad0ef9001e6041d4",
+        "name": "Belinda Roriz",
+        "created_at": "2025-09-10T15:40:37.077-03:00"
+      }
+    ],
+    "atendimentodrbenjamim@hotmail.com": [
+      {
+        "id": "68efe4c3c44c90001a350733",
+        "name": "Benjamim Gonçalves Rodrigues Dos Santos",
+        "created_at": "2025-10-15T15:15:31.281-03:00"
+      },
+      {
+        "id": "68efeb5c006d7000149b7e8b",
+        "name": "Benjamin Gonçalves Rodrigues Dos Santos",
+        "created_at": "2025-10-15T15:43:40.469-03:00"
+      }
+    ],
+    "drabiancagrechi@gmail.com": [
+      {
+        "id": "690a67e16e0bb70013e13d9b",
+        "name": "Bianca",
+        "created_at": "2025-11-04T17:53:53.131-03:00"
+      },
+      {
+        "id": "6907caec714b5f0001cd044d",
+        "name": "Bianca",
+        "created_at": "2025-11-02T18:19:41.113-03:00"
+      }
+    ],
+    "conchitateixeira1@hotmail.com": [
+      {
+        "id": "68f77ee934fe5c0014379ff3",
+        "name": "BRENDA (MARIA CONCEIÇÃO SARMENTO TEIXEIRA)",
+        "created_at": "2025-10-21T09:39:05.566-03:00"
+      },
+      {
+        "id": "68a488f2f636dd000175f17e",
+        "name": "Dra. Brenda",
+        "created_at": "2025-08-19T11:23:46.814-03:00"
+      }
+    ],
+    "susana.m.endres@gmail.com": [
+      {
+        "id": "68682342d56a350001fb5d8c",
+        "name": "Bruna",
+        "created_at": "2025-07-04T15:53:55.004-03:00"
+      },
+      {
+        "id": "68f780755e1d5a0017d0477d",
+        "name": "BRUNA COIMBRA ( SUSANA MARIA ENDRES)",
+        "created_at": "2025-10-21T09:45:41.136-03:00"
+      }
+    ],
+    "brunamascarellon@gmail.com": [
+      {
+        "id": "68f94930eda76200018e5606",
+        "name": "Bruna",
+        "created_at": "2025-10-22T18:14:24.853-03:00"
+      },
+      {
+        "id": "68fb69315c0cf5001b313654",
+        "name": "Bruna Mascarello",
+        "created_at": "2025-10-24T08:55:29.538-03:00"
+      }
+    ],
+    "maria.silva@email.com": [
+      {
+        "id": "68efe5573bb6b70018ca6935",
+        "name": "Bruna de Oliveira Silva",
+        "created_at": "2025-10-15T15:17:59.259-03:00"
+      },
+      {
+        "id": "68efe55df7e014001876fd55",
+        "name": "Carlos Eduardo Santos",
+        "created_at": "2025-10-15T15:18:05.578-03:00"
+      }
+    ],
+    "bruna.staico@gmail.com": [
+      {
+        "id": "68b9e0785fcdf7001453b791",
+        "name": "BRUNA MACHADO",
+        "created_at": "2025-09-04T15:54:48.026-03:00"
+      },
+      {
+        "id": "68c01f6bad855a0024d31a95",
+        "name": "Bruna Machado Staico",
+        "created_at": "2025-09-09T09:36:59.274-03:00"
+      }
+    ],
+    "camila.fernanda@terra.com.br": [
+      {
+        "id": "689dffecce53e4000182537b",
+        "name": "Camila",
+        "created_at": "2025-08-14T12:25:32.802-03:00"
+      },
+      {
+        "id": "689a91347d16460001e37da6",
+        "name": "CAMILA PIMENTA",
+        "created_at": "2025-08-11T21:56:20.907-03:00"
+      }
+    ],
+    "camilareisestetica@icloud.com": [
+      {
+        "id": "68a488f5f636dd000175f2e1",
+        "name": "Camila",
+        "created_at": "2025-08-19T11:23:49.479-03:00"
+      },
+      {
+        "id": "68f780a4bb75f4001b5eb79c",
+        "name": "CAMILA (C. C DOS REIS COSTA ESTETICA)",
+        "created_at": "2025-10-21T09:46:28.598-03:00"
+      }
+    ],
+    "camilabertolim@yahoo.com.br": [
+      {
+        "id": "68682345d56a350001fb5f15",
+        "name": "Camila",
+        "created_at": "2025-07-04T15:53:57.669-03:00"
+      },
+      {
+        "id": "68f7830e199149001471bc35",
+        "name": "CAMILA TEIXEIRA BERTOLIM",
+        "created_at": "2025-10-21T09:56:46.045-03:00"
+      }
+    ],
+    "daisyodonto@yahoo.com.br": [
+      {
+        "id": "68f7833031d130001ebf970b",
+        "name": "CAMILA (CLINICA TF SP LTDA (TRANSFORMANDO FACES )",
+        "created_at": "2025-10-21T09:57:20.725-03:00"
+      },
+      {
+        "id": "68a488f9f636dd000175f439",
+        "name": "DELANO",
+        "created_at": "2025-08-19T11:23:53.698-03:00"
+      }
+    ],
+    "camislote@hotmail.com": [
+      {
+        "id": "68b825fc3db705002696b717",
+        "name": "Camila Simon",
+        "created_at": "2025-09-03T08:26:52.488-03:00"
+      },
+      {
+        "id": "68b823afd5c1640019f0f84d",
+        "name": "Camila Simon",
+        "created_at": "2025-09-03T08:17:03.699-03:00"
+      }
+    ],
+    "candicesalvador@hotmail.com": [
+      {
+        "id": "68682344d56a350001fb5e46",
+        "name": "Candice",
+        "created_at": "2025-07-04T15:53:56.306-03:00"
+      },
+      {
+        "id": "68f7814e5259d600160b4046",
+        "name": "CANDICE SCHIMITI BALLALAI",
+        "created_at": "2025-10-21T09:49:18.306-03:00"
+      }
+    ],
+    "candidaantunes@hotmail.com": [
+      {
+        "id": "689a9682c104660001a611e8",
+        "name": "CÂNDIDA DOMECG",
+        "created_at": "2025-08-11T22:18:58.627-03:00"
+      },
+      {
+        "id": "689dffdece53e40001824efc",
+        "name": "Candida F.",
+        "created_at": "2025-08-14T12:25:18.464-03:00"
+      }
+    ],
+    "carinacamarana@hotmail.com": [
+      {
+        "id": "69b4326d2f84ca0013fbf8ce",
+        "name": "Carina",
+        "created_at": "2026-03-13T12:51:09.483-03:00"
+      },
+      {
+        "id": "690df6b30da1bf0025322e14",
+        "name": "CARINA CAMARANA",
+        "created_at": "2025-11-07T10:40:03.658-03:00"
+      }
+    ],
+    "dranakanishicarla@gmail.com": [
+      {
+        "id": "6866faf7010a3f0014f3a799",
+        "name": "Carla",
+        "created_at": "2025-07-03T18:49:43.894-03:00"
+      },
+      {
+        "id": "689a8b414ef17f0001dfbbf0",
+        "name": "CARLA NAKANISHI",
+        "created_at": "2025-08-11T21:30:57.534-03:00"
+      }
+    ],
+    "carlareginazanchettin@gmail.com": [
+      {
+        "id": "69aeb92fe6c3c4001f423148",
+        "name": "CARLA REGINA ZANCHETTIN",
+        "created_at": "2026-03-09T09:12:31.777-03:00"
+      },
+      {
+        "id": "68c03dd6b1f9ac0014cae8b9",
+        "name": "Carla Zanchettin",
+        "created_at": "2025-09-09T11:46:46.992-03:00"
+      }
+    ],
+    "carolinarvazquez03@gmail.com": [
+      {
+        "id": "694b5a5d8228ee0001ed85ed",
+        "name": "CAROLINA",
+        "created_at": "2025-12-24T00:13:33.208-03:00"
+      },
+      {
+        "id": "6989cb62c361a40015ea1bf8",
+        "name": "CAROLINA",
+        "created_at": "2026-02-09T08:56:18.639-03:00"
+      }
+    ],
+    "carol_scarpa@hotmail.com": [
+      {
+        "id": "68c9f82c2ea47c001f8d89e1",
+        "name": "CAROLINA DOS S. SCARPA",
+        "created_at": "2025-09-16T20:52:12.536-03:00"
+      },
+      {
+        "id": "68b73c87519245001f039dd1",
+        "name": "Dra. Carolina Scarpola",
+        "created_at": "2025-09-02T15:50:48.085-03:00"
+      }
+    ],
+    "carolinefantacini@gmail.com": [
+      {
+        "id": "68b1a8387d431d00177ca263",
+        "name": "Caroline famtacini palomino",
+        "created_at": "2025-08-29T10:16:40.540-03:00"
+      },
+      {
+        "id": "699e123d52ed6b0014953820",
+        "name": "Caroline Fantacini",
+        "created_at": "2026-02-24T18:03:57.257-03:00"
+      }
+    ],
+    "caroline_berger@hotmail.com": [
+      {
+        "id": "689a8b364ef17f0001dfb655",
+        "name": "Caroline Mercele Maciel Berger",
+        "created_at": "2025-08-11T21:30:46.313-03:00"
+      },
+      {
+        "id": "6866f68dd8d39700177ee8eb",
+        "name": "CB SERVICOS MEDICOS E HOSPITALARES LTDA",
+        "created_at": "2025-07-03T18:30:53.935-03:00"
+      }
+    ],
+    "cesar.aug.ferreira@gmail.com": [
+      {
+        "id": "69035e8ce2213a0015010e8a",
+        "name": "César Augusto Ferreira",
+        "created_at": "2025-10-30T09:48:13.163-03:00"
+      },
+      {
+        "id": "68ea478f2eef4a000185e998",
+        "name": "César Ferreira |",
+        "created_at": "2025-10-11T09:03:28.064-03:00"
+      }
+    ],
+    "charodonto@gmail.com": [
+      {
+        "id": "689dff93ce53e400018237c5",
+        "name": "Charline",
+        "created_at": "2025-08-14T12:24:03.824-03:00"
+      },
+      {
+        "id": "68f781dd140e4f001ae33530",
+        "name": "CHARLINE ODONTOLOGIA LTDA",
+        "created_at": "2025-10-21T09:51:41.294-03:00"
+      }
+    ],
+    "maraclaudia_cintra@icloud.com": [
+      {
+        "id": "68a488e0f636dd000175e937",
+        "name": "CRISTIANO (CINTRA MOURÃO E MENDONÇA LTDA)",
+        "created_at": "2025-08-19T11:23:29.023-03:00"
+      },
+      {
+        "id": "697a0e674ba45700139491fb",
+        "name": "MARA (CINTRA MOURÃO E MENDONÇA LTDA)",
+        "created_at": "2026-01-28T10:25:59.152-03:00"
+      }
+    ],
+    "dradanielamrocha@gmail.com": [
+      {
+        "id": "68f77fe6723a59001853a55d",
+        "name": "DANIELA DE MORAIS ROCHA",
+        "created_at": "2025-10-21T09:43:18.206-03:00"
+      },
+      {
+        "id": "68a488f4f636dd000175f25d",
+        "name": "Daniela De Paula",
+        "created_at": "2025-08-19T11:23:48.374-03:00"
+      }
+    ],
+    "debora.azenha@hotmail.com": [
+      {
+        "id": "689baf82f0ef8f000167b7b0",
+        "name": "Debora Azenha",
+        "created_at": "2025-08-12T18:17:54.015-03:00"
+      },
+      {
+        "id": "68a310766b36b80001e8941a",
+        "name": "Debora Azenha",
+        "created_at": "2025-08-18T08:37:26.717-03:00"
+      }
+    ],
+    "ded_odonto2012@hotmail.com": [
+      {
+        "id": "690b89eda1cc960015541e06",
+        "name": "Deborah de Freitas Cordeiro",
+        "created_at": "2025-11-05T14:31:25.087-03:00"
+      },
+      {
+        "id": "691b8dbf0e80800001e69306",
+        "name": "DEBORAH DE FREITAS CORDEIRO",
+        "created_at": "2025-11-17T18:03:59.232-03:00"
+      }
+    ],
+    "almeidapet@hotmail.com": [
+      {
+        "id": "68e525f778525b00146ae1a9",
+        "name": "DIANA CARVALHO",
+        "created_at": "2025-10-07T11:38:47.995-03:00"
+      },
+      {
+        "id": "68c01e1b93563800217213ae",
+        "name": "Diana Carvalho",
+        "created_at": "2025-09-09T09:31:23.241-03:00"
+      }
+    ],
+    "diegoandreiaguiar@gmail.com": [
+      {
+        "id": "691088779bcc940001b67522",
+        "name": "Diego",
+        "created_at": "2025-11-09T09:26:31.825-03:00"
+      },
+      {
+        "id": "6912314b815107001abff93c",
+        "name": "Diego",
+        "created_at": "2025-11-10T15:39:07.616-03:00"
+      }
+    ],
+    "diegoeduardo2@hotmail.com": [
+      {
+        "id": "68ee289ff9fec3000156ebb3",
+        "name": "Diego",
+        "created_at": "2025-10-14T07:40:31.899-03:00"
+      },
+      {
+        "id": "693806720d99a1001e2028bc",
+        "name": "Diego eduarda",
+        "created_at": "2025-12-09T08:22:26.056-03:00"
+      }
+    ],
+    "douglasresende22@hotmail.com": [
+      {
+        "id": "68f8c8e9db1ce10014017d56",
+        "name": "DOUGLAS RESENDE",
+        "created_at": "2025-10-22T09:07:05.321-03:00"
+      },
+      {
+        "id": "691376bac87a3c0013a05689",
+        "name": "DOUGLAS RESENDE",
+        "created_at": "2025-11-11T14:47:38.319-03:00"
+      }
+    ],
+    "clinica.nucleo.s2024@gmail.com": [
+      {
+        "id": "689a90c37d16460001e34fe2",
+        "name": "Dr Marcos Santana - GOLD INCISION RJ",
+        "created_at": "2025-08-11T21:54:27.201-03:00"
+      },
+      {
+        "id": "68c2d52cd5c50e0018cda127",
+        "name": "MARCOS SANTANA",
+        "created_at": "2025-09-11T10:57:00.976-03:00"
+      }
+    ],
+    "rspdermato@icloud.com": [
+      {
+        "id": "689dfec0ce53e4000181ee01",
+        "name": "Dr. Renato Soriani e Rodrigo Leite",
+        "created_at": "2025-08-14T12:20:32.742-03:00"
+      },
+      {
+        "id": "689a8b3b4ef17f0001dfb910",
+        "name": "Renato Soriani",
+        "created_at": "2025-08-11T21:30:51.371-03:00"
+      }
+    ],
+    "rlinharesteixeira@gmail.com": [
+      {
+        "id": "689dfff1ce53e40001825551",
+        "name": "Dra  RAILA LINHARES TEIXEIRA",
+        "created_at": "2025-08-14T12:25:37.517-03:00"
+      },
+      {
+        "id": "689a913a7d16460001e37fb8",
+        "name": "Raila Linhares Teixeira",
+        "created_at": "2025-08-11T21:56:27.016-03:00"
+      }
+    ],
+    "loanda.decrudis@gmail.com": [
+      {
+        "id": "68ae126b52b098001de55c56",
+        "name": "Dra Loanda",
+        "created_at": "2025-08-26T17:00:43.934-03:00"
+      },
+      {
+        "id": "689dffafce53e40001823e0c",
+        "name": "LOANDA COTTAS DE CRUDIS",
+        "created_at": "2025-08-14T12:24:31.610-03:00"
+      }
+    ],
+    "pamellasilva.pbs@gmail.com": [
+      {
+        "id": "689a9652c104660001a602e4",
+        "name": "Dra Pamella Silva",
+        "created_at": "2025-08-11T22:18:10.514-03:00"
+      },
+      {
+        "id": "68a488d2f636dd000175e251",
+        "name": "PAMELLA DA SILVA PEREIRA",
+        "created_at": "2025-08-19T11:23:14.040-03:00"
+      }
+    ],
+    "r.derma@uol.com.br": [
+      {
+        "id": "68f792db43ada000140f11fc",
+        "name": "DRA RITA SANTOS",
+        "created_at": "2025-10-21T11:04:11.603-03:00"
+      },
+      {
+        "id": "68ebfc834fbf28000104fdac",
+        "name": "Rita de Cassia",
+        "created_at": "2025-10-12T16:07:47.288-03:00"
+      }
+    ],
+    "talyssajunqueira@icloud.com": [
+      {
+        "id": "691b8dbe0e80800001e692e8",
+        "name": "DRA TALYSSA JUNQUEIRA",
+        "created_at": "2025-11-17T18:03:58.717-03:00"
+      },
+      {
+        "id": "68e7b97c942304001a81d940",
+        "name": "Dra Talyssa Junqueira",
+        "created_at": "2025-10-09T10:32:45.099-03:00"
+      }
+    ],
+    "financeiroclinicals@gmail.com": [
+      {
+        "id": "68a48433f636dd0001752670",
+        "name": "Dra. Lívia",
+        "created_at": "2025-08-19T11:03:31.304-03:00"
+      },
+      {
+        "id": "696a7786b0843a001d43ef08",
+        "name": "FRANCIELE ( DRA. LIVIA)",
+        "created_at": "2026-01-16T14:38:14.533-03:00"
+      }
+    ],
+    "lucianalourenco@lucianalourenco.com.br": [
+      {
+        "id": "68a48432f636dd000175260c",
+        "name": "Dra.Luciana",
+        "created_at": "2025-08-19T11:03:30.557-03:00"
+      },
+      {
+        "id": "689b3187120ec10001dcbb4e",
+        "name": "Luciana de Matos Lourenço",
+        "created_at": "2025-08-12T09:20:23.285-03:00"
+      }
+    ],
+    "eduardonicolosi@icloud.com": [
+      {
+        "id": "68ff72e4112610001554730b",
+        "name": "EDUARDO PIMENTEL NICOLOSI",
+        "created_at": "2025-10-27T10:25:56.853-03:00"
+      },
+      {
+        "id": "692595fd7d33d80013e33f0b",
+        "name": "EDUARDO PIMENTEL NICOLOSI",
+        "created_at": "2025-11-25T08:41:49.639-03:00"
+      }
+    ],
+    "esteticamendonca@gmail.com": [
+      {
+        "id": "69a63cff7de6d70001747644",
+        "name": "ELBA/SIMONE",
+        "created_at": "2026-03-02T22:44:31.995-03:00"
+      },
+      {
+        "id": "69a63cff7de6d70001747644",
+        "name": "ELBA/SIMONE",
+        "created_at": "2026-03-02T22:44:31.995-03:00"
+      }
+    ],
+    "lemottta951@gmail.com": [
+      {
+        "id": "69638168965d59000167a1ea",
+        "name": "ELENICE MOTTA",
+        "created_at": "2026-01-11T07:54:33.212-03:00"
+      },
+      {
+        "id": "6967d071efe44e00135e3476",
+        "name": "ELENICE MOTTA",
+        "created_at": "2026-01-14T14:20:49.537-03:00"
+      }
+    ],
+    "eliana@oestesolarenergia.com.br": [
+      {
+        "id": "68a488d6f636dd000175e492",
+        "name": "ELIANA",
+        "created_at": "2025-08-19T11:23:18.638-03:00"
+      },
+      {
+        "id": "69693ea4d6d1380013077ed2",
+        "name": "MERCEDES",
+        "created_at": "2026-01-15T16:23:17.345-03:00"
+      }
+    ],
+    "elisinhasugohara@gmail.com": [
+      {
+        "id": "69679a7d3cf27f0024eaf59d",
+        "name": "ELISIA",
+        "created_at": "2026-01-14T10:30:37.553-03:00"
+      },
+      {
+        "id": "69663f9c1d6c8e0001a798a3",
+        "name": "ELISIA",
+        "created_at": "2026-01-13T09:50:37.135-03:00"
+      }
+    ],
+    "lisi.freitas@icloud.com": [
+      {
+        "id": "689dfeb7ce53e4000181eacc",
+        "name": "Elisiane de Freitas Barbosa",
+        "created_at": "2025-08-14T12:20:23.350-03:00"
+      },
+      {
+        "id": "689a8b3a4ef17f0001dfb883",
+        "name": "ELISIANE DE FREITAS BARBOSA",
+        "created_at": "2025-08-11T21:30:50.370-03:00"
+      }
+    ],
+    "elisasoul7@gmail.com": [
+      {
+        "id": "69149f25f3c5fa001cd3d240",
+        "name": "Elizângela",
+        "created_at": "2025-11-12T11:52:21.871-03:00"
+      },
+      {
+        "id": "690bb4e78d023600015da424",
+        "name": "Elizângela",
+        "created_at": "2025-11-05T17:34:47.891-03:00"
+      }
+    ],
+    "elizangelacintra@gmail.com": [
+      {
+        "id": "694ac5a915d7a10022a841ee",
+        "name": "ELIZANGELA CINTRA",
+        "created_at": "2025-12-23T13:39:05.784-03:00"
+      },
+      {
+        "id": "6924434b52dcfd001dc008f9",
+        "name": "ELIZANGELA FLORINDO CINTRA",
+        "created_at": "2025-11-24T08:36:43.428-03:00"
+      }
+    ],
+    "draemilyruiz@gmail.com": [
+      {
+        "id": "68c06c87914cd10022766e20",
+        "name": "Emely Ruiz Cavalcante.",
+        "created_at": "2025-09-09T15:05:59.167-03:00"
+      },
+      {
+        "id": "68b89d0623ca000020850e48",
+        "name": "EMILY CAVALCANTE",
+        "created_at": "2025-09-03T16:54:46.842-03:00"
+      }
+    ],
+    "emiliana.carvalho@hotmail.com": [
+      {
+        "id": "68a488ecf636dd000175eebb",
+        "name": "EMILIANA CAMILO CARVALHO",
+        "created_at": "2025-08-19T11:23:40.698-03:00"
+      },
+      {
+        "id": "69822e8a8639130013f44bef",
+        "name": "Emiliana Carvalho",
+        "created_at": "2026-02-03T14:21:14.522-03:00"
+      }
+    ],
+    "eulercarneiro@locaderm.com": [
+      {
+        "id": "68cc00091e06ed00228257d4",
+        "name": "EULER DE SOUZA CARNEIRO JUNIOR",
+        "created_at": "2025-09-18T09:50:17.102-03:00"
+      },
+      {
+        "id": "691b8dbf0e80800001e6933c",
+        "name": "EULER DE SOUZA CARNEIRO JUNIOR",
+        "created_at": "2025-11-17T18:03:59.872-03:00"
+      }
+    ],
+    "fableal@gmail.com": [
+      {
+        "id": "68a4842ff636dd00017524fd",
+        "name": "Fabiano",
+        "created_at": "2025-08-19T11:03:28.317-03:00"
+      },
+      {
+        "id": "689a97af1fdea00001c27196",
+        "name": "FABIANO ROBERTO PEREIRA DE CARVALHO LEAL",
+        "created_at": "2025-08-11T22:23:59.726-03:00"
+      }
+    ],
+    "spazziocorpus@gmail.com": [
+      {
+        "id": "69386532ed789d0015a131d0",
+        "name": "FABIO",
+        "created_at": "2025-12-09T15:06:42.379-03:00"
+      },
+      {
+        "id": "699de29b3dfa22001509f948",
+        "name": "LIG CHINA RESTAURANTE (GILSON ALBERICI)",
+        "created_at": "2026-02-24T14:40:43.624-03:00"
+      }
+    ],
+    "fabricia.lelis@hotmail.com": [
+      {
+        "id": "68a488ccf636dd000175df95",
+        "name": "FABRICIA DA SILVA LELIS",
+        "created_at": "2025-08-19T11:23:08.664-03:00"
+      },
+      {
+        "id": "689a965fc104660001a60733",
+        "name": "Fabricia Lelis",
+        "created_at": "2025-08-11T22:18:23.495-03:00"
+      }
+    ],
+    "fabriciocristofer@hotmail.com": [
+      {
+        "id": "68a488eaf636dd000175ed2c",
+        "name": "Fabrício C.",
+        "created_at": "2025-08-19T11:23:38.105-03:00"
+      },
+      {
+        "id": "697915b51882af001315c9ed",
+        "name": "FABRÍCIO CRISTOFER DE OLIVEIRA",
+        "created_at": "2026-01-27T16:44:53.484-03:00"
+      }
+    ],
+    "fabriciocbarbosa988566@gmail.com": [
+      {
+        "id": "691c86e10413c800133664dc",
+        "name": "FABRICIO CAMPOS BARBOSA",
+        "created_at": "2025-11-18T11:46:58.208-03:00"
+      },
+      {
+        "id": "691b2298a600e1001bc95450",
+        "name": "FABRICIO CAMPOS BARBOSA",
+        "created_at": "2025-11-17T10:26:48.110-03:00"
+      }
+    ],
+    "fabyanavc@yahoo.com.br": [
+      {
+        "id": "68a488f2f636dd000175f144",
+        "name": "Fabyana",
+        "created_at": "2025-08-19T11:23:46.473-03:00"
+      },
+      {
+        "id": "68f77eaf771542001400ed49",
+        "name": "FABYANA VIEIRA CORREA",
+        "created_at": "2025-10-21T09:38:07.509-03:00"
+      }
+    ],
+    "felipeg_santana@yahoo.com.br": [
+      {
+        "id": "69094ff164355c0001f7dde9",
+        "name": "Felipe",
+        "created_at": "2025-11-03T21:59:29.479-03:00"
+      },
+      {
+        "id": "690bbbb48036030013710f30",
+        "name": "Felipe",
+        "created_at": "2025-11-05T18:03:48.479-03:00"
+      }
+    ],
+    "clinicadeo@gmail.com": [
+      {
+        "id": "68fc1e23d59cd100011cd223",
+        "name": "Fernanda",
+        "created_at": "2025-10-24T21:47:31.389-03:00"
+      },
+      {
+        "id": "6900b50043f96a00139c057a",
+        "name": "Fernanda",
+        "created_at": "2025-10-28T09:20:16.269-03:00"
+      }
+    ],
+    "fernanda@bolodqmadre.com.br": [
+      {
+        "id": "690de58a145d4e00173734aa",
+        "name": "Fernanda",
+        "created_at": "2025-11-07T09:26:50.067-03:00"
+      },
+      {
+        "id": "690790ce4fcc1900018941da",
+        "name": "Fernanda",
+        "created_at": "2025-11-02T14:11:42.498-03:00"
+      }
+    ],
+    "fernandabrcarneiro@hotmail.com": [
+      {
+        "id": "6866cbc6c4176200145d5539",
+        "name": "FERNANDA BUFAICAL RASSI CARNEIRO",
+        "created_at": "2025-07-03T15:28:22.333-03:00"
+      },
+      {
+        "id": "689a953bc104660001a5b12e",
+        "name": "Fernanda Rassi",
+        "created_at": "2025-08-11T22:13:31.034-03:00"
+      }
+    ],
+    "clinicamedicaharmoniarj@fmmail.com": [
+      {
+        "id": "69120334fa58c90001674842",
+        "name": "fernanda fernandes da silva",
+        "created_at": "2025-11-10T12:22:28.128-03:00"
+      },
+      {
+        "id": "691208ffaf1f77001a2a8426",
+        "name": "fernanda fernandes da silva",
+        "created_at": "2025-11-10T12:47:11.983-03:00"
+      }
+    ],
+    "ferfontao@hotmail.com": [
+      {
+        "id": "68a35dba5826930024c6b696",
+        "name": "FERNANDA FONTÃO",
+        "created_at": "2025-08-18T14:07:06.028-03:00"
+      },
+      {
+        "id": "691b8dbf0e80800001e6931e",
+        "name": "FERNANDA FONTAO LUPINO",
+        "created_at": "2025-11-17T18:03:59.506-03:00"
+      }
+    ],
+    "fernandasilvafreitas@yahoo.com.br": [
+      {
+        "id": "691494c8fd4bfc00197c2c42",
+        "name": "FERNANDA SILVA FREITAS",
+        "created_at": "2025-11-12T11:08:08.348-03:00"
+      },
+      {
+        "id": "691b8dbf0e80800001e69342",
+        "name": "FERNANDA SILVA FREITAS",
+        "created_at": "2025-11-17T18:03:59.941-03:00"
+      }
+    ],
+    "jaquelineferrazdermato@hotmail.com": [
+      {
+        "id": "6865a05d68811d0018e330f0",
+        "name": "FERRAZ & CARDOSO DERMATOLOGISTAS LTDA",
+        "created_at": "2025-07-02T18:10:53.510-03:00"
+      },
+      {
+        "id": "689a8b3c4ef17f0001dfb970",
+        "name": "Jaqueline",
+        "created_at": "2025-08-11T21:30:52.131-03:00"
+      }
+    ],
+    "flaviabarbosabritotp@gmail.com": [
+      {
+        "id": "68a854058acc7f00201b2c09",
+        "name": "Flávia Lúcia",
+        "created_at": "2025-08-22T08:27:01.204-03:00"
+      },
+      {
+        "id": "68a8544d56f214001b53d143",
+        "name": "Flávia Lúcia Barbosa de Brito",
+        "created_at": "2025-08-22T08:28:13.799-03:00"
+      }
+    ],
+    "flaviopiquet@gmail.com": [
+      {
+        "id": "69a225721f8d2b00133d3f28",
+        "name": "FLAVIO PIQUET",
+        "created_at": "2026-02-27T20:14:58.561-03:00"
+      },
+      {
+        "id": "68a310306b36b80001e880fa",
+        "name": "Juliana Piquet",
+        "created_at": "2025-08-18T08:36:16.692-03:00"
+      }
+    ],
+    "franciellesramos@gmail.com": [
+      {
+        "id": "698260d26903f40013bbeb87",
+        "name": "FRANCIELE",
+        "created_at": "2026-02-03T17:55:46.863-03:00"
+      },
+      {
+        "id": "689c9f94a295a90014bcbf78",
+        "name": "FRANCIELLE",
+        "created_at": "2025-08-13T11:22:12.675-03:00"
+      }
+    ],
+    "cribarifrann@gmail.com": [
+      {
+        "id": "68a488fbf636dd000175f4e3",
+        "name": "Francielli",
+        "created_at": "2025-08-19T11:23:55.753-03:00"
+      },
+      {
+        "id": "68f78406411e92001aabda43",
+        "name": "FRANCIELLI CRIBARI",
+        "created_at": "2025-10-21T10:00:54.378-03:00"
+      }
+    ],
+    "fredz_cavalcante@me.com": [
+      {
+        "id": "68682343d56a350001fb5dd9",
+        "name": "Frederico Lucas Lima Paiva Cavalcante",
+        "created_at": "2025-07-04T15:53:55.522-03:00"
+      },
+      {
+        "id": "689a90cb7d16460001e35389",
+        "name": "Frederico Lucas Lima Paiva Cavalcante",
+        "created_at": "2025-08-11T21:54:35.021-03:00"
+      }
+    ],
+    "ghfachini@hotmail.com": [
+      {
+        "id": "68f23b967370d2001ac870a2",
+        "name": "Gabriel hernandes",
+        "created_at": "2025-10-17T09:50:30.372-03:00"
+      },
+      {
+        "id": "68f1218a409ef60001ba1e6a",
+        "name": "Gabriel hernandes",
+        "created_at": "2025-10-16T13:47:06.181-03:00"
+      }
+    ],
+    "gabrielacapareli@yahoo.com.br": [
+      {
+        "id": "69a813bef62ab500011aa680",
+        "name": "Gabriela Cunha Capareli",
+        "created_at": "2026-03-04T08:13:02.341-03:00"
+      },
+      {
+        "id": "689a95bfc104660001a5d949",
+        "name": "Gabriela Cunha Capareli",
+        "created_at": "2025-08-11T22:15:43.343-03:00"
+      }
+    ],
+    "clinicavolpato@hotmail.com": [
+      {
+        "id": "690b992fa169b3001629c779",
+        "name": "GABRIELA M.",
+        "created_at": "2025-11-05T15:36:31.177-03:00"
+      },
+      {
+        "id": "690cbad2561483001d3ba921",
+        "name": "GABRIELA M.",
+        "created_at": "2025-11-06T12:12:18.761-03:00"
+      }
+    ],
+    "gabrielasassiarouca@hotmail.com": [
+      {
+        "id": "696500ea53bcdc001370304a",
+        "name": "Gabriela Sassi Arouca Ferreira",
+        "created_at": "2026-01-12T11:10:50.788-03:00"
+      },
+      {
+        "id": "6964fe1a7e99e200165429a4",
+        "name": "Gabriela Sassi Arouca Ferreira",
+        "created_at": "2026-01-12T10:58:50.530-03:00"
+      }
+    ],
+    "hauagge@yahoo.com.br": [
+      {
+        "id": "69056118b368a20001b75d61",
+        "name": "Georgen",
+        "created_at": "2025-10-31T22:23:36.960-03:00"
+      },
+      {
+        "id": "6908b87303f7b200210c6c43",
+        "name": "Georgen",
+        "created_at": "2025-11-03T11:13:07.852-03:00"
+      }
+    ],
+    "silvanaaparecidasiqueira@yahoo.com.br": [
+      {
+        "id": "69a63ce47de6d70001746cf1",
+        "name": "GERSON",
+        "created_at": "2026-03-02T22:44:04.559-03:00"
+      },
+      {
+        "id": "69a63ce47de6d70001746cf1",
+        "name": "GERSON",
+        "created_at": "2026-03-02T22:44:04.559-03:00"
+      }
+    ],
+    "gilsondermato@yahoo.com.br": [
+      {
+        "id": "689dfee9ce53e4000181fd06",
+        "name": "Gilson A P Gonçalves",
+        "created_at": "2025-08-14T12:21:13.805-03:00"
+      },
+      {
+        "id": "68c036e19b5acf002257cd2e",
+        "name": "GILSON ANTONIO GONCALVES",
+        "created_at": "2025-09-09T11:17:06.363-03:00"
+      }
+    ],
+    "ggmdermato@gmail.com": [
+      {
+        "id": "68b8a5546ea0a600189bc67f",
+        "name": "GISELE GARCIA MIGUEL",
+        "created_at": "2025-09-03T17:30:12.131-03:00"
+      },
+      {
+        "id": "68c06677944005001808f6a3",
+        "name": "Gisely Garcia Miguel.",
+        "created_at": "2025-09-09T14:40:07.972-03:00"
+      }
+    ],
+    "glaucegaziri@yahoo.com.br": [
+      {
+        "id": "68f8b37326f3230001811681",
+        "name": "Glauce",
+        "created_at": "2025-10-22T07:35:31.681-03:00"
+      },
+      {
+        "id": "68f8d244eda66200188354e9",
+        "name": "Glauce",
+        "created_at": "2025-10-22T09:47:00.893-03:00"
+      }
+    ],
+    "gleidsson.santos@contourline.com.br": [
+      {
+        "id": "690b392c05b1600015e33ea1",
+        "name": "Gleidsson",
+        "created_at": "2025-11-05T08:46:52.851-03:00"
+      },
+      {
+        "id": "690b412910de55001395e962",
+        "name": "Gleidsson",
+        "created_at": "2025-11-05T09:20:57.878-03:00"
+      }
+    ],
+    "gjcappato@gmail.com": [
+      {
+        "id": "6915d599e4aceb001d533a0a",
+        "name": "Guilherme",
+        "created_at": "2025-11-13T09:56:57.729-03:00"
+      },
+      {
+        "id": "6904131a4fff7f00013f862f",
+        "name": "Guilherme",
+        "created_at": "2025-10-30T22:38:34.466-03:00"
+      }
+    ],
+    "dermaalmeida@uol.com.br": [
+      {
+        "id": "689baf80f0ef8f000167b6e5",
+        "name": "Guilherme Almeida",
+        "created_at": "2025-08-12T18:17:52.621-03:00"
+      },
+      {
+        "id": "68a310376b36b80001e88306",
+        "name": "Guilherme Almeida",
+        "created_at": "2025-08-18T08:36:23.410-03:00"
+      }
+    ],
+    "gbsela@yahoo.com.br": [
+      {
+        "id": "6908cbeb08ce7a0019b3268d",
+        "name": "Gustavo",
+        "created_at": "2025-11-03T12:36:11.977-03:00"
+      },
+      {
+        "id": "6908147e4fcc19000189efd5",
+        "name": "Gustavo",
+        "created_at": "2025-11-02T23:33:34.848-03:00"
+      }
+    ],
+    "vitalocacoeseea@gmail.com": [
+      {
+        "id": "68dfc8b1527896001a4a8bc4",
+        "name": "GUSTAVO JOSÉ RIBEIRO RIOS",
+        "created_at": "2025-10-03T09:59:29.872-03:00"
+      },
+      {
+        "id": "6985e5d48cdda900166c7091",
+        "name": "GUSTAVO JOSÉ RIBEIRO RIOS",
+        "created_at": "2026-02-06T10:00:05.056-03:00"
+      }
+    ],
+    "gustavoluizbevilaqua@hotmail.com": [
+      {
+        "id": "689dff7dce53e40001822f7b",
+        "name": "Gustavo Luiz Bevilaqua",
+        "created_at": "2025-08-14T12:23:41.195-03:00"
+      },
+      {
+        "id": "68a35d7805077c0017434c0a",
+        "name": "GUSTAVO LUIZ BEVILAQUA",
+        "created_at": "2025-08-18T14:06:00.414-03:00"
+      }
+    ],
+    "hazelmed@me.com": [
+      {
+        "id": "6904259c67c02e0001a5f85c",
+        "name": "Hazel",
+        "created_at": "2025-10-30T23:57:32.930-03:00"
+      },
+      {
+        "id": "6904c300ea56cb0019b97f88",
+        "name": "Hazel",
+        "created_at": "2025-10-31T11:09:04.743-03:00"
+      }
+    ],
+    "hellen_guimaraes@hotmil.com": [
+      {
+        "id": "6867dd5e74274b0014533c04",
+        "name": "Helen Sampaio",
+        "created_at": "2025-07-04T10:55:42.327-03:00"
+      },
+      {
+        "id": "689a90357d16460001e313da",
+        "name": "Hellen Guimarães Sampaio",
+        "created_at": "2025-08-11T21:52:05.836-03:00"
+      }
+    ],
+    "hilde_jr@hotmail.com": [
+      {
+        "id": "696f8ff181a3a70020662e10",
+        "name": "HILDEBRANDO DE AZEVEDO JUNIOR",
+        "created_at": "2026-01-20T11:23:46.116-03:00"
+      },
+      {
+        "id": "68a488eaf636dd000175edc7",
+        "name": "LIDIANE (HILDEBRANDO DE AZEVEDO JUNIOR)",
+        "created_at": "2025-08-19T11:23:39.015-03:00"
+      }
+    ],
+    "hcr@grupohcr.com.br": [
+      {
+        "id": "699ddb3bcdca550015e8f3bb",
+        "name": "HUGO CORDOVA RAMOS",
+        "created_at": "2026-02-24T14:09:15.693-03:00"
+      },
+      {
+        "id": "69a63d247de6d700017482a7",
+        "name": "LUCIANA",
+        "created_at": "2026-03-02T22:45:08.176-03:00"
+      }
+    ],
+    "hugoinstitutoprado@gmail.com": [
+      {
+        "id": "6865ac80aa66e500144d21a4",
+        "name": "Hugo do Prado e Silva",
+        "created_at": "2025-07-02T19:02:40.543-03:00"
+      },
+      {
+        "id": "689a8b404ef17f0001dfbb92",
+        "name": "Hugo do Prado e Silva",
+        "created_at": "2025-08-11T21:30:56.562-03:00"
+      }
+    ],
+    "karinagnunes@hotmail.com": [
+      {
+        "id": "699dddc8c6e6bc001710ce9a",
+        "name": "INNOVE CLINIC LTDA",
+        "created_at": "2026-02-24T14:20:08.192-03:00"
+      },
+      {
+        "id": "69b95a049948a8001ae7f33c",
+        "name": "JACQUELINE",
+        "created_at": "2026-03-17T10:41:24.986-03:00"
+      }
+    ],
+    "ludmillafrangel@gmail.com": [
+      {
+        "id": "699f62971284e1001e93e125",
+        "name": "INSTITUTO BORTOLAN LTDA",
+        "created_at": "2026-02-25T17:59:03.234-03:00"
+      },
+      {
+        "id": "6977a8c7c3f15000168b3890",
+        "name": "LUDMILLA F RANGEL",
+        "created_at": "2026-01-26T14:47:51.717-03:00"
+      }
+    ],
+    "jeangneves04@gmail.com": [
+      {
+        "id": "6865a442b648aa001fbd9028",
+        "name": "INSTITUTO SCULPT LTDA",
+        "created_at": "2025-07-02T18:27:30.969-03:00"
+      },
+      {
+        "id": "689a8b3c4ef17f0001dfb9e4",
+        "name": "Jean Guilherme Neves",
+        "created_at": "2025-08-11T21:30:52.893-03:00"
+      }
+    ],
+    "isagabreu@hotmail.com": [
+      {
+        "id": "689dff34ce53e400018217c9",
+        "name": "Isabela",
+        "created_at": "2025-08-14T12:22:28.246-03:00"
+      },
+      {
+        "id": "68f77f37c292bc001f34fd4f",
+        "name": "ISABELA GUIEIRO DE ABREU",
+        "created_at": "2025-10-21T09:40:23.265-03:00"
+      }
+    ],
+    "janainabissani@hotmail.com": [
+      {
+        "id": "69694083bf3ea40017a6ed8e",
+        "name": "JANAINA TAIS BISSANI",
+        "created_at": "2026-01-15T16:31:15.675-03:00"
+      },
+      {
+        "id": "68a488cdf636dd000175dfb4",
+        "name": "JANAINA THAIS BISSANI",
+        "created_at": "2025-08-19T11:23:09.157-03:00"
+      }
+    ],
+    "jandiraiuchemafederizzi@gmail.com": [
+      {
+        "id": "6924484687c5590016936750",
+        "name": "Jandira Federizzi",
+        "created_at": "2025-11-24T08:57:59.085-03:00"
+      },
+      {
+        "id": "692447ca74f2df001c6c8753",
+        "name": "Jandira Federizzi",
+        "created_at": "2025-11-24T08:55:54.753-03:00"
+      }
+    ],
+    "jcharmonizacaofacial@outlook.com": [
+      {
+        "id": "68ee3a5ea62cd300145749aa",
+        "name": "Jaqueline Carvalho",
+        "created_at": "2025-10-14T08:56:14.869-03:00"
+      },
+      {
+        "id": "68ed9b8b0a23330001d0c136",
+        "name": "Jaqueline Carvalho",
+        "created_at": "2025-10-13T21:38:35.763-03:00"
+      }
+    ],
+    "jeffersonderma@gmail.com": [
+      {
+        "id": "68c096aeaddc9d00208675c1",
+        "name": "JEFFERSON ALFREDO DE BARROS",
+        "created_at": "2025-09-09T18:05:50.108-03:00"
+      },
+      {
+        "id": "68b8388a81eb0f00147a567e",
+        "name": "JEFFERSON ALFREDO DE BARROS",
+        "created_at": "2025-09-03T09:46:02.106-03:00"
+      }
+    ],
+    "jenifferoleastro@hotmail.com": [
+      {
+        "id": "696500d24c57340013b9a9dd",
+        "name": "Jeniffer Oleastro Sotelo de Mesquita",
+        "created_at": "2026-01-12T11:10:26.611-03:00"
+      },
+      {
+        "id": "6964fdef651dfb00161c4857",
+        "name": "Jeniffer Oleastro Sotelo de Mesquita",
+        "created_at": "2026-01-12T10:58:07.651-03:00"
+      }
+    ],
+    "jessicachen1993@hotmail.com": [
+      {
+        "id": "692f563373007e0014dd603e",
+        "name": "JESSICA CHEN",
+        "created_at": "2025-12-02T18:12:19.472-03:00"
+      },
+      {
+        "id": "68b88c6694b0cc001438295b",
+        "name": "JESSICA CHIA SIN CHEN",
+        "created_at": "2025-09-03T15:43:50.774-03:00"
+      }
+    ],
+    "jessyka.alisxandra@gmail.com": [
+      {
+        "id": "69a63cdd7de6d70001746a84",
+        "name": "JESSYCA",
+        "created_at": "2026-03-02T22:43:57.670-03:00"
+      },
+      {
+        "id": "69a63cdd7de6d70001746a84",
+        "name": "JESSYCA",
+        "created_at": "2026-03-02T22:43:57.670-03:00"
+      }
+    ],
+    "jjtfv@yahoo.com.br": [
+      {
+        "id": "689dfeface53e4000182037a",
+        "name": "João José Tadeu",
+        "created_at": "2025-08-14T12:21:30.744-03:00"
+      },
+      {
+        "id": "68c08f641c0a2b00188b95fd",
+        "name": "João José Tadeu",
+        "created_at": "2025-09-09T17:34:44.638-03:00"
+      }
+    ],
+    "compraswspa@gmail.com": [
+      {
+        "id": "697bc4bea207810023b10602",
+        "name": "Johnny Rogers",
+        "created_at": "2026-01-29T17:36:14.489-03:00"
+      },
+      {
+        "id": "688bc8889c37da000144cca8",
+        "name": "Johnny Rogers",
+        "created_at": "2025-07-31T16:48:24.742-03:00"
+      }
+    ],
+    "jordana.guiscem@gmail.com": [
+      {
+        "id": "68a488faf636dd000175f496",
+        "name": "Jordana",
+        "created_at": "2025-08-19T11:23:54.739-03:00"
+      },
+      {
+        "id": "68f783b9fce83c001586a928",
+        "name": "JORDANA HELENA GUISCEM LEITE",
+        "created_at": "2025-10-21T09:59:37.329-03:00"
+      }
+    ],
+    "jpinho3@gmail.com": [
+      {
+        "id": "6903ae7765a64400141a9bcb",
+        "name": "jorge",
+        "created_at": "2025-10-30T15:29:11.153-03:00"
+      },
+      {
+        "id": "68f4101e52d734000124019f",
+        "name": "jorge",
+        "created_at": "2025-10-18T19:09:34.206-03:00"
+      }
+    ],
+    "neto_sanches@hotmail.com": [
+      {
+        "id": "6908e4844f93fa001376804e",
+        "name": "José",
+        "created_at": "2025-11-03T14:21:08.952-03:00"
+      },
+      {
+        "id": "6907dff4f0a8b60001bcc0cb",
+        "name": "José",
+        "created_at": "2025-11-02T19:49:24.968-03:00"
+      }
+    ],
+    "jrllozano@hotmail.com": [
+      {
+        "id": "6904f70c9570cc0020ef7366",
+        "name": "Jose Roberto",
+        "created_at": "2025-10-31T14:51:08.285-03:00"
+      },
+      {
+        "id": "69004aa9931ca400014bce80",
+        "name": "Jose Roberto",
+        "created_at": "2025-10-28T01:46:34.144-03:00"
+      }
+    ],
+    "josiel_keila@hotmail.com": [
+      {
+        "id": "69a63d375bf1c500015220fb",
+        "name": "JOSIEL",
+        "created_at": "2026-03-02T22:45:27.547-03:00"
+      },
+      {
+        "id": "69a63d375bf1c500015220fb",
+        "name": "JOSIEL",
+        "created_at": "2026-03-02T22:45:27.547-03:00"
+      }
+    ],
+    "julianabelatti@gmail.com": [
+      {
+        "id": "6960e8f69555ef00180d8468",
+        "name": "Juliana",
+        "created_at": "2026-01-09T08:39:34.651-03:00"
+      },
+      {
+        "id": "690f8e96f41876000145cd27",
+        "name": "Juliana",
+        "created_at": "2025-11-08T15:40:22.543-03:00"
+      }
+    ],
+    "julyanahey@gmail.com": [
+      {
+        "id": "69662d385f1b660001593216",
+        "name": "JULIANA",
+        "created_at": "2026-01-13T08:32:09.391-03:00"
+      },
+      {
+        "id": "697a014e5ea34300213e092a",
+        "name": "JULIANA",
+        "created_at": "2026-01-28T09:30:06.427-03:00"
+      }
+    ],
+    "jubonella@yahoo.com.br": [
+      {
+        "id": "689a960dc104660001a5ee9e",
+        "name": "Juliana Bonella",
+        "created_at": "2025-08-11T22:17:01.025-03:00"
+      },
+      {
+        "id": "6984b46930bd050015751fa7",
+        "name": "JULIANA BONELLA",
+        "created_at": "2026-02-05T12:16:57.847-03:00"
+      }
+    ],
+    "drajucostaprado@gmail.com": [
+      {
+        "id": "691b0f5822cd420013139143",
+        "name": "Juliana Costa Prado",
+        "created_at": "2025-11-17T09:04:40.629-03:00"
+      },
+      {
+        "id": "68c08c294557180014c62f55",
+        "name": "Juliane Costa Prado",
+        "created_at": "2025-09-09T17:20:57.403-03:00"
+      }
+    ],
+    "contato.fabricioalam@hotmail.com": [
+      {
+        "id": "690b501c39de830001c710e7",
+        "name": "Juliana Maciel",
+        "created_at": "2025-11-05T10:24:45.631-03:00"
+      },
+      {
+        "id": "690b8e50bc0c2200138f1d10",
+        "name": "Juliana Maciel",
+        "created_at": "2025-11-05T14:50:08.023-03:00"
+      }
+    ],
+    "julianasaboia.dermatologia@gmail.com": [
+      {
+        "id": "69397b1069086e001bb94ade",
+        "name": "JULIANA SABOIA",
+        "created_at": "2025-12-10T10:52:16.568-03:00"
+      },
+      {
+        "id": "68a48423f636dd0001752127",
+        "name": "JULIANA SABOIA",
+        "created_at": "2025-08-19T11:03:16.245-03:00"
+      }
+    ],
+    "juliocesarnp@gmail.com": [
+      {
+        "id": "68e7990ab8f32b0001ad251f",
+        "name": "JULIO",
+        "created_at": "2025-10-09T08:14:18.643-03:00"
+      },
+      {
+        "id": "68e7b72f165c5c0014380b97",
+        "name": "JULIO CESAR NOGUEIRA",
+        "created_at": "2025-10-09T10:22:55.840-03:00"
+      }
+    ],
+    "irisprof10@yahoo.com.br": [
+      {
+        "id": "68f77e91ff3feb001639827e",
+        "name": "JÚLIO ODIZIO (IRIS CRISTINE ODIZIO)",
+        "created_at": "2025-10-21T09:37:37.379-03:00"
+      },
+      {
+        "id": "6868233fd56a350001fb5bd3",
+        "name": "JÚLIO ODIZIO (IRIS CRISTINE ODIZIO)",
+        "created_at": "2025-07-04T15:53:51.081-03:00"
+      }
+    ],
+    "giovanellakarine@gmail.com": [
+      {
+        "id": "68a488f2f636dd000175f19e",
+        "name": "Karine",
+        "created_at": "2025-08-19T11:23:46.986-03:00"
+      },
+      {
+        "id": "68f77f1b40cba800140b83b1",
+        "name": "KARINE DANIELE GIOVANELLA CANO",
+        "created_at": "2025-10-21T09:39:55.220-03:00"
+      }
+    ],
+    "karystula@hotmail.com": [
+      {
+        "id": "689a950ec104660001a5a322",
+        "name": "Karystula Montanha",
+        "created_at": "2025-08-11T22:12:46.964-03:00"
+      },
+      {
+        "id": "6865a2105430d2001f8fb600",
+        "name": "MONTANHA E SIQUEIRA LTDA",
+        "created_at": "2025-07-02T18:18:08.989-03:00"
+      }
+    ],
+    "dra_larissafaria@yahoo.com.br": [
+      {
+        "id": "689a962cc104660001a5f7b3",
+        "name": "Larissa",
+        "created_at": "2025-08-11T22:17:32.925-03:00"
+      },
+      {
+        "id": "69247d9edb758c0020520cd6",
+        "name": "Larissa Indicação",
+        "created_at": "2025-11-24T12:45:34.727-03:00"
+      }
+    ],
+    "dralarissaff@gmail.com": [
+      {
+        "id": "69a735faa5c5c800195b6f9d",
+        "name": "LARISSA",
+        "created_at": "2026-03-03T16:26:50.699-03:00"
+      },
+      {
+        "id": "689dff0cce53e400018209a7",
+        "name": "Larissa S F",
+        "created_at": "2025-08-14T12:21:48.309-03:00"
+      }
+    ],
+    "laura.w.m@hotmail.com": [
+      {
+        "id": "691dbb3030183f0016b7c067",
+        "name": "Laura ( LAUCH ODONTOLOGIA LTDA)",
+        "created_at": "2025-11-19T09:42:25.052-03:00"
+      },
+      {
+        "id": "6973bf412b4b19001cb11957",
+        "name": "LAURA WEBER ( LAUCH ODONTOLOGIA LTDA)",
+        "created_at": "2026-01-23T15:34:41.839-03:00"
+      }
+    ],
+    "ldlcabral@hotmail.com": [
+      {
+        "id": "68efed264109ab001aa4b10c",
+        "name": "Laura Dias Lustosa Cabral",
+        "created_at": "2025-10-15T15:51:18.682-03:00"
+      },
+      {
+        "id": "68eff647dd64f600172550bb",
+        "name": "Laura Dias Lustoza Cabral",
+        "created_at": "2025-10-15T16:30:15.272-03:00"
+      }
+    ],
+    "lauvivone@hotmail.com": [
+      {
+        "id": "696e8ded5167d700134b33ad",
+        "name": "Laura Vivone",
+        "created_at": "2026-01-19T17:02:53.316-03:00"
+      },
+      {
+        "id": "693bfb6f52698200011cf717",
+        "name": "Laura Vivone",
+        "created_at": "2025-12-12T08:24:32.287-03:00"
+      }
+    ],
+    "laysafor@gmail.com": [
+      {
+        "id": "68b835344c2d4500207e7977",
+        "name": "Laysa Fortuna De Oliveira Rebouças",
+        "created_at": "2025-09-03T09:31:48.173-03:00"
+      },
+      {
+        "id": "689dffeace53e4000182527f",
+        "name": "LAYZA FORTUNA DE OLIVEIRA REBOUCAS",
+        "created_at": "2025-08-14T12:25:30.390-03:00"
+      }
+    ],
+    "leandrosergiodasilva@yahoo.com.br": [
+      {
+        "id": "691b8dbf0e80800001e692fa",
+        "name": "LEANDRO SÉRGIO DA SILVA",
+        "created_at": "2025-11-17T18:03:59.092-03:00"
+      },
+      {
+        "id": "68baee0d3ce9890024c39ab7",
+        "name": "Leandro Sérgio da Silva",
+        "created_at": "2025-09-05T11:05:01.918-03:00"
+      }
+    ],
+    "wearestetic@gmail.com": [
+      {
+        "id": "689dff53ce53e40001822123",
+        "name": "Leticia",
+        "created_at": "2025-08-14T12:22:59.499-03:00"
+      },
+      {
+        "id": "68f77f93ca36da001f86a7b2",
+        "name": "LETICIA MANTOVANI FRANCO",
+        "created_at": "2025-10-21T09:41:55.747-03:00"
+      }
+    ],
+    "leticiagbelchior@gmail.com": [
+      {
+        "id": "697a70868c1bac0013612a89",
+        "name": "LETÍCIA BELCHIOR",
+        "created_at": "2026-01-28T17:24:38.135-03:00"
+      },
+      {
+        "id": "69ab68cbf519020013b1a8b5",
+        "name": "LETÍCIA BELCHIOR",
+        "created_at": "2026-03-06T20:52:43.591-03:00"
+      }
+    ],
+    "compras@leticiananci.com": [
+      {
+        "id": "68b608123a7dda000142bdc8",
+        "name": "LETICIA NANCI",
+        "created_at": "2025-09-01T17:54:43.416-03:00"
+      },
+      {
+        "id": "69a70a00622871001a609d3c",
+        "name": "LETICIA NANCI",
+        "created_at": "2026-03-03T13:19:12.811-03:00"
+      }
+    ],
+    "lianny010202@gmail.com": [
+      {
+        "id": "6900ce506247d10019e6e0ef",
+        "name": "Lianny",
+        "created_at": "2025-10-28T11:08:16.480-03:00"
+      },
+      {
+        "id": "691b7397589ed40025ed5e21",
+        "name": "Lianny",
+        "created_at": "2025-11-17T16:12:23.900-03:00"
+      }
+    ],
+    "neos.gerencia@outlook.com": [
+      {
+        "id": "689dffe2ce53e40001824fe9",
+        "name": "LIGIA BORGES NOVAIS BRAGA",
+        "created_at": "2025-08-14T12:25:22.032-03:00"
+      },
+      {
+        "id": "68a310216b36b80001e87c32",
+        "name": "Ligia Novais",
+        "created_at": "2025-08-18T08:36:01.317-03:00"
+      }
+    ],
+    "lorenafasouza22@gmail.com": [
+      {
+        "id": "68ce8cac5385aa00147520fc",
+        "name": "Lorena Furtado Alves de Souza",
+        "created_at": "2025-09-20T08:14:52.474-03:00"
+      },
+      {
+        "id": "68d13d94c235c80014cd2ebd",
+        "name": "Lorena Furtado Alves de Souza",
+        "created_at": "2025-09-22T09:14:12.894-03:00"
+      }
+    ],
+    "lorenalacerdac@gmail.com": [
+      {
+        "id": "698dd43deba96a00158e47f6",
+        "name": "Lorena lacerda",
+        "created_at": "2026-02-12T10:23:09.448-03:00"
+      },
+      {
+        "id": "698dd43deba96a00158e47f6",
+        "name": "Lorena lacerda",
+        "created_at": "2026-02-12T10:23:09.448-03:00"
+      }
+    ],
+    "lucasnicolau1@gmail.com": [
+      {
+        "id": "6905124480601c00011a52f5",
+        "name": "LUCAS NICOLAU",
+        "created_at": "2025-10-31T16:47:17.769-03:00"
+      },
+      {
+        "id": "6908b5b77622230013961029",
+        "name": "Lucas nicolau",
+        "created_at": "2025-11-03T11:01:27.977-03:00"
+      }
+    ],
+    "lucilalargura@gmail.com": [
+      {
+        "id": "68682345d56a350001fb5eca",
+        "name": "Lucila",
+        "created_at": "2025-07-04T15:53:57.190-03:00"
+      },
+      {
+        "id": "68f782eb770f110014745604",
+        "name": "LUCILA Z. LARGURA TREINAMENTO E CONSULTORIA LTDA",
+        "created_at": "2025-10-21T09:56:11.987-03:00"
+      }
+    ],
+    "lu.bardales@gmail.com": [
+      {
+        "id": "689a969dc104660001a619c8",
+        "name": "Lucilene do Nascimento Bardales",
+        "created_at": "2025-08-11T22:19:25.985-03:00"
+      },
+      {
+        "id": "68e80ed7faa05d001ea237f9",
+        "name": "Lucilene do Nascimento Bardales",
+        "created_at": "2025-10-09T16:36:55.525-03:00"
+      }
+    ],
+    "nestorvasconcelos@hotmail.com": [
+      {
+        "id": "68fc9cedac11fa00015cc3e6",
+        "name": "Luiz Nestor",
+        "created_at": "2025-10-25T06:48:29.745-03:00"
+      },
+      {
+        "id": "68ffb7482e3f8d0015a5caf9",
+        "name": "Luiz Nestor",
+        "created_at": "2025-10-27T15:17:44.705-03:00"
+      }
+    ],
+    "luizamplopes@gmail.com": [
+      {
+        "id": "68b0ae3a136601001be48f7a",
+        "name": "Luiza Lopes",
+        "created_at": "2025-08-28T16:30:02.793-03:00"
+      },
+      {
+        "id": "68a310206b36b80001e87c16",
+        "name": "Luiza Maria Neves De Paiva Lopes",
+        "created_at": "2025-08-18T08:36:00.985-03:00"
+      }
+    ],
+    "contato@linadepil.com.br": [
+      {
+        "id": "68cc14cc8756310014f31c48",
+        "name": "MANOELINA ROSANA",
+        "created_at": "2025-09-18T11:18:52.076-03:00"
+      },
+      {
+        "id": "689a966ec104660001a60b60",
+        "name": "Manoelina Rosana Santos",
+        "created_at": "2025-08-11T22:18:38.283-03:00"
+      }
+    ],
+    "marcelatinocomed@hotmail.com": [
+      {
+        "id": "68f9748f4af54900018b181b",
+        "name": "Marcela",
+        "created_at": "2025-10-22T21:19:27.541-03:00"
+      },
+      {
+        "id": "68fa4394500e2d001aae61ed",
+        "name": "Marcela",
+        "created_at": "2025-10-23T12:02:44.119-03:00"
+      }
+    ],
+    "marcelarmdeallbuquerque@gmail.com": [
+      {
+        "id": "6964fe10f575d20013071566",
+        "name": "Marcela Ribeiro Montenegro Albuquerque de Araújo",
+        "created_at": "2026-01-12T10:58:43.133-03:00"
+      },
+      {
+        "id": "696500e2bdef0d0017fa5027",
+        "name": "Marcela Ribeiro Montenegro Albuquerque de Araújo",
+        "created_at": "2026-01-12T11:10:42.099-03:00"
+      }
+    ],
+    "drmarcellcominato@hotmail.com": [
+      {
+        "id": "694157388aea1e0016434e54",
+        "name": "MARCELL CAIRRÃO COMINATO",
+        "created_at": "2025-12-16T09:57:29.263-03:00"
+      },
+      {
+        "id": "68b895ebb42149001909b057",
+        "name": "Marcell Cominato",
+        "created_at": "2025-09-03T16:24:28.327-03:00"
+      }
+    ],
+    "marcellanascimento.dermato@gmail.com": [
+      {
+        "id": "68c430abd9e6300001d55a0f",
+        "name": "Marcella",
+        "created_at": "2025-09-12T11:39:39.451-03:00"
+      },
+      {
+        "id": "68ffaf9d8ffcd10018dff01d",
+        "name": "Marcella Nascimento",
+        "created_at": "2025-10-27T14:45:01.949-03:00"
+      }
+    ],
+    "contato@marcellaaraujo.com.br": [
+      {
+        "id": "68b8a4adb441810021e37567",
+        "name": "MARCELLA SANTOS",
+        "created_at": "2025-09-03T17:27:25.217-03:00"
+      },
+      {
+        "id": "68c067b581fe2c00197bd5b4",
+        "name": "Marcella Santos Araújo.",
+        "created_at": "2025-09-09T14:45:25.730-03:00"
+      }
+    ],
+    "marcelo@mybeleza.com.br": [
+      {
+        "id": "68a4844df636dd0001753014",
+        "name": "Marcelo",
+        "created_at": "2025-08-19T11:03:57.929-03:00"
+      },
+      {
+        "id": "689a95aac104660001a5d2fa",
+        "name": "Marcelo Augusto Mourao de Oliveira",
+        "created_at": "2025-08-11T22:15:22.701-03:00"
+      }
+    ],
+    "marcelinhomello@hotmail.com": [
+      {
+        "id": "68b89f5c9ac78d001f2f1958",
+        "name": "MARCELO DE MELLO",
+        "created_at": "2025-09-03T17:04:44.167-03:00"
+      },
+      {
+        "id": "68c06ab919aeea0019b70419",
+        "name": "Marcelo F. C. de Mello J.",
+        "created_at": "2025-09-09T14:58:17.071-03:00"
+      }
+    ],
+    "adm@altostimaestetica.com.br": [
+      {
+        "id": "69a63d047de6d700017477e9",
+        "name": "MARCIO",
+        "created_at": "2026-03-02T22:44:36.415-03:00"
+      },
+      {
+        "id": "699d96aa5e509e001d051198",
+        "name": "MARIO",
+        "created_at": "2026-02-24T09:16:42.305-03:00"
+      }
+    ],
+    "marcio@giovanamoraes.com.br": [
+      {
+        "id": "68a48446f636dd0001752d35",
+        "name": "Márcio Menezes",
+        "created_at": "2025-08-19T11:03:51.056-03:00"
+      },
+      {
+        "id": "68a311c76b36b80001e8fa15",
+        "name": "REBELO DE MORAES SERVICOS MEDICOS LTDA",
+        "created_at": "2025-08-18T08:43:03.179-03:00"
+      }
+    ],
+    "doutormarcofischer@gmail.com": [
+      {
+        "id": "6866e0d827ceb100197a41d4",
+        "name": "MARCO AURELIO FISCHER DE LIMA",
+        "created_at": "2025-07-03T16:58:16.117-03:00"
+      },
+      {
+        "id": "689a8b444ef17f0001dfbd92",
+        "name": "MARCO AURELIO FISCHER DE LIMA",
+        "created_at": "2025-08-11T21:31:00.436-03:00"
+      }
+    ],
+    "consultorio@drmarcosgomes.com": [
+      {
+        "id": "69027a1b222bab0001a98a3c",
+        "name": "Marcos Gomes",
+        "created_at": "2025-10-29T17:33:31.403-03:00"
+      },
+      {
+        "id": "69036eafca2d8d0013c0faaf",
+        "name": "Marcos Gomes",
+        "created_at": "2025-10-30T10:57:03.283-03:00"
+      }
+    ],
+    "atendimento@stimadermatologia.com.br": [
+      {
+        "id": "68a312386b36b80001e91b55",
+        "name": "Margareth Zanatta",
+        "created_at": "2025-08-18T08:44:56.837-03:00"
+      },
+      {
+        "id": "68a312386b36b80001e91b55",
+        "name": "Margareth Zanatta",
+        "created_at": "2025-08-18T08:44:56.837-03:00"
+      }
+    ],
+    "maria@mariabussade.com.br": [
+      {
+        "id": "6866d988fcc8d6001a425c48",
+        "name": "MARIA BUSSADE DERMATOLOGIA LTDA",
+        "created_at": "2025-07-03T16:27:04.504-03:00"
+      },
+      {
+        "id": "689a8b364ef17f0001dfb63d",
+        "name": "Paula Montefusco",
+        "created_at": "2025-08-11T21:30:46.146-03:00"
+      }
+    ],
+    "isabelsaraivasc@gmail.com": [
+      {
+        "id": "689dff05ce53e40001820730",
+        "name": "Maria Isabel",
+        "created_at": "2025-08-14T12:21:41.899-03:00"
+      },
+      {
+        "id": "68c32af32d1d170017229b8d",
+        "name": "Maria Isabel Ramos Saraiva Rocha",
+        "created_at": "2025-09-11T17:02:59.346-03:00"
+      }
+    ],
+    "mayaracarvalho447@gmail.com": [
+      {
+        "id": "689a96acc104660001a61ea5",
+        "name": "Mayara Piccini",
+        "created_at": "2025-08-11T22:19:40.529-03:00"
+      },
+      {
+        "id": "689ccb4f3cad720024f836e5",
+        "name": "Mayara Piccini",
+        "created_at": "2025-08-13T14:28:47.258-03:00"
+      }
+    ],
+    "melinaquintella@gmail.com": [
+      {
+        "id": "6902c215da5585000136d84d",
+        "name": "melina",
+        "created_at": "2025-10-29T22:40:37.576-03:00"
+      },
+      {
+        "id": "68fb82d094ed5300187a51d1",
+        "name": "MELINA",
+        "created_at": "2025-10-24T10:44:48.118-03:00"
+      }
+    ],
+    "melinaquintella@hotmail.com": [
+      {
+        "id": "68fb82d094ed5300187a51d1",
+        "name": "MELINA",
+        "created_at": "2025-10-24T10:44:48.118-03:00"
+      },
+      {
+        "id": "68fb81a1e619b6000136b2de",
+        "name": "Melina",
+        "created_at": "2025-10-24T10:40:31.286-03:00"
+      }
+    ],
+    "mibarsilva@hotmail.com": [
+      {
+        "id": "68b89b18065d8c001cf5ee29",
+        "name": "MILENA BARRERA",
+        "created_at": "2025-09-03T16:46:32.374-03:00"
+      },
+      {
+        "id": "68c06d1852fcc1001e784790",
+        "name": "Milena Barriera.",
+        "created_at": "2025-09-09T15:08:24.042-03:00"
+      }
+    ],
+    "drmomairi@yahoo.com.br": [
+      {
+        "id": "68f79218a9edcb0019ddd4b4",
+        "name": "MOHAMAD OMAIRI",
+        "created_at": "2025-10-21T11:00:56.769-03:00"
+      },
+      {
+        "id": "68ec3a905b44b800015d0315",
+        "name": "Mohamad omairi",
+        "created_at": "2025-10-12T20:32:33.027-03:00"
+      }
+    ],
+    "monica.malves12@gmail.com": [
+      {
+        "id": "698dd6151d1319001755d935",
+        "name": "MÔNICA",
+        "created_at": "2026-02-12T10:31:01.437-03:00"
+      },
+      {
+        "id": "698ceaf5e7b1f90013eff5dc",
+        "name": "Mônica Alves",
+        "created_at": "2026-02-11T17:47:50.222-03:00"
+      }
+    ],
+    "mylenagomes021@gmail.com": [
+      {
+        "id": "69b07fb825f28b0013ba5195",
+        "name": "MYLENA GOMES DA SILVEIRA",
+        "created_at": "2026-03-10T17:31:52.419-03:00"
+      },
+      {
+        "id": "68f67784f3ee330014dee1e2",
+        "name": "MYLENA GOMES DA SILVEIRA",
+        "created_at": "2025-10-20T14:55:16.666-03:00"
+      }
+    ],
+    "nataliaguedesnascimento@gmail.com": [
+      {
+        "id": "695bc1924ca2740023dcba49",
+        "name": "NATALIA",
+        "created_at": "2026-01-05T10:50:10.796-03:00"
+      },
+      {
+        "id": "695bc23258aafb0015bf5289",
+        "name": "NATÁLIA GUEDES NASCIMENTO",
+        "created_at": "2026-01-05T10:52:50.781-03:00"
+      }
+    ],
+    "natasha.vieiraesteticista@gmail.com": [
+      {
+        "id": "691b8dbf0e80800001e6932a",
+        "name": "NATASHA VIEIRA",
+        "created_at": "2025-11-17T18:03:59.645-03:00"
+      },
+      {
+        "id": "689a9601c104660001a5ebd2",
+        "name": "NATASHA VIEIRA",
+        "created_at": "2025-08-11T22:16:49.217-03:00"
+      }
+    ],
+    "andradnathalia@gmail.com": [
+      {
+        "id": "6902c7f01bdfa9000173f402",
+        "name": "Nathália",
+        "created_at": "2025-10-29T23:05:37.224-03:00"
+      },
+      {
+        "id": "69037220a7d2760018bdb9d7",
+        "name": "Nathália Martins Ferreira de Andrade Maia",
+        "created_at": "2025-10-30T11:11:44.568-03:00"
+      }
+    ],
+    "nayanebraga@gmail.com": [
+      {
+        "id": "699ca0ec3e16130001cb6e74",
+        "name": "NAYANE",
+        "created_at": "2026-02-23T15:48:12.299-03:00"
+      },
+      {
+        "id": "699cc042bb0b9300176dd499",
+        "name": "Nayane",
+        "created_at": "2026-02-23T18:01:54.786-03:00"
+      }
+    ],
+    "drnelsonfrota@gmail.com": [
+      {
+        "id": "689dffecce53e40001825345",
+        "name": "Nelson Frota",
+        "created_at": "2025-08-14T12:25:32.268-03:00"
+      },
+      {
+        "id": "691b8dbf0e80800001e69312",
+        "name": "NELSON FROTA",
+        "created_at": "2025-11-17T18:03:59.366-03:00"
+      }
+    ],
+    "saldanhacmnina@hotmail.com": [
+      {
+        "id": "68adc670774af80019810c08",
+        "name": "Nina coelho de moura saldanha",
+        "created_at": "2025-08-26T11:36:32.371-03:00"
+      },
+      {
+        "id": "691b8dbf0e80800001e6930c",
+        "name": "NINA COELHO DE MOURA SALDANHA",
+        "created_at": "2025-11-17T18:03:59.300-03:00"
+      }
+    ],
+    "nubiamacedo_@hotmail.com": [
+      {
+        "id": "68682343d56a350001fb5de4",
+        "name": "NUBIA VEDOVATTO DE MACEDO",
+        "created_at": "2025-07-04T15:53:55.590-03:00"
+      },
+      {
+        "id": "689dff75ce53e40001822bf1",
+        "name": "NUBIA VEDOVATTO DE MACEDO",
+        "created_at": "2025-08-14T12:23:33.039-03:00"
+      }
+    ],
+    "nydiadipaula@gmail.com": [
+      {
+        "id": "68f27dea71475600246f6ced",
+        "name": "Nydia Di Paula Oliveira",
+        "created_at": "2025-10-17T14:33:30.669-03:00"
+      },
+      {
+        "id": "68ec48c7340ab200017f7f95",
+        "name": "NYDIA DI PAULA OLIVEIRA",
+        "created_at": "2025-10-12T21:33:11.133-03:00"
+      }
+    ],
+    "olivia.caxias@hotmail.com": [
+      {
+        "id": "689dffe9ce53e40001825200",
+        "name": "Olívia",
+        "created_at": "2025-08-14T12:25:29.079-03:00"
+      },
+      {
+        "id": "689a91307d16460001e37ba6",
+        "name": "Olívia Caxias",
+        "created_at": "2025-08-11T21:56:16.365-03:00"
+      }
+    ],
+    "osmanyrf98461@gmail.com": [
+      {
+        "id": "694061e830eb3300166f58ed",
+        "name": "Osmany Rodriguez Frometa",
+        "created_at": "2025-12-15T16:30:48.292-03:00"
+      },
+      {
+        "id": "69a040a073912c0017fb5021",
+        "name": "Osmany Rodriguez Frometa",
+        "created_at": "2026-02-26T09:46:24.456-03:00"
+      }
+    ],
+    "dra.pamelacapitanio@gmail.com": [
+      {
+        "id": "6902776f1863f600137cb0b2",
+        "name": "Pamela Capitanio",
+        "created_at": "2025-10-29T17:22:07.819-03:00"
+      },
+      {
+        "id": "68fab14596c10d0001878a33",
+        "name": "Pamela Capitanio",
+        "created_at": "2025-10-23T19:50:45.689-03:00"
+      }
+    ],
+    "patty_mattos@outlook.com": [
+      {
+        "id": "689a9649c104660001a5fffe",
+        "name": "Patricia Matos",
+        "created_at": "2025-08-11T22:18:01.720-03:00"
+      },
+      {
+        "id": "68eeb268ef69800014430f5e",
+        "name": "Patricia Matos",
+        "created_at": "2025-10-14T17:28:24.815-03:00"
+      }
+    ],
+    "paula@metodocamilaser.com.br": [
+      {
+        "id": "695fad2b20f6fb001f21aee9",
+        "name": "PAULA NASCIMENTO",
+        "created_at": "2026-01-08T10:12:11.189-03:00"
+      },
+      {
+        "id": "689dff61ce53e400018224f0",
+        "name": "PAULA ROBERTA PEREIRA DO NASCIMENTO",
+        "created_at": "2025-08-14T12:23:13.479-03:00"
+      }
+    ],
+    "pcmatielo@gmail.com": [
+      {
+        "id": "699dd77b41759800186b6bac",
+        "name": "PAULO",
+        "created_at": "2026-02-24T13:53:15.072-03:00"
+      },
+      {
+        "id": "699e070dc400550017ece077",
+        "name": "PAULO CESAR MATIELO",
+        "created_at": "2026-02-24T17:16:13.442-03:00"
+      }
+    ],
+    "pcjdias7@gmail.com": [
+      {
+        "id": "68f7cb41932423001674a4cd",
+        "name": "Paulo cesar de jesus dias",
+        "created_at": "2025-10-21T15:04:49.304-03:00"
+      },
+      {
+        "id": "68f7c472789c3b0001b57c11",
+        "name": "Paulo cesar de jesus dias",
+        "created_at": "2025-10-21T14:35:46.842-03:00"
+      }
+    ],
+    "jacquespedro76@gmail.com": [
+      {
+        "id": "69a63d5f5bf1c50001523634",
+        "name": "PEDRO",
+        "created_at": "2026-03-02T22:46:07.183-03:00"
+      },
+      {
+        "id": "69a63d5f5bf1c50001523634",
+        "name": "PEDRO",
+        "created_at": "2026-03-02T22:46:07.183-03:00"
+      }
+    ],
+    "pollyanna_coelho@hotmail.com": [
+      {
+        "id": "68682341d56a350001fb5d33",
+        "name": "Pollyanna",
+        "created_at": "2025-07-04T15:53:53.985-03:00"
+      },
+      {
+        "id": "68f7810c62fa2d001ee9c389",
+        "name": "POLLYANNA COELHO DE SOUSA FONSECA",
+        "created_at": "2025-10-21T09:48:12.247-03:00"
+      }
+    ],
+    "rafael@vitaforma.com.br": [
+      {
+        "id": "69a63d595bf1c50001523390",
+        "name": "RAFAEL",
+        "created_at": "2026-03-02T22:46:01.922-03:00"
+      },
+      {
+        "id": "69a63d595bf1c50001523390",
+        "name": "RAFAEL",
+        "created_at": "2026-03-02T22:46:01.922-03:00"
+      }
+    ],
+    "eikitakemura@gmail.com": [
+      {
+        "id": "690a8ebdc4300200013d6699",
+        "name": "Rafael Eiki",
+        "created_at": "2025-11-04T20:39:41.698-03:00"
+      },
+      {
+        "id": "690c8abff8427a00171f9d72",
+        "name": "Rafael Eiki",
+        "created_at": "2025-11-06T08:47:11.815-03:00"
+      }
+    ],
+    "rafamignoli@icloud.com": [
+      {
+        "id": "6977d34603f73c0013c36a31",
+        "name": "RAFAELA MIGNOLI",
+        "created_at": "2026-01-26T17:49:10.484-03:00"
+      },
+      {
+        "id": "6926132801b82e0015f8f7eb",
+        "name": "RAFAELA MINGOLI",
+        "created_at": "2025-11-25T17:35:52.341-03:00"
+      }
+    ],
+    "rafaela.moreschi@gmail.com": [
+      {
+        "id": "689a96a3c104660001a61b6b",
+        "name": "Rafaela Moreschi de Quadros Moura",
+        "created_at": "2025-08-11T22:19:31.364-03:00"
+      },
+      {
+        "id": "689a97c21fdea00001c27b0a",
+        "name": "Rafaela Moreschi de Quadros Moura",
+        "created_at": "2025-08-11T22:24:18.276-03:00"
+      }
+    ],
+    "rafaellamarinhomoura@gmail.com": [
+      {
+        "id": "68a4844ff636dd000175307f",
+        "name": "Rafaella M",
+        "created_at": "2025-08-19T11:03:59.907-03:00"
+      },
+      {
+        "id": "698f80d8b9450000132a2ef6",
+        "name": "RAFAELLA MARINHO",
+        "created_at": "2026-02-13T16:51:52.892-03:00"
+      }
+    ],
+    "rasesso@yahoo.com.br": [
+      {
+        "id": "6868233ed56a350001fb5b81",
+        "name": "Raquel",
+        "created_at": "2025-07-04T15:53:50.231-03:00"
+      },
+      {
+        "id": "68f77e31ada6b8001dce1433",
+        "name": "RAQUEL SESSO PERCHES HANSEN",
+        "created_at": "2025-10-21T09:36:01.741-03:00"
+      }
+    ],
+    "rebeca.fontoura@hotmail.com": [
+      {
+        "id": "689a903d7d16460001e31712",
+        "name": "REBECA FONTOURA ABREU FILIPPI",
+        "created_at": "2025-08-11T21:52:13.044-03:00"
+      },
+      {
+        "id": "6868234cd56a350001fb6205",
+        "name": "REBECA FONTOURA ABREU FILIPPI",
+        "created_at": "2025-07-04T15:54:04.581-03:00"
+      }
+    ],
+    "regis.med53@gmail.com": [
+      {
+        "id": "69388cbd70374100137848a2",
+        "name": "REGIS AUGUSTO SILVA",
+        "created_at": "2025-12-09T17:55:25.943-03:00"
+      },
+      {
+        "id": "68de6219b9e2ce0023c6219e",
+        "name": "REGIS AUGUSTO SILVA",
+        "created_at": "2025-10-02T08:29:29.825-03:00"
+      }
+    ],
+    "renan.br2@hotmail.com": [
+      {
+        "id": "68682345d56a350001fb5ebf",
+        "name": "Renan",
+        "created_at": "2025-07-04T15:53:57.125-03:00"
+      },
+      {
+        "id": "68f782a92b3b6000146c1cfa",
+        "name": "RENAN SOUZA OLIVEIRA ANDRADE",
+        "created_at": "2025-10-21T09:55:05.541-03:00"
+      }
+    ],
+    "renatarodriguessansao@hotmail.com": [
+      {
+        "id": "689dff65ce53e400018226be",
+        "name": "Renata",
+        "created_at": "2025-08-14T12:23:17.524-03:00"
+      },
+      {
+        "id": "68f780522ee3fc00168d50b3",
+        "name": "RENATA ALVES RODRIGUES SANSAO",
+        "created_at": "2025-10-21T09:45:06.657-03:00"
+      }
+    ],
+    "rbogea15@hotmail.com": [
+      {
+        "id": "68a310396b36b80001e883d5",
+        "name": "Renata Bogea",
+        "created_at": "2025-08-18T08:36:25.639-03:00"
+      },
+      {
+        "id": "68a310396b36b80001e883d5",
+        "name": "Renata Bogea",
+        "created_at": "2025-08-18T08:36:25.639-03:00"
+      }
+    ],
+    "renatoferreira1506@hotmail.com": [
+      {
+        "id": "6931d96e85e97b001af64cfc",
+        "name": "RENATA KELLY",
+        "created_at": "2025-12-04T15:56:47.125-03:00"
+      },
+      {
+        "id": "68deaa5a51658d0014595d68",
+        "name": "RENATO JOSÉ FERREIRA",
+        "created_at": "2025-10-02T13:37:46.951-03:00"
+      }
+    ],
+    "med.angelimsp@gmail.com": [
+      {
+        "id": "698dd87a90c8d00014cb48ea",
+        "name": "Renato Angelim",
+        "created_at": "2026-02-12T10:41:14.531-03:00"
+      },
+      {
+        "id": "698ccffba5e888001c74dd28",
+        "name": "Renato Angelim",
+        "created_at": "2026-02-11T15:52:43.495-03:00"
+      }
+    ],
+    "rennyermenandro@gmail.com": [
+      {
+        "id": "696c15700560fb00013b367e",
+        "name": "RENNYER",
+        "created_at": "2026-01-17T20:04:16.752-03:00"
+      },
+      {
+        "id": "696e7d62f0a43e0016e5af2a",
+        "name": "RENNYER",
+        "created_at": "2026-01-19T15:52:18.796-03:00"
+      }
+    ],
+    "asiudhui@gmail.com": [
+      {
+        "id": "6931a8f91a5e8a00012b93d3",
+        "name": "ricardo Amado",
+        "created_at": "2025-12-04T12:30:01.814-03:00"
+      },
+      {
+        "id": "6931a8f9afd3030001f18a27",
+        "name": "ricardo Amado",
+        "created_at": "2025-12-04T12:30:01.882-03:00"
+      }
+    ],
+    "atendimento.cassiaaraujo@gmail.com": [
+      {
+        "id": "690d07655a1e9f001319063c",
+        "name": "RITA",
+        "created_at": "2025-11-06T17:39:01.505-03:00"
+      },
+      {
+        "id": "691b8dbf0e80800001e69336",
+        "name": "RITA DE CASSIA RODRIGUES ARAUJO",
+        "created_at": "2025-11-17T18:03:59.805-03:00"
+      }
+    ],
+    "rivalinovaz@yahoo.com.br": [
+      {
+        "id": "690a5b6ffd5cf100218b0f2b",
+        "name": "Rivalino",
+        "created_at": "2025-11-04T17:00:47.551-03:00"
+      },
+      {
+        "id": "690948010d5c070001fecbb8",
+        "name": "Rivalino",
+        "created_at": "2025-11-03T21:25:37.928-03:00"
+      }
+    ],
+    "lopes.roberta7@gmail.com": [
+      {
+        "id": "689dfed7ce53e4000181f630",
+        "name": "Roberta Lopes",
+        "created_at": "2025-08-14T12:20:55.845-03:00"
+      },
+      {
+        "id": "68c09649c0a6ad0014041273",
+        "name": "ROBERTA SIMÃO LOPES CURY",
+        "created_at": "2025-09-09T18:04:09.064-03:00"
+      }
+    ]
+  },
+  "dup_names_count": 1598,
+  "dup_emails_count": 287
+}

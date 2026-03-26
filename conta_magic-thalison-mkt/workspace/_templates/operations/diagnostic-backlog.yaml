@@ -1,0 +1,36 @@
+# Diagnostic Backlog — Ações identificadas por diagnósticos C-Level
+# Path canônico: workspace/businesses/{slug}/operations/diagnostic-backlog.yaml
+# Owner: coo-orchestrator
+# Atualizado por: diagnose-business, diagnose-offer, growth-levers
+#
+# Cada item é adicionado APENAS com permissão do usuário.
+# Items são executados via squads recomendados e marcados como done após conclusão.
+
+metadata:
+  version: "1.0"
+  business: FILL_THIS
+  last_diagnostic: FILL_THIS  # YYYY-MM-DD
+  total_items: 0
+  completed_items: 0
+  status: INCOMPLETE
+
+# Backlog de ações priorizadas
+# Cada item segue a estrutura abaixo
+items: []
+
+# Estrutura de cada item:
+#
+# - id: "DIAG-{YYYY-MM-DD}-{N}"
+#   created_at: "YYYY-MM-DD"
+#   source_diagnostic: "diagnose-business|diagnose-offer|growth-levers"
+#   dimension: "customer|brand|offer|narrative|traffic|operations|success|evidence|movement|culture"
+#   score_at_detection: 45         # score quando o gap foi detectado
+#   priority: "CRÍTICO|ALTO|MÉDIO|BAIXO"
+#   gap_description: "ICP incompleto, faltam archetypes e pain stack"
+#   recommended_squad: "c-level"
+#   recommended_command: "*elicit-icp-yaml {slug}"
+#   prerequisite: null              # ou "DIAG-2026-03-18-1" (ID de outro item)
+#   status: "pending|in_progress|done|skipped"
+#   completed_at: null
+#   score_after: null               # score na dimensão após resolver
+#   notes: ""

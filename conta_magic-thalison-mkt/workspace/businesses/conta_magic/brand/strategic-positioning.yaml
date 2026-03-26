@@ -1,0 +1,74 @@
+metadata:
+  schema: contamagic.strategic_positioning
+  version: '1.0'
+  status: active
+  updated_at: '2026-03-14'
+  source: ETL Deep Pass — perfil + call vendas
+category:
+  name: Equipamentos Medicos para Medicina Estetica
+  definition: Fabricacao e/ou distribuicao de equipamentos de alta tecnologia certificados Anvisa para uso em procedimentos
+    de medicina estetica
+positioning:
+  for: Profissionais de medicina estetica que exigem equipamentos certificados, seguros e eficazes
+  problem: Mercado de estetica tem equipamentos sem certificacao, resultados inconsistentes e risco regulatorio
+  solution: Equipamentos medicos de alta tecnologia com certificacao Anvisa completa, suporte tecnico e resultados comprovados
+  onlyness: Uma das maiores empresas exclusivas do mercado de equipamentos esteticos, com background de tecnologia/programacao
+    e certificacao Anvisa
+differentiation:
+  vs_importadores_genericos:
+    competitor: Importadores de equipamentos genericos
+    their_approach: Importam equipamentos sem foco especifico ou certificacao completa
+    our_approach: Foco exclusivo em medicina estetica com certificacao Anvisa completa
+    proof: Uma das maiores do mercado EXCLUSIVO — nao somos generalistas
+  vs_marcas_internacionais:
+    competitor: Marcas internacionais diretas
+    their_approach: Vendem equipamentos internacionais com suporte limitado no Brasil
+    our_approach: Empresa brasileira com time de 120 pessoas, suporte local, compliance Anvisa
+    proof: R$115-120M de faturamento, 120 funcionarios, 100% home office nacional
+  vs_equipamentos_sem_certificacao:
+    competitor: Fornecedores sem certificacao completa
+    their_approach: Vendem equipamentos sem registro Anvisa — risco regulatorio para o profissional
+    our_approach: Certificacao Anvisa e pre-requisito — seguranca do profissional e do paciente
+    proof: Certificacao Anvisa (muita normativa regulatoria — barreira de entrada)
+competitive_moat:
+  moat_1: Certificacao Anvisa — barreira regulatoria significativa
+  moat_2: Escala — R$115-120M de faturamento, 120 funcionarios
+  moat_3: Background de tecnologia do CEO — empresa com DNA tech
+  moat_4: Foco exclusivo em medicina estetica — nao e generalista
+  moat_5: Operacao 100% home office — eficiencia de custos
+design_principle:
+  approach: Professional Trust
+  rationale: A identidade Conta Magic nasce da confianca profissional. O ponto de partida e seguranca regulatoria, nao estetica
+    visual.
+  ethos: Tecnologia a servico da medicina estetica — seguranca primeiro
+message_hierarchy:
+  level_1_why: Profissionais de medicina estetica merecem equipamentos certificados que entregam resultado
+  level_2_how: Tecnologia de ponta com certificacao Anvisa e suporte tecnico completo
+  level_3_what: Equipamentos medicos para procedimentos esteticos — certificados, seguros, eficazes
+conta_magic_quotes:
+  on_company: Uma das maiores do mercado exclusivo de equipamentos esteticos
+  on_frustration: Em Casa de Ferreiro, o espeto e de pau — empresa de tecnologia que nao automatiza internamente
+  on_ai_usage: Acoes individuais do time, mas nada coordenado
+  on_goal: Se reduzir 30% da folha de R$700-800k/mes, ja vale
+  on_timing: Ate quando isso vai ser uma vantagem?
+  on_motivation: Acredita que estamos passando pela maior mudanca da nossa era e quer estar na vanguarda
+voice_dna:
+  forbiddenWords:
+  - Magico
+  - Revolucionario
+  - Game-changer
+  - Disrupcao
+  - Sorte
+  signaturePhrases:
+  - Em Casa de Ferreiro, o espeto e de pau
+  - Ate quando isso vai ser uma vantagem?
+  - Se reduzir 30% da folha, ja vale
+  - Acoes individuais do time, mas nada coordenado
+  - Parece bom demais para ser verdade
+egio_roberto_quotes:
+  on_goal: Se reduzir 30% da folha de R$700-800k/mes, ja vale
+  on_timing: Ate quando isso vai ser uma vantagem?
+  on_company: Uma das maiores do mercado exclusivo de equipamentos esteticos
+  on_ai_usage: Acoes individuais do time, mas nada coordenado
+  on_motivation: Acredita que estamos passando pela maior mudanca da nossa era e quer estar na vanguarda
+  on_frustration: Em Casa de Ferreiro, o espeto e de pau — empresa de tecnologia que nao automatiza internamente

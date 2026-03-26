@@ -1,0 +1,26 @@
+---
+# Template: tribe identity dataset
+
+metadata:
+  template_id: "movement.foundation_tribe_identity"
+  version: "1.0.0"
+  lifecycle_stage: "foundation"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+tribe:
+  archetypes:
+    - key: "<required>"
+      label: "<required>"
+      motivation_core: "<required>"
+      main_fear: "<required>"
+      sample_members: []
+  transformation_arc:
+    stages: []
+  semantic_clusters:
+    - key: "<required>"
+      strength: "<low|medium|high|dominant>"
+      terms: []
+  narrative_gaps: []
+provenance:
+  source_docs: []

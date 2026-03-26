@@ -1,0 +1,313 @@
+metadata:
+  schema: contamagic.brandbook
+  version: '2.0'
+  status: active
+  owner_role: cmo
+  last_updated: '2026-03-15'
+  source: ETL Deep Pass v2 — perfil + call vendas + formulario + company/brand files
+  completeness: 72
+  notes: 'Sem instalacao presencial e sem acesso ao site oficial.
+
+    Call de vendas tem 145 linhas — Egio falou bastante (contexto rico).
+
+    Thalison Rodrigues Marcelino e o nome no CNPJ da Euforia Tecnologia —
+
+    possivelmente o sócio mencionado no titulo do workspace.
+
+    Gaps criticos: mission/vision formais, tagline oficial, origin story precoce.
+
+    Completar na imersao (19-20 Mar/2026).
+
+    '
+identity:
+  brand_name: Body Health Brasil / Contourline
+  brand_colloquial: Conta Magic / Conta Online Magic
+  slug: contamagic
+  legal_entity:
+    body_health_brasil: Body Health Brasil — pessoa juridica a confirmar CNPJ
+    contourline: Contourline — empresa de estetica medica, resultados no 40o RADLA
+    euforia_tech: EUFORIA TECNOLOGIA E PUBLICIDADE — CNPJ 62.727.948/0001-09
+  instagram_brand: '@onlinemag'
+  instagram_founder: '@egioroberto'
+  linkedin_founder: Egio Roberto Body Health Brasil — CEO na Contourline
+  site: null
+  phone: 55 31991888632
+  founded: null
+  headquarters: Sete Lagoas, MG
+core:
+  purpose:
+    inferred: Democratizar o acesso a equipamentos medicos de ponta para profissionais de medicina estetica, com seguranca
+      regulatoria garantida
+  essence: Tecnologia de ponta para medicina estetica com seguranca regulatoria
+  trueline_primary:
+    inferred: O equipamento que o profissional pode confiar
+  category: Equipamentos Medicos para Medicina Estetica
+  owned_word: CERTIFICACAO
+  vision:
+    inferred: Ser a maior e mais confiavel empresa de equipamentos medicos para medicina estetica do Brasil, liderando a transformacao
+      digital do setor
+  origin_myth: 'CEO com background de programacao que entrou no cruzamento raro entre tecnologia e medicina estetica. Enquanto
+    o setor era dominado por importadores genericos sem foco tecnico, Egio construiu uma empresa que entende tanto de codigo
+    quanto de compliance Anvisa. Resultado: uma das maiores do mercado exclusivo de equipamentos esteticos. "Em Casa de Ferreiro,
+    o espeto e de pau" — a autocritica de quem sabe o quanto ainda pode fazer quando a empresa de tecnologia finalmente automatizar
+    a si mesma.'
+positioning:
+  primary_audience: Profissionais de medicina estetica — medicos, dentistas, esteticistas com clinica propria
+  audience_filter: Nao e para quem busca equipamento barato sem certificacao. E para profissionais que exigem qualidade, seguranca
+    regulatoria (Anvisa) e resultado consistente para seus pacientes. Compradores de alto ticket em B2B.
+  enemy_core: Equipamentos sem certificacao Anvisa que colocam profissionais e pacientes em risco regulatorio e clinico
+  value_claim: Equipamentos medicos de alta performance com certificacao Anvisa completa — para o profissional que nao pode
+    errar
+  onlyness: Uma das maiores empresas exclusivas de equipamentos esteticos no Brasil, liderada por CEO com background de programacao,
+    com resultados validados no 40o RADLA Brasil (maior congresso de dermatologia da America Latina)
+  message_hierarchy:
+    level_1_why: Profissionais de medicina estetica merecem equipamentos que nao colocam sua licenca em risco
+    level_2_how: Tecnologia de ponta com certificacao Anvisa completa, suporte tecnico e resultados comprovados cientificamente
+    level_3_what: Equipamentos medicos certificados para procedimentos esteticos — seguros, eficazes, de resultado
+  b2b_promise: Equipamentos certificados Anvisa que entregam resultado clinico consistente, protegem a reputacao do profissional
+    e aumentam a rentabilidade da clinica
+archetype_mix:
+- name: Contourline
+  weight: 0
+voice:
+  personality:
+    warmth:
+      level: 3
+      desc: Profissional — setor medico exige credibilidade, nao calor excessivo
+    directness:
+      level: 4
+      desc: Direto ao ponto — B2B de alto ticket exige clareza, nao rodeios
+    formality:
+      level: 4
+      desc: Formal para setor de saude, mas acessivel para profissionais
+    confidence:
+      level: 5
+      desc: Muito confiante — R$115-120M, maior do mercado exclusivo, Anvisa, RADLA
+    pragmatism:
+      level: 5
+      desc: ROI-first — 'Se reduzir 30% da folha, ja vale'. Egio compra resultado, nao promessa
+  founder_voice_mirror: 'A voz da marca reflete o DNA do fundador: analitica, cetica, ROI-driven. Egio nao se empolga com
+    hype — precisa de evidencia. A marca nao promete, comprova. Nao fala em "revolucionar" — fala em resultado mensuravel.
+    "Se reduzir 30% da folha, ja vale" e o template de comunicacao: problema especifico, numero concreto, criterio de sucesso
+    claro.'
+  always_use:
+  - certificado
+  - Anvisa
+  - resultado
+  - tecnologia
+  - seguranca
+  - inovacao
+  - profissional
+  - equipamentos medicos
+  - estetica medica
+  avoid_use:
+  - barato
+  - generico
+  - alternativa
+  - facil
+  - simples
+  forbidden_words:
+  - Magico
+  - Revolucionario
+  - Game-changer
+  - Disrupcao
+  - Sorte
+  signature_phrases:
+  - Em Casa de Ferreiro, o espeto e de pau
+  - Ate quando isso vai ser uma vantagem?
+  - Se reduzir 30% da folha, ja vale
+  - Acoes individuais do time, mas nada coordenado
+  - Parece bom demais para ser verdade
+  - Faz sentido
+  - Acredita que estamos passando pela maior mudanca da nossa era
+  - Uma das maiores do mercado exclusivo
+  real_founder_quotes:
+    on_paradox: Em Casa de Ferreiro, o espeto e de pau — a gente nao consegue atuar em todas as areas.
+    on_coordination: Sao acoes individuais do time, mas nada coordenado. Chego, olho, vejo o que esta acontecendo, nada.
+    on_roi: Hoje devo ter de folha uns 700, 800 pau por mes. Se a gente reduz em 30%, ja vale a mentoria.
+    on_timing: Ate quando isso vai ser uma vantagem? Nos seis meses vai fazer diferenca pra mim?
+    on_skepticism: Parece bom demais para ser verdade.
+    on_technology: Porque ele se preocupa com a engenharia disso, com o design disso — voce conta da seguranca.
+    on_scale: A gente tem muitas acoes, verba de orcamento de marketing fazendo anuncio alto, mas usa muito pouco IA.
+    on_vision: A ideia e trazer isso para o meu negocio — criar esses fluxos, entender meu negocio, tornar ele mais digital.
+    on_ai_current: Hoje e uma coisa mais manual. Voce vai la, tem que fazer o video, usa o Eleven Labs para fazer o audio
+      junto.
+    on_system_thinking: Algo mais junto, algo que eu consiga entender a empresa trabalhando ali e as pessoas consigam junto
+      com os agentes trabalhar e aumentar a produtividade.
+brand_pillars:
+  pillar_1:
+    name: Tecnologia
+    description: DNA tecnico que diferencia — CEO com background de programacao liderando empresa de equipamentos medicos.
+      Nao somos distribuidores, somos tecnologistas.
+    proof: Empresa de tecnologia associada (Euforia Tecnologia e Publicidade). Videos e animacoes com IA no Instagram. CEO
+      que programa e testa sistemas pessoalmente.
+  pillar_2:
+    name: Certificacao
+    description: Compliance Anvisa como barreira estrutural — nao e formalidade, e a garantia que protege profissional e paciente.
+      Alta normativa como vantagem competitiva.
+    proof: Certificacao Anvisa ativa. Chat PDF para areas juridicas e normativas. Setor com alta normativa — barreira de entrada
+      significativa.
+  pillar_3:
+    name: Resultado Comprovado
+    description: Validacao cientifica, nao apenas marketing — resultados apresentados no maior congresso de dermatologia da
+      America Latina (RADLA).
+    proof: 40o RADLA Brasil — apresentacao de resultados da Contourline perante comunidade medica. R$115-120M de faturamento
+      anual.
+  pillar_4:
+    name: Escala com Qualidade
+    description: 120 pessoas, 100% home office nacional — empresa que manteve padrao Anvisa em escala. Nao e artesanal, e
+      industrial com rigor.
+    proof: ~120 funcionarios, time de marketing com 14 pessoas, 100% home office nacional. Faturamento R$115-120M.
+values:
+  value_1:
+    name: Tecnologia com Proposito
+    principle: Tecnologia so tem valor quando entrega resultado clinico real. Nao existe inovacao pela inovacao.
+  value_2:
+    name: Seguranca Primeiro
+    principle: Certificacao Anvisa nao e custo, e responsabilidade. O profissional de saude merece equipamentos que nao o
+      coloquem em risco.
+  value_3:
+    name: ROI Mensuravel
+    principle: Investimento em equipamento tem que se pagar. Resultado clinico gera resultado financeiro para o profissional.
+  value_4:
+    name: Vanguarda Tecnologica
+    principle: Ficar na vanguarda nao e opcao, e sobrevivencia. 'Estamos passando pela maior mudanca da nossa era.'
+  value_5:
+    name: Excelencia Operacional
+    principle: 120 pessoas entregando como empresa de referencia — processo, qualidade e padrao sem abrir mao de escala.
+design_principle:
+  approach: Professional Trust
+  rationale: 'A identidade Body Health Brasil / Contourline nasce da CONFIANCA PROFISSIONAL. O profissional de saude nao compra
+    emocao — compra certeza. O ponto de partida e seguranca regulatoria e resultado comprovado, nao estetica visual. Dados
+    antes de storytelling: faturamento, RADLA, certificacao Anvisa.'
+  visual_anchor: Certificacao, numeros de escala, validacao cientifica (RADLA), profissional em acao
+  ethos: Tecnologia a servico da medicina estetica — seguranca primeiro, resultado sempre
+visual_identity:
+  typography:
+    note: PENDENTE — extrair do site oficial (@onlinemag no Instagram para referencia visual)
+  color_palette:
+    note: PENDENTE — extrair do site
+    dominant_impression_inferred: Paleta de credibilidade medica — provavelmente azul/branco/cinza + accent de inovacao tecnologica
+  logo:
+    note: PENDENTE — extrair do Instagram @onlinemag ou site oficial
+  instagram_visual_reference: '@onlinemag — videos e animacoes com IA, referencias visuais da marca'
+social_proof:
+  numbers:
+    annual_revenue: R$ 115.000.000-120.000.000
+    team_size: ~120 funcionarios
+    marketing_team: 14 pessoas
+    monthly_payroll: R$ 700.000-800.000
+    market_position: Uma das maiores do mercado exclusivo de equipamentos esteticos
+    work_model: 100% home office nacional
+    certification: Anvisa — compliance ativo
+    congress_validation: 40o RADLA Brasil (maior congresso de dermatologia da America Latina)
+  media:
+  - 40o RADLA Brasil — apresentacao de resultados da Contourline
+  - 'LinkedIn: CEO da Body Health Brasil e Contourline'
+  - Instagram @onlinemag — conteudo de inovacao em estetica medica
+  founder_credibility:
+    headline: CEO com background de programacao que construiu empresa de R$115-120M/ano em equipamentos medicos e apresentou
+      resultados no maior congresso de dermatologia da America Latina
+    key_facts:
+    - 'CEO dual: Body Health Brasil + Contourline'
+    - Background de programacao — perfil tecnico raro no setor de saude
+    - 40o RADLA Brasil — validacao cientifica perante comunidade medica
+    - R$115-120M/ano, 120 funcionarios, 100% home office
+    - EUFORIA TECNOLOGIA E PUBLICIDADE — empresa tech associada (CNPJ verificado)
+differentiation:
+  vs_importadores_genericos:
+    competitor: Importadores de equipamentos esteticos sem foco especifico
+    their_approach: Importam equipamentos sem certificacao completa ou sem suporte tecnico local
+    our_approach: Empresa brasileira exclusiva de estetica medica, com compliance Anvisa e suporte de 120 pessoas
+    proof: Uma das maiores do mercado EXCLUSIVO — nao somos generalistas
+  vs_marcas_internacionais:
+    competitor: Marcas internacionais com distribuicao direta no Brasil
+    their_approach: Equipamentos internacionais com suporte limitado e compliance Anvisa incerto
+    our_approach: Empresa 100% brasileira, 120 pessoas, suporte nacional, compliance Anvisa completo
+    proof: R$115-120M de faturamento, operacao home office nacional consolidada
+  vs_equipamentos_sem_certificacao:
+    competitor: Fornecedores sem registro Anvisa completo
+    their_approach: Vendem equipamentos com risco regulatorio para o profissional
+    our_approach: Certificacao Anvisa e pre-requisito — nao e diferencial, e a base minima
+    proof: Compliance Anvisa ativo — setor com alta normativa, barreira de entrada significativa
+  competitive_moat:
+    moat_1: Certificacao Anvisa — barreira regulatoria que poucos conseguem escalar
+    moat_2: Background tecnico do CEO — empresa com DNA de programacao num setor analogico
+    moat_3: Escala — R$115-120M de faturamento, 120 pessoas, referencia de mercado
+    moat_4: Foco exclusivo em medicina estetica — nao e generalista, e dominante no nicho
+    moat_5: Validacao cientifica (RADLA) — empresa que apresenta resultado, nao so vende
+    moat_6: Operacao 100% home office — eficiencia operacional que reduz estrutura de custo
+founder_narrative:
+  one_liner: 'CEO com background de programacao que construiu uma das maiores empresas de equipamentos para medicina estetica
+    do Brasil — R$115-120M/ano, 120 pessoas, resultados no 40o RADLA. Agora quer resolver o paradoxo: a empresa de tecnologia
+    que finalmente vai automatizar a si mesma.'
+  hook: Em Casa de Ferreiro, o espeto e de pau. Empresa de tecnologia que fatura R$120M/ano e tem 120 pessoas. CEO que sabe
+    programar. Mas internamente? As acoes sao individuais, nada coordenado.
+  insight: Nao basta ter ferramentas de IA — precisa de orquestracao. Sistema que a empresa inteira entende, nao acoes avulsas
+    de cada area. "Algo mais junto, algo que eu consiga entender a empresa trabalhando ali."
+  proof: R$115-120M/ano em equipamentos para medicina estetica. 120 funcionarios, 100% home office nacional. 40o RADLA Brasil
+    — validacao cientifica (maior congresso de dermatologia LATAM). Certificacao Anvisa. Background de programacao.
+  second_chair:
+    name: 'Thalison (nome no CNPJ Euforia: Thalison Rodrigues Marcelino)'
+    role: Diretor / Head — vai tocar a implementacao no dia a dia
+    reason_to_bring: Precisa ter o conhecimento para aplicar e modificar internamente
+ceo_profile:
+  personality_type: Analitico-Estrategico
+  decision_pattern: ROI-driven — calcula retorno antes de agir, ceticismo saudavel que cede a evidencia
+  communication_style: Direto, pragmatico, faz perguntas estrategicas. Nao se empolga com hype.
+  knowledge_consumption: Feed 100% IA — assiste 4h + 3h de lives antes de decidir. Instala e testa antes de comprar.
+  strategic_question: Ate quando isso vai ser uma vantagem?
+  core_paradox: Empresa de tecnologia que nao automatiza internamente — consciente disso, quer resolver
+brand_evolution:
+  current_chapter: Transformacao Digital Interna
+  context: 'Body Health Brasil fatura R$115-120M/ano com 120 pessoas. IA ja esta presente em marketing (videos, animacoes,
+    Eleven Labs), compliance (Chat PDF Anvisa) e trafego (analise com IA). O problema: tudo isolado, sem coordenacao. O CEO
+    quer o proximo passo: sistema integrado, nao ferramentas avulsas.'
+  ai_positioning_angle:
+    direction: De usuario de ferramentas de IA para empresa com sistema coordenado de IA
+    egio_vision: Reducao de 30% da folha de R$700-800K/mes via automacao de marketing, financeiro e SDR
+    implication_for_brand: Empresa que domina equipamentos medicos vai dominar tambem a operacao interna via IA
+  priority_roadmap:
+    priority_1: Sistema coordenado de IA para marketing (14 pessoas) — maior quick win potencial
+    priority_2: Gestao financeira personalizada — complementar Totvs com IA sob medida
+    priority_3: SDR com IA — tratamento de leads que hoje e manual e 'apanhando ainda'
+completion_checklist:
+- '[x] Identity — brand names, slug, entidades, contatos, sede'
+- '[x] Core — essence, category, origin myth (inferido)'
+- '[x] Positioning — audiencia, enemy, value claim, onlyness, hierarchy'
+- '[x] Archetype mix — Creator/Ruler/Sage com rationale e evidencia comportamental'
+- '[x] Voice — personality levels, always/avoid/forbidden, signature phrases'
+- '[x] Real founder quotes — citacoes literais da call de vendas'
+- '[x] Brand pillars — 4 pilares com proof'
+- '[x] Values — 5 valores com principios (inferidos)'
+- '[x] Design principle — Professional Trust com rationale'
+- '[x] Social proof — numeros, credibilidade, RADLA'
+- '[x] Differentiation — vs concorrentes + competitive moat (6 moats)'
+- '[x] Founder narrative — hook, insight, proof, second chair'
+- '[x] CEO profile — para contextualizar tom e decisoes de marca'
+- '[x] Brand evolution — AI transformation roadmap'
+- '[ ] Purpose e vision formais — REQUIRES FOUNDER INPUT na imersao'
+- '[ ] Trueline oficial — REQUIRES FOUNDER INPUT'
+- '[ ] Values — confirmar/refinar com founder'
+- '[ ] Legal entity — confirmar relacao Body Health / Contourline / Conta Magic'
+- '[ ] Year founded — REQUIRES FOUNDER INPUT'
+- '[ ] Origin story completa (ato 1) — REQUIRES FOUNDER INPUT'
+- '[ ] Website URL — REQUIRES WEB SEARCH'
+- '[ ] Visual identity (tipografia, paleta, logo) — PENDENTE acesso ao site'
+- '[ ] Forbidden words — confirmar com Egio na imersao'
+- '[ ] Ticket medio dos equipamentos — REQUIRES FOUNDER INPUT'
+- '[ ] RADLA year — confirmar ano da apresentacao'
+- '[ ] Thalison Rodrigues Marcelino — confirmar papel no negocio'
+personality_traits:
+- max: 10
+  score: 9
+  trait: Confidence Level
+- max: 10
+  score: 7
+  trait: Directness Level
+- max: 10
+  score: 6
+  trait: Formality Level
+- max: 10
+  score: 5
+  trait: Warmth Level

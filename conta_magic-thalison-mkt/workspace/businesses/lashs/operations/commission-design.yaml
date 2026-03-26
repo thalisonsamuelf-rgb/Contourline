@@ -1,0 +1,130 @@
+---
+# COMMISSION-DESIGN.YAML - Sales Compensation Architecture & Incentive Design
+# Purpose: Design a commission structure that aligns sales behavior with business goals
+# Guardian: COO / Sales Lead / CFO
+# Timing: FILL after kpi-scorecards.yaml and team-structure.yaml define roles and metrics
+# Framework: Cole Gordon Commission Structures + DOSSIER-COMPENSATION
+# Dependency: kpi-scorecards.yaml (metrics), team-structure.yaml (roles)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "COO / Sales Lead"
+  framework: "Cole Gordon Commission Structures + Compensation Architecture"
+  notes: |
+    Commission design is BEHAVIOR DESIGN.
+
+    People do what they are INCENTIVIZED to do, not what you ASK them to do.
+    If you reward volume, you get volume (low quality).
+    If you reward quality, you get quality (fewer but better deals).
+
+    Cole Gordon's principle: Compensation must align with BUSINESS OUTCOMES,
+    not just sales activity. A closer who brings in high-churn clients
+    is costing you money, not making you money.
+
+    RULE: Review and adjust commission structure quarterly.
+    What works at $100K/month does not work at $1M/month.
+
+# ============================================================================
+# STEP 1: COMPENSATION PHILOSOPHY
+# ============================================================================
+
+compensation_philosophy:
+  approach: "FILL — Base + Commission / Commission-only / Base + Bonus / Hybrid"
+  alignment_principle: |
+    FILL — What behavior do you want to INCENTIVIZE?
+    Revenue? Retention? Upsells? Quality of customer? Show rate?
+    The commission structure must reward EXACTLY this.
+
+# ============================================================================
+# STEP 2: COMMISSION STRUCTURE
+# ============================================================================
+
+commission_structure:
+  role_1:
+    role_title: "FILL — Role (e.g., Closer)"
+    base_salary: "FILL — Monthly base (if any)"
+    commission_rate: "FILL — % of sale"
+    commission_basis: "FILL — Cash collected / Revenue booked / Profit margin"
+    accelerators:
+      tier_1: "FILL — 0-X sales: Y% commission"
+      tier_2: "FILL — X-Z sales: higher % commission"
+      tier_3: "FILL — Z+ sales: highest % commission"
+    clawback: "FILL — Is there a clawback for refunds/chargebacks? (recommended: yes)"
+    clawback_period: "FILL — How long? (30/60/90 days)"
+
+  role_2:
+    role_title: "FILL — Role (e.g., BDR/Setter)"
+    base_salary: "FILL — Monthly base"
+    commission_rate: "FILL — % per qualified appointment"
+    commission_basis: "FILL — Booked calls / Shown calls / Closed from their sets"
+    accelerators:
+      tier_1: "FILL — Tier 1 rate"
+      tier_2: "FILL — Tier 2 rate"
+
+# ============================================================================
+# STEP 3: BONUS STRUCTURE
+# ============================================================================
+
+bonus_structure:
+  monthly_bonus:
+    trigger: "FILL — What triggers the monthly bonus? (e.g., hit 100% of quota)"
+    amount: "FILL — Bonus amount"
+    criteria: "FILL — Exact criteria"
+
+  quarterly_bonus:
+    trigger: "FILL — Quarterly bonus trigger"
+    amount: "FILL — Amount"
+    criteria: "FILL — Criteria"
+
+  retention_bonus:
+    trigger: "FILL — Bonus tied to customer retention? (e.g., 90% retention = bonus)"
+    amount: "FILL — Amount"
+    criteria: "FILL — Criteria"
+
+# ============================================================================
+# STEP 4: GUARDRAILS
+# ============================================================================
+
+guardrails:
+  minimum_performance: "FILL — What is the minimum acceptable performance before PIP?"
+  quality_metrics: "FILL — What quality metrics prevent 'sell at all costs' behavior?"
+  ethical_standards: "FILL — What selling practices are prohibited?"
+  review_cadence: "FILL — How often is the comp plan reviewed? (recommended: quarterly)"
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+commission_strength_score:
+  alignment_with_goals: "FILL 1-10"
+  fairness_perception: "FILL 1-10"
+  motivation_effectiveness: "FILL 1-10"
+  financial_sustainability: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "Commission rewards wrong behavior, team feels underpaid, no accelerators, unsustainable margins."
+    range_4_6: "Basic commission structure, somewhat aligned with goals, some accelerators, financially viable."
+    range_7_8: "Commission clearly rewards desired outcomes, team is motivated, tiered accelerators, clawbacks protect quality."
+    range_9_10: "Perfect alignment between comp and business outcomes, team is highly motivated and retained, sophisticated tiers with quality bonuses, sustainable and scalable."
+
+evidence:
+  data_points: "FILL — Sales performance data, retention of sales team, customer retention by closer"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "kpi-scorecards.yaml"
+    - "team-structure.yaml"
+  feeds_into:
+    - "hiring-playbook.yaml"
+    - "ramp-plan.yaml"
+  related:
+    - "monetization-strategy.yaml"
+    - "analytics.yaml"

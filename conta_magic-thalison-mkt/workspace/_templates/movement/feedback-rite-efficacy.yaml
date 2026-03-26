@@ -1,0 +1,22 @@
+---
+# Template: feedback rite efficacy dataset (N8)
+
+metadata:
+  template_id: "movement.feedback_rite_efficacy"
+  version: "1.0.0"
+  lifecycle_stage: "feedback"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+rite_efficacy:
+  cycle_id: "<required>"
+  rite_scores:
+    - rite_id: "<required>"
+      format: "<required>"
+      retention_score: "<0-100>"
+      efficacy_score: "<0-100>"
+      trend: "<rising|stable|falling>"
+  format_ranking: []
+  cycle_average_retention: "<0-100>"
+provenance:
+  source_docs: []

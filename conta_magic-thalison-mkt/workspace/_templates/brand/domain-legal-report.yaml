@@ -1,0 +1,36 @@
+---
+metadata:
+  schema: "brand.domain_legal_report"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+inputs:
+  candidate_names: []
+  priority_tlds:
+    - ".com.br"
+    - ".com"
+    - ".io"
+  budget_usd: "FILL_THIS"
+checks:
+  - candidate: "FILL_THIS"
+    domains:
+      com_br: "<available|taken|premium|unknown>"
+      com: "<available|taken|premium|unknown>"
+      io: "<available|taken|premium|unknown>"
+    social_handles:
+      instagram: "<ok|partial|unavailable|unknown>"
+      x: "<ok|partial|unavailable|unknown>"
+      linkedin: "<ok|partial|unavailable|unknown>"
+      tiktok: "<ok|partial|unavailable|unknown>"
+    inpi_risk: "<low|medium|high|unknown>"
+    estimated_cost_year_1_usd: "FILL_THIS"
+recommendation:
+  ranked_candidates:
+    - name: "FILL_THIS"
+      best_domain: "FILL_THIS"
+      rationale: "FILL_THIS"
+notes:
+  legal_disclaimer: "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

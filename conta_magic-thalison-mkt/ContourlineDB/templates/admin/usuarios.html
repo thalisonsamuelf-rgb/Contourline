@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Usuarios - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0"><i class="bi bi-people"></i> Usuarios do Sistema</h4>
+        <a href="{{ url_for('admin_usuario_novo') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Novo Usuario</a>
+    </div>
+
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Cargo</th>
+                        <th>Status</th>
+                        <th>Criado em</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in usuarios %}
+                    <tr>
+                        <td><strong>{{ u.nome }}</strong></td>
+                        <td>{{ u.email }}</td>
+                        <td><span class="badge bg-primary">{{ u.cargo | title }}</span></td>
+                        <td>
+                            {% if u.ativo %}
+                            <span class="badge bg-success">Ativo</span>
+                            {% else %}
+                            <span class="badge bg-secondary">Inativo</span>
+                            {% endif %}
+                        </td>
+                        <td>{{ u.criado_em.strftime('%d/%m/%Y') if u.criado_em else '-' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

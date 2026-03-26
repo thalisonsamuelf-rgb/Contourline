@@ -1,0 +1,69 @@
+metadata:
+  artifact: creative_brief
+  version: "1.0.0"
+  status: draft
+  campaign_slug: FILL_THIS
+  asset_family: FILL_THIS
+  owner: FILL_THIS
+  updated_at: YYYY-MM-DD
+
+source_of_truth:
+  campaign_brief: "workspace/businesses/{business}/copy/{campaign_slug}/campaign-brief.yaml"
+  message_architecture: "workspace/businesses/{business}/copy/{campaign_slug}/message-architecture.yaml"
+  product_offer: "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+  product_proof:
+    - "workspace/businesses/{business}/products/{product}/proof.yaml"
+    - "workspace/businesses/{business}/products/{product}/testimonials.yaml"
+
+objective:
+  audience_action: FILL_THIS
+  audience_belief_after_exposure: FILL_THIS
+
+audience_snapshot:
+  who_this_is_for: FILL_THIS
+  what_they_already_know: FILL_THIS
+  what_they_doubt: FILL_THIS
+
+key_message:
+  primary: FILL_THIS
+  supporting: FILL_THIS
+  angle: FILL_THIS
+
+desired_shift:
+  from: FILL_THIS
+  to: FILL_THIS
+
+emotional_posture:
+  tone: FILL_THIS
+  energy_level: FILL_THIS
+  trust_posture: FILL_THIS
+
+offer_and_proof:
+  mandatory_offer_elements:
+    - FILL_THIS
+  mandatory_proof_elements:
+    - FILL_THIS
+  risk_reversal_elements:
+    - FILL_THIS
+
+guardrails:
+  must_include:
+    - FILL_THIS
+  must_avoid:
+    - FILL_THIS
+  voice_notes:
+    - FILL_THIS
+  visual_or_builder_notes:
+    - FILL_THIS
+
+cta:
+  primary: FILL_THIS
+  secondary: FILL_THIS
+  conditions: FILL_THIS
+
+review:
+  owner: FILL_THIS
+  approval_criteria:
+    - FILL_THIS
+  known_risks:
+    - FILL_THIS

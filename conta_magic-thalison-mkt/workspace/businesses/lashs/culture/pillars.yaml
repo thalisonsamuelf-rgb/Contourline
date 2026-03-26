@@ -1,0 +1,72 @@
+metadata:
+  version: "1.0"
+  template_type: culture_pillars
+  status: PARTIAL
+  last_updated: "2026-03-19"
+  owner: vision-chief
+  source: "company-profile.yaml (strategic_roadmap section)"
+  description: >
+    5 Pilares Estrategicos da Contourline extraidos do Planejamento
+    Estrategico 2026. Framework que sustenta valores, decisoes e lideranca.
+
+pillars_intro: "REQUIRES_ELICITATION"
+
+pillars:
+  - name: "Inovacao e Ciencia"
+    description: "REQUIRES_ELICITATION"
+    why_it_matters: "REQUIRES_ELICITATION"
+    how_it_manifests:
+      - "Programa Ciencia que Conecta"
+      - "Lei da Informatica & Lei do Bem"
+      - "2 equipamentos medicos + 1 estetico ate dez/2026"
+      - "Marketing cientifico baseado em evidencias"
+    connection_to_others: "REQUIRES_ELICITATION"
+
+  - name: "Expansao Comercial"
+    description: "REQUIRES_ELICITATION"
+    why_it_matters: "REQUIRES_ELICITATION"
+    how_it_manifests:
+      - "Convencao de Revendedores"
+      - "Expansao nacional e regionalizacao"
+      - "Lumenis R$ 40M"
+      - "Visbody lancamento oficial Brasil"
+      - "Expansao LATAM/EUA"
+    connection_to_others: "REQUIRES_ELICITATION"
+
+  - name: "Profissionalizacao"
+    description: "REQUIRES_ELICITATION"
+    why_it_matters: "REQUIRES_ELICITATION"
+    how_it_manifests:
+      - "Auditoria externa independente"
+      - "Compliance & ESG"
+      - "Novo ERP Protheus (go-live jan/2026)"
+      - "Revisao e padronizacao de processos"
+    connection_to_others: "REQUIRES_ELICITATION"
+
+  - name: "Experiencia do Cliente"
+    description: "REQUIRES_ELICITATION"
+    why_it_matters: "REQUIRES_ELICITATION"
+    how_it_manifests:
+      - "Pos-Venda / CX Excellence"
+      - "Universidade Contourline (academy)"
+      - "Eficiencia operacional"
+    connection_to_others: "REQUIRES_ELICITATION"
+
+  - name: "Forca da Marca"
+    description: "REQUIRES_ELICITATION"
+    why_it_matters: "REQUIRES_ELICITATION"
+    how_it_manifests:
+      - "Reposicionamento e nova identidade visual premium"
+      - "Contourline Experience (evento anual)"
+      - "Producao cientifica para autoridade"
+    connection_to_others: "REQUIRES_ELICITATION"
+
+unifying_statement: "REQUIRES_ELICITATION"
+
+cross_references:
+  depends_on:
+    - culture/manifesto.yaml
+    - culture/mission-vision-positioning.yaml
+  feeds_into:
+    - culture/values.yaml
+    - culture/commandments.yaml

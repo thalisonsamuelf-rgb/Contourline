@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contourline Group | Informações aos Acionistas 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--dark:#0F0638;--mid:#1A0B5B;--light:#2D1B6E;--accent:#0F0638;--accent2:#2D1B6E;--accent3:#4A3A8A;--white:#FFFFFF;--bg:#FAFAFA;--gray:#F3F4F6;--gray2:#E5E7EB;--gray3:#9CA3AF;--gray4:#6B7280;--green:#059669;--red:#DC2626}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);-webkit-font-smoothing:antialiased}
+
+/* ===== COVER ===== */
+.cover{
+  min-height:85vh;
+  background:linear-gradient(160deg,var(--dark) 0%,var(--mid) 50%,var(--light) 100%);
+  color:var(--white);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:60px 40px;
+}
+.cover::before{
+  content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;
+  background:radial-gradient(circle,rgba(74,58,138,0.15) 0%,transparent 70%);
+  animation:heroPulse 8s infinite alternate;
+}
+.cover::after{
+  content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(45,27,110,0.25) 0%,transparent 70%);
+}
+@keyframes heroPulse{0%{transform:scale(1);opacity:0.5}100%{transform:scale(1.3);opacity:0.8}}
+
+/* Decorative lines */
+.cover-deco-top,.cover-deco-bottom{
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:120px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+}
+.cover-deco-top{top:15%}
+.cover-deco-bottom{bottom:15%}
+.cover-deco-left,.cover-deco-right{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:1px;height:120px;
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,0.2),transparent);
+}
+.cover-deco-left{left:8%}
+.cover-deco-right{right:8%}
+
+/* Geometric corner accents */
+.cover-corner{position:absolute;width:60px;height:60px;opacity:0.12}
+.cover-corner--tl{top:40px;left:40px;border-top:2px solid var(--white);border-left:2px solid var(--white)}
+.cover-corner--tr{top:40px;right:40px;border-top:2px solid var(--white);border-right:2px solid var(--white)}
+.cover-corner--bl{bottom:40px;left:40px;border-bottom:2px solid var(--white);border-left:2px solid var(--white)}
+.cover-corner--br{bottom:40px;right:40px;border-bottom:2px solid var(--white);border-right:2px solid var(--white)}
+
+.cover-content{position:relative;z-index:1;animation:fadeInUp 1s ease}
+.cover-logo-img{height:72px;margin-bottom:20px}
+.cover-logo{font-size:4em;font-weight:900;letter-spacing:6px;line-height:1;margin-bottom:4px;display:none}
+.cover-group{font-size:1.2em;font-weight:300;letter-spacing:12px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:0;display:none}
+.cover-divider{width:60px;height:2px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);margin:48px auto}
+.cover-subtitle{font-size:1.3em;font-weight:400;color:rgba(255,255,255,0.85);letter-spacing:1px;margin-bottom:10px}
+.cover-year{font-size:1.05em;font-weight:300;color:rgba(255,255,255,0.6);letter-spacing:2px}
+
+/* ===== HIGHLIGHTS SECTION ===== */
+.highlights{padding:80px 0 40px;background:var(--bg)}
+.highlights-header{text-align:center;margin-bottom:40px}
+.highlights-header h2{font-size:0.85em;text-transform:uppercase;letter-spacing:4px;font-weight:800;color:var(--dark);margin-bottom:8px}
+.highlights-header .hl-line{width:40px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:2px;margin:0 auto}
+
+.highlights-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1300px;margin:0 auto;padding:0 40px}
+.highlight-card{
+  background:var(--white);border-radius:16px;padding:32px 28px;
+  border:1px solid var(--gray2);
+  transition:all 0.35s cubic-bezier(0.4,0,0.2,1);
+  position:relative;overflow:hidden;
+  box-shadow:0 2px 12px rgba(15,6,56,0.04);
+}
+.highlight-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(15,6,56,0.1);border-color:var(--mid)}
+.highlight-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--dark),var(--accent));transform:scaleX(0);transition:transform 0.35s;transform-origin:left}
+.highlight-card:hover::after{transform:scaleX(1)}
+.highlight-card .hc-label{font-size:0.7em;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray4);font-weight:600;margin-bottom:8px}
+.highlight-card .hc-value{font-size:2.4em;font-weight:900;letter-spacing:-1px;color:var(--dark)}
+.highlight-card .hc-value.accent{color:var(--dark)}
+.highlight-card .hc-change{display:inline-block;margin-top:8px;font-size:0.75em;font-weight:700;padding:4px 12px;border-radius:6px;background:#ECFDF5;color:var(--green)}
+.highlight-card .hc-sub{font-size:0.72em;color:var(--gray4);margin-top:6px}
+
+/* ===== CONTAINER ===== */
+.container{max-width:1300px;margin:0 auto;padding:0 40px}
+
+/* ===== SECTION ===== */
+.section{padding:50px 0 10px}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.section-line{width:40px;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent3));border-radius:2px}
+.section-title{font-size:0.85em;text-transform:uppercase;letter-spacing:3px;font-weight:800;color:var(--dark)}
+
+/* ===== CARDS ===== */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+
+.card{background:var(--white);border-radius:16px;padding:28px;border:1px solid var(--gray2);transition:all 0.35s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(15,6,56,0.03)}
+.card:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(15,6,56,0.08);border-color:var(--mid)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--dark),var(--accent));transform:scaleX(0);transition:transform 0.35s;transform-origin:left}
+.card:hover::after{transform:scaleX(1)}
+
+.card .c-label{font-size:0.7em;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray4);font-weight:600;margin-bottom:6px}
+.card .c-value{font-size:2.2em;font-weight:900;color:var(--dark);letter-spacing:-1px}
+.card .c-value.accent{color:var(--dark)}
+.card .c-value.green{color:var(--green)}
+.card .c-tag{display:inline-block;font-size:0.72em;font-weight:700;padding:3px 10px;border-radius:6px;margin-top:6px}
+.card .c-tag.up{background:#ECFDF5;color:var(--green)}
+.card .c-detail{font-size:0.72em;color:var(--gray3);margin-top:4px}
+.card.highlight{border-left:4px solid var(--mid);background:linear-gradient(135deg,#F0F0FF,var(--white))}
+.card.highlight-green{border-left:4px solid var(--green);background:linear-gradient(135deg,#F0FDF4,var(--white))}
+
+/* ===== BARS ===== */
+.bar-item{margin-bottom:14px}
+.bar-top{display:flex;justify-content:space-between;font-size:0.8em;margin-bottom:5px}
+.bar-name{color:var(--gray4);font-weight:500}
+.bar-val{color:var(--dark);font-weight:700}
+.bar-track{height:10px;background:var(--gray);border-radius:5px;overflow:hidden}
+.bar-fill{height:100%;border-radius:5px;transition:width 1.5s cubic-bezier(0.4,0,0.2,1)}
+.bar-fill.b1{background:linear-gradient(90deg,var(--dark),var(--mid))}
+.bar-fill.b2{background:linear-gradient(90deg,var(--accent2),var(--accent3))}
+.bar-fill.b3{background:linear-gradient(90deg,var(--dark),var(--accent))}
+
+/* ===== TABLE ===== */
+.table-card{background:var(--white);border-radius:16px;border:1px solid var(--gray2);overflow:hidden;box-shadow:0 2px 8px rgba(15,6,56,0.03)}
+.table-card h3{padding:20px 24px 0;font-size:0.8em;text-transform:uppercase;letter-spacing:2px;color:var(--dark);font-weight:700}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;min-width:480px}
+th{text-align:right;font-size:0.7em;color:var(--dark);padding:12px 16px;border-bottom:2px solid var(--dark);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+th:first-child{text-align:left}
+td{padding:12px 16px;text-align:right;font-size:0.85em;border-bottom:1px solid var(--gray)}
+td:first-child{text-align:left;font-weight:500;color:var(--dark)}
+tr:hover td{background:var(--bg)}
+.tr-total td{font-weight:800;border-top:2px solid var(--dark);border-bottom:2px solid var(--dark);background:var(--bg)}
+.neg{color:var(--red)}
+.pos{color:var(--green)}
+
+/* ===== DFC ===== */
+.dfc-card{background:var(--white);border-radius:16px;padding:24px;border:1px solid var(--gray2);text-align:center;transition:all 0.3s;box-shadow:0 2px 8px rgba(15,6,56,0.03)}
+.dfc-card:hover{transform:scale(1.03);border-color:var(--mid);box-shadow:0 8px 32px rgba(15,6,56,0.06)}
+.dfc-label{font-size:0.68em;text-transform:uppercase;letter-spacing:1.5px;color:var(--gray4);font-weight:600}
+.dfc-value{font-size:2em;font-weight:900;margin:8px 0;color:var(--dark);letter-spacing:-1px}
+.dfc-sub{font-size:0.7em;color:var(--gray3)}
+
+/* ===== MEDICAL ACCENT STRIP ===== */
+.accent-strip{background:linear-gradient(135deg,var(--dark),var(--mid));padding:40px;border-radius:16px;color:var(--white);display:flex;align-items:center;gap:30px;margin:30px 0}
+.accent-strip .as-icon{font-size:3em;opacity:0.3}
+.accent-strip .as-text h3{font-size:1.2em;font-weight:700;margin-bottom:4px}
+.accent-strip .as-text p{color:rgba(255,255,255,0.75);font-size:0.85em}
+.accent-strip .as-kpis{display:flex;gap:40px;margin-left:auto}
+.accent-strip .as-kpi{text-align:center}
+.accent-strip .as-kpi .ask-val{font-size:1.8em;font-weight:900;color:var(--white)}
+.accent-strip .as-kpi .ask-label{font-size:0.65em;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.75)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--dark);color:rgba(255,255,255,0.75);padding:40px;text-align:center;margin-top:60px;font-size:0.8em}
+.footer .f-logo-img{height:36px;filter:brightness(10);opacity:0.7;margin-bottom:16px}
+.footer .f-logo{font-size:1.4em;font-weight:900;letter-spacing:3px;margin-bottom:4px;color:var(--white);display:none}
+.footer .f-group{font-size:0.7em;font-weight:300;letter-spacing:6px;color:rgba(255,255,255,0.5);margin-bottom:16px;display:none}
+.footer .f-accent{color:var(--accent3)}
+
+/* ===== ANIMATIONS ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.4,0,0.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.counter{display:inline-block}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.cover-content{animation:fadeInUp 1s ease}
+.highlights-grid{animation:fadeInUp 1s ease 0.3s both}
+
+/* ===== RESPONSIVE — Tablet (<=1024px) ===== */
+@media(max-width:1024px){
+  .cover{min-height:70vh;padding:48px 32px}
+  .cover-logo-img{height:56px}
+  .cover-logo{font-size:3em;letter-spacing:4px}
+  .cover-group{font-size:1em;letter-spacing:8px}
+  .cover-subtitle{font-size:1.1em}
+  .cover-corner{width:40px;height:40px}
+  .cover-corner--tl,.cover-corner--bl{left:24px}
+  .cover-corner--tr,.cover-corner--br{right:24px}
+  .cover-corner--tl,.cover-corner--tr{top:24px}
+  .cover-corner--bl,.cover-corner--br{bottom:24px}
+
+  .highlights-grid,.grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .container{padding:0 24px}
+  .highlights-grid{padding:0 24px}
+  .section{padding:36px 0 8px}
+
+  .accent-strip{flex-direction:column;text-align:center;padding:28px 24px}
+  .accent-strip .as-kpis{margin-left:0;justify-content:center}
+}
+
+/* ===== RESPONSIVE — Mobile (<=640px) ===== */
+@media(max-width:640px){
+  .cover{min-height:75vh;padding:40px 20px}
+  .cover-logo-img{height:40px}
+  .cover-logo{font-size:2em;letter-spacing:3px}
+  .cover-group{font-size:0.8em;letter-spacing:6px}
+  .cover-subtitle{font-size:0.95em}
+  .cover-year{font-size:0.85em}
+  .cover-divider{margin:32px auto}
+  .cover-corner{width:30px;height:30px}
+  .cover-corner--tl,.cover-corner--bl{left:16px}
+  .cover-corner--tr,.cover-corner--br{right:16px}
+  .cover-corner--tl,.cover-corner--tr{top:16px}
+  .cover-corner--bl,.cover-corner--br{bottom:16px}
+  .cover-deco-left{left:4%}
+  .cover-deco-right{right:4%}
+
+  .highlights-grid,.grid-4,.grid-3,.grid-2{grid-template-columns:1fr}
+  .container{padding:0 16px}
+  .highlights-grid{padding:0 16px;gap:16px}
+  .highlight-card .hc-value{font-size:1.8em}
+  .section{padding:28px 0 8px}
+  .section-title{font-size:0.75em;letter-spacing:2px}
+
+  .card .c-value{font-size:1.6em}
+  .accent-strip{padding:24px 16px;gap:20px}
+  .accent-strip .as-kpis{gap:24px}
+
+  .dfc-value{font-size:1.5em}
+  .table-card h3{padding:16px 16px 0;font-size:0.72em}
+  td,th{padding:10px 12px;font-size:0.78em}
+
+  .footer{padding:28px 16px}
+}
+
+@media print{
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;min-height:100vh;page-break-after:always}
+  .card,.table-card{break-inside:avoid}
+  .highlights{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-corner cover-corner--tl"></div>
+  <div class="cover-corner cover-corner--tr"></div>
+  <div class="cover-corner cover-corner--bl"></div>
+  <div class="cover-corner cover-corner--br"></div>
+  <div class="cover-deco-top"></div>
+  <div class="cover-deco-bottom"></div>
+  <div class="cover-deco-left"></div>
+  <div class="cover-deco-right"></div>
+  <div class="cover-content">
+    <img src="logo-contourline-branca.png" alt="Contourline" class="cover-logo-img">
+    <div class="cover-divider"></div>
+    <div class="cover-subtitle">Informações aos Acionistas</div>
+    <div class="cover-year">Exercício 2025</div>
+  </div>
+</div>
+
+<!-- ===== DESTAQUES DO EXERCÍCIO ===== -->
+<div class="highlights">
+  <div class="highlights-header">
+    <div class="hl-line"></div>
+    <h2>Destaques do Exercício</h2>
+  </div>
+  <div class="highlights-grid">
+    <div class="highlight-card reveal">
+      <div class="hc-label">Receita Líquida</div>
+      <div class="hc-value">R$ <span class="counter" data-target="80172">0</span></div>
+      <div class="hc-change">&uarr; +58,4% vs 2024</div>
+    </div>
+    <div class="highlight-card reveal">
+      <div class="hc-label">EBITDA</div>
+      <div class="hc-value accent">R$ <span class="counter" data-target="36635">0</span></div>
+      <div class="hc-change">&uarr; +73,5%</div>
+      <div class="hc-sub">Margem: 45,7%</div>
+    </div>
+    <div class="highlight-card reveal">
+      <div class="hc-label">Lucro Líquido</div>
+      <div class="hc-value">R$ <span class="counter" data-target="18788">0</span></div>
+      <div class="hc-change">&uarr; +60,8%</div>
+      <div class="hc-sub">Margem: 23,4%</div>
+    </div>
+    <div class="highlight-card reveal">
+      <div class="hc-label">ROIC Spread</div>
+      <div class="hc-value accent">+8,7pp</div>
+      <div class="hc-change">Criando valor</div>
+      <div class="hc-sub">ROIC 23,7% &minus; WACC 15,0%</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ===== CRIAÇÃO DE VALOR ===== -->
+  <div class="section"><div class="section-header"><div class="section-line"></div><div class="section-title">Criação de Valor</div></div></div>
+  <div class="grid-4">
+    <div class="card highlight reveal"><div class="c-label">ROIC</div><div class="c-value accent">23,7%</div><div class="c-detail">NOPAT R$ 22.742 / Capital R$ 96.070</div></div>
+    <div class="card reveal"><div class="c-label">WACC</div><div class="c-value">15,0%</div><div class="c-detail">Kd 12,1% &bull; Ke 20,5%</div></div>
+    <div class="card highlight-green reveal"><div class="c-label">ROIC Spread</div><div class="c-value green">+8,7pp</div><div class="c-tag up">Criando Valor</div></div>
+    <div class="card reveal"><div class="c-label">EVA Estimado</div><div class="c-value accent">R$ <span class="counter" data-target="8360">0</span></div><div class="c-detail">Spread &times; Capital Investido</div></div>
+  </div>
+
+  <!-- ===== MEDICAL ACCENT ===== -->
+  <div class="accent-strip reveal">
+    <div class="as-icon">&plus;</div>
+    <div class="as-text">
+      <h3>Tecnologia Médica de Alta Performance</h3>
+      <p>Cardiologia &bull; Cirurgia Vascular &bull; Endovascular &bull; Radiologia Intervencionista</p>
+    </div>
+    <div class="as-kpis">
+      <div class="as-kpi"><div class="ask-val">5</div><div class="ask-label">Filiais</div></div>
+      <div class="as-kpi"><div class="ask-val">4</div><div class="ask-label">Empresas</div></div>
+      <div class="as-kpi"><div class="ask-val">+58%</div><div class="ask-label">Crescimento</div></div>
+    </div>
+  </div>
+
+  <!-- ===== RENTABILIDADE ===== -->
+  <div class="section"><div class="section-header"><div class="section-line"></div><div class="section-title">Indicadores de Rentabilidade</div></div></div>
+  <div class="grid-2">
+    <div class="card reveal">
+      <div class="c-label" style="margin-bottom:16px">Evolução das Margens</div>
+      <div class="bar-item"><div class="bar-top"><span class="bar-name">Margem Bruta 2025</span><span class="bar-val">68,8%</span></div><div class="bar-track"><div class="bar-fill b3" style="width:68.8%"></div></div></div>
+      <div class="bar-item"><div class="bar-top"><span class="bar-name">Margem Bruta 2024</span><span class="bar-val">62,0%</span></div><div class="bar-track"><div class="bar-fill b2" style="width:62%"></div></div></div>
+      <div class="bar-item"><div class="bar-top"><span class="bar-name">Margem EBITDA 2025</span><span class="bar-val">45,7%</span></div><div class="bar-track"><div class="bar-fill b1" style="width:45.7%"></div></div></div>
+      <div class="bar-item"><div class="bar-top"><span class="bar-name">Margem EBITDA 2024</span><span class="bar-val">41,7%</span></div><div class="bar-track"><div class="bar-fill b2" style="width:41.7%"></div></div></div>
+      <div class="bar-item"><div class="bar-top"><span class="bar-name">Margem Líquida 2025</span><span class="bar-val">23,4%</span></div><div class="bar-track"><div class="bar-fill b3" style="width:23.4%"></div></div></div>
+    </div>
+    <div class="card reveal">
+      <div class="c-label" style="margin-bottom:16px">Retorno e Estrutura</div>
+      <div class="grid-2" style="gap:16px;margin-bottom:20px">
+        <div style="text-align:center;padding:16px;background:var(--bg);border-radius:12px"><div style="font-size:2.2em;font-weight:900;color:var(--dark)">52,2%</div><div style="font-size:0.7em;color:var(--gray4);text-transform:uppercase;letter-spacing:1px">ROE</div></div>
+        <div style="text-align:center;padding:16px;background:var(--bg);border-radius:12px"><div style="font-size:2.2em;font-weight:900;color:var(--dark)">11,8%</div><div style="font-size:0.7em;color:var(--gray4);text-transform:uppercase;letter-spacing:1px">ROA</div></div>
+      </div>
+      <div class="bar-item"><div class="bar-top"><span class="bar-name">Dív. Líquida / EBITDA</span><span class="bar-val">1,6x</span></div><div class="bar-track"><div class="bar-fill b1" style="width:40%"></div></div></div>
+      <div class="bar-item"><div class="bar-top"><span class="bar-name">Liquidez Corrente</span><span class="bar-val">3,8x</span></div><div class="bar-track"><div class="bar-fill b3" style="width:76%"></div></div></div>
+    </div>
+  </div>
+
+  <!-- ===== DRE ===== -->
+  <div class="section"><div class="section-header"><div class="section-line"></div><div class="section-title">Demonstração do Resultado</div></div></div>
+  <div class="table-card reveal">
+    <h3>Consolidado &mdash; R$ mil</h3>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Descrição</th><th>2025</th><th>2024</th><th>Variação</th></tr></thead>
+      <tbody>
+        <tr><td>Receita operacional líquida</td><td>80.172</td><td>50.620</td><td class="pos">+58,4%</td></tr>
+        <tr><td>(-) Custos dos produtos vendidos</td><td class="neg">(25.033)</td><td class="neg">(19.211)</td><td>+30,3%</td></tr>
+        <tr class="tr-total"><td>Lucro bruto</td><td>55.139</td><td>31.409</td><td class="pos">+75,6%</td></tr>
+        <tr><td>(-) Despesas administrativas e comerciais</td><td class="neg">(31.898)</td><td class="neg">(16.990)</td><td></td></tr>
+        <tr><td>(+) Outras receitas (despesas) operacionais</td><td>11.215</td><td>6.259</td><td></td></tr>
+        <tr><td><strong>EBITDA</strong></td><td><strong>36.635</strong></td><td><strong>21.114</strong></td><td class="pos"><strong>+73,5%</strong></td></tr>
+        <tr><td>(-) Depreciação e amortização</td><td class="neg">(2.178)</td><td class="neg">(436)</td><td></td></tr>
+        <tr><td>Resultado financeiro líquido</td><td class="neg">(12.550)</td><td class="neg">(6.510)</td><td></td></tr>
+        <tr><td>IR e CSLL</td><td class="neg">(3.118)</td><td class="neg">(2.481)</td><td></td></tr>
+        <tr class="tr-total"><td>Lucro líquido do exercício</td><td>18.788</td><td>11.687</td><td class="pos">+60,8%</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ===== DFC ===== -->
+  <div class="section"><div class="section-header"><div class="section-line"></div><div class="section-title">Fluxo de Caixa — Consolidado 2025</div></div></div>
+  <div class="grid-3">
+    <div class="dfc-card reveal"><div class="dfc-label">Atividades Operacionais</div><div class="dfc-value neg">(75.198)</div><div class="dfc-sub">Investimento em capital de giro</div></div>
+    <div class="dfc-card reveal"><div class="dfc-label">Atividades de Investimento</div><div class="dfc-value neg">(24.358)</div><div class="dfc-sub">Capex e aplicações</div></div>
+    <div class="dfc-card reveal"><div class="dfc-label">Atividades de Financiamento</div><div class="dfc-value pos">97.896</div><div class="dfc-sub">Captações e capital</div></div>
+  </div>
+
+  <!-- ===== BALANÇO ===== -->
+  <div class="section"><div class="section-header"><div class="section-line"></div><div class="section-title">Balanço Patrimonial Consolidado</div></div></div>
+  <div class="grid-2">
+    <div class="table-card reveal">
+      <h3>Ativo &mdash; R$ mil</h3>
+      <div class="table-wrap">
+      <table>
+        <tr><td>Caixa e aplicações</td><td>8.245</td></tr>
+        <tr><td>Contas a receber</td><td>61.787</td></tr>
+        <tr><td>Estoques</td><td>41.911</td></tr>
+        <tr><td>Imobilizado</td><td>20.872</td></tr>
+        <tr><td>Outros ativos</td><td>25.903</td></tr>
+        <tr class="tr-total"><td>Total do Ativo</td><td>158.718</td></tr>
+      </table>
+      </div>
+    </div>
+    <div class="table-card reveal">
+      <h3>Passivo e Patrimônio Líquido &mdash; R$ mil</h3>
+      <div class="table-wrap">
+      <table>
+        <tr><td>Empréstimos e financiamentos</td><td>68.299</td></tr>
+        <tr><td>Fornecedores</td><td>13.715</td></tr>
+        <tr><td>Outros passivos</td><td>40.688</td></tr>
+        <tr><td>Patrimônio líquido</td><td>36.016</td></tr>
+        <tr class="tr-total"><td>Total Passivo e PL</td><td>158.718</td></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ROIC/WACC ===== -->
+  <div class="section"><div class="section-header"><div class="section-line"></div><div class="section-title">Memória de Cálculo &mdash; ROIC e WACC</div></div></div>
+  <div class="grid-2">
+    <div class="table-card reveal">
+      <h3>ROIC</h3>
+      <div class="table-wrap">
+      <table>
+        <tr><td>EBITDA</td><td>36.635</td></tr>
+        <tr><td>(-) Depreciação</td><td class="neg">(2.178)</td></tr>
+        <tr class="tr-total"><td>= EBIT</td><td>34.457</td></tr>
+        <tr><td>(-) IR/CSLL nominal (34%)</td><td class="neg">(11.715)</td></tr>
+        <tr class="tr-total"><td>= NOPAT</td><td>22.742</td></tr>
+        <tr><td>Patrimônio Líquido</td><td>36.016</td></tr>
+        <tr><td>(+) Dívida Líquida</td><td>60.054</td></tr>
+        <tr class="tr-total"><td>= Capital Investido</td><td>96.070</td></tr>
+        <tr class="tr-total"><td style="color:var(--mid)">ROIC</td><td style="color:var(--mid);font-size:1.2em">23,7%</td></tr>
+      </table>
+      </div>
+    </div>
+    <div class="table-card reveal">
+      <h3>WACC</h3>
+      <div class="table-wrap">
+      <table>
+        <tr><td style="color:var(--dark);font-weight:700" colspan="2">Custo da Dívida</td></tr>
+        <tr><td>Kd bruto (implícito)</td><td>18,4%</td></tr>
+        <tr class="tr-total"><td>Kd líquido (&times; 1&minus;34%)</td><td>12,1%</td></tr>
+        <tr><td style="color:var(--dark);font-weight:700" colspan="2">Custo do Equity (CAPM)</td></tr>
+        <tr><td>Rf (NTN-B 2035)</td><td>11,5%</td></tr>
+        <tr><td>Beta &times; Prêmio de risco</td><td>6,0%</td></tr>
+        <tr><td>Prêmio de tamanho</td><td>3,0%</td></tr>
+        <tr class="tr-total"><td>Ke</td><td>20,5%</td></tr>
+        <tr><td>Peso Dívida / Peso Equity</td><td>65,5% / 34,5%</td></tr>
+        <tr class="tr-total"><td>WACC</td><td>15,0%</td></tr>
+        <tr class="tr-total"><td style="color:var(--green)">Spread (ROIC &minus; WACC)</td><td style="color:var(--green);font-size:1.2em">+8,7pp</td></tr>
+      </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTROLADORA ===== -->
+  <div class="section"><div class="section-header"><div class="section-line"></div><div class="section-title">Controladora (Holding)</div></div></div>
+  <div class="grid-4">
+    <div class="card reveal"><div class="c-label">Investimento</div><div class="c-value">R$ 45.044</div><div class="c-detail">Custo + MEP</div></div>
+    <div class="card reveal"><div class="c-label">Equivalência Patrimonial</div><div class="c-value accent">R$ 17.236</div><div class="c-detail">100% resultado CTL</div></div>
+    <div class="card reveal"><div class="c-label">Capital Social</div><div class="c-value">R$ 27.809</div><div class="c-detail">Integralizado</div></div>
+    <div class="card reveal"><div class="c-label">Lucro Líquido</div><div class="c-value green">R$ 17.234</div><div class="c-detail">Individual</div></div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <img src="logo-contourline-branca.png" alt="Contourline" class="f-logo-img">
+  <span class="f-accent">Contourline Group</span> &mdash; Informações aos Acionistas &mdash; Exercício 2025<br>
+  Documento confidencial &bull; Valores expressos em R$ mil<br>
+  <em>Os números não mentem</em>
+</div>
+
+<script>
+// Counter animation
+const counters=document.querySelectorAll('.counter');
+const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const el=e.target;const t=parseInt(el.dataset.target);const d=2000;const s=performance.now();const a=n=>{const p=Math.min((n-s)/d,1);const eased=1-Math.pow(1-p,3);el.textContent=Math.round(t*eased).toLocaleString('pt-BR');if(p<1)requestAnimationFrame(a)};requestAnimationFrame(a);cObs.unobserve(el)}})},{threshold:0.5});
+counters.forEach(c=>cObs.observe(c));
+
+// Scroll reveal
+const reveals=document.querySelectorAll('.reveal');
+const rObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');rObs.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(r=>rObs.observe(r));
+
+// Bar animation
+const bars=document.querySelectorAll('.bar-fill');
+const bObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const w=e.target.style.width;e.target.style.width='0';setTimeout(()=>{e.target.style.width=w},200);bObs.unobserve(e.target)}})},{threshold:0.3});
+bars.forEach(b=>bObs.observe(b));
+</script>
+</body>
+</html>

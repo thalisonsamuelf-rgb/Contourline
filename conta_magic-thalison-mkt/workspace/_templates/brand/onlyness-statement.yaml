@@ -1,0 +1,17 @@
+---
+metadata:
+  schema: "brand.onlyness_statement"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+onlyness:
+  statement: "FILL_THIS"
+  target_segment: "FILL_THIS"
+  differentiator: "FILL_THIS"
+  proof: "FILL_THIS"
+tests:
+  swap_test_result: "<pass|fail|pending>"
+  uniqueness_confidence: "<low|medium|high>"
+references:
+  source_doc: "FILL_THIS"

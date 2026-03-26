@@ -1,0 +1,13 @@
+metadata:
+  schema: contamagic.leaders
+  version: '1.0'
+  status: SKELETON
+  updated_at: '2026-03-14'
+leaders:
+  leader_1:
+    name: Egio Roberto
+    role: CEO / Socio-fundador
+    archetype: The Technologist / The Optimizer
+    contribution: Visao estrategica, background de programacao, lideranca geral
+    public_presence:
+      instagram: '@egioroberto'

@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#141416"/>
+  <circle cx="910" cy="230" r="170" fill="#DDD1BB" fill-opacity="0.16"/>
+  <rect x="88" y="88" width="1024" height="724" stroke="#DDD1BB" stroke-width="2"/>
+  <rect x="132" y="134" width="420" height="630" fill="#1B1B1E"/>
+  <rect x="590" y="134" width="478" height="202" fill="#E8E1D2"/>
+  <rect x="590" y="362" width="478" height="180" fill="#212126"/>
+  <rect x="590" y="568" width="478" height="196" fill="#18181B"/>
+  <text x="176" y="540" fill="#F4F4F4" font-family="Arial, sans-serif" font-size="82" font-weight="700">STARTER</text>
+  <text x="176" y="614" fill="#DDD1BB" font-family="Arial, sans-serif" font-size="82" font-weight="700">SHOWCASE</text>
+  <text x="596" y="715" fill="#F4F4F4" font-family="Courier New, monospace" font-size="28" letter-spacing="4">EDITORIAL LAYOUT / 02</text>
+</svg>

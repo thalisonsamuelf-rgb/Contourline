@@ -1,0 +1,30 @@
+template:
+  id: sop
+  version: "1.0.0"
+  description: Generic machine-readable SOP template for business-level automation
+
+sop:
+  metadata:
+    sop_id: "<business>-<process>-sop"
+    version: "0.1.0"
+    status: draft
+    business: "<business>"
+    process: "<process>"
+    owner: "<role>"
+    last_updated: "<ISO-8601>"
+  intent:
+    objective: "<what this SOP achieves>"
+    trigger: "<when the SOP starts>"
+    success_state: "<terminal success condition>"
+  inputs: []
+  tools: []
+  states: []
+  transitions: []
+  error_handling:
+    escalation_path: []
+    retry_policy: {}
+  controls:
+    sla:
+      expected_duration: "<duration>"
+      max_duration: "<duration>"
+    evidence: []

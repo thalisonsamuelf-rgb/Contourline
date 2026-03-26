@@ -1,0 +1,563 @@
+---
+# PROBLEM-SOLUTION-MATRIX.YAML - Value Stack Engineering (Hormozi Method)
+# Purpose: Systematically map every client problem, generate solutions, trim low-value items, stack high-value items
+# Guardian: Offer Engineer / Product Lead
+# Timing: FILL after diagnosis.yaml, icp.yaml, and value-equation.yaml are complete
+# Framework: Alex Hormozi, $100M Offers — Grand Slam Offer Algorithm (Phase 2: Reverse Engineering Value)
+# Dependency: value-equation.yaml (Dream Outcome must be defined first)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Offer Engineer"
+  framework: "Hormozi Problem-Solution Matrix + Value Stacking"
+  notes: |
+    This file is the CORE of offer construction.
+    It answers: "What are ALL the problems the client faces, and what solutions
+    address each one with maximum perceived value and minimum delivery cost?"
+
+    PROCESS:
+    1. Define the Dream Outcome (from value-equation.yaml)
+    2. Map ALL problems chronologically (before, during, after)
+    3. Generate a solution for each problem
+    4. Score each solution: Perceived Value vs Delivery Cost
+    5. TRIM: Remove low-value / high-cost solutions
+    6. STACK: Keep high-value / low-cost solutions
+    7. Name each solution component
+    8. Assign dollar value to each component
+    9. Sequence from lowest to highest value
+    10. Totalize the stack
+
+    RULE: "An offer divided into named components is worth more than presented as a whole."
+    RULE: The goal is not more features. The goal is solving more problems at low delivery cost.
+# ============================================================================
+# STEP 1: DREAM OUTCOME ANCHOR
+# ============================================================================
+# Everything in this matrix serves ONE purpose: getting the client to the Dream Outcome.
+# Pull this directly from value-equation.yaml.
+dream_outcome_anchor:
+  one_sentence: "FILL — Copy from value-equation.yaml. The single sentence describing the transformation."
+  avatar: "FILL — Who specifically is this for? The more specific, the more problems you can identify."
+  current_state: "FILL — Where is the client RIGHT NOW? What is their daily reality?"
+  desired_state: "FILL — Where do they want to BE? What does success look like?"
+# ============================================================================
+# STEP 2: CHRONOLOGICAL PROBLEM MAP
+# ============================================================================
+# Think through the client's journey in THREE phases:
+# BEFORE: Problems that prevent them from STARTING
+# DURING: Problems that arise WHILE pursuing the Dream Outcome
+# AFTER: Problems that emerge AFTER achieving initial success
+#
+# For each phase, ask:
+# - What stops them from starting?
+# - What makes them quit midway?
+# - What new problems emerge after success?
+# - What do they fear?
+# - What do they not know they need?
+# - What have they tried before that failed?
+problems_before:
+  # Problems that prevent the client from even STARTING
+  # These are pre-purchase objections and fears
+  problem_b1:
+    description: "FILL — First problem before starting (e.g., 'I do not know where to begin')"
+    emotional_weight: "FILL — How painful is this? (1-10)"
+    frequency: "FILL — How often does the client experience this? (Daily / Weekly / Constant)"
+    current_solution: "FILL — What do they currently do about it? (Nothing / DIY / Competitor)"
+  problem_b2:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_b3:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_b4:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_b5:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+problems_during:
+  # Problems that arise WHILE the client is pursuing the Dream Outcome
+  # These are the reasons people quit, stall, or get frustrated
+  problem_d1:
+    description: "FILL — First problem during execution (e.g., 'I get overwhelmed and stop')"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_d2:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_d3:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_d4:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_d5:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+problems_after:
+  # Problems that emerge AFTER the client achieves initial success
+  # These are retention opportunities and upsell triggers
+  problem_a1:
+    description: "FILL — First problem after success (e.g., 'Now I have clients but no systems to handle them')"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_a2:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+  problem_a3:
+    description: "FILL"
+    emotional_weight: "FILL"
+    frequency: "FILL"
+    current_solution: "FILL"
+# ============================================================================
+# STEP 3: SOLUTION GENERATION
+# ============================================================================
+# For EACH problem identified above, generate a solution.
+# Each solution must specify:
+# - What it solves (link to problem ID)
+# - The delivery vehicle (how the client receives it)
+# - The format (digital, physical, service, tool, template, community, etc.)
+#
+# DIVERGENT THINKING: Generate solutions freely here. Do NOT judge yet.
+# Judgment happens in Step 4 (Trim & Stack).
+solutions:
+  # SOLUTIONS FOR "BEFORE" PROBLEMS
+  solution_b1:
+    solves_problem: "problem_b1"
+    solution_name_draft: "FILL — Working name (will be refined in Step 6)"
+    description: "FILL — What does this solution do? One sentence."
+    delivery_vehicle: "FILL — How is it delivered? (PDF, video, template, call, tool, community, DFY service)"
+    format: "FILL — Digital / Physical / Service / Hybrid"
+    value_equation_variable: "FILL — Which Value Equation variable does this primarily improve? (Dream Outcome / Perceived Likelihood / Time Delay / Effort & Sacrifice)"
+  solution_b2:
+    solves_problem: "problem_b2"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_b3:
+    solves_problem: "problem_b3"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_b4:
+    solves_problem: "problem_b4"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_b5:
+    solves_problem: "problem_b5"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  # SOLUTIONS FOR "DURING" PROBLEMS
+  solution_d1:
+    solves_problem: "problem_d1"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_d2:
+    solves_problem: "problem_d2"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_d3:
+    solves_problem: "problem_d3"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_d4:
+    solves_problem: "problem_d4"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_d5:
+    solves_problem: "problem_d5"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  # SOLUTIONS FOR "AFTER" PROBLEMS
+  solution_a1:
+    solves_problem: "problem_a1"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_a2:
+    solves_problem: "problem_a2"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+  solution_a3:
+    solves_problem: "problem_a3"
+    solution_name_draft: "FILL"
+    description: "FILL"
+    delivery_vehicle: "FILL"
+    format: "FILL"
+    value_equation_variable: "FILL"
+# ============================================================================
+# STEP 4: TRIM & STACK (Value vs Cost Matrix)
+# ============================================================================
+# For EACH solution, evaluate TWO dimensions:
+# 1. PERCEIVED VALUE TO CLIENT: How much does the client value this? (High / Medium / Low)
+# 2. DELIVERY COST TO BUSINESS: How much does it cost you to deliver? (High / Medium / Low)
+#
+# DECISION MATRIX:
+# High Value + Low Cost  = STACK (keep, these are your best items)
+# High Value + High Cost = EVALUATE (keep if margin allows, or find cheaper delivery)
+# Low Value  + Low Cost  = INCLUDE IF EASY (padding, but not core)
+# Low Value  + High Cost = TRIM (remove immediately)
+#
+# The IDEAL offer is packed with High Value / Low Cost items.
+# Digital products, templates, checklists, recorded content, community access = low cost, high value.
+trim_and_stack:
+  solution_b1:
+    perceived_value: "FILL — High / Medium / Low"
+    delivery_cost: "FILL — High / Medium / Low"
+    decision: "FILL — STACK / EVALUATE / INCLUDE / TRIM"
+    reasoning: "FILL — Why this decision?"
+  solution_b2:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_b3:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_b4:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_b5:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_d1:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_d2:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_d3:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_d4:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_d5:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_a1:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_a2:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  solution_a3:
+    perceived_value: "FILL"
+    delivery_cost: "FILL"
+    decision: "FILL"
+    reasoning: "FILL"
+  # SUMMARY
+  items_stacked: "FILL — List solution IDs that were STACKED"
+  items_trimmed: "FILL — List solution IDs that were TRIMMED"
+  items_evaluated: "FILL — List solution IDs that need further evaluation"
+# ============================================================================
+# STEP 5: VALUE EQUATION COVERAGE CHECK
+# ============================================================================
+# Verify that the stacked solutions address ALL 4 Value Equation variables.
+# A strong offer does not just stack randomly — it SYSTEMATICALLY improves
+# every variable in the Value Equation.
+value_equation_coverage:
+  dream_outcome_solutions: "FILL — Which stacked solutions improve Dream Outcome? List them."
+  perceived_likelihood_solutions: "FILL — Which stacked solutions improve Perceived Likelihood?"
+  time_delay_solutions: "FILL — Which stacked solutions reduce Time Delay?"
+  effort_sacrifice_solutions: "FILL — Which stacked solutions reduce Effort & Sacrifice?"
+  coverage_gaps: |
+    FILL — Is any variable NOT addressed by the stacked solutions?
+    If yes, go back to Step 3 and generate a solution specifically for that variable.
+    The weakest variable in the Value Equation should have the MOST solutions addressing it.
+
+    Gaps identified: FILL (None / List the gaps)
+# ============================================================================
+# STEP 6: NAMING (MAGIC Framework)
+# ============================================================================
+# Each solution component gets a compelling, benefit-driven name.
+# A named component is perceived as more valuable than an unnamed one.
+# "Sales Scripts" = generic. "The Instant Confidence Closing System" = valuable.
+#
+# MAGIC Naming Elements (use any combination):
+# M — Mechanism (what makes it work)
+# A — Avatar (who it is for)
+# G — Graphic element (memorable word or image)
+# I — Idea (the benefit)
+# C — Convergence (time constraint)
+# O — Outcome (the result)
+#
+# NAMING RULES:
+# - Must sound like it could be sold as a standalone product
+# - Must communicate the benefit, not the format
+# - Must be specific enough to repel non-ideal clients
+# - Numbers add credibility ("7-Step", "30-Day", "The 3 Pillars")
+named_components:
+  component_1:
+    original_solution: "FILL — Link to solution ID from Step 3"
+    name: "FILL — The compelling, named component (e.g., 'The 7-Minute Content Arsenal')"
+    tagline: "FILL — One sentence explaining what it does for the client"
+    magic_elements_used: "FILL — Which MAGIC elements? (e.g., M + I + C)"
+  component_2:
+    original_solution: "FILL"
+    name: "FILL"
+    tagline: "FILL"
+    magic_elements_used: "FILL"
+  component_3:
+    original_solution: "FILL"
+    name: "FILL"
+    tagline: "FILL"
+    magic_elements_used: "FILL"
+  component_4:
+    original_solution: "FILL"
+    name: "FILL"
+    tagline: "FILL"
+    magic_elements_used: "FILL"
+  component_5:
+    original_solution: "FILL"
+    name: "FILL"
+    tagline: "FILL"
+    magic_elements_used: "FILL"
+  component_6:
+    original_solution: "FILL"
+    name: "FILL"
+    tagline: "FILL"
+    magic_elements_used: "FILL"
+  component_7:
+    original_solution: "FILL"
+    name: "FILL"
+    tagline: "FILL"
+    magic_elements_used: "FILL"
+    # Add more if needed. Minimum 5, maximum 10 named components.
+# ============================================================================
+# STEP 7: VALUE ASSIGNMENT
+# ============================================================================
+# Assign a dollar value to each named component.
+# The value must be DEFENSIBLE — based on one of these methods:
+# 1. What would it cost to buy this separately? (market price)
+# 2. What result does it produce? (ROI-based value)
+# 3. How much time does it save? (time-based value)
+# 4. What would a consultant charge for this? (service-based value)
+#
+# RULE: The sum of all components must be AT LEAST 10x the offer price.
+# This creates the perception gap that makes the offer irresistible.
+value_assignment:
+  component_1:
+    name: "FILL — Copy from Step 6"
+    assigned_value: "FILL — e.g., R$ 2.000"
+    value_justification: "FILL — Why is this worth that amount? (market price / ROI / time saved / consultant rate)"
+    justification_method: "FILL — Market Price / ROI-Based / Time-Based / Service-Based"
+  component_2:
+    name: "FILL"
+    assigned_value: "FILL"
+    value_justification: "FILL"
+    justification_method: "FILL"
+  component_3:
+    name: "FILL"
+    assigned_value: "FILL"
+    value_justification: "FILL"
+    justification_method: "FILL"
+  component_4:
+    name: "FILL"
+    assigned_value: "FILL"
+    value_justification: "FILL"
+    justification_method: "FILL"
+  component_5:
+    name: "FILL"
+    assigned_value: "FILL"
+    value_justification: "FILL"
+    justification_method: "FILL"
+  component_6:
+    name: "FILL"
+    assigned_value: "FILL"
+    value_justification: "FILL"
+    justification_method: "FILL"
+  component_7:
+    name: "FILL"
+    assigned_value: "FILL"
+    value_justification: "FILL"
+    justification_method: "FILL"
+# ============================================================================
+# STEP 8: SEQUENCING (Presentation Order)
+# ============================================================================
+# Present components from LOWEST to HIGHEST value.
+# This creates an escalating sense of value that peaks right before the price reveal.
+#
+# STRUCTURE:
+# 1. Core offer (the main thing they are buying)
+# 2. Bonuses (presented one at a time, ascending value)
+# 3. Guarantee (presented AFTER all value is stacked)
+# 4. Price reveal (presented AFTER total value is established)
+#
+# The client should be thinking "this is already worth it" BEFORE you finish stacking.
+presentation_sequence:
+  position_1_core:
+    component_name: "FILL — The core offer (main deliverable)"
+    assigned_value: "FILL"
+    presentation_note: "FILL — How to introduce this (e.g., 'Here is what you get when you join...')"
+  position_2_bonus:
+    component_name: "FILL — Lowest value bonus"
+    assigned_value: "FILL"
+    presentation_note: "FILL — 'But that is not all. You also get...'"
+  position_3_bonus:
+    component_name: "FILL"
+    assigned_value: "FILL"
+    presentation_note: "FILL"
+  position_4_bonus:
+    component_name: "FILL"
+    assigned_value: "FILL"
+    presentation_note: "FILL"
+  position_5_bonus:
+    component_name: "FILL"
+    assigned_value: "FILL"
+    presentation_note: "FILL"
+  position_6_bonus:
+    component_name: "FILL — Highest value bonus"
+    assigned_value: "FILL"
+    presentation_note: "FILL — 'And finally, the most valuable piece...'"
+    # Add more positions as needed
+# ============================================================================
+# STEP 9: TOTAL VALUE STACK
+# ============================================================================
+# Sum all components. This is the number you present BEFORE revealing the price.
+total_value_stack:
+  components_list: |
+    FILL — List all components with values:
+    1. [Component Name] .................. [Value]
+    2. [Component Name] .................. [Value]
+    3. [Component Name] .................. [Value]
+    4. [Component Name] .................. [Value]
+    5. [Component Name] .................. [Value]
+    6. [Component Name] .................. [Value]
+    7. [Component Name] .................. [Value]
+  total_stacked_value: "FILL — Sum of all component values"
+  offer_price: "FILL — What you actually charge"
+  value_to_price_ratio: "FILL — e.g., 27:1"
+  ratio_check: |
+    FILL — Is the ratio at least 10:1?
+    If < 10:1: Add more components or increase value justifications.
+    If > 30:1: Verify value claims are defensible. Inflated values erode trust.
+    If 10:1 to 30:1: Sweet spot. The client sees massive value gap.
+  # The presentation script
+  stack_reveal_script: |
+    FILL — Write the actual script for presenting the value stack:
+
+    "Here is everything you get when you [join/buy/enroll]:
+
+    First, [Component 1] — [what it does]. Alone, this is worth [Value 1].
+
+    But you also get [Component 2] — [what it does]. That is another [Value 2].
+
+    [Continue for each component...]
+
+    Total value: [Total Stacked Value].
+
+    Your investment today: [Offer Price].
+
+    That is [X]% off what all of this is worth individually."
+# ============================================================================
+# STEP 10: DIAGNOSTIC SUMMARY
+# ============================================================================
+diagnostic_summary:
+  total_problems_identified: "FILL — How many problems were mapped across all 3 phases?"
+  total_solutions_generated: "FILL — How many solutions were created?"
+  solutions_stacked: "FILL — How many made it through the Trim & Stack filter?"
+  solutions_trimmed: "FILL — How many were cut?"
+  value_equation_coverage: "FILL — Are all 4 variables addressed? (Yes / No — list gaps)"
+  weakest_coverage_area: "FILL — Which Value Equation variable has the fewest solutions?"
+  total_stacked_value: "FILL — Final stacked value number"
+  value_to_price_ratio: "FILL — Final ratio"
+  naming_quality: "FILL — Rate naming quality (Weak / Acceptable / Strong / Magnetic)"
+  next_actions:
+    action_1: "FILL — What is the most important thing to do next with this matrix?"
+    action_2: "FILL — Second priority"
+    action_3: "FILL — Third priority"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# TEMPLATE INSTRUCTIONS
+# 1. Start with the Dream Outcome from value-equation.yaml — everything serves that
+# 2. Map problems CHRONOLOGICALLY: before, during, after
+# 3. Be EXHAUSTIVE in problem identification — missing a problem means missing a value stack item
+# 4. Generate solutions WITHOUT judging — divergent thinking first
+# 5. THEN judge with the Trim & Stack matrix (value vs cost)
+# 6. Check Value Equation coverage — no variable should be uncovered
+# 7. Name each component as if it were a standalone product
+# 8. Assign defensible values using one of the 4 methods
+# 9. Sequence from lowest to highest value for maximum impact
+# 10. Write the stack reveal script — this goes directly into sales copy
+#
+# CROSS-REFERENCES:
+# - value-equation.yaml: Dream Outcome and composite scores
+# - guarantee-design.yaml: The guarantee sits AFTER the value stack in presentation
+# - offerbook.yaml: The complete offer architecture
+# - objections.yaml: Problems here often map to objections there

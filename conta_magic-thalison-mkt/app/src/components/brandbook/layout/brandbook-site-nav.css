@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════════════
+   BRANDBOOK SITE NAV — Replica fiel do HTML legado
+   Source: apps/brandbook/css/primitives.css (.site-nav section)
+   Prefixed with .bb- to avoid collisions.
+   Scoped via @layer brandbook-bridge for cascade isolation.
+   ═══════════════════════════════════════════════════════════ */
+
+@layer brandbook-bridge {
+
+.bb-site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--bb-gutter, 1.5rem);
+  min-height: 48px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: sticky;
+  top: 0;
+  z-index: var(--layer-nav);
+}
+
+.bb-nav-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.25rem 0;
+  color: var(--cream);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.bb-nav-logo span {
+  color: var(--bb-accent);
+}
+
+.bb-nav-links {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  min-width: 0;
+}
+
+.bb-nav-section {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Top-level link (non-dropdown) ── */
+.bb-nav-top-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--dim);
+  text-decoration: none;
+  padding: 0.75rem 0.8rem;
+  border-left: 1px solid var(--border);
+  transition: color 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.bb-nav-top-link:hover {
+  color: var(--cream);
+  background: rgba(245, 244, 231, 0.03);
+}
+
+.bb-nav-top-link.active {
+  color: var(--bb-accent);
+}
+
+/* ── Separator ── */
+.bb-nav-sep {
+  width: 1px;
+  height: 16px;
+  background: var(--border);
+  align-self: center;
+  flex-shrink: 0;
+}
+
+/* ── Dropdown ── */
+.bb-nav-dropdown {
+  position: relative;
+}
+
+.bb-nav-dropdown-trigger {
+  background: none;
+  border: none;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-height: 44px;
+  padding: 0.75rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+  border-left: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.bb-nav-dropdown-trigger:hover {
+  color: var(--cream);
+  background: rgba(245, 244, 231, 0.03);
+}
+
+.bb-chevron {
+  font-size: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.bb-nav-dropdown:hover .bb-chevron {
+  transform: rotate(180deg);
+}
+
+.bb-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+.bb-nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  z-index: var(--layer-dropdown);
+  flex-direction: column;
+}
+
+.bb-nav-dropdown:hover .bb-nav-dropdown-menu {
+  display: flex;
+}
+
+/* Last two dropdowns align right to prevent horizontal overflow */
+.bb-nav-section:last-child .bb-nav-dropdown-menu,
+.bb-nav-section:nth-last-child(2) .bb-nav-dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+.bb-nav-dropdown-menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--dim);
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease, background 0.2s ease;
+  border-bottom: 1px solid var(--border);
+}
+
+.bb-nav-dropdown-menu a:last-child {
+  border-bottom: none;
+}
+
+.bb-nav-dropdown-menu a:hover {
+  color: var(--cream);
+  background: rgba(245, 244, 231, 0.03);
+}
+
+.bb-nav-dropdown-menu a.active {
+  color: var(--bb-accent);
+  background: var(--bb-accent-05);
+}
+
+/* ── Multi-column dropdown ── */
+.bb-nav-dropdown-columns {
+  min-width: 340px;
+  gap: 0;
+}
+
+.bb-nav-dropdown:hover .bb-nav-dropdown-columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.bb-nav-dropdown-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bb-nav-dropdown-col + .bb-nav-dropdown-col {
+  border-left: 1px solid var(--border);
+}
+
+.bb-nav-dropdown-subgroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.bb-nav-dropdown-subgroup + .bb-nav-dropdown-subgroup {
+  border-top: 1px solid var(--border);
+}
+
+.bb-nav-dropdown-heading {
+  color: var(--bb-accent);
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.5rem 1rem 0.25rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 1180px) {
+  .bb-site-nav {
+    padding: 0 1rem;
+  }
+
+  .bb-nav-top-link,
+  .bb-nav-dropdown-trigger {
+    padding-inline: 0.65rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 1080px) {
+  .bb-site-nav {
+    gap: 0.75rem;
+  }
+
+  .bb-nav-logo {
+    min-width: 72px;
+  }
+
+  .bb-nav-top-link,
+  .bb-nav-dropdown-trigger {
+    padding-inline: 0.55rem;
+    font-size: 0.53rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* ── Hamburger ── */
+.bb-nav-hamburger {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--cream);
+  font-size: 1rem;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .bb-site-nav {
+    padding: 0 1rem;
+  }
+
+  .bb-nav-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Desktop nav hidden on mobile — Sheet handles it */
+  .bb-nav-links {
+    display: none;
+  }
+
+  .bb-nav-sep {
+    display: none;
+  }
+
+  .bb-sidebar {
+    display: none;
+  }
+}
+
+} /* end @layer brandbook-bridge */

@@ -1,0 +1,89 @@
+/* ═══════════════════════════════════════════════════════════
+   BRANDBOOK BRIDGE — SHARED KEYFRAME ANIMATIONS
+   Renamed from animations.css → keyframes.css
+   Scoped via @layer brandbook-bridge for cascade isolation.
+   ═══════════════════════════════════════════════════════════ */
+
+@layer brandbook-bridge {
+
+  /* ─── GROUP A: UI Animations ─── */
+  /* bb-ticker removed — canonical definition lives in globals.css (-33.333% for 3x repeat).
+     Use bb-ticker-scroll below for 2x repeat (-50%) if needed. */
+
+  @keyframes bb-ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes bb-pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+  }
+
+  @keyframes bb-barGrow {
+    from { width: 0; }
+  }
+
+  @keyframes bb-drawLine {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  @keyframes bb-drawLineV {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+  }
+
+  /* ─── GROUP B: Loading Animations ─── */
+  @keyframes bb-content-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bb-blinds-open {
+    to { --blinds-width: 0px; }
+  }
+
+  @keyframes bb-letter-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bb-x-tick {
+    0%, 10%  { transform: rotate(0deg); }
+    25%, 35% { transform: rotate(90deg); }
+    50%, 60% { transform: rotate(180deg); }
+    75%, 85% { transform: rotate(270deg); }
+    100%     { transform: rotate(360deg); }
+  }
+
+  @keyframes bb-progress-fill {
+    0%   { width: 0%; }
+    30%  { width: 40%; }
+    60%  { width: 70%; }
+    85%  { width: 90%; }
+    100% { width: 100%; }
+  }
+
+  /* ─── GROUP C: Foundations Animations ─── */
+  @keyframes bb-easing-run {
+    from { left: 0; }
+    to   { left: calc(100% - 12px); }
+  }
+
+  @keyframes bb-duration-fill {
+    from { width: 0; }
+    to   { width: 100%; }
+  }
+
+  /* ─── GROUP D: Pattern Animations ─── */
+  @keyframes bb-scanline-sweep {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
+  /* bb-pulse: reused by .pattern-glow-pulse (defined in patterns.css) */
+  @keyframes bb-pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+  }
+
+} /* end @layer brandbook-bridge */

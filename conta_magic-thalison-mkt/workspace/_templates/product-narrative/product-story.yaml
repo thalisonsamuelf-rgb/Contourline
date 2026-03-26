@@ -1,0 +1,62 @@
+---
+# PRODUCT-STORY.YAML - Shared product narrative spine
+# PURPOSE: Canonical story arc for product pages, launches, presentations,
+# franchise recruitment narratives, and copy adaptation.
+
+metadata:
+  version: "1.0"
+  artifact_type: "product_story"
+  status: "DRAFT"
+  owner: "coo-orchestrator"
+  canonical_storage:
+    product: "workspace/businesses/{business}/products/{product}/narrative/product-story.yaml"
+  shared_across:
+    - copy
+    - storytelling
+    - traffic-masters
+    - franchise
+  source_dependencies:
+    - "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+    - "workspace/businesses/{business}/products/{product}/proof.yaml"
+    - "workspace/businesses/{business}/products/{product}/testimonials.yaml"
+
+context:
+  business_slug: "FILL_THIS"
+  product_slug: "FILL_THIS"
+  narrative_goal: "FILL_THIS"
+  primary_format: "landing_page|pitch|presentation|franchise_recruitment|launch"
+
+story_arc:
+  before_state: "FILL_THIS"
+  inciting_problem: "FILL_THIS"
+  failed_attempts:
+    - "FILL_THIS"
+  unique_mechanism: "FILL_THIS"
+  transformation_path:
+    - phase: 1
+      label: "FILL_THIS"
+    - phase: 2
+      label: "FILL_THIS"
+    - phase: 3
+      label: "FILL_THIS"
+  after_state: "FILL_THIS"
+
+proof_stack_summary:
+  flagship_results:
+    - "FILL_THIS"
+  proof_themes:
+    - "FILL_THIS"
+  testimonial_arcs:
+    - "FILL_THIS"
+
+conversion_hooks:
+  core_hook: "FILL_THIS"
+  secondary_hooks:
+    - "FILL_THIS"
+  emotional_shift: "FILL_THIS"
+
+reuse_notes:
+  copy_angle: "FILL_THIS"
+  storytelling_angle: "FILL_THIS"
+  traffic_angle: "FILL_THIS"
+  franchise_angle: "FILL_THIS"

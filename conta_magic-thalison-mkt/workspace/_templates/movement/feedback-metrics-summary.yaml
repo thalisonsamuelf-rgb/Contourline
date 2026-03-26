@@ -1,0 +1,31 @@
+---
+# Template: feedback metrics summary dataset (N8)
+
+metadata:
+  template_id: "movement.feedback_metrics_summary"
+  version: "1.0.0"
+  lifecycle_stage: "feedback"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+metrics_summary:
+  cycle_id: "<required>"
+  report_cadence: "<weekly|monthly|quarterly>"
+  kpis:
+    - metric: "<required>"
+      baseline: "<required>"
+      result: "<required>"
+      delta: "<required>"
+      status: "<up|flat|down>"
+  doctrine_installation_signals:
+    tribal_language: "<low|medium|high>"
+    qualitative_engagement: "<low|medium|high>"
+    spontaneous_defense: "<low|medium|high>"
+    ugc_aligned: "<low|medium|high>"
+  rite_efficiency:
+    retention_by_format: []
+  flywheel:
+    transitions: []
+    bottlenecks: []
+provenance:
+  source_docs: []

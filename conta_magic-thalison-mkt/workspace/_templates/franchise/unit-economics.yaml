@@ -1,0 +1,14 @@
+business_slug: "{{business_slug}}"
+status: draft
+assumptions:
+  investment_required: 0
+  royalty_rate: 0
+  payback_months: 0
+  expected_margin: 0
+scenarios:
+  conservative: {}
+  base: {}
+  aggressive: {}
+go_no_go:
+  viable: false
+  rationale: ""

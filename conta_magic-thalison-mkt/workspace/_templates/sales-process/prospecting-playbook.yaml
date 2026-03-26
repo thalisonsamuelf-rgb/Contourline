@@ -1,0 +1,181 @@
+---
+# PROSPECTING-PLAYBOOK.YAML - Outbound & Inbound Lead Generation System
+# Purpose: Design the complete prospecting system for generating qualified leads
+# Guardian: Sales Lead / BDR Manager
+# Timing: FILL after icp.yaml is complete — this drives the top of the sales funnel
+# Framework: AGG-OUTBOUND DNA + Hormozi $100M Leads + BDR Qualification Frameworks
+# Dependency: icp.yaml (target avatar), conversion-funnel.yaml (funnel targets)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Sales Lead / BDR Manager"
+  framework: "Hormozi $100M Leads + AGG-OUTBOUND DNA + BDR Qualification"
+  notes: |
+    Prospecting is the lifeblood of any sales organization.
+    Without a systematic approach, revenue is unpredictable.
+
+    Hormozi's $100M Leads framework: There are only 4 ways to get leads:
+    1. Warm outreach (people you know)
+    2. Cold outreach (people you do not know)
+    3. Paid advertising (buying attention)
+    4. Content (earning attention)
+
+    Each has different cost, speed, and scalability characteristics.
+    The best businesses use ALL FOUR in a coordinated system.
+
+    RULE: Never depend on a single lead source.
+    If one channel dies, your business should not die with it.
+
+# ============================================================================
+# STEP 1: LEAD SOURCE STRATEGY
+# ============================================================================
+
+lead_sources:
+  warm_outreach:
+    active: "FILL — Yes/No. Are you using warm outreach?"
+    methods: "FILL — Personal network, referrals, past contacts, existing community"
+    volume_target: "FILL — Leads per month from warm outreach"
+    cost_per_lead: "FILL — Estimated CPL (usually lowest)"
+
+  cold_outreach:
+    active: "FILL — Yes/No"
+    methods: "FILL — Cold email, cold DM, cold call, LinkedIn outreach"
+    volume_target: "FILL — Leads per month"
+    cost_per_lead: "FILL — Estimated CPL"
+
+  paid_advertising:
+    active: "FILL — Yes/No"
+    platforms: "FILL — Facebook, Google, YouTube, LinkedIn, etc."
+    volume_target: "FILL — Leads per month"
+    cost_per_lead: "FILL — Measured CPL"
+
+  content_marketing:
+    active: "FILL — Yes/No"
+    channels: "FILL — Blog, YouTube, podcast, social media, etc."
+    volume_target: "FILL — Leads per month"
+    cost_per_lead: "FILL — Estimated CPL (time-based)"
+
+  total_leads_target: "FILL — Total monthly leads across all sources"
+
+# ============================================================================
+# STEP 2: OUTBOUND PROSPECTING SYSTEM
+# ============================================================================
+
+outbound_system:
+  ideal_prospect_profile:
+    title_role: "FILL — What titles/roles are you targeting? (from icp.yaml)"
+    company_size: "FILL — Company size range"
+    industry: "FILL — Target industries"
+    signals: "FILL — Buying signals to look for (hiring, funding, growth, complaints)"
+
+  outreach_cadence:
+    day_1: "FILL — First touchpoint (channel + message type)"
+    day_3: "FILL — Second touchpoint"
+    day_5: "FILL — Third touchpoint"
+    day_7: "FILL — Fourth touchpoint"
+    day_14: "FILL — Fifth touchpoint (if no response)"
+
+  message_templates:
+    cold_email_1:
+      subject: "FILL — Subject line"
+      body: |
+        FILL — Cold email body.
+        Structure: Hook → Relevance → Value → CTA
+        Keep under 100 words.
+    cold_dm_1:
+      platform: "FILL — LinkedIn / Instagram / Twitter"
+      message: |
+        FILL — DM template.
+        Structure: Connection point → Question → Value hint
+
+  daily_targets:
+    emails_sent: "FILL — Number per day"
+    dms_sent: "FILL — Number per day"
+    calls_made: "FILL — Number per day"
+    connections_requested: "FILL — Number per day"
+
+# ============================================================================
+# STEP 3: INBOUND LEAD PROCESSING
+# ============================================================================
+
+inbound_system:
+  lead_capture_points:
+    capture_1: "FILL — Where do inbound leads enter? (form, chatbot, email, DM)"
+    capture_2: "FILL — Secondary capture point"
+    capture_3: "FILL — Tertiary capture point"
+
+  response_time_target: "FILL — How fast do you respond to inbound leads? (target: <5 minutes)"
+
+  qualification_framework:
+    method: "FILL — BANT / MEDDIC / GPCTBA / Custom"
+    criteria:
+      budget: "FILL — How do you assess budget?"
+      authority: "FILL — How do you verify decision-maker?"
+      need: "FILL — How do you confirm genuine need?"
+      timeline: "FILL — How do you assess urgency?"
+
+  lead_scoring:
+    hot_criteria: "FILL — What makes a lead HOT? (immediate action)"
+    warm_criteria: "FILL — What makes a lead WARM? (nurture sequence)"
+    cold_criteria: "FILL — What makes a lead COLD? (long-term pipeline)"
+
+# ============================================================================
+# STEP 4: PIPELINE MANAGEMENT
+# ============================================================================
+
+pipeline:
+  stages:
+    stage_1: "FILL — New lead"
+    stage_2: "FILL — Contacted"
+    stage_3: "FILL — Qualified"
+    stage_4: "FILL — Call booked"
+    stage_5: "FILL — Proposal sent"
+    stage_6: "FILL — Closed won / Closed lost"
+
+  pipeline_metrics:
+    total_pipeline_value: "FILL — Total value of all active opportunities"
+    average_deal_size: "FILL — Average deal size"
+    average_sales_cycle: "FILL — Days from first contact to close"
+    pipeline_velocity: "FILL — Deals closed per month"
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+prospecting_strength_score:
+  source_diversity: "FILL 1-10"
+  outbound_execution: "FILL 1-10"
+  inbound_processing: "FILL 1-10"
+  pipeline_management: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "Single lead source, no systematic outbound, slow inbound response, no pipeline tracking."
+    range_4_6: "2 lead sources, basic outbound cadence, inbound processing exists, pipeline in CRM."
+    range_7_8: "3+ lead sources, systematic outbound with templates and daily targets, fast inbound response with qualification, data-driven pipeline management."
+    range_9_10: "All 4 lead sources coordinated, optimized outbound with A/B testing, <5 min inbound response with automated scoring, predictable pipeline with accurate forecasting."
+
+evidence:
+  data_points: "FILL — Lead generation data, conversion rates by source, pipeline metrics"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  best_performing_source: "FILL — Which lead source has the best ROI?"
+  biggest_pipeline_gap: "FILL — Where is the pipeline weakest?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "icp.yaml"
+    - "conversion-funnel.yaml"
+  feeds_into:
+    - "discovery-framework.yaml"
+    - "show-rate-optimization.yaml"
+    - "analytics.yaml"
+  related:
+    - "ad-creative-brief.yaml"
+    - "email-sequences.yaml"
+    - "referral-system.yaml"

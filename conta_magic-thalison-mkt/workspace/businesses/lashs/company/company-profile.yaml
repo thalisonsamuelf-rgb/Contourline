@@ -1,0 +1,424 @@
+---
+# COMPANY-PROFILE.YAML - Quem somos como empresa
+# Purpose: Define a identidade, missao, valores e portfolio da empresa
+# Guardian: CEO / CFO / CMO
+# Timing: FILL ONCE - Update annually or when pivoting
+# Source: Planejamento Estrategico 2026
+
+metadata:
+  version: "1.0"
+  company_name: "Contourline"
+  status: "FILLED"
+  last_updated: "2026-03-19"
+  owner: "Egio Roberto (CEO)"
+  notes: |
+    Preenchido a partir do Planejamento Estrategico 2026.
+    #SomosAFabricaDeAltoEstima
+  product_name: "Equipamentos Medicos e Esteticos"
+# ============================================================================
+# SECTION 1: COMPANY FOUNDATION
+# ============================================================================
+company_essence:
+  legal_name: "Contourline Equipamentos Medicos e Diagnosticos LTDA"
+  trade_name: "Contourline"
+  year_founded: 2011
+  headquarters: "Sete Lagoas, MG, Brasil"
+  one_liner: |
+    A Contourline e a Fabrica de Autoestima que revela em todas as pessoas
+    a sua melhor versao, atraves de equipamentos medicos e esteticos de
+    alta tecnologia com P&D proprio e parcerias premium globais.
+  origin_story_short: |
+    Com mais de 15 anos de experiencia no fornecimento de equipamentos
+    medicos e esteticos de alta tecnologia, a Contourline nasceu em
+    Sete Lagoas (MG) com a missao de democratizar o acesso a tecnologia
+    de ponta para medicina estetica no Brasil. Fabrica e comercializa
+    equipamentos proprios e representa marcas globais como Body Health,
+    Lumenis e Indiba.
+# ============================================================================
+# SECTION 2: MISSION, VISION, VALUES
+# ============================================================================
+mission:
+  statement: |
+    Ser uma Fabrica de Autoestima, revelando em todas as pessoas a sua
+    melhor versao. Ajudar colaboradores, clientes e seus pacientes a
+    descobrirem suas melhores versoes.
+  who_benefits:
+    - "Colaboradores da Contourline"
+    - "Medicos e clinicas (clientes diretos)"
+    - "Pacientes finais (beneficiarios indiretos)"
+  transformation: |
+    De profissionais e pacientes inseguros com sua aparencia e saude
+    para pessoas que descobriram sua melhor versao atraves de
+    tecnologia medica de ponta.
+vision:
+  statement: |
+    Ser a melhor empresa do segmento de equipamentos de estetica medica
+    no mercado brasileiro ate 2027, com forte reconhecimento no mercado
+    e avaliacao que reflita sucesso, inovacao e capacidade de entregar
+    resultados excepcionais. Meta: R$ 500M de valuation ate 2027.
+  proof_of_traction:
+    - "4 mil clientes em todo o Brasil"
+    - "Projecao de faturamento acima de R$ 200 milhoes em 2026"
+    - "Sede propria de 2 mil m2 com P&D"
+    - "Estudos cientificos publicados"
+    - "15 anos de operacao"
+values:
+  value_1:
+    name: "Lealdade"
+    definition: "Compromisso genuino com clientes, parceiros e equipe"
+    how_you_live_it: "Relacoes de longo prazo com clientes e parceiros estrategicos"
+    contradiction_check: "Priorizar ganho de curto prazo sobre relacao de confianca"
+  value_2:
+    name: "Excelencia"
+    definition: "Busca constante pelo mais alto padrao em tudo que fazemos"
+    how_you_live_it: "Investimento em P&D, certificacoes cientificas, parceria Fundacao Dom Cabral"
+    contradiction_check: "Entregar produto ou servico sem validacao cientifica"
+  value_3:
+    name: "Postura de Dono"
+    definition: "Cada colaborador age como se a empresa fosse sua"
+    how_you_live_it: "Autonomia com responsabilidade, gestao por indicadores"
+    contradiction_check: "Delegar sem acompanhar resultados"
+  value_4:
+    name: "Alegria em Servir"
+    definition: "Atender com prazer e genuino interesse no sucesso do cliente"
+    how_you_live_it: "Programa de Excelencia no Atendimento, CX Excellence"
+    contradiction_check: "Tratar atendimento como obrigacao e nao como missao"
+  value_5:
+    name: "Seguranca"
+    definition: "Garantir seguranca em produtos, processos e relacoes"
+    how_you_live_it: "Conformidade ANVISA/Inmetro, rastreabilidade, compliance"
+    contradiction_check: "Lancar produto sem validacao regulatoria completa"
+# ============================================================================
+# SECTION 3: COMPANY POSITIONING
+# ============================================================================
+positioning:
+  target_market:
+    description: "Medicos, clinicas de estetica e centros medicos no Brasil"
+    your_version: "Profissionais de medicina estetica e clinicas que buscam equipamentos de alta tecnologia com respaldo cientifico"
+  unique_angle:
+    description: "O que torna a Contourline unica"
+    your_version: "Unica empresa nacional com P&D proprio, fabrica de 2mil m2, parcerias premium globais (Lumenis, Indiba, Visbody) e operacao sob Lei da Informatica"
+  primary_promise:
+    description: "Promessa institucional"
+    your_version: "Tecnologia medica de ponta com ciencia, inovacao e resultado comprovado, revelando a melhor versao em cada pessoa"
+  credibility_foundation:
+    description: "Por que confiar na Contourline"
+    points:
+      - "15+ anos de mercado"
+      - "4 mil clientes em todo o Brasil"
+      - "P&D proprio com estudos cientificos publicados"
+      - "Parceria com Lumenis (lider global), Indiba e Visbody"
+      - "Sede propria de 2 mil m2"
+      - "Auditoria externa independente a partir de 2026"
+      - "Parceria com Fundacao Dom Cabral"
+# ============================================================================
+# SECTION 4: PRODUCT PORTFOLIO
+# ============================================================================
+products:
+  product_1:
+    name: "Linha Medica"
+    type: "Equipamentos medicos de alta tecnologia"
+    positioning: "Lider em rentabilidade - margem bruta de 67%"
+    annual_revenue_estimate: "R$ 99M"
+    status: "ACTIVE"
+    sub_products:
+      - "UNYQUE PRO (133 unidades)"
+      - "UNYQUE PRO + ENYMA (66 unidades)"
+      - "HIPRO MED (57 unidades)"
+      - "SUPREME PRO (47 unidades)"
+  product_2:
+    name: "Linha Estetica"
+    type: "Equipamentos esteticos"
+    positioning: "Performance solida com margem bruta de 60%"
+    annual_revenue_estimate: "R$ 44.3M"
+    status: "ACTIVE"
+    sub_products:
+      - "HIPRO (215 unidades - 78% do volume)"
+      - "FOCUSKIN (28 unidades)"
+      - "MULTSHAPE (15 unidades)"
+      - "HIVE PRO (9 unidades)"
+      - "LASER CRYSTAL 3D PLUS (5 unidades)"
+  product_3:
+    name: "Lumenis"
+    type: "Representacao de marca premium global"
+    positioning: "Alto faturamento, desafio de margem (9%)"
+    annual_revenue_estimate: "R$ 47M (meta R$ 40M)"
+    status: "ACTIVE"
+    notes: "Necessidade de revisao estrategica de precificacao"
+  product_4:
+    name: "Visbody"
+    type: "Body scanners e analise corporal"
+    positioning: "Crescimento com rentabilidade - margem bruta 62%"
+    annual_revenue_estimate: "R$ 7.1M"
+    status: "ACTIVE - Lancamento oficial no Brasil"
+    sub_products:
+      - "Scanner M-30 (16 unidades)"
+      - "Scanner S-30 (16 unidades)"
+      - "Esteira A600 (12 unidades)"
+      - "R-Explorer (10 unidades)"
+  product_5:
+    name: "Assistencia Tecnica"
+    type: "Servicos e pecas"
+    positioning: "Receita de servicos com estrutura especializada"
+    annual_revenue_estimate: "R$ 1.4M"
+    status: "ACTIVE"
+    notes: "Margem 17% - intensivo em mao de obra"
+  total_revenue_estimate: "R$ 200M+ (projecao 2026)"
+  revenue_by_product:
+    "Linha Medica": "50%"
+    "Lumenis": "24%"
+    "Linha Estetica": "22%"
+    "Visbody": "3.5%"
+    "Assistencia Tecnica": "0.5%"
+# ============================================================================
+# SECTION 5: TEAM STRUCTURE
+# ============================================================================
+leadership_team:
+  ceo:
+    name: "Egio Roberto"
+    title: "CEO"
+    role: "Lider estrategico - todas as areas se reportam ao CEO"
+    reports_diretos: "RH e TI"
+    reports_pontilhados: "CS, CX, Juridico"
+  diretoria_comercial:
+    name: "Glaucia Moura (transicao para Gabriel Carpello)"
+    title: "Diretora Comercial"
+    role: "Inside Sales, Vendas Externas, UN Lumenis, UN Visbody, Credito, CS, CX"
+  cfo:
+    name: "Claudio Kaizer"
+    title: "CFO - Diretor Administrativo & Financeiro"
+    role: "Financeiro, Controladoria, FP&A, Fiscal, Contabilidade, Compras, Juridico, Compliance"
+  diretoria_operacoes:
+    name: "Filipe Ferreira"
+    title: "Diretor de Operacoes"
+    role: "Producao, Engenharia/AT, Logistica, Qualidade, PCP, Manutencao"
+  diretoria_consultoria:
+    name: "Andreia Almeida"
+    title: "Diretora de Consultoria, Treinamento e P&D"
+    role: "Consultoria Tecnica, Treinamentos, Ciencia que Conecta, Laboratorio, P&D, Inovacao"
+  diretoria_marketing:
+    name: "Helaine Hohendorff"
+    title: "Diretora de Marketing"
+    role: "Performance, Branding, Conteudo/Audiovisual, CRM/Automacao, Eventos/Feiras"
+team_size:
+  total_headcount: 118
+  novo_quadro_projetado: 165
+  novas_contratacoes: 47
+  crescimento_percentual: "40%"
+  areas_expansao:
+    comercial: "+13 posicoes (28%)"
+    producao_at: "+8 posicoes (17%)"
+    consultoria: "+6 posicoes (13%)"
+    backoffice: "+5 posicoes (11%)"
+# ============================================================================
+# SECTION 6: MARKET POSITION
+# ============================================================================
+market_analysis:
+  total_addressable_market: "Mercado de medicina estetica no Brasil - um dos que mais cresce no mundo"
+  market_segment: "Equipamentos medicos e esteticos de alta tecnologia"
+  market_growth_rate: "Crescimento acelerado com projecoes otimistas ate 2033"
+  competitive_landscape:
+    main_competitors:
+      - "Fotona"
+      - "Alma"
+      - "Lutronic"
+      - "Candela"
+      - "Rennova"
+    your_advantage: |
+      P&D proprio nacional, fabrica de 2mil m2, parcerias premium
+      globais (Lumenis, Indiba, Visbody), Lei da Informatica,
+      auditoria externa e governanca forte. Unica empresa nacional
+      posicionada para lideranca premium com ciencia e inovacao.
+  market_timing:
+    why_now: |
+      Mercado pronto para empresa nacional assumir posicionamento
+      de lider premium com ciencia, inovacao e profissionalizacao.
+      Boom da estetica no Brasil e America Latina.
+    emerging_trends:
+      - "Procedimentos nao-invasivos com menos downtime"
+      - "Pos-farmacos emagrecedores (busca por firmeza e contorno corporal)"
+      - "Envelhecimento populacional com maior poder aquisitivo"
+      - "Avanco tecnologico em RF, ultrassom e energia"
+      - "Automacao e IA aplicadas"
+# ============================================================================
+# SECTION 7: COMPANY STAGE & METRICS
+# ============================================================================
+stage:
+  current_stage: "SCALE"
+  notes: "Empresa em avancado processo de transformacao e profissionalizacao"
+key_metrics:
+  annual_revenue: "R$ 200M+ (projecao 2026)"
+  year_over_year_growth: "40% vs 2025"
+  customer_count: "4.000+"
+  receita_liquida: "R$ 158M"
+  margem_bruta: "48%"
+  lucro_liquido: "R$ 24M"
+  margem_liquida: "15%"
+  ebitda: "R$ 51M"
+  margem_ebitda: "33%"
+  divida_liquida_ebitda: "1.97x"
+  investimentos:
+    marketing: "8% da receita liquida"
+    pd: "3% da receita liquida"
+    capacitacao: "R$ 200K (Fundacao Dom Cabral)"
+    erp: "R$ 250K (Protheus TOTVS)"
+  funding:
+    fidc: "R$ 50M (47%)"
+    finimp: "R$ 36M (34%)"
+    capital_giro: "R$ 20M (19%)"
+    total_captacoes: "R$ 106M"
+  caixa_minimo_mensal: "R$ 10M"
+  dividendos: "R$ 7.2M"
+# ============================================================================
+# SECTION 8: COMPANY VOICE & PERSONALITY
+# ============================================================================
+company_voice:
+  tone:
+    primary: "Inovadora, cientifica, profissional"
+    secondary: "Acolhedora e focada em autoestima"
+    avoid: "Amadorismo, promessas sem evidencia, linguagem excessivamente tecnica"
+  vocabulary:
+    signature_terms:
+      - "Fabrica de Autoestima"
+      - "Melhor versao"
+      - "Ciencia que Conecta"
+      - "Inovacao"
+      - "Excelencia"
+      - "Premium"
+    never_use:
+      - "Barato"
+      - "Milagre"
+      - "Garantia de resultado estetico"
+  personality_archetype:
+    archetype: "O Inovador Premium / O Mentor Cientifico"
+    your_version: "Empresa inovadora, etica e baseada em ciencia que transforma a autoestima atraves de tecnologia"
+communication_philosophy: |
+  Comunicamos como uma empresa que combina ciencia com autoestima.
+  Somos premium mas acessiveis. Inovadores mas fundamentados em evidencia.
+  Nossa autoridade vem de 15 anos de mercado, P&D proprio e resultados comprovados.
+# ============================================================================
+# SECTION 9: STRATEGIC PARTNERSHIPS
+# ============================================================================
+partnerships:
+  partner_1:
+    name: "Lumenis"
+    type: "DISTRIBUTION"
+    benefit: "Marca premium global - alto faturamento (R$ 47M)"
+    status: "ACTIVE"
+  partner_2:
+    name: "Indiba"
+    type: "DISTRIBUTION"
+    benefit: "Presenca global, tecnologia de radiofrequencia"
+    status: "ACTIVE"
+  partner_3:
+    name: "Visbody"
+    type: "DISTRIBUTION"
+    benefit: "Body scanners inovadores, margem 62%"
+    status: "ACTIVE - Lancamento oficial Brasil 2026"
+  partner_4:
+    name: "Body Health"
+    type: "DISTRIBUTION"
+    benefit: "Fornecedor internacional exclusivo"
+    status: "ACTIVE"
+    notes: "Risco: dependencia de fornecedor exclusivo"
+  partner_5:
+    name: "Fundacao Dom Cabral"
+    type: "EDUCATION"
+    benefit: "Capacitacao executiva e profissionalizacao da gestao"
+    status: "ACTIVE"
+# ============================================================================
+# SECTION 10: FUTURE ROADMAP (COMPANY LEVEL)
+# ============================================================================
+strategic_roadmap:
+  pillar_1:
+    name: "Inovacao e Ciencia"
+    goals:
+      - "Programa Ciencia que Conecta"
+      - "Lei da Informatica & Lei do Bem"
+      - "2 equipamentos medicos + 1 estetico ate dez/2026"
+      - "Marketing cientifico baseado em evidencias"
+  pillar_2:
+    name: "Expansao Comercial"
+    goals:
+      - "Convencao de Revendedores"
+      - "Expansao nacional e regionalizacao"
+      - "Lumenis R$ 40M"
+      - "Visbody lancamento oficial Brasil"
+      - "Expansao LATAM/EUA"
+  pillar_3:
+    name: "Profissionalizacao"
+    goals:
+      - "Auditoria externa independente"
+      - "Compliance & ESG"
+      - "Novo ERP Protheus (go-live jan/2026)"
+      - "Revisao e padronizacao de processos"
+  pillar_4:
+    name: "Experiencia do Cliente"
+    goals:
+      - "Pos-Venda / CX Excellence"
+      - "Universidade Contourline (academy)"
+      - "Eficiencia operacional"
+  pillar_5:
+    name: "Forca da Marca"
+    goals:
+      - "Reposicionamento e nova identidade visual premium"
+      - "Contourline Experience (evento anual)"
+      - "Producao cientifica para autoridade"
+# ============================================================================
+# SECTION 11: SWOT ANALYSIS
+# ============================================================================
+swot:
+  forcas:
+    - "Portfolio robusto e diversificado (Med, Est, Lumenis)"
+    - "Fabrica propria com controle de qualidade"
+    - "Equipes qualificadas (comercial, tecnico, P&D)"
+    - "Assistencia tecnica diferenciada"
+    - "Cultura forte e alto engajamento"
+    - "Compliance estruturado"
+  fraquezas:
+    - "Processos manuais e baixa automatizacao"
+    - "Dependencia de pessoas-chave"
+    - "Capacidade operacional no limite"
+    - "Ruidos entre areas (comercial, backoffice, marketing)"
+    - "Baixa maturidade em dados e indicadores"
+    - "Dependencia de fornecedores internacionais (Body Health)"
+  oportunidades:
+    - "Boom da estetica no Brasil e LATAM"
+    - "Pos-farmacos emagrecedores (firmeza e contorno corporal)"
+    - "Tecnologia e IA para automacao"
+    - "Certificacoes cientificas como diferencial"
+  ameacas:
+    - "Competicao global (Fotona, Alma, Lutronic, Candela, Rennova)"
+    - "Saturacao e comoditizacao tecnologica"
+    - "Instabilidade economica e cambial"
+    - "Riscos regulatorios (reforma tributaria, ANVISA/INMETRO)"
+    - "Escassez de profissionais especializados"
+# ============================================================================
+# SECTION 12: EXTERNAL REFERENCES
+# ============================================================================
+references:
+  source_document: "Planejamento Estrategico 2026 - Contourline"
+  products:
+    - "workspace/businesses/lashs/products/"
+  founders:
+    - "founder-dna.yaml"
+  credentials:
+    - "credentials.yaml"
+  authority:
+    - "authority-story.yaml"
+# ============================================================================
+# CHECKLIST: COMPANY-PROFILE COMPLETENESS
+# ============================================================================
+completion_checklist:
+  - "[x] Company essence filled (legal name, trade name, founding date)"
+  - "[x] One-liner is compelling and differentiating"
+  - "[x] Origin story explains WHY company exists"
+  - "[x] Mission statement is clear and inspiring"
+  - "[x] Values are lived, not posted"
+  - "[x] Positioning is unique vs competitors"
+  - "[x] Product portfolio is listed with revenue estimates"
+  - "[x] Leadership team is documented"
+  - "[x] Company voice is distinctive"
+  - "[x] Strategic roadmap is clear"
+  - "[ ] Brand story needs further development"
+  - "[ ] Founder DNA file needs completion"

@@ -1,0 +1,69 @@
+template_metadata:
+  schema_version: "analytics-template-v1"
+  template_id: "activation-score-tmpl"
+  artifact: "activation-score"
+  artifact_family: "cohorts"
+  owner_agent: "data-chief"
+  governance_owners:
+    - "c-level-cmo"
+    - "ry-schwartz"
+    - "data-chief"
+  output_path: "workspace/businesses/{slug}/analytics/{cohort_slug}/activation-score.yaml"
+  custom_fallback_path: "docs/data/{slug}/activation-score-{cohort_slug}-{date}.md"
+  contains_real_data: false
+  pii_allowed: false
+
+context:
+  business_slug: "{slug}"
+  product_slug: "{product_slug}"
+  cohort_slug: "{cohort_slug}"
+  period_start: "{yyyy-mm-dd}"
+  period_end: "{yyyy-mm-dd}"
+  generated_at: "{iso_datetime}"
+  generated_by: "{agent_or_workflow}"
+
+analysis:
+  scoring_model:
+    score_range: "0-100"
+    activation_objective: "{what product behavior proves real activation?}"
+    components:
+      - component: "ritual_initiation"
+        weight: null
+        description: "FILL — e.g. RT-001 terminal aberto + stack instalado + primeiro comando"
+      - component: "first_real_creation"
+        weight: null
+        description: "FILL — e.g. RT-002 primeira criação funcional"
+      - component: "public_proof"
+        weight: null
+        description: "FILL — e.g. RT-004 mostrar o que criou"
+      - component: "context_control"
+        weight: null
+        description: "FILL — e.g. RT-030 fonte da verdade + optimize + registry"
+    thresholds:
+      installed_min: null
+      activated_min: null
+      attention_min: null
+      stalled_min: null
+  instrumentation_status:
+    product_events: "unknown"
+    onboarding_checklist: "unknown"
+    community_proofs: "unknown"
+    context_control_checks: "unknown"
+  leading_indicators: []
+  friction_clusters: []
+  segment_breakdown: []
+  member_scores: []
+
+insights: []
+
+recommendations:
+  instrumentation_actions: []
+  intervention_playbooks: []
+  analytics_dependencies: []
+
+quality:
+  completeness_score: null
+  confidence_score: null
+  validation:
+    sources_linked: false
+    assumptions_listed: false

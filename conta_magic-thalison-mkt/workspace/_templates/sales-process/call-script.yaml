@@ -1,0 +1,220 @@
+---
+# CALL-SCRIPT.YAML - Sales Call Script Architecture & Tonality Guide
+# Purpose: Provide a complete, adaptable call script with tonality guidance for every phase
+# Guardian: Sales Lead / Closer
+# Timing: FILL after discovery-framework.yaml — this is the tactical execution layer
+# Framework: Cole Gordon Sales Call Architecture + Miner 7 Tonalities + NEPQ Integration
+# Dependency: discovery-framework.yaml (phase structure), objections.yaml (objection responses)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Sales Lead / Closer"
+  framework: "Cole Gordon Call Architecture + Miner 7 Tonalities"
+  notes: |
+    The script is a GUIDE, not a prison.
+
+    Cole Gordon: "Scripts are training wheels. You practice them until
+    the PRINCIPLES are internalized, then you adapt in real-time."
+
+    Miner's 7 Tonalities: HOW you say it matters more than WHAT you say.
+    The same question with different tonality produces completely different responses.
+
+    7 Tonalities:
+    1. Curious - genuinely interested (use in discovery)
+    2. Concerned - empathetic worry (use when exploring pain)
+    3. Challenging - respectful push (use to create urgency)
+    4. Confused - intentional confusion (use to get them to explain/commit)
+    5. Playful - lighthearted (use to build rapport)
+    6. Skeptical - healthy doubt (use to test their commitment)
+    7. Certainty - confident authority (use during presentation and close)
+
+    RULE: Practice the script 100 times before going live.
+    Record yourself. Listen back. Fix the tonality first, words second.
+
+# ============================================================================
+# STEP 1: PRE-CALL PREPARATION
+# ============================================================================
+
+pre_call:
+  research_checklist:
+    - "FILL — Review prospect's application/form (if any)"
+    - "FILL — Check their LinkedIn/social (if B2B)"
+    - "FILL — Review notes from previous interactions (if any)"
+    - "FILL — Set mental state (energy, confidence, genuine curiosity)"
+
+  mindset_frame: |
+    FILL — What mindset do you enter the call with?
+    Example: "I am a doctor diagnosing a problem. I am not selling.
+    I am determining if I can help. If yes, I offer. If no, I refer."
+
+# ============================================================================
+# STEP 2: OPENING SCRIPT (2-3 minutes)
+# ============================================================================
+
+opening:
+  tonality: "Playful → Curious"
+  script: |
+    FILL — Write your exact opening script (word for word).
+    Include: greeting, time check, agenda setting, permission.
+
+  variations:
+    cold_lead: "FILL — Opening variation for cold leads"
+    warm_lead: "FILL — Opening variation for warm leads (webinar attendee, email subscriber)"
+    hot_lead: "FILL — Opening variation for hot leads (referral, past customer)"
+
+# ============================================================================
+# STEP 3: DISCOVERY QUESTIONS (10-15 minutes)
+# ============================================================================
+
+discovery:
+  tonality: "Curious → Concerned"
+
+  situation_questions:
+    q_1:
+      question: "FILL — Exact wording"
+      tonality: "Curious"
+      listen_for: "FILL — What answer reveals"
+    q_2:
+      question: "FILL — Exact wording"
+      tonality: "Curious"
+      listen_for: "FILL — What answer reveals"
+
+  pain_questions:
+    q_1:
+      question: "FILL — Exact wording"
+      tonality: "Concerned"
+      listen_for: "FILL — Emotional signals"
+    q_2:
+      question: "FILL — Exact wording"
+      tonality: "Concerned"
+      listen_for: "FILL — Depth of pain"
+    q_3:
+      question: "FILL — Future pacing question"
+      tonality: "Challenging"
+      listen_for: "FILL — Urgency signals"
+
+  commitment_questions:
+    q_1:
+      question: "FILL — Exact wording"
+      tonality: "Skeptical"
+      listen_for: "FILL — Readiness signals"
+
+# ============================================================================
+# STEP 4: PRESENTATION SCRIPT (5-10 minutes)
+# ============================================================================
+
+presentation:
+  tonality: "Certainty"
+
+  summary_script: |
+    FILL — "So based on what you shared..."
+    Summarize their situation, pain, and desired outcome IN THEIR WORDS.
+
+  solution_script: |
+    FILL — Present the solution.
+    "What we do is [unique mechanism]..."
+    Reference solution-architecture.yaml.
+
+  proof_script: |
+    FILL — Present proof.
+    "Here is what happened when [similar person] used this system..."
+    Reference specific results from testimonials.yaml.
+
+  offer_script: |
+    FILL — Present the offer details.
+    "Here is exactly what you get..."
+    Walk through deliverables from offerbook.yaml.
+
+  price_script: |
+    FILL — Present the price.
+    Use anchoring sequence from pricing-anchoring.yaml.
+
+# ============================================================================
+# STEP 5: OBJECTION HANDLING SCRIPTS
+# ============================================================================
+
+objection_scripts:
+  price_objection:
+    trigger: "FILL — How they express it"
+    response: |
+      FILL — Exact response script.
+      Tonality: Confused → Curious → Certainty
+    follow_up: "FILL — Follow-up question after response"
+
+  timing_objection:
+    trigger: "FILL — How they express it"
+    response: |
+      FILL — Exact response script.
+    follow_up: "FILL — Follow-up question"
+
+  spouse_objection:
+    trigger: "FILL — 'I need to talk to my partner'"
+    response: |
+      FILL — Exact response script.
+    follow_up: "FILL — Follow-up question"
+
+  think_about_it:
+    trigger: "FILL — 'I need to think about it'"
+    response: |
+      FILL — Exact response script.
+      Tonality: Concerned → Challenging
+    follow_up: "FILL — Follow-up question"
+
+# ============================================================================
+# STEP 6: CLOSING SCRIPT
+# ============================================================================
+
+closing:
+  tonality: "Certainty"
+
+  close_script: |
+    FILL — The closing script.
+    "So [name], based on everything we discussed, it sounds like
+    [summarize their need]. [Offer name] addresses exactly that.
+    Are you ready to get started?"
+
+  next_steps_if_yes: |
+    FILL — What happens after they say yes?
+    Payment link, onboarding call scheduling, welcome email.
+
+  next_steps_if_no: |
+    FILL — What happens if they say no?
+    Follow-up sequence trigger, timeline for re-engagement.
+
+# ============================================================================
+# STEP 7: SCORING & DIAGNOSTIC
+# ============================================================================
+
+script_strength_score:
+  natural_flow: "FILL 1-10"
+  tonality_precision: "FILL 1-10"
+  objection_coverage: "FILL 1-10"
+  close_effectiveness: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "Script sounds robotic, no tonality awareness, common objections not covered, close is aggressive."
+    range_4_6: "Script flows but needs practice, some tonality awareness, main objections covered, close is standard."
+    range_7_8: "Natural conversational flow, intentional tonality shifts, comprehensive objection handling, close feels like mutual decision."
+    range_9_10: "Script sounds like natural conversation, masterful tonality creates emotional journey, every objection has practiced response, prospect closes themselves."
+
+evidence:
+  data_points: "FILL — Close rate, average call duration, common objection frequency"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "discovery-framework.yaml"
+    - "objections.yaml"
+  feeds_into:
+    - "follow-up-system.yaml"
+    - "analytics.yaml"
+  related:
+    - "show-rate-optimization.yaml"
+    - "solution-architecture.yaml"

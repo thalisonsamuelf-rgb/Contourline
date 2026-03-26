@@ -1,0 +1,178 @@
+---
+# INTERVIEW-FRAMEWORK.YAML - Structured Interview & Candidate Evaluation System
+# Purpose: Design a consistent, bias-reduced interview process that accurately predicts job performance
+# Guardian: COO / HR Lead / Hiring Manager
+# Timing: FILL after hiring-playbook.yaml defines the role and candidate profile
+# Framework: Structured Behavioral Interview + Scalable Company Interview Process + Cole Gordon 7 Beliefs
+# Dependency: hiring-playbook.yaml (role definition, candidate profile)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "COO / Hiring Manager"
+  framework: "Structured Behavioral Interview + Scalable Company + Cole Gordon 7 Beliefs"
+  notes: |
+    Unstructured interviews predict job performance at 14%.
+    Structured interviews predict at 51%.
+
+    The difference: asking the SAME questions in the SAME order
+    with a SCORING RUBRIC, rather than "having a conversation."
+
+    Cole Gordon's 7 Beliefs framework: Beyond skills, assess whether
+    the candidate BELIEVES in the right things:
+    1. Belief in the product
+    2. Belief in themselves
+    3. Belief in the process
+    4. Belief in effort over talent
+    5. Belief in accountability
+    6. Belief in continuous learning
+    7. Belief in team over individual
+
+    RULE: Never make a hiring decision in the interview room.
+    Score independently, compare scores, then discuss. This prevents
+    charismatic candidates from biasing the group.
+
+# ============================================================================
+# STEP 1: INTERVIEW STRUCTURE
+# ============================================================================
+
+interview_structure:
+  total_duration: "FILL — Minutes (recommended: 45-60)"
+  format: "FILL — 1-on-1 / Panel / Sequential (multiple interviewers)"
+  interviewers: "FILL — Who participates? (names/roles)"
+
+  agenda:
+    minutes_0_5: "Welcome, set expectations, build rapport"
+    minutes_5_15: "Behavioral questions (past performance)"
+    minutes_15_30: "Situational questions (hypothetical scenarios)"
+    minutes_30_40: "Culture and values assessment"
+    minutes_40_50: "Candidate questions (they interview you)"
+    minutes_50_55: "Next steps and timeline"
+
+# ============================================================================
+# STEP 2: BEHAVIORAL QUESTIONS (Past Performance)
+# ============================================================================
+
+behavioral_questions:
+  question_1:
+    question: "FILL — 'Tell me about a time when [relevant situation]...'"
+    what_it_measures: "FILL — What competency does this assess?"
+    scoring:
+      score_1: "FILL — What a weak answer looks like"
+      score_3: "FILL — What an average answer looks like"
+      score_5: "FILL — What a strong answer looks like"
+
+  question_2:
+    question: "FILL — Second behavioral question"
+    what_it_measures: "FILL — Competency"
+    scoring:
+      score_1: "FILL — Weak"
+      score_3: "FILL — Average"
+      score_5: "FILL — Strong"
+
+  question_3:
+    question: "FILL — Third behavioral question"
+    what_it_measures: "FILL — Competency"
+    scoring:
+      score_1: "FILL — Weak"
+      score_3: "FILL — Average"
+      score_5: "FILL — Strong"
+
+# ============================================================================
+# STEP 3: SITUATIONAL QUESTIONS (Hypothetical)
+# ============================================================================
+
+situational_questions:
+  question_1:
+    question: "FILL — 'Imagine you are in this situation: [scenario]. What would you do?'"
+    what_it_measures: "FILL — Problem-solving approach, decision-making"
+    scoring:
+      score_1: "FILL — Weak"
+      score_3: "FILL — Average"
+      score_5: "FILL — Strong"
+
+  question_2:
+    question: "FILL — Second situational question"
+    what_it_measures: "FILL — Competency"
+    scoring:
+      score_1: "FILL — Weak"
+      score_3: "FILL — Average"
+      score_5: "FILL — Strong"
+
+# ============================================================================
+# STEP 4: CULTURE & VALUES ASSESSMENT
+# ============================================================================
+
+culture_assessment:
+  value_question_1:
+    value: "FILL — Company value being assessed"
+    question: "FILL — Question that reveals this value"
+    green_flag: "FILL — What answer shows alignment?"
+    red_flag: "FILL — What answer shows misalignment?"
+
+  value_question_2:
+    value: "FILL — Second value"
+    question: "FILL — Question"
+    green_flag: "FILL — Good signal"
+    red_flag: "FILL — Bad signal"
+
+  belief_assessment:
+    belief_in_product: "FILL — How do you assess if they believe in what you sell?"
+    belief_in_effort: "FILL — How do you assess work ethic vs entitlement?"
+    belief_in_accountability: "FILL — How do you assess ownership vs blame?"
+
+# ============================================================================
+# STEP 5: SCORECARD
+# ============================================================================
+
+scorecard:
+  dimensions:
+    technical_skills: "FILL 1-5"
+    behavioral_competence: "FILL 1-5"
+    culture_fit: "FILL 1-5"
+    growth_potential: "FILL 1-5"
+    overall_recommendation: "FILL — Strong hire / Hire / Maybe / No hire / Strong no"
+
+  minimum_thresholds:
+    must_score: "FILL — Minimum total score to advance (e.g., 14/20)"
+    must_not_score: "FILL — Any single dimension below X = automatic no"
+
+  decision_process:
+    individual_scoring: "FILL — Each interviewer scores independently FIRST"
+    group_discussion: "FILL — Then compare scores and discuss disagreements"
+    final_decision: "FILL — Who makes the final call?"
+
+# ============================================================================
+# STEP 6: SCORING & DIAGNOSTIC
+# ============================================================================
+
+interview_strength_score:
+  structure_consistency: "FILL 1-10"
+  question_quality: "FILL 1-10"
+  scoring_objectivity: "FILL 1-10"
+  prediction_accuracy: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "No structure, random questions, gut-based decisions, no scoring."
+    range_4_6: "Some structure, decent questions, basic scoring, occasional good hires."
+    range_7_8: "Consistent structure, behavioral + situational questions, rubric-based scoring, good prediction accuracy."
+    range_9_10: "Rigorous structure, calibrated questions, independent scoring with group debrief, data shows high correlation between interview score and job performance."
+
+evidence:
+  data_points: "FILL — Correlation between interview scores and actual performance, hiring success rate"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "hiring-playbook.yaml"
+  feeds_into:
+    - "ramp-plan.yaml"
+  related:
+    - "team-structure.yaml"
+    - "kpi-scorecards.yaml"
