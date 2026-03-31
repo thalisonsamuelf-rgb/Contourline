@@ -8,3 +8,4 @@ sync.sh
 
 # Brand assets (large files - use external storage)
 workspace/businesses/conta_magic/brand/referencias/
+.github/workflows/
