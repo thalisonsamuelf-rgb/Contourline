@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contourline | Portal de Transformacao Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>document.documentElement.setAttribute('data-theme',localStorage.getItem('ctl_theme')||'light')</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* THEME: LIGHT (default) */
+:root, [data-theme="light"]{
+  --dark:#f8f9fa;
+  --mid:#1e2a3a;
+  --surface:#ffffff;
+  --surface2:#f3f4f6;
+  --border:#e5e7eb;
+  --border2:#d1d5db;
+  --text:#1a1a2e;
+  --text2:#4b5563;
+  --text3:#9ca3af;
+  --accent:#3b82f6;
+  --accent2:#2563eb;
+  --accent-glow:rgba(59,130,246,0.08);
+  --green:#10b981;
+  --green-bg:rgba(16,185,129,0.08);
+  --red:#ef4444;
+  --red-bg:rgba(239,68,68,0.08);
+  --amber:#f59e0b;
+  --amber-bg:rgba(245,158,11,0.08);
+  --blue:#3b82f6;
+  --blue-bg:rgba(59,130,246,0.08);
+  --purple:#a855f7;
+  --purple-bg:rgba(168,85,247,0.08);
+  --cyan:#06b6d4;
+  --cyan-bg:rgba(6,182,212,0.08);
+  --radius:14px;--sidebar-w:300px;
+  /* light-specific tokens */
+  --login-bg:#f0f2f5;
+  --login-card-shadow:0 4px 24px rgba(0,0,0,0.08);
+  --card-shadow:0 1px 3px rgba(0,0,0,0.06);
+  --table-header-bg:#f9fafb;
+  --input-bg:#ffffff;
+  --input-border:#d1d5db;
+  --topbar-bg:#ffffff;
+  --topbar-border:#e5e7eb;
+  --cb-unchecked-border:#d1d5db;
+  --cb-unchecked-bg:#ffffff;
+  --progress-track:#e5e7eb;
+  --scrollbar-thumb:#c4c8cc;
+  --scrollbar-track:#f1f1f1;
+}
+
+/* THEME: DARK */
+[data-theme="dark"]{
+  --dark:#0a0a1a;
+  --mid:#111128;
+  --surface:#171730;
+  --surface2:#1e1e3a;
+  --border:#2a2a4a;
+  --border2:#3a3a5a;
+  --text:#e8e8f0;
+  --text2:#a0a0b8;
+  --text3:#707088;
+  --accent:#6366f1;
+  --accent2:#818cf8;
+  --accent-glow:rgba(99,102,241,0.15);
+  --green:#10b981;
+  --green-bg:rgba(16,185,129,0.12);
+  --red:#ef4444;
+  --red-bg:rgba(239,68,68,0.12);
+  --amber:#f59e0b;
+  --amber-bg:rgba(245,158,11,0.12);
+  --blue:#3b82f6;
+  --blue-bg:rgba(59,130,246,0.12);
+  --purple:#a855f7;
+  --purple-bg:rgba(168,85,247,0.12);
+  --cyan:#06b6d4;
+  --cyan-bg:rgba(6,182,212,0.12);
+  /* dark-specific tokens */
+  --login-bg:#0a0a1a;
+  --login-card-shadow:none;
+  --card-shadow:none;
+  --table-header-bg:transparent;
+  --input-bg:var(--mid);
+  --input-border:var(--border);
+  --topbar-bg:var(--mid);
+  --topbar-border:var(--border);
+  --cb-unchecked-border:var(--border2);
+  --cb-unchecked-bg:transparent;
+  --progress-track:var(--mid);
+  --scrollbar-thumb:#3a3a5a;
+  --scrollbar-track:#111128;
+}
+
+/* SMOOTH TRANSITIONS */
+body,.sidebar,.topbar,.kpi-card,.section-block,.story-card,.task-card,.ac-item,.task-item,.notes-section,.login-screen,.login-box,.filter-chip,.nav-item,.topbar-btn,.badge{
+  transition:background-color 0.3s,color 0.3s,border-color 0.3s,box-shadow 0.3s;
+}
+
+/* SCROLLBAR THEMING */
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-track{background:var(--scrollbar-track)}
+::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{opacity:.8}
+
+/* SIDEBAR: always dark in both themes */
+[data-theme="light"] .sidebar{background:#1e2a3a;border-right-color:#2a3a4e}
+[data-theme="light"] .sidebar-header{background:linear-gradient(135deg,#162233,#1e2a3a);border-bottom-color:#2a3a4e}
+[data-theme="light"] .sidebar-search{border-bottom-color:#2a3a4e}
+[data-theme="light"] .sidebar-search input{background:#263548;border-color:#2a3a4e;color:#e8e8f0}
+[data-theme="light"] .sidebar-search input::placeholder{color:#708090}
+[data-theme="light"] .sidebar-filters{border-bottom-color:#2a3a4e}
+[data-theme="light"] .filter-chip{background:#263548;border-color:#2a3a4e;color:#a0b0c0}
+[data-theme="light"] .filter-chip:hover,[data-theme="light"] .filter-chip.active{background:rgba(59,130,246,0.15);border-color:#3b82f6;color:#93c5fd}
+[data-theme="light"] .nav-section{color:#708090}
+[data-theme="light"] .nav-item{color:#c0d0e0}
+[data-theme="light"] .nav-item:hover{background:rgba(59,130,246,.08)}
+[data-theme="light"] .nav-item.active{background:rgba(59,130,246,.15);color:#fff}
+[data-theme="light"] .nav-item .nav-count{color:#708090}
+[data-theme="light"] .nav-story{color:#a0b0c0}
+[data-theme="light"] .nav-story:hover{background:rgba(59,130,246,.06);color:#fff}
+[data-theme="light"] .nav-story.active{background:rgba(59,130,246,.15);color:#fff}
+[data-theme="light"] .sidebar-brand{color:#fff}
+[data-theme="light"] .sidebar-sub{color:#93c5fd}
+[data-theme="light"] .sidebar-link{color:#708090}
+[data-theme="light"] .sidebar-link:hover{color:#93c5fd}
+
+/* THEME TOGGLE BUTTON */
+#themeToggleBtn{font-size:1.1em !important;min-width:34px;text-align:center}
+
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6;display:flex;min-height:100vh}
+a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}
+
+/* SIDEBAR */
+.sidebar{width:var(--sidebar-w);min-height:100vh;background:var(--mid);border-right:1px solid var(--border);position:fixed;top:0;left:0;overflow-y:auto;z-index:100;transition:transform .3s}
+.sidebar-header{padding:20px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,#0d0d24,#1a1a4a)}
+.sidebar-brand{font-size:1.1em;font-weight:900;color:#fff;letter-spacing:-0.5px}
+.sidebar-sub{font-size:.68em;color:var(--accent2);font-weight:600;margin-top:2px}
+.sidebar-link{display:block;padding:4px 20px;font-size:.72em;color:var(--text3);font-weight:500;margin-top:8px;transition:color .2s}
+.sidebar-link:hover{color:var(--accent2);text-decoration:none}
+.sidebar-search{padding:12px 16px;border-bottom:1px solid var(--border)}
+.sidebar-search input{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font-size:.8em;font-family:inherit;outline:none;transition:border .2s}
+.sidebar-search input:focus{border-color:var(--accent)}
+.sidebar-search input::placeholder{color:var(--text3)}
+.sidebar-filters{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:4px}
+.filter-chip{background:var(--surface);border:1px solid var(--border);color:var(--text3);padding:3px 8px;border-radius:6px;font-size:.65em;font-weight:600;cursor:pointer;transition:all .2s;font-family:inherit}
+.filter-chip:hover,.filter-chip.active{background:var(--accent-glow);border-color:var(--accent);color:var(--accent2)}
+.sidebar-nav{padding:8px 0}
+.nav-section{padding:8px 16px 4px;font-size:.6em;text-transform:uppercase;letter-spacing:2px;color:var(--text3);font-weight:700}
+.nav-item{display:flex;align-items:center;gap:8px;padding:7px 16px;cursor:pointer;transition:all .15s;border-left:3px solid transparent;font-size:.78em}
+.nav-item:hover{background:rgba(99,102,241,.06);border-left-color:var(--accent)}
+.nav-item.active{background:var(--accent-glow);border-left-color:var(--accent);color:#fff;font-weight:600}
+.nav-item .nav-badge{margin-left:auto;padding:1px 6px;border-radius:4px;font-size:.8em;font-weight:700}
+.nav-item .badge-p1{background:var(--red-bg);color:var(--red)}
+.nav-item .badge-p2{background:var(--amber-bg);color:var(--amber)}
+.nav-item .badge-p3{background:var(--green-bg);color:var(--green)}
+.nav-item .badge-p4{background:var(--blue-bg);color:var(--blue)}
+.nav-item .nav-count{margin-left:auto;color:var(--text3);font-size:.85em}
+.nav-story{padding:5px 16px 5px 36px;cursor:pointer;font-size:.72em;color:var(--text2);transition:all .15s;border-left:3px solid transparent;display:none}
+.nav-story:hover{background:rgba(99,102,241,.04);color:#fff}
+.nav-story.active{background:var(--accent-glow);border-left-color:var(--accent2);color:#fff;font-weight:600}
+.nav-story .sz{padding:1px 5px;border-radius:3px;font-size:.85em;font-weight:700;margin-left:4px}
+.nav-story .sz-s{background:var(--green-bg);color:var(--green)}
+.nav-story .sz-m{background:var(--blue-bg);color:var(--blue)}
+.nav-story .sz-l{background:var(--amber-bg);color:var(--amber)}
+.stories-visible .nav-story{display:block}
+
+/* MAIN */
+.main{margin-left:var(--sidebar-w);flex:1;min-height:100vh}
+.topbar{background:var(--topbar-bg);border-bottom:1px solid var(--topbar-border);padding:12px 32px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:50}
+.topbar-title{font-size:.85em;font-weight:700;color:var(--text);flex:1}
+.topbar-back{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:5px 12px;border-radius:6px;font-size:.72em;cursor:pointer;font-family:inherit;font-weight:600;transition:all .2s}
+.topbar-back:hover{border-color:var(--accent);color:var(--accent2)}
+.hamburger{display:none;background:none;border:none;color:var(--text);font-size:1.4em;cursor:pointer;padding:4px 8px}
+.content{padding:32px}
+
+/* HOME */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:28px}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:all .3s;cursor:pointer;box-shadow:var(--card-shadow)}
+.kpi-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(99,102,241,0.15)}
+.kpi-card .kval{font-size:2em;font-weight:900;letter-spacing:-1px;color:var(--text)}
+.kpi-card .kval.accent{color:var(--accent2)}
+.kpi-card .kval.green{color:var(--green)}
+.kpi-card .kval.amber{color:var(--amber)}
+.kpi-card .klabel{font-size:.62em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:600;margin-top:4px}
+.progress-section{margin-bottom:28px}
+.progress-row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid rgba(42,42,74,.4)}
+.progress-row:last-child{border:none}
+.progress-row .plabel{width:280px;font-size:.78em;font-weight:600;color:var(--text);flex-shrink:0}
+.progress-row .pbar{flex:1;height:8px;background:var(--progress-track);border-radius:4px;overflow:hidden}
+.progress-row .pfill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1s}
+.progress-row .pval{width:40px;text-align:right;font-size:.72em;font-weight:700;color:var(--text2)}
+
+/* EPIC / STORY DETAIL */
+.detail-header{margin-bottom:28px}
+.detail-header h1{font-size:1.6em;font-weight:900;color:var(--text);letter-spacing:-0.5px;margin-bottom:8px}
+.detail-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.badge{padding:3px 10px;border-radius:6px;font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.badge-p1{background:var(--red-bg);color:var(--red)}.badge-p2{background:var(--amber-bg);color:var(--amber)}
+.badge-p3{background:var(--green-bg);color:var(--green)}.badge-p4{background:var(--blue-bg);color:var(--blue)}
+.badge-draft{background:rgba(112,112,136,.15);color:var(--text3)}
+.badge-agent{background:var(--purple-bg);color:var(--purple)}
+.badge-size{padding:2px 8px;border-radius:4px;font-size:.72em;font-weight:700}
+.badge-s{background:var(--green-bg);color:var(--green)}.badge-m{background:var(--blue-bg);color:var(--blue)}
+.badge-l{background:var(--amber-bg);color:var(--amber)}
+.detail-meta{font-size:.78em;color:var(--text2);display:flex;gap:20px;flex-wrap:wrap}
+.detail-meta span{display:flex;align-items:center;gap:4px}
+.section-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px;box-shadow:var(--card-shadow)}
+.section-block h2{font-size:.8em;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:var(--accent2);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.section-block h2::before{content:'';width:24px;height:3px;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px;flex-shrink:0}
+.section-block p,.section-block li{font-size:.85em;color:var(--text2);line-height:1.7}
+.section-block ul,.section-block ol{padding-left:20px}
+.section-block li{margin-bottom:4px}
+.section-block table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.82em}
+.section-block th{text-align:left;padding:8px 10px;border-bottom:2px solid var(--border);color:var(--text3);font-weight:700;text-transform:uppercase;font-size:.75em;letter-spacing:1px;background:var(--table-header-bg)}
+.section-block td{padding:7px 10px;border-bottom:1px solid rgba(42,42,74,.4);color:var(--text2)}
+.section-block tr:hover td{background:rgba(99,102,241,.03)}
+
+/* CHECKBOXES */
+.ac-item,.task-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;font-size:.82em;color:var(--text2)}
+.ac-item .cb,.task-item .cb{width:16px;height:16px;border:2px solid var(--cb-unchecked-border);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:.65em;color:transparent;background:var(--cb-unchecked-bg)}
+.ac-item .cb.checked,.task-item .cb.checked{background:var(--green);border-color:var(--green);color:#fff}
+.ac-item .cb.checked::after,.task-item .cb.checked::after{content:'OK';font-weight:900}
+.ac-item .cb,.task-item .cb{cursor:pointer;transition:all .2s}
+.ac-item .cb:hover,.task-item .cb:hover{border-color:var(--accent);transform:scale(1.1)}
+.ev-upload-area{border:2px dashed var(--border);border-radius:8px;padding:16px;text-align:center;cursor:pointer;transition:all .2s;background:var(--surface2)}
+.ev-upload-area:hover{border-color:var(--accent);background:var(--accent-glow)}
+.ev-upload-area .ev-icon{font-size:1.5em;margin-bottom:4px}
+.ev-upload-area .ev-text{font-size:.72em;color:var(--text3)}
+.ev-upload-area .ev-formats{font-size:.6em;color:var(--text3);margin-top:4px}
+.ev-file-list{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.ev-file-item{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;font-size:.72em}
+.ev-file-item a{color:var(--accent2);font-weight:600;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ev-file-item .ev-type{padding:2px 6px;border-radius:4px;font-size:.8em;font-weight:700;text-transform:uppercase}
+.ev-file-item .ev-type-img{background:var(--green-bg);color:var(--green)}
+.ev-file-item .ev-type-pdf{background:var(--red-bg);color:var(--red)}
+.ev-file-item .ev-type-doc{background:var(--blue-bg);color:var(--blue)}
+.ev-file-item .ev-type-other{background:var(--amber-bg);color:var(--amber)}
+.ev-file-item .ev-delete{background:none;border:none;color:var(--red);cursor:pointer;font-size:1.1em;padding:2px 4px;opacity:.6;transition:opacity .2s}
+.ev-file-item .ev-delete:hover{opacity:1}
+.ev-uploading{font-size:.7em;color:var(--cyan);margin-top:4px;display:none}
+.ev-uploading.show{display:block}
+.notes-section{margin-top:16px;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+.notes-section h3{font-size:.85em;color:var(--accent2);margin-bottom:8px;font-weight:700}
+.notes-textarea{width:100%;min-height:120px;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text);padding:12px;border-radius:8px;font-size:.82em;font-family:inherit;outline:none;resize:vertical;line-height:1.6;transition:border .2s}
+.notes-textarea:focus{border-color:var(--accent)}
+.notes-textarea::placeholder{color:var(--text3)}
+.notes-save{margin-top:8px;padding:6px 16px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:.75em;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+.notes-save:hover{background:var(--accent2)}
+.notes-saved{display:inline-block;margin-left:8px;font-size:.72em;color:var(--green);font-weight:600;opacity:0;transition:opacity .3s}
+.notes-saved.show{opacity:1}
+
+/* STORIES LIST IN EPIC */
+.stories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;margin-top:12px}
+.story-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;cursor:pointer;transition:all .3s;box-shadow:var(--card-shadow)}
+.story-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.story-card .sc-title{font-size:.85em;font-weight:700;color:var(--text);margin-bottom:6px}
+.story-card .sc-meta{display:flex;gap:6px;flex-wrap:wrap}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .main{margin-left:0}
+  .hamburger{display:block}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .stories-grid{grid-template-columns:1fr}
+  .progress-row .plabel{width:160px;font-size:.7em}
+  .detail-header h1{font-size:1.2em}
+}
+@media(max-width:500px){
+  .kpi-grid{grid-template-columns:1fr}
+  .content{padding:16px}
+}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+.overlay.show{display:block}
+
+/* LOGIN SCREEN */
+.login-screen{position:fixed;inset:0;background:var(--login-bg);z-index:999;display:flex;align-items:center;justify-content:center}
+.login-screen.hidden{display:none}
+.login-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:40px;width:360px;max-width:90vw;text-align:center;box-shadow:var(--login-card-shadow)}
+.login-box h1{font-size:1.4em;font-weight:900;color:var(--text);margin-bottom:4px}
+.login-box .login-sub{font-size:.75em;color:var(--accent2);font-weight:600;margin-bottom:28px}
+.login-box label{display:block;text-align:left;font-size:.72em;font-weight:700;color:var(--text2);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+.login-box select,.login-box input[type="password"]{width:100%;background:var(--input-bg);border:1px solid var(--input-border);color:var(--text);padding:10px 14px;border-radius:8px;font-size:.85em;font-family:inherit;outline:none;margin-bottom:16px;transition:border .2s}
+.login-box select:focus,.login-box input[type="password"]:focus{border-color:var(--accent)}
+.login-box select option{background:var(--surface);color:var(--text)}
+.login-btn{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:.85em;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+.login-btn:hover{background:var(--accent2)}
+.login-btn:disabled{opacity:.5;cursor:not-allowed}
+.login-error{color:var(--red);font-size:.75em;font-weight:600;margin-top:8px;min-height:20px}
+
+/* LOGOUT & ADMIN BUTTONS */
+.topbar-user{display:flex;align-items:center;gap:8px}
+.topbar-user .user-name{font-size:.72em;color:var(--text2);font-weight:600}
+.topbar-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:5px 12px;border-radius:6px;font-size:.72em;cursor:pointer;font-family:inherit;font-weight:600;transition:all .2s}
+.topbar-btn:hover{border-color:var(--accent);color:var(--accent2)}
+.topbar-btn.admin-btn{border-color:var(--purple);color:var(--purple)}
+.topbar-btn.admin-btn:hover{background:var(--purple-bg)}
+
+/* ADMIN PANEL */
+.admin-panel{margin-bottom:28px}
+.admin-user-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:12px}
+.admin-user-section h3{font-size:.82em;font-weight:700;color:var(--accent2);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.admin-user-section .user-color{width:10px;height:10px;border-radius:50%;display:inline-block}
+.admin-note-item{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px}
+.admin-note-item .note-author{font-size:.72em;font-weight:700;color:var(--accent2);margin-bottom:4px}
+.admin-note-item .note-date{font-size:.65em;color:var(--text3);margin-left:8px}
+.admin-note-item .note-content{font-size:.82em;color:var(--text2);line-height:1.6;white-space:pre-wrap}
+
+/* MULTI-USER CHECKS */
+.check-badge{display:inline-block;padding:1px 5px;border-radius:3px;font-size:.6em;font-weight:700;margin-left:4px}
+.others-notes{margin-top:16px;padding:16px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius)}
+.others-notes h4{font-size:.78em;color:var(--text3);font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
+
+/* VIEW TOGGLE */
+.view-toggle{display:flex;gap:4px;margin-bottom:12px}
+.view-toggle button{background:var(--surface);border:1px solid var(--border);color:var(--text3);padding:4px 12px;border-radius:6px;font-size:.7em;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+.view-toggle button.active{background:var(--accent-glow);border-color:var(--accent);color:var(--accent2)}
+
+/* TASK CARDS */
+.task-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;transition:all .3s ease;box-shadow:var(--card-shadow)}
+.task-card:hover{border-color:var(--border2)}
+.task-card.status-pending{border-left:3px solid var(--text3)}
+.task-card.status-in_progress{border-left:3px solid var(--cyan)}
+.task-card.status-done{border-left:3px solid var(--green)}
+.task-card.status-blocked{border-left:3px solid var(--red)}
+.task-card-header{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;user-select:none;transition:background .2s}
+.task-card-header:hover{background:rgba(99,102,241,.04)}
+.task-card-title{flex:1;font-size:.82em;color:var(--text2);line-height:1.4}
+.task-card.status-done .task-card-title{color:var(--text3);text-decoration:line-through}
+.task-badge{padding:2px 8px;border-radius:4px;font-size:.62em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.task-badge-pending{background:rgba(112,112,136,.15);color:var(--text3)}
+.task-badge-in_progress{background:var(--cyan-bg);color:var(--cyan)}
+.task-badge-done{background:var(--green-bg);color:var(--green)}
+.task-badge-blocked{background:var(--red-bg);color:var(--red)}
+.task-badge-assignee{background:var(--purple-bg);color:var(--purple);margin-left:2px}
+.task-badge-overdue{background:var(--red-bg);color:var(--red);margin-left:2px;animation:pulse-overdue 2s infinite}
+@keyframes pulse-overdue{0%,100%{opacity:1}50%{opacity:.6}}
+.task-deadline-icon{font-size:.72em;color:var(--text3);white-space:nowrap}
+.task-deadline-icon.overdue{color:var(--red);font-weight:700}
+.task-card-body{max-height:0;overflow:hidden;transition:max-height .4s ease, padding .3s ease;padding:0 14px}
+.task-card.expanded .task-card-body{max-height:600px;padding:0 14px 16px}
+.task-card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+@media(max-width:700px){.task-card-grid{grid-template-columns:1fr}}
+.task-field{display:flex;flex-direction:column;gap:3px}
+.task-field label{font-size:.65em;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px}
+.task-field select,.task-field input,.task-field textarea{background:var(--input-bg);border:1px solid var(--input-border);color:var(--text);padding:7px 10px;border-radius:6px;font-size:.8em;font-family:inherit;outline:none;transition:border .2s;width:100%}
+.task-field select:focus,.task-field input:focus,.task-field textarea:focus{border-color:var(--accent)}
+.task-field textarea{min-height:60px;resize:vertical;line-height:1.5}
+.task-field-full{grid-column:1/-1}
+.task-save-row{display:flex;align-items:center;gap:10px;margin-top:10px;grid-column:1/-1}
+.task-save-btn{padding:6px 18px;background:var(--accent);color:#fff;border:none;border-radius:6px;font-size:.75em;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+.task-save-btn:hover{background:var(--accent2)}
+.task-save-btn:disabled{opacity:.5;cursor:not-allowed}
+.task-saved-msg{font-size:.7em;color:var(--green);font-weight:600;opacity:0;transition:opacity .3s}
+.task-saved-msg.show{opacity:1}
+.task-updated-info{font-size:.65em;color:var(--text3);margin-top:6px;grid-column:1/-1}
+.task-expand-arrow{color:var(--text3);font-size:.8em;transition:transform .3s;flex-shrink:0}
+.task-card.expanded .task-expand-arrow{transform:rotate(180deg)}
+
+/* Tasks summary header */
+.tasks-summary{font-size:.72em;color:var(--text2);font-weight:500;margin-bottom:8px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-box">
+    <h1>Contourline</h1>
+    <div class="login-sub">Portal de Transformacao Digital</div>
+    <label for="loginUser">Usuario</label>
+    <select id="loginUser"><option value="">Carregando...</option></select>
+    <label for="loginPin">PIN</label>
+    <input type="password" id="loginPin" placeholder="Digite seu PIN" maxlength="10" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="login-btn" id="loginBtn" onclick="doLogin()">Entrar</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-brand">Contourline</div>
+    <div class="sidebar-sub">Portal de Transformacao Digital</div>
+    <a class="sidebar-link" href="https://contourline-dashboard.vercel.app" target="_blank">Voltar ao Dashboard Principal</a>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="searchInput" placeholder="Buscar epics e stories..." oninput="handleSearch(this.value)">
+  </div>
+  <div class="sidebar-filters">
+    <button class="filter-chip active" data-filter="all" onclick="setFilter('all',this)">Todos</button>
+    <button class="filter-chip" data-filter="P1" onclick="setFilter('P1',this)">P1</button>
+    <button class="filter-chip" data-filter="P2" onclick="setFilter('P2',this)">P2</button>
+    <button class="filter-chip" data-filter="P3" onclick="setFilter('P3',this)">P3</button>
+    <button class="filter-chip" data-filter="P4" onclick="setFilter('P4',this)">P4</button>
+  </div>
+  <nav class="sidebar-nav" id="sidebarNav"></nav>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="topbar">
+    <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+    <div class="topbar-title" id="topbarTitle">Contourline -- Portal de Transformacao Digital</div>
+    <div class="topbar-user" id="topbarUser">
+      <span class="user-name" id="topbarUserName"></span>
+      <button class="topbar-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Alternar tema claro/escuro" style="font-size:1em;padding:4px 10px;line-height:1"></button>
+      <button class="topbar-btn admin-btn" id="adminBtn" onclick="showAdmin()" style="display:none">Admin</button>
+      <button class="topbar-btn" onclick="doLogout()">Sair</button>
+    </div>
+  </div>
+  <div class="content" id="content"></div>
+</div>
+
+<script>
+// ========================================================
+// THEME: Light / Dark toggle
+// ========================================================
+(function initTheme(){
+  const saved = localStorage.getItem('ctl_theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  updateThemeIcon(saved);
+})();
+function toggleTheme(){
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('ctl_theme', next);
+  updateThemeIcon(next);
+}
+function updateThemeIcon(theme){
+  const btn = document.getElementById('themeToggleBtn');
+  if(!btn) return;
+  // Sun = light active, Moon = dark active
+  btn.textContent = theme === 'dark' ? '\u263D' : '\u2600';
+  btn.title = theme === 'dark' ? 'Mudar para tema claro' : 'Mudar para tema escuro';
+}
+
+// ========================================================
+// DATA: ALL EPICS
+// ========================================================
+const EPICS = [
+{id:1,num:"01",title:"Comercial & SDR",priority:"P1",status:"Draft",owner:"@pm Morgan",
+leaders:["Gabriel Carpelo (Diretor Comercial)","Hermano Lanza (Head Comercial)","Brandina Vidal (Supervisora SDR)"],
+context:"O time comercial da Contourline tem 23 pessoas distribuidas em 5 camadas (Diretor, Gerentes, Field Sales, Inside Sales, SDR). O principal gargalo e o tratamento manual de leads e a tentativa frustrada de implementar SDR com IA. O handoff entre Marketing, SDR, Inside Sales e Field Sales e o processo mais lento da empresa.",
+objective:"Estruturar e automatizar o funil comercial da Contourline com IA, desde a qualificacao de leads (SDR) ate o fechamento (Field + Inside Sales), reduzindo o tempo de resposta e aumentando a taxa de conversao sem aumentar headcount.",
+pains:["SDR com IA nao funcional -- leads nao qualificados chegando ao IS","Tratamento manual de leads -- perda de oportunidades","Handoff Marketing para Vendas lento -- leads esfriando","Sem Sales Ops estruturado -- forecasting impreciso","Field Sales sem visibilidade de pipeline"],
+metrics:[{m:"Tempo de resposta ao lead",b:"Manual / lento",t:"< 5 min (IA)"},{m:"Taxa de qualificacao SDR",b:"Baixa",t:"+40%"},{m:"Leads convertidos / mes",b:"Atual",t:"+25% sem headcount"},{m:"Forecasting accuracy",b:"Baixa",t:"> 80%"}],
+scopeIn:["Qualificacao automatica de leads via IA (SDR)","Automacao do handoff SDR - Inside Sales - Field Sales","Dashboard de pipeline por regiao","Forecasting automatizado","Integracao com RD Station (CRM existente)","Playbook digital de vendas"],
+scopeOut:["Contratacao de novos vendedores","Mudanca de CRM (RD Station permanece)","Estrategia de geracao de leads (Epic 02)","Pos-venda e CS (Epic 07)","Infraestrutura tecnica (Epic 09)"],
+risks:[{r:"SDR com IA ja falhou antes",p:"Alta",i:"Alto",m:"Implementacao incremental, piloto com 1 vendedor"},{r:"API do RD Station com limitacoes",p:"Media",i:"Alto",m:"Auditoria tecnica antes, plano B com webhooks"},{r:"Adocao baixa pelo time comercial",p:"Media",i:"Alto",m:"Treinamento hands-on, playbook digital"}],
+deps:["Epic 02 (Marketing) -- fonte dos leads","Epic 09 (TI) -- infraestrutura de integracao"],
+storyCount:8},
+
+{id:2,num:"02",title:"Marketing & IA",priority:"P1",status:"Draft",owner:"@pm Morgan",
+leaders:["Helaine Hohendorff (Diretora de Marketing)","Thalison (Head de Growth Marketing)"],
+context:"O time de Marketing tem 14 pessoas e ja usa IA de forma fragmentada -- cada pessoa usa suas proprias ferramentas sem coordenacao. A meta do CEO e automatizar processos repetitivos para liberar o time para trabalho estrategico.",
+objective:"Criar um sistema coordenado de IA para o time de Marketing, integrando producao de conteudo, gestao de midia paga, CRM e analytics em um hub central -- reduzindo trabalho manual e aumentando ROI sem ampliar headcount.",
+pains:["IA fragmentada -- sem coordenacao","Muita verba de anuncio, pouca automacao","Producao de video manual e lenta","Sem dashboard central de performance","CRM desconectado do marketing"],
+metrics:[{m:"Tempo de producao de video",b:"Atual (manual)",t:"-50% com IA"},{m:"Custo por lead (CPL)",b:"Atual",t:"-20%"},{m:"Velocidade de publicacao",b:"Atual",t:"+3x conteudos/semana"},{m:"ROI de midia paga",b:"Atual",t:"+30%"}],
+scopeIn:["Hub central de IA para coordenacao de conteudo","Pipeline de video com IA","Integracao trafego pago - CRM - funil de leads","Dashboard unificado de performance","Automacoes de social media","Playbook de uso de IA para o time"],
+scopeOut:["Eventos presenciais e branding offline","Contratacao de novos profissionais","Brand guidelines (ja existe)","Gestao do funil comercial pos-lead (Epic 01)","Compra de novas ferramentas sem aprovacao CEO"],
+risks:[{r:"Resistencia do time a centralizar ferramentas",p:"Alta",i:"Alto",m:"Onboarding gradual, manter ferramentas que ja funcionam"},{r:"Dependencia de APIs de terceiros",p:"Media",i:"Alto",m:"Mapear alternativas para cada ferramenta critica"},{r:"Qualidade do conteudo IA abaixo do padrao",p:"Media",i:"Alto",m:"Fluxo de aprovacao humana obrigatorio"}],
+deps:["Epic 01 (Comercial) -- destino dos leads","Epic 09 (TI) -- infraestrutura"],
+storyCount:8},
+
+{id:3,num:"03",title:"Financeiro & BI",priority:"P1",status:"Draft",owner:"@pm Morgan",
+leaders:["Claudio Kaizer (CFO)","Ana Paula (Coordenadora Financeira)"],
+context:"O financeiro opera com Totvs (ERP) como sistema central, mas o CEO quer algo mais personalizado e com IA integrada. A folha mensal de R$700-800k e o maior custo da empresa, com meta de reducao de 30% via automacao.",
+objective:"Criar uma camada de inteligencia financeira sobre o Totvs existente, automatizando relatorios, gestao de folha, cobranca e compras com IA -- entregando visibilidade em tempo real para a lideranca.",
+pains:["Totvs limitado -- sem personalizacao com IA","Gestao de folha R$700-800k sem automacao","Relatorios financeiros manuais e lentos","Compras sem automacao de cotacao","Cobranca manual de inadimplentes"],
+metrics:[{m:"Tempo de fechamento mensal",b:"Atual (dias)",t:"< 1 dia"},{m:"Reducao de folha via automacao",b:"R$700-800k",t:"-30% = R$210-240k/mes"},{m:"Taxa de recuperacao inadimplencia",b:"Atual",t:"+25%"},{m:"Tempo de geracao de relatorios",b:"Manual",t:"Automatico / tempo real"}],
+scopeIn:["Camada de BI sobre o Totvs","Automacao de relatorios contabeis e fiscais","Regua de cobranca inteligente","Sistema de cotacao e compras com IA","Analise de folha com sugestoes","Integracao Totvs - BI central"],
+scopeOut:["Substituicao do Totvs","Mudanca de sistema contabil","Decisoes de demissao/contratacao","Gestao de RH e DP (Epic 06)","Compliance regulatorio Anvisa (Epic 08)"],
+risks:[{r:"API do Totvs limitada ou inexistente",p:"Alta",i:"Critico",m:"Auditoria tecnica primeiro, plano B com exportacao de dados"},{r:"Seguranca de dados financeiros",p:"Media",i:"Critico",m:"Criptografia, controle de acesso, validacao com QA"},{r:"Compliance tributario -- relatorios gerados por IA",p:"Media",i:"Alto",m:"Validacao obrigatoria pelo Fiscal"}],
+deps:["Epic 09 (TI) -- infraestrutura e APIs","Epic 06 (RH & DP) -- dados de folha"],
+storyCount:8},
+
+{id:4,num:"04",title:"Operacoes & Logistica",priority:"P2",status:"Draft",owner:"@pm Morgan",
+leaders:["Filipe Ferreira (Diretor de Operacoes)","Silas Oliveira (Supervisor Logistica)"],
+context:"O Diretor de Operacoes coordena toda a cadeia de valor fisica: fabrica, logistica, estoque, recebimento e expedicao. A empresa tem 130 funcionarios e opera como uma das maiores do mercado de equipamentos medicos esteticos.",
+objective:"Digitalizar e automatizar a cadeia operacional, criando visibilidade completa do estoque, rastreabilidade de equipamentos e otimizacao logistica -- garantindo compliance Anvisa e reduzindo custos operacionais.",
+pains:["Visibilidade do estoque em tempo real","Rastreabilidade de equipamentos (Anvisa exige)","Coordenacao logistica sem sistema centralizado","Importacao sem automacao de processos","Patrimonio sem controle digital"],
+metrics:[{m:"Acuracidade de estoque",b:"Atual",t:"> 98%"},{m:"Tempo de expedicao",b:"Atual",t:"-30%"},{m:"Rastreabilidade de equipamentos",b:"Parcial",t:"100% (Anvisa)"},{m:"Ruptura de estoque",b:"Atual",t:"< 2%"}],
+scopeIn:["Gestao de estoque com rastreabilidade Anvisa","Dashboard operacional em tempo real","Automacao de recebimento e expedicao","Controle digital de patrimonio","Integracao com Totvs","Processos de importacao"],
+scopeOut:["Substituicao do Totvs","Gestao financeira (Epic 03)","Qualidade de produto (Epic 05)","Infraestrutura de TI (Epic 09)"],
+risks:[{r:"Integracao Totvs com sistema novo falhar",p:"Media",i:"Alto",m:"PoC de integracao antes de desenvolvimento"},{r:"Perda de rastreabilidade durante migracao",p:"Baixa",i:"Critico",m:"Migracao gradual com dupla operacao"},{r:"Equipamento danificado em logistica",p:"Baixa",i:"Alto",m:"Protocolos de embalagem e rastreio"}],
+deps:["Epic 03 (Financeiro)","Epic 05 (P&D & Q.A)","Epic 09 (TI)"],
+storyCount:7},
+
+{id:5,num:"05",title:"P&D & Qualidade",priority:"P2",status:"Draft",owner:"@pm Morgan",
+leaders:["Vanessa Melo (Gerente de P&D)","Rodrigo Martins (Coordenador P&D)","Filipe Fraga (Gerente Assistencia Tecnica)"],
+context:"A Contourline tem certificacao Anvisa como barreira competitiva central. O time de P&D e responsavel por desenvolver e homologar novos equipamentos. O Q.A garante que cada equipamento saia da fabrica dentro dos padroes regulatorios.",
+objective:"Digitalizar e otimizar o ciclo de vida de produtos, desde o P&D ate a assistencia tecnica, com foco em garantir conformidade Anvisa, reduzir o ciclo de desenvolvimento e aumentar a eficiencia do time tecnico.",
+pains:["Documentacao Anvisa manual -- risco regulatorio alto","Ciclo de desenvolvimento longo","Registro de testes em papel/planilha","Assistencia tecnica sem base de conhecimento","Gestao de P&D descentralizada"],
+metrics:[{m:"Tempo de ciclo de P&D",b:"Atual",t:"-20%"},{m:"Rastreabilidade Anvisa",b:"Parcial",t:"100%"},{m:"Tempo medio de reparo (MTTR)",b:"Atual",t:"-30%"},{m:"Nao-conformidades em inspecao",b:"Atual",t:"-40%"}],
+scopeIn:["Gestao de projetos de P&D digital","Documentacao Anvisa digitalizada","Registro digital de inspecoes Q.A","Base de conhecimento para Assistencia Tecnica","Dashboard de conformidade","Integracao P&D - Q.A - liberacao de lote"],
+scopeOut:["Gestao de estoque fisico (Epic 04)","Gestao juridica (Epic 08)","Certificacoes internacionais (Epic 10)","Infraestrutura de TI (Epic 09)"],
+risks:[{r:"Perda de conformidade Anvisa durante digitalizacao",p:"Baixa",i:"Critico",m:"Manter processo manual em paralelo"},{r:"Base de conhecimento incompleta",p:"Media",i:"Alto",m:"Review periodico com time de P&D"},{r:"Mudanca regulatoria Anvisa",p:"Media",i:"Alto",m:"Monitoramento continuo (Epic 08)"}],
+deps:["Epic 04 (Operacoes)","Epic 08 (Juridico)","Epic 09 (TI)"],
+storyCount:8},
+
+{id:6,num:"06",title:"RH & DP",priority:"P2",status:"Draft",owner:"@pm Morgan",
+leaders:["Cassiano Torres (RH Estrategico)","Gisele Machado (DP)"],
+context:"Com 130 funcionarios e folha mensal de R$700-800k, RH e DP sao setores criticos para a meta do CEO de reduzir custos em 30%. RH Estrategico cuida de recrutamento, cultura e desenvolvimento. DP cuida de admissao, folha, ferias e beneficios.",
+objective:"Automatizar os processos operacionais de RH e DP com IA, desde recrutamento ate gestao de folha e desenvolvimento de pessoas -- liberando o time para trabalho estrategico.",
+pains:["Processos de recrutamento lentos e manuais","Folha de R$700-800k sem analise preditiva","Onboarding sem automacao","Controle de ponto e ferias manual","Sem plano de desenvolvimento individualizado"],
+metrics:[{m:"Tempo medio de contratacao",b:"Atual",t:"-40%"},{m:"Custo de pessoal / receita",b:"~8%",t:"~5.5% (-30%)"},{m:"Tempo de onboarding",b:"Atual",t:"-50%"},{m:"Erros na folha",b:"Atual",t:"< 0.5%"}],
+scopeIn:["Sistema de recrutamento com IA","Dashboard de folha e custo por setor","Automacao de onboarding digital","Controle de ponto e ferias digitalizado","Analise preditiva de custo de pessoal","Plataforma de desenvolvimento"],
+scopeOut:["Gestao financeira global (Epic 03)","Compliance trabalhista avancado (Epic 08)","Estrategia de remuneracao","Infraestrutura de TI (Epic 09)"],
+risks:[{r:"Meta de -30% gerar demissoes mal planejadas",p:"Media",i:"Critico",m:"Foco em automacao de funcoes, nao de pessoas"},{r:"Sistema de ponto com baixa adesao",p:"Media",i:"Medio",m:"Integracao com ferramentas existentes"},{r:"Triagem por IA com vies",p:"Baixa",i:"Alto",m:"Auditoria periodica de criterios"}],
+deps:["Epic 03 (Financeiro)","Epic 09 (TI)"],
+storyCount:8},
+
+{id:7,num:"07",title:"CX / CS & Pos-venda",priority:"P3",status:"Draft",owner:"@pm Morgan",
+leaders:["Andreia Almeida (Diretora Consultoria e Treinamentos)"],
+context:"O time de CX/CS tem 5 pessoas responsaveis pela experiencia e sucesso do cliente apos a compra de equipamentos medicos esteticos. O cliente da Contourline e um profissional de medicina estetica que precisa dominar o equipamento.",
+objective:"Criar uma jornada de sucesso do cliente automatizada e escalavel, combinando CX proativo, treinamentos digitais e uso inteligente do CRM para aumentar retencao e expansao de receita.",
+pains:["Sem jornada do cliente mapeada","Treinamento de clientes manual e presencial","Sem sistema de NPS estruturado","Atendimento pos-venda reativo","CRM nao usado para expansao (upsell)"],
+metrics:[{m:"NPS",b:"Nao medido",t:"> 50"},{m:"Taxa de churn",b:"Atual",t:"-20%"},{m:"Receita de expansao (upsell)",b:"Atual",t:"+15%"},{m:"Tempo de onboarding de cliente",b:"Atual",t:"-40%"}],
+scopeIn:["Jornada do cliente automatizada no CRM","Plataforma de treinamento digital (LMS)","Sistema de NPS automatizado","Alertas proativos de churn","Fluxo de upsell no CRM","Dashboard de saude da carteira"],
+scopeOut:["Funil comercial pre-venda (Epic 01)","Assistencia tecnica de equipamentos (Epic 05)","Infraestrutura de TI (Epic 09)","Treinamentos internos (Epic 06)"],
+risks:[{r:"Modelo preditivo de churn sem dados historicos",p:"Alta",i:"Medio",m:"Comecar com regras manuais e evoluir"},{r:"LMS com baixa adocao (publico 35-55 anos)",p:"Media",i:"Alto",m:"UX simples, mobile-first, conteudo em video"},{r:"NPS expor problemas nao mapeados",p:"Media",i:"Medio",m:"Plano de acao vinculado a cada faixa de NPS"}],
+deps:["Epic 01 (Comercial)","Epic 09 (TI)"],
+storyCount:8},
+
+{id:8,num:"08",title:"Juridico & Compliance",priority:"P3",status:"Draft",owner:"@pm Morgan",
+leaders:["Julia Maria (Analista Juridico)","Valdirene Gomes (Compliance)"],
+context:"A certificacao Anvisa e a maior barreira competitiva e o maior risco regulatorio. O time juridico ja usa Chat PDF para consultas de normativas Anvisa. O KPI principal e zero infracoes regulatorias.",
+objective:"Centralizar e automatizar a gestao juridica e de compliance, com foco em monitoramento continuo de normativas Anvisa, gestao de contratos e alertas proativos de vencimento de certificacoes.",
+pains:["Consultas Anvisa manuais e demoradas","Gestao de contratos sem sistema centralizado","Monitoramento de mudancas regulatorias manual","Documentacao de conformidade descentralizada","Sem alertas de vencimento de certificacoes"],
+metrics:[{m:"Infracoes regulatorias",b:"Zero (manter)",t:"Zero"},{m:"Tempo de resposta a consulta Anvisa",b:"Horas/dias",t:"< 30 min (IA)"},{m:"Contratos vencidos sem renovacao",b:"Atual",t:"0"},{m:"Cobertura de monitoramento normativo",b:"Parcial",t:"100%"}],
+scopeIn:["Monitoramento automatico de normativas Anvisa","Repositorio de contratos com alertas","Dashboard de compliance e certificacoes","Expansao do Chat PDF para agente","Alertas de mudancas regulatorias","Integracao compliance - P&D - Q.A"],
+scopeOut:["Gestao de qualidade de produto (Epic 05)","Compliance trabalhista (Epic 06)","Processos de importacao (Epic 04)","Infraestrutura de TI (Epic 09)"],
+risks:[{r:"Agente de IA interpretar normativa incorretamente",p:"Media",i:"Critico",m:"Human-in-the-loop obrigatorio"},{r:"Mudanca regulatoria nao detectada",p:"Baixa",i:"Critico",m:"Dupla verificacao: IA + checagem manual"},{r:"Perda de certificacao durante transicao",p:"Baixa",i:"Critico",m:"Manter processo manual em paralelo"}],
+deps:["Epic 05 (P&D & Q.A)","Epic 09 (TI)"],
+storyCount:6},
+
+{id:9,num:"09",title:"TI & Infraestrutura",priority:"P1",status:"Draft",owner:"@pm Morgan",
+leaders:["Rafael Henrique (Supervisor TI)","Thalison Samuel (Head Growth Marketing / Decisor dados-IA)"],
+context:"O time de TI tem apenas 3 pessoas para suportar 130 colaboradores em regime 100% presencial. Thalison e o decisor principal para dados, IA e arquitetura tecnica. A AIOX esta instalada e em teste. Este e o epic enabler -- sem infraestrutura robusta, nenhum outro epic consegue ser executado.",
+objective:"Estabelecer a fundacao tecnologica da Contourline: arquitetura de dados centralizada, integracoes entre sistemas, processo de adocao da AIOX e capacitacao do time -- habilitando a execucao de todos os outros epics.",
+pains:["Time TI minusculo para empresa de R$115M","Sem arquitetura de dados centralizada","AIOX instalada mas sem processo de adocao","Sem documentacao tecnica do ambiente","Integracoes entre sistemas inexistentes"],
+metrics:[{m:"Sistemas integrados",b:"0",t:"Todos os sistemas core"},{m:"Documentacao tecnica",b:"Inexistente",t:"100% do ambiente"},{m:"Uptime dos sistemas",b:"Desconhecido",t:"> 99.5%"},{m:"Adocao do AIOX",b:"Em teste",t:"100% dos setores"}],
+scopeIn:["Arquitetura de dados centralizada","Hub de integracao entre sistemas","Processo de adocao e governanca AIOX","Documentacao tecnica do ambiente","Capacitacao do time de TI","Roadmap tecnico para os demais epics"],
+scopeOut:["Suporte ao usuario final / helpdesk","Compra de hardware","Desenvolvimento de features de produto","Gestao de projetos nao-tecnicos","Migracao do Totvs ou RD Station"],
+risks:[{r:"Time minimo: 3 pessoas para 130 colaboradores",p:"Alta",i:"Critico",m:"Priorizar automacao do proprio TI primeiro"},{r:"APIs do Totvs e RD Station com limitacoes",p:"Media",i:"Alto",m:"Auditoria tecnica primeiro"},{r:"LGPD compliance -- dados de 130 pessoas",p:"Media",i:"Critico",m:"QA Gate obrigatorio, consultoria juridica"}],
+deps:["Pre-requisito para todos os outros epics","Iniciar em paralelo com Epics 01, 02, 03"],
+storyCount:8},
+
+{id:10,num:"10",title:"Novos Negocios & Internacional",priority:"P4",status:"Draft",owner:"@pm Morgan",
+leaders:["Filipe Ferreira (Novos Negocios)","Julio Cesar (Analista Importacao)"],
+context:"A Contourline tem operacao internacional via Body Health Internacional, com conselheiros internacionais. A empresa fatura R$115-120M/ano e a expansao internacional e o proximo passo estrategico, mas deve ser executada apos a casa estar em ordem internamente.",
+objective:"Estruturar o processo de expansao internacional e novos negocios com dados e IA, preparando a empresa para escalar alem do Brasil de forma organizada e eficiente.",
+pains:["Operacao internacional sem sistema integrado","Novos negocios sem processo estruturado","Comercio exterior manual","Sem inteligencia de mercado para expansao"],
+metrics:[{m:"Novos mercados avaliados / trim",b:"Nao medido",t:"3+"},{m:"Tempo de processo de importacao",b:"Atual",t:"-25%"},{m:"Pipeline internacional",b:"Inexistente",t:"Operacional"}],
+scopeIn:["Processo de avaliacao de novos mercados","Dashboard de operacoes internacionais","Automacao de comercio exterior","Funil de novos negocios no CRM","Inteligencia de mercado com IA"],
+scopeOut:["Operacoes domesticas (Epics 01-09)","Certificacoes Anvisa para novos produtos","Logistica domestica (Epic 04)","Infraestrutura de TI (Epic 09)"],
+risks:[{r:"Expansao prematura antes de operacao interna otimizada",p:"Media",i:"Alto",m:"P4 garante que Epics P1-P3 estejam resolvidos"},{r:"Regulacao incompativel com Anvisa",p:"Media",i:"Alto",m:"Pesquisa regulatoria por mercado"},{r:"Suporte local em novo mercado sem infra",p:"Alta",i:"Alto",m:"Parcerias locais primeiro"}],
+deps:["Todos os epics P1/P2/P3 completos ou em andamento","Epic 01 (Comercial)","Epic 09 (TI)"],
+storyCount:6}
+];
+
+// ========================================================
+// DATA: ALL STORIES
+// ========================================================
+const STORIES = [
+// EPIC 01
+{id:"1.1",epicId:1,title:"Mapeamento do Funil Comercial Atual (as-is)",agent:"@analyst",size:"S",status:"Draft",priority:"P1",
+desc:"O time comercial da Contourline tem 23 pessoas distribuidas em 5 camadas, mas nao existe um mapeamento formal do funil comercial atual. Esta story mapeia o funil completo do jeito que funciona hoje: desde o lead entrando no RD Station ate o fechamento. O objetivo e ter uma visao clara dos gargalos, tempos medios, taxas de conversao por etapa e os pontos de handoff entre as 5 camadas.",
+ac:[{t:"Diagrama do funil comercial as-is documentado",c:true},{t:"Tempos medios por etapa do funil identificados",c:true},{t:"Taxas de conversao por etapa coletadas",c:true},{t:"Pontos de handoff entre camadas mapeados",c:true},{t:"Gargalos criticos identificados (minimo 3)",c:true},{t:"Ferramentas usadas em cada etapa listadas",c:true},{t:"Entrevistas com representantes de cada camada comercial",c:false},{t:"Documento aprovado pelo Diretor Comercial",c:false},{t:"Secao Oportunidades de Automacao preenchida",c:true}],
+tasks:[{t:"T1.1.1 -- Entrevistas com SDR",c:false},{t:"T1.1.2 -- Entrevistas com Inside Sales",c:false},{t:"T1.1.3 -- Entrevistas com Field Sales",c:false},{t:"T1.1.4 -- Entrevista com lideranca comercial",c:false},{t:"T1.1.5 -- Mapear estagios RD Station",c:true},{t:"T1.1.6 -- Criar diagrama visual do funil",c:true},{t:"T1.1.7 -- Compilar metricas baseline",c:true},{t:"T1.1.8 -- Documentar gargalos e oportunidades",c:true},{t:"T1.1.9 -- Redigir documento final",c:true},{t:"T1.1.10 -- Registrar outputs para Stories 1.2-1.6",c:true}],
+deps:["Nenhuma (story fundacional do Epic 01)","Acesso ao RD Station (leitura)"],
+risks:[{r:"Time comercial sem tempo para entrevistas",m:"Entrevistas de 30 min maximo, questionario assincrono como fallback"},{r:"Dados de conversao nao existem",m:"Usar estimativas validadas pelo time"},{r:"Processo informal diferente do CRM",m:"Mapear ambos, destacar divergencias"}]},
+
+{id:"1.2",epicId:1,title:"Configuracao e Integracao RD Station como Hub Central",agent:"@dev",size:"M",status:"Draft",priority:"P1",
+desc:"O RD Station e o CRM existente e permanece como sistema central. Porem nao esta configurado para suportar o funil completo. Esta story configura o RD Station como hub central e fonte unica de verdade para o funil comercial, com auditoria tecnica da API.",
+ac:[{t:"Estagios do funil alinhados com o processo real (Story 1.1)",c:false},{t:"Campos obrigatorios por estagio configurados",c:false},{t:"API do RD Station auditada: endpoints, rate limits, autenticacao",c:false},{t:"Webhook configurado para notificar mudanca de estagio",c:false},{t:"Integracao bidirecional com Marketing validada",c:false},{t:"Regras de deduplicacao configuradas",c:false},{t:"Documento tecnico de integracao publicado",c:false},{t:"Plano B documentado caso API tenha limitacoes",c:false},{t:"Testes de integracao executados (>= 95% sucesso)",c:false}],
+tasks:[{t:"T1.2.1 -- Auditar API do RD Station",c:false},{t:"T1.2.2 -- Revisar estagios atuais vs Story 1.1",c:false},{t:"T1.2.3 -- Reconfigurar etapas do funil",c:false},{t:"T1.2.4 -- Configurar campos obrigatorios",c:false},{t:"T1.2.5 -- Configurar webhooks de mudanca de estagio",c:false},{t:"T1.2.6 -- Script de limpeza de leads duplicados",c:false},{t:"T1.2.7 -- Testar integracao com fontes de Marketing",c:false},{t:"T1.2.8 -- Documentar limitacoes da API",c:false},{t:"T1.2.9 -- Criar documentacao tecnica de integracao",c:false},{t:"T1.2.10 -- Executar suite de testes",c:false}],
+deps:["Story 1.1 (Mapeamento do funil)","Acesso de admin ao RD Station","Credenciais de API (coordenar com TI)"],
+risks:[{r:"API com limitacoes de integracao",m:"Auditoria e plano B antes de continuar"},{r:"Reconfigurar CRM quebrar processos atuais",m:"Homologacao primeiro"},{r:"Dados inconsistentes",m:"Script de limpeza obrigatorio"}]},
+
+{id:"1.3",epicId:1,title:"SDR IA -- Qualificacao Automatica de Leads",agent:"@dev",size:"L",status:"Draft",priority:"P1",
+desc:"Story central do Epic 01 -- a que o CEO declarou estar 'apanhando' para implementar. Implementar de forma incremental: qualificacao automatica de leads que le dados do RD Station, aplica criterios de qualificacao e encaminha leads qualificados para Inside Sales. O SDR IA comeca como camada de triagem automatica. Criterio de sucesso: tempo de resposta < 5 min e taxa de qualificacao +40%.",
+ac:[{t:"SDR IA funcional qualificando leads automaticamente",c:false},{t:"Criterios de qualificacao definidos (min 5 criterios)",c:false},{t:"Lead qualificado encaminhado para IS em < 5 minutos",c:false},{t:"Lead nao qualificado marcado com motivo no CRM",c:false},{t:"Fluxo de enriquecimento para leads com dados insuficientes",c:false},{t:"SDR humano notificado apenas para zona cinza",c:false},{t:"Dashboard simples para os 2 SDRs",c:false},{t:"Piloto de 2 semanas com 1 SDR",c:false},{t:"Taxa de falsos negativos < 5%",c:false},{t:"Logs de todas as decisoes armazenados",c:false}],
+tasks:[{t:"T1.3.1 -- Workshop com SDRs e lideranca para definir criterios ICP",c:false},{t:"T1.3.2 -- Definir scoring model com pesos e thresholds",c:false},{t:"T1.3.3 -- Selecionar abordagem tecnica com @architect",c:false},{t:"T1.3.4 -- Implementar consumer de webhook RD Station",c:false},{t:"T1.3.5 -- Implementar engine de qualificacao",c:false},{t:"T1.3.6 -- Implementar acao de encaminhamento",c:false},{t:"T1.3.7 -- Implementar fluxo de enriquecimento",c:false},{t:"T1.3.8 -- Implementar notificacao para SDR humano",c:false},{t:"T1.3.9 -- Criar dashboard simples para SDRs",c:false},{t:"T1.3.10 -- Executar piloto de 2 semanas",c:false},{t:"T1.3.11 -- Ajustar scoring baseado no piloto",c:false},{t:"T1.3.12 -- Escalar para processo completo",c:false},{t:"T1.3.13 -- Documentar o sistema",c:false}],
+deps:["Story 1.1 (ICP e criterios)","Story 1.2 (webhooks e API disponiveis)","Epic 09 Story 9.3 (hub de integracao)"],
+risks:[{r:"SDR com IA ja falhou antes -- resistencia do time",m:"Implementacao incremental, piloto com 1 vendedor"},{r:"Dados de leads desatualizados/sujos",m:"Limpeza de base na Story 1.2"},{r:"Criterios de qualificacao mal definidos",m:"Workshop obrigatorio com os proprios SDRs"},{r:"Taxa de falsos negativos alta",m:"Piloto de 2 semanas com validacao humana"}]},
+
+{id:"1.4",epicId:1,title:"Automacao de Handoff SDR para Inside Sales",agent:"@dev",size:"M",status:"Draft",priority:"P1",
+desc:"O maior gargalo e o handoff lento entre camadas comerciais. Quando um lead e qualificado, o Inside Sales precisa ser notificado com contexto suficiente para abordagem. Esta story automatiza o processo de passagem com contexto completo do lead.",
+ac:[{t:"Notificacao para IS em < 2 minutos apos qualificacao",c:false},{t:"Notificacao com contexto completo (nome, empresa, cargo, produto, score, historico)",c:false},{t:"IS responsavel atribuido automaticamente por regra",c:false},{t:"Notificacao em 2 canais: CRM + secundario (WhatsApp/email)",c:false},{t:"IS tem 30 min para aceitar ou lead redistribuido",c:false},{t:"Handoff IS para FS segue mesmo padrao",c:false},{t:"Todos os handoffs registrados com timestamp",c:false},{t:"Relatorio semanal de SLA de handoff",c:false},{t:"Piloto de 2 semanas validado",c:false}],
+tasks:[{t:"T1.4.1 -- Definir regras de atribuicao de IS",c:false},{t:"T1.4.2 -- Definir SLA de aceite",c:false},{t:"T1.4.3 -- Implementar trigger no RD Station",c:false},{t:"T1.4.4 -- Implementar atribuicao automatica",c:false},{t:"T1.4.5 -- Implementar composicao de contexto",c:false},{t:"T1.4.6 -- Implementar notificacao multicanal",c:false},{t:"T1.4.7 -- Implementar timer de SLA",c:false},{t:"T1.4.8 -- Replicar fluxo para IS para FS",c:false},{t:"T1.4.9 -- Criar relatorio semanal de SLA",c:false},{t:"T1.4.10 -- Executar piloto de 2 semanas",c:false}],
+deps:["Story 1.2 (webhooks de mudanca de estagio)","Story 1.3 (fonte dos leads qualificados)"],
+risks:[{r:"IS ignorando notificacoes",m:"Metricas visiveis para gerentes, gamificacao"},{r:"Canal WhatsApp sem aprovacao",m:"Usar email como fallback"},{r:"Regras de atribuicao complexas demais",m:"Comecar com round-robin simples"}]},
+
+{id:"1.5",epicId:1,title:"Dashboard de Pipeline por Regiao (Field Sales)",agent:"@dev",size:"M",status:"Draft",priority:"P1",
+desc:"O time de Field Sales tem 10 pessoas em 6 regioes (SP, MG, PR, CO, RJ, NO) sem visibilidade centralizada do pipeline. Esta story cria um dashboard de pipeline regionalizado, alimentado em tempo real pelo RD Station.",
+ac:[{t:"Dashboard operacional web e mobile",c:false},{t:"Pipeline consolidado por regiao com drill-down",c:false},{t:"Visao de funil por estagio",c:false},{t:"Valor total de pipeline por regiao e vendedor",c:false},{t:"Velocidade do pipeline por regiao",c:false},{t:"Alertas de deals parados",c:false},{t:"Comparativo mes atual vs meta",c:false},{t:"Atualizacao em tempo real (max 15 min delay)",c:false},{t:"Acesso segmentado por perfil",c:false},{t:"Validado por 2 Field Sales + Gerente Regional",c:false}],
+tasks:[{t:"T1.5.1 -- Workshop de KPIs com lideranca",c:false},{t:"T1.5.2 -- Selecionar stack de dashboard com @architect",c:false},{t:"T1.5.3 -- Implementar connector RD Station",c:false},{t:"T1.5.4 -- Modelar dados",c:false},{t:"T1.5.5 -- Desenvolver queries para KPIs",c:false},{t:"T1.5.6 -- Implementar alertas de deals parados",c:false},{t:"T1.5.7 -- Configurar controle de acesso",c:false},{t:"T1.5.8 -- Otimizar para mobile",c:false},{t:"T1.5.9 -- Configurar sync a cada 15 min",c:false},{t:"T1.5.10 -- Executar UAT",c:false}],
+deps:["Story 1.2 (dados de pipeline limpos)","Story 1.1 (definicao de regioes e estagios)","Epic 09 Story 9.2 (arquitetura de dados)"],
+risks:[{r:"RD Station sem API adequada",m:"Exportacao periodica como plano B"},{r:"Field Sales nao atualiza CRM",m:"Abordar em Story 1.7 e treinamento"},{r:"Stack de dashboard errada",m:"Workshop com @architect antes"}]},
+
+{id:"1.6",epicId:1,title:"Forecasting Automatizado para Lideranca",agent:"@dev",size:"M",status:"Draft",priority:"P1",
+desc:"Forecasting atualmente feito manualmente por telefone, WhatsApp e planilhas. Esta story implementa forecasting automatizado usando dados do pipeline e padroes historicos de conversao, com indice de confianca. Meta: precisao > 80%.",
+ac:[{t:"Forecast automatico semanal para 30, 60 e 90 dias",c:false},{t:"Segmentado por regiao e consolidado total",c:false},{t:"Indice de confianca em cada projecao",c:false},{t:"Fatores do forecast documentados",c:false},{t:"Comparativo forecast vs realizado",c:false},{t:"Alertas quando forecast < meta em 15%",c:false},{t:"Integrado ao dashboard da Story 1.5",c:false},{t:"Metodologia documentada em linguagem nao-tecnica",c:false},{t:"Precisao validada em 2 ciclos mensais",c:false}],
+tasks:[{t:"T1.6.1 -- Coletar dados historicos de pipeline",c:false},{t:"T1.6.2 -- Definir modelo de forecasting com Diretor Comercial",c:false},{t:"T1.6.3 -- Implementar pipeline de coleta diaria",c:false},{t:"T1.6.4 -- Implementar calculo de forecast",c:false},{t:"T1.6.5 -- Implementar indice de confianca",c:false},{t:"T1.6.6 -- Implementar alertas de meta em risco",c:false},{t:"T1.6.7 -- Integrar ao dashboard Story 1.5",c:false},{t:"T1.6.8 -- Criar comparativo forecast vs realizado",c:false},{t:"T1.6.9 -- Documentar metodologia",c:false},{t:"T1.6.10 -- Validar em 2 ciclos com Diretor",c:false}],
+deps:["Story 1.5 (dashboard e infraestrutura de dados)","Story 1.2 (dados de pipeline)"],
+risks:[{r:"Dados historicos insuficientes",m:"Usar weighted pipeline simples no inicio"},{r:"Diretor nao confia nos numeros",m:"Documentar metodologia e mostrar forecast vs realizado"},{r:"Modelo impreciso por dados inconsistentes",m:"Alertas de qualidade de dados"}]},
+
+{id:"1.7",epicId:1,title:"Playbook Digital de Vendas",agent:"@analyst + @pm",size:"S",status:"Draft",priority:"P1",
+desc:"Centraliza como cada etapa do funil funciona, como usar as novas automacoes (SDR IA, handoff automatizado), criterios de qualificacao do ICP, scripts de abordagem e as regras do jogo comercial da Contourline. Recurso acessivel, pesquisavel e atualizado continuamente.",
+ac:[{t:"Playbook publicado em formato digital acessivel",c:false},{t:"Secoes: ICP, etapas do funil, SDR IA, handoff, scripts, politica CRM, FAQ",c:false},{t:"Revisado e aprovado por representantes de cada camada",c:false},{t:"Versao mobile-friendly",c:false},{t:"Sistema de busca disponivel",c:false},{t:"Processo de atualizacao definido",c:false},{t:"Apresentado ao time antes do go-live das automacoes",c:false},{t:"Feedback coletado apos 30 dias",c:false}],
+tasks:[{t:"T1.7.1 -- Definir plataforma de publicacao",c:false},{t:"T1.7.2 -- Estruturar indice com Diretor Comercial",c:false},{t:"T1.7.3 -- Redigir secao ICP e criterios de qualificacao",c:false},{t:"T1.7.4 -- Redigir secao Funil comercial",c:false},{t:"T1.7.5 -- Redigir secao SDR IA",c:false},{t:"T1.7.6 -- Redigir secao Handoff automatizado",c:false},{t:"T1.7.7 -- Redigir scripts de abordagem",c:false},{t:"T1.7.8 -- Redigir politica de uso do CRM",c:false},{t:"T1.7.9 -- Revisao com representantes",c:false},{t:"T1.7.10 -- Publicar e apresentar ao time",c:false},{t:"T1.7.11 -- Coletar feedback e publicar v2.0",c:false}],
+deps:["Story 1.1 (base de conteudo)","Story 1.3 (SDR IA)","Story 1.4 (handoff)"],
+risks:[{r:"Time nao le o playbook",m:"Apresentacao obrigatoria, links nas automacoes"},{r:"Playbook desatualizado rapidamente",m:"Dono e ciclo de revisao definidos"},{r:"Plataforma nao aprovada pelo TI",m:"Validar com Rafael antes"}]},
+
+{id:"1.8",epicId:1,title:"QA Gate -- Validacao e Testes do Funil Completo",agent:"@qa",size:"M",status:"Draft",priority:"P1",
+desc:"QA Gate completo que valida o funil ponta a ponta antes do go-live oficial. Inclui validacao nao-funcional: seguranca de dados (LGPD), performance e confiabilidade dos dashboards.",
+ac:[{t:"Fluxo completo end-to-end testado",c:false},{t:"Fluxo negativo testado",c:false},{t:"Performance: 100 leads em < 10s por lead",c:false},{t:"Notificacoes dentro do SLA em 95% dos casos",c:false},{t:"Dashboard atualiza em < 15 min (100% dos casos)",c:false},{t:"Forecast gerado corretamente",c:false},{t:"Nenhum dado exposto sem autenticacao",c:false},{t:"LGPD compliance validada",c:false},{t:"Logs de decisao registrados corretamente",c:false},{t:"Relatorio de QA com GO/NO-GO",c:false}],
+tasks:[{t:"T1.8.1 -- Criar plano de testes completo",c:false},{t:"T1.8.2 -- Preparar ambiente de teste",c:false},{t:"T1.8.3 -- Testes funcionais do SDR IA",c:false},{t:"T1.8.4 -- Testes de integracao ciclo completo",c:false},{t:"T1.8.5 -- Testes de performance (100 leads)",c:false},{t:"T1.8.6 -- Testes de notificacao SLA",c:false},{t:"T1.8.7 -- Testes do dashboard",c:false},{t:"T1.8.8 -- Testes de seguranca",c:false},{t:"T1.8.9 -- Testes de LGPD",c:false},{t:"T1.8.10 -- Consolidar relatorio GO/NO-GO",c:false}],
+deps:["Stories 1.2, 1.3, 1.4, 1.5, 1.6 concluidas","Story 1.7 pronto para distribuicao"],
+risks:[{r:"Issues criticos atrasam go-live",m:"Gate real -- go-live bloqueado ate correcao"},{r:"Dados reais usados nos testes",m:"Usar dados sinteticos sempre"},{r:"LGPD sem consultoria juridica",m:"Documentar controles e escalar"}]},
+
+// EPIC 02
+{id:"2.1",epicId:2,title:"Auditoria do Stack de IA Atual do Time de Marketing",agent:"@analyst",size:"S",status:"Draft",priority:"P1",
+desc:"Time de Marketing de 14 pessoas usa IA fragmentada. Antes de construir o hub central, mapear o estado atual: quais ferramentas, quem usa, custo total, sobreposicoes e oportunidades de coordenacao.",
+ac:[{t:"Inventario completo de ferramentas de IA",c:true},{t:"Para cada ferramenta: nome, quem usa, custo, frequencia",c:false},{t:"Ferramentas de video IA mapeadas com detalhe",c:false},{t:"Eleven Labs documentado",c:false},{t:"Custo total mensal estimado",c:true},{t:"Matriz de sobreposicao identificada",c:true},{t:"Quick wins identificados",c:true},{t:"Gaps identificados",c:true},{t:"Aprovado por Thalison e Helaine",c:false},{t:"Recomendacoes para Hub Central",c:true}],
+tasks:[{t:"T2.1.1 -- Entrevistas por subarea",c:false},{t:"T2.1.2 -- Formulario de inventario",c:true},{t:"T2.1.3 -- Mapear ferramentas de video IA",c:false},{t:"T2.1.4 -- Mapear Eleven Labs",c:false},{t:"T2.1.5 -- Estimar custo total",c:true},{t:"T2.1.6 -- Identificar sobreposicoes",c:true},{t:"T2.1.7 -- Identificar gaps",c:true},{t:"T2.1.8 -- Documentar quick wins",c:true},{t:"T2.1.9 -- Consolidar relatorio",c:false},{t:"T2.1.10 -- Extrair recomendacoes para Hub",c:true}],
+deps:["Nenhuma (fundacional do Epic 02)"],
+risks:[{r:"Time omite ferramentas nao aprovadas",m:"Posicionar como mapeamento, nao punicao"},{r:"Custo maior que esperado pelo CEO",m:"Apresentar como oportunidade de otimizacao"}]},
+
+{id:"2.2",epicId:2,title:"Hub Central de Briefing e Aprovacao de Conteudo com IA",agent:"@dev",size:"L",status:"Draft",priority:"P1",
+desc:"O maior problema e falta de coordenacao. O Hub Central centraliza o ciclo de vida do conteudo: do briefing ate a aprovacao e distribuicao. Aprovacao humana antes de publicacao e NON-NEGOTIABLE.",
+ac:[{t:"Hub operacional: briefing - geracao IA - revisao - aprovacao - distribuicao",c:false},{t:"Briefing estruturado por tipo de conteudo",c:false},{t:"Geracao de rascunho por IA integrada",c:false},{t:"Fluxo de revisao obrigatorio, sem bypass",c:false},{t:"Status tracking visivel por peca de conteudo",c:false},{t:"Historico completo de versoes e aprovacoes",c:false},{t:"Notificacoes automaticas",c:false},{t:"Dashboard de producao",c:false},{t:"Onboarding do time completo feito",c:false}],
+tasks:[{t:"T2.2.1 -- Definir plataforma com @architect",c:false},{t:"T2.2.2 -- Mapear tipos de conteudo",c:false},{t:"T2.2.3 -- Implementar templates de briefing",c:false},{t:"T2.2.4 -- Implementar geracao de copy com IA",c:false},{t:"T2.2.5 -- Implementar fluxo de revisao/aprovacao",c:false},{t:"T2.2.6 -- Implementar versionamento",c:false},{t:"T2.2.7 -- Implementar dashboard de producao",c:false},{t:"T2.2.8 -- Implementar notificacoes",c:false},{t:"T2.2.9 -- Integrar com pipeline de video (Story 2.3)",c:false},{t:"T2.2.10 -- Onboarding do time",c:false},{t:"T2.2.11 -- Go-live com acompanhamento",c:false}],
+deps:["Story 2.1 (auditoria)","Story 2.3 (pipeline de video)","Epic 09 Story 9.2 (arquitetura)"],
+risks:[{r:"Resistencia do time a centralizar",m:"Onboarding gradual, manter ferramentas que funcionam"},{r:"Plataforma cara ou nao aprovada",m:"Notion como fallback"},{r:"Fluxo de aprovacao vira gargalo",m:"SLA de aprovacao com escalacao"}]},
+
+{id:"2.3",epicId:2,title:"Pipeline de Video com IA (Roteiro - Edicao - Publicacao)",agent:"@dev",size:"L",status:"Draft",priority:"P1",
+desc:"Producao de video e o maior gargalo do Marketing. Pipeline semi-automatizado desde briefing ate publicacao. Eleven Labs ja em uso para audio. Meta: -50% no tempo de producao.",
+ac:[{t:"Pipeline funcional: briefing - roteiro IA - narracao Eleven Labs - edicao - aprovacao - publicacao",c:false},{t:"Roteiro gerado em < 5 min apos briefing",c:false},{t:"Integracao com Eleven Labs",c:false},{t:"Ferramentas de video IA integradas ou documentadas",c:false},{t:"Aprovacao humana obrigatoria",c:false},{t:"Tempo de producao reduzido em 30% no piloto",c:false},{t:"Templates para 3 formatos",c:false},{t:"Historico completo de todos os videos",c:false},{t:"Piloto de 4 semanas com Audiovisual",c:false}],
+tasks:[{t:"T2.3.1 -- Mapear formatos mais produzidos",c:false},{t:"T2.3.2 -- Definir pipeline tecnico com @architect",c:false},{t:"T2.3.3 -- Implementar geracao de roteiro por IA",c:false},{t:"T2.3.4 -- Integrar Eleven Labs",c:false},{t:"T2.3.5 -- Mapear e integrar ferramentas de video IA",c:false},{t:"T2.3.6 -- Criar templates de video",c:false},{t:"T2.3.7 -- Fluxo de submissao para revisao",c:false},{t:"T2.3.8 -- Publicacao assistida",c:false},{t:"T2.3.9 -- Medir tempo antes e depois",c:false},{t:"T2.3.10 -- Piloto de 4 semanas",c:false}],
+deps:["Story 2.1 (auditoria)","Story 2.2 (Hub Central)","Credenciais Eleven Labs"],
+risks:[{r:"Ferramentas de video IA sem API",m:"Workflow manual assistido como alternativa"},{r:"Qualidade abaixo do padrao",m:"Aprovacao humana obrigatoria"},{r:"Eleven Labs com limitacoes de quota",m:"Verificar plano antes de implementar"}]},
+
+{id:"2.4",epicId:2,title:"Integracao Trafego Pago + CRM + Funil de Leads",agent:"@dev",size:"M",status:"Draft",priority:"P1",
+desc:"Fechar o loop entre trafego pago e funil de vendas. Leads de anuncios chegam ao CRM com UTMs e atribuicao de campanha. ROI real calculado automaticamente.",
+ac:[{t:"Leads com UTM parameters completos no RD Station",c:false},{t:"Atribuicao de campanha preservada ate fechamento",c:false},{t:"Dashboard de atribuicao por campanha",c:false},{t:"ROI por campanha calculado automaticamente",c:false},{t:"Integracao com Meta Ads + Google Ads",c:false},{t:"Alertas de CPL acima do threshold",c:false},{t:"Dados de segmento enriquecidos com dados da campanha",c:false},{t:"Dados de campanha preservados no handoff SDR-IS-FS",c:false},{t:"Relatorio semanal automatico de performance",c:false}],
+tasks:[{t:"T2.4.1 -- Auditar UTM strategy atual",c:false},{t:"T2.4.2 -- Criar padrao de UTM parameters",c:false},{t:"T2.4.3 -- Configurar integracoes nativas Meta/Google para RD",c:false},{t:"T2.4.4 -- Implementar preservacao de UTMs no funil",c:false},{t:"T2.4.5 -- Implementar calculo de ROI por campanha",c:false},{t:"T2.4.6 -- Implementar dashboard de atribuicao",c:false},{t:"T2.4.7 -- Configurar alertas de CPL",c:false},{t:"T2.4.8 -- Criar relatorio semanal",c:false},{t:"T2.4.9 -- Testar ciclo completo",c:false},{t:"T2.4.10 -- Documentar convencao de UTMs",c:false}],
+deps:["Story 1.2 (RD Station configurado)","Story 2.1 (auditoria)","APIs Meta Ads e Google Ads"],
+risks:[{r:"RD Station com limitacoes de integracao",m:"Webhooks como fallback"},{r:"UTMs perdidos no funil",m:"Auditoria tecnica das landing pages"},{r:"Dados historicos sem UTMs",m:"Baseline a partir de data X"}]},
+
+{id:"2.5",epicId:2,title:"Dashboard Unificado de Performance de Marketing",agent:"@dev",size:"M",status:"Draft",priority:"P1",
+desc:"Consolida metricas de trafego pago, engajamento organico, geracao de leads e funil de conversao em uma unica tela. Centro de comando para decisoes baseadas em dados.",
+ac:[{t:"Dashboard unico com dados de ads, organico, CRM e funil",c:false},{t:"Metricas: CPL, CTR, taxa de conversao, ROAS",c:false},{t:"Comparativo periodo atual vs anterior",c:false},{t:"Segmentacao por canal, campanha e periodo",c:false},{t:"Atualizacao automatica: ads diario, CRM a cada hora",c:false},{t:"Alertas de KPI critico",c:false},{t:"Acesso segmentado por perfil",c:false},{t:"Validado com Analista de Performance",c:false},{t:"Relatorio semanal exportavel",c:false}],
+tasks:[{t:"T2.5.1 -- Workshop de KPIs",c:false},{t:"T2.5.2 -- Definir stack de dashboard com @architect",c:false},{t:"T2.5.3 -- Implementar connectors (Meta, Google, RD)",c:false},{t:"T2.5.4 -- Modelar dados",c:false},{t:"T2.5.5 -- Desenvolver views de KPIs",c:false},{t:"T2.5.6 -- Integrar atribuicao (Story 2.4)",c:false},{t:"T2.5.7 -- Implementar alertas",c:false},{t:"T2.5.8 -- Configurar relatorio semanal",c:false},{t:"T2.5.9 -- Configurar acesso por perfil",c:false},{t:"T2.5.10 -- Executar UAT",c:false}],
+deps:["Story 2.4 (integracao trafego + CRM)","Story 1.2 (RD Station)","Epic 09 Story 9.2 (arquitetura)"],
+risks:[{r:"APIs de ads com rate limits",m:"Dados diarios reduzem chamadas"},{r:"KPIs mudam constantemente",m:"Workshop obrigatorio antes de implementar"},{r:"Stack de BI duplicada",m:"Coordenar com @architect para BI central"}]},
+
+{id:"2.6",epicId:2,title:"Automacoes de Social Media com IA",agent:"@dev",size:"M",status:"Draft",priority:"P1",
+desc:"Automacoes integradas ao Hub Central: conteudo aprovado pode ser agendado e publicado automaticamente, copies para diferentes plataformas gerados por IA. Meta: +3x conteudos/semana.",
+ac:[{t:"Integracao com Instagram + LinkedIn (minimo)",c:false},{t:"Agendamento de posts direto do hub",c:false},{t:"Geracao de copy adaptado por plataforma",c:false},{t:"Calendario editorial visual",c:false},{t:"Aprovacao antes de agendar (obrigatoria)",c:false},{t:"Relatorio de publicacoes e engajamento",c:false},{t:"Sugestao de horario otimo",c:false},{t:"Reaproveitamento de conteudo com IA",c:false},{t:"Piloto de 4 semanas",c:false}],
+tasks:[{t:"T2.6.1 -- Mapear APIs de social media",c:false},{t:"T2.6.2 -- Verificar plataforma de agendamento com CEO",c:false},{t:"T2.6.3 -- Implementar geracao de copy por plataforma",c:false},{t:"T2.6.4 -- Implementar agendamento de posts",c:false},{t:"T2.6.5 -- Implementar sugestao de horario",c:false},{t:"T2.6.6 -- Criar calendario editorial",c:false},{t:"T2.6.7 -- Implementar reaproveitamento de conteudo",c:false},{t:"T2.6.8 -- Integrar ao dashboard (Story 2.5)",c:false},{t:"T2.6.9 -- Piloto de 4 semanas",c:false},{t:"T2.6.10 -- Medir volume antes e depois",c:false}],
+deps:["Story 2.2 (Hub Central)","Story 2.5 (dashboard)","APIs Instagram/LinkedIn"],
+risks:[{r:"Instagram API com restricoes severas",m:"Fallback com ferramenta de agendamento"},{r:"Qualidade do copy IA",m:"Brand guidelines no prompt, aprovacao humana"},{r:"API de social media muda politicas",m:"Implementacao resiliente"}]},
+
+{id:"2.7",epicId:2,title:"Playbook de IA para o Time de Marketing",agent:"@analyst + @pm",size:"S",status:"Draft",priority:"P1",
+desc:"Guia de como usar o Hub Central, pipeline de video, automacoes de social media e governanca de uso de IA. Mitiga o risco de fragmentacao voltar.",
+ac:[{t:"Playbook publicado na mesma plataforma da Story 1.7",c:false},{t:"Secoes: Hub Central, pipeline video, automacoes social, ferramentas aprovadas, politica, exemplos, FAQ",c:false},{t:"Revisado e aprovado por Thalison e Helaine",c:false},{t:"Politica de governanca de IA clara",c:false},{t:"Processo de atualizacao definido",c:false},{t:"Sessao de onboarding para as 14 pessoas",c:false},{t:"Mobile-friendly",c:false},{t:"Feedback apos 30 dias e v2.0",c:false}],
+tasks:[{t:"T2.7.1 -- Definir estrutura com Thalison e Helaine",c:false},{t:"T2.7.2 -- Redigir secao Hub Central",c:false},{t:"T2.7.3 -- Redigir secao pipeline de video",c:false},{t:"T2.7.4 -- Redigir secao automacoes social",c:false},{t:"T2.7.5 -- Inventario de ferramentas aprovadas",c:false},{t:"T2.7.6 -- Politica de governanca de IA",c:false},{t:"T2.7.7 -- Exemplos praticos",c:false},{t:"T2.7.8 -- FAQ",c:false},{t:"T2.7.9 -- Revisao e aprovacao",c:false},{t:"T2.7.10 -- Onboarding do time",c:false},{t:"T2.7.11 -- Publicar v2.0 apos feedback",c:false}],
+deps:["Story 2.1 (inventario)","Stories 2.2, 2.3, 2.6 (conteudo das secoes)"],
+risks:[{r:"Playbook obsoleto rapidamente",m:"Ciclo de revisao mensal, dono designado"},{r:"Time nao adota",m:"Referenciar nas automacoes"},{r:"Politica muito rigida",m:"Equilibrar controle com autonomia"}]},
+
+{id:"2.8",epicId:2,title:"QA Gate -- Validacao e Testes do Hub Completo",agent:"@qa",size:"M",status:"Draft",priority:"P1",
+desc:"QA Gate que valida o hub de marketing ponta a ponta. Multiplas integracoes testadas: Hub, Eleven Labs, ferramentas de video, plataformas de ads, social media, CRM.",
+ac:[{t:"Fluxo completo end-to-end testado",c:false},{t:"Fluxo de video testado",c:false},{t:"Fluxo de lead com UTM testado",c:false},{t:"Nenhum conteudo publicado sem aprovacao (teste bypass falha)",c:false},{t:"Dashboard com dados corretos (tolerancia 5%)",c:false},{t:"Performance: hub < 3 segundos",c:false},{t:"Resiliencia testada: falhas de APIs externas",c:false},{t:"LGPD validada",c:false},{t:"Acessos por perfil funcionando",c:false},{t:"Relatorio GO/NO-GO",c:false}],
+tasks:[{t:"T2.8.1 -- Plano de testes completo",c:false},{t:"T2.8.2 -- Preparar ambiente de teste",c:false},{t:"T2.8.3 -- Testes do hub (briefing, geracao, aprovacao)",c:false},{t:"T2.8.4 -- Testes pipeline de video",c:false},{t:"T2.8.5 -- Testes integracao ads",c:false},{t:"T2.8.6 -- Testes social media",c:false},{t:"T2.8.7 -- Testes dashboard",c:false},{t:"T2.8.8 -- Testes de performance",c:false},{t:"T2.8.9 -- Testes de resiliencia",c:false},{t:"T2.8.10 -- Relatorio GO/NO-GO",c:false}],
+deps:["Stories 2.2, 2.3, 2.4, 2.5, 2.6 concluidas","Story 2.7 pronto","Contas de teste em plataformas"],
+risks:[{r:"Testes publicam em canais reais",m:"Contas de teste OBRIGATORIAMENTE"},{r:"APIs externas indisponiveis",m:"Documentar comportamento e usar mocks"},{r:"Issues no fluxo de aprovacao",m:"NON-NEGOTIABLE do CEO -- bloqueia go-live"}]},
+
+// EPIC 03
+{id:"3.1",epicId:3,title:"Auditoria do Totvs -- Mapeamento de Dados Disponiveis via API",agent:"@analyst + @data-engineer",size:"M",status:"Draft",priority:"P1",desc:"Auditoria tecnica completa do Totvs: APIs, dados disponiveis, qualidade de dados, plano B para limitacoes.",ac:[{t:"Inventario de dados no Totvs",c:true},{t:"API documentada: endpoints, auth, rate limits",c:true},{t:"Qualidade dos dados avaliada",c:false},{t:"Dados criticos por story mapeados",c:true},{t:"Limitacoes da API documentadas",c:true},{t:"Plano B definido para limitacoes",c:true},{t:"Entidade responsavel no Totvs identificada",c:false},{t:"Documento revisado com CFO",c:false},{t:"Recomendacoes tecnicas publicadas",c:true}],tasks:[{t:"T3.1.1 -- Entrevista com CFO",c:false},{t:"T3.1.2 -- Entrevista com TI (Rafael)",c:false},{t:"T3.1.3 -- Auditar API do Totvs",c:true},{t:"T3.1.4 -- Mapear entidades e campos",c:true},{t:"T3.1.5 -- Avaliar qualidade dos dados",c:false},{t:"T3.1.6 -- Documentar limitacoes",c:true},{t:"T3.1.7 -- Definir plano B",c:true},{t:"T3.1.8 -- Mapear dados por story downstream",c:true},{t:"T3.1.9 -- Compilar relatorio",c:false},{t:"T3.1.10 -- Publicar recomendacoes",c:true}],deps:["Acesso ao Totvs (leitura)","Disponibilidade do CFO","Documentacao do Totvs"],risks:[{r:"API nao disponivel",m:"Plano B via exportacao de dados"},{r:"Dados sensiveis expostos",m:"Ambiente de somente leitura"},{r:"Totvs customizado",m:"Mapear diretamente na instancia"}]},
+{id:"3.2",epicId:3,title:"Dashboard Financeiro em Tempo Real",agent:"@dev",size:"L",status:"Draft",priority:"P1",desc:"Dashboard central alimentado pelo Totvs com visibilidade em tempo real dos indicadores financeiros criticos para CEO e CFO.",ac:[{t:"Dashboard operacional com dados do Totvs",c:false},{t:"KPIs: caixa, CP, CR, DRE, margem",c:false},{t:"Comparativo mes atual vs anterior e vs budget",c:false},{t:"Alertas de desvio de budget > 15%",c:false},{t:"Fluxo de caixa projetado 30/60/90 dias",c:false},{t:"Acesso segmentado por perfil",c:false},{t:"Atualizacao no maximo a cada 1 hora",c:false},{t:"Validado pelo CFO",c:false},{t:"Drill-down para dados de origem",c:false}],tasks:[{t:"T3.2.1 -- Workshop com CFO",c:false},{t:"T3.2.2 -- Definir stack com @architect",c:false},{t:"T3.2.3 -- Pipeline de dados Totvs",c:false},{t:"T3.2.4 -- Modelar dados financeiros",c:false},{t:"T3.2.5 -- DRE simplificado em tempo real",c:false},{t:"T3.2.6 -- Projecao de fluxo de caixa",c:false},{t:"T3.2.7 -- Comparativo vs budget",c:false},{t:"T3.2.8 -- Sistema de alertas",c:false},{t:"T3.2.9 -- Controle de acesso",c:false},{t:"T3.2.10 -- Validacao com CFO",c:false},{t:"T3.2.11 -- Go-live com monitoramento",c:false}],deps:["Story 3.1 (auditoria Totvs)","Epic 09 Story 9.2 (arquitetura)"],risks:[{r:"Dados inconsistentes entre modulos",m:"Reconciliacao automatica com alertas"},{r:"CFO nao valida os numeros",m:"Workshop inicial e validacao rigorosa"},{r:"Seguranca de dados sensiveis",m:"Criptografia e controle de acesso"}]},
+{id:"3.3",epicId:3,title:"Automacao de Relatorios Contabeis e Fiscais",agent:"@dev",size:"M",status:"Draft",priority:"P1",desc:"Automacao dos relatorios padrao: DRE, Fluxo de Caixa, Balanco Patrimonial e obrigacoes fiscais. Meta: fechamento mensal < 1 dia.",ac:[{t:"DRE mensal automatico no dia 1",c:false},{t:"Fluxo de Caixa mensal automatico",c:false},{t:"Balanco Patrimonial trimestral automatico",c:false},{t:"Relatorio de obrigacoes fiscais automatico",c:false},{t:"Fluxo de validacao: IA gera, Fiscal valida, aprovacao, entrega",c:false},{t:"Flag de itens que precisam atencao manual",c:false},{t:"Comparativo automatico vs periodo anterior",c:false},{t:"Historico de 24 meses",c:false},{t:"Geracao em < 15 min",c:false},{t:"Validado por 2 ciclos mensais",c:false}],tasks:[{t:"T3.3.1 -- Definir relatorios prioritarios com time",c:false},{t:"T3.3.2 -- Mapear regras de negocio de cada relatorio",c:false},{t:"T3.3.3 -- Pipeline de extracao de dados do Totvs",c:false},{t:"T3.3.4 -- Geracao automatica do DRE",c:false},{t:"T3.3.5 -- Geracao automatica do Fluxo de Caixa",c:false},{t:"T3.3.6 -- Geracao automatica do Balanco",c:false},{t:"T3.3.7 -- Relatorio de obrigacoes fiscais",c:false},{t:"T3.3.8 -- Deteccao de inconsistencias",c:false},{t:"T3.3.9 -- Fluxo de validacao",c:false},{t:"T3.3.10 -- Comparativo vs periodo anterior",c:false},{t:"T3.3.11 -- Validar em 2 ciclos",c:false}],deps:["Story 3.1 (auditoria Totvs)","Story 3.2 (compartilhar pipeline)"],risks:[{r:"Regras contabeis nao documentadas",m:"Mapeamento obrigatorio com time Contabil"},{r:"Relatorio com erro financeiro",m:"Validacao humana obrigatoria"},{r:"Compliance tributario",m:"Validacao pelo Fiscal"}]},
+{id:"3.4",epicId:3,title:"Regua de Cobranca Inteligente com IA",agent:"@dev",size:"M",status:"Draft",priority:"P1",desc:"Sequencia automatizada de contatos com inadimplentes, personalizada por perfil. Meta: +25% na taxa de recuperacao.",ac:[{t:"Regua ativa para todos os clientes em atraso",c:false},{t:"3 etapas automatizadas: D-3, D0, D+5/D+15/D+30",c:false},{t:"Personalizacao por perfil de cliente",c:false},{t:"Email obrigatorio, WhatsApp como upgrade",c:false},{t:"Escalonamento automatico apos D+30",c:false},{t:"Registro de todos os contatos",c:false},{t:"Dashboard de cobranca com aging",c:false},{t:"Pausa automatica quando cliente responde",c:false},{t:"Taxa de recuperacao monitorada",c:false},{t:"Piloto de 1 mes",c:false}],tasks:[{t:"T3.4.1 -- Definir regua com time de Cobranca",c:false},{t:"T3.4.2 -- Mapear dados de inadimplencia no Totvs",c:false},{t:"T3.4.3 -- Templates de comunicacao",c:false},{t:"T3.4.4 -- Engine de cobranca",c:false},{t:"T3.4.5 -- Envio automatizado de emails",c:false},{t:"T3.4.6 -- Envio por WhatsApp",c:false},{t:"T3.4.7 -- Deteccao de resposta",c:false},{t:"T3.4.8 -- Escalonamento para negociacao humana",c:false},{t:"T3.4.9 -- Registro de contatos",c:false},{t:"T3.4.10 -- Dashboard de cobranca",c:false},{t:"T3.4.11 -- Piloto de 1 mes",c:false}],deps:["Story 3.1 (dados de inadimplencia)","Canal de comunicacao (email, WhatsApp)"],risks:[{r:"Tom inadequado prejudicando relacionamento",m:"Templates revisados por CFO antes de ativar"},{r:"Dados de contato desatualizados",m:"Limpeza de dados antes de ativar"}]},
+{id:"3.5",epicId:3,title:"Sistema de Cotacao e Compras Automatizado",agent:"@dev",size:"M",status:"Draft",priority:"P1",desc:"Centraliza solicitacoes de compra, automatiza cotacao com fornecedores, compara propostas e gera recomendacao de compra. Decisao final sempre humana.",ac:[{t:"Solicitacoes centralizadas (nao mais email/WhatsApp)",c:false},{t:"Cotacao automatizada com fornecedores cadastrados",c:false},{t:"Minimo 3 cotacoes acima do threshold",c:false},{t:"Comparativo automatico de cotacoes",c:false},{t:"Recomendacao com justificativa pela IA",c:false},{t:"Fluxo de aprovacao humana por alcada",c:false},{t:"Integracao com Totvs (ordem de compra)",c:false},{t:"Dashboard de compras",c:false},{t:"Historico de fornecedores e cotacoes",c:false},{t:"Piloto de 2 meses",c:false}],tasks:[{t:"T3.5.1 -- Definir fluxo e alcadas com CFO",c:false},{t:"T3.5.2 -- Mapear base de fornecedores",c:false},{t:"T3.5.3 -- Modulo de solicitacao de compra",c:false},{t:"T3.5.4 -- Automacao de RFQ (Request for Quotation)",c:false},{t:"T3.5.5 -- Coleta e normalizacao de cotacoes",c:false},{t:"T3.5.6 -- Comparativo automatico",c:false},{t:"T3.5.7 -- Recomendacao de compra com IA",c:false},{t:"T3.5.8 -- Fluxo de aprovacao",c:false},{t:"T3.5.9 -- Integracao com Totvs",c:false},{t:"T3.5.10 -- Dashboard de compras",c:false},{t:"T3.5.11 -- Piloto de 2 meses",c:false}],deps:["Story 3.1 (auditoria Totvs)","Escrita no Totvs (validar)","CFO para thresholds e alcadas"],risks:[{r:"Fornecedores nao respondendo",m:"Formulario web como alternativa ao email"},{r:"API Totvs sem suporte a escrita",m:"Entrada manual como fallback"},{r:"Algoritmo escolhendo fornecedor inadequado",m:"Decisao final SEMPRE humana"}]},
+{id:"3.6",epicId:3,title:"Analise de Folha e Projecao de Economia",agent:"@data-engineer",size:"M",status:"Draft",priority:"P1",desc:"Analise de folha com inteligencia: cruzar dados de folha com processos de cada setor e gerar projecoes de economia realistas. Meta: identificar caminho para -30% via automacao.",ac:[{t:"Dados de folha normalizados por setor e cargo",c:false},{t:"Distribuicao de folha por setor documentada",c:false},{t:"Cruzamento com processos mapeados",c:false},{t:"Projecao de economia por automacao",c:false},{t:"Ranking de oportunidades (ROI x Esforco)",c:false},{t:"Relatorio executivo top 5 oportunidades",c:false},{t:"Dados tratados com maxima seguranca (LGPD)",c:false},{t:"Projecoes marcadas como estimativas",c:false},{t:"Revisado pelo CFO",c:false}],tasks:[{t:"T3.6.1 -- Definir fonte de dados de folha",c:false},{t:"T3.6.2 -- Extrair e normalizar dados (anonimizados)",c:false},{t:"T3.6.3 -- Cruzar com mapeamentos de outros epics",c:false},{t:"T3.6.4 -- Modelo de analise de correlacao",c:false},{t:"T3.6.5 -- Projecao de economia por automacao",c:false},{t:"T3.6.6 -- Matriz ROI x Esforco",c:false},{t:"T3.6.7 -- Relatorio executivo top 5",c:false},{t:"T3.6.8 -- View no dashboard (restrita)",c:false},{t:"T3.6.9 -- Controles de seguranca",c:false},{t:"T3.6.10 -- Revisao com CFO",c:false}],deps:["Story 3.1 (Totvs)","Epic 06 (dados de folha detalhados)","Mapeamentos de processo dos outros Epics"],risks:[{r:"Dados de folha expostos indevidamente",m:"Acesso restrito a CFO e CEO, anonimizacao"},{r:"Projecoes irrealistas",m:"Documentar como estimativas, incluir range"},{r:"Resistencia do CFO",m:"Posicionar como otimizacao, nao corte"}]},
+{id:"3.7",epicId:3,title:"Integracao Totvs para BI Central da Empresa",agent:"@data-engineer",size:"L",status:"Draft",priority:"P1",desc:"Pilar financeiro do hub de integracao central: dados do Totvs disponiveis no BI central para analises cruzadas (CAC, margem por produto).",ac:[{t:"Pipeline Totvs para BI central operacional",c:false},{t:"Entidades financeiras no BI: DRE, Balanco, CP/CR, Folha, Compras",c:false},{t:"Reconciliacao < 0.1% de divergencia",c:false},{t:"Latencia definida com CFO",c:false},{t:"Analises cruzadas possiveis (CAC)",c:false},{t:"Documentacao do modelo de dados",c:false},{t:"Controles de seguranca aplicados",c:false},{t:"Reconciliacao automatica com alertas",c:false},{t:"Alinhado com Story 9.2 (Epic 09)",c:false},{t:"Validado pelo CFO e TI",c:false}],tasks:[{t:"T3.7.1 -- Alinhar com Story 9.2",c:false},{t:"T3.7.2 -- Modelar entidades financeiras (dimensional)",c:false},{t:"T3.7.3 -- Pipeline de extracao do Totvs",c:false},{t:"T3.7.4 -- Transformacoes para modelo dimensional",c:false},{t:"T3.7.5 -- Carga no BI central",c:false},{t:"T3.7.6 -- Reconciliacao automatica",c:false},{t:"T3.7.7 -- Analises cruzadas iniciais",c:false},{t:"T3.7.8 -- Documentar modelo de dados",c:false},{t:"T3.7.9 -- Controles de seguranca",c:false},{t:"T3.7.10 -- Validacao e go-live",c:false}],deps:["Story 3.1 (mecanismo de extracao)","Story 3.2 (compartilhar pipeline)","Epic 09 Story 9.2 (BLOQUEADOR)"],risks:[{r:"Epic 09 atrasado",m:"Iniciar modelagem e pipeline antecipadamente"},{r:"Dados inconsistentes",m:"Reconciliacao automatica com alertas"},{r:"Seguranca no BI compartilhado",m:"Dados financeiros isolados no BI"}]},
+{id:"3.8",epicId:3,title:"QA Gate -- Validacao Financeira e Seguranca de Dados",agent:"@qa",size:"M",status:"Draft",priority:"P1",desc:"QA Gate mais critico de todos os epics. Dados financeiros tem implicacoes legais, fiscais e de negocio.",ac:[{t:"Dashboard conferido contra Totvs (divergencia < 0.1%)",c:false},{t:"Relatorios validados por Contabil e Fiscal em ciclo real",c:false},{t:"Regua de cobranca testada sem clientes reais",c:false},{t:"Sistema de compras testado com simulacoes",c:false},{t:"Analise de folha com dados anonimizados validada",c:false},{t:"Integracao BI reconciliada 100%",c:false},{t:"Testes de acesso nao autorizado",c:false},{t:"LGPD validada",c:false},{t:"Performance: dashboard < 5 segundos",c:false},{t:"Relatorio GO/NO-GO com validacao CFO",c:false}],tasks:[{t:"T3.8.1 -- Plano de testes completo",c:false},{t:"T3.8.2 -- Ambiente de teste com dados simulados",c:false},{t:"T3.8.3 -- Conferencia dashboard vs Totvs",c:false},{t:"T3.8.4 -- Validacao de relatorios com Contabil/Fiscal",c:false},{t:"T3.8.5 -- Testes da regua de cobranca",c:false},{t:"T3.8.6 -- Testes do sistema de compras",c:false},{t:"T3.8.7 -- Testes de seguranca",c:false},{t:"T3.8.8 -- Testes de LGPD",c:false},{t:"T3.8.9 -- Testes de performance",c:false},{t:"T3.8.10 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 3.2-3.7 concluidas","CFO e Contabil/Fiscal disponiveis"],risks:[{r:"Time Contabil/Fiscal sem disponibilidade",m:"Agendar com antecedencia"},{r:"LGPD sem consultoria juridica",m:"Documentar controles, escalar para juridico"}]},
+
+// EPIC 04
+{id:"4.1",epicId:4,title:"Mapeamento dos Fluxos Operacionais Atuais (As-Is)",agent:"@analyst",size:"M",status:"Draft",priority:"P2",desc:"Documentar estado atual de todos os processos operacionais e logisticos, identificando gargalos, pontos de rastreabilidade fragil e oportunidades de automacao.",ac:[{t:"Mapa de processo: Recebimento",c:false},{t:"Mapa de processo: Gestao de Estoque",c:false},{t:"Mapa de processo: Expedicao e Embalagem",c:false},{t:"Mapa de processo: Logistica Nacional",c:false},{t:"Mapa de processo: Importacao",c:false},{t:"Mapa de processo: Controle de Patrimonio",c:false},{t:"Pontos de rastreabilidade Anvisa identificados",c:false},{t:"Ferramentas atuais por processo listadas",c:false},{t:"Gargalos priorizados",c:false},{t:"Validado pelo Diretor de Operacoes",c:false}],tasks:[{t:"T4.1.1 -- Entrevistas com responsaveis de cada setor",c:false},{t:"T4.1.2 -- Fluxo de Recebimento",c:false},{t:"T4.1.3 -- Fluxo de Estoque",c:false},{t:"T4.1.4 -- Fluxo de Expedicao",c:false},{t:"T4.1.5 -- Fluxo de Logistica Nacional",c:false},{t:"T4.1.6 -- Fluxo de Importacao",c:false},{t:"T4.1.7 -- Fluxo de Patrimonio",c:false},{t:"T4.1.8 -- Mapear rastreabilidade Anvisa",c:false},{t:"T4.1.9 -- Levantar ferramentas atuais",c:false},{t:"T4.1.10 -- Compilar e priorizar gargalos",c:false},{t:"T4.1.11 -- Validacao com Diretor",c:false},{t:"T4.1.12 -- Documento final com BPMN",c:false}],deps:["Nenhuma (story inicial do Epic 04)"],risks:[{r:"Dificuldade de acesso ao Diretor",m:"Backup com supervisores"},{r:"Processos nao documentados",m:"Walkthrough presencial"},{r:"Totvs subutilizado",m:"Cruzar sistema com pratica real"}]},
+{id:"4.2",epicId:4,title:"Sistema de Gestao de Estoque com Rastreabilidade",agent:"@dev",size:"L",status:"Draft",priority:"P2",desc:"Gestao de estoque em tempo real com rastreabilidade Anvisa por numero de serie para cada equipamento medico.",ac:[{t:"Estoque em tempo real operacional",c:false},{t:"Rastreabilidade por numero de serie (Anvisa)",c:false},{t:"Integracao com Totvs",c:false},{t:"Alertas de estoque minimo e maximo",c:false},{t:"Historico de movimentacoes por equipamento",c:false},{t:"Dashboard de inventario",c:false},{t:"Acuracidade > 98%",c:false}],tasks:[{t:"T4.2.1 -- Definir modelo de dados de estoque",c:false},{t:"T4.2.2 -- Implementar registro por numero de serie",c:false},{t:"T4.2.3 -- Integrar com Totvs",c:false},{t:"T4.2.4 -- Alertas de estoque",c:false},{t:"T4.2.5 -- Dashboard de inventario",c:false},{t:"T4.2.6 -- Testes com equipe de estoque",c:false}],deps:["Story 4.1 (mapeamento)","Integracao com Totvs"],risks:[{r:"Integracao Totvs falhar",m:"PoC de integracao antes"},{r:"Perda de rastreabilidade na migracao",m:"Dupla operacao"}]},
+{id:"4.3",epicId:4,title:"Dashboard Operacional -- Visibilidade em Tempo Real",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Dashboard para o Diretor de Operacoes com visibilidade completa de estoque, logistica e expedicao.",ac:[{t:"Dashboard operacional em tempo real",c:false},{t:"Metricas de estoque, expedicao, logistica",c:false},{t:"Alertas operacionais",c:false},{t:"Acesso por perfil",c:false},{t:"Mobile-friendly",c:false}],tasks:[{t:"T4.3.1 -- Workshop de KPIs com Diretor",c:false},{t:"T4.3.2 -- Implementar connectors",c:false},{t:"T4.3.3 -- Desenvolver dashboard",c:false},{t:"T4.3.4 -- Configurar alertas",c:false},{t:"T4.3.5 -- Validacao com Diretor",c:false}],deps:["Story 4.2 (dados de estoque)","Story 4.1 (metricas definidas)"],risks:[{r:"Dados fragmentados",m:"Consolidar antes de construir dashboard"}]},
+{id:"4.4",epicId:4,title:"Automacao de Recebimento e Expedicao",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Automatizar processos de recebimento de materiais e expedicao de pedidos com checklist digital e rastreio.",ac:[{t:"Checklist digital de recebimento",c:false},{t:"Registro automatico no sistema",c:false},{t:"Checklist de expedicao com rastreio",c:false},{t:"Integracao com transportadoras",c:false},{t:"Rastreabilidade Anvisa mantida",c:false}],tasks:[{t:"T4.4.1 -- Digitalizar checklist de recebimento",c:false},{t:"T4.4.2 -- Implementar registro automatico",c:false},{t:"T4.4.3 -- Digitalizar checklist de expedicao",c:false},{t:"T4.4.4 -- Integrar com transportadoras",c:false},{t:"T4.4.5 -- Testes com equipe",c:false}],deps:["Story 4.1 (fluxos mapeados)","Story 4.2 (sistema de estoque)"],risks:[{r:"Resistencia do time operacional",m:"Treinamento progressivo"}]},
+{id:"4.5",epicId:4,title:"Controle Digital de Patrimonio",agent:"@dev",size:"S",status:"Draft",priority:"P2",desc:"Sistema digital para controle de ativos e patrimonio da empresa.",ac:[{t:"Cadastro digital de ativos",c:false},{t:"Movimentacao interna rastreada",c:false},{t:"Depreciacao calculada automaticamente",c:false},{t:"Dashboard de patrimonio",c:false}],tasks:[{t:"T4.5.1 -- Modelar dados de patrimonio",c:false},{t:"T4.5.2 -- Implementar cadastro digital",c:false},{t:"T4.5.3 -- Calculo de depreciacao",c:false},{t:"T4.5.4 -- Dashboard de patrimonio",c:false}],deps:["Story 4.1 (fluxo de patrimonio mapeado)"],risks:[{r:"Dados de ativos incompletos",m:"Inventario fisico antes de digitalizar"}]},
+{id:"4.6",epicId:4,title:"Integracao Logistica para Financeiro (Totvs)",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Integrar dados logisticos e de estoque com o sistema financeiro para custo de estoque e compras.",ac:[{t:"Custo de estoque disponivel no financeiro",c:false},{t:"Dados de compras integrados",c:false},{t:"Reconciliacao automatica",c:false},{t:"Alertas de divergencia",c:false}],tasks:[{t:"T4.6.1 -- Definir modelo de integracao com Epic 03",c:false},{t:"T4.6.2 -- Implementar pipeline de dados",c:false},{t:"T4.6.3 -- Reconciliacao automatica",c:false},{t:"T4.6.4 -- Testes de integracao",c:false}],deps:["Story 4.2 (sistema de estoque)","Epic 03 (financeiro)"],risks:[{r:"Dados inconsistentes entre sistemas",m:"Reconciliacao automatica"}]},
+{id:"4.7",epicId:4,title:"QA Gate -- Validacao Operacional e Compliance Anvisa",agent:"@qa",size:"M",status:"Draft",priority:"P2",desc:"QA Gate com foco em rastreabilidade Anvisa e integridade dos dados operacionais.",ac:[{t:"Rastreabilidade Anvisa 100% validada",c:false},{t:"Estoque reconciliado com Totvs",c:false},{t:"Fluxos de recebimento e expedicao testados",c:false},{t:"Dashboard operacional validado",c:false},{t:"Testes de performance",c:false},{t:"Relatorio GO/NO-GO",c:false}],tasks:[{t:"T4.7.1 -- Plano de testes",c:false},{t:"T4.7.2 -- Testes de rastreabilidade",c:false},{t:"T4.7.3 -- Testes de estoque",c:false},{t:"T4.7.4 -- Testes de expedicao/recebimento",c:false},{t:"T4.7.5 -- Testes do dashboard",c:false},{t:"T4.7.6 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 4.2-4.6 concluidas"],risks:[{r:"Falha na rastreabilidade Anvisa",m:"Bloqueador -- corrigir antes do go-live"}]},
+
+// EPIC 05
+{id:"5.1",epicId:5,title:"Mapeamento do Ciclo de Desenvolvimento Atual",agent:"@analyst",size:"S",status:"Draft",priority:"P2",desc:"Documentar ciclo de P&D, Q.A e Assistencia Tecnica. Base para digitalizacao.",ac:[{t:"Ciclo de P&D documentado",c:false},{t:"Processo de Q.A documentado",c:false},{t:"Assistencia Tecnica documentada",c:false},{t:"Documentos Anvisa inventariados",c:false},{t:"Pontos de rastreabilidade fragil identificados",c:false},{t:"Validado com Gerente de P&D",c:false}],tasks:[{t:"T5.1.1 -- Entrevistas com P&D",c:false},{t:"T5.1.2 -- Entrevistas com Q.A",c:false},{t:"T5.1.3 -- Entrevistas com Assistencia Tecnica",c:false},{t:"T5.1.4 -- Inventario de documentos Anvisa",c:false},{t:"T5.1.5 -- Identificar gaps de rastreabilidade",c:false},{t:"T5.1.6 -- Validacao com Vanessa Melo",c:false}],deps:["Nenhuma (fundacional do Epic 05)"],risks:[{r:"Documentacao inexistente",m:"Usar entrevistas como fonte primaria"}]},
+{id:"5.2",epicId:5,title:"Sistema de Gestao de Projetos de P&D",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Sistema digital para gestao de projetos de desenvolvimento de novos equipamentos.",ac:[{t:"Sistema operacional com ciclo de vida",c:false},{t:"Rastreabilidade de decisoes de projeto",c:false},{t:"Dashboard de projetos ativos",c:false},{t:"Integracao com Q.A (Story 5.3)",c:false}],tasks:[{t:"T5.2.1 -- Definir modelo de projeto com P&D",c:false},{t:"T5.2.2 -- Implementar gestao de ciclo de vida",c:false},{t:"T5.2.3 -- Dashboard de projetos",c:false},{t:"T5.2.4 -- Integracao com Q.A",c:false}],deps:["Story 5.1 (mapeamento)"],risks:[{r:"Resistencia a mudanca de processo",m:"Envolver time desde mapeamento"}]},
+{id:"5.3",epicId:5,title:"Registro Digital de Inspecoes e Testes Q.A",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Substituir registros em papel/planilha por sistema digital com rastreabilidade Anvisa.",ac:[{t:"Registro digital de inspecoes operacional",c:false},{t:"Rastreabilidade Anvisa completa",c:false},{t:"Historico de testes por equipamento",c:false},{t:"Alertas de nao-conformidade",c:false}],tasks:[{t:"T5.3.1 -- Modelo de dados de inspecao",c:false},{t:"T5.3.2 -- Implementar registro digital",c:false},{t:"T5.3.3 -- Rastreabilidade por numero de serie",c:false},{t:"T5.3.4 -- Alertas de nao-conformidade",c:false}],deps:["Story 5.1 (processo de Q.A mapeado)"],risks:[{r:"Perda de conformidade durante digitalizacao",m:"Processo manual em paralelo"}]},
+{id:"5.4",epicId:5,title:"Documentacao Anvisa -- Digitalizacao e Rastreabilidade",agent:"@dev",size:"L",status:"Draft",priority:"P2",desc:"Digitalizar toda a documentacao Anvisa com rastreabilidade completa.",ac:[{t:"Repositorio digital de documentacao Anvisa",c:false},{t:"Rastreabilidade por equipamento",c:false},{t:"Alertas de vencimento",c:false},{t:"Busca por tipo de documento e equipamento",c:false}],tasks:[{t:"T5.4.1 -- Estrutura do repositorio",c:false},{t:"T5.4.2 -- Digitalizacao de documentos",c:false},{t:"T5.4.3 -- Sistema de alertas de vencimento",c:false},{t:"T5.4.4 -- Busca e indexacao",c:false}],deps:["Story 5.1 (inventario de documentos)","Epic 08 (compliance)"],risks:[{r:"Volume de documentos muito grande",m:"Priorizacao por criticidade"}]},
+{id:"5.5",epicId:5,title:"Base de Conhecimento para Assistencia Tecnica",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Base de conhecimento centralizada para tecnicos de eletronica com historico de reparos e solucoes.",ac:[{t:"Base de conhecimento operacional",c:false},{t:"Busca por equipamento e sintoma",c:false},{t:"Historico de reparos por equipamento",c:false},{t:"Tempo de resolucao reduzido",c:false}],tasks:[{t:"T5.5.1 -- Modelo de dados da base",c:false},{t:"T5.5.2 -- Implementar base com busca",c:false},{t:"T5.5.3 -- Popular com conhecimento existente",c:false},{t:"T5.5.4 -- Validacao com tecnicos",c:false}],deps:["Story 5.1 (processo de assistencia mapeado)"],risks:[{r:"Conhecimento tacito nao documentado",m:"Sessoes de captura com tecnicos"}]},
+{id:"5.6",epicId:5,title:"Dashboard de Conformidade por Equipamento",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Dashboard mostrando status de conformidade Anvisa de cada equipamento produzido.",ac:[{t:"Dashboard de conformidade operacional",c:false},{t:"Status por equipamento",c:false},{t:"Alertas de nao-conformidade",c:false},{t:"Integracao com P&D e Q.A",c:false}],tasks:[{t:"T5.6.1 -- Definir metricas de conformidade",c:false},{t:"T5.6.2 -- Implementar dashboard",c:false},{t:"T5.6.3 -- Integrar com registros de Q.A",c:false},{t:"T5.6.4 -- Configurar alertas",c:false}],deps:["Story 5.3 (registros digitais)","Story 5.4 (documentacao)"],risks:[{r:"Dados incompletos",m:"Reconciliacao com registros manuais"}]},
+{id:"5.7",epicId:5,title:"Integracao Q.A para Liberacao de Lote no Estoque",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Integrar aprovacao de Q.A com liberacao de lote no estoque automaticamente.",ac:[{t:"Liberacao de lote automatica apos aprovacao Q.A",c:false},{t:"Bloqueio de lote reprovado",c:false},{t:"Rastreabilidade completa do fluxo",c:false},{t:"Integracao com Epic 04 (estoque)",c:false}],tasks:[{t:"T5.7.1 -- Definir fluxo de liberacao",c:false},{t:"T5.7.2 -- Implementar integracao Q.A-Estoque",c:false},{t:"T5.7.3 -- Bloqueio de lote reprovado",c:false},{t:"T5.7.4 -- Testes de integracao",c:false}],deps:["Story 5.3 (registro digital Q.A)","Epic 04 Story 4.2 (sistema de estoque)"],risks:[{r:"Fluxo de aprovacao complexo",m:"Comecar com fluxo simples"}]},
+{id:"5.8",epicId:5,title:"QA Gate -- Validacao Regulatoria e Tecnica",agent:"@qa",size:"M",status:"Draft",priority:"P2",desc:"QA Gate com foco em conformidade Anvisa e integridade dos registros digitais.",ac:[{t:"Rastreabilidade Anvisa validada",c:false},{t:"Registros digitais conferidos com manuais",c:false},{t:"Base de conhecimento validada",c:false},{t:"Dashboard de conformidade correto",c:false},{t:"Integracao Q.A-Estoque testada",c:false},{t:"Relatorio GO/NO-GO",c:false}],tasks:[{t:"T5.8.1 -- Plano de testes regulatorios",c:false},{t:"T5.8.2 -- Testes de rastreabilidade",c:false},{t:"T5.8.3 -- Testes de registros",c:false},{t:"T5.8.4 -- Testes do dashboard",c:false},{t:"T5.8.5 -- Testes de integracao",c:false},{t:"T5.8.6 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 5.2-5.7 concluidas"],risks:[{r:"Falha de conformidade Anvisa",m:"Bloqueador absoluto"}]},
+
+// EPIC 06
+{id:"6.1",epicId:6,title:"Mapeamento de Processos de RH e DP Atuais",agent:"@analyst",size:"S",status:"Draft",priority:"P2",desc:"Documentar todos os processos de RH e DP, identificando etapas manuais e oportunidades de automacao para a meta de -30% na folha.",ac:[{t:"Recrutamento documentado",c:false},{t:"Onboarding documentado",c:false},{t:"Folha de pagamento documentada",c:false},{t:"Controle de ponto documentado",c:false},{t:"Gestao de ferias documentada",c:false},{t:"Beneficios documentados",c:false},{t:"Oportunidades de automacao priorizadas",c:false},{t:"Validado com Cassiano Torres e Gisele Machado",c:false}],tasks:[{t:"T6.1.1 -- Entrevistas com RH e DP",c:false},{t:"T6.1.2 -- Documentar processos",c:false},{t:"T6.1.3 -- Identificar automacoes",c:false},{t:"T6.1.4 -- Validacao com lideres",c:false}],deps:["Nenhuma (fundacional)"],risks:[{r:"Processos fragmentados",m:"Walkthrough com cada area"}]},
+{id:"6.2",epicId:6,title:"Sistema de Recrutamento com Triagem por IA",agent:"@dev",size:"L",status:"Draft",priority:"P2",desc:"Triagem automatica de candidatos por IA com criterios definidos pelo RH.",ac:[{t:"Triagem automatica de CVs operacional",c:false},{t:"Criterios de triagem configuraveis",c:false},{t:"Ranking de candidatos por adequacao",c:false},{t:"Dashboard de vagas e candidatos",c:false},{t:"Piloto de 3 meses",c:false}],tasks:[{t:"T6.2.1 -- Definir criterios com RH",c:false},{t:"T6.2.2 -- Implementar triagem por IA",c:false},{t:"T6.2.3 -- Dashboard de recrutamento",c:false},{t:"T6.2.4 -- Piloto",c:false}],deps:["Story 6.1 (mapeamento)"],risks:[{r:"Vies na triagem por IA",m:"Auditoria periodica"}]},
+{id:"6.3",epicId:6,title:"Dashboard de Folha e Custo de Pessoal por Setor",agent:"@data-engineer",size:"M",status:"Draft",priority:"P2",desc:"Dashboard detalhado de custo de pessoal por setor, cargo e faixa salarial para o CFO e CEO.",ac:[{t:"Dashboard de folha operacional",c:false},{t:"Custo por setor, cargo, nivel",c:false},{t:"Tendencia mensal",c:false},{t:"Comparativo vs meta (-30%)",c:false},{t:"Acesso restrito CFO e CEO",c:false}],tasks:[{t:"T6.3.1 -- Definir metricas com CFO",c:false},{t:"T6.3.2 -- Pipeline de dados de folha",c:false},{t:"T6.3.3 -- Implementar dashboard",c:false},{t:"T6.3.4 -- Controles de seguranca",c:false}],deps:["Story 6.1 (mapeamento)","Story 3.1 (dados do Totvs)"],risks:[{r:"Dados sensiveis",m:"Acesso restrito e anonimizacao"}]},
+{id:"6.4",epicId:6,title:"Automacao de Onboarding Digital",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Onboarding digital automatizado para novos colaboradores: documentacao, treinamentos iniciais e integracao.",ac:[{t:"Onboarding digital operacional",c:false},{t:"Checklist automatizado de admissao",c:false},{t:"Trilha de treinamento inicial",c:false},{t:"Integracao com DP para documentos",c:false},{t:"Tempo de onboarding reduzido",c:false}],tasks:[{t:"T6.4.1 -- Definir jornada de onboarding",c:false},{t:"T6.4.2 -- Implementar checklist digital",c:false},{t:"T6.4.3 -- Trilha de treinamento",c:false},{t:"T6.4.4 -- Integracao com DP",c:false}],deps:["Story 6.1 (processo mapeado)"],risks:[{r:"Baixa adesao",m:"UX simples, mobile"}]},
+{id:"6.5",epicId:6,title:"Sistema de Controle de Ponto e Ferias",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"Digitalizar controle de ponto e gestao de ferias, eliminando processos manuais.",ac:[{t:"Controle de ponto digital",c:false},{t:"Gestao de ferias com fluxo de aprovacao",c:false},{t:"Integracao com Totvs (folha)",c:false},{t:"Dashboard de horas e banco de horas",c:false},{t:"Erros na folha < 0.5%",c:false}],tasks:[{t:"T6.5.1 -- Definir sistema de ponto com DP",c:false},{t:"T6.5.2 -- Implementar controle de ponto digital",c:false},{t:"T6.5.3 -- Implementar gestao de ferias",c:false},{t:"T6.5.4 -- Integracao com Totvs",c:false}],deps:["Story 6.1 (processo mapeado)"],risks:[{r:"Integracao com Totvs",m:"Validar API antes"}]},
+{id:"6.6",epicId:6,title:"Analise Preditiva de Custo de Pessoal",agent:"@data-engineer",size:"M",status:"Draft",priority:"P2",desc:"Modelo preditivo de custo de pessoal para planejamento orcamentario e identificacao de oportunidades de automacao.",ac:[{t:"Modelo preditivo operacional",c:false},{t:"Projecao de custo por cenario",c:false},{t:"Identificacao de oportunidades de automacao",c:false},{t:"Relatorio para CFO e CEO",c:false}],tasks:[{t:"T6.6.1 -- Definir modelo com CFO",c:false},{t:"T6.6.2 -- Implementar analise preditiva",c:false},{t:"T6.6.3 -- Gerar relatorio executivo",c:false},{t:"T6.6.4 -- Validacao com CFO",c:false}],deps:["Story 6.3 (dados de folha)","Story 3.6 (analise de folha)"],risks:[{r:"Modelo impreciso",m:"Range de cenarios (otimista/pessimista)"}]},
+{id:"6.7",epicId:6,title:"Plataforma de Desenvolvimento e Trilhas de Aprendizado",agent:"@dev",size:"M",status:"Draft",priority:"P2",desc:"LMS interno com trilhas de aprendizado personalizadas para desenvolvimento dos 130 colaboradores.",ac:[{t:"Plataforma LMS operacional",c:false},{t:"Trilhas por cargo e area",c:false},{t:"Acompanhamento de progresso",c:false},{t:"Dashboard de desenvolvimento",c:false}],tasks:[{t:"T6.7.1 -- Definir trilhas com RH",c:false},{t:"T6.7.2 -- Implementar LMS",c:false},{t:"T6.7.3 -- Popular com conteudo",c:false},{t:"T6.7.4 -- Dashboard de progresso",c:false}],deps:["Story 6.1 (mapeamento)"],risks:[{r:"Baixa adesao",m:"Gamificacao e incentivos"}]},
+{id:"6.8",epicId:6,title:"QA Gate -- Validacao de Conformidade Trabalhista",agent:"@qa",size:"S",status:"Draft",priority:"P2",desc:"QA Gate com foco em conformidade trabalhista, LGPD e seguranca de dados de colaboradores.",ac:[{t:"Controle de ponto validado legalmente",c:false},{t:"Dados de colaboradores seguros (LGPD)",c:false},{t:"Triagem por IA sem vies documentado",c:false},{t:"Relatorio GO/NO-GO",c:false}],tasks:[{t:"T6.8.1 -- Plano de testes trabalhistas",c:false},{t:"T6.8.2 -- Testes de conformidade",c:false},{t:"T6.8.3 -- Testes de LGPD",c:false},{t:"T6.8.4 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 6.2-6.7 concluidas"],risks:[{r:"Conformidade trabalhista",m:"Consultar juridico se necessario"}]},
+
+// EPIC 07
+{id:"7.1",epicId:7,title:"Mapeamento da Jornada do Cliente Atual",agent:"@analyst",size:"S",status:"Draft",priority:"P3",desc:"Mapear jornada pos-venda do cliente B2B de alto ticket: momentos de verdade, pontos de churn silencioso e oportunidades de automacao.",ac:[{t:"Jornada mapeada em formato visual",c:false},{t:"Etapas com acoes, canal, tempo e sentimento",c:false},{t:"5+ momentos de verdade identificados",c:false},{t:"3+ pontos de churn silencioso",c:false},{t:"Sistemas atuais por etapa levantados",c:false},{t:"Validado com time CX/CS",c:false},{t:"Automacoes priorizadas por impacto/esforco",c:false}],tasks:[{t:"T7.1.1 -- Preparar roteiro de entrevistas",c:false},{t:"T7.1.2 -- Conduzir entrevistas com CX/CS",c:false},{t:"T7.1.3 -- Analisar dados historicos",c:false},{t:"T7.1.4 -- Construir mapa da jornada",c:false},{t:"T7.1.5 -- Identificar MoT e gaps",c:false},{t:"T7.1.6 -- Priorizar automacoes",c:false},{t:"T7.1.7 -- Registrar no Supabase",c:false}],deps:["Acesso ao time CX/CS","Historico de atendimentos"],risks:[{r:"Dados historicos fragmentados",m:"Memoria do time como fonte primaria"}]},
+{id:"7.2",epicId:7,title:"Automacao da Jornada de Onboarding de Clientes no CRM",agent:"@dev",size:"M",status:"Draft",priority:"P3",desc:"Automatizar jornada de onboarding do cliente no RD Station: boas-vindas, instalacao, treinamento, acompanhamento.",ac:[{t:"Jornada de onboarding automatizada no CRM",c:false},{t:"Sequencia de comunicacoes automaticas",c:false},{t:"Alertas para time CX/CS em marcos criticos",c:false},{t:"Dashboard de onboarding de clientes",c:false},{t:"Tempo de onboarding reduzido em 40%",c:false}],tasks:[{t:"T7.2.1 -- Definir jornada com time CX/CS",c:false},{t:"T7.2.2 -- Configurar automacoes no RD Station",c:false},{t:"T7.2.3 -- Implementar alertas",c:false},{t:"T7.2.4 -- Dashboard de onboarding",c:false}],deps:["Story 7.1 (jornada mapeada)","Story 1.2 (RD Station configurado)"],risks:[{r:"CRM com limitacoes para automacao pos-venda",m:"Usar N8N como complemento"}]},
+{id:"7.3",epicId:7,title:"Plataforma de Treinamento Digital (LMS para Clientes)",agent:"@dev",size:"L",status:"Draft",priority:"P3",desc:"LMS para clientes (medicos e profissionais de saude) com conteudo em video sobre uso dos equipamentos.",ac:[{t:"LMS operacional para clientes",c:false},{t:"Conteudo em video por equipamento",c:false},{t:"Certificado de conclusao",c:false},{t:"Mobile-first (publico 35-55 anos)",c:false},{t:"Dashboard de engajamento",c:false}],tasks:[{t:"T7.3.1 -- Definir plataforma com @architect",c:false},{t:"T7.3.2 -- Implementar LMS",c:false},{t:"T7.3.3 -- Produzir conteudo com equipe de treinamento",c:false},{t:"T7.3.4 -- Implementar certificacao",c:false},{t:"T7.3.5 -- Dashboard de engajamento",c:false}],deps:["Story 7.1 (jornada mapeada)","Conteudo do time de treinamento"],risks:[{r:"Baixa adocao pelo publico",m:"UX simples, mobile, video"}]},
+{id:"7.4",epicId:7,title:"Sistema de NPS e Pesquisas Automatizadas",agent:"@dev",size:"S",status:"Draft",priority:"P3",desc:"Implementar NPS automatizado em momentos chave da jornada do cliente.",ac:[{t:"NPS automatizado em marcos da jornada",c:false},{t:"Pesquisas de satisfacao configuradas",c:false},{t:"Dashboard de NPS com tendencia",c:false},{t:"Alertas de detratores (NPS < 7)",c:false},{t:"Meta: NPS > 50",c:false}],tasks:[{t:"T7.4.1 -- Definir momentos de NPS na jornada",c:false},{t:"T7.4.2 -- Implementar envio automatico",c:false},{t:"T7.4.3 -- Dashboard de NPS",c:false},{t:"T7.4.4 -- Alertas de detratores",c:false}],deps:["Story 7.1 (jornada mapeada)","Story 7.2 (CRM configurado)"],risks:[{r:"Taxa de resposta baixa",m:"Pesquisa curta (1 pergunta NPS + 1 aberta)"}]},
+{id:"7.5",epicId:7,title:"Alertas de Churn com IA Preditiva",agent:"@dev",size:"M",status:"Draft",priority:"P3",desc:"Modelo preditivo de risco de churn baseado em sinais de comportamento do cliente.",ac:[{t:"Modelo de risco de churn operacional",c:false},{t:"Alertas automaticos para CX/CS",c:false},{t:"Score de saude por cliente",c:false},{t:"Dashboard de risco",c:false},{t:"Meta: reducao de churn em 20%",c:false}],tasks:[{t:"T7.5.1 -- Definir sinais de churn com CX/CS",c:false},{t:"T7.5.2 -- Implementar modelo preditivo",c:false},{t:"T7.5.3 -- Alertas automaticos",c:false},{t:"T7.5.4 -- Dashboard de risco",c:false}],deps:["Story 7.1 (jornada e dados historicos)","Story 7.2 (CRM com dados de interacao)"],risks:[{r:"Dados historicos insuficientes",m:"Regras manuais primeiro, evoluir para IA"}]},
+{id:"7.6",epicId:7,title:"Fluxo de Upsell e Expansao no CRM",agent:"@dev",size:"M",status:"Draft",priority:"P3",desc:"Automacao de identificacao e execucao de oportunidades de upsell/cross-sell no CRM.",ac:[{t:"Fluxo de upsell automatizado no CRM",c:false},{t:"Triggers baseados em comportamento do cliente",c:false},{t:"Notificacoes para time comercial",c:false},{t:"Dashboard de receita de expansao",c:false},{t:"Meta: +15% receita de expansao",c:false}],tasks:[{t:"T7.6.1 -- Definir criterios de upsell com Comercial e CX",c:false},{t:"T7.6.2 -- Configurar triggers no CRM",c:false},{t:"T7.6.3 -- Notificacoes para time comercial",c:false},{t:"T7.6.4 -- Dashboard de expansao",c:false}],deps:["Story 7.2 (CRM configurado)","Epic 01 (processos comerciais)"],risks:[{r:"CRM sem suporte a automacao de upsell",m:"Usar N8N como intermediario"}]},
+{id:"7.7",epicId:7,title:"Dashboard de Saude da Carteira de Clientes",agent:"@dev",size:"M",status:"Draft",priority:"P3",desc:"Dashboard consolidado mostrando saude da carteira: NPS, engajamento, risco de churn, oportunidades de expansao.",ac:[{t:"Dashboard de saude da carteira operacional",c:false},{t:"Score de saude por cliente",c:false},{t:"NPS integrado",c:false},{t:"Risco de churn integrado",c:false},{t:"Oportunidades de upsell visiveis",c:false},{t:"Segmentacao por perfil de cliente",c:false}],tasks:[{t:"T7.7.1 -- Definir KPIs com CX/CS e Diretora",c:false},{t:"T7.7.2 -- Integrar dados de NPS, churn e upsell",c:false},{t:"T7.7.3 -- Implementar dashboard",c:false},{t:"T7.7.4 -- Validacao com time",c:false}],deps:["Stories 7.4, 7.5, 7.6 (dados integrados)"],risks:[{r:"Dados fragmentados",m:"Consolidar antes de construir"}]},
+{id:"7.8",epicId:7,title:"QA Gate -- Validacao da Jornada Completa",agent:"@qa",size:"S",status:"Draft",priority:"P3",desc:"QA Gate para validacao da jornada completa do cliente, NPS, churn e upsell.",ac:[{t:"Jornada de onboarding testada end-to-end",c:false},{t:"LMS funcional e acessivel",c:false},{t:"NPS e pesquisas funcionando",c:false},{t:"Alertas de churn disparando corretamente",c:false},{t:"Fluxo de upsell testado",c:false},{t:"Dashboard de carteira validado",c:false},{t:"Relatorio GO/NO-GO",c:false}],tasks:[{t:"T7.8.1 -- Plano de testes da jornada",c:false},{t:"T7.8.2 -- Testes do LMS",c:false},{t:"T7.8.3 -- Testes de NPS e churn",c:false},{t:"T7.8.4 -- Testes de upsell",c:false},{t:"T7.8.5 -- Testes do dashboard",c:false},{t:"T7.8.6 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 7.2-7.7 concluidas"],risks:[{r:"Dados de clientes sensiveis nos testes",m:"Dados anonimizados"}]},
+
+// EPIC 08
+{id:"8.1",epicId:8,title:"Mapeamento de Todas as Certificacoes e Obrigacoes Anvisa",agent:"@analyst",size:"M",status:"Draft",priority:"P3",desc:"Inventario completo de todas as obrigacoes regulatorias Anvisa: registros, AFE, licencas, prazos de renovacao. Base para monitoramento automatizado.",ac:[{t:"Inventario de registros Anvisa ativos",c:false},{t:"AFE mapeada",c:false},{t:"Licencas por categoria listadas",c:false},{t:"Calendario de vencimentos (24 meses)",c:false},{t:"Classificacao de risco por item",c:false},{t:"Obrigacoes periodicas mapeadas",c:false},{t:"Validado por Julia Maria e Valdirene Gomes",c:false},{t:"Dados prontos para Supabase",c:false}],tasks:[{t:"T8.1.1 -- Roteiro de entrevistas",c:false},{t:"T8.1.2 -- Entrevistas com juridico/compliance",c:false},{t:"T8.1.3 -- Consultar portal Anvisa (DATAVISA)",c:false},{t:"T8.1.4 -- Consolidar inventario estruturado",c:false},{t:"T8.1.5 -- Calendario de vencimentos",c:false},{t:"T8.1.6 -- Obrigacoes periodicas",c:false},{t:"T8.1.7 -- Identificar gaps e riscos",c:false},{t:"T8.1.8 -- Validacao com time",c:false},{t:"T8.1.9 -- Preparar dados para Supabase",c:false}],deps:["Acesso ao time juridico/compliance","Acesso ao portal Anvisa"],risks:[{r:"Documentacao incompleta",m:"Portal Anvisa para verificacao cruzada"},{r:"Items criticos nao detectados",m:"Classificacao de risco sistematica"}]},
+{id:"8.2",epicId:8,title:"Sistema de Monitoramento de Normativas Anvisa com IA",agent:"@dev",size:"L",status:"Draft",priority:"P3",desc:"Agente especializado em normativas Anvisa que monitora mudancas regulatorias continuamente e gera alertas automaticos.",ac:[{t:"Monitoramento automatico de normativas operacional",c:false},{t:"Alertas de mudancas regulatorias",c:false},{t:"Classificacao de impacto por mudanca",c:false},{t:"Historico de normativas indexado",c:false},{t:"Human-in-the-loop para decisoes regulatorias",c:false}],tasks:[{t:"T8.2.1 -- Definir fontes de monitoramento (DOU, Anvisa)",c:false},{t:"T8.2.2 -- Implementar scraping/monitoramento",c:false},{t:"T8.2.3 -- Implementar classificacao de impacto com IA",c:false},{t:"T8.2.4 -- Sistema de alertas",c:false},{t:"T8.2.5 -- Base de normativas indexada",c:false}],deps:["Story 8.1 (inventario de obrigacoes)"],risks:[{r:"IA interpretar normativa incorretamente",m:"Human-in-the-loop obrigatorio"},{r:"Mudanca nao detectada",m:"Dupla verificacao: IA + checagem manual"}]},
+{id:"8.3",epicId:8,title:"Repositorio de Contratos com Alertas Inteligentes",agent:"@dev",size:"M",status:"Draft",priority:"P3",desc:"Repositorio centralizado de contratos com alertas de vencimento e renovacao automaticos.",ac:[{t:"Repositorio de contratos operacional",c:false},{t:"Alertas de vencimento automaticos",c:false},{t:"Busca por tipo, fornecedor, valor",c:false},{t:"Dashboard de contratos",c:false},{t:"Zero contratos vencidos sem renovacao",c:false}],tasks:[{t:"T8.3.1 -- Definir modelo de dados",c:false},{t:"T8.3.2 -- Implementar repositorio",c:false},{t:"T8.3.3 -- Sistema de alertas",c:false},{t:"T8.3.4 -- Dashboard de contratos",c:false}],deps:["Nenhuma (pode iniciar em paralelo)"],risks:[{r:"Volume de contratos grande",m:"Priorizacao por valor e criticidade"}]},
+{id:"8.4",epicId:8,title:"Dashboard de Compliance e Certificacoes",agent:"@dev",size:"M",status:"Draft",priority:"P3",desc:"Dashboard mostrando status de todas as certificacoes, licencas e obrigacoes regulatorias.",ac:[{t:"Dashboard de compliance operacional",c:false},{t:"Status de cada certificacao/licenca",c:false},{t:"Alertas de vencimento proximo",c:false},{t:"Historico de renovacoes",c:false},{t:"Visao executiva para lideranca",c:false}],tasks:[{t:"T8.4.1 -- Definir metricas com compliance",c:false},{t:"T8.4.2 -- Implementar dashboard",c:false},{t:"T8.4.3 -- Integrar dados do Story 8.1",c:false},{t:"T8.4.4 -- Alertas de vencimento",c:false}],deps:["Story 8.1 (inventario de certificacoes)"],risks:[{r:"Dados desatualizados",m:"Processo de atualizacao regular"}]},
+{id:"8.5",epicId:8,title:"Integracao Compliance para P&D para Q.A",agent:"@dev",size:"M",status:"Draft",priority:"P3",desc:"Integrar fluxo de compliance com P&D e Q.A para homologacao de novos equipamentos.",ac:[{t:"Fluxo de homologacao integrado",c:false},{t:"Requisitos Anvisa vinculados a projeto de P&D",c:false},{t:"Checklist de compliance automatico",c:false},{t:"Rastreabilidade do processo de homologacao",c:false}],tasks:[{t:"T8.5.1 -- Definir fluxo de integracao",c:false},{t:"T8.5.2 -- Implementar integracao compliance-P&D",c:false},{t:"T8.5.3 -- Checklist automatico de compliance",c:false},{t:"T8.5.4 -- Testes de integracao",c:false}],deps:["Epic 05 (P&D e Q.A)","Story 8.1 (inventario)"],risks:[{r:"Fluxo complexo entre areas",m:"Simplificar MVP"}]},
+{id:"8.6",epicId:8,title:"QA Gate -- Validacao Regulatoria",agent:"@qa",size:"S",status:"Draft",priority:"P3",desc:"QA Gate com foco em garantir que o sistema de compliance nao introduz riscos regulatorios.",ac:[{t:"Monitoramento de normativas validado",c:false},{t:"Repositorio de contratos testado",c:false},{t:"Dashboard de compliance correto",c:false},{t:"Integracao compliance-P&D-Q.A testada",c:false},{t:"Relatorio GO/NO-GO",c:false}],tasks:[{t:"T8.6.1 -- Plano de testes regulatorios",c:false},{t:"T8.6.2 -- Testes do monitoramento",c:false},{t:"T8.6.3 -- Testes do repositorio",c:false},{t:"T8.6.4 -- Testes da integracao",c:false},{t:"T8.6.5 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 8.2-8.5 concluidas"],risks:[{r:"Risco regulatorio real",m:"Bloqueador absoluto"}]},
+
+// EPIC 09
+{id:"9.1",epicId:9,title:"Auditoria Tecnica Completa do Ambiente Atual",agent:"@architect",size:"M",status:"Draft",priority:"P1",desc:"Auditoria completa de TI: sistemas, integracoes, infraestrutura, seguranca, AIOX, capacidade do time. Pre-requisito para tudo.",ac:[{t:"Inventario completo de sistemas",c:true},{t:"Integracoes mapeadas",c:true},{t:"Infraestrutura documentada",c:false},{t:"Seguranca documentada",c:false},{t:"AIOX documentado",c:true},{t:"Comunicacao e colaboracao documentados",c:false},{t:"Capacidade do time TI documentada",c:true},{t:"Riscos identificados",c:true},{t:"Revisado por Thalison, CEO e Rafael",c:false},{t:"Gaps priorizados para Story 9.2",c:true}],tasks:[{t:"T9.1.1 -- Entrevista com Rafael Henrique",c:false},{t:"T9.1.2 -- Entrevista com CEO",c:false},{t:"T9.1.3 -- Inventario de sistemas",c:true},{t:"T9.1.4 -- Mapear infraestrutura",c:false},{t:"T9.1.5 -- Auditar AIOX",c:false},{t:"T9.1.6 -- Mapear fluxo de dados",c:true},{t:"T9.1.7 -- Identificar riscos criticos",c:true},{t:"T9.1.8 -- Avaliar capacidade do time",c:true},{t:"T9.1.9 -- Documentar ambiente",c:true},{t:"T9.1.10 -- Revisao e aprovacao",c:false}],deps:["Nenhuma (fundacional)","Disponibilidade de Thalison, CEO e Rafael"],risks:[{r:"Shadow IT nao detectado",m:"Entrevistar multiplas areas"},{r:"Riscos criticos bloqueando outros epics",m:"Escalar imediatamente"}]},
+{id:"9.2",epicId:9,title:"Arquitetura de Dados e Integracoes (Design)",agent:"@architect",size:"L",status:"Draft",priority:"P1",desc:"Design da arquitetura de dados centralizada e plano de integracoes entre todos os sistemas da Contourline.",ac:[{t:"Arquitetura de dados desenhada",c:false},{t:"Plano de integracoes documentado",c:false},{t:"Stack de BI definida",c:false},{t:"Modelo de dados central definido",c:false},{t:"Aprovado por Thalison e @architect",c:false}],tasks:[{t:"T9.2.1 -- Analisar outputs da Story 9.1",c:false},{t:"T9.2.2 -- Projetar arquitetura de dados",c:false},{t:"T9.2.3 -- Selecionar stack de BI",c:false},{t:"T9.2.4 -- Modelar dados central",c:false},{t:"T9.2.5 -- Plano de integracoes",c:false},{t:"T9.2.6 -- Revisao e aprovacao",c:false}],deps:["Story 9.1 (auditoria)"],risks:[{r:"Complexidade excessiva",m:"MVP primeiro, evoluir depois"}]},
+{id:"9.3",epicId:9,title:"Hub de Integracao entre Sistemas (Implementacao)",agent:"@dev",size:"L",status:"Draft",priority:"P1",desc:"Implementar o hub de integracao central: conectar Totvs, RD Station e demais sistemas.",ac:[{t:"Hub de integracao operacional",c:false},{t:"Totvs integrado",c:false},{t:"RD Station integrado",c:false},{t:"APIs documentadas",c:false},{t:"Monitoramento de saude das integracoes",c:false}],tasks:[{t:"T9.3.1 -- Implementar hub de integracao",c:false},{t:"T9.3.2 -- Integrar Totvs",c:false},{t:"T9.3.3 -- Integrar RD Station",c:false},{t:"T9.3.4 -- Documentar APIs",c:false},{t:"T9.3.5 -- Monitoramento de saude",c:false}],deps:["Story 9.2 (arquitetura definida)"],risks:[{r:"APIs limitadas",m:"Plano B com exportacao"}]},
+{id:"9.4",epicId:9,title:"Processo de Adocao e Governanca da AIOX",agent:"@pm + @architect",size:"M",status:"Draft",priority:"P1",desc:"Definir processo formal de adocao e governanca da AIOX pela Contourline.",ac:[{t:"Processo de adocao documentado",c:false},{t:"Governanca definida",c:false},{t:"Papeis e responsabilidades claros",c:false},{t:"Plano de rollout por setor",c:false}],tasks:[{t:"T9.4.1 -- Definir modelo de governanca",c:false},{t:"T9.4.2 -- Plano de rollout",c:false},{t:"T9.4.3 -- Documentacao de processos",c:false},{t:"T9.4.4 -- Aprovacao CEO",c:false}],deps:["Story 9.1 (estado atual da AIOX)"],risks:[{r:"Resistencia a mudanca",m:"Demonstrar valor rapido"}]},
+{id:"9.5",epicId:9,title:"Documentacao Tecnica do Ambiente",agent:"@dev",size:"M",status:"Draft",priority:"P1",desc:"Documentar todo o ambiente tecnico da Contourline de forma mantivel.",ac:[{t:"Documentacao tecnica completa",c:false},{t:"Diagramas de arquitetura",c:false},{t:"Runbooks operacionais",c:false},{t:"Processo de atualizacao definido",c:false}],tasks:[{t:"T9.5.1 -- Criar templates de documentacao",c:false},{t:"T9.5.2 -- Documentar sistemas core",c:false},{t:"T9.5.3 -- Criar diagramas de arquitetura",c:false},{t:"T9.5.4 -- Criar runbooks",c:false}],deps:["Story 9.1 (auditoria)","Story 9.2 (arquitetura)"],risks:[{r:"Documentacao desatualiza rapido",m:"Processo de atualizacao automatizado"}]},
+{id:"9.6",epicId:9,title:"Capacitacao do Time TI",agent:"@pm",size:"S",status:"Draft",priority:"P1",desc:"Plano de capacitacao para as 3 pessoas do time de TI nas novas tecnologias e processos.",ac:[{t:"Plano de capacitacao documentado",c:false},{t:"Trilha de aprendizado por membro",c:false},{t:"Budget de treinamento definido",c:false},{t:"Cronograma de capacitacao",c:false}],tasks:[{t:"T9.6.1 -- Assessment de skills atuais",c:false},{t:"T9.6.2 -- Definir gaps vs necessidades",c:false},{t:"T9.6.3 -- Plano de capacitacao",c:false},{t:"T9.6.4 -- Cronograma e budget",c:false}],deps:["Story 9.1 (capacidade do time documentada)"],risks:[{r:"Time sem tempo para capacitacao",m:"Integrar ao dia a dia"}]},
+{id:"9.7",epicId:9,title:"Roadmap Tecnico de Suporte aos 9 Epics",agent:"@architect",size:"M",status:"Draft",priority:"P1",desc:"Roadmap tecnico alinhando as necessidades de infraestrutura dos 9 outros epics.",ac:[{t:"Roadmap tecnico documentado",c:false},{t:"Dependencias entre epics mapeadas",c:false},{t:"Timeline de entrega por epic",c:false},{t:"Recursos necessarios estimados",c:false},{t:"Aprovado por Thalison e CEO",c:false}],tasks:[{t:"T9.7.1 -- Consolidar necessidades de cada epic",c:false},{t:"T9.7.2 -- Mapear dependencias",c:false},{t:"T9.7.3 -- Definir timeline",c:false},{t:"T9.7.4 -- Estimar recursos",c:false},{t:"T9.7.5 -- Revisao e aprovacao",c:false}],deps:["Story 9.1 (auditoria)","Story 9.2 (arquitetura)","Todos os epics terem stories definidas"],risks:[{r:"Dependencia circular",m:"Iniciar stories independentes em paralelo"}]},
+{id:"9.8",epicId:9,title:"QA Gate -- Validacao de Seguranca e LGPD",agent:"@qa",size:"M",status:"Draft",priority:"P1",desc:"QA Gate com foco em seguranca da informacao, LGPD e integridade das integracoes.",ac:[{t:"Hub de integracao testado",c:false},{t:"Seguranca da informacao validada",c:false},{t:"LGPD compliance para 130 colaboradores",c:false},{t:"Performance das integracoes testada",c:false},{t:"Documentacao tecnica revisada",c:false},{t:"Relatorio GO/NO-GO",c:false}],tasks:[{t:"T9.8.1 -- Plano de testes de seguranca",c:false},{t:"T9.8.2 -- Testes de integracao",c:false},{t:"T9.8.3 -- Testes de LGPD",c:false},{t:"T9.8.4 -- Testes de performance",c:false},{t:"T9.8.5 -- Revisao de documentacao",c:false},{t:"T9.8.6 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 9.3, 9.4, 9.5 concluidas"],risks:[{r:"LGPD compliance critica",m:"Consultoria juridica se necessario"}]},
+
+// EPIC 10
+{id:"10.1",epicId:10,title:"Mapeamento da Operacao Internacional Atual",agent:"@analyst",size:"M",status:"Draft",priority:"P4",desc:"Mapa completo da operacao internacional: presenca, processos de comercio exterior, Body Health Internacional, oportunidades identificadas.",ac:[{t:"Mapa de presenca internacional",c:false},{t:"Processos de comercio exterior mapeados",c:false},{t:"Body Health Internacional documentada",c:false},{t:"Oportunidades identificadas listadas",c:false},{t:"Analise regulatoria por mercado",c:false},{t:"Concorrentes mapeados",c:false},{t:"Barreiras de entrada identificadas",c:false},{t:"Validado por Filipe Ferreira",c:false}],tasks:[{t:"T10.1.1 -- Roteiro de entrevistas",c:false},{t:"T10.1.2 -- Entrevistas com Filipe e conselheiros",c:false},{t:"T10.1.3 -- Pesquisar regulacao em mercados",c:false},{t:"T10.1.4 -- Mapear concorrentes internacionais",c:false},{t:"T10.1.5 -- Documentar comercio exterior",c:false},{t:"T10.1.6 -- Framework de avaliacao de mercados",c:false},{t:"T10.1.7 -- Documentar Body Health Internacional",c:false},{t:"T10.1.8 -- Validar documento final",c:false}],deps:["Acesso a Filipe Ferreira e conselheiros"],risks:[{r:"Informacoes dispersas",m:"Entrevistas estruturadas"},{r:"Regulacao complexa",m:"Pesquisa por mercado prioritario"}]},
+{id:"10.2",epicId:10,title:"Funil de Novos Negocios no CRM",agent:"@dev",size:"S",status:"Draft",priority:"P4",desc:"Estruturar funil de novos negocios internacionais no RD Station.",ac:[{t:"Funil de novos negocios no CRM",c:false},{t:"Estagios definidos para pipeline internacional",c:false},{t:"Campos customizados por mercado",c:false},{t:"Dashboard de pipeline internacional",c:false}],tasks:[{t:"T10.2.1 -- Definir estagios com Filipe",c:false},{t:"T10.2.2 -- Configurar no RD Station",c:false},{t:"T10.2.3 -- Dashboard de pipeline",c:false}],deps:["Story 10.1 (mapeamento)","Story 1.2 (RD Station configurado)"],risks:[{r:"CRM nao suporta funil internacional",m:"Funil separado ou campos customizados"}]},
+{id:"10.3",epicId:10,title:"Automacao de Processos de Comercio Exterior",agent:"@dev",size:"M",status:"Draft",priority:"P4",desc:"Automatizar processos de importacao e exportacao com documentacao e tracking digital.",ac:[{t:"Processos de importacao digitalizados",c:false},{t:"Tracking de documentacao",c:false},{t:"Alertas de prazos e pendencias",c:false},{t:"Reducao de tempo de processo em 25%",c:false}],tasks:[{t:"T10.3.1 -- Definir fluxo digital com Julio Cesar",c:false},{t:"T10.3.2 -- Implementar digitalizacao",c:false},{t:"T10.3.3 -- Alertas e tracking",c:false},{t:"T10.3.4 -- Dashboard de comercio exterior",c:false}],deps:["Story 10.1 (processos mapeados)"],risks:[{r:"Processos regulatorios complexos",m:"Comecar com fluxo mais frequente"}]},
+{id:"10.4",epicId:10,title:"Dashboard de Operacoes Internacionais",agent:"@dev",size:"M",status:"Draft",priority:"P4",desc:"Dashboard para visibilidade das operacoes internacionais: mercados, pipeline, comercio exterior.",ac:[{t:"Dashboard internacional operacional",c:false},{t:"Metricas por mercado",c:false},{t:"Pipeline internacional visivel",c:false},{t:"Processos de comercio exterior",c:false},{t:"Acesso para lideranca",c:false}],tasks:[{t:"T10.4.1 -- Definir KPIs com Filipe",c:false},{t:"T10.4.2 -- Implementar dashboard",c:false},{t:"T10.4.3 -- Integrar dados de CRM e comercio exterior",c:false},{t:"T10.4.4 -- Validacao com Filipe",c:false}],deps:["Story 10.2 (CRM)","Story 10.3 (comercio exterior)"],risks:[{r:"Dados fragmentados",m:"Consolidar fontes"}]},
+{id:"10.5",epicId:10,title:"Inteligencia de Mercado com IA para Expansao",agent:"@analyst",size:"M",status:"Draft",priority:"P4",desc:"Relatorios de inteligencia de mercado gerados por IA para suportar decisoes de expansao internacional.",ac:[{t:"Relatorio de inteligencia por mercado alvo",c:false},{t:"Analise de concorrencia internacional",c:false},{t:"Regulacao por mercado documentada",c:false},{t:"Framework de scoring de mercados aplicado",c:false},{t:"3+ mercados avaliados por trimestre",c:false}],tasks:[{t:"T10.5.1 -- Definir mercados alvo com Filipe",c:false},{t:"T10.5.2 -- Pesquisa de mercado com IA",c:false},{t:"T10.5.3 -- Analise de concorrencia",c:false},{t:"T10.5.4 -- Scoring de mercados",c:false},{t:"T10.5.5 -- Relatorio executivo",c:false}],deps:["Story 10.1 (framework de avaliacao)"],risks:[{r:"Dados de mercados emergentes escassos",m:"Multiplas fontes de pesquisa"}]},
+{id:"10.6",epicId:10,title:"QA Gate",agent:"@qa",size:"S",status:"Draft",priority:"P4",desc:"QA Gate para validacao dos sistemas internacionais.",ac:[{t:"CRM internacional testado",c:false},{t:"Processos de comercio exterior testados",c:false},{t:"Dashboard validado",c:false},{t:"Relatorio GO/NO-GO",c:false}],tasks:[{t:"T10.6.1 -- Plano de testes",c:false},{t:"T10.6.2 -- Testes do CRM internacional",c:false},{t:"T10.6.3 -- Testes de comercio exterior",c:false},{t:"T10.6.4 -- Testes do dashboard",c:false},{t:"T10.6.5 -- Relatorio GO/NO-GO",c:false}],deps:["Stories 10.2-10.5 concluidas"],risks:[{r:"Dados internacionais sensiveis",m:"Controles de acesso"}]}
+];
+
+// ========================================================
+// SUPABASE CONFIG
+// ========================================================
+const SUPABASE_URL = 'https://lyifnttxpoypwibbffnv.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5aWZudHR4cG95cHdpYmJmZm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNDY3MTQsImV4cCI6MjA2NTkyMjcxNH0.4z8lmc2DAnykbh7YqquyoeEo0uJM_dKt2X90D7-OTS0';
+
+async function supaFetch(table, method, params) {
+  const url = SUPABASE_URL + '/rest/v1/' + table + (params?.query || '');
+  const res = await fetch(url, {
+    method: method || 'GET',
+    headers: {
+      'apikey': SUPABASE_KEY,
+      'Authorization': 'Bearer ' + SUPABASE_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': params?.prefer || 'return=representation'
+    },
+    body: params?.body ? JSON.stringify(params.body) : undefined
+  });
+  if (!res.ok) { const t = await res.text(); throw new Error(t); }
+  const text = await res.text();
+  return text ? JSON.parse(text) : [];
+}
+
+// ========================================================
+// AUTH STATE
+// ========================================================
+let currentUserId = sessionStorage.getItem('ctl_user_id') || null;
+let currentUserName = sessionStorage.getItem('ctl_user_name') || '';
+let currentUserAdmin = sessionStorage.getItem('ctl_user_admin') === 'true';
+let allUsers = []; // cached from Supabase
+
+// ========================================================
+// IN-MEMORY CACHES
+// ========================================================
+let checksCache = {};   // key: `${userId}_${storyId}_${type}_${index}` -> bool
+let checksCacheLoaded = {}; // key: storyId -> bool (per-user loaded)
+let allChecksCache = {}; // key: `${userId}_${storyId}_${type}_${index}` -> bool (admin view)
+let allChecksCacheLoaded = {}; // key: storyId -> bool
+let notesCache = {};    // key: storyId -> content string
+let notesCacheLoaded = {};
+let allNotesCache = {}; // key: storyId -> [{user_id, user_name, content, updated_at}]
+let allNotesCacheLoaded = {};
+let viewMode = 'mine'; // 'mine' or 'all' (admin toggle)
+let tasksCache = {};   // key: `${storyId}_${taskIndex}` -> task data object
+let tasksCacheLoaded = {}; // key: storyId -> bool
+let expandedTasks = {}; // key: `${storyId}_${taskIndex}` -> bool
+
+const ASSIGNEE_NAMES = [
+  'Thalison Samuel','Ramon','Rafael Henrique','Egio Roberto','Helaine Hohendorff',
+  'Gabriel Carpelo','Hermano Lanza','Filipe Ferreira','Claudio Kaizer','Andreia Almeida',
+  'Vanessa Melo','Rodrigo Martins','Filipe Fraga','Gisele Machado','Cassiano Torres',
+  'Julia Maria','Valdirene Gomes','Brandina Vidal','Fabricia Resende','Lorena Silva',
+  'Nicole Caetano','Giovani Gomes','Fernanda Normando','Silas Oliveira','Ana Paula',
+  'Thiago Marques','Nathalia','Julio Cesar','Xavier Ramos','Arthur','Isabella',
+  'Marcos Roberto','Joao Emanuel','Mariana Normando'
+];
+
+const TASK_STATUS_LABELS = {pending:'Pendente',in_progress:'Em Andamento',done:'Concluida',blocked:'Bloqueada'};
+const TASK_STATUS_OPTIONS = ['pending','in_progress','done','blocked'];
+
+// User color mapping for admin multi-user view
+const USER_COLORS = ['#6366f1','#10b981','#f59e0b','#ef4444','#a855f7','#06b6d4','#ec4899','#84cc16'];
+function getUserColor(userId) {
+  const idx = allUsers.findIndex(u => u.id === userId);
+  return USER_COLORS[idx >= 0 ? idx % USER_COLORS.length : 0];
+}
+function getUserName(userId) {
+  const u = allUsers.find(x => x.id === userId);
+  return u ? u.name : 'Desconhecido';
+}
+
+// ========================================================
+// LOGIN / LOGOUT
+// ========================================================
+async function loadLoginUsers() {
+  try {
+    allUsers = await supaFetch('portal_users', 'GET', { query: '?select=id,name,is_admin&order=name' });
+    const sel = document.getElementById('loginUser');
+    sel.innerHTML = '<option value="">Selecione seu nome...</option>' +
+      allUsers.map(u => '<option value="' + u.id + '">' + u.name + '</option>').join('');
+  } catch(e) {
+    document.getElementById('loginError').textContent = 'Erro ao carregar usuarios. Verifique sua conexao.';
+  }
+}
+
+async function doLogin() {
+  const sel = document.getElementById('loginUser');
+  const pin = document.getElementById('loginPin').value.trim();
+  const errEl = document.getElementById('loginError');
+  errEl.textContent = '';
+  if (!sel.value) { errEl.textContent = 'Selecione um usuario.'; return; }
+  if (!pin) { errEl.textContent = 'Digite seu PIN.'; return; }
+  document.getElementById('loginBtn').disabled = true;
+  try {
+    const res = await supaFetch('portal_users', 'GET', {
+      query: '?id=eq.' + sel.value + '&pin=eq.' + pin + '&select=id,name,is_admin'
+    });
+    if (!res || res.length === 0) {
+      errEl.textContent = 'PIN incorreto. Tente novamente.';
+      document.getElementById('loginBtn').disabled = false;
+      return;
+    }
+    const user = res[0];
+    currentUserId = user.id;
+    currentUserName = user.name;
+    currentUserAdmin = user.is_admin;
+    sessionStorage.setItem('ctl_user_id', user.id);
+    sessionStorage.setItem('ctl_user_name', user.name);
+    sessionStorage.setItem('ctl_user_admin', user.is_admin ? 'true' : 'false');
+    enterPortal();
+  } catch(e) {
+    errEl.textContent = 'Erro de conexao. Tente novamente.';
+    document.getElementById('loginBtn').disabled = false;
+  }
+}
+
+function doLogout() {
+  sessionStorage.removeItem('ctl_user_id');
+  sessionStorage.removeItem('ctl_user_name');
+  sessionStorage.removeItem('ctl_user_admin');
+  currentUserId = null;
+  currentUserName = '';
+  currentUserAdmin = false;
+  checksCache = {}; checksCacheLoaded = {};
+  allChecksCache = {}; allChecksCacheLoaded = {};
+  notesCache = {}; notesCacheLoaded = {};
+  allNotesCache = {}; allNotesCacheLoaded = {};
+  tasksCache = {}; tasksCacheLoaded = {}; expandedTasks = {};
+  viewMode = 'mine';
+  document.getElementById('loginScreen').classList.remove('hidden');
+  document.getElementById('loginPin').value = '';
+  document.getElementById('loginError').textContent = '';
+  document.getElementById('loginBtn').disabled = false;
+}
+
+function enterPortal() {
+  document.getElementById('loginScreen').classList.add('hidden');
+  document.getElementById('topbarUserName').textContent = currentUserName;
+  document.getElementById('adminBtn').style.display = currentUserAdmin ? 'inline-block' : 'none';
+  showHome();
+}
+
+// ========================================================
+// SUPABASE DATA: CHECKS
+// ========================================================
+async function loadChecksForStory(storyId) {
+  if (checksCacheLoaded[storyId]) return;
+  try {
+    const data = await supaFetch('portal_checks', 'GET', {
+      query: '?user_id=eq.' + currentUserId + '&story_id=eq.' + storyId + '&select=check_type,check_index,checked'
+    });
+    data.forEach(r => {
+      checksCache[currentUserId + '_' + storyId + '_' + r.check_type + '_' + r.check_index] = r.checked;
+    });
+    checksCacheLoaded[storyId] = true;
+  } catch(e) { console.error('loadChecks error:', e); }
+}
+
+async function loadAllChecksForStory(storyId) {
+  if (allChecksCacheLoaded[storyId]) return;
+  try {
+    const data = await supaFetch('portal_checks', 'GET', {
+      query: '?story_id=eq.' + storyId + '&select=user_id,check_type,check_index,checked'
+    });
+    data.forEach(r => {
+      allChecksCache[r.user_id + '_' + storyId + '_' + r.check_type + '_' + r.check_index] = r.checked;
+    });
+    allChecksCacheLoaded[storyId] = true;
+  } catch(e) { console.error('loadAllChecks error:', e); }
+}
+
+function getCheckState(storyId, type, index) {
+  const key = currentUserId + '_' + storyId + '_' + type + '_' + index;
+  if (key in checksCache) return checksCache[key];
+  // fallback to inline data
+  const s = STORIES.find(x => x.id === storyId);
+  if (!s) return false;
+  const arr = type === 'ac' ? s.ac : s.tasks;
+  return arr[index] ? arr[index].c : false;
+}
+
+async function setCheckState(storyId, type, index, val) {
+  const key = currentUserId + '_' + storyId + '_' + type + '_' + index;
+  checksCache[key] = val;
+  // Also update allChecksCache so admin view stays consistent
+  allChecksCache[key] = val;
+  try {
+    await supaFetch('portal_checks', 'POST', {
+      prefer: 'return=representation,resolution=merge-duplicates',
+      body: {
+        user_id: currentUserId,
+        story_id: storyId,
+        check_type: type,
+        check_index: index,
+        checked: val,
+        updated_at: new Date().toISOString()
+      }
+    });
+  } catch(e) { console.error('setCheck error:', e); }
+}
+
+async function toggleCheck(storyId, type, index) {
+  const current = getCheckState(storyId, type, index);
+  await setCheckState(storyId, type, index, !current);
+  showStory(storyId);
+}
+
+function renderCheckbox(checked, storyId, type, index) {
+  const isChecked = getCheckState(storyId, type, index);
+  let extra = '';
+  // In admin "all" view mode, show who checked
+  if (currentUserAdmin && viewMode === 'all') {
+    const checkedBy = allUsers.filter(u => {
+      const k = u.id + '_' + storyId + '_' + type + '_' + index;
+      return allChecksCache[k] === true;
+    });
+    if (checkedBy.length > 0) {
+      extra = checkedBy.map(u =>
+        '<span class="check-badge" style="background:' + getUserColor(u.id) + '20;color:' + getUserColor(u.id) + '">' +
+        u.name.split(' ')[0] + '</span>'
+      ).join('');
+    }
+  }
+  return '<div class="cb' + (isChecked ? ' checked' : '') + '" onclick="event.stopPropagation();toggleCheck(\'' + storyId + '\',\'' + type + '\',' + index + ')"></div>' + extra;
+}
+
+// ========================================================
+// SUPABASE DATA: NOTES
+// ========================================================
+async function loadNotesForStory(storyId) {
+  if (notesCacheLoaded[storyId]) return;
+  try {
+    const data = await supaFetch('portal_notes', 'GET', {
+      query: '?user_id=eq.' + currentUserId + '&story_id=eq.' + storyId + '&select=content'
+    });
+    notesCache[storyId] = (data.length > 0) ? data[0].content : '';
+    notesCacheLoaded[storyId] = true;
+  } catch(e) { console.error('loadNotes error:', e); }
+}
+
+async function loadAllNotesForStory(storyId) {
+  if (allNotesCacheLoaded[storyId]) return;
+  try {
+    const data = await supaFetch('portal_notes', 'GET', {
+      query: '?story_id=eq.' + storyId + '&select=user_id,content,updated_at&order=updated_at.desc'
+    });
+    allNotesCache[storyId] = data.map(r => ({
+      user_id: r.user_id,
+      user_name: getUserName(r.user_id),
+      content: r.content,
+      updated_at: r.updated_at
+    }));
+    allNotesCacheLoaded[storyId] = true;
+  } catch(e) { console.error('loadAllNotes error:', e); }
+}
+
+function getNotes(storyId) {
+  return notesCache[storyId] || '';
+}
+
+async function saveNotes(storyId) {
+  const ta = document.getElementById('notes-' + storyId);
+  if (!ta) return;
+  const content = ta.value;
+  notesCache[storyId] = content;
+  // Invalidate allNotes cache so it reloads
+  allNotesCacheLoaded[storyId] = false;
+  try {
+    await supaFetch('portal_notes', 'POST', {
+      prefer: 'return=representation,resolution=merge-duplicates',
+      body: {
+        user_id: currentUserId,
+        story_id: storyId,
+        content: content,
+        updated_at: new Date().toISOString()
+      }
+    });
+    const badge = document.getElementById('notes-saved-' + storyId);
+    if (badge) { badge.classList.add('show'); setTimeout(() => badge.classList.remove('show'), 2000); }
+  } catch(e) {
+    console.error('saveNotes error:', e);
+    const badge = document.getElementById('notes-saved-' + storyId);
+    if (badge) { badge.textContent = 'Erro ao salvar!'; badge.style.color = 'var(--red)'; badge.classList.add('show'); setTimeout(() => { badge.classList.remove('show'); badge.textContent = 'Salvo!'; badge.style.color = ''; }, 3000); }
+  }
+}
+
+function toggleViewMode(mode) {
+  viewMode = mode;
+  if (currentStoryId) showStory(currentStoryId);
+}
+
+// ========================================================
+// SUPABASE DATA: TASKS (portal_tasks)
+// ========================================================
+async function loadTasksForStory(storyId) {
+  if (tasksCacheLoaded[storyId]) return;
+  try {
+    const data = await supaFetch('portal_tasks', 'GET', {
+      query: '?story_id=eq.' + storyId + '&select=task_index,status,assignee,deadline,notes,evidence_url,evidence_files,block_reason,updated_by,updated_at'
+    });
+    data.forEach(r => {
+      tasksCache[storyId + '_' + r.task_index] = {
+        status: r.status || 'pending',
+        assignee: r.assignee || '',
+        deadline: r.deadline || '',
+        notes: r.notes || '',
+        evidence_url: r.evidence_url || '',
+        evidence_files: JSON.stringify(r.evidence_files || []),
+        block_reason: r.block_reason || '',
+        updated_by: r.updated_by || '',
+        updated_at: r.updated_at || ''
+      };
+    });
+    tasksCacheLoaded[storyId] = true;
+  } catch(e) { console.error('loadTasks error:', e); }
+}
+
+function getTaskData(storyId, taskIndex) {
+  const key = storyId + '_' + taskIndex;
+  return tasksCache[key] || { status: 'pending', assignee: '', deadline: '', notes: '', evidence_url: '', evidence_files: '[]', block_reason: '', updated_by: '', updated_at: '' };
+}
+
+async function saveTaskData(storyId, taskIndex) {
+  const prefix = 'tf_' + storyId + '_' + taskIndex + '_';
+  const statusEl = document.getElementById(prefix + 'status');
+  const assigneeEl = document.getElementById(prefix + 'assignee');
+  const deadlineEl = document.getElementById(prefix + 'deadline');
+  const notesEl = document.getElementById(prefix + 'notes');
+  const blockEl = document.getElementById(prefix + 'block');
+  const btn = document.getElementById(prefix + 'btn');
+  const msg = document.getElementById(prefix + 'msg');
+
+  if (!statusEl) return;
+  const data = {
+    status: statusEl.value,
+    assignee: assigneeEl.value,
+    deadline: deadlineEl.value || null,
+    notes: notesEl.value,
+    block_reason: blockEl ? blockEl.value : '',
+    updated_by: currentUserId,
+    updated_at: new Date().toISOString()
+  };
+
+  // Update cache
+  const key = storyId + '_' + taskIndex;
+  tasksCache[key] = { ...data, updated_by: currentUserId, updated_at: data.updated_at };
+
+  if (btn) btn.disabled = true;
+  try {
+    await supaFetch('portal_tasks', 'POST', {
+      prefer: 'return=representation,resolution=merge-duplicates',
+      body: {
+        story_id: storyId,
+        task_index: taskIndex,
+        status: data.status,
+        assignee: data.assignee,
+        deadline: data.deadline,
+        notes: data.notes,
+        block_reason: data.block_reason,
+        updated_by: currentUserId,
+        updated_at: data.updated_at
+      }
+    });
+    if (msg) { msg.classList.add('show'); setTimeout(() => msg.classList.remove('show'), 2000); }
+  } catch(e) {
+    console.error('saveTask error:', e);
+    if (msg) { msg.textContent = 'Erro!'; msg.style.color = 'var(--red)'; msg.classList.add('show'); setTimeout(() => { msg.classList.remove('show'); msg.textContent = 'Salvo!'; msg.style.color = ''; }, 3000); }
+  }
+  if (btn) btn.disabled = false;
+  // Refresh the story view to update counters and badges
+  showStory(storyId);
+}
+
+function toggleTaskCard(storyId, taskIndex) {
+  const key = storyId + '_' + taskIndex;
+  expandedTasks[key] = !expandedTasks[key];
+  const card = document.getElementById('tcard_' + storyId + '_' + taskIndex);
+  if (card) card.classList.toggle('expanded');
+}
+
+function onTaskStatusChange(storyId, taskIndex) {
+  const prefix = 'tf_' + storyId + '_' + taskIndex + '_';
+  const statusEl = document.getElementById(prefix + 'status');
+  const blockWrapper = document.getElementById(prefix + 'block_wrap');
+  if (blockWrapper) {
+    blockWrapper.style.display = statusEl.value === 'blocked' ? 'flex' : 'none';
+  }
+}
+
+function isTaskOverdue(taskData) {
+  if (taskData.status === 'done' || !taskData.deadline) return false;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const dl = new Date(taskData.deadline + 'T00:00:00');
+  return dl < today;
+}
+
+function getTaskStatusCounts(storyId, tasks) {
+  const counts = { pending: 0, in_progress: 0, done: 0, blocked: 0 };
+  tasks.forEach((t, i) => {
+    const td = getTaskData(storyId, i);
+    counts[td.status] = (counts[td.status] || 0) + 1;
+  });
+  return counts;
+}
+
+function renderTaskCard(storyId, task, taskIndex) {
+  const td = getTaskData(storyId, taskIndex);
+  const isExpanded = expandedTasks[storyId + '_' + taskIndex] || false;
+  const overdue = isTaskOverdue(td);
+  const prefix = 'tf_' + storyId + '_' + taskIndex + '_';
+
+  let html = '<div id="tcard_' + storyId + '_' + taskIndex + '" class="task-card status-' + td.status + (isExpanded ? ' expanded' : '') + '">';
+
+  // Header (collapsed view)
+  html += '<div class="task-card-header" onclick="toggleTaskCard(\'' + storyId + '\',' + taskIndex + ')">';
+  html += '<div class="cb' + (td.status === 'done' ? ' checked' : '') + '" onclick="event.stopPropagation();toggleCheck(\'' + storyId + '\',\'task\',' + taskIndex + ')" style="flex-shrink:0"></div>';
+  html += '<span class="task-card-title">' + task.t + '</span>';
+  if (td.assignee) html += '<span class="task-badge task-badge-assignee">' + td.assignee.split(' ')[0] + '</span>';
+  if (overdue) html += '<span class="task-badge task-badge-overdue">ATRASADA</span>';
+  else if (td.deadline) {
+    const dlDate = new Date(td.deadline + 'T00:00:00');
+    html += '<span class="task-deadline-icon">' + dlDate.toLocaleDateString('pt-BR') + '</span>';
+  }
+  html += '<span class="task-badge task-badge-' + td.status + '">' + TASK_STATUS_LABELS[td.status] + '</span>';
+  html += '<span class="task-expand-arrow">&#9660;</span>';
+  html += '</div>';
+
+  // Body (expanded view)
+  html += '<div class="task-card-body"><div class="task-card-grid">';
+
+  // Status
+  html += '<div class="task-field"><label>Status</label><select id="' + prefix + 'status" onchange="onTaskStatusChange(\'' + storyId + '\',' + taskIndex + ')">';
+  TASK_STATUS_OPTIONS.forEach(opt => {
+    html += '<option value="' + opt + '"' + (td.status === opt ? ' selected' : '') + '>' + TASK_STATUS_LABELS[opt] + '</option>';
+  });
+  html += '</select></div>';
+
+  // Assignee
+  html += '<div class="task-field"><label>Responsavel</label><select id="' + prefix + 'assignee"><option value="">-- Ninguem --</option>';
+  ASSIGNEE_NAMES.forEach(name => {
+    html += '<option value="' + name + '"' + (td.assignee === name ? ' selected' : '') + '>' + name + '</option>';
+  });
+  html += '</select></div>';
+
+  // Deadline
+  html += '<div class="task-field"><label>Prazo</label><input type="date" id="' + prefix + 'deadline" value="' + (td.deadline || '') + '"></div>';
+
+  // Evidence Files (upload)
+  html += renderEvidenceFiles(storyId, taskIndex, td);
+
+  // Notes (full width)
+  html += '<div class="task-field task-field-full"><label>Notas da Task</label><textarea id="' + prefix + 'notes" placeholder="Anotacoes especificas desta task...">' + (td.notes || '').replace(/</g, '&lt;') + '</textarea></div>';
+
+  // Block reason (only visible if blocked)
+  html += '<div id="' + prefix + 'block_wrap" class="task-field task-field-full" style="display:' + (td.status === 'blocked' ? 'flex' : 'none') + '"><label>Motivo do Bloqueio</label><textarea id="' + prefix + 'block" placeholder="Descreva o motivo do bloqueio...">' + (td.block_reason || '').replace(/</g, '&lt;') + '</textarea></div>';
+
+  // Save row
+  html += '<div class="task-save-row"><button id="' + prefix + 'btn" class="task-save-btn" onclick="event.stopPropagation();saveTaskData(\'' + storyId + '\',' + taskIndex + ')">Salvar</button><span id="' + prefix + 'msg" class="task-saved-msg">Salvo!</span></div>';
+
+  // Updated info
+  if (td.updated_at) {
+    const updatedByName = td.updated_by ? getUserName(td.updated_by) : 'Desconhecido';
+    html += '<div class="task-updated-info">Ultima atualizacao: ' + formatDate(td.updated_at) + ' por ' + updatedByName + '</div>';
+  }
+
+  html += '</div></div>'; // close grid and body
+  html += '</div>'; // close card
+  return html;
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'});
+}
+
+// ========================================================
+// FILE UPLOAD: Evidências
+// ========================================================
+function getFileTypeClass(name) {
+  const ext = name.split('.').pop().toLowerCase();
+  if (['jpg','jpeg','png','gif','webp','avif','svg'].includes(ext)) return 'img';
+  if (ext === 'pdf') return 'pdf';
+  if (['doc','docx','xls','xlsx','ppt','pptx','txt','csv'].includes(ext)) return 'doc';
+  return 'other';
+}
+
+function getFileTypeLabel(name) {
+  const ext = name.split('.').pop().toLowerCase();
+  if (['jpg','jpeg','png','gif','webp','avif','svg'].includes(ext)) return 'IMG';
+  if (ext === 'pdf') return 'PDF';
+  if (['doc','docx'].includes(ext)) return 'DOC';
+  if (['xls','xlsx','csv'].includes(ext)) return 'XLS';
+  if (['ppt','pptx'].includes(ext)) return 'PPT';
+  return ext.toUpperCase();
+}
+
+async function uploadEvidence(storyId, taskIndex) {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv';
+  input.multiple = true;
+  input.onchange = async function() {
+    const files = input.files;
+    if (!files.length) return;
+    const loadingEl = document.getElementById('ev_loading_' + storyId + '_' + taskIndex);
+    if (loadingEl) { loadingEl.classList.add('show'); loadingEl.textContent = 'Enviando...'; }
+    const key = storyId + '_' + taskIndex;
+    const td = tasksCache[key] || {};
+    let existingFiles = [];
+    try { existingFiles = JSON.parse(td.evidence_files || '[]'); } catch(e) { existingFiles = []; }
+
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const ts = Date.now();
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+      const path = storyId + '/' + taskIndex + '/' + ts + '_' + safeName;
+      if (loadingEl) loadingEl.textContent = 'Enviando ' + (i+1) + '/' + files.length + '...';
+      try {
+        const res = await fetch(SUPABASE_URL + '/storage/v1/object/evidencias/' + path, {
+          method: 'POST',
+          headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Content-Type': file.type },
+          body: file
+        });
+        if (res.ok) {
+          const publicUrl = SUPABASE_URL + '/storage/v1/object/public/evidencias/' + path;
+          existingFiles.push({ name: file.name, url: publicUrl, path: path, type: file.type, size: file.size, uploaded_at: new Date().toISOString(), uploaded_by: currentUserName });
+        }
+      } catch(e) { console.error('Upload error:', e); }
+    }
+
+    // Save files list to portal_tasks
+    if (!td.status) td.status = 'pending';
+    tasksCache[key] = { ...td, evidence_files: JSON.stringify(existingFiles) };
+    await supaFetch('portal_tasks', 'POST', {
+      prefer: 'return=representation,resolution=merge-duplicates',
+      body: { story_id: storyId, task_index: taskIndex, evidence_files: existingFiles, updated_by: currentUserId, updated_at: new Date().toISOString() }
+    });
+    if (loadingEl) { loadingEl.textContent = 'Enviado!'; setTimeout(() => loadingEl.classList.remove('show'), 2000); }
+    showStory(currentStoryId);
+  };
+  input.click();
+}
+
+async function deleteEvidence(storyId, taskIndex, fileIndex) {
+  if (!confirm('Remover este arquivo?')) return;
+  const key = storyId + '_' + taskIndex;
+  const td = tasksCache[key] || {};
+  let files = [];
+  try { files = JSON.parse(td.evidence_files || '[]'); } catch(e) { files = []; }
+  const file = files[fileIndex];
+  if (!file) return;
+
+  // Delete from storage
+  try {
+    await fetch(SUPABASE_URL + '/storage/v1/object/evidencias/' + file.path, {
+      method: 'DELETE',
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY }
+    });
+  } catch(e) { console.error('Delete storage error:', e); }
+
+  // Remove from list and update DB
+  files.splice(fileIndex, 1);
+  tasksCache[key] = { ...td, evidence_files: JSON.stringify(files) };
+  await supaFetch('portal_tasks', 'POST', {
+    prefer: 'return=representation,resolution=merge-duplicates',
+    body: { story_id: storyId, task_index: taskIndex, evidence_files: files, updated_by: currentUserId, updated_at: new Date().toISOString() }
+  });
+  showStory(currentStoryId);
+}
+
+function renderEvidenceFiles(storyId, taskIndex, td) {
+  let files = [];
+  try { files = JSON.parse(td.evidence_files || '[]'); } catch(e) { files = []; }
+  let html = '<div class="task-field task-field-full"><label>Evidencias / Anexos</label>';
+  html += '<div class="ev-upload-area" onclick="event.stopPropagation();uploadEvidence(\'' + storyId + '\',' + taskIndex + ')">';
+  html += '<div class="ev-icon">+</div>';
+  html += '<div class="ev-text">Clique para anexar arquivo</div>';
+  html += '<div class="ev-formats">PDF, DOC, XLS, PPT, imagens (JPG, PNG) e outros</div>';
+  html += '</div>';
+  html += '<div id="ev_loading_' + storyId + '_' + taskIndex + '" class="ev-uploading">Enviando...</div>';
+  if (files.length > 0) {
+    html += '<div class="ev-file-list">';
+    files.forEach((f, i) => {
+      const typeClass = getFileTypeClass(f.name);
+      const typeLabel = getFileTypeLabel(f.name);
+      html += '<div class="ev-file-item">';
+      html += '<span class="ev-type ev-type-' + typeClass + '">' + typeLabel + '</span>';
+      html += '<a href="' + f.url + '" target="_blank" title="' + f.name + '">' + f.name + '</a>';
+      if (f.uploaded_by) html += '<span style="font-size:.85em;color:var(--text3)">' + f.uploaded_by + '</span>';
+      html += '<button class="ev-delete" onclick="event.stopPropagation();deleteEvidence(\'' + storyId + '\',' + taskIndex + ',' + i + ')" title="Remover">x</button>';
+      html += '</div>';
+    });
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+// ========================================================
+// SPA LOGIC
+// ========================================================
+let currentView = 'home';
+let currentEpicId = null;
+let currentStoryId = null;
+let currentFilter = 'all';
+let searchTerm = '';
+let expandedEpics = {};
+
+function getEpicStories(epicId){ return STORIES.filter(s=>s.epicId===epicId); }
+function getPriorityClass(p){ return p==='P1'?'badge-p1':p==='P2'?'badge-p2':p==='P3'?'badge-p3':'badge-p4'; }
+function getSizeClass(s){ return s==='S'?'badge-s':s==='L'?'badge-l':'badge-m'; }
+function getNavBadgeClass(p){ return p==='P1'?'badge-p1':p==='P2'?'badge-p2':p==='P3'?'badge-p3':'badge-p4'; }
+
+function buildSidebar(){
+  const nav=document.getElementById('sidebarNav');
+  let html='<div class="nav-section">Navegacao</div>';
+  html+='<div class="nav-item'+(currentView==='home'?' active':'')+'" onclick="showHome()">Visao Geral</div>';
+  if(currentUserAdmin) html+='<div class="nav-item'+(currentView==='admin'?' active':'')+'" onclick="showAdmin()">Painel Admin</div>';
+  html+='<div class="nav-section" style="margin-top:12px">10 Epics</div>';
+  EPICS.forEach(e=>{
+    if(currentFilter!=='all' && e.priority!==currentFilter) return;
+    const stories=getEpicStories(e.id);
+    const matchesSearch=!searchTerm||e.title.toLowerCase().includes(searchTerm)||stories.some(s=>s.title.toLowerCase().includes(searchTerm));
+    if(!matchesSearch) return;
+    const expanded=expandedEpics[e.id];
+    html+='<div class="nav-item'+(currentView==='epic'&&currentEpicId===e.id?' active':'')+'" onclick="showEpic('+e.id+')"><span>'+e.num+' '+e.title+'</span><span class="nav-badge '+getNavBadgeClass(e.priority)+'">'+e.priority+'</span></div>';
+    if(expanded||currentEpicId===e.id){
+      stories.forEach(s=>{
+        if(searchTerm && !s.title.toLowerCase().includes(searchTerm) && !e.title.toLowerCase().includes(searchTerm)) return;
+        html+='<div class="nav-story'+(currentStoryId===s.id?' active':'')+'" style="display:block" onclick="showStory(\''+s.id+'\')"><span>'+s.id+' '+s.title.substring(0,40)+(s.title.length>40?'...':'')+'</span><span class="sz sz-'+s.size.toLowerCase()+'">'+s.size+'</span></div>';
+      });
+    }
+  });
+  nav.innerHTML=html;
+}
+
+function showHome(){
+  currentView='home';currentEpicId=null;currentStoryId=null;
+  document.getElementById('topbarTitle').textContent='Contourline -- Portal de Transformacao Digital';
+  const totalStories=STORIES.length;
+  const totalAC=STORIES.reduce((a,s)=>a+s.ac.length,0);
+  let checkedAC=0;STORIES.forEach(s=>{s.ac.forEach((a,i)=>{if(getCheckState(s.id,'ac',i))checkedAC++;});});
+  const pct=totalAC?Math.round(checkedAC/totalAC*100):0;
+  let html='<div class="kpi-grid">';
+  html+='<div class="kpi-card" onclick="scrollToSection(\'progresso\')"><div class="kval accent">10</div><div class="klabel">Epics</div></div>';
+  html+='<div class="kpi-card" onclick="scrollToSection(\'progresso\')"><div class="kval green">'+totalStories+'</div><div class="klabel">Stories</div></div>';
+  html+='<div class="kpi-card" onclick="scrollToSection(\'distribuicao\')"><div class="kval amber">17</div><div class="klabel">Setores</div></div>';
+  html+='<div class="kpi-card" onclick="scrollToSection(\'progresso\')"><div class="kval">'+pct+'%</div><div class="klabel">AC Concluidos</div></div>';
+  html+='<div class="kpi-card" onclick="window.open(\'https://contourline-dashboard.vercel.app\',\'_blank\')"><div class="kval" style="font-size:1em;color:var(--cyan)">Supabase+Metabase+N8N</div><div class="klabel">Stack Sugerida</div></div>';
+  html+='</div>';
+  html+='<div class="section-block" id="sec-progresso"><h2>Progresso por Epic</h2><div class="progress-section">';
+  EPICS.forEach(e=>{
+    const stories=getEpicStories(e.id);
+    const tac=stories.reduce((a,s)=>a+s.ac.length,0);
+    let cac=0;stories.forEach(s=>{s.ac.forEach((a,i)=>{if(getCheckState(s.id,'ac',i))cac++;});});
+    const p=tac?Math.round(cac/tac*100):0;
+    html+='<div class="progress-row" style="cursor:pointer" onclick="showEpic('+e.id+')"><div class="plabel"><span class="badge '+getPriorityClass(e.priority)+'" style="margin-right:6px">'+e.priority+'</span>'+e.num+' -- '+e.title+'</div><div class="pbar"><div class="pfill" style="width:'+p+'%"></div></div><div class="pval">'+p+'%</div></div>';
+  });
+  html+='</div></div>';
+  html+='<div class="section-block" id="sec-distribuicao"><h2>Distribuicao por Prioridade</h2><div class="kpi-grid">';
+  ['P1','P2','P3','P4'].forEach(p=>{
+    const count=EPICS.filter(e=>e.priority===p).length;
+    const sc=STORIES.filter(s=>s.priority===p).length;
+    html+='<div class="kpi-card" onclick="filterAndScrollToEpics(\''+p+'\')"><div class="kval" style="font-size:1.4em"><span class="badge '+getPriorityClass(p)+'">'+p+'</span></div><div class="klabel">'+count+' Epics / '+sc+' Stories</div></div>';
+  });
+  html+='</div></div>';
+  document.getElementById('content').innerHTML=html;
+  buildSidebar();
+  closeSidebar();
+}
+
+function showEpic(id){
+  currentView='epic';currentEpicId=id;currentStoryId=null;
+  expandedEpics[id]=true;
+  const e=EPICS.find(x=>x.id===id);
+  const stories=getEpicStories(id);
+  document.getElementById('topbarTitle').textContent='Epic '+e.num+' -- '+e.title;
+  let html='<div class="detail-header"><h1>Epic '+e.num+' -- '+e.title+'</h1><div class="detail-badges"><span class="badge '+getPriorityClass(e.priority)+'">'+e.priority+'</span><span class="badge badge-draft">'+e.status+'</span></div><div class="detail-meta"><span>Owner: '+e.owner+'</span><span>Stories: '+stories.length+'</span><span>Lideres: '+e.leaders.join(', ')+'</span></div></div>';
+  html+='<div class="section-block"><h2>Contexto</h2><p>'+e.context+'</p></div>';
+  html+='<div class="section-block"><h2>Objetivo</h2><p>'+e.objective+'</p></div>';
+  html+='<div class="section-block"><h2>Dores Mapeadas</h2><ul>'+e.pains.map(p=>'<li>'+p+'</li>').join('')+'</ul></div>';
+  html+='<div class="section-block"><h2>Metricas de Sucesso</h2><table><tr><th>Metrica</th><th>Baseline</th><th>Meta</th></tr>'+e.metrics.map(m=>'<tr><td>'+m.m+'</td><td>'+m.b+'</td><td style="color:var(--green);font-weight:700">'+m.t+'</td></tr>').join('')+'</table></div>';
+  html+='<div class="section-block"><h2>Escopo IN</h2><ul>'+e.scopeIn.map(s=>'<li>'+s+'</li>').join('')+'</ul></div>';
+  html+='<div class="section-block"><h2>Escopo OUT</h2><ul>'+e.scopeOut.map(s=>'<li style="color:var(--text3)">'+s+'</li>').join('')+'</ul></div>';
+  html+='<div class="section-block"><h2>Riscos</h2><table><tr><th>Risco</th><th>Prob.</th><th>Impacto</th><th>Mitigacao</th></tr>'+e.risks.map(r=>'<tr><td>'+r.r+'</td><td>'+r.p+'</td><td>'+r.i+'</td><td>'+r.m+'</td></tr>').join('')+'</table></div>';
+  html+='<div class="section-block"><h2>Dependencias</h2><ul>'+e.deps.map(d=>'<li>'+d+'</li>').join('')+'</ul></div>';
+  html+='<div class="section-block"><h2>Stories ('+stories.length+')</h2><div class="stories-grid">';
+  stories.forEach(s=>{
+    const tac=s.ac.length;const cac=s.ac.filter(x=>x.c).length;const pct=tac?Math.round(cac/tac*100):0;
+    html+='<div class="story-card" onclick="showStory(\''+s.id+'\')"><div class="sc-title">'+s.id+' -- '+s.title+'</div><div class="sc-meta"><span class="badge '+getSizeClass(s.size)+'">'+s.size+'</span><span class="badge badge-agent">'+s.agent+'</span><span class="badge badge-draft">'+s.status+'</span><span style="font-size:.68em;color:var(--text3);margin-left:auto">AC: '+pct+'%</span></div></div>';
+  });
+  html+='</div></div>';
+  document.getElementById('content').innerHTML=html;
+  buildSidebar();
+  closeSidebar();
+  window.scrollTo(0,0);
+}
+
+async function showStory(id){
+  currentView='story';currentStoryId=id;
+  const s=STORIES.find(x=>x.id===id);
+  const e=EPICS.find(x=>x.id===s.epicId);
+  currentEpicId=e.id;
+  expandedEpics[e.id]=true;
+  document.getElementById('topbarTitle').textContent='Story '+s.id+' -- '+s.title;
+
+  // Load data from Supabase
+  await loadChecksForStory(s.id);
+  await loadNotesForStory(s.id);
+  await loadTasksForStory(s.id);
+  if (currentUserAdmin && viewMode === 'all') {
+    await loadAllChecksForStory(s.id);
+    await loadAllNotesForStory(s.id);
+  }
+
+  let html='<div style="margin-bottom:12px"><button class="topbar-back" onclick="showEpic('+e.id+')">Voltar ao Epic '+e.num+'</button></div>';
+  html+='<div class="detail-header"><h1>Story '+s.id+' -- '+s.title+'</h1><div class="detail-badges"><span class="badge '+getPriorityClass(s.priority)+'">'+s.priority+'</span><span class="badge '+getSizeClass(s.size)+'">'+s.size+'</span><span class="badge badge-agent">'+s.agent+'</span><span class="badge badge-draft">'+s.status+'</span></div><div class="detail-meta"><span>Epic: '+e.num+' -- '+e.title+'</span></div></div>';
+
+  // Admin view toggle
+  if (currentUserAdmin) {
+    html+='<div class="view-toggle"><button class="'+(viewMode==='mine'?'active':'')+'" onclick="toggleViewMode(\'mine\')">Meus checks</button><button class="'+(viewMode==='all'?'active':'')+'" onclick="toggleViewMode(\'all\')">Ver de todos</button></div>';
+  }
+
+  html+='<div class="section-block"><h2>Descricao</h2><p>'+s.desc+'</p></div>';
+  const tac=s.ac.length;let cac=0;s.ac.forEach((a,i)=>{if(getCheckState(s.id,'ac',i))cac++;});
+  html+='<div class="section-block"><h2>Acceptance Criteria ('+cac+'/'+tac+')</h2>';
+  s.ac.forEach((a,i)=>{html+='<div class="ac-item">'+renderCheckbox(a.c,s.id,'ac',i)+'<span>'+a.t+'</span></div>';});
+  html+='</div>';
+  const ttask=s.tasks.length;
+  const taskCounts = getTaskStatusCounts(s.id, s.tasks);
+  const taskSummaryParts = [];
+  if (taskCounts.done > 0) taskSummaryParts.push('<span style="color:var(--green)">' + taskCounts.done + ' concluida' + (taskCounts.done > 1 ? 's' : '') + '</span>');
+  if (taskCounts.in_progress > 0) taskSummaryParts.push('<span style="color:var(--cyan)">' + taskCounts.in_progress + ' em andamento</span>');
+  if (taskCounts.blocked > 0) taskSummaryParts.push('<span style="color:var(--red)">' + taskCounts.blocked + ' bloqueada' + (taskCounts.blocked > 1 ? 's' : '') + '</span>');
+  if (taskCounts.pending > 0) taskSummaryParts.push('<span style="color:var(--text3)">' + taskCounts.pending + ' pendente' + (taskCounts.pending > 1 ? 's' : '') + '</span>');
+  const taskSummary = taskSummaryParts.join(' / ') + ' de ' + ttask;
+  html+='<div class="section-block"><h2>Tasks Tecnicas (' + ttask + ')</h2>';
+  html+='<div class="tasks-summary">' + taskSummary + '</div>';
+  s.tasks.forEach((t,i)=>{html+=renderTaskCard(s.id, t, i);});
+  html+='</div>';
+  html+='<div class="section-block"><h2>Dependencias</h2><ul>'+s.deps.map(d=>'<li>'+d+'</li>').join('')+'</ul></div>';
+  html+='<div class="section-block"><h2>Riscos e Mitigacao</h2><table><tr><th>Risco</th><th>Mitigacao</th></tr>'+s.risks.map(r=>'<tr><td>'+r.r+'</td><td>'+r.m+'</td></tr>').join('')+'</table></div>';
+
+  // Notes section
+  const savedNotes=getNotes(s.id);
+  html+='<div class="notes-section"><h3>Notas / Entrevistas / Observacoes</h3>';
+  html+='<textarea id="notes-'+s.id+'" class="notes-textarea" placeholder="Registre aqui informacoes de entrevistas, observacoes, decisoes tomadas...">'+savedNotes.replace(/</g,'&lt;')+'</textarea>';
+  html+='<button class="notes-save" onclick="saveNotes(\''+s.id+'\')">Salvar Notas</button>';
+  html+='<span id="notes-saved-'+s.id+'" class="notes-saved">Salvo!</span>';
+  html+='</div>';
+
+  // Admin: show all users' notes
+  if (currentUserAdmin && viewMode === 'all') {
+    await loadAllNotesForStory(s.id);
+    const allNotes = allNotesCache[s.id] || [];
+    if (allNotes.length > 0) {
+      html+='<div class="others-notes"><h4>Notas de todos os usuarios</h4>';
+      allNotes.forEach(n => {
+        const color = getUserColor(n.user_id);
+        html+='<div class="admin-note-item"><div class="note-author"><span class="user-color" style="background:'+color+'"></span> '+n.user_name.replace(/</g,'&lt;')+'<span class="note-date">'+formatDate(n.updated_at)+'</span></div><div class="note-content">'+n.content.replace(/</g,'&lt;')+'</div></div>';
+      });
+      html+='</div>';
+    }
+  }
+
+  document.getElementById('content').innerHTML=html;
+  buildSidebar();
+  closeSidebar();
+  window.scrollTo(0,0);
+}
+
+function scrollToSection(id){
+  const el=document.getElementById('sec-'+id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function filterAndScrollToEpics(priority){
+  // Filtra sidebar pela prioridade e navega ao primeiro epic dessa prioridade
+  currentFilter=priority;
+  document.querySelectorAll('.filter-chip').forEach(c=>{
+    c.classList.toggle('active',c.textContent.trim()===priority);
+  });
+  buildSidebar();
+  const firstEpic=EPICS.find(e=>e.priority===priority);
+  if(firstEpic) showEpic(firstEpic.id);
+}
+function handleSearch(val){
+  searchTerm=val.toLowerCase();
+  buildSidebar();
+}
+
+function setFilter(f,el){
+  currentFilter=f;
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  buildSidebar();
+}
+
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('show');
+}
+function closeSidebar(){
+  if(window.innerWidth<=900){
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+  }
+}
+
+// ========================================================
+// ADMIN PANEL
+// ========================================================
+async function showAdmin() {
+  if (!currentUserAdmin) return;
+  currentView = 'admin'; currentEpicId = null; currentStoryId = null;
+  document.getElementById('topbarTitle').textContent = 'Painel Admin -- Visao Consolidada';
+
+  let html = '<div class="detail-header"><h1>Painel Admin</h1><div class="detail-meta"><span>Visao consolidada de todos os usuarios</span></div></div>';
+
+  // Load all checks and notes for all stories
+  html += '<div class="section-block"><h2>Carregando dados...</h2></div>';
+  document.getElementById('content').innerHTML = html;
+
+  // Fetch ALL checks and notes in bulk
+  try {
+    const [allChecks, allNotes] = await Promise.all([
+      supaFetch('portal_checks', 'GET', { query: '?select=user_id,story_id,check_type,check_index,checked&checked=eq.true' }),
+      supaFetch('portal_notes', 'GET', { query: '?select=user_id,story_id,content,updated_at&order=updated_at.desc' })
+    ]);
+
+    html = '<div class="detail-header"><h1>Painel Admin</h1><div class="detail-meta"><span>Visao consolidada de todos os usuarios</span></div></div>';
+
+    // Build per-story summary
+    html += '<div class="section-block"><h2>Progresso por Story (com checks de todos)</h2>';
+    EPICS.forEach(e => {
+      const stories = getEpicStories(e.id);
+      html += '<div style="margin-top:16px"><strong style="color:var(--accent2);font-size:.82em">Epic ' + e.num + ' -- ' + e.title + '</strong></div>';
+      stories.forEach(s => {
+        const storyChecks = allChecks.filter(c => c.story_id === s.id);
+        // Group by user
+        const byUser = {};
+        storyChecks.forEach(c => {
+          if (!byUser[c.user_id]) byUser[c.user_id] = { ac: 0, task: 0 };
+          if (c.check_type === 'ac') byUser[c.user_id].ac++;
+          else byUser[c.user_id].task++;
+        });
+        const userSummaries = Object.keys(byUser).map(uid =>
+          '<span style="color:' + getUserColor(uid) + ';font-size:.72em;font-weight:600">' +
+          getUserName(uid).split(' ')[0] + ' (AC:' + byUser[uid].ac + '/' + s.ac.length + ', T:' + byUser[uid].task + '/' + s.tasks.length + ')</span>'
+        ).join(' | ');
+
+        html += '<div style="padding:6px 0;border-bottom:1px solid rgba(42,42,74,.3);font-size:.82em;cursor:pointer" onclick="showStory(\'' + s.id + '\')">';
+        html += '<span style="color:var(--text)">' + s.id + ' -- ' + s.title + '</span><br>';
+        html += userSummaries || '<span style="font-size:.72em;color:var(--text3)">Nenhum check registrado</span>';
+        html += '</div>';
+      });
+    });
+    html += '</div>';
+
+    // All notes section
+    const storiesWithNotes = {};
+    allNotes.forEach(n => {
+      if (!storiesWithNotes[n.story_id]) storiesWithNotes[n.story_id] = [];
+      storiesWithNotes[n.story_id].push(n);
+    });
+
+    html += '<div class="section-block"><h2>Todas as Notas</h2>';
+    if (Object.keys(storiesWithNotes).length === 0) {
+      html += '<p style="color:var(--text3);font-size:.82em">Nenhuma nota registrada ainda.</p>';
+    } else {
+      Object.keys(storiesWithNotes).forEach(storyId => {
+        const s = STORIES.find(x => x.id === storyId);
+        if (!s) return;
+        html += '<div class="admin-user-section"><h3 onclick="showStory(\'' + storyId + '\')" style="cursor:pointer">' + storyId + ' -- ' + s.title + '</h3>';
+        storiesWithNotes[storyId].forEach(n => {
+          const color = getUserColor(n.user_id);
+          html += '<div class="admin-note-item"><div class="note-author"><span class="user-color" style="background:' + color + '"></span> ' + getUserName(n.user_id).replace(/</g, '&lt;') + '<span class="note-date">' + formatDate(n.updated_at) + '</span></div><div class="note-content">' + (n.content || '').replace(/</g, '&lt;') + '</div></div>';
+        });
+        html += '</div>';
+      });
+    }
+    html += '</div>';
+
+  } catch(e) {
+    html = '<div class="section-block"><h2>Erro ao carregar dados</h2><p>' + e.message + '</p></div>';
+  }
+
+  document.getElementById('content').innerHTML = html;
+  buildSidebar();
+  closeSidebar();
+  window.scrollTo(0, 0);
+}
+
+// ========================================================
+// INIT
+// ========================================================
+(async function init() {
+  await loadLoginUsers();
+  if (currentUserId) {
+    // Already logged in via sessionStorage
+    enterPortal();
+  }
+})();
+</script>
+</body>
+</html>

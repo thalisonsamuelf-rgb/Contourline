@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Contourline Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            background: url('static/img/login-bg2.png') center center / cover no-repeat;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            padding: 20px;
+        }
+
+        /* LOGO */
+        .login-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .login-logo .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+        .login-logo .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        .login-logo .logo-text .brand {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: white;
+            letter-spacing: 1px;
+        }
+        .login-logo .logo-text .sub {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #00bcd4;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        /* CARD */
+        .login-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+
+        .login-message {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d0d5dd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #1a1a2e;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-group input:focus {
+            border-color: #1a237e;
+            box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+        }
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        .login-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+        }
+        .forgot-link {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .forgot-link a {
+            color: #1a237e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .forgot-link a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-login {
+            padding: 12px 32px;
+            background: #1a237e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .btn-login:hover {
+            background: #283593;
+        }
+        .btn-login:active {
+            transform: scale(0.98);
+        }
+
+        /* ERROR STATE */
+        .form-group.error input {
+            border-color: #c62828;
+            box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1);
+        }
+        .error-msg {
+            display: none;
+            color: #c62828;
+            font-size: 0.8rem;
+            margin-top: 6px;
+        }
+        .form-group.error .error-msg {
+            display: block;
+        }
+
+        /* LOADING */
+        .btn-login.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        .btn-login.loading::after {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* SUCCESS TOAST */
+        .login-toast {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            background: #2e7d32;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            transform: translateY(-80px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        .login-toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* FORGOT PASSWORD OVERLAY */
+        .forgot-overlay {
+            position: fixed; inset: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.25s;
+        }
+        .forgot-overlay.show { opacity: 1; visibility: visible; }
+        .forgot-card {
+            background: white; border-radius: 16px; padding: 40px;
+            width: 100%; max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            transform: translateY(20px); transition: transform 0.25s;
+        }
+        .forgot-overlay.show .forgot-card { transform: translateY(0); }
+        .forgot-card h3 { color: #1a1a2e; font-size: 1.2rem; margin-bottom: 8px; }
+        .forgot-card p { color: #666; font-size: 0.88rem; line-height: 1.5; margin-bottom: 24px; }
+        .btn-forgot {
+            width: 100%; padding: 14px; background: white; color: #1a1a2e;
+            border: 1px solid #d0d5dd; border-radius: 8px; font-size: 0.9rem;
+            cursor: pointer; transition: all 0.2s; margin-top: 16px;
+        }
+        .btn-forgot:hover { background: #f5f7fa; border-color: #1a237e; }
+        .btn-back {
+            display: inline-block; margin-top: 16px; font-size: 0.85rem;
+            color: #1a237e; text-decoration: none; cursor: pointer;
+        }
+        .btn-back:hover { text-decoration: underline; }
+
+        /* RESPONSIVE */
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 28px 24px;
+                margin: 0 16px;
+            }
+            .login-logo .logo-text .brand {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-wrapper">
+    <!-- LOGO -->
+    <div class="login-logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="18" stroke="white" stroke-width="1.5" opacity="0.3"/>
+            <circle cx="20" cy="12" r="2.5" fill="white"/>
+            <circle cx="12" cy="20" r="2.5" fill="white"/>
+            <circle cx="28" cy="20" r="2.5" fill="white"/>
+            <circle cx="20" cy="28" r="2.5" fill="white"/>
+            <circle cx="14" cy="14" r="2" fill="white" opacity="0.7"/>
+            <circle cx="26" cy="14" r="2" fill="white" opacity="0.7"/>
+            <circle cx="14" cy="26" r="2" fill="white" opacity="0.7"/>
+            <circle cx="26" cy="26" r="2" fill="white" opacity="0.7"/>
+            <circle cx="20" cy="20" r="3" fill="#00bcd4"/>
+        </svg>
+        <div class="logo-text">
+            <span class="brand">contourline</span>
+            <span class="sub">ACADEMY</span>
+        </div>
+    </div>
+
+    <!-- LOGIN CARD -->
+    <div class="login-card" id="card-login">
+        <p class="login-message" id="login-message">Bem-vindo ao Contourline Academy.</p>
+
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <!-- CAMPOS DE REGISTRO (ocultos por padrao) -->
+            <div class="form-group" id="nome-group" style="display:none">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" placeholder="Seu nome">
+                <span class="error-msg">Informe seu nome</span>
+            </div>
+
+            <div class="form-group" id="email-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com.br" autocomplete="email" required>
+                <span class="error-msg" id="email-error">Email invalido</span>
+            </div>
+
+            <div class="form-group" id="senha-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="" autocomplete="current-password" required>
+                <span class="error-msg" id="senha-error">Senha incorreta</span>
+            </div>
+
+            <div class="login-footer">
+                <span class="forgot-link" id="forgot-link">Esqueceu sua senha? <a href="#" onclick="event.preventDefault();openForgot()">Clique aqui</a></span>
+                <button type="submit" class="btn-login" id="btn-login">login</button>
+            </div>
+        </form>
+
+        <div style="text-align:center;margin-top:16px;padding-top:16px;border-top:1px solid #eee">
+            <span id="toggle-mode-text" style="font-size:0.85rem;color:#666">Nao tem conta? <a href="#" onclick="event.preventDefault();toggleMode()" style="color:#1a237e;font-weight:500;text-decoration:none">Criar conta</a></span>
+        </div>
+    </div>
+</div>
+
+<!-- FORGOT PASSWORD -->
+<div class="forgot-overlay" id="forgot-overlay" onclick="if(event.target===this)closeForgot()">
+    <div class="forgot-card">
+        <h3>Esqueceu sua senha?</h3>
+        <p>Digite seu endereco de email e nos enviaremos um link de recuperacao de senha para sua caixa de entrada.</p>
+        <div class="form-group" id="forgot-email-group">
+            <label for="forgot-email">Email</label>
+            <input type="email" id="forgot-email" placeholder="">
+            <span class="error-msg">Informe um email valido</span>
+        </div>
+        <button class="btn-forgot" onclick="sendReset()">enviar email de redefinicao de senha</button>
+        <a class="btn-back" onclick="closeForgot()"><i class="bi bi-arrow-left"></i> Voltar ao login</a>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div class="login-toast" id="login-toast">
+    <i class="bi bi-check-circle-fill"></i> <span id="toast-msg">Login efetuado!</span>
+</div>
+
+<script>
+// ── SUPABASE INIT ────────────────────────────────────
+var SUPABASE_URL = 'https://lyifnttxpoypwibbffnv.supabase.co';
+var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5aWZudHR4cG95cHdpYmJmZm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNDY3MTQsImV4cCI6MjA2NTkyMjcxNH0.4z8lmc2DAnykbh7YqquyoeEo0uJM_dKt2X90D7-OTS0';
+var supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+var isRegisterMode = false;
+
+// ── CHECK SESSION ON LOAD ────────────────────────────
+(async function checkSession() {
+    var { data } = await supabase.auth.getSession();
+    if (data.session) {
+        window.location.href = 'preview-academy.html';
+    }
+})();
+
+// ── LOGIN / REGISTER ─────────────────────────────────
+async function handleLogin(e) {
+    e.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var senha = document.getElementById('senha').value;
+    var btn = document.getElementById('btn-login');
+
+    // Reset errors
+    document.querySelectorAll('.form-group').forEach(function(g) { g.classList.remove('error'); });
+
+    // Validate
+    if (!email || !email.includes('@')) {
+        document.getElementById('email-group').classList.add('error');
+        document.getElementById('email').focus();
+        return;
+    }
+    if (senha.length < 6) {
+        document.getElementById('senha-error').textContent = 'Minimo 6 caracteres';
+        document.getElementById('senha-group').classList.add('error');
+        document.getElementById('senha').focus();
+        return;
+    }
+
+    if (isRegisterMode) {
+        var nome = document.getElementById('nome').value.trim();
+        if (!nome) {
+            document.getElementById('nome-group').classList.add('error');
+            document.getElementById('nome').focus();
+            return;
+        }
+    }
+
+    // Loading
+    btn.classList.add('loading');
+    btn.textContent = isRegisterMode ? 'Criando...' : 'Entrando';
+
+    try {
+        if (isRegisterMode) {
+            // REGISTER
+            var { data, error } = await supabase.auth.signUp({
+                email: email,
+                password: senha,
+                options: {
+                    data: { full_name: document.getElementById('nome').value.trim() }
+                }
+            });
+
+            if (error) throw error;
+
+            btn.classList.remove('loading');
+            btn.textContent = 'Criar conta';
+            showToast('Conta criada! Verifique seu email para confirmar.');
+            toggleMode(); // volta pro login
+
+        } else {
+            // LOGIN
+            var { data, error } = await supabase.auth.signInWithPassword({
+                email: email,
+                password: senha
+            });
+
+            if (error) throw error;
+
+            // Save user info
+            localStorage.setItem('academy_user', JSON.stringify({
+                id: data.user.id,
+                email: data.user.email,
+                name: data.user.user_metadata.full_name || email.split('@')[0]
+            }));
+
+            btn.classList.remove('loading');
+            showToast('Login efetuado!');
+            setTimeout(function() {
+                window.location.href = 'preview-academy.html';
+            }, 800);
+        }
+
+    } catch (err) {
+        btn.classList.remove('loading');
+        btn.textContent = isRegisterMode ? 'Criar conta' : 'login';
+
+        var msg = err.message || 'Erro desconhecido';
+        if (msg.includes('Invalid login')) {
+            document.getElementById('senha-error').textContent = 'Email ou senha incorretos';
+            document.getElementById('senha-group').classList.add('error');
+        } else if (msg.includes('already registered')) {
+            document.getElementById('email-error').textContent = 'Este email ja esta cadastrado';
+            document.getElementById('email-group').classList.add('error');
+        } else {
+            document.getElementById('senha-error').textContent = msg;
+            document.getElementById('senha-group').classList.add('error');
+        }
+    }
+}
+
+// ── TOGGLE LOGIN / REGISTER ──────────────────────────
+function toggleMode() {
+    isRegisterMode = !isRegisterMode;
+    document.getElementById('nome-group').style.display = isRegisterMode ? 'block' : 'none';
+    document.getElementById('forgot-link').style.display = isRegisterMode ? 'none' : '';
+    document.getElementById('btn-login').textContent = isRegisterMode ? 'Criar conta' : 'login';
+    document.getElementById('login-message').textContent = isRegisterMode
+        ? 'Crie sua conta no Contourline Academy.'
+        : 'Bem-vindo ao Contourline Academy.';
+    document.getElementById('toggle-mode-text').innerHTML = isRegisterMode
+        ? 'Ja tem conta? <a href="#" onclick="event.preventDefault();toggleMode()" style="color:#1a237e;font-weight:500;text-decoration:none">Fazer login</a>'
+        : 'Nao tem conta? <a href="#" onclick="event.preventDefault();toggleMode()" style="color:#1a237e;font-weight:500;text-decoration:none">Criar conta</a>';
+    document.querySelectorAll('.form-group').forEach(function(g) { g.classList.remove('error'); });
+
+    if (isRegisterMode) {
+        document.getElementById('nome').focus();
+    } else {
+        document.getElementById('email').focus();
+    }
+}
+
+// ── FORGOT PASSWORD ──────────────────────────────────
+function openForgot() {
+    document.getElementById('forgot-overlay').classList.add('show');
+    setTimeout(function() { document.getElementById('forgot-email').focus(); }, 200);
+}
+
+function closeForgot() {
+    document.getElementById('forgot-overlay').classList.remove('show');
+    document.getElementById('forgot-email-group').classList.remove('error');
+}
+
+async function sendReset() {
+    var email = document.getElementById('forgot-email').value.trim();
+    if (!email || !email.includes('@')) {
+        document.getElementById('forgot-email-group').classList.add('error');
+        document.getElementById('forgot-email').focus();
+        return;
+    }
+
+    var { error } = await supabase.auth.resetPasswordForEmail(email);
+    closeForgot();
+
+    if (error) {
+        showToast('Erro: ' + error.message);
+    } else {
+        showToast('Email de recuperacao enviado para ' + email);
+    }
+}
+
+// ── TOAST ─────────────────────────────────────────────
+function showToast(msg) {
+    var toast = document.getElementById('login-toast');
+    document.getElementById('toast-msg').textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 4000);
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeForgot();
+});
+
+// Auto-focus email on load
+document.getElementById('email').focus();
+</script>
+</body>
+</html>

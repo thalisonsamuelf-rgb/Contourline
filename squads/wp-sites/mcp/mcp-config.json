@@ -1,0 +1,69 @@
+{
+  "$schema": "https://aiox.dev/schemas/mcp-config.json",
+  "squad": "wp-sites",
+  "version": "1.0.0",
+  "updated_at": "2026-03-25",
+  "servers": {
+    "wordpress": {
+      "name": "WordPress MCP Server",
+      "description": "Servidor MCP custom para WordPress REST API — gerencia conteúdo, plugins, SEO, mídia e configurações do site.",
+      "version": "1.0.0",
+      "tier": "primary",
+      "transport": "stdio",
+      "command": "python3",
+      "args": ["tools/wp-mcp-server/server.py"],
+      "env": {
+        "WP_URL": "${WP_URL}",
+        "WP_USER": "${WP_USER}",
+        "WP_APP_PASSWORD": "${WP_APP_PASSWORD}"
+      },
+      "tools_count": 22,
+      "categories": {
+        "content": ["wp_list_posts", "wp_get_post", "wp_create_post", "wp_update_post", "wp_delete_post", "wp_list_pages", "wp_get_page"],
+        "taxonomies": ["wp_list_categories", "wp_list_tags", "wp_create_category", "wp_create_tag"],
+        "media": ["wp_list_media", "wp_get_media"],
+        "plugins": ["wp_list_plugins", "wp_get_plugin", "wp_activate_plugin", "wp_deactivate_plugin"],
+        "site": ["wp_get_site_info", "wp_list_users", "wp_list_menus", "wp_get_settings"],
+        "seo": ["wp_get_yoast_meta"],
+        "health": ["wp_site_health"]
+      },
+      "agents": ["wp-developer", "wp-chief"],
+      "notes": "Requer Application Password do WordPress. Gerar em: WP Admin > Usuários > Perfil > Application Passwords."
+    },
+    "wordpress-mcp-adapter": {
+      "name": "WordPress MCP Adapter (Plugin Oficial)",
+      "description": "Plugin oficial do WordPress.org que expõe WordPress Abilities como tools MCP. Instalado diretamente no site WordPress.",
+      "version": "latest",
+      "tier": "complementary",
+      "transport": "sse",
+      "url": "${WP_URL}/wp-json/mcp/v1/sse",
+      "env": {
+        "WP_URL": "${WP_URL}",
+        "WP_MCP_TOKEN": "${WP_MCP_TOKEN}"
+      },
+      "tools_count": "dynamic",
+      "categories": {
+        "abilities": "Depende das abilities habilitadas no plugin — cada plugin WordPress pode registrar suas próprias abilities"
+      },
+      "agents": ["wp-developer", "wp-chief"],
+      "setup": {
+        "steps": [
+          "1. Instalar plugin 'WordPress MCP Adapter' via WP Admin > Plugins > Adicionar",
+          "2. Ativar o plugin",
+          "3. Acessar WP Admin > Settings > MCP Adapter",
+          "4. Habilitar as abilities desejadas (content, plugins, themes, etc)",
+          "5. Gerar token de autenticação MCP",
+          "6. Configurar WP_MCP_TOKEN no .env"
+        ],
+        "reference": "https://developer.wordpress.org/news/2026/02/from-abilities-to-ai-agents-introducing-the-wordpress-mcp-adapter/"
+      },
+      "notes": "Opt-in por design — nada habilitado por default. Cada site controla quais abilities expor. Complementa o MCP custom com abilities de plugins third-party (WooCommerce, ACF, Elementor, etc)."
+    }
+  },
+  "rules": {
+    "primary_for_crud": "wordpress",
+    "primary_for_plugin_abilities": "wordpress-mcp-adapter",
+    "conflict_resolution": "Se ambos oferecem a mesma operação, preferir 'wordpress' (custom) por ser mais previsível e controlado.",
+    "multi_site_support": "Para múltiplos sites, configurar uma instância do MCP Server custom por site via env vars distintos (WP_URL_SITE1, WP_URL_SITE2, etc)."
+  }
+}

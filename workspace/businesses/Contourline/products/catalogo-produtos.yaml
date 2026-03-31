@@ -1,0 +1,198 @@
+metadata:g
+  version: '2.1'
+  company_name: Contourline
+  status: ACTIVE
+  last_updated: '2026-03-28'
+  source: PartnerZone (partnerzone.contourline.com.br) + site contourline.com.br + bodyhealthbrasil.com + lumenis.com + indiba.com
+  total_produtos: 26
+  total_linhas: 5
+  note: Catalogo oficial. Tecnologias enriquecidas via site e buscas web.
+
+linhas:
+  contourline:
+    nome: Contourline
+    tipo: Marca propria
+    total_produtos: 11
+    produtos:
+      - nome: Focuskin
+        tecnologia: Analisador facial com IA
+        aplicacao: Analise facial — identifica e mapeia problemas de pele em 12 areas-chave
+        descricao: Tecnologia consolidada com 16 anos de desenvolvimento. Oferece consultas personalizadas baseadas nas necessidades individuais do paciente.
+        status: ACTIVE
+      - nome: HIPRO
+        tecnologia: Ultrassom Microfocado de Alta Intensidade (HIFU)
+        aplicacao: Facial e corporal — rejuvenescimento, flacidez, lifting nao invasivo
+        descricao: Primeiro ultrassom microfocado sem cartucho e de baixo consumivel. Atinge ate 13mm de profundidade na derme, estimulando colageno no SMAS.
+        diferencial: Sem cartucho (baixo custo operacional), alta rentabilidade para clinicas
+        status: ACTIVE
+      - nome: Hipro Med
+        tecnologia: Ultrassom Microfocado (HIFU) — linha medica
+        aplicacao: Facial e corporal — uso exclusivo medico
+        descricao: Versao do HIPRO para o mercado medico com especificacoes clinicas avancadas.
+        status: ACTIVE
+      - nome: Hipro Prime Edition
+        tecnologia: Ultrassom Microfocado (HIFU) — edicao premium
+        aplicacao: Facial e corporal
+        descricao: Edicao premium do HIPRO com recursos adicionais.
+        status: ACTIVE
+      - nome: Hive Pro
+        tecnologia: Analisador capilar All-in-One
+        aplicacao: Analise e diagnostico capilar completo
+        descricao: Equipamento de diagnostico capilar que oferece avaliacao completa do couro cabeludo e fios.
+        status: ACTIVE
+      - nome: Inkie Laser
+        tecnologia: Laser para remocao de tatuagem e micropigmentacao
+        aplicacao: Remocao de tatuagem e micropigmentacao
+        descricao: Laser especializado em remocao de tatuagens e micropigmentacao. Resultados desde a primeira sessao.
+        status: ACTIVE
+      - nome: Inkie Light
+        tecnologia: Laser para remocao de tatuagem e micropigmentacao — versao compacta
+        aplicacao: Remocao de tatuagem e micropigmentacao
+        descricao: Versao mais acessivel do Inkie Laser para clinicas que buscam entrar no segmento de remocao.
+        status: ACTIVE
+      - nome: Laser Fusion
+        tecnologia: Laser 3 comprimentos de onda (Alexandrite 755nm + Diodo 810nm + Nd:YAG 1064nm)
+        aplicacao: Depilacao a laser para todos os tipos de pele e pelos
+        descricao: Emite 3 comprimentos de onda em um mesmo disparo, atingindo diferentes profundidades na pele. Depilacao precisa, segura e eficaz para todos os fototipos.
+        status: ACTIVE
+      - nome: Multishape
+        tecnologia: RF multipolar + Endermologia Super Pulse + Cavitacao de baixa frequencia + LED vermelho
+        aplicacao: Corporal — flacidez, celulite, gordura localizada
+        descricao: Plataforma multitecnologia que combina 4 tecnologias para tratamentos corporais com resultados em firmeza e rejuvenescimento.
+        status: ACTIVE
+      - nome: Raytrace
+        tecnologia: Plasma BT
+        aplicacao: Queda de cabelo, linhas de expressao, tratamentos nao invasivos
+        descricao: Tecnologia de plasma para tratamentos capilares e faciais nao invasivos.
+        status: ACTIVE
+      - nome: X-Tonus
+        tecnologia: Ondas eletromagneticas de alta intensidade (eletroestimulacao muscular)
+        aplicacao: Fortalecimento muscular, incontinencia urinaria, estetica corporal
+        descricao: Eletroestimulador muscular com impulsos de diferentes intensidades e frequencias. Inclui o X-Seat (assento de campo eletromagnetico para assoalho pelvico). Trata incontinencia urinaria fortalecendo musculos do assoalho pelvico.
+        status: ACTIVE
+
+  body_health:
+    nome: Body Health
+    tipo: Fabricante parceiro
+    total_produtos: 6
+    produtos:
+      - nome: Crystal 3D
+        tecnologia: Laser 3 comprimentos (Alexandrite + Diodo + Nd:YAG) com sistema de refrigeracao sinergico
+        aplicacao: Depilacao a laser para todos os fototipos
+        descricao: Crystal 3D Plus com visor LED integrado no aplicador para monitoramento de energia, temperatura, tempo e disparos em tempo real.
+        status: ACTIVE
+      - nome: Enygma
+        tecnologia: Sistema X-Orbital exclusivo Body Health
+        aplicacao: Ginecologia estetica regenerativa, saude intima feminina
+        descricao: Tecnologia desenvolvida exclusivamente pela Body Health para tratamentos de Ginecologia Estetica Funcional Regenerativa. Ajuda mulheres a restaurar saude intima e autoestima.
+        status: ACTIVE
+      - nome: Iconyc
+        tecnologia: Criofrequencia (Cryocooling) + Ultrassom HImFU (cavitacao instavel 2.9MHz/45W) + Succao a vacuo + LED vermelho 624nm
+        aplicacao: Corporal e facial — gordura localizada, celulite, flacidez, fibrose pos-cirurgica
+        descricao: Plataforma multiuso com 6 polos de 12mm e 1 polo de 20mm. Sistema de refrigeracao a agua integrado (Cryocooling) para seguranca e conforto. Cavitacao instavel para quebra de celulas de gordura.
+        status: ACTIVE
+      - nome: Supreme Pro
+        tecnologia: Plataforma multitecnologia Body Health
+        aplicacao: Estetica facial e corporal
+        status: ACTIVE
+      - nome: Unyque Pro
+        tecnologia: 3 tecnologias — ReFreeze + Cryo RF Max (criofrequencia) + HImFU (ultrassom focado de alta intensidade)
+        aplicacao: Facial e corporal
+        preco_estimado: R$ 386.010
+        descricao: Solucao completa que combina 3 tecnologias de ponta em um unico equipamento. Cryo RF Max e a tecnologia destaque do mercado de medicina estetica.
+        status: ACTIVE
+      - nome: Unyque Pro Enygma
+        tecnologia: Criofrequencia + HImFU + Sistema X-Orbital
+        aplicacao: Facial, corporal e ginecologia estetica
+        descricao: Combina as tecnologias do Unyque Pro com o sistema X-Orbital do Enygma em um unico equipamento.
+        status: ACTIVE
+
+  lumenis:
+    nome: Lumenis
+    tipo: Fabricante parceiro (representacao)
+    total_produtos: 5
+    produtos:
+      - nome: Trilift
+        tecnologia: DMST (Dynamic Muscle Stimulation Technology) + Radiofrequencia
+        aplicacao: Facial — lifting nao invasivo, tonificacao muscular facial
+        descricao: Atua na base do rosto com estimulacao muscular dinamica. Eleva o padrao das clinicas em tratamentos faciais nao invasivos.
+        status: ACTIVE
+      - nome: Ultrapulse Alpha
+        tecnologia: Laser CO2 Fracionado
+        aplicacao: Resurfacing, cicatrizes (incluindo acne), rejuvenescimento, lesoes cutaneas
+        descricao: Referencia mundial em laser CO2 fracionado. Potencia e precisao para resultados em resurfacing profundo.
+        preco_estimado: R$ 450.000
+        status: ACTIVE
+      - nome: Folix
+        tecnologia: Laser fracionado nao-ablativo para estimulacao capilar
+        aplicacao: Tratamento de queda de cabelo (homens e mulheres, Fitzpatrick I-IV)
+        descricao: Primeiro e unico laser fracionado com aprovacao FDA para tratamento de queda de cabelo. Ativa processos naturais de cura que aumentam fluxo sanguineo e estimulam foliculos capilares. Protocolo de 4-6 sessoes a cada 4 semanas + manutencao 2-3x/ano. Sem anestesia, agulhas ou downtime.
+        diferencial: Unico com FDA clearance para queda de cabelo
+        status: ACTIVE
+      - nome: Nuera Tight
+        tecnologia: Radiofrequencia
+        aplicacao: Corporal e facial — gordura localizada, flacidez, celulite, rugas
+        descricao: Plataforma de radiofrequencia que entrega resultados em multiplas indicacoes corporais e faciais.
+        preco_estimado: R$ 220.000
+        status: ACTIVE
+      - nome: Stella
+        tecnologia: Plataforma IPL (Intense Pulsed Light)
+        aplicacao: Tratamentos vasculares, pigmentacao, fotorrejuvenescimento
+        descricao: Evolucao da linha Stellar/M22 da Lumenis. Plataforma IPL versatil para multiplas indicacoes dermatologicas.
+        preco_estimado: R$ 380.000
+        status: ACTIVE
+
+  visbody:
+    nome: Visbody
+    tipo: Fabricante parceiro
+    total_produtos: 3
+    produtos:
+      - nome: Creator - 600
+        tecnologia: Esteira inteligente
+        aplicacao: Avaliacao fisica e reabilitacao
+        status: ACTIVE
+      - nome: M - 30
+        tecnologia: Scanner corporal 3D
+        aplicacao: Avaliacao corporal — composicao, postura, medidas
+        status: ACTIVE
+      - nome: S - 30
+        tecnologia: Scanner corporal 3D
+        aplicacao: Avaliacao corporal — composicao, postura, medidas
+        status: ACTIVE
+
+  indiba:
+    nome: Indiba
+    tipo: Fabricante parceiro
+    total_produtos: 1
+    produtos:
+      - nome: Reverso
+        tecnologia: Radiofrequencia fracionada com microagulhas (VPP — Variable Pulse Profile + VSP — Very Sharp Pin 15 graus)
+        aplicacao: Resurfacing cutaneo, cicatrizes (incluindo pos-acne), estrias, remodelacao tecidual
+        descricao: RF fracionada com energia constante durante o pulso. Agulhas ultrafinas a 15 graus penetram ate 1mm de profundidade. Emite pulsos a cada segundo cobrindo ~2cm2 por pulso. Energia de ate 10W por pino. Adequado para todos os tipos de pele. Design premiado internacionalmente.
+        diferencial: Tecnologia VPP (energia constante) + agulhas VSP (15 graus) para penetracao precisa
+        status: ACTIVE
+
+produtos_descontinuados_ou_removidos:
+  nota: Produtos que estavam no CRM/workspace antigo mas NAO aparecem no PartnerZone atual
+  lista:
+    - nome: Stellar M22
+      linha: Lumenis
+      nota: Substituido por Stella no PartnerZone
+    - nome: Splendor X
+      linha: Lumenis
+      nota: Nao encontrado no PartnerZone
+    - nome: LightSheer DESIRE
+      linha: Lumenis
+      nota: Nao encontrado no PartnerZone
+    - nome: LEGEND Pro+
+      linha: Lumenis
+      nota: Nao encontrado no PartnerZone
+    - nome: PiQo4
+      linha: Lumenis
+      nota: Nao encontrado no PartnerZone
+    - nome: ResurFX
+      linha: Lumenis
+      nota: Era modulo do M22, nao produto separado
+    - nome: Essenza
+      linha: Desconhecida
+      nota: Mencionado no CRM antigo, nao encontrado no PartnerZone

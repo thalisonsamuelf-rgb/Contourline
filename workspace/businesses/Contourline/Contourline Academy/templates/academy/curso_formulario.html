@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Editar' if curso else 'Novo' }} Curso - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 700px;">
+    <a href="{{ url_for('academy_cursos_lista') }}" class="btn btn-sm btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+
+    <div class="form-container">
+        <h4 class="mb-4">{{ 'Editar Curso' if curso else 'Novo Curso Academy' }}</h4>
+
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label class="form-label fw-semibold">Nome do Curso *</label>
+                    <input type="text" name="nome" class="form-control" value="{{ curso.nome if curso else '' }}" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Modalidade</label>
+                    <select name="modalidade" class="form-select">
+                        {% for m in ['presencial', 'online', 'hibrido'] %}
+                        <option value="{{ m }}" {{ 'selected' if curso and curso.modalidade == m else '' }}>{{ m | title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Carga Horaria (h)</label>
+                    <input type="number" name="carga_horaria" class="form-control" value="{{ curso.carga_horaria if curso and curso.carga_horaria else '' }}" min="1">
+                </div>
+                <div class="col-md-8">
+                    <label class="form-label fw-semibold">Equipamento Relacionado</label>
+                    <select name="equipamento_id" class="form-select">
+                        <option value="">Nenhum</option>
+                        {% for e in equipamentos %}
+                        <option value="{{ e.id }}" {{ 'selected' if curso and curso.equipamento_id == e.id else '' }}>{{ e.nome }} ({{ e.categoria }})</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Publico Alvo</label>
+                    <input type="text" name="publico_alvo" class="form-control" value="{{ curso.publico_alvo if curso else '' }}" placeholder="Ex: Dermatologistas, Esteticistas">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Pre-requisitos</label>
+                    <input type="text" name="pre_requisitos" class="form-control" value="{{ curso.pre_requisitos if curso else '' }}">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Descricao</label>
+                    <textarea name="descricao" class="form-control" rows="3">{{ curso.descricao if curso else '' }}</textarea>
+                </div>
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg"></i> {{ 'Salvar' if curso else 'Cadastrar Curso' }}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

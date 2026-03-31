@@ -1,0 +1,488 @@
+# WF-1: WordPress Site Creation Pipeline
+# Duration: 2-4 weeks
+# Best for: New WordPress site projects from scratch
+# Key Agents: wp-chief, wp-discovery, wp-architect, wp-copywriter, wp-designer, wp-developer
+
+workflow:
+  id: wf-site-creation-pipeline
+  name: "WordPress Site Creation Pipeline"
+  version: "2.0"
+  type: orchestration
+  orchestrator: wp-chief
+  duration: "2-4 weeks"
+  description: |
+    End-to-end pipeline for creating WordPress sites. Five phases with client
+    approval gates between each. Follows the Asimov Academy reference style.
+
+    Pipeline: Discovery -> Architecture -> Copywriting -> Design -> Build+QA+Launch
+
+    Each phase produces deliverables that feed the next. No phase proceeds
+    without explicit client approval.
+
+  best_for:
+    - "New WordPress sites from scratch"
+    - "Site redesigns with new content"
+    - "Landing pages needing structured approach"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# EXECUTABLE SEQUENCE
+# ═══════════════════════════════════════════════════════════════════════════════
+sequence:
+  - step: 1
+    id: PHASE-1
+    phase: 1
+    phase_name: "Discovery"
+    agent: wp-discovery
+    task: tasks/run-discovery-briefing.md
+    next: PHASE-2
+    outputs:
+      - "discovery-brief.md"
+      - "objectives.md"
+      - "reference-analysis.md"
+    checkpoint:
+      criteria:
+        - "All 6 briefing sections complete"
+        - "Objectives extracted and structured"
+        - "Reference sites analyzed"
+        - "Client has reviewed the brief"
+      human_review: true
+    notes: |
+      Client approval gate: Brief must be approved before Architecture begins.
+      This is the most important gate -- a bad brief causes rework in every phase.
+
+  - step: 2
+    id: PHASE-2
+    phase: 2
+    phase_name: "Architecture"
+    agent: wp-architect
+    task: tasks/create-sitemap.md
+    requires: PHASE-1
+    next: PHASE-3
+    outputs:
+      - "sitemap.md"
+      - "wireframe-skeletons.md"
+      - "page-framework-assignments.md"
+    checkpoint:
+      criteria:
+        - "Sitemap covers all pages from brief"
+        - "Navigation has 5-7 main items"
+        - "Wireframe skeleton exists for every page"
+        - "Page frameworks assigned"
+        - "Mobile section order defined"
+      human_review: true
+    notes: |
+      Client approval gate: Sitemap and wireframes must be approved before
+      Copywriting begins. Structure drives everything downstream.
+
+  - step: 3
+    id: PHASE-3
+    phase: 3
+    phase_name: "Copywriting"
+    agent: wp-copywriter
+    task: tasks/write-hero-copy.md
+    requires: PHASE-2
+    next: PHASE-4
+    outputs:
+      - "hero-copy.md"
+      - "page-copy-package.md"
+      - "seo-metadata.md"
+    checkpoint:
+      criteria:
+        - "Hero copy for all pages (action verb + benefit)"
+        - "Full section copy for all pages"
+        - "CTAs are specific (no Learn More)"
+        - "Social proof with specific numbers"
+        - "SEO metadata within character limits"
+      human_review: true
+    notes: |
+      Client approval gate: All copy must be approved before Design begins.
+      Copy drives design -- the designer wraps visuals around approved words.
+
+  - step: 4
+    id: PHASE-4
+    phase: 4
+    phase_name: "Design"
+    agent: wp-designer
+    task: tasks/define-visual-direction.md
+    requires: PHASE-3
+    next: PHASE-5
+    outputs:
+      - "visual-direction.md"
+      - "layout-specs.md"
+      - "page-layouts.md"
+    checkpoint:
+      criteria:
+        - "Typography scale defined (all sizes, desktop+mobile)"
+        - "Color palette with max 7 tokens"
+        - "Spacing system documented"
+        - "Layout specs for all page sections"
+        - "Responsive behavior at 375px, 768px, 1200px"
+      human_review: true
+    notes: |
+      Client approval gate: Design direction must be approved before Build begins.
+      Asimov Academy style: bold typography, neutral palette, white space, mobile-first.
+
+  - step: 5
+    id: PHASE-5
+    phase: 5
+    phase_name: "Build + QA + Launch"
+    agent: wp-developer
+    task: tasks/setup-wordpress.md
+    requires: PHASE-4
+    outputs:
+      - "wordpress-setup-report.md"
+      - "qa-report.md"
+      - "go-live-report.md"
+    checkpoint:
+      criteria:
+        - "WordPress installed and configured"
+        - "All pages built matching design specs"
+        - "Lighthouse 90+ on all categories"
+        - "QA report shows GO verdict"
+        - "Client approves staging"
+        - "Site live on production with SSL"
+        - "48-hour monitoring complete"
+      human_review: true
+    notes: |
+      Two client gates in this phase:
+      1. Client approves staging site before go-live
+      2. Client confirms live site after launch
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# HANDOFF PROMPTS
+# ═══════════════════════════════════════════════════════════════════════════════
+handoff_prompts:
+  discovery_to_architect:
+    context: "Discovery brief with objectives and reference analysis"
+    instruction: "Create sitemap, page hierarchy, wireframe skeletons, and page framework assignments from the approved brief."
+
+  architect_to_copywriter:
+    context: "Sitemap, wireframe skeletons, and page framework assignments"
+    instruction: "Write hero copy and full page copy for every section of every page. Follow Asimov Academy style: action verb + benefit headlines, specific CTAs, short paragraphs."
+
+  copywriter_to_designer:
+    context: "Complete page copy package with hero copy, section copy, and SEO metadata"
+    instruction: "Define visual direction (Asimov Academy style) and create section-by-section layout specs. The copy is approved -- design wraps around it."
+
+  designer_to_developer:
+    context: "Design specs including typography, colors, spacing, and responsive layouts"
+    instruction: "Build WordPress site from specs: setup environment, implement pages, configure plugins, optimize performance, run QA, and execute go-live."
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# SUPPLEMENTAL PHASE METADATA
+# ═══════════════════════════════════════════════════════════════════════════════
+phases:
+  - id: PHASE-1
+    name: "Discovery"
+    days: "2-3"
+    tier: 0
+    description: |
+      Structured client interview to extract business goals, audience, content needs,
+      functionality, visual preferences, and constraints. Produces the discovery brief.
+
+    tasks:
+      - task_file: tasks/run-discovery-briefing.md
+        agent: wp-discovery
+        required: true
+        description: "Structured 6-section client interview"
+        output: "discovery-brief.md"
+
+      - task_file: tasks/extract-objectives.md
+        agent: wp-discovery
+        required: true
+        description: "Transform answers into structured objectives"
+        output: "objectives.md"
+
+      - task_file: tasks/analyze-references.md
+        agent: wp-discovery
+        required: false
+        description: "Analyze reference sites (if provided)"
+        output: "reference-analysis.md"
+
+    checkpoint:
+      criteria:
+        - "All 6 sections complete"
+        - "Objectives extracted"
+      human_review: true
+      message: "Review the discovery brief and approve to proceed to Architecture."
+
+  - id: PHASE-2
+    name: "Architecture"
+    days: "2-3"
+    tier: 0
+    description: |
+      Transform discovery brief into navigable site structure: sitemap, page hierarchy,
+      wireframe skeletons, and page framework assignments.
+
+    tasks:
+      - task_file: tasks/create-sitemap.md
+        agent: wp-architect
+        required: true
+        description: "Define pages, hierarchy, and navigation"
+        output: "sitemap.md"
+
+      - task_file: tasks/create-wireframes.md
+        agent: wp-architect
+        required: true
+        description: "Create section-level wireframe skeletons"
+        output: "wireframe-skeletons.md"
+
+      - task_file: tasks/define-page-frameworks.md
+        agent: wp-architect
+        required: true
+        description: "Assign LP/institutional/lead-capture frameworks"
+        output: "page-framework-assignments.md"
+
+    checkpoint:
+      criteria:
+        - "Sitemap complete with all pages"
+        - "Wireframes exist for all pages"
+      human_review: true
+      message: "Review the sitemap and wireframes. Approve to proceed to Copywriting."
+
+  - id: PHASE-3
+    name: "Copywriting"
+    days: "3-5"
+    tier: 1
+    description: |
+      Write all page copy in Asimov Academy style: hero headlines, benefit blocks,
+      CTAs, social proof, and SEO metadata.
+
+    tasks:
+      - task_file: tasks/write-hero-copy.md
+        agent: wp-copywriter
+        required: true
+        description: "Hero headlines and subheadlines for all pages"
+        output: "hero-copy.md"
+
+      - task_file: tasks/write-page-copy.md
+        agent: wp-copywriter
+        required: true
+        description: "Full section copy for all pages"
+        output: "page-copy-package.md"
+
+      - task_file: tasks/write-seo-metadata.md
+        agent: wp-copywriter
+        required: true
+        description: "Title tags, meta descriptions, OG tags"
+        output: "seo-metadata.md"
+
+    checkpoint:
+      criteria:
+        - "All pages have hero + section copy"
+        - "All CTAs specific"
+        - "SEO metadata complete"
+      human_review: true
+      message: "Review all page copy. Approve to proceed to Design."
+
+  - id: PHASE-4
+    name: "Design"
+    days: "3-5"
+    tier: 1
+    description: |
+      Define visual direction and layout specifications in Asimov Academy style.
+      Typography, colors, spacing, responsive breakpoints, and page layouts.
+
+    tasks:
+      - task_file: tasks/define-visual-direction.md
+        agent: wp-designer
+        required: true
+        description: "Design tokens: typography, colors, spacing"
+        output: "visual-direction.md"
+
+      - task_file: tasks/create-layout-specs.md
+        agent: wp-designer
+        required: true
+        description: "Layout patterns and responsive behavior"
+        output: "layout-specs.md"
+
+      - task_file: tasks/design-page-layouts.md
+        agent: wp-designer
+        required: true
+        description: "Section-by-section layouts for all pages"
+        output: "page-layouts.md"
+
+    checkpoint:
+      criteria:
+        - "Visual direction complete"
+        - "Layout specs for all sections"
+        - "Responsive behavior documented"
+      human_review: true
+      message: "Review the design direction. Approve to proceed to Build."
+
+  - id: PHASE-5
+    name: "Build + QA + Launch"
+    days: "5-10"
+    tier: 2
+    description: |
+      WordPress implementation, plugin configuration, SEO setup, performance
+      optimization, security hardening, QA testing, and go-live execution.
+
+    tasks:
+      - task_file: tasks/setup-wordpress.md
+        agent: wp-developer
+        required: true
+        description: "Install WordPress, theme, and plugins"
+        output: "wordpress-setup-report.md"
+
+      - task_file: tasks/build-pages.md
+        agent: wp-developer
+        required: true
+        description: "Implement all pages from design specs"
+        output: "built pages on staging"
+
+      - task_file: tasks/configure-seo.md
+        agent: wp-developer
+        required: true
+        description: "Configure SEO plugin with metadata"
+        output: "seo-configuration.md"
+
+      - task_file: tasks/configure-performance.md
+        agent: wp-developer
+        required: true
+        description: "Optimize performance (Lighthouse 90+)"
+        output: "performance-report.md"
+
+      - task_file: tasks/configure-security.md
+        agent: wp-developer
+        required: true
+        description: "Harden WordPress security"
+        output: "security-report.md"
+
+      - task_file: tasks/run-qa-checks.md
+        agent: wp-developer
+        required: true
+        description: "Full QA: browser, mobile, performance, functionality"
+        output: "qa-report.md"
+
+      - task_file: tasks/execute-go-live.md
+        agent: wp-developer
+        required: true
+        description: "DNS, SSL, redirects, monitoring"
+        output: "go-live-report.md"
+
+    checkpoint:
+      criteria:
+        - "All pages built"
+        - "QA report GO"
+        - "Client approves staging"
+        - "Site live"
+      human_review: true
+      message: "Review staging site. Approve for go-live."
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ERROR HANDLING
+# ═══════════════════════════════════════════════════════════════════════════════
+error_handling:
+  on_phase_failure:
+    - log_error: true
+    - notify_stakeholders: true
+    - create_remediation_task: true
+    - halt_workflow: true
+
+  on_checkpoint_failure:
+    - log_failure_reason: true
+    - return_to_previous_phase: false
+    - max_retries: 3
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# COMPLETION SIGNALS
+# ═══════════════════════════════════════════════════════════════════════════════
+completion_signal: "<promise>COMPLETE</promise>"
+checkpoint_signal: "<promise>CHECKPOINT:PHASE-X</promise>"
+blocked_signal: "<promise>BLOCKED:T-X.Y</promise>"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# OUTPUT ARTIFACTS
+# ═══════════════════════════════════════════════════════════════════════════════
+outputs:
+  discovery:
+    - "discovery-brief.md"
+    - "objectives.md"
+    - "reference-analysis.md"
+  architecture:
+    - "sitemap.md"
+    - "wireframe-skeletons.md"
+    - "page-framework-assignments.md"
+  copywriting:
+    - "hero-copy.md"
+    - "page-copy-package.md"
+    - "seo-metadata.md"
+  design:
+    - "visual-direction.md"
+    - "layout-specs.md"
+    - "page-layouts.md"
+  build:
+    - "wordpress-setup-report.md"
+    - "qa-report.md"
+    - "go-live-report.md"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# AGENT ASSIGNMENTS
+# ═══════════════════════════════════════════════════════════════════════════════
+agents_by_phase:
+  PHASE-1:
+    primary: ["wp-discovery"]
+    secondary: ["wp-chief"]
+  PHASE-2:
+    primary: ["wp-architect"]
+    secondary: ["wp-chief"]
+  PHASE-3:
+    primary: ["wp-copywriter"]
+    secondary: ["wp-chief"]
+  PHASE-4:
+    primary: ["wp-designer"]
+    secondary: ["wp-chief"]
+  PHASE-5:
+    primary: ["wp-developer"]
+    secondary: ["wp-chief"]
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# QUALITY CHECKLIST
+# ═══════════════════════════════════════════════════════════════════════════════
+quality_checklist:
+  Discovery:
+    - "[ ] All 6 briefing sections complete"
+    - "[ ] Objectives extracted with measurable targets"
+    - "[ ] Client approved brief"
+  Architecture:
+    - "[ ] Sitemap covers all required pages"
+    - "[ ] Navigation has 5-7 items"
+    - "[ ] Wireframes exist for all pages"
+    - "[ ] Client approved architecture"
+  Copywriting:
+    - "[ ] Headlines use action verbs"
+    - "[ ] CTAs are specific"
+    - "[ ] SEO metadata complete"
+    - "[ ] Client approved copy"
+  Design:
+    - "[ ] Asimov Academy style applied"
+    - "[ ] Responsive specs at 3 breakpoints"
+    - "[ ] Client approved design"
+  Build:
+    - "[ ] Lighthouse 90+ all categories"
+    - "[ ] QA report shows GO"
+    - "[ ] Client approved staging"
+    - "[ ] Site live with SSL"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# GOVERNANCE GATE
+# ═══════════════════════════════════════════════════════════════════════════════
+governance_gate:
+  protocol: "squads/squad-creator/protocols/ai-first-governance.md"
+  required_checks:
+    - "Client approval recorded at each phase gate"
+    - "Deliverables match discovery brief requirements"
+    - "No invented requirements beyond project artifacts"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# METADATA
+# ═══════════════════════════════════════════════════════════════════════════════
+metadata:
+  version: "2.0"
+  framework: "AIOX WP Sites Squad"
+  created: "2026-03-25"
+  primary_use_case: "New WordPress site creation"
+  key_difference: |
+    5-phase pipeline with mandatory client approval gates between each phase.
+    Asimov Academy reference style enforced. Developer+QA merged into single agent.

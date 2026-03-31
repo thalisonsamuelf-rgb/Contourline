@@ -1,0 +1,69 @@
+# WF-3: WordPress Site Maintenance
+# Duration: Recurring (monthly/weekly)
+# Best for: Ongoing WordPress site maintenance
+# Key Agents: wp-developer
+
+workflow:
+  id: wf-site-maintenance
+  name: "WordPress Site Maintenance"
+  version: "2.0"
+  type: recurring
+  orchestrator: wp-chief
+  duration: "2-4 hours per cycle"
+  description: |
+    Recurring maintenance workflow for WordPress sites. Covers updates,
+    backups, performance checks, and security scans.
+
+  best_for:
+    - "Monthly WordPress maintenance"
+    - "Post-launch ongoing care"
+    - "Plugin and theme update management"
+
+sequence:
+  - step: 1
+    id: MAINTENANCE-1
+    phase: 1
+    phase_name: "Backup & Updates"
+    agent: wp-developer
+    task: tasks/configure-security.md
+    next: MAINTENANCE-2
+    outputs:
+      - "backup-confirmation.md"
+      - "update-log.md"
+    checkpoint:
+      criteria:
+        - "Full backup created and verified"
+        - "WordPress core updated"
+        - "All plugins updated"
+        - "Theme updated"
+        - "No broken functionality after updates"
+      human_review: false
+
+  - step: 2
+    id: MAINTENANCE-2
+    phase: 2
+    phase_name: "Health Check"
+    agent: wp-developer
+    task: tasks/run-qa-checks.md
+    requires: MAINTENANCE-1
+    outputs:
+      - "maintenance-report.md"
+    checkpoint:
+      criteria:
+        - "Lighthouse scores checked"
+        - "Security scan clean"
+        - "No broken links"
+        - "Forms working"
+        - "Uptime log reviewed"
+      human_review: true
+
+outputs:
+  maintenance_report:
+    - "backup-confirmation.md"
+    - "update-log.md"
+    - "maintenance-report.md"
+
+metadata:
+  version: "2.0"
+  created: "2026-03-25"
+  primary_use_case: "Recurring WordPress maintenance"

@@ -1,0 +1,86 @@
+# WF-2: WordPress Site Audit
+# Duration: 1-2 days
+# Best for: Existing WordPress sites needing health assessment
+# Key Agents: wp-chief, wp-developer
+
+workflow:
+  id: wf-site-audit
+  name: "WordPress Site Audit"
+  version: "2.0"
+  type: analysis
+  orchestrator: wp-chief
+  duration: "1-2 days"
+  description: |
+    Comprehensive audit of an existing WordPress site covering performance,
+    security, SEO, accessibility, and content quality. Produces a scored
+    report with prioritized recommendations.
+
+  best_for:
+    - "Existing WordPress sites needing health check"
+    - "Pre-redesign assessment"
+    - "Periodic maintenance reviews"
+
+sequence:
+  - step: 1
+    id: PHASE-1
+    phase: 1
+    phase_name: "Performance Audit"
+    agent: wp-developer
+    task: tasks/configure-performance.md
+    next: PHASE-2
+    outputs:
+      - "performance-audit.md"
+    checkpoint:
+      criteria:
+        - "Lighthouse scores recorded"
+        - "Core Web Vitals measured"
+        - "Image optimization assessed"
+        - "Caching status checked"
+      human_review: false
+
+  - step: 2
+    id: PHASE-2
+    phase: 2
+    phase_name: "Security Audit"
+    agent: wp-developer
+    task: tasks/configure-security.md
+    requires: PHASE-1
+    next: PHASE-3
+    outputs:
+      - "security-audit.md"
+    checkpoint:
+      criteria:
+        - "Wordfence scan completed"
+        - "WordPress hardening assessed"
+        - "Plugin vulnerabilities checked"
+        - "Backup status verified"
+      human_review: false
+
+  - step: 3
+    id: PHASE-3
+    phase: 3
+    phase_name: "SEO Audit"
+    agent: wp-developer
+    task: tasks/configure-seo.md
+    requires: PHASE-2
+    outputs:
+      - "seo-audit.md"
+    checkpoint:
+      criteria:
+        - "Meta tags assessed"
+        - "Schema markup checked"
+        - "Sitemap verified"
+        - "Search Console issues reviewed"
+      human_review: true
+
+outputs:
+  audit_report:
+    - "performance-audit.md"
+    - "security-audit.md"
+    - "seo-audit.md"
+    - "audit-summary.md"
+
+metadata:
+  version: "2.0"
+  created: "2026-03-25"
+  primary_use_case: "Existing WordPress site health assessment"

@@ -1,0 +1,499 @@
+# WP Sites - WordPress Site Creation Squad v2.0
+# Architecture: 6-agent pipeline with Asimov Academy reference style
+# Handoff: wp-discovery -> wp-architect -> wp-copywriter -> wp-designer -> wp-developer
+# wp-chief orchestrates all phases with client approval gates between each
+
+squad:
+  name: wp-sites
+  version: "2.0.0"
+  short-title: "WP Sites Squad"
+  description: >-
+    End-to-end WordPress site creation squad. Six specialized agents handle
+    discovery, content architecture, copywriting, visual design, and technical
+    build+launch. Built around the Asimov Academy reference style: large bold
+    typography, neutral palette, direct copy, white space, mobile-first.
+    Client approval gates enforce quality between every phase.
+  author: "AIOX Team"
+  icon: "WP"
+  entry_agent: wp-chief
+  slashPrefix: wpSites
+  created_at: "2026-03-25"
+  updated_at: "2026-03-25"
+  tested: false
+
+workspace_integration:
+  level: read_only
+  rationale: >-
+    Reads business context from workspace for brand alignment and content strategy.
+    Does not write to workspace; all outputs stay within squad-local directories
+    or user-specified project paths.
+  read_paths:
+    - workspace/businesses/{brand}/company/
+    - workspace/businesses/{brand}/brand/
+    - workspace/businesses/{brand}/operations/
+  write_paths: []
+  template_namespace: wp-sites
+  owner: "squad-local"
+  execution_mode: "self_contained"
+
+# ==============================================================================
+# SQUAD TYPE & CLASSIFICATION
+# ==============================================================================
+squad_type: pipeline
+# pipeline = Sequential flow with client approval gates between phases
+
+metadata:
+  version: "2.0.0"
+  score: 0.0
+  architecture: "6-agent pipeline with merged Developer+QA/Launch"
+
+# ==============================================================================
+# REFERENCE STYLE: ASIMOV ACADEMY
+# ==============================================================================
+reference_style:
+  name: "Asimov Academy"
+  principles:
+    - "Large bold typography in Hero sections"
+    - "Neutral palette: white, black, gray with one accent color"
+    - "Direct copy: action verb + clear benefit"
+    - "Generous white space between sections"
+    - "Single visible CTA per section"
+    - "Mobile-first always"
+  page_frameworks:
+    lp_product_service:
+      name: "LP Product/Service"
+      structure: "Strong Hero -> Problem -> Solution -> Social Proof -> CTA"
+    institutional_site:
+      name: "Institutional Site"
+      structure: "Home -> About -> Services -> Cases -> Contact"
+    lead_capture_lp:
+      name: "Lead Capture LP"
+      structure: "Hook -> Benefits -> Short Form"
+
+# ==============================================================================
+# TECH STACK
+# ==============================================================================
+tech_stack:
+  cms: "WordPress"
+  builders:
+    - "Elementor"
+    - "Gutenberg (Block Editor)"
+  essential_plugins:
+    seo:
+      - "Yoast SEO"
+      - "Rank Math"
+    cache:
+      - "WP Rocket"
+      - "LiteSpeed Cache"
+    security:
+      - "Wordfence"
+    forms:
+      - "WPForms"
+      - "Contact Form 7"
+  hosting_recommended:
+    - "Cloudways"
+    - "Hostinger"
+    - "Kinsta"
+
+# ==============================================================================
+# PATTERN LIBRARY (WP-xxx)
+# ==============================================================================
+pattern_library:
+  prefix: WP
+  naming_convention:
+    format: "{PREFIX}-{CATEGORY}-{NUMBER}"
+    example: "WP-TP-001"
+  categories:
+    - id: TP
+      name: "Task Patterns"
+      description: "Patterns for WordPress task structure and execution"
+    - id: EP
+      name: "Executor Patterns"
+      description: "Patterns for executor types and selection"
+    - id: PP
+      name: "Process Patterns"
+      description: "Patterns for WordPress workflow processes"
+    - id: IP
+      name: "Integration Patterns"
+      description: "Patterns for WordPress plugin and service integrations"
+    - id: AP
+      name: "Automation Patterns"
+      description: "Patterns for WordPress automation logic"
+    - id: DP
+      name: "Documentation Patterns"
+      description: "Patterns for WordPress documentation structure"
+  patterns: []
+
+# ==============================================================================
+# TASK STANDARDS (WP-TP-001)
+# ==============================================================================
+task_standards:
+  enforce_anatomy: true
+  validator: "WP-TP-001"
+  required_fields:
+    - task_name
+    - status
+    - responsible_executor
+    - execution_type
+    - input
+    - output
+    - action_items
+    - acceptance_criteria
+  optional_fields:
+    - estimated_time
+    - dependencies
+    - templates
+    - quality_gate
+    - handoff
+
+# ==============================================================================
+# EXECUTOR TYPES (WP-EP-xxx)
+# ==============================================================================
+executor_types:
+  human:
+    id: "WP-EP-001"
+    name: "Human Executor"
+    characteristics:
+      - judgment
+      - creativity
+      - client_communication
+    cost: "$$$"
+    speed: slow
+    use_for:
+      - "Brand strategy decisions"
+      - "Client approvals"
+      - "Creative direction"
+  agent:
+    id: "WP-EP-002"
+    name: "Agent Executor (AI)"
+    characteristics:
+      - analysis
+      - generation
+      - pattern_recognition
+    cost: "$$$$"
+    speed: fast
+    use_for:
+      - "Content generation"
+      - "SEO analysis"
+      - "Code scaffolding"
+  hybrid:
+    id: "WP-EP-003"
+    name: "Hybrid Executor"
+    characteristics:
+      - ai_assisted
+      - human_validated
+    cost: "$$"
+    speed: moderate
+    use_for:
+      - "Design review"
+      - "QA testing"
+      - "Content editing"
+  worker:
+    id: "WP-EP-004"
+    name: "Worker Executor"
+    characteristics:
+      - deterministic
+      - api_integration
+      - file_operations
+    cost: "$"
+    speed: very_fast
+    use_for:
+      - "Plugin installation"
+      - "Theme deployment"
+      - "Backup automation"
+
+executor_selection:
+  requires_creativity: human
+  requires_judgment: [human, hybrid]
+  requires_speed: [agent, worker]
+  requires_consistency: worker
+  requires_validation: hybrid
+  requires_learning: agent
+
+# ==============================================================================
+# WORKFLOW CONFIGURATION
+# ==============================================================================
+workflow_config:
+  checkpoint_policy: always_active
+  checkpoint_modes:
+    always_active: "Every checkpoint MUST pass with client approval"
+    skip_on_override: "Can skip with manual approval"
+    advisory: "Only alerts, doesn't block"
+  fail_fast: true
+  allow_manual_override: false
+
+# ==============================================================================
+# AGENTS (6-Agent Architecture)
+# ==============================================================================
+agents:
+  - id: wp-chief
+    name: "WP Chief"
+    role: "Squad orchestrator, project coordinator, and client approval gate enforcer"
+    tier: orchestrator
+    specialty: "Routes requests, coordinates agents, enforces client approval gates between phases"
+
+  - id: wp-discovery
+    name: "WP Discovery"
+    role: "Briefing specialist -- structured client interview, objectives extraction, reference analysis"
+    tier: 1
+    specialty: "Client intake interviews, requirements gathering, objective extraction, reference site analysis"
+
+  - id: wp-architect
+    name: "WP Architect"
+    role: "Content architect -- pages, hierarchy, wireframe skeleton, navigation"
+    tier: 1
+    specialty: "Sitemap definition, page hierarchy, wireframe skeletons, navigation structure, user flow"
+
+  - id: wp-copywriter
+    name: "WP Copywriter"
+    role: "Copywriter -- Hero copy, benefits, CTAs, social proof in Asimov Academy style"
+    tier: 1
+    specialty: "Hero headlines, benefit blocks, CTA copy, social proof, direct persuasion copy"
+
+  - id: wp-designer
+    name: "WP Designer"
+    role: "Visual designer -- Asimov Academy style: clean, bold typography, white space, mobile-first"
+    tier: 1
+    specialty: "Visual direction, layout specs, typography, color palette, spacing, responsive breakpoints"
+
+  - id: wp-developer
+    name: "WP Developer"
+    role: "WordPress developer + QA/Launch -- technical build, plugins, SEO, go-live"
+    tier: 1
+    specialty: "WordPress implementation, theme customization, plugin config, performance, security, QA, launch"
+
+# ==============================================================================
+# HANDOFF FLOW
+# ==============================================================================
+handoff_flow:
+  description: "Sequential pipeline with client approval gates"
+  sequence:
+    - from: wp-discovery
+      to: wp-architect
+      gate: "Client approves brief and objectives"
+      artifact: "discovery-brief.md"
+    - from: wp-architect
+      to: wp-copywriter
+      gate: "Client approves sitemap and wireframes"
+      artifact: "sitemap-wireframes.md"
+    - from: wp-copywriter
+      to: wp-designer
+      gate: "Client approves copy for all pages"
+      artifact: "page-copy-package.md"
+    - from: wp-designer
+      to: wp-developer
+      gate: "Client approves visual direction and layouts"
+      artifact: "design-specs.md"
+    - from: wp-developer
+      to: wp-chief
+      gate: "QA checklist passes, client approves staging"
+      artifact: "qa-report.md + live-site"
+
+# ==============================================================================
+# TASKS
+# ==============================================================================
+tasks:
+  # --- Discovery ---
+  - id: run-discovery-briefing
+    name: "Run Discovery Briefing"
+    category: discovery
+    description: "Structured client interview to extract business goals, audience, references"
+
+  - id: extract-objectives
+    name: "Extract Objectives"
+    category: discovery
+    description: "Transform briefing answers into structured objectives document"
+
+  - id: analyze-references
+    name: "Analyze Reference Sites"
+    category: discovery
+    description: "Analyze client-provided reference sites for patterns and preferences"
+
+  # --- Architecture ---
+  - id: create-sitemap
+    name: "Create Sitemap & Hierarchy"
+    category: architecture
+    description: "Define site pages, hierarchy, and navigation structure"
+
+  - id: create-wireframes
+    name: "Create Wireframe Skeletons"
+    category: architecture
+    description: "Design section-level wireframe skeletons for each page"
+
+  - id: define-page-frameworks
+    name: "Define Page Frameworks"
+    category: architecture
+    description: "Select LP/institutional/lead-capture framework per page"
+
+  # --- Copywriting ---
+  - id: write-hero-copy
+    name: "Write Hero Copy"
+    category: copywriting
+    description: "Create hero headlines and subheadlines for all pages"
+
+  - id: write-page-copy
+    name: "Write Full Page Copy"
+    category: copywriting
+    description: "Write complete copy: benefits, CTAs, social proof per page"
+
+  - id: write-seo-metadata
+    name: "Write SEO Metadata"
+    category: copywriting
+    description: "Create title tags, meta descriptions, and OG tags for all pages"
+
+  # --- Design ---
+  - id: define-visual-direction
+    name: "Define Visual Direction"
+    category: design
+    description: "Establish visual style following Asimov Academy reference"
+
+  - id: create-layout-specs
+    name: "Create Layout Specifications"
+    category: design
+    description: "Define spacing, typography scale, color tokens, responsive breakpoints"
+
+  - id: design-page-layouts
+    name: "Design Page Layouts"
+    category: design
+    description: "Create section-by-section layout specifications for all pages"
+
+  # --- Development + QA/Launch ---
+  - id: setup-wordpress
+    name: "Setup WordPress Environment"
+    category: development
+    description: "Install WordPress, configure theme, install essential plugins"
+
+  - id: build-pages
+    name: "Build Pages in WordPress"
+    category: development
+    description: "Implement all pages using Elementor/Gutenberg following design specs"
+
+  - id: configure-seo
+    name: "Configure SEO Plugin"
+    category: development
+    description: "Configure Yoast/RankMath with metadata, schema markup, XML sitemap"
+
+  - id: configure-performance
+    name: "Configure Performance"
+    category: development
+    description: "Setup caching, image optimization, lazy loading, CDN"
+
+  - id: configure-security
+    name: "Configure Security"
+    category: development
+    description: "Install Wordfence, harden WordPress, configure backups"
+
+  - id: run-qa-checks
+    name: "Run QA Checks"
+    category: qa
+    description: "Cross-browser testing, mobile testing, broken links, Core Web Vitals"
+
+  - id: execute-go-live
+    name: "Execute Go-Live"
+    category: launch
+    description: "DNS migration, SSL setup, redirects, final verification, monitoring"
+
+# ==============================================================================
+# WORKFLOWS
+# ==============================================================================
+workflows:
+  - id: wf-site-creation-pipeline
+    name: "Site Creation Pipeline"
+    category: creation
+    description: "Full pipeline: Discovery -> Architecture -> Copy -> Design -> Development+QA -> Launch"
+
+  - id: wf-site-audit
+    name: "Site Audit Workflow"
+    category: analysis
+    description: "Comprehensive audit of existing WordPress site"
+
+  - id: wf-site-maintenance
+    name: "Site Maintenance Workflow"
+    category: maintenance
+    description: "Scheduled maintenance: updates, backups, monitoring"
+
+# ==============================================================================
+# TEMPLATES
+# ==============================================================================
+templates:
+  - id: discovery-brief-tmpl
+    name: "Discovery Brief Template"
+    description: "Structured client intake brief with interview questions"
+
+  - id: sitemap-tmpl
+    name: "Sitemap & Wireframe Template"
+    description: "Page hierarchy and wireframe skeleton document"
+
+  - id: page-copy-tmpl
+    name: "Page Copy Template"
+    description: "Structured copy template: Hero, Benefits, CTA, Social Proof"
+
+  - id: design-specs-tmpl
+    name: "Design Specs Template"
+    description: "Visual direction, layout specs, typography, colors, spacing"
+
+  - id: launch-checklist-tmpl
+    name: "Launch Checklist Template"
+    description: "Pre-launch and go-live verification checklist"
+
+  - id: qa-report-tmpl
+    name: "QA Report Template"
+    description: "QA findings, test results, and go/no-go recommendation"
+
+# ==============================================================================
+# CHECKLISTS
+# ==============================================================================
+checklists:
+  - id: discovery-checklist
+    name: "Discovery Completeness Checklist"
+    description: "Verify all briefing information was captured"
+
+  - id: architecture-checklist
+    name: "Architecture Review Checklist"
+    description: "Validate sitemap, hierarchy, and wireframe quality"
+
+  - id: copy-checklist
+    name: "Copy Quality Checklist"
+    description: "Validate copy against Asimov Academy style and conversion principles"
+
+  - id: design-checklist
+    name: "Design Review Checklist"
+    description: "Validate visual direction, responsiveness, and brand alignment"
+
+  - id: pre-launch-checklist
+    name: "Pre-Launch Checklist"
+    description: "Go/no-go checklist: SEO, performance, security, functionality"
+
+  - id: seo-checklist
+    name: "SEO Checklist"
+    description: "On-page and technical SEO validation"
+
+  - id: performance-checklist
+    name: "Performance Checklist"
+    description: "Core Web Vitals and loading performance validation"
+
+  - id: security-checklist
+    name: "Security Hardening Checklist"
+    description: "WordPress security best practices validation"
+
+# ==============================================================================
+# DEPENDENCIES & TAGS
+# ==============================================================================
+dependencies:
+  squads:
+    - aiox-core
+
+tags:
+  - wordpress
+  - web-development
+  - site-creation
+  - asimov-academy
+  - copywriting
+  - mobile-first
+  - elementor
+  - gutenberg
+  - seo
+  - performance
+  - security
+  - responsive-design
+  - launch
