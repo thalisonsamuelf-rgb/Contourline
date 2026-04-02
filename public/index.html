@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contourline IA | Hub Central</title>
+<script src="/auth.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e1a;
+  --surface:#111827;
+  --surface2:#1a2234;
+  --border:#1e293b;
+  --text:#f1f5f9;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  --accent:#3b82f6;
+  --accent2:#2563eb;
+  --green:#10b981;
+  --purple:#a855f7;
+  --amber:#f59e0b;
+  --cyan:#06b6d4;
+  --radius:16px;
+}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Header */
+.header{
+  text-align:center;
+  padding:80px 24px 40px;
+  max-width:700px;
+}
+.logo{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:24px;
+}
+.logo-icon{
+  width:56px;height:56px;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;font-weight:800;color:#fff;
+}
+.logo-text{
+  font-size:28px;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.header h1{
+  font-size:42px;font-weight:800;line-height:1.2;
+  margin-bottom:16px;
+}
+.header h1 span{
+  background:linear-gradient(135deg,var(--accent),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.header p{
+  font-size:18px;color:var(--text2);line-height:1.6;
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+  max-width:1100px;
+  width:100%;
+  padding:0 24px 80px;
+}
+
+/* Card */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+  text-decoration:none;
+  color:var(--text);
+  transition:all .3s ease;
+  position:relative;
+  overflow:hidden;
+}
+.card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;
+  height:3px;
+  border-radius:var(--radius) var(--radius) 0 0;
+  transition:height .3s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:transparent;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+.card:hover::before{height:4px}
+
+.card-portal::before{background:linear-gradient(90deg,var(--accent),var(--cyan))}
+.card-portal:hover{border-color:rgba(59,130,246,0.3)}
+
+.card-dashboard::before{background:linear-gradient(90deg,var(--green),var(--cyan))}
+.card-dashboard:hover{border-color:rgba(16,185,129,0.3)}
+
+.card-fechamento::before{background:linear-gradient(90deg,var(--purple),var(--accent))}
+.card-fechamento:hover{border-color:rgba(168,85,247,0.3)}
+
+.card-mapa::before{background:linear-gradient(90deg,var(--cyan),var(--green))}
+.card-mapa:hover{border-color:rgba(6,182,212,0.3)}
+
+.card-rdstation::before{background:linear-gradient(90deg,var(--amber),#f97316)}
+.card-rdstation:hover{border-color:rgba(245,158,11,0.3)}
+
+.card-academy::before{background:linear-gradient(90deg,#ec4899,var(--purple))}
+.card-academy:hover{border-color:rgba(236,72,153,0.3)}
+
+.card-icon{
+  width:52px;height:52px;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
+  margin-bottom:20px;
+}
+.card-portal .card-icon{background:rgba(59,130,246,0.12);color:var(--accent)}
+.card-dashboard .card-icon{background:rgba(16,185,129,0.12);color:var(--green)}
+.card-fechamento .card-icon{background:rgba(168,85,247,0.12);color:var(--purple)}
+.card-mapa .card-icon{background:rgba(6,182,212,0.12);color:var(--cyan)}
+.card-rdstation .card-icon{background:rgba(245,158,11,0.12);color:var(--amber)}
+.card-academy .card-icon{background:rgba(236,72,153,0.12);color:#ec4899}
+
+.card h2{
+  font-size:22px;font-weight:700;margin-bottom:8px;
+}
+.card p{
+  font-size:15px;color:var(--text2);line-height:1.6;margin-bottom:20px;
+}
+.card-tag{
+  display:inline-block;
+  padding:4px 12px;
+  border-radius:20px;
+  font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.5px;
+}
+.card-portal .card-tag{background:rgba(59,130,246,0.12);color:var(--accent)}
+.card-dashboard .card-tag{background:rgba(16,185,129,0.12);color:var(--green)}
+.card-fechamento .card-tag{background:rgba(168,85,247,0.12);color:var(--purple)}
+.card-mapa .card-tag{background:rgba(6,182,212,0.12);color:var(--cyan)}
+.card-rdstation .card-tag{background:rgba(245,158,11,0.12);color:var(--amber)}
+.card-academy .card-tag{background:rgba(236,72,153,0.12);color:#ec4899}
+
+.card-arrow{
+  position:absolute;
+  top:32px;right:32px;
+  font-size:20px;
+  color:var(--text3);
+  transition:all .3s ease;
+}
+.card:hover .card-arrow{
+  color:var(--text);
+  transform:translateX(4px);
+}
+
+/* Footer */
+.footer{
+  padding:24px;
+  text-align:center;
+  color:var(--text3);
+  font-size:13px;
+  border-top:1px solid var(--border);
+  width:100%;
+  margin-top:auto;
+}
+
+/* Coming soon card */
+.card-soon{
+  opacity:.5;
+  pointer-events:none;
+}
+.card-soon::before{background:linear-gradient(90deg,var(--text3),var(--text3))}
+.card-soon .card-icon{background:rgba(100,116,139,0.12);color:var(--text3)}
+.card-soon .card-tag{background:rgba(100,116,139,0.12);color:var(--text3)}
+
+/* Topbar */
+.topbar{
+  position:fixed;top:0;left:0;right:0;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;height:56px;z-index:100;
+  background:rgba(10,14,26,0.85);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-left{display:flex;align-items:center;gap:10px}
+.topbar-brand{
+  width:32px;height:32px;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  border-radius:9px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:800;color:#fff;text-decoration:none;
+  transition:transform .2s;
+}
+.topbar-brand:hover{transform:scale(1.05)}
+.topbar-name{font-size:15px;font-weight:700;color:var(--text)}
+.topbar-name span{color:var(--text3);font-weight:400;font-size:13px;margin-left:6px}
+
+.topbar-center{display:flex;align-items:center;gap:4px}
+.topbar-nav{
+  padding:7px 14px;border-radius:8px;font-size:13px;font-weight:500;
+  color:var(--text3);text-decoration:none;transition:all .2s;
+  display:flex;align-items:center;gap:6px;
+}
+.topbar-nav:hover{color:var(--text);background:var(--surface)}
+.topbar-nav.active{color:var(--accent);background:rgba(59,130,246,0.1)}
+.topbar-nav svg{width:16px;height:16px}
+
+.topbar-right{display:flex;align-items:center;gap:10px}
+.topbar-user{
+  display:flex;align-items:center;gap:8px;
+  padding:5px 12px 5px 5px;border-radius:20px;
+  background:var(--surface);border:1px solid var(--border);
+  cursor:default;
+}
+.topbar-avatar{
+  width:26px;height:26px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;color:#fff;
+}
+.topbar-user-name{font-size:13px;font-weight:500;color:var(--text)}
+.topbar-role{font-size:10px;font-weight:600;color:var(--purple);text-transform:uppercase;letter-spacing:.3px}
+
+.btn-bar{
+  padding:7px 14px;border-radius:8px;font-size:12px;font-weight:600;
+  border:none;cursor:pointer;font-family:inherit;transition:all .2s;
+  text-decoration:none;display:flex;align-items:center;gap:5px;
+}
+.btn-admin{background:rgba(168,85,247,0.12);color:var(--purple)}.btn-admin:hover{background:rgba(168,85,247,0.2)}
+.btn-logout{background:rgba(239,68,68,0.08);color:#ef4444}.btn-logout:hover{background:rgba(239,68,68,0.15)}
+
+/* Alert msg */
+.alert-msg{
+  max-width:600px;margin:0 auto 24px;padding:12px 20px;border-radius:10px;font-size:14px;text-align:center;
+  background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);color:var(--amber);
+  display:none;
+}
+.alert-msg.visible{display:block}
+
+@media(max-width:768px){
+  .header{padding:48px 20px 32px}
+  .header h1{font-size:30px}
+  .header p{font-size:16px}
+  .grid{grid-template-columns:1fr;padding:0 16px 48px}
+  .card{padding:24px}
+  .topbar{padding:0 12px}
+  .topbar-name span{display:none}
+  .topbar-center{gap:0}
+  .topbar-nav{padding:7px 8px;font-size:0}
+  .topbar-nav svg{width:18px;height:18px}
+  .topbar-user-name{font-size:12px}
+  .topbar-role{display:none}
+  .btn-bar{padding:6px 10px;font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar" id="userBar" style="display:none">
+  <div class="topbar-left">
+    <a href="/" class="topbar-brand">C</a>
+    <div class="topbar-name">Hub<span>Contourline IA</span></div>
+  </div>
+
+  <div class="topbar-center" id="topbarNav">
+    <a href="/" class="topbar-nav active">
+      <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Hub
+    </a>
+    <a href="/portal" class="topbar-nav">
+      <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Portal
+    </a>
+    <a href="/dashboard" class="topbar-nav">
+      <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+      Dashboard
+    </a>
+    <a href="/mapa" class="topbar-nav">
+      <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
+      Mapa
+    </a>
+  </div>
+
+  <div class="topbar-right">
+    <div class="topbar-user">
+      <div class="topbar-avatar" id="hubUserAvatar"></div>
+      <div>
+        <div class="topbar-user-name" id="hubUserName"></div>
+        <div class="topbar-role" id="hubUserRole"></div>
+      </div>
+    </div>
+    <a href="/admin" class="btn-bar btn-admin" id="btnAdmin" style="display:none">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      Admin
+    </a>
+    <button class="btn-bar btn-logout" onclick="SupaAuth.signOut()">Sair</button>
+  </div>
+</div>
+
+<div class="header" style="padding-top:100px">
+  <div class="logo">
+    <div class="logo-icon">C</div>
+    <span class="logo-text">Contourline IA</span>
+  </div>
+  <h1>Hub de <span>Transformacao Digital</span></h1>
+  <p>Plataforma centralizada de ferramentas inteligentes para gestao e operacao da Contourline.</p>
+</div>
+
+<div class="grid">
+
+  <a href="/portal" class="card card-portal">
+    <span class="card-arrow">&rarr;</span>
+    <div class="card-icon">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </div>
+    <h2>Portal de Processos</h2>
+    <p>Gestao completa de processos organizacionais, fluxos de trabalho e automacoes por diretoria.</p>
+    <span class="card-tag">Ativo</span>
+  </a>
+
+  <a href="/dashboard" class="card card-dashboard">
+    <span class="card-arrow">&rarr;</span>
+    <div class="card-icon">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+    </div>
+    <h2>Dashboard Estrategico</h2>
+    <p>Indicadores de performance, metricas de transformacao digital e acompanhamento de metas em tempo real.</p>
+    <span class="card-tag">Ativo</span>
+  </a>
+
+  <a href="/fechamento" class="card card-fechamento">
+    <span class="card-arrow">&rarr;</span>
+    <div class="card-icon">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+    </div>
+    <h2>DFs Acionistas</h2>
+    <p>Demonstracoes financeiras e informacoes consolidadas para acionistas da Contourline Group.</p>
+    <span class="card-tag">Ativo</span>
+  </a>
+
+  <a href="/mapa" class="card card-mapa">
+    <span class="card-arrow">&rarr;</span>
+    <div class="card-icon">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7z"/></svg>
+    </div>
+    <h2>Mapa Interativo</h2>
+    <p>Visualizacao geografica das operacoes, unidades e representantes da Contourline em tempo real.</p>
+    <span class="card-tag">Ativo</span>
+  </a>
+
+  <a href="/rdstation" class="card card-rdstation">
+    <span class="card-arrow">&rarr;</span>
+    <div class="card-icon">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    </div>
+    <h2>Dashboard Comercial</h2>
+    <p>Painel comercial com dados do RD Station, pipeline de vendas e metricas de conversao.</p>
+    <span class="card-tag">Ativo</span>
+  </a>
+
+  <a href="/academy" class="card card-academy">
+    <span class="card-arrow">&rarr;</span>
+    <div class="card-icon">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/></svg>
+    </div>
+    <h2>Contourline Academy</h2>
+    <p>Plataforma LMS de treinamento e capacitacao dos colaboradores com trilhas de aprendizado.</p>
+    <span class="card-tag">Ativo</span>
+  </a>
+
+</div>
+
+<div class="footer">
+  &copy; 2026 Contourline &mdash; Transformacao Digital com Inteligencia Artificial
+</div>
+
+<script>
+(async function() {
+  // Mostrar mensagem se redirecionado
+  const msg = sessionStorage.getItem('ctl_msg');
+  if (msg) {
+    sessionStorage.removeItem('ctl_msg');
+    const el = document.createElement('div');
+    el.className = 'alert-msg visible';
+    el.textContent = msg;
+    document.querySelector('.grid').before(el);
+    setTimeout(() => el.remove(), 5000);
+  }
+
+  // Mostrar topbar
+  const profile = await SupaAuth.getProfile();
+  if (profile) {
+    const name = profile.full_name || profile.email;
+    const initials = name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+    const roles = { admin: 'Administrador', manager: 'Gerente', user: 'Usuario' };
+    document.getElementById('hubUserName').textContent = name;
+    document.getElementById('hubUserAvatar').textContent = initials;
+    document.getElementById('hubUserRole').textContent = roles[profile.role] || 'Usuario';
+    document.getElementById('userBar').style.display = 'flex';
+    if (profile.role === 'admin') {
+      document.getElementById('btnAdmin').style.display = 'inline-flex';
+    }
+  }
+})();
+</script>
+
+</body>
+</html>

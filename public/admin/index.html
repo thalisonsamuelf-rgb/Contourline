@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contourline IA | Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/auth.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e1a;--surface:#111827;--surface2:#1a2234;--border:#1e293b;--border2:#2d3748;
+  --text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;
+  --accent:#3b82f6;--accent2:#2563eb;--green:#10b981;--red:#ef4444;
+  --amber:#f59e0b;--purple:#a855f7;--cyan:#06b6d4;--pink:#ec4899;
+  --radius:12px;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* Layout */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 32px;border-bottom:1px solid var(--border);
+  background:var(--surface);position:sticky;top:0;z-index:100;
+}
+.topbar-left{display:flex;align-items:center;gap:12px}
+.topbar-logo{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--purple));border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:18px}
+.topbar-title{font-size:18px;font-weight:700}
+.topbar-title span{color:var(--text3);font-weight:400;font-size:14px;margin-left:8px}
+.topbar-right{display:flex;align-items:center;gap:16px}
+.topbar-user{font-size:13px;color:var(--text2)}
+.btn-sm{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;border:none;cursor:pointer;font-family:inherit;transition:all .2s}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent2)}
+.btn-danger{background:rgba(239,68,68,0.1);color:var(--red);border:1px solid rgba(239,68,68,0.2)}.btn-danger:hover{background:rgba(239,68,68,0.2)}
+.btn-ghost{background:transparent;color:var(--text2);border:1px solid var(--border)}.btn-ghost:hover{background:var(--surface2);color:var(--text)}
+.btn-success{background:var(--green);color:#fff}.btn-success:hover{background:#059669}
+
+.container{max-width:1200px;margin:0 auto;padding:32px;padding-top:16px}
+
+/* Tabs */
+.tabs{display:flex;gap:4px;margin-bottom:32px;background:var(--surface);border-radius:10px;padding:4px;border:1px solid var(--border)}
+.tab{padding:10px 20px;border-radius:8px;font-size:14px;font-weight:500;color:var(--text3);cursor:pointer;transition:all .2s;border:none;background:none;font-family:inherit}
+.tab:hover{color:var(--text2)}
+.tab.active{background:var(--accent);color:#fff}
+
+/* Cards */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.stat-card .label{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.stat-card .value{font-size:28px;font-weight:700}
+.stat-card .sub{font-size:12px;color:var(--text3);margin-top:4px}
+
+/* Table */
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.table-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.table-header h3{font-size:16px;font-weight:600}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:12px 20px;font-size:12px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);background:var(--surface2)}
+td{padding:14px 20px;font-size:14px;border-bottom:1px solid var(--border)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(59,130,246,0.03)}
+
+/* Badges */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.badge-admin{background:rgba(168,85,247,0.12);color:var(--purple)}
+.badge-manager{background:rgba(59,130,246,0.12);color:var(--accent)}
+.badge-user{background:rgba(100,116,139,0.12);color:var(--text3)}
+.badge-active{background:rgba(16,185,129,0.12);color:var(--green)}
+.badge-inactive{background:rgba(239,68,68,0.12);color:var(--red)}
+
+/* Toggle */
+.toggle{position:relative;width:44px;height:24px;cursor:pointer}
+.toggle input{display:none}
+.toggle .slider{position:absolute;top:0;left:0;right:0;bottom:0;background:var(--border2);border-radius:12px;transition:.2s}
+.toggle .slider::before{content:'';position:absolute;width:18px;height:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle input:checked+.slider{background:var(--green)}
+.toggle input:checked+.slider::before{transform:translateX(20px)}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:200;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--surface);border:1px solid var(--border);border-radius:16px;width:100%;max-width:500px;max-height:90vh;overflow-y:auto}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:18px;font-weight:700}
+.modal-close{background:none;border:none;color:var(--text3);font-size:24px;cursor:pointer;padding:4px}
+.modal-body{padding:24px}
+.modal-footer{padding:16px 24px;border-top:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px}
+
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:var(--text2);margin-bottom:6px}
+.form-group input,.form-group select{width:100%;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:14px;font-family:inherit;outline:none}
+.form-group input:focus,.form-group select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,0.12)}
+.form-group select{cursor:pointer}
+
+/* Permissions grid */
+.perm-grid{display:grid;gap:8px}
+.perm-item{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.perm-item .perm-label{font-size:14px;font-weight:500}
+.perm-item .perm-route{font-size:12px;color:var(--text3)}
+
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;padding:14px 20px;border-radius:10px;font-size:14px;font-weight:500;z-index:300;transform:translateY(100px);opacity:0;transition:all .3s}
+.toast.visible{transform:translateY(0);opacity:1}
+.toast-success{background:var(--green);color:#fff}
+.toast-error{background:var(--red);color:#fff}
+
+/* Logs */
+.log-entry{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.log-entry:last-child{border-bottom:none}
+.log-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.log-dot.login{background:var(--green)}
+.log-dot.page_view{background:var(--accent)}
+.log-dot.logout{background:var(--red)}
+.log-time{font-size:12px;color:var(--text3);min-width:140px}
+.log-detail{font-size:13px;color:var(--text2)}
+.log-email{color:var(--text);font-weight:500}
+
+.empty{text-align:center;padding:48px 24px;color:var(--text3)}
+
+/* Role select */
+.role-select{
+  padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;
+  border:1px solid var(--border);cursor:pointer;font-family:inherit;
+  outline:none;transition:all .2s;appearance:auto;
+}
+.role-select.role-admin{background:rgba(168,85,247,0.12);color:var(--purple);border-color:rgba(168,85,247,0.3)}
+.role-select.role-manager{background:rgba(59,130,246,0.12);color:var(--accent);border-color:rgba(59,130,246,0.3)}
+.role-select.role-user{background:rgba(100,116,139,0.12);color:var(--text3);border-color:var(--border)}
+.role-select:focus{box-shadow:0 0 0 3px rgba(59,130,246,0.15)}
+.role-select option{background:var(--surface);color:var(--text)}
+
+/* Toggle all btn */
+.toggle-all-btn{
+  padding:6px 14px;border-radius:8px;font-size:12px;font-weight:600;
+  border:1px solid var(--border);background:var(--surface2);color:var(--text2);
+  cursor:pointer;font-family:inherit;transition:all .2s;
+}
+.toggle-all-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+@media(max-width:768px){
+  .topbar{padding:12px 16px}
+  .container{padding:16px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .tabs{overflow-x:auto}
+  th,td{padding:10px 12px;font-size:13px}
+  .modal{margin:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- Topbar (navegação via navbar global do auth.js) -->
+<div class="topbar" style="top:48px">
+  <div class="topbar-left">
+    <div class="topbar-logo">C</div>
+    <div class="topbar-title">Admin<span>Contourline IA</span></div>
+  </div>
+  <div class="topbar-right">
+    <span class="topbar-user" id="adminName"></span>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Stats -->
+  <div class="stats" id="statsCards"></div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('users',this)">Usuarios</button>
+    <button class="tab" onclick="switchTab('sectors',this)">Setores</button>
+    <button class="tab" onclick="switchTab('permissions',this)">Permissoes</button>
+    <button class="tab" onclick="switchTab('pages',this)">Paginas</button>
+    <button class="tab" onclick="switchTab('logs',this)">Logs de Acesso</button>
+  </div>
+
+  <!-- Tab: Users -->
+  <div id="tab-users" class="tab-content">
+    <div class="table-wrap">
+      <div class="table-header">
+        <h3>Usuarios Cadastrados</h3>
+        <button class="btn-sm btn-primary" onclick="openCreateUser()">+ Novo Usuario</button>
+      </div>
+      <table>
+        <thead><tr><th>Usuario</th><th>Role</th><th>Status</th><th>Criado em</th><th>Acoes</th></tr></thead>
+        <tbody id="usersTable"><tr><td colspan="5" class="empty">Carregando...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab: Sectors -->
+  <div id="tab-sectors" class="tab-content" style="display:none">
+    <div class="table-wrap">
+      <div class="table-header">
+        <h3>Setores da Contourline</h3>
+      </div>
+      <table>
+        <thead><tr><th>Setor</th><th>Descricao</th><th>Paginas Vinculadas</th><th>Acoes</th></tr></thead>
+        <tbody id="sectorsTable"><tr><td colspan="4" class="empty">Carregando...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab: Permissions (por setor) -->
+  <div id="tab-permissions" class="tab-content" style="display:none">
+    <div class="table-wrap">
+      <div class="table-header">
+        <h3>Permissoes por Usuario (Setores)</h3>
+      </div>
+      <div style="padding:20px" id="permissionsContent"><div class="empty">Carregando...</div></div>
+    </div>
+  </div>
+
+  <!-- Tab: Pages -->
+  <div id="tab-pages" class="tab-content" style="display:none">
+    <div class="table-wrap">
+      <div class="table-header">
+        <h3>Paginas do Hub</h3>
+      </div>
+      <table>
+        <thead><tr><th>Titulo</th><th>Rota</th><th>Status</th><th>Ordem</th></tr></thead>
+        <tbody id="pagesTable"><tr><td colspan="4" class="empty">Carregando...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab: Logs -->
+  <div id="tab-logs" class="tab-content" style="display:none">
+    <div class="table-wrap">
+      <div class="table-header">
+        <h3>Logs de Acesso (ultimos 100)</h3>
+      </div>
+      <div style="padding:20px" id="logsContent"><div class="empty">Carregando...</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Criar Usuario -->
+<div class="modal-overlay" id="modalCreate">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Novo Usuario</h3>
+      <button class="modal-close" onclick="closeModal('modalCreate')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label>Nome Completo</label>
+        <input type="text" id="newName" placeholder="Nome do colaborador">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="newEmail" placeholder="email@contourline.com">
+      </div>
+      <div class="form-group">
+        <label>Senha Inicial</label>
+        <input type="text" id="newPass" placeholder="Minimo 6 caracteres" value="">
+      </div>
+      <div class="form-group">
+        <label>Role</label>
+        <select id="newRole">
+          <option value="user">Usuario</option>
+          <option value="manager">Gerente</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-sm btn-ghost" onclick="closeModal('modalCreate')">Cancelar</button>
+      <button class="btn-sm btn-primary" onclick="createUser()">Criar Usuario</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Setores do Usuario -->
+<div class="modal-overlay" id="modalUserSectors">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="userSectorsTitle">Setores do Usuario</h3>
+      <button class="modal-close" onclick="closeModal('modalUserSectors')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:12px">
+        <button class="toggle-all-btn" onclick="toggleAllSectors()">Selecionar / Desmarcar Todos</button>
+      </div>
+      <div class="perm-grid" id="userSectorsGrid"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-sm btn-ghost" onclick="closeModal('modalUserSectors')">Fechar</button>
+      <button class="btn-sm btn-success" onclick="saveUserSectors()">Salvar Setores</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Paginas do Setor -->
+<div class="modal-overlay" id="modalSectorPages">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="sectorPagesTitle">Paginas do Setor</h3>
+      <button class="modal-close" onclick="closeModal('modalSectorPages')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="perm-grid" id="sectorPagesGrid"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-sm btn-ghost" onclick="closeModal('modalSectorPages')">Fechar</button>
+      <button class="btn-sm btn-success" onclick="saveSectorPages()">Salvar Paginas</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+let allUsers = [];
+let allPages = [];
+let allSectors = [];
+let allSectorPages = [];
+let editingUserId = null;
+let editingSectorId = null;
+
+// Init
+(async function() {
+  const profile = await SupaAuth.getProfile();
+  if (!profile || profile.role !== 'admin') {
+    sessionStorage.setItem('ctl_msg', 'Acesso restrito a administradores.');
+    window.location.href = '/';
+    return;
+  }
+  document.getElementById('adminName').textContent = profile.full_name || profile.email;
+  SupaAuth.logAccess('/admin', 'admin_access');
+  loadAll();
+})();
+
+async function loadAll() {
+  await Promise.all([loadUsers(), loadPages(), loadSectors(), loadStats(), loadLogs()]);
+}
+
+// Stats
+async function loadStats() {
+  const users = await SupaAuth.query('profiles', 'select=id,is_active,role');
+  const logs = await SupaAuth.query('access_logs', 'select=id&created_at=gte.' + new Date(Date.now() - 86400000).toISOString());
+  const active = users.filter(u => u.is_active).length;
+  const admins = users.filter(u => u.role === 'admin').length;
+
+  document.getElementById('statsCards').innerHTML = `
+    <div class="stat-card"><div class="label">Total Usuarios</div><div class="value">${users.length}</div><div class="sub">${active} ativos</div></div>
+    <div class="stat-card"><div class="label">Administradores</div><div class="value" style="color:var(--purple)">${admins}</div></div>
+    <div class="stat-card"><div class="label">Setores</div><div class="value" style="color:var(--cyan)">${allSectors.length || '...'}</div></div>
+    <div class="stat-card"><div class="label">Paginas</div><div class="value" style="color:var(--green)">${allPages.length || '...'}</div></div>
+  `;
+}
+
+// Users
+async function loadUsers() {
+  allUsers = await SupaAuth.query('profiles', 'select=*&order=created_at.asc');
+  const tbody = document.getElementById('usersTable');
+  if (allUsers.length === 0) { tbody.innerHTML = '<tr><td colspan="5" class="empty">Nenhum usuario</td></tr>'; return; }
+  tbody.innerHTML = allUsers.map(u => `
+    <tr>
+      <td><strong>${u.full_name || '\u2014'}</strong><br><span style="font-size:12px;color:var(--text3)">${u.email}</span></td>
+      <td><span class="badge badge-${u.role}">${u.role}</span></td>
+      <td><span class="badge badge-${u.is_active ? 'active' : 'inactive'}">${u.is_active ? 'Ativo' : 'Inativo'}</span></td>
+      <td style="font-size:13px;color:var(--text3)">${new Date(u.created_at).toLocaleDateString('pt-BR')}</td>
+      <td>
+        <button class="btn-sm btn-ghost" onclick="openUserSectors('${u.id}','${(u.full_name||u.email).replace(/'/g,"\\'")}')">Setores</button>
+        <button class="btn-sm btn-ghost" onclick="toggleUserStatus('${u.id}',${u.is_active})">${u.is_active ? 'Desativar' : 'Ativar'}</button>
+        <select class="role-select role-${u.role}" onchange="changeRole('${u.id}',this.value)">
+          <option value="user" ${u.role==='user'?'selected':''}>Usuario</option>
+          <option value="manager" ${u.role==='manager'?'selected':''}>Gerente</option>
+          <option value="admin" ${u.role==='admin'?'selected':''}>Admin</option>
+        </select>
+      </td>
+    </tr>
+  `).join('');
+}
+
+// Sectors
+async function loadSectors() {
+  allSectors = await SupaAuth.query('sectors', 'select=*&order=sort_order.asc');
+  allSectorPages = await SupaAuth.query('sector_pages', 'select=*');
+  renderSectorsTable();
+}
+
+function renderSectorsTable() {
+  const tbody = document.getElementById('sectorsTable');
+  if (allSectors.length === 0) { tbody.innerHTML = '<tr><td colspan="4" class="empty">Nenhum setor. Execute a migration SQL.</td></tr>'; return; }
+
+  tbody.innerHTML = allSectors.map(s => {
+    const pages = allSectorPages.filter(sp => sp.sector_id === s.id).map(sp => sp.page_route);
+    return `
+      <tr>
+        <td>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:10px;height:10px;border-radius:50%;background:${s.color};flex-shrink:0"></div>
+            <strong>${s.name}</strong>
+          </div>
+        </td>
+        <td style="font-size:13px;color:var(--text2)">${s.description || ''}</td>
+        <td>
+          ${pages.length > 0
+            ? pages.map(r => `<code style="background:var(--bg);padding:2px 8px;border-radius:4px;font-size:12px;margin:2px">${r}</code>`).join('')
+            : '<span style="font-size:12px;color:var(--text3)">Nenhuma</span>'}
+        </td>
+        <td>
+          <button class="btn-sm btn-ghost" onclick="openSectorPages(${s.id},'${s.name.replace(/'/g,"\\'")}')">Vincular Paginas</button>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+// Pages
+async function loadPages() {
+  allPages = await SupaAuth.query('hub_pages', 'select=*&order=sort_order.asc');
+  const tbody = document.getElementById('pagesTable');
+  if (allPages.length === 0) { tbody.innerHTML = '<tr><td colspan="4" class="empty">Nenhuma pagina</td></tr>'; return; }
+  tbody.innerHTML = allPages.map(p => `
+    <tr>
+      <td><strong>${p.title}</strong><br><span style="font-size:12px;color:var(--text3)">${p.description||''}</span></td>
+      <td><code style="background:var(--bg);padding:2px 8px;border-radius:4px;font-size:13px">${p.route}</code></td>
+      <td><span class="badge badge-${p.is_active ? 'active' : 'inactive'}">${p.is_active ? 'Ativo' : 'Inativo'}</span></td>
+      <td>${p.sort_order}</td>
+    </tr>
+  `).join('');
+}
+
+// Logs
+async function loadLogs() {
+  const logs = await SupaAuth.query('access_logs', 'select=*&order=created_at.desc&limit=100');
+  const el = document.getElementById('logsContent');
+  if (logs.length === 0) { el.innerHTML = '<div class="empty">Nenhum log ainda</div>'; return; }
+  el.innerHTML = logs.map(l => `
+    <div class="log-entry">
+      <div class="log-dot ${l.action}"></div>
+      <div class="log-time">${new Date(l.created_at).toLocaleString('pt-BR')}</div>
+      <div class="log-detail"><span class="log-email">${l.email||'\u2014'}</span> &rarr; ${l.page_route} <span style="color:var(--text3)">(${l.action})</span></div>
+    </div>
+  `).join('');
+}
+
+// ===== SETORES DO USUARIO =====
+async function openUserSectors(userId, userName) {
+  editingUserId = userId;
+  document.getElementById('userSectorsTitle').textContent = `Setores: ${userName}`;
+  const userSecs = await SupaAuth.query('user_sectors', `user_id=eq.${userId}&select=sector_id`);
+  const assignedIds = userSecs.map(us => us.sector_id);
+
+  document.getElementById('userSectorsGrid').innerHTML = allSectors.map(s => `
+    <div class="perm-item">
+      <div>
+        <div class="perm-label" style="display:flex;align-items:center;gap:8px">
+          <span style="width:10px;height:10px;border-radius:50%;background:${s.color};display:inline-block"></span>
+          ${s.name}
+        </div>
+        <div class="perm-route">${s.description || ''}</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" data-sector-id="${s.id}" ${assignedIds.includes(s.id) ? 'checked' : ''}>
+        <span class="slider"></span>
+      </label>
+    </div>
+  `).join('');
+  openModal('modalUserSectors');
+}
+
+function toggleAllSectors() {
+  const toggles = document.querySelectorAll('#userSectorsGrid input[type=checkbox]');
+  const allChecked = [...toggles].every(t => t.checked);
+  toggles.forEach(t => t.checked = !allChecked);
+}
+
+async function saveUserSectors() {
+  const session = SupaAuth.getSession();
+  const toggles = document.querySelectorAll('#userSectorsGrid input[type=checkbox]');
+
+  // Deletar todos os vínculos do usuário
+  await SupaAuth.delete('user_sectors', `user_id=eq.${editingUserId}`).catch(() => {});
+
+  // Inserir os marcados
+  for (const t of toggles) {
+    if (t.checked) {
+      await SupaAuth.insert('user_sectors', {
+        user_id: editingUserId,
+        sector_id: parseInt(t.dataset.sectorId),
+        granted_by: session.user.id
+      }).catch(() => {});
+    }
+  }
+  closeModal('modalUserSectors');
+  showToast('Setores do usuario atualizados!', 'success');
+  loadPermissionsTab();
+}
+
+// ===== PAGINAS DO SETOR =====
+async function openSectorPages(sectorId, sectorName) {
+  editingSectorId = sectorId;
+  document.getElementById('sectorPagesTitle').textContent = `Paginas: ${sectorName}`;
+  const linked = allSectorPages.filter(sp => sp.sector_id === sectorId).map(sp => sp.page_route);
+
+  document.getElementById('sectorPagesGrid').innerHTML = allPages.map(p => `
+    <div class="perm-item">
+      <div>
+        <div class="perm-label">${p.title}</div>
+        <div class="perm-route">${p.route}</div>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" data-route="${p.route}" ${linked.includes(p.route) ? 'checked' : ''}>
+        <span class="slider"></span>
+      </label>
+    </div>
+  `).join('');
+  openModal('modalSectorPages');
+}
+
+async function saveSectorPages() {
+  // Deletar vínculos do setor
+  await SupaAuth.delete('sector_pages', `sector_id=eq.${editingSectorId}`).catch(() => {});
+
+  // Inserir os marcados
+  const toggles = document.querySelectorAll('#sectorPagesGrid input[type=checkbox]');
+  for (const t of toggles) {
+    if (t.checked) {
+      await SupaAuth.insert('sector_pages', {
+        sector_id: editingSectorId,
+        page_route: t.dataset.route
+      }).catch(() => {});
+    }
+  }
+  closeModal('modalSectorPages');
+  showToast('Paginas do setor atualizadas!', 'success');
+  // Recarregar dados
+  allSectorPages = await SupaAuth.query('sector_pages', 'select=*');
+  renderSectorsTable();
+}
+
+// ===== PERMISSIONS TAB (resumo) =====
+async function loadPermissionsTab() {
+  const el = document.getElementById('permissionsContent');
+  if (allUsers.length === 0) { el.innerHTML = '<div class="empty">Nenhum usuario</div>'; return; }
+
+  // Carregar user_sectors de todos
+  const allUserSectors = await SupaAuth.query('user_sectors', 'select=user_id,sector_id');
+
+  let html = '';
+  for (const u of allUsers) {
+    const userSecIds = allUserSectors.filter(us => us.user_id === u.id).map(us => us.sector_id);
+    const userSecNames = allSectors.filter(s => userSecIds.includes(s.id));
+
+    html += `
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border)">
+        <div>
+          <strong>${u.full_name || u.email}</strong>
+          <span class="badge badge-${u.role}" style="margin-left:8px">${u.role}</span>
+          ${u.role === 'admin' ? '<span style="font-size:12px;color:var(--text3);margin-left:8px">(acesso total)</span>' : ''}
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+          ${u.role === 'admin' ? '<span style="font-size:12px;color:var(--green)">Todos os setores</span>' :
+            userSecNames.length > 0
+              ? userSecNames.map(s => `<span style="display:inline-flex;align-items:center;gap:4px;background:var(--bg);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:500"><span style="width:8px;height:8px;border-radius:50%;background:${s.color}"></span>${s.name}</span>`).join('')
+              : '<span style="font-size:12px;color:var(--red)">Sem setor atribuido</span>'}
+          <button class="btn-sm btn-ghost" onclick="openUserSectors('${u.id}','${(u.full_name||u.email).replace(/'/g,"\\'")}')">Editar</button>
+        </div>
+      </div>
+    `;
+  }
+  el.innerHTML = html;
+}
+
+// Create User
+function openCreateUser() {
+  document.getElementById('newName').value = '';
+  document.getElementById('newEmail').value = '';
+  document.getElementById('newPass').value = '';
+  document.getElementById('newRole').value = 'user';
+  openModal('modalCreate');
+}
+
+async function createUser() {
+  const name = document.getElementById('newName').value.trim();
+  const email = document.getElementById('newEmail').value.trim();
+  const pass = document.getElementById('newPass').value;
+  const role = document.getElementById('newRole').value;
+
+  if (!name || !email || !pass) { showToast('Preencha todos os campos', 'error'); return; }
+  if (pass.length < 6) { showToast('Senha deve ter no minimo 6 caracteres', 'error'); return; }
+
+  try {
+    await SupaAuth.createUser(email, pass, name, role);
+    closeModal('modalCreate');
+    showToast(`Usuario ${name} criado com sucesso!`, 'success');
+    setTimeout(() => loadAll(), 1000);
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+}
+
+// Toggle status
+async function toggleUserStatus(id, currentActive) {
+  const action = currentActive ? 'desativar' : 'ativar';
+  if (!confirm(`Deseja ${action} este usuario?`)) return;
+  try {
+    await SupaAuth.update('profiles', `id=eq.${id}`, { is_active: !currentActive });
+    showToast(`Usuario ${currentActive ? 'desativado' : 'ativado'}!`, 'success');
+    loadUsers();
+  } catch (err) { showToast(err.message, 'error'); }
+}
+
+// Change role
+async function changeRole(id, newRole) {
+  const labels = { admin: 'Admin', manager: 'Gerente', user: 'Usuario' };
+  if (!confirm(`Alterar funcao para "${labels[newRole]}"?`)) {
+    loadUsers(); // reset select
+    return;
+  }
+  try {
+    await SupaAuth.update('profiles', `id=eq.${id}`, { role: newRole });
+    showToast(`Funcao alterada para ${labels[newRole]}!`, 'success');
+    localStorage.removeItem('ctl_profile');
+    loadAll();
+  } catch (err) { showToast(err.message, 'error'); }
+}
+
+// Tab switching
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.style.display = 'none');
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(`tab-${name}`).style.display = 'block';
+  btn.classList.add('active');
+  if (name === 'permissions') loadPermissionsTab();
+  if (name === 'sectors') loadSectors();
+}
+
+// Modal
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// Toast
+function showToast(msg, type = 'success') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `toast toast-${type} visible`;
+  setTimeout(() => el.classList.remove('visible'), 3000);
+}
+</script>
+</body>
+</html>

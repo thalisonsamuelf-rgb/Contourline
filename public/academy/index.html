@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>Contourline Academy - Preview LMS</title>
+    <script src="/auth.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        :root {
+            --academy-dark: #0f1724;
+            --academy-sidebar: #141c2b;
+            --academy-card: #1a2332;
+            --academy-accent: #00bcd4;
+            --academy-text: #e0e0e0;
+            --academy-muted: #8899aa;
+            --academy-hover: #1e2d3d;
+            --academy-success: #4caf50;
+            --academy-border: #243040;
+        }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--academy-dark); color: var(--academy-text); font-family: 'Segoe UI', system-ui, sans-serif; }
+
+        /* SIDEBAR */
+        .academy-sidebar {
+            position: fixed; left: 0; top: 0; bottom: 0; width: 220px;
+            background: var(--academy-sidebar); border-right: 1px solid var(--academy-border);
+            display: flex; flex-direction: column; z-index: 100;
+            overflow-y: auto;
+        }
+        .academy-sidebar .brand {
+            padding: 20px 16px; border-bottom: 1px solid var(--academy-border);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .academy-sidebar .brand img { height: 28px; }
+        .academy-sidebar .brand span { font-weight: 700; font-size: 1.1rem; color: white; }
+        .academy-sidebar .brand small { font-size: 0.65rem; color: var(--academy-accent); text-transform: uppercase; letter-spacing: 2px; display: block; }
+        .sidebar-nav { flex: 1; padding: 8px 0; }
+        .sidebar-nav a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 20px; color: var(--academy-muted); text-decoration: none;
+            font-size: 0.9rem; transition: all 0.2s; border-left: 3px solid transparent;
+        }
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            color: white; background: var(--academy-hover); border-left-color: var(--academy-accent);
+        }
+        .sidebar-nav a .badge-count {
+            margin-left: auto; background: var(--academy-accent); color: white;
+            border-radius: 10px; padding: 2px 8px; font-size: 0.7rem;
+        }
+        .sidebar-divider { height: 1px; background: var(--academy-border); margin: 8px 16px; }
+
+        /* MAIN */
+        .academy-main { margin-left: 220px; min-height: 100vh; }
+        .academy-topbar {
+            padding: 16px 24px; border-bottom: 1px solid var(--academy-border);
+            display: flex; justify-content: space-between; align-items: center;
+            background: var(--academy-sidebar);
+        }
+        .academy-topbar h5 { margin: 0; color: white; }
+        .academy-topbar .subtitle { color: var(--academy-muted); font-size: 0.85rem; }
+        .academy-content { padding: 24px; }
+
+        /* PAGE SECTIONS — hide all, show only .visible */
+        [data-page] { display: none !important; }
+        [data-page].visible { display: block !important; }
+
+        /* COURSE CARDS */
+        .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+        .course-card {
+            background: var(--academy-card); border-radius: 12px; overflow: hidden;
+            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--academy-border);
+        }
+        .course-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+        .course-card .thumb {
+            height: 140px; background: linear-gradient(135deg, #1a237e, #0d47a1);
+            display: flex; align-items: center; justify-content: center; position: relative;
+            overflow: hidden; background-size: cover; background-position: center;
+        }
+        .course-card .thumb .equip-icon { font-size: 3rem; opacity: 0.6; }
+        .course-card .thumb .brand-tag {
+            position: absolute; top: 8px; right: 8px;
+            background: rgba(0,0,0,0.5); color: white; padding: 2px 8px;
+            border-radius: 4px; font-size: 0.7rem;
+        }
+        .course-card .card-info { padding: 14px; }
+        .course-card .card-info h6 { margin: 0 0 4px; font-size: 0.95rem; color: white; }
+        .course-card .card-info p { margin: 0; font-size: 0.8rem; color: var(--academy-muted); line-height: 1.3; }
+
+        /* CATEGORY TABS */
+        .cat-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+        .cat-tab {
+            padding: 6px 16px; border-radius: 20px; font-size: 0.85rem;
+            cursor: pointer; border: 1px solid var(--academy-border);
+            background: transparent; color: var(--academy-muted); transition: all 0.2s;
+        }
+        .cat-tab:hover, .cat-tab.active { background: var(--academy-accent); color: white; border-color: var(--academy-accent); }
+
+        /* CATEGORY TITLE */
+        .cat-title { font-size: 1.2rem; font-weight: 600; color: white; margin: 24px 0 16px; }
+        .cat-title:first-of-type { margin-top: 0; }
+
+        /* CURSO DETAIL PAGE */
+        .curso-header { display: flex; gap: 32px; margin-bottom: 32px; }
+        .curso-info { flex: 1; }
+        .curso-info h3 { color: white; margin-bottom: 8px; }
+        .curso-meta { display: flex; gap: 16px; color: var(--academy-muted); font-size: 0.85rem; margin: 12px 0; }
+        .curso-meta span { display: flex; align-items: center; gap: 4px; }
+        .progress-bar-custom { height: 6px; background: var(--academy-border); border-radius: 3px; overflow: hidden; margin: 16px 0; }
+        .progress-bar-custom .fill { height: 100%; background: var(--academy-accent); border-radius: 3px; transition: width 0.3s; }
+        .btn-comecar {
+            background: var(--academy-accent); color: white; border: none;
+            padding: 12px 32px; border-radius: 8px; font-size: 1rem; cursor: pointer;
+            transition: background 0.2s; width: 100%;
+        }
+        .btn-comecar:hover { background: #00a5b8; }
+
+        /* MODULOS ACCORDION */
+        .modulo-item {
+            background: var(--academy-card); border: 1px solid var(--academy-border);
+            border-radius: 8px; margin-bottom: 8px; overflow: hidden;
+        }
+        .modulo-header {
+            padding: 16px 20px; cursor: pointer; display: flex;
+            justify-content: space-between; align-items: center;
+            transition: background 0.2s;
+        }
+        .modulo-header:hover { background: var(--academy-hover); }
+        .modulo-header h6 { margin: 0; color: white; font-size: 0.95rem; }
+        .modulo-body { padding: 0 20px 16px; display: none; }
+        .modulo-item.open .modulo-body { display: block; }
+        .modulo-item.open .modulo-chevron { transform: rotate(90deg); }
+        .modulo-chevron { transition: transform 0.2s; color: var(--academy-muted); }
+
+        .aula-link {
+            display: flex; align-items: center; gap: 10px;
+            padding: 8px 0; color: var(--academy-text); text-decoration: none;
+            font-size: 0.88rem; border-bottom: 1px solid var(--academy-border);
+        }
+        .aula-link:last-child { border-bottom: none; }
+        .aula-link:hover { color: var(--academy-accent); }
+        .aula-link .play-icon { color: var(--academy-accent); }
+        .aula-link .dur { color: var(--academy-muted); font-size: 0.8rem; }
+        .aula-link .aula-actions { display: flex; align-items: center; gap: 4px; margin-left: auto; flex-shrink: 0; }
+        .aula-link .aula-action-btn {
+            width: 28px; height: 28px; display: flex; align-items: center; justify-content: center;
+            color: var(--academy-muted); border-radius: 4px; cursor: pointer; font-size: 0.8rem;
+            transition: all 0.15s; background: transparent; border: none; padding: 0;
+        }
+        .aula-link .aula-action-btn:hover { color: var(--academy-accent); background: var(--academy-hover); }
+        .aula-link .drag-handle { cursor: grab; }
+        .aula-link .drag-handle:active { cursor: grabbing; }
+        .aula-link.dragging { opacity: 0.4; background: var(--academy-hover); }
+        .aula-link.drag-over { border-top: 2px solid var(--academy-accent); padding-top: 10px; }
+        .aula-title { flex: 1; cursor: pointer; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .aula-title:hover { color: var(--academy-accent); }
+
+        /* AULA PLAYER PAGE */
+        .player-layout { display: grid; grid-template-columns: 1fr 320px; gap: 24px; }
+        .video-area { background: #000; border-radius: 12px 12px 0 0; overflow: hidden; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; }
+        .video-placeholder { color: white; text-align: center; }
+        .video-placeholder i { font-size: 4rem; opacity: 0.5; }
+        .player-sidebar {
+            background: var(--academy-card); border-radius: 12px;
+            border: 1px solid var(--academy-border); overflow: hidden;
+        }
+        .player-sidebar-header { padding: 16px; border-bottom: 1px solid var(--academy-border); }
+        .player-sidebar-header h6 { margin: 0 0 4px; color: white; font-size: 0.9rem; }
+        .sidebar-lesson {
+            display: flex; align-items: center; gap: 10px; padding: 10px 16px;
+            border-bottom: 1px solid var(--academy-border); cursor: pointer;
+            transition: background 0.2s; font-size: 0.85rem;
+        }
+        .sidebar-lesson:hover { background: var(--academy-hover); }
+        .sidebar-lesson.active { background: var(--academy-hover); color: var(--academy-accent); }
+        .sidebar-lesson .check { width: 18px; height: 18px; border: 2px solid var(--academy-border); border-radius: 4px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .sidebar-lesson .check.done { background: var(--academy-success); border-color: var(--academy-success); }
+
+        .player-actions { display: flex; gap: 12px; margin-top: 16px; }
+        .player-actions button, .player-actions a {
+            padding: 8px 16px; border-radius: 8px; font-size: 0.85rem;
+            cursor: pointer; text-decoration: none; display: flex; align-items: center; gap: 6px;
+        }
+        .btn-download { background: var(--academy-card); border: 1px solid var(--academy-border); color: var(--academy-text); }
+        .btn-download:hover { background: var(--academy-hover); color: white; }
+        .btn-nav { background: var(--academy-accent); border: none; color: white; }
+        .btn-nav:hover { background: #00a5b8; }
+        .btn-nav.outline { background: transparent; border: 1px solid var(--academy-border); color: var(--academy-text); }
+        .btn-concluir { background: var(--academy-success); border: none; color: white; }
+        .btn-concluir:hover { background: #43a047; }
+
+        .breadcrumb-academy { display: flex; align-items: center; gap: 8px; color: var(--academy-muted); font-size: 0.85rem; margin-bottom: 16px; }
+        .breadcrumb-academy a { color: var(--academy-muted); text-decoration: none; }
+        .breadcrumb-academy a:hover { color: var(--academy-accent); }
+
+        .xp-badge { background: var(--academy-card); border: 1px solid var(--academy-border); padding: 4px 12px; border-radius: 16px; font-size: 0.8rem; color: var(--academy-accent); }
+
+        /* EDIT COURSE PAGE */
+        .edit-section { display: flex; gap: 40px; }
+        .edit-section-left { width: 280px; flex-shrink: 0; }
+        .edit-section-left h6 { color: white; font-size: 1.1rem; margin-bottom: 8px; }
+        .edit-section-left p { color: var(--academy-muted); font-size: 0.85rem; line-height: 1.5; }
+        .edit-section-right { flex: 1; }
+        .edit-label { display: block; color: var(--academy-text); font-size: 0.85rem; margin: 16px 0 6px; font-weight: 500; }
+        .edit-label:first-child { margin-top: 0; }
+        .edit-input {
+            width: 100%; padding: 10px 14px; background: white; border: 1px solid #d0d5dd;
+            border-radius: 8px; font-size: 0.9rem; color: #1a1a2e;
+            outline: none; transition: border-color 0.2s;
+        }
+        .edit-input:focus { border-color: var(--academy-accent); box-shadow: 0 0 0 3px rgba(0,188,212,0.15); }
+        .edit-input::placeholder { color: #aaa; }
+        select.edit-input { cursor: pointer; }
+        textarea.edit-input { font-family: inherit; }
+
+        .edit-check-row { margin-top: 16px; }
+        .edit-checkbox {
+            display: flex; align-items: flex-start; gap: 12px; cursor: pointer;
+            padding: 14px 16px; background: white; border: 1px solid #d0d5dd;
+            border-radius: 8px;
+        }
+        .edit-checkbox input[type="checkbox"] {
+            width: 20px; height: 20px; margin-top: 2px; accent-color: var(--academy-accent);
+            flex-shrink: 0; cursor: pointer;
+        }
+        .edit-checkbox strong { display: block; color: #1a1a2e; font-size: 0.9rem; }
+        .edit-checkbox span { display: block; color: #666; font-size: 0.8rem; margin-top: 2px; }
+
+        /* Layout picker */
+        .layout-option {
+            flex: 1; cursor: pointer; border: 2px solid var(--academy-border);
+            border-radius: 12px; padding: 16px; text-align: center; transition: all 0.2s;
+            background: white;
+        }
+        .layout-option.selected { border-color: var(--academy-accent); box-shadow: 0 0 0 3px rgba(0,188,212,0.2); }
+        .layout-option span { display: block; margin-top: 10px; font-size: 0.85rem; color: #1a1a2e; font-weight: 500; }
+        .layout-preview {
+            background: #f5f7fa; border-radius: 8px; min-height: 120px; overflow: hidden;
+        }
+
+        /* Capa preview */
+        .capa-preview { background: var(--academy-card); border-radius: 10px; overflow: hidden; border: 1px solid var(--academy-border); }
+        .btn-upload {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 16px; border: 1px solid var(--academy-border); border-radius: 8px;
+            background: transparent; color: var(--academy-text); font-size: 0.85rem; cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-upload:hover { background: var(--academy-hover); }
+
+        /* Rich text editor */
+        .onboarding-toolbar {
+            display: flex; gap: 2px; padding: 8px; background: white;
+            border: 1px solid #d0d5dd; border-bottom: none; border-radius: 8px 8px 0 0;
+            flex-wrap: wrap;
+        }
+        .onboarding-toolbar button {
+            width: 32px; height: 32px; border: none; background: transparent;
+            cursor: pointer; border-radius: 4px; color: #333; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .onboarding-toolbar button:hover { background: #e8e8e8; }
+        .toolbar-divider { width: 1px; background: #d0d5dd; margin: 4px 6px; }
+        .onboarding-editor {
+            min-height: 160px; padding: 16px; background: white;
+            border: 1px solid #d0d5dd; border-radius: 0 0 8px 8px;
+            color: #1a1a2e; font-size: 0.9rem; line-height: 1.6;
+            outline: none;
+        }
+        .onboarding-editor:focus { border-color: var(--academy-accent); }
+
+        /* Action buttons */
+        .btn-action {
+            padding: 10px 20px; border-radius: 8px; font-size: 0.9rem;
+            cursor: pointer; border: 1px solid var(--academy-border);
+            display: inline-flex; align-items: center; gap: 6px; font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-action.primary { background: #1a237e; color: white; border-color: #1a237e; }
+        .btn-action.primary:hover { background: #283593; }
+        .btn-action.danger { background: transparent; color: #c62828; border-color: #c62828; }
+        .btn-action.danger:hover { background: #c62828; color: white; }
+        .btn-action.neutral { background: transparent; color: var(--academy-text); }
+        .btn-action.neutral:hover { background: var(--academy-hover); }
+
+        /* Members page */
+        .member-tabs { display: flex; gap: 0; border-bottom: none; }
+        .member-tab {
+            padding: 10px 16px; background: transparent; border: 1px solid var(--academy-border);
+            border-bottom: none; color: var(--academy-muted); cursor: pointer; font-size: 0.9rem;
+            transition: all 0.2s; border-radius: 8px 8px 0 0; margin-right: -1px;
+        }
+        .member-tab:first-child { border-radius: 8px 0 0 0; }
+        .member-tab:last-child { border-radius: 0 8px 0 0; }
+        .member-tab.active { background: var(--academy-card); color: white; border-bottom-color: var(--academy-card); }
+        .member-tab:hover:not(.active) { background: var(--academy-hover); }
+        .tab-count {
+            display: inline-block; background: var(--academy-border); color: var(--academy-muted);
+            padding: 1px 8px; border-radius: 10px; font-size: 0.75rem; margin-left: 4px;
+        }
+        .member-tab.active .tab-count { background: var(--academy-accent); color: white; }
+        .member-search {
+            width: 100%; padding: 8px 36px 8px 12px; background: var(--academy-sidebar);
+            border: 1px solid var(--academy-border); border-radius: 6px; color: var(--academy-text);
+            font-size: 0.85rem; outline: none;
+        }
+        .member-search:focus { border-color: var(--academy-accent); }
+        .member-search::placeholder { color: var(--academy-muted); }
+        .filter-tag {
+            padding: 4px 12px; background: transparent; border: 1px solid var(--academy-border);
+            border-radius: 16px; color: var(--academy-muted); font-size: 0.8rem; cursor: pointer;
+            display: flex; align-items: center; gap: 4px; transition: all 0.2s;
+        }
+        .filter-tag:hover { border-color: var(--academy-accent); color: var(--academy-accent); }
+        .members-table { width: 100%; border-collapse: collapse; }
+        .members-table th {
+            text-align: left; padding: 12px 20px; font-size: 0.7rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; color: var(--academy-muted);
+            border-bottom: 1px solid var(--academy-border);
+        }
+        .member-row { border-bottom: 1px solid var(--academy-border); transition: background 0.15s; }
+        .member-row:hover { background: var(--academy-hover); }
+        .member-row td { padding: 12px 20px; font-size: 0.88rem; color: var(--academy-text); }
+        .member-name { display: flex; align-items: center; gap: 12px; }
+        .member-avatar {
+            width: 36px; height: 36px; border-radius: 50%; background: #455a64;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; font-weight: 600; color: white; flex-shrink: 0;
+        }
+        .member-actions { display: flex; gap: 4px; justify-content: flex-end; }
+        .member-btn {
+            width: 32px; height: 32px; border: 1px solid var(--academy-border); background: transparent;
+            border-radius: 6px; cursor: pointer; color: var(--academy-muted); font-size: 0.85rem;
+            display: flex; align-items: center; justify-content: center; transition: all 0.15s;
+        }
+        .member-btn:hover { background: var(--academy-hover); color: white; border-color: var(--academy-accent); }
+
+        /* Turmas */
+        .turma-row {
+            display: flex; align-items: center; gap: 16px; padding: 12px 20px;
+            border-bottom: 1px solid var(--academy-border); transition: background 0.15s; cursor: pointer;
+        }
+        .turma-row:last-child { border-bottom: none; }
+        .turma-row:hover { background: var(--academy-hover); }
+        .turma-thumb {
+            width: 80px; height: 50px; border-radius: 6px; background-size: cover;
+            background-position: center; background-color: var(--academy-border); flex-shrink: 0;
+        }
+        .turma-info { flex: 1; min-width: 0; }
+        .turma-name { color: white; font-weight: 600; font-size: 0.95rem; }
+        .turma-curso { color: var(--academy-muted); font-size: 0.8rem; }
+        .turma-stat { color: var(--academy-muted); font-size: 0.85rem; width: 140px; display: flex; align-items: center; gap: 6px; }
+        .turma-progress { display: flex; align-items: center; gap: 8px; width: 120px; color: var(--academy-muted); font-size: 0.85rem; }
+
+        /* Comments */
+        .comment-item {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 16px 20px; border-bottom: 1px solid var(--academy-border);
+            transition: background 0.15s;
+        }
+        .comment-item:hover { background: var(--academy-hover); }
+        .comment-check { width: 18px; height: 18px; accent-color: var(--academy-accent); margin-top: 4px; flex-shrink: 0; }
+        .comment-avatar {
+            width: 40px; height: 40px; border-radius: 50%; background: #455a64;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.85rem; font-weight: 600; color: white; flex-shrink: 0;
+        }
+        .comment-body { flex: 1; }
+        .comment-header { font-size: 0.88rem; color: var(--academy-text); margin-bottom: 4px; display: flex; flex-wrap: wrap; gap: 4px; align-items: baseline; }
+        .comment-header strong { color: white; }
+        .comment-link { color: var(--academy-accent); text-decoration: underline; }
+        .comment-date { margin-left: auto; color: var(--academy-muted); font-size: 0.8rem; white-space: nowrap; }
+        .comment-text { color: var(--academy-text); font-size: 0.88rem; margin: 4px 0 8px; line-height: 1.4; }
+        .comment-actions { display: flex; gap: 6px; align-items: center; }
+        .comment-action-btn {
+            background: transparent; border: none; color: var(--academy-muted);
+            cursor: pointer; font-size: 0.85rem; padding: 2px 6px; border-radius: 4px;
+            transition: all 0.15s;
+        }
+        .comment-action-btn:hover { color: var(--academy-accent); background: var(--academy-hover); }
+
+        /* Aula form layout */
+        .aula-form-layout { display: flex; gap: 32px; max-width: 900px; }
+        .aula-form-main { flex: 1; min-width: 0; }
+        .aula-form-sidebar { width: 180px; flex-shrink: 0; padding-top: 48px; }
+
+        /* Content type tabs */
+        .content-type-tabs { display: flex; gap: 4px; margin-top: 20px; }
+        .content-tab {
+            padding: 8px 16px; border: 1px solid #d0d5dd; background: white;
+            border-radius: 8px 8px 0 0; cursor: pointer; font-size: 0.85rem;
+            color: #666; display: flex; align-items: center; gap: 6px;
+            transition: all 0.2s; border-bottom: none;
+        }
+        .content-tab.active { background: white; color: #1a237e; font-weight: 600; border-color: #d0d5dd; position: relative; }
+        .content-tab.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: white; }
+        .content-tab:hover:not(.active) { background: #f5f7fa; }
+
+        /* Upload area */
+        .upload-area {
+            background: white; border: 2px dashed #d0d5dd; border-radius: 8px;
+            padding: 40px; text-align: center; cursor: pointer; transition: border-color 0.2s;
+        }
+        .upload-area:hover { border-color: var(--academy-accent); }
+
+        /* Aula capa */
+        .aula-capa-box {
+            width: 100%; aspect-ratio: 120/68; background: white; border: 1px solid #d0d5dd;
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        .aula-capa-box img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 9000;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.2s;
+        }
+        .modal-overlay.show { opacity: 1; visibility: visible; }
+        .modal-box {
+            background: white; border-radius: 12px; width: 560px; max-width: 90vw;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4); transform: translateY(20px);
+            transition: transform 0.2s;
+        }
+        .modal-overlay.show .modal-box { transform: translateY(0); }
+        .modal-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 24px 28px 0;
+        }
+        .modal-header h5 { margin: 0; color: #1a1a2e; font-size: 1.2rem; font-weight: 600; }
+        .modal-close {
+            width: 32px; height: 32px; border: none; background: transparent;
+            cursor: pointer; font-size: 1.2rem; color: #666; border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .modal-close:hover { background: #f0f0f0; }
+        .modal-body { padding: 20px 28px; }
+        .modal-label { display: block; color: #333; font-size: 0.85rem; font-weight: 500; margin-bottom: 6px; }
+        .modal-input {
+            width: 100%; padding: 10px 14px; border: 1px solid #d0d5dd; border-radius: 8px;
+            font-size: 0.9rem; color: #1a1a2e; outline: none; background: white;
+        }
+        .modal-input:focus { border-color: var(--academy-accent); box-shadow: 0 0 0 3px rgba(0,188,212,0.15); }
+        .modal-input::placeholder { color: #aaa; }
+        .modal-toggle-row {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-top: 20px;
+        }
+        .modal-toggle-row .label-text { font-size: 0.9rem; color: #1a1a2e; font-weight: 500; }
+        .modal-toggle-row .label-sub { font-size: 0.8rem; color: #888; }
+        .toggle-switch {
+            width: 44px; height: 24px; background: #d0d5dd; border-radius: 12px;
+            position: relative; cursor: pointer; transition: background 0.2s; flex-shrink: 0;
+        }
+        .toggle-switch.on { background: var(--academy-accent); }
+        .toggle-switch::after {
+            content: ''; position: absolute; width: 20px; height: 20px;
+            background: white; border-radius: 50%; top: 2px; left: 2px;
+            transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .toggle-switch.on::after { transform: translateX(20px); }
+        .modal-footer {
+            display: flex; justify-content: flex-end; gap: 12px;
+            padding: 16px 28px 24px; border-top: 1px solid #e8e8e8; margin-top: 8px;
+        }
+        .modal-btn {
+            padding: 10px 20px; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+            cursor: pointer; border: none; transition: background 0.2s;
+        }
+        .modal-btn.cancel { background: transparent; color: #333; }
+        .modal-btn.cancel:hover { background: #f0f0f0; }
+        .modal-btn.primary { background: #1a237e; color: white; }
+        .modal-btn.primary:hover { background: #283593; }
+
+        /* Toast */
+        .academy-toast {
+            position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+            background: #2e7d32; color: white; padding: 14px 24px; border-radius: 10px;
+            font-size: 0.9rem; display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3); transform: translateY(80px); opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .academy-toast.show { transform: translateY(0); opacity: 1; }
+
+        @media (max-width: 768px) {
+            .academy-sidebar { display: none; }
+            .academy-main { margin-left: 0; }
+            .player-layout { grid-template-columns: 1fr; }
+            .curso-header { flex-direction: column; }
+            .edit-section { flex-direction: column; gap: 16px; }
+            .edit-section-left { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="academy-sidebar">
+    <div class="brand">
+        <div>
+            <span style="color:white">contourline</span>
+            <small>ACADEMY</small>
+        </div>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="#" class="active" onclick="showPage('conteudos')"><i class="bi bi-collection-play"></i> Conteudos</a>
+        <a href="#" onclick="showPage('turmas')"><i class="bi bi-people"></i> Turmas</a>
+        <a href="#"><i class="bi bi-award"></i> Certificados</a>
+        <a href="#"><i class="bi bi-image"></i> Banners</a>
+        <div class="sidebar-divider"></div>
+        <a href="#"><i class="bi bi-credit-card"></i> Assinaturas</a>
+        <a href="#"><i class="bi bi-envelope"></i> Convites</a>
+        <a href="#" onclick="showPage('membros')"><i class="bi bi-person"></i> Membros</a>
+        <a href="#" onclick="showPage('comentarios')"><i class="bi bi-chat-dots"></i> Comentarios <span class="badge-count">33</span></a>
+        <a href="#"><i class="bi bi-globe"></i> Comunidades</a>
+        <a href="#"><i class="bi bi-trophy"></i> Ranking</a>
+        <div class="sidebar-divider"></div>
+        <a href="#"><i class="bi bi-tag"></i> Ofertas</a>
+        <a href="#"><i class="bi bi-bar-chart"></i> Relatorios</a>
+        <a href="#"><i class="bi bi-palette"></i> Templates</a>
+        <a href="#"><i class="bi bi-plug"></i> Integracoes</a>
+        <a href="#"><i class="bi bi-brush"></i> Aparencia</a>
+        <a href="#"><i class="bi bi-gear"></i> Configuracoes</a>
+    </nav>
+</div>
+
+<!-- MAIN -->
+<div class="academy-main">
+
+<!-- ============================================================ -->
+<!-- PAGE: CONTEUDOS -->
+<!-- ============================================================ -->
+<div id="page-conteudos" data-page class="visible">
+    <div class="academy-topbar">
+        <div>
+            <h5>Gestao de produtos digitais</h5>
+            <span class="subtitle">Adicione novos conteudos ou mude a visualizacao da sua vitrine.</span>
+        </div>
+        <div style="display:flex;gap:8px">
+        </div>
+    </div>
+    <div class="academy-content">
+        <!-- CATEGORY TABS -->
+        <div class="cat-tabs">
+            <span class="cat-tab active" onclick="filterCat('todos', this)">Todos</span>
+            <span class="cat-tab" onclick="filterCat('inicio', this)">Inicio</span>
+            <span class="cat-tab" onclick="filterCat('equipamentos', this)">Equipamentos</span>
+        </div>
+
+        <!-- INICIO -->
+        <div class="cat-section" data-cat="inicio">
+            <h5 class="cat-title">Inicio</h5>
+            <div class="course-grid">
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/marketing.png')"></div>
+                    <div class="card-info"><h6>Marketing para Clinicas</h6><p>Masterclass de Marketing para sua Clinica</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/metodo-rtc.png')"></div>
+                    <div class="card-info"><h6>Metodo RTC</h6><p>Metodo RTC</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/atendimento-magico.png')"></div>
+                    <div class="card-info"><h6>Atendimento Magico</h6><p>Humanizacao das experiencias do cliente</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/masterclass.png')"></div>
+                    <div class="card-info"><h6>Master Class</h6><p>Lives com conteudo rico para clinicas de estetica</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/tomada-decisao.png')"></div>
+                    <div class="card-info"><h6>Tomada de Decisao</h6><p>Como tomar as melhores decisoes</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/gerenciamento-envelhecimento.png')"></div>
+                    <div class="card-info"><h6>Gerenciamento do Envelhecimento</h6><p>Dra. Telma Advincula</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/programa-indicacao.png')"></div>
+                    <div class="card-info"><h6>Programa de Indicacao</h6><p>Com Rodrigo Noll - Vendas por indicacao</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/hipro-hof-teorico.png')"></div>
+                    <div class="card-info"><h6>Hipro HOF Teorico</h6><p>Curso teorico Hipro Hof Teorico</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EQUIPAMENTOS -->
+        <div class="cat-section" data-cat="equipamentos">
+            <h5 class="cat-title">Equipamentos</h5>
+            <div class="course-grid">
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/unyque-pro.png')"></div>
+                    <div class="card-info"><h6>Unyque PRO</h6><p>Curso teorico e pratica do equipamento Unyque</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/iconyc.png')"></div>
+                    <div class="card-info"><h6>Iconyc</h6><p>Curso Teorico do equipamento Iconyc</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/multishape.png')"></div>
+                    <div class="card-info"><h6>MultiShape</h6><p>Curso pratico do equipamento MultiShape</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/xtonus.png')"></div>
+                    <div class="card-info"><h6>X-Tonus</h6><p>Curso Teorico do equipamento X-tonus</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/hipro.png')"></div>
+                    <div class="card-info"><h6>HIPRO</h6><p>Curso teorico e pratico do equipamento HIPRO</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/enygma.png')"></div>
+                    <div class="card-info"><h6>Enygma X-Orbital</h6><p>Curso teorico e pratico do Enygma X-Orbital</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/crystal-3d-plus.png')"></div>
+                    <div class="card-info"><h6>Laser Crystal 3D Plus</h6><p>Curso teorico e pratico do Laser Crystal 3D Plus</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/ultralift.png')"></div>
+                    <div class="card-info"><h6>Ultralift</h6><p>Treinamento de montagem e instalacao do Ultralift</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/supreme-pro.png')"></div>
+                    <div class="card-info"><h6>Supreme PRO</h6><p>Curso Supreme Pro</p></div>
+                </div>
+                <div class="course-card" onclick="showPage('curso-detalhe')">
+                    <div class="thumb" style="background-image:url('static/img/capas/criofrequencia.png')"></div>
+                    <div class="card-info"><h6>Criofrequencia & HimFU</h6><p>Bhs 156 Full - Criofrequencia e HimFU</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: CURSO DETALHE (MODULOS) -->
+<!-- ============================================================ -->
+<div id="page-curso-detalhe" data-page>
+    <div class="academy-topbar">
+        <div>
+            <h5>Gestao de conteudo</h5>
+            <span class="subtitle">Ative a moderacao de comentarios, duplique ou remova este curso na pagina de edicao.</span>
+        </div>
+    </div>
+    <div class="academy-content">
+        <div class="curso-header">
+            <div class="curso-info" style="max-width:400px">
+                <a href="#" onclick="showPage('conteudos')" style="color:var(--academy-accent);text-decoration:none;font-size:0.85rem"><i class="bi bi-arrow-left"></i> Voltar</a>
+                <div style="margin:12px 0;border-radius:10px;overflow:hidden;max-width:360px"><img src="static/img/capas/unyque-pro.png" style="width:100%;display:block" alt="Unyque PRO"></div>
+                <h3 style="margin-top:12px">Unyque PRO</h3>
+                <p style="color:var(--academy-muted)">Curso teorico e pratica do equipamento Unyque</p>
+                <div class="curso-meta">
+                    <span><i class="bi bi-clock"></i> 6h 3m</span>
+                    <span><i class="bi bi-collection-play"></i> 62 conteudos</span>
+                    <span><i class="bi bi-tag"></i> Equipamentos</span>
+                </div>
+                <div class="progress-bar-custom"><div class="fill" style="width:0%"></div></div>
+                <span style="color:var(--academy-muted);font-size:0.85rem">0%</span>
+                <br><br>
+                <button class="btn-comecar" onclick="showPage('aula-player')">comecar agora</button>
+            </div>
+            <div style="flex:1">
+                <!-- MODULOS -->
+                <div class="modulo-item" onclick="toggleModulo(this)">
+                    <div class="modulo-header">
+                        <h6><i class="bi bi-chevron-right modulo-chevron"></i> Termos e Guia Rapido</h6>
+                        <span style="color:var(--academy-muted);font-size:0.8rem">...</span>
+                    </div>
+                    <div class="modulo-body" onclick="event.stopPropagation()">
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Termos de uso e politica de privacidade</span><div class="aula-actions"><span class="dur">2min</span></div></div>
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Guia rapido do curso</span><div class="aula-actions"><span class="dur">5min</span></div></div>
+                    </div>
+                </div>
+                <div class="modulo-item" onclick="toggleModulo(this)">
+                    <div class="modulo-header">
+                        <h6><i class="bi bi-chevron-right modulo-chevron"></i> Modulo 1: Apresentacao e montagem de acessorios Unyque Pro</h6>
+                    </div>
+                    <div class="modulo-body" onclick="event.stopPropagation()">
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Conhecendo o Unyque PRO</span><div class="aula-actions"><span class="dur">12min</span></div></div>
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Montagem dos acessorios</span><div class="aula-actions"><span class="dur">8min</span></div></div>
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Conexoes e calibracao</span><div class="aula-actions"><span class="dur">10min</span></div></div>
+                    </div>
+                </div>
+                <div class="modulo-item" onclick="toggleModulo(this)">
+                    <div class="modulo-header">
+                        <h6><i class="bi bi-chevron-right modulo-chevron"></i> Modulo 2: Limpeza do equipamento, filtros e troca de agua</h6>
+                    </div>
+                    <div class="modulo-body" onclick="event.stopPropagation()">
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Procedimento de limpeza</span><div class="aula-actions"><span class="dur">7min</span></div></div>
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Troca de filtros</span><div class="aula-actions"><span class="dur">5min</span></div></div>
+                    </div>
+                </div>
+                <div class="modulo-item" onclick="toggleModulo(this)">
+                    <div class="modulo-header">
+                        <h6><i class="bi bi-chevron-right modulo-chevron"></i> Modulo 3: Treinamento obrigatorio - Conhecendo a plataforma</h6>
+                    </div>
+                    <div class="modulo-body" onclick="event.stopPropagation()">
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Interface e funcoes</span><div class="aula-actions"><span class="dur">15min</span></div></div>
+                    </div>
+                </div>
+                <div class="modulo-item" onclick="toggleModulo(this)">
+                    <div class="modulo-header">
+                        <h6><i class="bi bi-chevron-right modulo-chevron"></i> Modulo 4: Protocolo Refreeze Sistemico</h6>
+                    </div>
+                    <div class="modulo-body" onclick="event.stopPropagation()">
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Teoria do Refreeze</span><div class="aula-actions"><span class="dur">10min</span></div></div>
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Pratica supervisionada</span><div class="aula-actions"><span class="dur">20min</span></div></div>
+                    </div>
+                </div>
+                <div class="modulo-item" onclick="toggleModulo(this)">
+                    <div class="modulo-header">
+                        <h6><i class="bi bi-chevron-right modulo-chevron"></i> Modulo 5: Programacao e pratica do ReFreeze</h6>
+                    </div>
+                    <div class="modulo-body" onclick="event.stopPropagation()">
+                        <div class="aula-link"><span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span><i class="bi bi-play-circle play-icon"></i><span class="aula-title" onclick="showPage('aula-player')">Parametros por indicacao</span><div class="aula-actions"><span class="dur">12min</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: AULA PLAYER -->
+<!-- ============================================================ -->
+<div id="page-aula-player" data-page>
+    <div class="academy-content">
+        <div class="breadcrumb-academy">
+            <a href="#" onclick="showPage('conteudos')"><i class="bi bi-collection-play"></i> Cursos</a>
+            <i class="bi bi-chevron-right"></i>
+            <a href="#" onclick="showPage('curso-detalhe')">Unyque PRO</a>
+            <i class="bi bi-chevron-right"></i>
+            <span style="color:white">Conhecendo o Unyque PRO</span>
+            <span class="xp-badge" style="margin-left:auto"><i class="bi bi-star-fill"></i> 25 XP</span>
+        </div>
+
+        <div class="player-layout">
+            <div>
+                <!-- VIDEO VIMEO PLAYER -->
+                <div class="video-area" id="vimeo-container">
+                    <div id="vimeo-player-wrap" style="width:100%;height:100%;display:none">
+                        <iframe id="vimeo-iframe" src="" style="width:100%;height:100%;border:none" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div id="vimeo-placeholder" class="video-placeholder">
+                        <i class="bi bi-play-circle-fill" style="cursor:pointer" onclick="promptVimeoUrl()"></i>
+                        <p style="margin-top:12px;opacity:0.7" id="vimeo-title">Conhecendo o Unyque PRO</p>
+                        <p style="font-size:0.8rem;opacity:0.4">Clique para inserir URL do Vimeo</p>
+                    </div>
+                    <!-- PROGRESS OVERLAY -->
+                    <div id="vimeo-progress-bar" style="position:absolute;bottom:0;left:0;right:0;height:4px;background:rgba(255,255,255,0.2);display:none">
+                        <div id="vimeo-progress-fill" style="height:100%;background:var(--academy-accent);width:0%;transition:width 0.5s"></div>
+                    </div>
+                </div>
+                <!-- VIDEO INFO BAR -->
+                <div id="vimeo-info-bar" style="display:none;background:var(--academy-card);border:1px solid var(--academy-border);border-radius:0 0 8px 8px;padding:10px 16px;justify-content:space-between;align-items:center;margin-top:-4px">
+                    <div style="display:flex;align-items:center;gap:12px">
+                        <span id="vimeo-time" style="color:var(--academy-muted);font-size:0.8rem">0:00 / 0:00</span>
+                        <span id="vimeo-status-badge" style="display:none;background:var(--academy-success);color:white;padding:2px 10px;border-radius:10px;font-size:0.75rem"><i class="bi bi-check-circle"></i> Assistido</span>
+                    </div>
+                    <div style="display:flex;gap:6px">
+                        <button class="comment-action-btn" onclick="setVimeoSpeed(0.75)" title="0.75x">0.75x</button>
+                        <button class="comment-action-btn" onclick="setVimeoSpeed(1)" title="1x" style="color:var(--academy-accent)">1x</button>
+                        <button class="comment-action-btn" onclick="setVimeoSpeed(1.5)" title="1.5x">1.5x</button>
+                        <button class="comment-action-btn" onclick="setVimeoSpeed(2)" title="2x">2x</button>
+                    </div>
+                </div>
+
+                <!-- ACTIONS -->
+                <div class="player-actions">
+                    <button class="btn-download"><i class="bi bi-download"></i> Baixar Material</button>
+                    <button class="btn-download"><i class="bi bi-sticky"></i> Criar anotacao</button>
+                    <button class="btn-download"><i class="bi bi-heart"></i> Favorito</button>
+                    <div style="flex:1"></div>
+                    <a href="#" class="btn-nav outline" onclick="showPage('curso-detalhe')"><i class="bi bi-arrow-left"></i> Voltar ao Curso</a>
+                    <button class="btn-concluir" onclick="toggleConcluir(this)"><i class="bi bi-check-circle"></i> Concluir Aula</button>
+                    <a href="#" class="btn-nav"><i class="bi bi-arrow-right"></i> Proxima Licao</a>
+                </div>
+            </div>
+
+            <!-- SIDEBAR AULAS -->
+            <div class="player-sidebar">
+                <div class="player-sidebar-header">
+                    <h6>Curso Completo</h6>
+                    <div style="display:flex;justify-content:space-between;align-items:center">
+                        <span style="color:var(--academy-muted);font-size:0.8rem">Progresso</span>
+                        <span style="color:var(--academy-accent);font-size:0.9rem;font-weight:600">8%</span>
+                    </div>
+                    <div class="progress-bar-custom" style="margin:8px 0 0"><div class="fill" style="width:8%"></div></div>
+                </div>
+                <div id="sidebar-lessons">
+                    <div class="sidebar-lesson active" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle-fill" style="color:var(--academy-accent)"></i>
+                        <span>Conhecendo o Unyque PRO</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Montagem dos acessorios</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Conexoes e calibracao</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Procedimento de limpeza</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Troca de filtros</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Interface e funcoes</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Teoria do Refreeze</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Pratica supervisionada</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                    <div class="sidebar-lesson" onclick="selectLesson(this)">
+                        <i class="bi bi-play-circle" style="color:var(--academy-muted)"></i>
+                        <span>Parametros por indicacao</span>
+                        <div class="check" style="margin-left:auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: MEMBROS -->
+<!-- ============================================================ -->
+<div id="page-membros" data-page>
+    <div class="academy-content">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px">
+            <div>
+                <span style="color:var(--academy-accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:600">CONTOURLINE ACADEMY</span>
+                <h3 style="color:white;margin:4px 0 0">Membros</h3>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div class="member-tabs">
+            <button class="member-tab active" onclick="switchMemberTab(this)">Todos <span class="tab-count">1,379</span></button>
+            <button class="member-tab" onclick="switchMemberTab(this)">Assinantes <span class="tab-count">41</span></button>
+            <button class="member-tab" onclick="switchMemberTab(this)">Ilimitados <span class="tab-count">13</span></button>
+            <button class="member-tab" onclick="switchMemberTab(this)">Colaboradores <span class="tab-count">17</span></button>
+            <button class="member-tab" onclick="switchMemberTab(this)">Banidos <span class="tab-count">0</span></button>
+        </div>
+
+        <!-- TABLE CONTAINER -->
+        <div style="background:var(--academy-card);border:1px solid var(--academy-border);border-radius:0 0 12px 12px;border-top:none">
+            <!-- SEARCH + FILTERS -->
+            <div style="padding:16px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--academy-border)">
+                <div style="position:relative;width:240px">
+                    <input type="text" class="member-search" placeholder="Busque por nome" id="member-search" oninput="filterMembers(this.value)">
+                    <i class="bi bi-search" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--academy-muted);font-size:0.85rem"></i>
+                </div>
+                <span style="color:var(--academy-muted);font-size:0.8rem">Mostrando itens 1-10 do total de 1379</span>
+            </div>
+
+            <!-- FILTER TAGS -->
+            <div style="padding:12px 20px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--academy-border)">
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Curso</button>
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Turma</button>
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Assinatura</button>
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Ilimitado</button>
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Convite</button>
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Certificado</button>
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Ultima vez visto</button>
+                <button class="filter-tag"><i class="bi bi-plus-circle"></i> Membros inativos</button>
+            </div>
+
+            <!-- TABLE -->
+            <table class="members-table">
+                <thead>
+                    <tr>
+                        <th style="width:30%">NOME COMPLETO</th>
+                        <th style="width:30%">ENDERECO DE EMAIL</th>
+                        <th style="width:18%">DATA DE INSCRICAO</th>
+                        <th style="width:15%">PERFIL</th>
+                        <th style="width:7%"></th>
+                    </tr>
+                </thead>
+                <tbody id="members-tbody">
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar">CI</div>Carla Izabela Pereira Santos</div></td><td>isaportila@hotmail.com</td><td>27/03/2026 11:20</td><td>-</td><td class="member-actions"><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar">PR</div>Paula Raposo</div></td><td>paula.raposo@contourline.com.br</td><td>26/03/2026 17:29</td><td>-</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#2e7d32">FR</div>Fabiano Rosestolato</div></td><td>fabiano.rosestolato@contourline.com.br</td><td>26/03/2026 17:07</td><td>27/03/2026 15:53</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#0d47a1">MC</div>Maya Campos</div></td><td>maya.campos@contourline.com.br</td><td>26/03/2026 17:03</td><td>-</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#4a148c">KX</div>Kleylto Xavier</div></td><td>xavier.ramos@contourline.com.br</td><td>26/03/2026 16:59</td><td>-</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#bf360c">VR</div>Vitor Luis Righetto Sabino</div></td><td>vitorluis484@gmail.com</td><td>26/03/2026 11:23</td><td>28/03/2026 12:28</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#00695c">AR</div>Anderson Ricardo Zoll</div></td><td>arzoll@gmail.com</td><td>25/03/2026 15:59</td><td>28/03/2026 19:32</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#c62828">AY</div>Aline Yuri</div></td><td>aline.yu_t@hotmail.com</td><td>25/03/2026 14:02</td><td>27/03/2026 14:00</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#1a237e">TS</div>Thalison Samuel</div></td><td>thalison@contourline.com.br</td><td>20/03/2026 09:15</td><td>29/03/2026 16:10</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                    <tr class="member-row"><td><div class="member-name"><div class="member-avatar" style="background:#e65100">DR</div>Dr. Ricardo Almeida</div></td><td>ricardo.almeida@clinicasp.com.br</td><td>18/03/2026 14:30</td><td>26/03/2026 10:45</td><td class="member-actions"><button class="member-btn"><i class="bi bi-pencil"></i></button><button class="member-btn"><i class="bi bi-three-dots"></i></button></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: TURMAS -->
+<!-- ============================================================ -->
+<div id="page-turmas" data-page>
+    <div class="academy-content">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px">
+            <div>
+                <span style="color:var(--academy-accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:600">CONTOURLINE ACADEMY</span>
+                <h3 style="color:white;margin:4px 0 0">Turmas</h3>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+                <div style="position:relative;width:200px">
+                    <input type="text" class="member-search" placeholder="Pesquisar turma" oninput="filterTurmas(this.value)">
+                    <i class="bi bi-search" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--academy-muted);font-size:0.85rem"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- TURMAS LIST -->
+        <div style="background:var(--academy-card);border:1px solid var(--academy-border);border-radius:12px;overflow:hidden">
+            <div class="turma-row" data-name="Treinamento Interno"
+                <div class="turma-thumb" style="background-image:url('static/img/capas/hipro.png')"></div>
+                <div class="turma-info"><div class="turma-name">Treinamento Interno</div><div class="turma-curso">Treinamentos Internos</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 19 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 0 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:0%"></div></div> <span>0%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Supreme PRO">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/supreme-pro.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Supreme PRO</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 122 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 1 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:53%"></div></div> <span>53%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Ultralift">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/ultralift.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Ultralift</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 80 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 8 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:58%"></div></div> <span>58%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Tomada de decisao">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/tomada-decisao.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Tomada de decisao</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 1,131 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 10 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:51%"></div></div> <span>51%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A X-Tonus">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/xtonus.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">X-Tonus</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 110 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 3 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:40%"></div></div> <span>40%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Iconyc">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/iconyc.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Iconyc</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 128 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 70 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:54%"></div></div> <span>54%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Hipro HOF Teorico">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/hipro-hof-teorico.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Hipro HOF Teorico</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 320 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 35 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:62%"></div></div> <span>62%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Gerenciamento do Envelhecimento">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/gerenciamento-envelhecimento.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Gerenciamento do Envelhecimento</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 676 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 33 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:57%"></div></div> <span>57%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Marketing para Clinicas">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/marketing.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Marketing para Clinicas</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 890 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 45 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:48%"></div></div> <span>48%</span></div>
+            </div>
+            <div class="turma-row" data-name="Turma A Atendimento Magico">
+                <div class="turma-thumb" style="background-image:url('static/img/capas/atendimento-magico.png')"></div>
+                <div class="turma-info"><div class="turma-name">Turma A</div><div class="turma-curso">Atendimento Magico</div></div>
+                <div class="turma-stat"><i class="bi bi-people"></i> 540 Membros</div>
+                <div class="turma-stat"><i class="bi bi-chat-dots"></i> 22 Comentarios</div>
+                <div class="turma-progress"><div class="progress-bar-custom" style="width:80px;display:inline-block"><div class="fill" style="width:61%"></div></div> <span>61%</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+<!-- PAGE: COMENTARIOS -->
+<!-- ============================================================ -->
+<div id="page-comentarios" data-page>
+    <div class="academy-content">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px">
+            <div>
+                <span style="color:var(--academy-accent);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;font-weight:600">CONTOURLINE ACADEMY</span>
+                <h3 style="color:white;margin:4px 0 0">Comentarios</h3>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+                <div style="position:relative;width:200px">
+                    <input type="text" class="member-search" placeholder="Pesquisar comentario">
+                    <i class="bi bi-search" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--academy-muted);font-size:0.85rem"></i>
+                </div>
+                <button class="btn-action neutral" style="padding:8px 12px;border:1px solid var(--academy-border)"><i class="bi bi-three-dots"></i></button>
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div class="member-tabs">
+            <button class="member-tab active" onclick="switchMemberTab(this)">Nao Lidos <span class="tab-count">33</span></button>
+            <button class="member-tab" onclick="switchMemberTab(this)">Aprovados <span class="tab-count">1,462</span></button>
+            <button class="member-tab" onclick="switchMemberTab(this)">Reprovados <span class="tab-count">0</span></button>
+            <button class="member-tab" onclick="switchMemberTab(this)">Pendentes <span class="tab-count">0</span></button>
+        </div>
+
+        <!-- COMMENTS CONTAINER -->
+        <div style="background:var(--academy-card);border:1px solid var(--academy-border);border-radius:0 0 12px 12px;border-top:none">
+            <!-- FILTERS -->
+            <div style="padding:16px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--academy-border)">
+                <div style="display:flex;gap:12px;align-items:center">
+                    <input type="checkbox" style="width:18px;height:18px;accent-color:var(--academy-accent)">
+                    <select class="edit-input" style="width:200px;padding:6px 10px;font-size:0.85rem;background:var(--academy-sidebar);color:var(--academy-text);border-color:var(--academy-border)">
+                        <option>Todos os cursos</option>
+                        <option>Unyque PRO</option>
+                        <option>HIPRO</option>
+                        <option>MultiShape</option>
+                        <option>Marketing para Clinicas</option>
+                    </select>
+                    <select class="edit-input" style="width:180px;padding:6px 10px;font-size:0.85rem;background:var(--academy-sidebar);color:var(--academy-text);border-color:var(--academy-border)">
+                        <option>Todas as aulas</option>
+                    </select>
+                </div>
+                <span style="color:var(--academy-muted);font-size:0.8rem">Mostrando itens 1-10 do total de 33</span>
+            </div>
+
+            <!-- COMMENTS LIST -->
+            <div class="comment-item">
+                <input type="checkbox" class="comment-check">
+                <div class="comment-avatar">C</div>
+                <div class="comment-body">
+                    <div class="comment-header"><strong>Carolina</strong> postou em <a href="#" class="comment-link">Troca de membrana</a><span class="comment-date">29 de marco de 2026, 11:45</span></div>
+                    <p class="comment-text">De um tempo pra ca as membranas estao furando com muita facilidade, mesmo o equipamento calibrado. Pq isso esta acontecendo?</p>
+                    <div class="comment-actions">
+                        <button class="comment-action-btn" onclick="this.textContent='Respondido!'">Responder</button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-up"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-down"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-eye"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <input type="checkbox" class="comment-check">
+                <div class="comment-avatar" style="background:#4a148c">L</div>
+                <div class="comment-body">
+                    <div class="comment-header"><strong>Livia Bortoluzzi</strong> postou em <a href="#" class="comment-link">Como aplicar o protocolo ReFreeze sistemico</a><span class="comment-date">12 de marco de 2026, 11:38</span></div>
+                    <p class="comment-text">Existe um documento com os protocolos escritos?</p>
+                    <div class="comment-actions">
+                        <button class="comment-action-btn">Responder</button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-up"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-down"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-eye"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <input type="checkbox" class="comment-check">
+                <div class="comment-avatar" style="background:#00695c">P</div>
+                <div class="comment-body">
+                    <div class="comment-header"><strong>Priscila Dan Rosi</strong> postou em <a href="#" class="comment-link">Efeito fisiologico na gordura</a><span class="comment-date">11 de marco de 2026, 16:18</span></div>
+                    <p class="comment-text">pode ser usado na papada?</p>
+                    <div class="comment-actions">
+                        <button class="comment-action-btn">Responder</button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-up"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-down"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-eye"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <input type="checkbox" class="comment-check">
+                <div class="comment-avatar" style="background:#bf360c">A</div>
+                <div class="comment-body">
+                    <div class="comment-header"><strong>Ana Julia Campolina Oliveira Rodrigues</strong> postou em <a href="#" class="comment-link">Protocolos</a><span class="comment-date">11 de marco de 2026, 14:17</span></div>
+                    <p class="comment-text">Conteudo muito interessante!</p>
+                    <div class="comment-actions">
+                        <button class="comment-action-btn">Responder</button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-up"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-down"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-eye"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <input type="checkbox" class="comment-check">
+                <div class="comment-avatar" style="background:#1a237e">F</div>
+                <div class="comment-body">
+                    <div class="comment-header"><strong>Francisca Antonia Silva de Oliveira</strong> postou em <a href="#" class="comment-link">Contra Indicacoes</a><span class="comment-date">10 de marco de 2026, 16:22</span></div>
+                    <p class="comment-text">Excelente conteudo!</p>
+                    <div class="comment-actions">
+                        <button class="comment-action-btn">Responder</button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-up"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-down"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-eye"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <input type="checkbox" class="comment-check">
+                <div class="comment-avatar" style="background:#e65100">M</div>
+                <div class="comment-body">
+                    <div class="comment-header"><strong>Maria Fernanda Souza</strong> postou em <a href="#" class="comment-link">Montagem dos acessorios</a><span class="comment-date">08 de marco de 2026, 09:30</span></div>
+                    <p class="comment-text">Qual o tempo de vida util da ponteira grande do Unyque PRO?</p>
+                    <div class="comment-actions">
+                        <button class="comment-action-btn">Responder</button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-up"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-hand-thumbs-down"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-eye"></i></button>
+                        <button class="comment-action-btn"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+
+<!-- ============================================================ -->
+
+</div><!-- /academy-main -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Page Navigation — data-page attribute based
+// ── SUPABASE ──────────────────────────────────────────
+var SB_URL = 'https://lyifnttxpoypwibbffnv.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5aWZudHR4cG95cHdpYmJmZm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNDY3MTQsImV4cCI6MjA2NTkyMjcxNH0.4z8lmc2DAnykbh7YqquyoeEo0uJM_dKt2X90D7-OTS0';
+var sb = window.supabase.createClient(SB_URL, SB_KEY);
+
+// Thumbnail map (local images)
+var thumbMap = {
+    'marketing para clínicas': 'static/img/capas/marketing.png',
+    'método rtc': 'static/img/capas/metodo-rtc.png',
+    'humanização das experiências do cliente': 'static/img/capas/atendimento-magico.png',
+    'master class': 'static/img/capas/masterclass.png',
+    'tomada de decisão': 'static/img/capas/tomada-decisao.png',
+    'gerenciamento do envelhecimento': 'static/img/capas/gerenciamento-envelhecimento.png',
+    'como criar um programa de indicação para clínicas de estética': 'static/img/capas/programa-indicacao.png',
+    'hipro hof teórico': 'static/img/capas/hipro-hof-teorico.png',
+    'unyque pro': 'static/img/capas/unyque-pro.png',
+    'iconyc': 'static/img/capas/iconyc.png',
+    'multishape': 'static/img/capas/multishape.png',
+    'x-tonus': 'static/img/capas/xtonus.png',
+    'hipro': 'static/img/capas/hipro.png',
+    'enygma x-orbital': 'static/img/capas/enygma.png',
+    'laser crystal 3d plus': 'static/img/capas/crystal-3d-plus.png',
+    'ultralift': 'static/img/capas/ultralift.png',
+    'supreme pro': 'static/img/capas/supreme-pro.png',
+    'criofrequência & himfu': 'static/img/capas/criofrequencia.png',
+};
+
+function getThumb(title) {
+    var key = (title || '').toLowerCase();
+    return thumbMap[key] || null;
+}
+
+// Load courses from Supabase
+async function loadCoursesFromDB() {
+    try {
+        // 1. Load categories
+        var { data: cats } = await sb.from('academy_categories').select('*').order('order_index');
+        // 2. Load courses with category
+        var { data: courses } = await sb.from('academy_courses').select('*, academy_categories(name, slug)').eq('status', 'published').order('created_at');
+
+        if (!courses || courses.length === 0) return;
+
+        // Group by category
+        var grouped = {};
+        (cats || []).forEach(function(c) { grouped[c.id] = { name: c.name, slug: c.slug, courses: [] }; });
+        courses.forEach(function(c) {
+            var catId = c.category_id;
+            if (grouped[catId]) grouped[catId].courses.push(c);
+        });
+
+        // Build category tabs
+        var tabsEl = document.querySelector('.cat-tabs');
+        if (tabsEl) {
+            tabsEl.innerHTML = '<span class="cat-tab active" onclick="filterCat(\'todos\', this)">Todos</span>';
+            Object.values(grouped).forEach(function(g) {
+                if (g.courses.length > 0) {
+                    tabsEl.innerHTML += '<span class="cat-tab" onclick="filterCat(\'' + g.slug + '\', this)">' + g.name + '</span>';
+                }
+            });
+        }
+
+        // Build course grids
+        var contentEl = document.querySelector('#page-conteudos .academy-content');
+        // Remove existing cat-sections
+        contentEl.querySelectorAll('.cat-section').forEach(function(s) { s.remove(); });
+
+        Object.values(grouped).forEach(function(g) {
+            if (g.courses.length === 0) return;
+            var section = document.createElement('div');
+            section.className = 'cat-section';
+            section.dataset.cat = g.slug;
+            var html = '<h5 class="cat-title">' + g.name + '</h5><div class="course-grid">';
+            g.courses.forEach(function(c) {
+                var thumb = getThumb(c.title) || c.thumbnail_url || c.cover_url;
+                var thumbStyle = thumb
+                    ? 'background-image:url(' + thumb + ')'
+                    : 'background:linear-gradient(135deg,#1a237e,#3949ab)';
+                html += '<div class="course-card" onclick="loadCourseDetail(\'' + c.id + '\')">'
+                    + '<div class="thumb" style="' + thumbStyle + '">'
+                    + (!thumb ? '<span class="equip-icon"><i class="bi bi-collection-play"></i></span>' : '')
+                    + '</div>'
+                    + '<div class="card-info"><h6>' + c.title + '</h6><p>' + (c.short_description || c.description || '') + '</p></div>'
+                    + '</div>';
+            });
+            html += '</div>';
+            section.innerHTML = html;
+            contentEl.appendChild(section);
+        });
+
+        console.log('Loaded ' + courses.length + ' courses from Supabase');
+    } catch(err) {
+        console.error('Failed to load courses:', err);
+    }
+}
+
+// Load course detail (modules + lessons) from Supabase
+async function loadCourseDetail(courseId) {
+    try {
+        var { data: course } = await sb.from('academy_courses').select('*').eq('id', courseId).single();
+        var { data: modules } = await sb.from('academy_modules').select('*').eq('course_id', courseId).order('order_index');
+        var { data: lessons } = await sb.from('academy_lessons').select('*').eq('module_id', modules.length > 0 ? undefined : 'none');
+
+        // Load all lessons for this course's modules
+        var moduleIds = modules.map(function(m) { return m.id; });
+        var allLessons = [];
+        if (moduleIds.length > 0) {
+            var { data: ls } = await sb.from('academy_lessons').select('*').in('module_id', moduleIds).order('order_index');
+            allLessons = ls || [];
+        }
+
+        // Update course detail page
+        var infoEl = document.querySelector('#page-curso-detalhe .curso-info');
+        if (infoEl) {
+            var thumb = getThumb(course.title) || course.thumbnail_url || course.cover_url;
+            var imgHtml = thumb ? '<div style="margin:12px 0;border-radius:10px;overflow:hidden;max-width:360px"><img src="' + thumb + '" style="width:100%;display:block"></div>' : '';
+
+            infoEl.innerHTML = '<a href="#" onclick="showPage(\'conteudos\')" style="color:var(--academy-accent);text-decoration:none;font-size:0.85rem"><i class="bi bi-arrow-left"></i> Voltar</a>'
+                + imgHtml
+                + '<h3 style="margin-top:12px">' + course.title + '</h3>'
+                + '<p style="color:var(--academy-muted)">' + (course.description || '') + '</p>'
+                + '<div class="curso-meta"><span><i class="bi bi-clock"></i> ' + (course.duration_minutes || 0) + 'min</span>'
+                + '<span><i class="bi bi-collection-play"></i> ' + allLessons.length + ' conteudos</span></div>'
+                + '<div class="progress-bar-custom"><div class="fill" style="width:0%"></div></div>'
+                + '<span style="color:var(--academy-muted);font-size:0.85rem">0%</span><br><br>'
+                + '<button class="btn-comecar" onclick="playFirstLesson()">comecar agora</button>';
+        }
+
+        // Build modules accordion
+        var modulosEl = document.querySelector('#page-curso-detalhe .curso-header > div:last-child');
+        if (modulosEl) {
+            modulosEl.innerHTML = '';
+            modules.forEach(function(mod) {
+                var modLessons = allLessons.filter(function(l) { return l.module_id === mod.id; });
+                var div = document.createElement('div');
+                div.className = 'modulo-item';
+                div.onclick = function() { toggleModulo(this); };
+
+                var lessonsHtml = '';
+                modLessons.forEach(function(lesson) {
+                    var dur = lesson.duration_seconds ? Math.round(lesson.duration_seconds / 60) + 'min' : '';
+                    lessonsHtml += '<div class="aula-link">'
+                        + '<span class="aula-action-btn drag-handle"><i class="bi bi-grip-vertical"></i></span>'
+                        + '<i class="bi bi-play-circle play-icon"></i>'
+                        + '<span class="aula-title" onclick="loadLesson(\'' + lesson.id + '\')">' + lesson.title + '</span>'
+                        + '<div class="aula-actions"><span class="dur">' + dur + '</span></div>'
+                        + '</div>';
+                });
+
+                if (!lessonsHtml) {
+                    lessonsHtml = '<p style="color:var(--academy-muted);font-size:0.85rem;padding:4px 0">Nenhuma aula neste modulo.</p>';
+                }
+
+                div.innerHTML = '<div class="modulo-header"><h6><i class="bi bi-chevron-right modulo-chevron"></i> ' + mod.title + '</h6></div>'
+                    + '<div class="modulo-body" onclick="event.stopPropagation()">' + lessonsHtml + '</div>';
+                modulosEl.appendChild(div);
+            });
+        }
+
+        // Store for player
+        window._currentCourse = course;
+        window._currentLessons = allLessons;
+
+        showPage('curso-detalhe');
+    } catch(err) {
+        console.error('Failed to load course:', err);
+        showPage('curso-detalhe');
+    }
+}
+
+// Load lesson into player
+async function loadLesson(lessonId) {
+    try {
+        var { data: lesson } = await sb.from('academy_lessons').select('*, academy_modules(title, course_id)').eq('id', lessonId).single();
+        if (!lesson) return;
+
+        // Update breadcrumb
+        var bc = document.querySelector('#page-aula-player .breadcrumb-academy');
+        if (bc) {
+            var courseTitle = window._currentCourse ? window._currentCourse.title : 'Curso';
+            bc.innerHTML = '<a href="#" onclick="showPage(\'conteudos\')"><i class="bi bi-collection-play"></i> Cursos</a>'
+                + '<i class="bi bi-chevron-right"></i>'
+                + '<a href="#" onclick="showPage(\'curso-detalhe\')">' + courseTitle + '</a>'
+                + '<i class="bi bi-chevron-right"></i>'
+                + '<span style="color:white">' + lesson.title + '</span>'
+                + '<span class="xp-badge" style="margin-left:auto"><i class="bi bi-star-fill"></i> ' + (lesson.xp_reward || 25) + ' XP</span>';
+        }
+
+        // Load Vimeo video if available
+        if (lesson.vimeo_url || lesson.vimeo_id) {
+            var vimeoUrl = lesson.vimeo_url || ('https://vimeo.com/' + lesson.vimeo_id);
+            demoVimeoUrl = vimeoUrl;
+        }
+
+        // Update sidebar lessons
+        var sidebarEl = document.getElementById('sidebar-lessons');
+        if (sidebarEl && window._currentLessons) {
+            sidebarEl.innerHTML = '';
+            window._currentLessons.forEach(function(l) {
+                var isActive = l.id === lessonId;
+                var div = document.createElement('div');
+                div.className = 'sidebar-lesson' + (isActive ? ' active' : '');
+                div.onclick = function() { loadLesson(l.id); };
+                div.innerHTML = '<i class="bi bi-play-circle' + (isActive ? '-fill' : '') + '" style="color:var(--academy-' + (isActive ? 'accent' : 'muted') + ')"></i>'
+                    + '<span>' + l.title + '</span>'
+                    + '<div class="check" style="margin-left:auto"></div>';
+                sidebarEl.appendChild(div);
+            });
+        }
+
+        showPage('aula-player');
+    } catch(err) {
+        console.error('Failed to load lesson:', err);
+    }
+}
+
+function playFirstLesson() {
+    if (window._currentLessons && window._currentLessons.length > 0) {
+        loadLesson(window._currentLessons[0].id);
+    } else {
+        showPage('aula-player');
+    }
+}
+
+// Load members from Supabase
+async function loadMembersFromDB() {
+    try {
+        var { data: profiles } = await sb.from('academy_profiles').select('*').order('created_at', { ascending: false }).limit(20);
+        if (!profiles || profiles.length === 0) return;
+
+        var tbody = document.getElementById('members-tbody');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+
+        profiles.forEach(function(p) {
+            var initials = (p.full_name || p.email || '??').split(' ').map(function(w) { return w[0]; }).join('').substring(0, 2).toUpperCase();
+            var colors = ['#455a64','#2e7d32','#0d47a1','#4a148c','#bf360c','#00695c','#c62828','#1a237e','#e65100'];
+            var color = colors[Math.abs(initials.charCodeAt(0)) % colors.length];
+            var date = p.created_at ? new Date(p.created_at).toLocaleString('pt-BR') : '-';
+
+            tbody.innerHTML += '<tr class="member-row">'
+                + '<td><div class="member-name"><div class="member-avatar" style="background:' + color + '">' + initials + '</div>' + (p.full_name || p.email) + '</div></td>'
+                + '<td>' + (p.email || '-') + '</td>'
+                + '<td>' + date + '</td>'
+                + '<td>' + (p.role || 'student') + '</td>'
+                + '<td class="member-actions"><button class="member-btn"><i class="bi bi-three-dots"></i></button></td>'
+                + '</tr>';
+        });
+    } catch(err) {
+        console.error('Failed to load members:', err);
+    }
+}
+
+// Init: load data from Supabase on page load
+loadCoursesFromDB();
+loadMembersFromDB();
+
+(function initPages() {
+    var all = document.querySelectorAll('[data-page]');
+    all.forEach(function(p) { p.classList.remove('visible'); });
+    document.getElementById('page-conteudos').classList.add('visible');
+})();
+
+function showPage(id) {
+    // 1. Hide ALL pages first
+    var all = document.querySelectorAll('[data-page]');
+    for (var i = 0; i < all.length; i++) {
+        all[i].classList.remove('visible');
+    }
+    // 2. Scroll to top WHILE nothing is visible (body is short)
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    // 3. Show target page AFTER scroll completed
+    requestAnimationFrame(function() {
+        var page = document.getElementById('page-' + id);
+        if (page) page.classList.add('visible');
+    });
+    // Auto-load Vimeo when opening player
+    if (id === 'aula-player' && demoVimeoUrl) {
+        setTimeout(function() { loadVimeoVideo(demoVimeoUrl); }, 300);
+    }
+    // Stop video when leaving player
+    if (id !== 'aula-player' && vimeoPlayer) {
+        vimeoPlayer.pause().catch(function(){});
+    }
+}
+
+// Modulo accordion
+function toggleModulo(el) { el.classList.toggle('open'); }
+
+// Category filter
+function filterCat(cat, tab) {
+    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.cat-section').forEach(s => {
+        s.style.display = (cat === 'todos' || s.dataset.cat === cat) ? 'block' : 'none';
+    });
+}
+
+// Concluir aula toggle
+function toggleConcluir(btn) {
+    var lesson = document.querySelector('.sidebar-lesson.active .check');
+    if (lesson.classList.contains('done')) {
+        lesson.classList.remove('done');
+        lesson.innerHTML = '';
+        btn.innerHTML = '<i class="bi bi-check-circle"></i> Concluir Aula';
+    } else {
+        lesson.classList.add('done');
+        lesson.innerHTML = '<i class="bi bi-check" style="color:white;font-size:12px"></i>';
+        btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Concluida!';
+    }
+}
+
+
+// ── TURMAS ────────────────────────────────────────────
+function filterTurmas(val) {
+    val = val.toLowerCase();
+    document.querySelectorAll('.turma-row').forEach(function(r) {
+        r.style.display = r.dataset.name.toLowerCase().includes(val) ? '' : 'none';
+    });
+}
+
+
+// ── MEMBROS ───────────────────────────────────────────
+function switchMemberTab(btn) {
+    document.querySelectorAll('.member-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+}
+
+function filterMembers(val) {
+    var rows = document.querySelectorAll('.member-row');
+    val = val.toLowerCase();
+    rows.forEach(function(r) {
+        var text = r.textContent.toLowerCase();
+        r.style.display = text.includes(val) ? '' : 'none';
+    });
+}
+
+
+
+
+// ── VIMEO INTEGRATION ─────────────────────────────────
+var vimeoPlayer = null;
+var vimeoWatched = false;
+
+function extractVimeoId(url) {
+    if (!url) return null;
+    // https://vimeo.com/123456789
+    var m = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    if (m) return m[1];
+    // Just a number
+    if (/^\d+$/.test(url.trim())) return url.trim();
+    return null;
+}
+
+function extractVimeoHash(url) {
+    // https://vimeo.com/123456789/abcdef1234 (private hash)
+    var m = url.match(/vimeo\.com\/\d+\/([a-f0-9]+)/);
+    return m ? m[1] : null;
+}
+
+function loadVimeoVideo(url) {
+    var id = extractVimeoId(url);
+    if (!id) return;
+    var hash = extractVimeoHash(url);
+    var src = 'https://player.vimeo.com/video/' + id + '?autoplay=1&title=0&byline=0&portrait=0';
+    if (hash) src += '&h=' + hash;
+
+    document.getElementById('vimeo-iframe').src = src;
+    document.getElementById('vimeo-player-wrap').style.display = 'block';
+    document.getElementById('vimeo-placeholder').style.display = 'none';
+    document.getElementById('vimeo-progress-bar').style.display = 'block';
+    document.getElementById('vimeo-info-bar').style.display = 'flex';
+    vimeoWatched = false;
+
+    // Init Vimeo Player SDK
+    var iframe = document.getElementById('vimeo-iframe');
+    vimeoPlayer = new Vimeo.Player(iframe);
+
+    vimeoPlayer.on('timeupdate', function(data) {
+        var pct = (data.percent * 100).toFixed(0);
+        document.getElementById('vimeo-progress-fill').style.width = pct + '%';
+        // Time display
+        var cur = formatTime(data.seconds);
+        vimeoPlayer.getDuration().then(function(dur) {
+            document.getElementById('vimeo-time').textContent = cur + ' / ' + formatTime(dur);
+        });
+        // Auto-complete at 90%
+        if (data.percent >= 0.9 && !vimeoWatched) {
+            vimeoWatched = true;
+            document.getElementById('vimeo-status-badge').style.display = 'inline-block';
+            // Auto mark lesson as done
+            var activeLesson = document.querySelector('.sidebar-lesson.active .check');
+            if (activeLesson && !activeLesson.classList.contains('done')) {
+                activeLesson.classList.add('done');
+                activeLesson.innerHTML = '<i class="bi bi-check" style="color:white;font-size:12px"></i>';
+                showToast('Aula concluida automaticamente!');
+            }
+        }
+    });
+
+    vimeoPlayer.on('ended', function() {
+        document.getElementById('vimeo-progress-fill').style.width = '100%';
+        if (!vimeoWatched) {
+            vimeoWatched = true;
+            document.getElementById('vimeo-status-badge').style.display = 'inline-block';
+        }
+    });
+}
+
+function promptVimeoUrl() {
+    var url = prompt('Cole a URL do video Vimeo:\n\nEx: https://vimeo.com/123456789');
+    if (url) loadVimeoVideo(url);
+}
+
+function setVimeoSpeed(speed) {
+    if (vimeoPlayer) {
+        vimeoPlayer.setPlaybackRate(speed);
+        document.querySelectorAll('#vimeo-info-bar .comment-action-btn').forEach(function(b) {
+            b.style.color = 'var(--academy-muted)';
+        });
+        event.target.style.color = 'var(--academy-accent)';
+        showToast('Velocidade: ' + speed + 'x');
+    }
+}
+
+function formatTime(seconds) {
+    var m = Math.floor(seconds / 60);
+    var s = Math.floor(seconds % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+}
+
+function selectLesson(el) {
+    document.querySelectorAll('.sidebar-lesson').forEach(function(l) {
+        l.classList.remove('active');
+        l.querySelector('i').className = 'bi bi-play-circle';
+        l.querySelector('i').style.color = 'var(--academy-muted)';
+    });
+    el.classList.add('active');
+    el.querySelector('i').className = 'bi bi-play-circle-fill';
+    el.querySelector('i').style.color = 'var(--academy-accent)';
+    // Update breadcrumb
+    var title = el.querySelector('span').textContent;
+    var breadcrumb = document.querySelector('#page-aula-player .breadcrumb-academy');
+    var lastSpan = breadcrumb.querySelector('span[style*="color:white"]');
+    if (lastSpan) lastSpan.textContent = title;
+    document.getElementById('vimeo-title').textContent = title;
+    // Reset video state
+    vimeoWatched = false;
+    document.getElementById('vimeo-status-badge').style.display = 'none';
+    document.getElementById('vimeo-progress-fill').style.width = '0%';
+}
+
+// Demo: Load sample video on player page open
+var demoVimeoUrl = 'https://vimeo.com/1172949070';
+
+function previewVimeoThumb(url) {
+    var id = extractVimeoId(url);
+    if (id) {
+        var src = 'https://player.vimeo.com/video/' + id + '?title=0&byline=0&portrait=0';
+        var hash = extractVimeoHash(url);
+        if (hash) src += '&h=' + hash;
+        document.getElementById('aula-video-preview-iframe').src = src;
+        document.getElementById('aula-video-preview').style.display = 'block';
+    } else {
+        document.getElementById('aula-video-preview').style.display = 'none';
+    }
+}
+
+// ── DRAG AND DROP AULAS (custom mouse events) ────────
+var dragState = { el: null, startY: 0, placeholder: null, parent: null, clone: null };
+
+document.addEventListener('mousedown', function(e) {
+    var handle = e.target.closest('.drag-handle');
+    if (!handle) return;
+    e.preventDefault();
+    var aula = handle.closest('.aula-link');
+    if (!aula) return;
+
+    dragState.el = aula;
+    dragState.parent = aula.parentElement;
+    dragState.startY = e.clientY;
+
+    // Create visual clone
+    var rect = aula.getBoundingClientRect();
+    var clone = aula.cloneNode(true);
+    clone.style.cssText = 'position:fixed;left:' + rect.left + 'px;top:' + rect.top + 'px;width:' + rect.width + 'px;z-index:9999;opacity:0.9;pointer-events:none;box-shadow:0 8px 30px rgba(0,0,0,0.4);background:var(--academy-card);border:1px solid var(--academy-accent);border-radius:6px;';
+    document.body.appendChild(clone);
+    dragState.clone = clone;
+
+    // Dim original
+    aula.style.opacity = '0.3';
+    aula.style.background = 'var(--academy-hover)';
+
+    document.addEventListener('mousemove', onDragMove);
+    document.addEventListener('mouseup', onDragEnd);
+});
+
+function onDragMove(e) {
+    if (!dragState.clone) return;
+    var dy = e.clientY - dragState.startY;
+    var rect = dragState.el.getBoundingClientRect();
+    dragState.clone.style.top = (rect.top + dy) + 'px';
+
+    // Find drop target
+    var siblings = Array.from(dragState.parent.querySelectorAll('.aula-link'));
+    siblings.forEach(function(s) { s.classList.remove('drag-over'); });
+
+    for (var i = 0; i < siblings.length; i++) {
+        if (siblings[i] === dragState.el) continue;
+        var r = siblings[i].getBoundingClientRect();
+        var mid = r.top + r.height / 2;
+        if (e.clientY < mid) {
+            siblings[i].classList.add('drag-over');
+            break;
+        }
+    }
+}
+
+function onDragEnd(e) {
+    document.removeEventListener('mousemove', onDragMove);
+    document.removeEventListener('mouseup', onDragEnd);
+
+    if (!dragState.clone) return;
+    dragState.clone.remove();
+
+    // Find where to drop
+    var siblings = Array.from(dragState.parent.querySelectorAll('.aula-link'));
+    var target = null;
+    for (var i = 0; i < siblings.length; i++) {
+        if (siblings[i].classList.contains('drag-over')) {
+            target = siblings[i];
+            break;
+        }
+    }
+
+    // Move element
+    if (target && target !== dragState.el) {
+        dragState.parent.insertBefore(dragState.el, target);
+        showToast('Ordem atualizada!');
+    }
+
+    // Cleanup
+    dragState.el.style.opacity = '';
+    dragState.el.style.background = '';
+    siblings.forEach(function(s) { s.classList.remove('drag-over'); });
+    dragState = { el: null, startY: 0, placeholder: null, parent: null, clone: null };
+}
+
+
+// Toast notification
+function showToast(msg) {
+    var toast = document.createElement('div');
+    toast.className = 'academy-toast';
+    toast.innerHTML = '<i class="bi bi-check-circle-fill"></i> ' + msg;
+    document.body.appendChild(toast);
+    setTimeout(function() { toast.classList.add('show'); }, 10);
+    setTimeout(function() { toast.classList.remove('show'); setTimeout(function() { toast.remove(); }, 300); }, 3000);
+}
+</script>
+</body>
+</html>

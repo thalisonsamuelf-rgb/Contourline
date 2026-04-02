@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contourline IA | Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e1a;
+  --surface:#111827;
+  --border:#1e293b;
+  --text:#f1f5f9;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  --accent:#3b82f6;
+  --accent2:#2563eb;
+  --red:#ef4444;
+  --green:#10b981;
+  --purple:#a855f7;
+  --radius:14px;
+}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* Background animation */
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(59,130,246,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(168,85,247,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(6,182,212,0.05) 0%, transparent 50%);
+  pointer-events:none;z-index:0;
+}
+
+.login-container{
+  position:relative;z-index:1;
+  width:100%;max-width:420px;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:40px;
+}
+.logo-icon{
+  width:64px;height:64px;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  border-radius:16px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:32px;font-weight:800;color:#fff;
+  margin-bottom:16px;
+  box-shadow:0 8px 32px rgba(59,130,246,0.25);
+}
+.logo h1{
+  font-size:24px;font-weight:700;
+  background:linear-gradient(135deg,var(--accent),var(--purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.logo p{
+  color:var(--text3);font-size:14px;margin-top:6px;
+}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:36px;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+.form-group label{
+  display:block;
+  font-size:13px;font-weight:600;
+  color:var(--text2);
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.form-group input{
+  width:100%;
+  padding:12px 16px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:var(--text);
+  font-size:15px;
+  font-family:inherit;
+  transition:all .2s ease;
+  outline:none;
+}
+.form-group input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(59,130,246,0.15);
+}
+.form-group input::placeholder{
+  color:var(--text3);
+}
+
+.btn{
+  width:100%;
+  padding:14px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  font-size:15px;
+  font-weight:600;
+  font-family:inherit;
+  cursor:pointer;
+  transition:all .2s ease;
+  position:relative;
+  overflow:hidden;
+}
+.btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(59,130,246,0.3);
+}
+.btn:active{transform:translateY(0)}
+.btn:disabled{
+  opacity:.6;cursor:not-allowed;
+  transform:none;box-shadow:none;
+}
+
+.btn-loading .btn-text{visibility:hidden}
+.btn-loading::after{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  width:20px;height:20px;
+  margin:-10px 0 0 -10px;
+  border:2px solid rgba(255,255,255,0.3);
+  border-top-color:#fff;
+  border-radius:50%;
+  animation:spin .6s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.error-msg{
+  background:rgba(239,68,68,0.1);
+  border:1px solid rgba(239,68,68,0.2);
+  color:var(--red);
+  padding:12px 16px;
+  border-radius:10px;
+  font-size:14px;
+  margin-bottom:20px;
+  display:none;
+}
+.error-msg.visible{display:block}
+
+.success-msg{
+  background:rgba(16,185,129,0.1);
+  border:1px solid rgba(16,185,129,0.2);
+  color:var(--green);
+  padding:12px 16px;
+  border-radius:10px;
+  font-size:14px;
+  margin-bottom:20px;
+  display:none;
+}
+.success-msg.visible{display:block}
+
+.link-row{
+  text-align:center;
+  margin-top:16px;
+}
+.link-btn{
+  background:none;border:none;
+  color:var(--accent);
+  font-size:14px;font-family:inherit;
+  cursor:pointer;
+  transition:color .2s;
+}
+.link-btn:hover{color:var(--purple);text-decoration:underline}
+
+.card-desc{
+  color:var(--text2);
+  font-size:14px;
+  line-height:1.6;
+  margin-bottom:24px;
+}
+
+.footer-text{
+  text-align:center;
+  margin-top:24px;
+  color:var(--text3);
+  font-size:13px;
+}
+
+/* Password toggle */
+.input-wrapper{
+  position:relative;
+}
+.toggle-pass{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:var(--text3);cursor:pointer;
+  padding:4px;font-size:18px;
+}
+.toggle-pass:hover{color:var(--text2)}
+
+@media(max-width:480px){
+  .card{padding:24px}
+  .logo-icon{width:52px;height:52px;font-size:26px;border-radius:14px}
+}
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="logo">
+    <div class="logo-icon">C</div>
+    <h1>Contourline IA</h1>
+    <p>Acesse a plataforma de transformacao digital</p>
+  </div>
+
+  <!-- LOGIN -->
+  <div class="card" id="loginCard">
+    <div id="errorMsg" class="error-msg"></div>
+    <div id="successMsg" class="success-msg"></div>
+
+    <form id="loginForm" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="seu.email@contourline.com" required autocomplete="email" autofocus>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <div class="input-wrapper">
+          <input type="password" id="password" placeholder="Digite sua senha" required autocomplete="current-password" minlength="6">
+          <button type="button" class="toggle-pass" onclick="togglePassword('password','eyeIcon')" aria-label="Mostrar senha">
+            <span id="eyeIcon">&#9673;</span>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn" id="submitBtn">
+        <span class="btn-text">Entrar</span>
+      </button>
+    </form>
+    <div class="link-row">
+      <button type="button" class="link-btn" onclick="showView('recover')">Esqueci minha senha</button>
+    </div>
+  </div>
+
+  <!-- RECUPERAR SENHA -->
+  <div class="card" id="recoverCard" style="display:none">
+    <div id="recoverError" class="error-msg"></div>
+    <div id="recoverSuccess" class="success-msg"></div>
+
+    <p class="card-desc">Informe seu email e enviaremos um link para redefinir sua senha.</p>
+
+    <form id="recoverForm" onsubmit="handleRecover(event)">
+      <div class="form-group">
+        <label for="recoverEmail">Email</label>
+        <input type="email" id="recoverEmail" placeholder="seu.email@contourline.com" required autocomplete="email" autofocus>
+      </div>
+
+      <button type="submit" class="btn" id="recoverBtn">
+        <span class="btn-text">Enviar link de recuperacao</span>
+      </button>
+    </form>
+    <div class="link-row">
+      <button type="button" class="link-btn" onclick="showView('login')">Voltar ao login</button>
+    </div>
+  </div>
+
+  <!-- REDEFINIR SENHA (vindo do email) -->
+  <div class="card" id="resetCard" style="display:none">
+    <div id="resetError" class="error-msg"></div>
+    <div id="resetSuccess" class="success-msg"></div>
+
+    <p class="card-desc">Defina sua nova senha abaixo.</p>
+
+    <form id="resetForm" onsubmit="handleReset(event)">
+      <div class="form-group">
+        <label for="newPassword">Nova senha</label>
+        <div class="input-wrapper">
+          <input type="password" id="newPassword" placeholder="Minimo 6 caracteres" required minlength="6" autocomplete="new-password">
+          <button type="button" class="toggle-pass" onclick="togglePassword('newPassword','eyeIconNew')" aria-label="Mostrar senha">
+            <span id="eyeIconNew">&#9673;</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirmar nova senha</label>
+        <div class="input-wrapper">
+          <input type="password" id="confirmPassword" placeholder="Repita a nova senha" required minlength="6" autocomplete="new-password">
+          <button type="button" class="toggle-pass" onclick="togglePassword('confirmPassword','eyeIconConfirm')" aria-label="Mostrar senha">
+            <span id="eyeIconConfirm">&#9673;</span>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn" id="resetBtn">
+        <span class="btn-text">Redefinir senha</span>
+      </button>
+    </form>
+  </div>
+
+  <div class="footer-text">
+    &copy; 2026 Contourline &mdash; Acesso restrito a colaboradores autorizados
+  </div>
+</div>
+
+<script src="/auth.js"></script>
+<script>
+
+// Token de recovery vindo do email (guardado para uso no reset)
+let recoveryAccessToken = null;
+
+// Detectar hash params do Supabase (recovery link)
+(function() {
+  const hash = window.location.hash.substring(1);
+  if (!hash) {
+    // Se já logado, redirecionar
+    try {
+      const session = JSON.parse(localStorage.getItem('ctl_session'));
+      if (session && session.access_token && session.expires_at > Date.now() / 1000) {
+        window.location.href = '/';
+      }
+    } catch {}
+    return;
+  }
+
+  const params = new URLSearchParams(hash);
+  const type = params.get('type');
+  const accessToken = params.get('access_token');
+
+  if (type === 'recovery' && accessToken) {
+    recoveryAccessToken = accessToken;
+    // Limpar hash da URL
+    history.replaceState(null, '', window.location.pathname);
+    // Mostrar formulário de redefinição
+    showView('reset');
+  }
+})();
+
+// ---- View management ----
+function showView(view) {
+  document.getElementById('loginCard').style.display = view === 'login' ? 'block' : 'none';
+  document.getElementById('recoverCard').style.display = view === 'recover' ? 'block' : 'none';
+  document.getElementById('resetCard').style.display = view === 'reset' ? 'block' : 'none';
+  // Limpar mensagens ao trocar
+  document.querySelectorAll('.error-msg, .success-msg').forEach(el => el.classList.remove('visible'));
+  // Atualizar subtítulo
+  const subtitle = document.querySelector('.logo p');
+  if (view === 'recover') subtitle.textContent = 'Recuperar acesso a sua conta';
+  else if (view === 'reset') subtitle.textContent = 'Definir nova senha';
+  else subtitle.textContent = 'Acesse a plataforma de transformacao digital';
+}
+
+// ---- Helpers ----
+function showMsg(id, msg) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+
+function hideMsg(id) {
+  document.getElementById(id).classList.remove('visible');
+}
+
+function setBtnLoading(btnId, loading) {
+  const btn = document.getElementById(btnId);
+  btn.disabled = loading;
+  if (loading) btn.classList.add('btn-loading');
+  else btn.classList.remove('btn-loading');
+}
+
+function togglePassword(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.innerHTML = '&#9675;';
+  } else {
+    input.type = 'password';
+    icon.innerHTML = '&#9673;';
+  }
+}
+
+// ---- Login ----
+async function handleLogin(e) {
+  e.preventDefault();
+  hideMsg('errorMsg');
+  hideMsg('successMsg');
+  setBtnLoading('submitBtn', true);
+
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+
+  try {
+    const res = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      const msg = data.error_description || data.msg || 'Email ou senha incorretos';
+      throw new Error(msg);
+    }
+
+    localStorage.setItem('ctl_session', JSON.stringify({
+      access_token: data.access_token,
+      refresh_token: data.refresh_token,
+      expires_at: data.expires_at,
+      user: data.user
+    }));
+
+    const profileRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/profiles?id=eq.${data.user.id}&select=*`,
+      { headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${data.access_token}` } }
+    );
+    const profiles = await profileRes.json();
+
+    if (profiles.length > 0 && !profiles[0].is_active) {
+      localStorage.removeItem('ctl_session');
+      throw new Error('Sua conta foi desativada. Entre em contato com o administrador.');
+    }
+
+    if (profiles.length > 0) {
+      localStorage.setItem('ctl_profile', JSON.stringify(profiles[0]));
+    }
+
+    window.location.href = '/';
+
+  } catch (err) {
+    showMsg('errorMsg', err.message);
+    setBtnLoading('submitBtn', false);
+  }
+}
+
+// ---- Recuperar senha (enviar email) ----
+async function handleRecover(e) {
+  e.preventDefault();
+  hideMsg('recoverError');
+  hideMsg('recoverSuccess');
+  setBtnLoading('recoverBtn', true);
+
+  const email = document.getElementById('recoverEmail').value.trim();
+
+  try {
+    await SupaAuth.resetPasswordForEmail(email);
+    showMsg('recoverSuccess', 'Email enviado! Verifique sua caixa de entrada e clique no link para redefinir sua senha.');
+    document.getElementById('recoverForm').reset();
+  } catch (err) {
+    showMsg('recoverError', err.message);
+  } finally {
+    setBtnLoading('recoverBtn', false);
+  }
+}
+
+// ---- Redefinir senha (vindo do email) ----
+async function handleReset(e) {
+  e.preventDefault();
+  hideMsg('resetError');
+  hideMsg('resetSuccess');
+
+  const newPass = document.getElementById('newPassword').value;
+  const confirmPass = document.getElementById('confirmPassword').value;
+
+  if (newPass !== confirmPass) {
+    showMsg('resetError', 'As senhas nao coincidem.');
+    return;
+  }
+
+  if (newPass.length < 6) {
+    showMsg('resetError', 'A senha deve ter no minimo 6 caracteres.');
+    return;
+  }
+
+  setBtnLoading('resetBtn', true);
+
+  try {
+    if (!recoveryAccessToken) {
+      throw new Error('Token de recuperacao invalido ou expirado. Solicite um novo link.');
+    }
+
+    await SupaAuth.updatePassword(newPass, recoveryAccessToken);
+    showMsg('resetSuccess', 'Senha redefinida com sucesso! Redirecionando para o login...');
+    document.getElementById('resetForm').reset();
+    recoveryAccessToken = null;
+
+    setTimeout(() => {
+      showView('login');
+      showMsg('successMsg', 'Senha alterada com sucesso. Faca login com sua nova senha.');
+    }, 2000);
+
+  } catch (err) {
+    showMsg('resetError', err.message);
+  } finally {
+    setBtnLoading('resetBtn', false);
+  }
+}
+</script>
+
+</body>
+</html>

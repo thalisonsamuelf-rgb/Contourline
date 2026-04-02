@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Comercial 2026 - Contourline</title>
+<script src="/auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--card2:#334155;--text:#f8fafc;--muted:#94a3b8;--border:#475569;--green:#22c55e;--red:#ef4444;--blue:#3b82f6;--yellow:#eab308;--purple:#a855f7;--cyan:#06b6d4;--orange:#f97316}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.header{background:linear-gradient(135deg,#1e3a5f,#0f172a);padding:20px 32px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.header h1{font-size:22px;font-weight:700}.header h1 span{color:var(--blue)}
+.header-right{display:flex;align-items:center;gap:16px}
+.header .date{color:var(--muted);font-size:13px}
+.header .logo{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.btn-refresh{background:var(--blue);color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;transition:all .2s}
+.btn-refresh:hover{background:#2563eb;transform:scale(1.02)}
+.btn-refresh:disabled{opacity:.5;cursor:not-allowed}
+.btn-refresh .spinner{display:none;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .6s linear infinite}
+.btn-refresh.loading .spinner{display:inline-block}
+.btn-refresh.loading .icon{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.filters-bar{background:var(--card);padding:14px 32px;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.filter-group{display:flex;flex-direction:column;gap:2px}
+.filter-group label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.filter-group select{background:var(--card2);color:var(--text);border:1px solid var(--border);padding:7px 12px;border-radius:6px;font-size:12px;min-width:140px;cursor:pointer}
+.filter-group select:focus{outline:none;border-color:var(--blue)}
+.btn-clear{background:transparent;color:var(--muted);border:1px solid var(--border);padding:7px 14px;border-radius:6px;cursor:pointer;font-size:12px;margin-top:14px;transition:all .2s}
+.btn-clear:hover{background:var(--card2);color:var(--text)}
+.filter-count{font-size:11px;color:var(--muted);margin-top:14px;margin-left:auto}
+
+.tabs{display:flex;gap:6px;padding:14px 32px;background:var(--card);border-bottom:1px solid var(--border)}
+.tab{padding:9px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;background:transparent;color:var(--muted);border:1px solid transparent;transition:all .2s}
+.tab:hover{background:var(--card2);color:var(--text)}
+.tab.active{background:var(--blue);color:white;border-color:var(--blue)}
+.tab .badge-count{background:rgba(255,255,255,.2);padding:1px 6px;border-radius:10px;font-size:10px;margin-left:4px}
+
+.container{padding:20px 32px;max-width:1440px;margin:0 auto}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px}
+.kpi{background:var(--card);border-radius:10px;padding:16px;border:1px solid var(--border)}
+.kpi .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.kpi .value{font-size:28px;font-weight:800}
+.kpi .sub{font-size:12px;color:var(--muted);margin-top:2px}
+.kpi.green .value{color:var(--green)}.kpi.red .value{color:var(--red)}.kpi.blue .value{color:var(--blue)}
+.kpi.yellow .value{color:var(--yellow)}.kpi.purple .value{color:var(--purple)}.kpi.cyan .value{color:var(--cyan)}
+.kpi.orange .value{color:var(--orange)}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:10px;padding:18px;border:1px solid var(--border)}
+.card h3{font-size:14px;font-weight:700;margin-bottom:14px}
+.chart-box{position:relative;height:260px}
+
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:8px 10px;color:var(--muted);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--border)}
+td{padding:8px 10px;border-bottom:1px solid rgba(71,85,105,.3)}
+tr:hover td{background:rgba(59,130,246,.05)}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700}
+.badge.green{background:rgba(34,197,94,.15);color:var(--green)}
+.badge.red{background:rgba(239,68,68,.15);color:var(--red)}
+.badge.yellow{background:rgba(234,179,8,.15);color:var(--yellow)}
+.badge.blue{background:rgba(59,130,246,.15);color:var(--blue)}
+
+.insight{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(59,130,246,.03));border:1px solid rgba(59,130,246,.2);border-radius:10px;padding:16px;margin-bottom:20px;font-size:13px;line-height:1.6;color:var(--muted)}
+.insight strong{color:var(--text)}
+.insight.warn{background:linear-gradient(135deg,rgba(239,68,68,.08),rgba(239,68,68,.03));border-color:rgba(239,68,68,.2)}
+
+.footer{text-align:center;padding:20px;color:var(--muted);font-size:11px;border-top:1px solid var(--border)}
+.loading-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,23,42,.85);display:flex;align-items:center;justify-content:center;z-index:999;flex-direction:column;gap:16px}
+.loading-overlay .big-spinner{width:48px;height:48px;border:4px solid rgba(59,130,246,.3);border-top-color:var(--blue);border-radius:50%;animation:spin .8s linear infinite}
+.loading-overlay p{color:var(--muted);font-size:14px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<div id="loading-overlay" class="loading-overlay">
+  <div class="big-spinner"></div>
+  <p id="loading-msg">Carregando dados do CRM...</p>
+</div>
+
+<div class="header">
+  <div>
+    <div class="logo">Contourline</div>
+    <h1>Dashboard <span>Comercial 2026</span></h1>
+  </div>
+  <div class="header-right">
+    <div class="date" id="updated-at">--</div>
+    <button class="btn-refresh" onclick="refreshData()">
+      <span class="spinner"></span>
+      <span class="icon">&#x21bb;</span>
+      Atualizar Dados
+    </button>
+  </div>
+</div>
+
+<div class="filters-bar">
+  <div class="filter-group">
+    <label>Funil</label>
+    <select id="f-pipeline" onchange="applyFilters()">
+      <option value="">Todos</option>
+      <option value="SDR">SDR</option>
+      <option value="HIGH TICKET">High Ticket</option>
+      <option value="VENDAS">Vendas</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Equipamento</label>
+    <select id="f-equipment" onchange="applyFilters()"><option value="">Todos</option></select>
+  </div>
+  <div class="filter-group">
+    <label>Vendedor</label>
+    <select id="f-user" onchange="applyFilters()"><option value="">Todos</option></select>
+  </div>
+  <div class="filter-group">
+    <label>Fonte</label>
+    <select id="f-source" onchange="applyFilters()"><option value="">Todos</option></select>
+  </div>
+  <div class="filter-group">
+    <label>Especialidade</label>
+    <select id="f-specialty" onchange="applyFilters()"><option value="">Todos</option></select>
+  </div>
+  <div class="filter-group">
+    <label>Mes</label>
+    <select id="f-month" onchange="applyFilters()"><option value="">Todos</option></select>
+  </div>
+  <button class="btn-clear" onclick="clearFilters()">Limpar filtros</button>
+  <div class="filter-count" id="filter-count"></div>
+</div>
+
+<div class="container">
+  <!-- KPIs -->
+  <div class="kpis">
+    <div class="kpi blue"><div class="label">Total de Leads</div><div class="value" id="k-total">--</div><div class="sub" id="k-total-sub"></div></div>
+    <div class="kpi cyan"><div class="label">Abertos</div><div class="value" id="k-open">--</div><div class="sub" id="k-open-sub"></div></div>
+    <div class="kpi green"><div class="label">Ganhas</div><div class="value" id="k-won">--</div><div class="sub" id="k-won-sub"></div></div>
+    <div class="kpi red"><div class="label">Perdidas</div><div class="value" id="k-lost">--</div><div class="sub" id="k-lost-sub"></div></div>
+    <div class="kpi yellow"><div class="label">Receita</div><div class="value" id="k-revenue">--</div></div>
+    <div class="kpi orange"><div class="label">Conversao</div><div class="value" id="k-conv">--</div></div>
+  </div>
+
+  <!-- Charts Row 1 -->
+  <div class="grid">
+    <div class="card">
+      <h3>Leads por Funil</h3>
+      <div class="chart-box"><canvas id="c-funnel"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Evolucao Mensal</h3>
+      <div class="chart-box"><canvas id="c-monthly"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Charts Row 2 -->
+  <div class="grid">
+    <div class="card">
+      <h3>Pipeline (abertos por etapa)</h3>
+      <div class="chart-box"><canvas id="c-stages"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Motivos de Perda</h3>
+      <div class="chart-box"><canvas id="c-lost"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Charts Row 3 -->
+  <div class="grid">
+    <div class="card">
+      <h3>Top Equipamentos</h3>
+      <div class="chart-box"><canvas id="c-equip"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Performance por Vendedor</h3>
+      <div class="chart-box"><canvas id="c-users"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="card" style="margin-bottom:20px">
+    <h3>Ranking de Vendedores</h3>
+    <div style="overflow-x:auto">
+      <table id="t-users">
+        <thead><tr><th>Vendedor</th><th>Leads</th><th>Ganhas</th><th>Perdidas</th><th>Abertos</th><th>Taxa Conv.</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="footer">Dashboard Contourline 2026 | Dados do RD Station CRM</div>
+
+<script>
+const C = { blue:'#3b82f6',green:'#22c55e',red:'#ef4444',yellow:'#eab308',purple:'#a855f7',cyan:'#06b6d4',orange:'#f97316',pink:'#ec4899' };
+const PALETTE = [C.blue,C.cyan,C.purple,C.green,C.yellow,C.orange,C.red,C.pink];
+Chart.defaults.color='#94a3b8'; Chart.defaults.borderColor='rgba(71,85,105,.3)';
+
+let RAW = null; // all records
+let charts = {};
+
+// ===== DATA LOADING =====
+async function loadData() {
+  try {
+    const r = await fetch('/api/data');
+    if (!r.ok) throw new Error('No data');
+    RAW = await r.json();
+    document.getElementById('updated-at').textContent = 'Atualizado: ' + RAW.generated;
+    populateFilters();
+    applyFilters();
+    document.getElementById('loading-overlay').classList.add('hidden');
+  } catch(e) {
+    document.getElementById('loading-msg').textContent = 'Atualizando dados do CRM...';
+    await refreshData(true);
+  }
+}
+
+async function refreshData(isInit) {
+  const btn = document.querySelector('.btn-refresh');
+  btn.classList.add('loading'); btn.disabled = true;
+  if (!isInit) document.getElementById('loading-overlay').classList.remove('hidden');
+  document.getElementById('loading-msg').textContent = 'Buscando dados do CRM... (pode levar 1-2 min)';
+  try {
+    const r = await fetch('/api/refresh');
+    const info = await r.json();
+    document.getElementById('loading-msg').textContent = `${info.records} registros carregados! Renderizando...`;
+    await loadData();
+  } catch(e) {
+    alert('Erro ao atualizar: ' + e.message);
+    document.getElementById('loading-overlay').classList.add('hidden');
+  }
+  btn.classList.remove('loading'); btn.disabled = false;
+}
+
+// ===== FILTERS =====
+function populateFilters() {
+  const f = RAW.filters;
+  fillSelect('f-equipment', f.equipments);
+  fillSelect('f-user', f.users);
+  fillSelect('f-source', f.sources);
+  fillSelect('f-specialty', f.specialties);
+  const mSel = document.getElementById('f-month');
+  mSel.innerHTML = '<option value="">Todos</option>';
+  f.months.forEach(m => { const o = document.createElement('option'); o.value=m.value; o.textContent=m.label; mSel.appendChild(o); });
+}
+
+function fillSelect(id, items) {
+  const sel = document.getElementById(id);
+  sel.innerHTML = '<option value="">Todos</option>';
+  items.forEach(v => { const o = document.createElement('option'); o.value=v; o.textContent=v; sel.appendChild(o); });
+}
+
+function clearFilters() {
+  ['f-pipeline','f-equipment','f-user','f-source','f-specialty','f-month'].forEach(id => document.getElementById(id).value='');
+  applyFilters();
+}
+
+function getFiltered() {
+  const fp = document.getElementById('f-pipeline').value;
+  const fe = document.getElementById('f-equipment').value;
+  const fu = document.getElementById('f-user').value;
+  const fs = document.getElementById('f-source').value;
+  const fsp = document.getElementById('f-specialty').value;
+  const fm = document.getElementById('f-month').value;
+  return RAW.records.filter(r =>
+    (!fp || r.pipeline === fp) &&
+    (!fe || r.equipment === fe) &&
+    (!fu || r.user === fu) &&
+    (!fs || r.source === fs) &&
+    (!fsp || r.specialty === fsp) &&
+    (!fm || r.month === fm)
+  );
+}
+
+function applyFilters() {
+  if (!RAW) return;
+  const data = getFiltered();
+  document.getElementById('filter-count').textContent = `${data.length} de ${RAW.records.length} registros`;
+  renderKPIs(data);
+  renderCharts(data);
+  renderTable(data);
+}
+
+// ===== KPIs =====
+function renderKPIs(data) {
+  const total = data.length;
+  const won = data.filter(r => r.win === true).length;
+  const lost = data.filter(r => r.win === false).length;
+  const open = data.filter(r => r.win === null).length;
+  const rev = data.filter(r => r.win === true).reduce((s,r) => s + r.amount, 0);
+  const conv = (won+lost) > 0 ? (won/(won+lost)*100).toFixed(1) : '0';
+
+  document.getElementById('k-total').textContent = total.toLocaleString('pt-BR');
+  document.getElementById('k-total-sub').textContent = 'Jan-Mar 2026';
+  document.getElementById('k-open').textContent = open.toLocaleString('pt-BR');
+  document.getElementById('k-open-sub').textContent = total>0 ? (open/total*100).toFixed(1)+'% do total' : '';
+  document.getElementById('k-won').textContent = won.toLocaleString('pt-BR');
+  document.getElementById('k-won-sub').textContent = conv+'% conversao';
+  document.getElementById('k-lost').textContent = lost.toLocaleString('pt-BR');
+  document.getElementById('k-lost-sub').textContent = total>0 ? (lost/total*100).toFixed(1)+'% do total' : '';
+  document.getElementById('k-revenue').textContent = 'R$ '+rev.toLocaleString('pt-BR',{maximumFractionDigits:0});
+  document.getElementById('k-conv').textContent = conv+'%';
+}
+
+// ===== CHARTS =====
+function destroyAll() { Object.values(charts).forEach(c => c.destroy()); charts = {}; }
+
+function makeChart(id, cfg) {
+  if (charts[id]) charts[id].destroy();
+  charts[id] = new Chart(document.getElementById(id), cfg);
+}
+
+function renderCharts(data) {
+  // Funnel
+  const byPl = groupBy(data, 'pipeline');
+  const pls = ['SDR','HIGH TICKET','VENDAS'];
+  makeChart('c-funnel', {
+    type:'bar',
+    data:{labels:pls, datasets:[
+      {label:'Abertos',data:pls.map(p=>(byPl[p]||[]).filter(r=>r.win===null).length),backgroundColor:C.blue},
+      {label:'Ganhas',data:pls.map(p=>(byPl[p]||[]).filter(r=>r.win===true).length),backgroundColor:C.green},
+      {label:'Perdidas',data:pls.map(p=>(byPl[p]||[]).filter(r=>r.win===false).length),backgroundColor:C.red},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:true}}}
+  });
+
+  // Monthly
+  const byMonth = groupBy(data, 'month');
+  const months = Object.keys(byMonth).sort();
+  const MN = {'01':'Jan','02':'Fev','03':'Mar','04':'Abr','05':'Mai','06':'Jun','07':'Jul','08':'Ago','09':'Set','10':'Out','11':'Nov','12':'Dez'};
+  makeChart('c-monthly', {
+    type:'line',
+    data:{labels:months.map(m=>MN[m.slice(5)]||m), datasets:[
+      {label:'Total',data:months.map(m=>byMonth[m].length),borderColor:C.blue,backgroundColor:'rgba(59,130,246,.1)',fill:true,tension:.3},
+      {label:'Ganhas',data:months.map(m=>byMonth[m].filter(r=>r.win===true).length),borderColor:C.green,tension:.3},
+      {label:'Perdidas',data:months.map(m=>byMonth[m].filter(r=>r.win===false).length),borderColor:C.red,tension:.3},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},scales:{y:{beginAtZero:true}}}
+  });
+
+  // Stages (open deals)
+  const openDeals = data.filter(r => r.win === null);
+  const byStage = countBy(openDeals, 'stage');
+  const stageEntries = Object.entries(byStage).sort((a,b) => b[1]-a[1]).slice(0,8);
+  makeChart('c-stages', {
+    type:'doughnut',
+    data:{labels:stageEntries.map(e=>`${e[0]} (${e[1]})`), datasets:[{data:stageEntries.map(e=>e[1]),backgroundColor:PALETTE}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,font:{size:10}}}}}
+  });
+
+  // Lost reasons
+  const lostDeals = data.filter(r => r.win === false);
+  const byReason = countBy(lostDeals, 'lost_reason');
+  const reasonEntries = Object.entries(byReason).sort((a,b) => b[1]-a[1]).slice(0,8);
+  makeChart('c-lost', {
+    type:'bar',
+    data:{labels:reasonEntries.map(e=>e[0].length>25?e[0].slice(0,25)+'...':e[0]),
+      datasets:[{data:reasonEntries.map(e=>e[1]),backgroundColor:PALETTE}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true}}}
+  });
+
+  // Equipment
+  const withEquip = data.filter(r => r.equipment);
+  const byEquip = countBy(withEquip, 'equipment');
+  const equipEntries = Object.entries(byEquip).sort((a,b) => b[1]-a[1]).slice(0,10);
+  makeChart('c-equip', {
+    type:'bar',
+    data:{labels:equipEntries.map(e=>e[0].length>20?e[0].slice(0,20)+'...':e[0]),
+      datasets:[{label:'Leads',data:equipEntries.map(e=>e[1]),backgroundColor:PALETTE}]},
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true}}}
+  });
+
+  // Users chart
+  const byUser = groupBy(data, 'user');
+  const userEntries = Object.entries(byUser).sort((a,b) => b[1].length-a[1].length).slice(0,10);
+  makeChart('c-users', {
+    type:'bar',
+    data:{labels:userEntries.map(e=>e[0].length>15?e[0].slice(0,15)+'...':e[0]),
+      datasets:[
+        {label:'Abertos',data:userEntries.map(e=>e[1].filter(r=>r.win===null).length),backgroundColor:C.blue},
+        {label:'Ganhas',data:userEntries.map(e=>e[1].filter(r=>r.win===true).length),backgroundColor:C.green},
+        {label:'Perdidas',data:userEntries.map(e=>e[1].filter(r=>r.win===false).length),backgroundColor:C.red},
+      ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}},scales:{x:{stacked:true},y:{stacked:true,beginAtZero:true}}}
+  });
+}
+
+// ===== TABLE =====
+function renderTable(data) {
+  const byUser = groupBy(data, 'user');
+  const rows = Object.entries(byUser).map(([name, deals]) => {
+    const won = deals.filter(r=>r.win===true).length;
+    const lost = deals.filter(r=>r.win===false).length;
+    const open = deals.filter(r=>r.win===null).length;
+    const rate = (won+lost)>0 ? (won/(won+lost)*100).toFixed(1) : '-';
+    return { name, total:deals.length, won, lost, open, rate };
+  }).sort((a,b) => b.total - a.total);
+
+  const tbody = document.querySelector('#t-users tbody');
+  tbody.innerHTML = rows.map(r => {
+    const cls = r.rate === '-' ? 'yellow' : parseFloat(r.rate) >= 10 ? 'green' : parseFloat(r.rate) > 0 ? 'blue' : 'red';
+    return `<tr><td><strong>${r.name}</strong></td><td>${r.total}</td><td>${r.won}</td><td>${r.lost}</td><td>${r.open}</td><td><span class="badge ${cls}">${r.rate}%</span></td></tr>`;
+  }).join('');
+}
+
+// ===== UTILS =====
+function groupBy(arr, key) {
+  return arr.reduce((g, r) => { (g[r[key]] = g[r[key]] || []).push(r); return g; }, {});
+}
+function countBy(arr, key) {
+  return arr.reduce((c, r) => { c[r[key]] = (c[r[key]]||0)+1; return c; }, {});
+}
+
+// ===== INIT =====
+loadData();
+</script>
+</body>
+</html>

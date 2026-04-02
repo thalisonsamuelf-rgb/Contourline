@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contourline | Dashboard Estrategico de Transformacao Digital</title>
+<script src="/auth.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --dark:#0a0a1a;--mid:#111128;--surface:#171730;--surface2:#1e1e3a;
+  --border:#2a2a4a;--border2:#3a3a5a;
+  --text:#e8e8f0;--text2:#a0a0b8;--text3:#707088;
+  --accent:#6366f1;--accent2:#818cf8;--accent-glow:rgba(99,102,241,0.15);
+  --green:#10b981;--green-bg:rgba(16,185,129,0.12);
+  --red:#ef4444;--red-bg:rgba(239,68,68,0.12);
+  --amber:#f59e0b;--amber-bg:rgba(245,158,11,0.12);
+  --blue:#3b82f6;--blue-bg:rgba(59,130,246,0.12);
+  --purple:#a855f7;--purple-bg:rgba(168,85,247,0.12);
+  --cyan:#06b6d4;--cyan-bg:rgba(6,182,212,0.12);
+  --radius:14px;
+}
+body{font-family:'Inter',sans-serif;background:var(--dark);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(160deg,#0d0d24 0%,#131338 50%,#1a1a4a 100%);padding:48px 40px 56px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.hero::before{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,0.06) 0%,transparent 70%);animation:heroPulse 10s infinite alternate}
+.hero::after{content:'';position:absolute;bottom:-150px;left:-50px;width:400px;height:400px;background:radial-gradient(circle,rgba(168,85,247,0.04) 0%,transparent 70%)}
+@keyframes heroPulse{0%{transform:scale(1);opacity:0.5}100%{transform:scale(1.4);opacity:0.8}}
+.hero-content{position:relative;z-index:1;max-width:1280px;margin:0 auto}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:16px}
+.hero-badge{background:var(--accent-glow);border:1px solid rgba(99,102,241,0.3);color:var(--accent2);padding:6px 16px;border-radius:24px;font-size:0.7em;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.hero h1{font-size:2.6em;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin-bottom:4px;color:#fff}
+.hero .tagline{color:var(--accent2);font-size:1.1em;font-weight:600;margin-bottom:4px;font-style:italic}
+.hero .one-liner{color:var(--text2);font-size:0.92em;font-weight:400;margin-bottom:6px;max-width:680px}
+.hero .hero-meta{display:flex;gap:24px;flex-wrap:wrap;color:var(--text3);font-size:0.78em;font-weight:500;margin-top:8px}
+.hero .hero-meta span{display:flex;align-items:center;gap:5px}
+.hero .update-date{color:var(--text3);font-size:0.72em;font-weight:500;margin-top:6px}
+
+/* ===== CONTAINER ===== */
+.container{max-width:1280px;margin:0 auto;padding:0 40px}
+
+/* ===== KPI STRIP ===== */
+.kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin-top:28px}
+.kpi-strip-2{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1px}
+.kpi-item{background:var(--surface);padding:20px 16px;text-align:center;transition:background 0.3s}
+.kpi-item:hover{background:var(--surface2)}
+.kpi-label{font-size:0.62em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:600;margin-bottom:6px}
+.kpi-value{font-size:1.8em;font-weight:900;letter-spacing:-1px;color:#fff}
+.kpi-value.accent{color:var(--accent2)}
+.kpi-value.green{color:var(--green)}
+.kpi-value.amber{color:var(--amber)}
+.kpi-value.red{color:var(--red)}
+.kpi-value.cyan{color:var(--cyan)}
+.kpi-sub{font-size:0.65em;color:var(--text3);margin-top:4px}
+
+/* ===== SECTIONS ===== */
+.section{padding:44px 0 10px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:24px;cursor:pointer;user-select:none}
+.section-line{width:36px;height:3px;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px}
+.section-title{font-size:0.8em;text-transform:uppercase;letter-spacing:3px;font-weight:800;color:var(--text)}
+.section-toggle{margin-left:auto;font-size:0.75em;color:var(--text3);font-weight:600;transition:transform 0.3s}
+.section-content{overflow:hidden;transition:max-height 0.5s ease, opacity 0.3s;max-height:5000px;opacity:1}
+.section-content.collapsed{max-height:0;opacity:0;padding:0}
+
+/* ===== FILTERS ===== */
+.filters{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.filter-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:7px 16px;border-radius:8px;font-size:0.75em;font-weight:600;cursor:pointer;transition:all 0.2s;font-family:inherit}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent2)}
+.filter-btn.active{background:var(--accent-glow);border-color:var(--accent);color:var(--accent2)}
+
+/* ===== CARDS ===== */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+.card{background:var(--surface);border-radius:var(--radius);padding:24px;border:1px solid var(--border);transition:all 0.35s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden}
+.card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.3);border-color:var(--accent)}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--purple));transform:scaleX(0);transition:transform 0.35s;transform-origin:left}
+.card:hover::after{transform:scaleX(1)}
+
+/* ===== QUOTE CARDS ===== */
+.quote-card{background:var(--surface);border-radius:var(--radius);padding:28px 28px 22px;border:1px solid var(--border);position:relative;transition:all 0.3s}
+.quote-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,0.25)}
+.quote-mark{font-size:2.8em;color:var(--accent);opacity:0.3;line-height:1;margin-bottom:-10px;font-family:Georgia,serif}
+.quote-text{font-size:0.92em;color:var(--text);line-height:1.6;font-style:italic;margin-bottom:10px}
+.quote-context{font-size:0.72em;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+
+/* ===== PAIN CARDS ===== */
+.pain-card{background:var(--surface);border-radius:var(--radius);padding:22px;border:1px solid var(--border);transition:all 0.3s;display:flex;gap:16px;align-items:flex-start}
+.pain-card:hover{border-color:var(--red);transform:translateY(-2px);box-shadow:0 8px 32px rgba(239,68,68,0.08)}
+.pain-num{width:40px;height:40px;border-radius:10px;background:var(--red-bg);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:0.85em;font-weight:900;flex-shrink:0}
+.pain-title{font-size:0.88em;font-weight:700;color:#fff;margin-bottom:4px}
+.pain-desc{font-size:0.78em;color:var(--text2);line-height:1.5}
+
+/* ===== USE CASE CARDS ===== */
+.usecase-card{background:var(--surface);border-radius:var(--radius);padding:24px;border:1px solid var(--border);transition:all 0.3s;position:relative;overflow:hidden}
+.usecase-card:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 8px 32px rgba(16,185,129,0.08)}
+.usecase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--radius) var(--radius) 0 0}
+.usecase-card.uc-1::before{background:linear-gradient(90deg,var(--accent),var(--purple))}
+.usecase-card.uc-2::before{background:linear-gradient(90deg,var(--green),var(--cyan))}
+.usecase-card.uc-3::before{background:linear-gradient(90deg,var(--amber),#f97316)}
+.usecase-card.uc-4::before{background:linear-gradient(90deg,var(--red),#ec4899)}
+.usecase-num{font-size:0.65em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:700;margin-bottom:6px}
+.usecase-title{font-size:1em;font-weight:800;color:#fff;margin-bottom:8px}
+.usecase-desc{font-size:0.82em;color:var(--text2);line-height:1.5;margin-bottom:12px}
+.usecase-meta{display:flex;gap:8px;flex-wrap:wrap}
+.usecase-tag{padding:4px 10px;border-radius:6px;font-size:0.68em;font-weight:700}
+.usecase-tag.squad{background:var(--accent-glow);color:var(--accent2)}
+.usecase-tag.epic-ref{background:var(--green-bg);color:var(--green)}
+.usecase-tag.status-tag{background:var(--amber-bg);color:var(--amber)}
+
+/* ===== COMPETE CARDS ===== */
+.compete-card{background:var(--surface);border-radius:var(--radius);padding:24px;border:1px solid var(--border);transition:all 0.3s}
+.compete-card:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 32px rgba(6,182,212,0.08)}
+.compete-vs{font-size:0.68em;text-transform:uppercase;letter-spacing:1.5px;color:var(--cyan);font-weight:700;margin-bottom:8px}
+.compete-title{font-size:0.95em;font-weight:800;color:#fff;margin-bottom:10px}
+.compete-advantage{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px}
+.compete-check{color:var(--green);font-weight:900;font-size:0.85em;flex-shrink:0;margin-top:1px}
+.compete-text{font-size:0.82em;color:var(--text2);line-height:1.5}
+.moat-box{background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.2);border-radius:var(--radius);padding:24px;margin-top:20px}
+.moat-title{font-size:0.72em;text-transform:uppercase;letter-spacing:2px;color:var(--accent2);font-weight:800;margin-bottom:10px}
+.moat-items{display:flex;gap:12px;flex-wrap:wrap}
+.moat-item{background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);color:var(--accent2);padding:6px 14px;border-radius:8px;font-size:0.78em;font-weight:700}
+
+/* ===== EPIC CARDS ===== */
+.epic-card{background:var(--surface);border-radius:var(--radius);padding:20px 24px;border:1px solid var(--border);transition:all 0.3s;margin-bottom:12px}
+.epic-card:hover{border-color:var(--accent);box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+.epic-card.hidden{display:none}
+.epic-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.epic-title{font-size:1em;font-weight:700;color:#fff}
+.epic-num{color:var(--accent2);font-weight:800;margin-right:8px}
+.epic-badges{display:flex;gap:6px;flex-wrap:wrap}
+.badge{padding:3px 10px;border-radius:6px;font-size:0.68em;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.badge.p1{background:var(--red-bg);color:var(--red)}
+.badge.p2{background:var(--amber-bg);color:var(--amber)}
+.badge.p3{background:var(--blue-bg);color:var(--blue)}
+.badge.p4{background:var(--purple-bg);color:var(--purple)}
+.badge.em-andamento{background:var(--green-bg);color:var(--green)}
+.badge.draft{background:rgba(112,112,136,0.15);color:var(--text3)}
+.epic-meta{display:flex;gap:20px;font-size:0.78em;color:var(--text2);margin-bottom:12px;flex-wrap:wrap}
+.epic-meta span{display:flex;align-items:center;gap:4px}
+.progress-bar{height:8px;background:var(--mid);border-radius:4px;overflow:hidden;margin-top:4px}
+.progress-fill{height:100%;border-radius:4px;transition:width 1.2s cubic-bezier(0.4,0,0.2,1)}
+.progress-fill.pf-green{background:linear-gradient(90deg,var(--green),#34d399)}
+.progress-fill.pf-accent{background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.progress-fill.pf-gray{background:var(--border2)}
+.progress-label{display:flex;justify-content:space-between;font-size:0.72em;color:var(--text3);margin-top:4px}
+
+/* ===== STORY LIST IN EPIC ===== */
+.epic-stories{margin-top:12px;padding:12px 16px;background:var(--mid);border-radius:10px;border:1px solid var(--border)}
+.epic-stories-title{font-size:0.68em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:700;margin-bottom:8px}
+.epic-stories ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 16px}
+.epic-stories li{font-size:0.75em;color:var(--text2);padding:3px 0;display:flex;align-items:center;gap:6px}
+.epic-stories li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;opacity:0.6}
+.story-size{display:inline-block;padding:1px 6px;border-radius:4px;font-size:0.85em;font-weight:700;margin-left:4px}
+.story-size.sz-s{background:var(--green-bg);color:var(--green)}
+.story-size.sz-m{background:var(--blue-bg);color:var(--blue)}
+.story-size.sz-l{background:var(--amber-bg);color:var(--amber)}
+@media(max-width:640px){.epic-stories ul{grid-template-columns:1fr}}
+
+/* ===== SUMMARY BOX ===== */
+.summary-box{background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(168,85,247,0.06));border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.summary-item{text-align:center}
+.summary-item-value{font-size:1.4em;font-weight:900;color:#fff}
+.summary-item-label{font-size:0.7em;color:var(--text3);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-top:2px}
+@media(max-width:640px){.summary-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== DEPENDENCY MAP ===== */
+.dep-map{background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:32px;overflow-x:auto}
+.dep-map svg{width:100%;max-width:900px;margin:0 auto;display:block}
+.dep-map svg text{font-family:'Inter',sans-serif}
+
+/* ===== TIMELINE ===== */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--purple),var(--border))}
+.tl-item{position:relative;margin-bottom:28px;padding-left:28px}
+.tl-dot{position:absolute;left:-25px;top:4px;width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);background:var(--dark)}
+.tl-dot.active{background:var(--accent);box-shadow:0 0 12px rgba(99,102,241,0.5)}
+.tl-dot.future{border-color:var(--border2);background:var(--dark)}
+.tl-phase{font-size:0.68em;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2);font-weight:700;margin-bottom:4px}
+.tl-title{font-size:0.95em;font-weight:700;color:#fff;margin-bottom:4px}
+.tl-desc{font-size:0.82em;color:var(--text2);line-height:1.5}
+.tl-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.68em;font-weight:600;margin-top:6px}
+.tl-tag.current{background:var(--green-bg);color:var(--green)}
+.tl-tag.blocker{background:var(--red-bg);color:var(--red)}
+.tl-tag.pending{background:rgba(112,112,136,0.15);color:var(--text3)}
+
+/* ===== RISK LIST ===== */
+.risk-item{background:var(--surface);border-radius:10px;padding:16px 20px;border:1px solid var(--border);margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;transition:border-color 0.2s}
+.risk-item:hover{border-color:var(--red)}
+.risk-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1em;flex-shrink:0}
+.risk-icon.critical{background:var(--red-bg);color:var(--red)}
+.risk-icon.high{background:var(--amber-bg);color:var(--amber)}
+.risk-icon.medium{background:var(--blue-bg);color:var(--blue)}
+.risk-title{font-size:0.88em;font-weight:700;color:#fff;margin-bottom:2px}
+.risk-desc{font-size:0.78em;color:var(--text2)}
+
+/* ===== NEXT STEPS ===== */
+.step-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.step-item:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:8px;background:var(--accent-glow);color:var(--accent2);display:flex;align-items:center;justify-content:center;font-size:0.82em;font-weight:800;flex-shrink:0}
+.step-text{font-size:0.88em;color:var(--text);line-height:1.5}
+.step-text strong{color:#fff}
+
+/* ===== AI STRATEGY INFO BOXES ===== */
+.info-row{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap}
+.info-box{flex:1;min-width:200px;background:var(--surface2);border-radius:10px;padding:18px;border:1px solid var(--border)}
+.info-box-label{font-size:0.65em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-weight:700;margin-bottom:8px}
+.info-box-content{font-size:0.85em;color:var(--text);line-height:1.5}
+.info-box-content strong{color:#fff}
+
+/* ===== FOOTER ===== */
+.footer{text-align:center;padding:48px 40px;color:var(--text3);font-size:0.72em;border-top:1px solid var(--border);margin-top:40px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .kpi-strip{grid-template-columns:repeat(3,1fr)}
+  .kpi-strip-2{grid-template-columns:repeat(3,1fr)}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .grid-2{grid-template-columns:1fr}
+  .hero{padding:32px 24px 40px}
+  .hero h1{font-size:2em}
+  .container{padding:0 24px}
+}
+@media(max-width:640px){
+  .kpi-strip{grid-template-columns:repeat(2,1fr)}
+  .kpi-strip-2{grid-template-columns:repeat(2,1fr)}
+  .grid-3{grid-template-columns:1fr}
+  .hero h1{font-size:1.6em}
+  .kpi-value{font-size:1.5em}
+  .epic-header{flex-direction:column}
+  .dep-map{padding:16px;overflow-x:scroll}
+  .dep-map svg{min-width:600px}
+  .info-row{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-top">
+      <div>
+        <h1>Contourline</h1>
+        <div class="tagline">"Fabrica de Autoestima &mdash; revelando em todas as pessoas a sua melhor versao"</div>
+        <div class="one-liner">Uma das maiores empresas do mercado exclusivo de equipamentos para medicina estetica no Brasil</div>
+        <div class="hero-meta">
+          <span>Sete Lagoas, MG</span>
+          <span>Fundada em 2011</span>
+          <span>100% Presencial</span>
+          <span>~130 colaboradores</span>
+          <span>B2B Medicina Estetica</span>
+        </div>
+        <div class="update-date">Ultima atualizacao: 27 de Marco de 2026</div>
+      </div>
+      <div class="hero-badge">Equipamentos Medicos | R$115-120M/ano</div>
+    </div>
+
+    <!-- KPI Strip Row 1 -->
+    <div class="kpi-strip">
+      <div class="kpi-item">
+        <div class="kpi-label">Faturamento Anual</div>
+        <div class="kpi-value green">R$120M</div>
+        <div class="kpi-sub">R$115-120M/ano</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Folha Mensal</div>
+        <div class="kpi-value">R$750k</div>
+        <div class="kpi-sub">R$700-800k/mes</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Meta Economia</div>
+        <div class="kpi-value green">R$240k</div>
+        <div class="kpi-sub">-30% folha = R$210-240k/mes</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Payroll / Revenue</div>
+        <div class="kpi-value amber">8%</div>
+        <div class="kpi-sub">Meta: 5.5% (-30%)</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Mkt Productivity</div>
+        <div class="kpi-value accent">R$8.5M</div>
+        <div class="kpi-sub">por pessoa (R$120M / 14)</div>
+      </div>
+    </div>
+    <!-- KPI Strip Row 2 -->
+    <div class="kpi-strip-2">
+      <div class="kpi-item">
+        <div class="kpi-label">Total de Epics</div>
+        <div class="kpi-value accent">10</div>
+        <div class="kpi-sub">4 P1 + 3 P2 + 2 P3 + 1 P4</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Stories P1</div>
+        <div class="kpi-value">32</div>
+        <div class="kpi-sub">8 por epic (4 epics P1)</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Stories Total</div>
+        <div class="kpi-value accent">75</div>
+        <div class="kpi-sub">10 epics (P1-P4)</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Stories Iniciadas</div>
+        <div class="kpi-value amber">5</div>
+        <div class="kpi-sub">1.1, 2.1, 3.1, 9.1, 9.2</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">Setores Mapeados</div>
+        <div class="kpi-value">17</div>
+        <div class="kpi-sub">~130 colaboradores</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">AI Maturity</div>
+        <div class="kpi-value red">Iniciante</div>
+        <div class="kpi-sub">Acoes isoladas, sem coordenacao</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ===== RESUMO DO PROJETO ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('resumo')">
+      <div class="section-line"></div>
+      <div class="section-title">Resumo do Projeto</div>
+      <div class="section-toggle" id="toggle-resumo">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-resumo">
+      <div class="summary-box">
+        <div style="font-size:0.88em;color:var(--text);line-height:1.6">
+          Projeto de transformacao digital da Contourline cobrindo <strong style="color:#fff">17 setores</strong> da empresa, estruturado em 10 epics com 75 stories de implementacao. Stack tecnica definida com foco em custo-beneficio e escalabilidade para uma operacao de R$115-120M/ano.
+        </div>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <div class="summary-item-value" style="color:var(--accent2)">10</div>
+            <div class="summary-item-label">Epics</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-value" style="color:var(--green)">75</div>
+            <div class="summary-item-label">Stories</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-value" style="color:var(--amber)">17</div>
+            <div class="summary-item-label">Setores</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-item-value" style="color:var(--cyan)">5</div>
+            <div class="summary-item-label">Deliverables Produzidos</div>
+          </div>
+        </div>
+        <div class="info-row" style="margin-top:16px">
+          <div class="info-box">
+            <div class="info-box-label">Stack Tecnica</div>
+            <div class="info-box-content">
+              <strong>Supabase</strong> (banco + auth)<br>
+              <strong>Metabase</strong> (BI/dashboards)<br>
+              <strong>N8N</strong> (automacoes/integracoes)<br>
+              <strong>Railway</strong> (hosting)
+            </div>
+          </div>
+          <div class="info-box">
+            <div class="info-box-label">TCO Estimado</div>
+            <div class="info-box-content">
+              <strong style="color:var(--green)">R$210 - R$900/mes</strong><br>
+              Escalavel conforme demanda. Custo inicial minimo com capacidade de crescimento.
+            </div>
+          </div>
+          <div class="info-box">
+            <div class="info-box-label">Deliverables Produzidos</div>
+            <div class="info-box-content">
+              Perfil Empresa, SOPs, Diagnostico IA, Auditorias Setoriais, Arquitetura de Dados
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== VISAO DO CEO ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('ceo')">
+      <div class="section-line"></div>
+      <div class="section-title">Visao do CEO &mdash; Egio Roberto</div>
+      <div class="section-toggle" id="toggle-ceo">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-ceo">
+      <div style="font-size:0.82em;color:var(--text2);margin-bottom:18px">
+        CEO com background em programacao. Stage: <strong style="color:var(--green)">SCALE</strong>
+      </div>
+
+      <!-- Lideranca Completa -->
+      <div style="margin-bottom:24px">
+        <div style="font-size:0.72em;text-transform:uppercase;letter-spacing:2px;color:var(--text3);font-weight:700;margin-bottom:12px">Lideranca da Empresa</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--amber);font-weight:700;margin-bottom:4px">CEO</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Egio Roberto</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--green);font-weight:700;margin-bottom:4px">CFO / Socio</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Claudio Kaizer</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--accent2);font-weight:700;margin-bottom:4px">Head de Growth Marketing</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Thalison Samuel</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--purple);font-weight:700;margin-bottom:4px">Diretora de Marketing</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Helaine Hohendorff</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--cyan);font-weight:700;margin-bottom:4px">Diretor Comercial</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Gabriel Carpelo</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--blue);font-weight:700;margin-bottom:4px">Diretor de Operacoes</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Filipe Ferreira</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--amber);font-weight:700;margin-bottom:4px">Diretora Consultoria</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Andreia Almeida</div>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center">
+            <div style="font-size:0.68em;text-transform:uppercase;letter-spacing:1px;color:var(--red);font-weight:700;margin-bottom:4px">Supervisor TI</div>
+            <div style="font-size:0.88em;font-weight:700;color:#fff">Rafael Henrique</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Em Casa de Ferreiro, o espeto e de pau</div>
+          <div class="quote-context">Sobre a empresa de tech que nao automatiza</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Ate quando isso vai ser uma vantagem?</div>
+          <div class="quote-context">Questionando a sustentabilidade do modelo atual</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Se reduzir 30% da folha, ja vale</div>
+          <div class="quote-context">Criterio de sucesso para IA</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Acoes individuais do time, mas nada coordenado</div>
+          <div class="quote-context">Diagnostico do uso de IA</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <div class="quote-text">Acredita que estamos passando pela maior mudanca da nossa era</div>
+          <div class="quote-context">Visao sobre IA e transformacao digital</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 6 DORES MAPEADAS ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('pains')">
+      <div class="section-line"></div>
+      <div class="section-title">6 Dores Mapeadas do CEO</div>
+      <div class="section-toggle" id="toggle-pains">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-pains">
+      <div class="grid-2">
+        <div class="pain-card">
+          <div class="pain-num">1</div>
+          <div>
+            <div class="pain-title">Uso Fragmentado de IA</div>
+            <div class="pain-desc">Acoes isoladas do time sem coordenacao. Cada pessoa usa sua ferramenta individualmente, sem estrategia unificada.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">2</div>
+          <div>
+            <div class="pain-title">Falta de Sistema Central</div>
+            <div class="pain-desc">Nenhum hub coordenando as iniciativas de IA entre setores. Decisoes descentralizadas e redundantes.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">3</div>
+          <div>
+            <div class="pain-title">Marketing Manual</div>
+            <div class="pain-desc">14 pessoas no time de marketing com pouca automacao. Producao de conteudo, campanhas e CRM operados manualmente.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">4</div>
+          <div>
+            <div class="pain-title">Tratamento de Leads Manual</div>
+            <div class="pain-desc">Qualificacao e nurturing de leads sem automacao. Perda de oportunidades por falta de velocidade no follow-up.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">5</div>
+          <div>
+            <div class="pain-title">SDR com IA &mdash; "Apanhando"</div>
+            <div class="pain-desc">Tentativas de implementar SDR automatizado ainda nao deram resultado. CEO admite que esta "apanhando ainda" com essa frente.</div>
+          </div>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">6</div>
+          <div>
+            <div class="pain-title">Coordenacao entre Areas</div>
+            <div class="pain-desc">Handoff entre setores e mais lento do que deveria. Informacao se perde na transicao Marketing > Vendas > CS.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ESTRATEGIA DE IA ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('ai')">
+      <div class="section-line"></div>
+      <div class="section-title">Estrategia de IA</div>
+      <div class="section-toggle" id="toggle-ai">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-ai">
+      <!-- 4 Use Cases -->
+      <div style="font-size:0.82em;color:var(--text2);margin-bottom:18px">
+        4 use cases prioritarios identificados no planejamento estrategico. Objetivo: sistema coordenado de IA para reduzir folha em 30% e triplicar producao de marketing.
+      </div>
+      <div class="grid-2">
+        <div class="usecase-card uc-1">
+          <div class="usecase-num">Use Case #1</div>
+          <div class="usecase-title">Marketing Coordenado com IA</div>
+          <div class="usecase-desc">
+            3x producao de conteudo sem aumentar o time de 14 pessoas. Hub centralizado de IA para campanhas, copy, design e CRM automatizado.
+          </div>
+          <div class="usecase-meta">
+            <span class="usecase-tag squad">Squad: Marketing</span>
+            <span class="usecase-tag epic-ref">Epic 02</span>
+            <span class="usecase-tag status-tag">Em Auditoria</span>
+          </div>
+        </div>
+        <div class="usecase-card uc-2">
+          <div class="usecase-num">Use Case #2</div>
+          <div class="usecase-title">SDR com IA</div>
+          <div class="usecase-desc">
+            Leads qualificados automaticamente com resposta em menos de 5 minutos. Nurturing automatizado e handoff inteligente para vendas.
+          </div>
+          <div class="usecase-meta">
+            <span class="usecase-tag squad">Squad: Sales</span>
+            <span class="usecase-tag epic-ref">Epic 01</span>
+            <span class="usecase-tag status-tag">Em Auditoria</span>
+          </div>
+        </div>
+        <div class="usecase-card uc-3">
+          <div class="usecase-num">Use Case #3</div>
+          <div class="usecase-title">Gestao Financeira com IA</div>
+          <div class="usecase-desc">
+            Integracao Totvs + IA personalizada para dashboard financeiro, previsoes e automacao de processos contabeis e fiscais.
+          </div>
+          <div class="usecase-meta">
+            <span class="usecase-tag squad">Squad: Finance</span>
+            <span class="usecase-tag epic-ref">Epic 03</span>
+            <span class="usecase-tag status-tag">Em Auditoria</span>
+          </div>
+        </div>
+        <div class="usecase-card uc-4">
+          <div class="usecase-num">Use Case #4</div>
+          <div class="usecase-title">Compliance Anvisa com IA</div>
+          <div class="usecase-desc">
+            Upgrade do Chat PDF para sistema de compliance inteligente. Monitoramento automatico de regulamentacoes e documentacao tecnica.
+          </div>
+          <div class="usecase-meta">
+            <span class="usecase-tag squad">Squad: Compliance</span>
+            <span class="usecase-tag epic-ref">Epic 08</span>
+            <span class="usecase-tag status-tag">Planejado</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategy Info Boxes -->
+      <div class="info-row">
+        <div class="info-box">
+          <div class="info-box-label">Nivel de Autonomia</div>
+          <div class="info-box-content">
+            <strong>Medio-Alto</strong><br>
+            CEO valida decisoes estrategicas, sistema opera autonomamente no dia-a-dia.
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label">Human-in-the-Loop</div>
+          <div class="info-box-content">
+            <strong>CEO</strong> para decisoes estrategicas<br>
+            <strong>CFO</strong> para decisoes financeiras
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label">Risk Tolerance</div>
+          <div class="info-box-content">
+            <strong>Medio</strong> &mdash; cetico saudavel.<br>
+            Quer resultados comprovados antes de escalar.
+          </div>
+        </div>
+        <div class="info-box">
+          <div class="info-box-label">Tech Priorities</div>
+          <div class="info-box-content">
+            <strong>1.</strong> AIOX para coordenacao<br>
+            <strong>2.</strong> IA + Totvs financeiro<br>
+            <strong>3.</strong> SDR automatizado
+          </div>
+        </div>
+      </div>
+
+      <!-- Squads -->
+      <div style="margin-top:20px">
+        <div style="font-size:0.72em;text-transform:uppercase;letter-spacing:2px;color:var(--text3);font-weight:700;margin-bottom:12px">Squads Planejadas</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <span class="moat-item">Marketing Squad</span>
+          <span class="moat-item">Sales Squad</span>
+          <span class="moat-item">Finance Squad</span>
+          <span class="moat-item">Compliance Squad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== VISAO POR EPIC ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('epics')">
+      <div class="section-line"></div>
+      <div class="section-title">Visao por Epic</div>
+      <div class="section-toggle" id="toggle-epics">[ - ]</div>
+    </div>
+
+    <div class="section-content" id="section-epics">
+      <!-- Filters -->
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterEpics('all')">Todos (10)</button>
+        <button class="filter-btn" onclick="filterEpics('P1')">P1 - Alta (4)</button>
+        <button class="filter-btn" onclick="filterEpics('P2')">P2 - Media (3)</button>
+        <button class="filter-btn" onclick="filterEpics('P3')">P3 - Normal (2)</button>
+        <button class="filter-btn" onclick="filterEpics('P4')">P4 - Expansao (1)</button>
+      </div>
+
+      <!-- Epic 01 -->
+      <div class="epic-card" data-priority="P1">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">01</span>Comercial & SDR</div>
+          <div class="epic-badges">
+            <span class="badge p1">P1</span>
+            <span class="badge em-andamento">Em Andamento</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Gabriel Carpelo (Diretor Comercial), Hermano Lanza (Head)</div>
+        <div class="epic-meta">
+          <span>8 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: Vendas, SDR, Inside Sales, Field Sales, Sales Ops</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>1/8 stories (12.5%)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-green" style="width:12.5%"></div></div>
+        <div style="font-size:0.75em;color:var(--text3);margin-top:8px">
+          Story 1.1 (Mapeamento funil comercial) em andamento | Dor principal: SDR com IA nao funcional | Meta: +40% qualificacao, resposta &lt;5min
+        </div>
+      </div>
+
+      <!-- Epic 02 -->
+      <div class="epic-card" data-priority="P1">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">02</span>Marketing & IA</div>
+          <div class="epic-badges">
+            <span class="badge p1">P1</span>
+            <span class="badge em-andamento">Em Andamento</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Helaine Hohendorff (Diretora), Thalison (Head de Growth Marketing)</div>
+        <div class="epic-meta">
+          <span>8 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: Marketing, Audiovisual, Growth, CRM</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>1/8 stories (12.5%)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-green" style="width:12.5%"></div></div>
+        <div style="font-size:0.75em;color:var(--text3);margin-top:8px">
+          Story 2.1 (Auditoria stack IA Marketing) em andamento | 14 pessoas no time | IA fragmentada sem coordenacao
+        </div>
+      </div>
+
+      <!-- Epic 03 -->
+      <div class="epic-card" data-priority="P1">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">03</span>Financeiro & BI</div>
+          <div class="epic-badges">
+            <span class="badge p1">P1</span>
+            <span class="badge em-andamento">Em Andamento</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Claudio Kaizer (CFO/Socio)</div>
+        <div class="epic-meta">
+          <span>8 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: Financeiro, Contabil, Fiscal, Compras, Tesouraria</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>1/8 stories (12.5%)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-green" style="width:12.5%"></div></div>
+        <div style="font-size:0.75em;color:var(--text3);margin-top:8px">
+          Story 3.1 (Auditoria Totvs) em andamento | Folha R$700-800k/mes | Risco: API Totvs limitada
+        </div>
+      </div>
+
+      <!-- Epic 04 -->
+      <div class="epic-card" data-priority="P2">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">04</span>Operacoes & Logistica</div>
+          <div class="epic-badges">
+            <span class="badge p2">P2</span>
+            <span class="badge draft">Planejado</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Filipe Ferreira (Diretor de Operacoes)</div>
+        <div class="epic-meta">
+          <span>7 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: Logistica, Producao, Estoque, Expedicao, Facilities</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>0/7 stories (Aguardando P1)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-gray" style="width:0%"></div></div>
+        <div class="epic-stories">
+          <div class="epic-stories-title">Stories planejadas</div>
+          <ul>
+            <li>4.1 Mapeamento Fluxos Operacionais <span class="story-size sz-m">M</span></li>
+            <li>4.2 Gestao Estoque com Rastreabilidade <span class="story-size sz-l">L</span></li>
+            <li>4.3 Dashboard Operacional <span class="story-size sz-m">M</span></li>
+            <li>4.4 Automacao Recebimento/Expedicao <span class="story-size sz-m">M</span></li>
+            <li>4.5 Controle Digital Patrimonio <span class="story-size sz-s">S</span></li>
+            <li>4.6 Integracao Logistica -> Financeiro <span class="story-size sz-m">M</span></li>
+            <li>4.7 QA Gate Operacional <span class="story-size sz-m">M</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Epic 05 -->
+      <div class="epic-card" data-priority="P2">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">05</span>P&D & Qualidade</div>
+          <div class="epic-badges">
+            <span class="badge p2">P2</span>
+            <span class="badge draft">Planejado</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Vanessa Melo (Gerente P&D), Filipe Fraga (Gerente Ass. Tecnica)</div>
+        <div class="epic-meta">
+          <span>8 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: P&D, Q.A, Assistencia Tecnica</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>0/8 stories (Aguardando P1)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-gray" style="width:0%"></div></div>
+        <div class="epic-stories">
+          <div class="epic-stories-title">Stories planejadas</div>
+          <ul>
+            <li>5.1 Mapeamento Ciclo Desenvolvimento <span class="story-size sz-s">S</span></li>
+            <li>5.2 Gestao Projetos P&D <span class="story-size sz-m">M</span></li>
+            <li>5.3 Registro Digital Inspecoes Q.A <span class="story-size sz-m">M</span></li>
+            <li>5.4 Documentacao Anvisa Digital <span class="story-size sz-l">L</span></li>
+            <li>5.5 Base Conhecimento Assistencia Tecnica <span class="story-size sz-m">M</span></li>
+            <li>5.6 Dashboard Conformidade <span class="story-size sz-m">M</span></li>
+            <li>5.7 Integracao Q.A -> Liberacao Lote <span class="story-size sz-m">M</span></li>
+            <li>5.8 QA Gate Regulatorio <span class="story-size sz-m">M</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Epic 06 -->
+      <div class="epic-card" data-priority="P2">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">06</span>RH & DP</div>
+          <div class="epic-badges">
+            <span class="badge p2">P2</span>
+            <span class="badge draft">Planejado</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Gisele Machado (DP/Recrutamento), Cassiano Torres (RH Estrategico)</div>
+        <div class="epic-meta">
+          <span>8 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: RH Estrategico, DP, Recrutamento</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>0/8 stories (Aguardando P1)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-gray" style="width:0%"></div></div>
+        <div class="epic-stories">
+          <div class="epic-stories-title">Stories planejadas</div>
+          <ul>
+            <li>6.1 Mapeamento Processos RH/DP <span class="story-size sz-s">S</span></li>
+            <li>6.2 Recrutamento com Triagem IA <span class="story-size sz-l">L</span></li>
+            <li>6.3 Dashboard Folha/Custo Pessoal <span class="story-size sz-m">M</span></li>
+            <li>6.4 Automacao Onboarding Digital <span class="story-size sz-m">M</span></li>
+            <li>6.5 Controle Ponto/Ferias <span class="story-size sz-m">M</span></li>
+            <li>6.6 Analise Preditiva Custo Pessoal <span class="story-size sz-m">M</span></li>
+            <li>6.7 Trilhas de Aprendizado <span class="story-size sz-m">M</span></li>
+            <li>6.8 QA Gate Trabalhista <span class="story-size sz-s">S</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Epic 07 -->
+      <div class="epic-card" data-priority="P3">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">07</span>CX / CS & Pos-venda</div>
+          <div class="epic-badges">
+            <span class="badge p3">P3</span>
+            <span class="badge draft">Planejado</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Andreia Almeida (Diretora Consultoria/Treinamentos)</div>
+        <div class="epic-meta">
+          <span>8 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: CX, CS, Consultoria, Treinamentos</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>0/8 stories (Aguardando P1/P2)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-gray" style="width:0%"></div></div>
+        <div class="epic-stories">
+          <div class="epic-stories-title">Stories planejadas</div>
+          <ul>
+            <li>7.1 Mapeamento Jornada Cliente <span class="story-size sz-s">S</span></li>
+            <li>7.2 Automacao Onboarding CRM <span class="story-size sz-m">M</span></li>
+            <li>7.3 Plataforma Treinamento LMS <span class="story-size sz-l">L</span></li>
+            <li>7.4 NPS e Pesquisas Automatizadas <span class="story-size sz-s">S</span></li>
+            <li>7.5 Alertas Churn com IA Preditiva <span class="story-size sz-m">M</span></li>
+            <li>7.6 Fluxo Upsell/Expansao CRM <span class="story-size sz-m">M</span></li>
+            <li>7.7 Dashboard Saude Carteira <span class="story-size sz-m">M</span></li>
+            <li>7.8 QA Gate Jornada Completa <span class="story-size sz-s">S</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Epic 08 -->
+      <div class="epic-card" data-priority="P3">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">08</span>Juridico & Compliance</div>
+          <div class="epic-badges">
+            <span class="badge p3">P3</span>
+            <span class="badge draft">Planejado</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Julia Maria (Juridico), Valdirene Gomes (Compliance)</div>
+        <div class="epic-meta">
+          <span>6 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: Juridico, Compliance Anvisa</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>0/6 stories (Aguardando P1/P2)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-gray" style="width:0%"></div></div>
+        <div class="epic-stories">
+          <div class="epic-stories-title">Stories planejadas</div>
+          <ul>
+            <li>8.1 Mapeamento Certificacoes Anvisa <span class="story-size sz-m">M</span></li>
+            <li>8.2 Monitoramento Normativas Anvisa com IA <span class="story-size sz-l">L</span></li>
+            <li>8.3 Repositorio Contratos com Alertas <span class="story-size sz-m">M</span></li>
+            <li>8.4 Dashboard Compliance <span class="story-size sz-m">M</span></li>
+            <li>8.5 Integracao Compliance -> P&D -> Q.A <span class="story-size sz-m">M</span></li>
+            <li>8.6 QA Gate Regulatorio <span class="story-size sz-s">S</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Epic 09 -->
+      <div class="epic-card" data-priority="P1">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">09</span>TI & Infraestrutura <span style="color:var(--amber);font-size:0.75em;font-weight:600">[ENABLER]</span></div>
+          <div class="epic-badges">
+            <span class="badge p1">P1</span>
+            <span class="badge em-andamento">Em Andamento</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Rafael Henrique (Supervisor TI)</div>
+        <div class="epic-meta">
+          <span>8 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: TI, PMO</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>2/8 stories (25%)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-green" style="width:25%"></div></div>
+        <div style="font-size:0.75em;color:var(--text3);margin-top:8px">
+          Stories 9.1 (Auditoria tecnica) e 9.2 (Arquitetura) em andamento | CRITICO: 3 pessoas TI para 130 colaboradores | 9.2 e bloqueador de todos os epics
+        </div>
+      </div>
+
+      <!-- Epic 10 -->
+      <div class="epic-card" data-priority="P4">
+        <div class="epic-header">
+          <div class="epic-title"><span class="epic-num">10</span>Novos Negocios & Internacional</div>
+          <div class="epic-badges">
+            <span class="badge p4">P4</span>
+            <span class="badge draft">Planejado</span>
+          </div>
+        </div>
+        <div style="font-size:0.75em;color:var(--text3);margin-bottom:8px">Filipe Ferreira (Diretor Operacoes/Internacionalizacao)</div>
+        <div class="epic-meta">
+          <span>6 stories</span>
+          <span>Owner: @pm Morgan</span>
+          <span>Setores: Internacionalizacao, Body Health</span>
+        </div>
+        <div class="progress-label"><span>Progresso</span><span>0/6 stories (Futuro)</span></div>
+        <div class="progress-bar"><div class="progress-fill pf-gray" style="width:0%"></div></div>
+        <div class="epic-stories">
+          <div class="epic-stories-title">Stories planejadas</div>
+          <ul>
+            <li>10.1 Mapeamento Operacao Internacional <span class="story-size sz-m">M</span></li>
+            <li>10.2 Funil Novos Negocios CRM <span class="story-size sz-s">S</span></li>
+            <li>10.3 Automacao Comercio Exterior <span class="story-size sz-m">M</span></li>
+            <li>10.4 Dashboard Operacoes Internacionais <span class="story-size sz-m">M</span></li>
+            <li>10.5 Inteligencia de Mercado com IA <span class="story-size sz-m">M</span></li>
+            <li>10.6 QA Gate Epic 10 <span class="story-size sz-s">S</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAPA DE DEPENDENCIAS ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('deps')">
+      <div class="section-line"></div>
+      <div class="section-title">Mapa de Dependencias entre Epics</div>
+      <div class="section-toggle" id="toggle-deps">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-deps">
+      <div class="dep-map">
+        <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#6366f1" opacity="0.7"/>
+            </marker>
+            <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#ef4444" opacity="0.8"/>
+            </marker>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- EPIC 09 - TI (CENTER/ENABLER) -->
+          <rect x="350" y="170" width="200" height="70" rx="12" fill="#1e1e3a" stroke="#ef4444" stroke-width="2" filter="url(#glow)"/>
+          <text x="450" y="198" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="800" letter-spacing="1">ENABLER</text>
+          <text x="450" y="218" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Epic 09 - TI &amp; Infra</text>
+
+          <!-- EPIC 01 - Comercial -->
+          <rect x="50" y="30" width="180" height="56" rx="10" fill="#1e1e3a" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="140" y="55" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="700">P1</text>
+          <text x="140" y="73" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epic 01 - Comercial</text>
+
+          <!-- EPIC 02 - Marketing -->
+          <rect x="50" y="290" width="180" height="56" rx="10" fill="#1e1e3a" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="140" y="315" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="700">P1</text>
+          <text x="140" y="333" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epic 02 - Marketing</text>
+
+          <!-- EPIC 03 - Financeiro -->
+          <rect x="670" y="30" width="180" height="56" rx="10" fill="#1e1e3a" stroke="#6366f1" stroke-width="1.5"/>
+          <text x="760" y="55" text-anchor="middle" fill="#818cf8" font-size="10" font-weight="700">P1</text>
+          <text x="760" y="73" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epic 03 - Financeiro</text>
+
+          <!-- EPIC 06 - RH -->
+          <rect x="670" y="150" width="180" height="56" rx="10" fill="#1e1e3a" stroke="#f59e0b" stroke-width="1"/>
+          <text x="760" y="175" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="700">P2</text>
+          <text x="760" y="193" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epic 06 - RH &amp; DP</text>
+
+          <!-- EPIC 07 - CX/CS -->
+          <rect x="50" y="150" width="180" height="56" rx="10" fill="#1e1e3a" stroke="#3b82f6" stroke-width="1"/>
+          <text x="140" y="175" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="700">P3</text>
+          <text x="140" y="193" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epic 07 - CX / Pos-venda</text>
+
+          <!-- EPIC 04-05 (P2 cluster) -->
+          <rect x="350" y="340" width="200" height="56" rx="10" fill="#1e1e3a" stroke="#f59e0b" stroke-width="1"/>
+          <text x="450" y="365" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="700">P2</text>
+          <text x="450" y="383" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epics 04, 05 - Ops &amp; P&amp;D</text>
+
+          <!-- EPIC 08 (P3) -->
+          <rect x="670" y="290" width="180" height="56" rx="10" fill="#1e1e3a" stroke="#3b82f6" stroke-width="1"/>
+          <text x="760" y="315" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="700">P3</text>
+          <text x="760" y="333" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epic 08 - Juridico</text>
+
+          <!-- EPIC 10 (P4) -->
+          <rect x="350" y="10" width="200" height="50" rx="10" fill="#1e1e3a" stroke="#a855f7" stroke-width="1"/>
+          <text x="450" y="32" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="700">P4</text>
+          <text x="450" y="48" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Epic 10 - Internacional</text>
+
+          <!-- ARROWS: Epic 09 -> ALL (red, enabler) -->
+          <line x1="380" y1="190" x2="230" y2="60" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-red)" opacity="0.5"/>
+          <line x1="380" y1="210" x2="230" y2="310" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-red)" opacity="0.5"/>
+          <line x1="550" y1="190" x2="670" y2="60" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-red)" opacity="0.5"/>
+          <line x1="550" y1="205" x2="670" y2="170" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-red)" opacity="0.4"/>
+          <line x1="450" y1="240" x2="450" y2="340" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-red)" opacity="0.4"/>
+          <line x1="550" y1="215" x2="670" y2="310" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-red)" opacity="0.4"/>
+
+          <!-- ARROWS: Business dependencies (blue) -->
+          <line x1="140" y1="290" x2="140" y2="86" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="100" y="195" fill="#818cf8" font-size="9" font-weight="600" transform="rotate(-90, 100, 195)">leads</text>
+
+          <line x1="120" y1="86" x2="120" y2="150" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+          <text x="78" y="125" fill="#818cf8" font-size="9" font-weight="600">pos-venda</text>
+
+          <text x="610" y="120" fill="#ef4444" font-size="9" font-weight="600">APIs</text>
+
+          <line x1="760" y1="86" x2="760" y2="150" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow)" opacity="0.6"/>
+          <text x="770" y="125" fill="#818cf8" font-size="9" font-weight="600">folha</text>
+
+          <!-- Legend -->
+          <rect x="20" y="385" width="860" height="30" rx="6" fill="rgba(30,30,58,0.5)"/>
+          <line x1="40" y1="400" x2="70" y2="400" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+          <text x="78" y="404" fill="#ef4444" font-size="10">Epic 09 habilita todos</text>
+          <line x1="260" y1="400" x2="290" y2="400" stroke="#6366f1" stroke-width="2"/>
+          <text x="298" y="404" fill="#818cf8" font-size="10">Dependencia de negocio</text>
+          <circle cx="510" cy="400" r="5" fill="#ef4444" opacity="0.3"/>
+          <text x="520" y="404" fill="var(--text3)" font-size="10">Bloqueador critico: Story 9.2 (Arquitetura)</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE / ROADMAP ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('timeline')">
+      <div class="section-line"></div>
+      <div class="section-title">Roadmap de Fases</div>
+      <div class="section-toggle" id="toggle-timeline">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-timeline">
+      <div class="card" style="padding:32px">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot active" style="background:var(--green);border-color:var(--green)"></div>
+            <div class="tl-phase">Fase 1 -- Concluida</div>
+            <div class="tl-title">Auditorias e Mapeamento (As-Is)</div>
+            <div class="tl-desc">
+              Stories 1.1 (Funil Comercial), 2.1 (Stack IA Marketing), 3.1 (Totvs API), 9.1 (Ambiente TI).<br>
+              Mapeamento do estado atual de cada setor concluido.
+            </div>
+            <span class="tl-tag current">CONCLUIDA</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot active" style="background:var(--green);border-color:var(--green)"></div>
+            <div class="tl-phase">Fase 2 -- Concluida</div>
+            <div class="tl-title">Arquitetura de Dados e Integracoes (Story 9.2)</div>
+            <div class="tl-desc">
+              Design da arquitetura centralizada de dados. Hub de integracoes entre Totvs, RD Station e demais sistemas.<br>
+              Stack definida: Supabase + Metabase + N8N + Railway.
+            </div>
+            <span class="tl-tag current">CONCLUIDA</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot active"></div>
+            <div class="tl-phase">Fase 3 -- Proxima</div>
+            <div class="tl-title">Implementacao Epics P1</div>
+            <div class="tl-desc">
+              Execucao das stories 1.2-1.8, 2.2-2.8, 3.2-3.8, 9.3-9.8 em paralelo.<br>
+              SDR com IA, Hub Marketing, Dashboard Financeiro, Hub de Integracoes N8N.
+            </div>
+            <span class="tl-tag current">PROXIMA</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot future"></div>
+            <div class="tl-phase">Fase 4</div>
+            <div class="tl-title">QA Gates P1</div>
+            <div class="tl-desc">
+              Stories 1.8, 2.8, 3.8, 9.8 -- validacao de seguranca, LGPD, testes de integracao e aceite dos stakeholders.
+            </div>
+            <span class="tl-tag pending">PENDENTE</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot future"></div>
+            <div class="tl-phase">Fase 5</div>
+            <div class="tl-title">Epics P2 (04, 05, 06)</div>
+            <div class="tl-desc">
+              Operacoes & Logistica (04 - 7 stories), P&D & Qualidade (05 - 8 stories), RH & DP (06 - 8 stories).<br>
+              Inicio apos estabilizacao dos Epics P1.
+            </div>
+            <span class="tl-tag pending">PENDENTE</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot future"></div>
+            <div class="tl-phase">Fase 6</div>
+            <div class="tl-title">Epics P3 (07, 08)</div>
+            <div class="tl-desc">
+              CX / CS & Pos-venda (07 - 8 stories), Juridico & Compliance (08 - 6 stories).<br>
+              Dependem da infraestrutura P1 e processos P2 estabilizados.
+            </div>
+            <span class="tl-tag pending">FUTURO</span>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot future"></div>
+            <div class="tl-phase">Fase 7</div>
+            <div class="tl-title">Epic P4 (10)</div>
+            <div class="tl-desc">
+              Novos Negocios & Internacional (10 - 6 stories).<br>
+              Expansao internacional e novos verticais apos operacao domestica estabilizada.
+            </div>
+            <span class="tl-tag pending">FUTURO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DIFERENCIACAO COMPETITIVA ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('compete')">
+      <div class="section-line"></div>
+      <div class="section-title">Diferenciacao Competitiva</div>
+      <div class="section-toggle" id="toggle-compete">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-compete">
+      <div class="grid-3">
+        <div class="compete-card">
+          <div class="compete-vs">vs Importadores Genericos</div>
+          <div class="compete-title">Foco Exclusivo + Anvisa</div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Foco exclusivo em medicina estetica, nao dilui portfolio</span>
+          </div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Certificacao Anvisa completa para todos os equipamentos</span>
+          </div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Suporte tecnico especializado e treinamento incluido</span>
+          </div>
+        </div>
+        <div class="compete-card">
+          <div class="compete-vs">vs Marcas Internacionais</div>
+          <div class="compete-title">Empresa Brasileira, Suporte Local</div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Empresa brasileira com entendimento do mercado local</span>
+          </div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Suporte em portugues com equipe nacional</span>
+          </div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Logistica domestica e assistencia tecnica rapida</span>
+          </div>
+        </div>
+        <div class="compete-card">
+          <div class="compete-vs">vs Sem Certificacao</div>
+          <div class="compete-title">Anvisa e Pre-requisito</div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Anvisa como barreira de entrada para concorrentes</span>
+          </div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Profissionais de saude exigem certificacao para operar</span>
+          </div>
+          <div class="compete-advantage">
+            <span class="compete-check">+</span>
+            <span class="compete-text">Responsabilidade legal compartilhada com fabricante certificado</span>
+          </div>
+        </div>
+      </div>
+      <div class="moat-box">
+        <div class="moat-title">Moat da Empresa</div>
+        <div class="moat-items">
+          <span class="moat-item">Certificacao Anvisa</span>
+          <span class="moat-item">Escala Nacional</span>
+          <span class="moat-item">DNA Tech</span>
+          <span class="moat-item">Foco Exclusivo</span>
+          <span class="moat-item">100% Presencial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BLOQUEADORES E RISCOS ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('risks')">
+      <div class="section-line"></div>
+      <div class="section-title">Bloqueadores e Riscos</div>
+      <div class="section-toggle" id="toggle-risks">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-risks">
+      <div class="risk-item">
+        <div class="risk-icon critical">!!</div>
+        <div>
+          <div class="risk-title">Story 9.2 (Arquitetura de Dados) e bloqueador critico</div>
+          <div class="risk-desc">Sem a arquitetura centralizada, nenhum epic P1 consegue avancar para implementacao. Depende da auditoria 9.1 estar completa e do alinhamento com Rafael (TI) e CEO Egio.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon critical">!!</div>
+        <div>
+          <div class="risk-title">Time TI subdimensionado: 3 pessoas para 130 colaboradores</div>
+          <div class="risk-desc">Supervisor Rafael + Estagiario + 1. Empresa de R$115M/ano, 100% presencial. Risco de gargalo em todos os projetos.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon high">/!\</div>
+        <div>
+          <div class="risk-title">API do Totvs -- disponibilidade e limitacoes desconhecidas</div>
+          <div class="risk-desc">Story 3.1 (auditoria) vai mapear, mas se API for limitada/inexistente, plano B necessario (exportacao de dados). Impacto direto no Epic 03 e na camada de BI.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon high">/!\</div>
+        <div>
+          <div class="risk-title">Entrevistas pendentes com stakeholders-chave</div>
+          <div class="risk-desc">Rafael (Supervisor TI), CEO Egio e CFO Claudio Kaizer. Sem essas entrevistas, auditorias ficam incompletas e decisoes de arquitetura travadas.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon medium">~</div>
+        <div>
+          <div class="risk-title">SDR com IA ja falhou antes -- resistencia do time comercial</div>
+          <div class="risk-desc">CEO declarou que esta "apanhando ainda" com SDR via IA. Implementacao incremental e piloto com 1 vendedor mitigam o risco.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-icon medium">~</div>
+        <div>
+          <div class="risk-title">IA fragmentada no Marketing -- cada pessoa usa sua ferramenta</div>
+          <div class="risk-desc">14 pessoas sem coordenacao de ferramentas de IA. Risco de resistencia ao centralizar no hub proposto pelo Epic 02.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROXIMOS PASSOS ===== -->
+  <div class="section">
+    <div class="section-header" onclick="toggleSection('next')">
+      <div class="section-line"></div>
+      <div class="section-title">Proximos Passos Imediatos</div>
+      <div class="section-toggle" id="toggle-next">[ - ]</div>
+    </div>
+    <div class="section-content" id="section-next">
+      <div class="card" style="padding:28px 32px">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Validar arquitetura 9.2 com CEO e Rafael</strong> -- Revisar decisoes de stack (Supabase + Metabase + N8N + Railway) com CEO Egio e Supervisor TI Rafael para alinhamento final</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Implementar Story 9.3 (Hub de integracao N8N)</strong> -- Proximo passo critico: configurar hub de integracoes que conecta Totvs, RD Station e demais sistemas</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Iniciar stories de implementacao dos Epics P1 em paralelo</strong> -- Executar stories 1.2+, 2.2+, 3.2+ e 9.3+ simultaneamente para maximizar velocidade</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text"><strong>Apos P1 concluido, iniciar Epics P2</strong> -- Operacoes (04), P&D/Qualidade (05) e RH/DP (06) com 23 stories totais aguardando infraestrutura P1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  Contourline Equipamentos Medicos e Diagnosticos | CNPJ 14.458.149/0001-23<br>
+  CEO: Egio Roberto | Socios: Andreia Almeida, Maria Dulce | Lideranca: Thalison Samuel (Head de Growth Marketing), Claudio Kaizer (CFO)<br>
+  Dashboard gerado por AIOX Synkra | Projeto Contourline | Marco 2026<br>
+  Faturamento: R$115-120M/ano | ~130 colaboradores | 100% Presencial | Sete Lagoas, MG
+</div>
+
+<script>
+// Toggle sections
+function toggleSection(id) {
+  const section = document.getElementById('section-' + id);
+  const toggle = document.getElementById('toggle-' + id);
+  if (section.classList.contains('collapsed')) {
+    section.classList.remove('collapsed');
+    toggle.textContent = '[ - ]';
+  } else {
+    section.classList.add('collapsed');
+    toggle.textContent = '[ + ]';
+  }
+}
+
+// Filter epics by priority
+function filterEpics(priority) {
+  const cards = document.querySelectorAll('.epic-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  cards.forEach(card => {
+    if (priority === 'all' || card.dataset.priority === priority) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+// Animate progress bars on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const fills = entry.target.querySelectorAll('.progress-fill');
+      fills.forEach(fill => {
+        const width = fill.style.width;
+        fill.style.width = '0%';
+        setTimeout(() => { fill.style.width = width; }, 100);
+      });
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.epic-card').forEach(card => observer.observe(card));
+
+// Animate KPI values on load
+document.addEventListener('DOMContentLoaded', () => {
+  const kpis = document.querySelectorAll('.kpi-item');
+  kpis.forEach((kpi, i) => {
+    kpi.style.opacity = '0';
+    kpi.style.transform = 'translateY(10px)';
+    kpi.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    setTimeout(() => {
+      kpi.style.opacity = '1';
+      kpi.style.transform = 'translateY(0)';
+    }, 80 * i);
+  });
+});
+</script>
+</body>
+</html>
