@@ -1,0 +1,28 @@
+metadata:
+  version: '1.0'
+  product_name: Equipamentos para Medicina Estetica
+  status: SKELETON
+  last_updated: '2026-03-14'
+character:
+  who: Profissional de medicina estetica
+  wants: Equipamentos certificados que entreguem resultado seguro e consistente
+problem:
+  external: Equipamentos sem certificacao ou de qualidade duvidosa no mercado
+  internal: Inseguranca sobre o resultado do equipamento no paciente
+  philosophical: Profissionais de saude merecem ferramentas a altura da sua competencia
+  villain: Mercado sem padrao — equipamentos sem certificacao, fornecedores irresponsaveis
+guide:
+  who: Conta Magic
+  empathy: Entendemos a complexidade do setor (normativas Anvisa, resultados clinicos, investimento alto)
+  authority: Uma das maiores do mercado exclusivo, R$115-120M, certificacao Anvisa, background de tecnologia
+plan:
+  step_1: FILL_THIS
+  step_2: FILL_THIS
+  step_3: FILL_THIS
+call_to_action:
+  direct: FILL_THIS
+  transitional: FILL_THIS
+success:
+  transformation: De profissional inseguro com equipamento duvidoso para referencia no mercado com tecnologia certificada
+failure:
+  consequence: Usar equipamento sem certificacao — risco de multa Anvisa, resultado ruim, perda de pacientes

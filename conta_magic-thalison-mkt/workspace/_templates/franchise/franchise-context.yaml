@@ -1,0 +1,18 @@
+business_slug: "{{business_slug}}"
+franchise_status: draft
+governance:
+  owner: franchise-chief
+  workspace_contract: workspace_first
+  consulting_only: true
+  readiness_owner: coo-orchestrator
+canonical_paths:
+  root: workspace/businesses/{{business_slug}}/franchise/
+  assessment: workspace/businesses/{{business_slug}}/franchise/assessment/
+  formatting: workspace/businesses/{{business_slug}}/franchise/formatting/
+  sales: workspace/businesses/{{business_slug}}/franchise/sales/
+  network: workspace/businesses/{{business_slug}}/franchise/network/
+dependencies:
+  company_profile: workspace/businesses/{{business_slug}}/company/company-profile.yaml
+  brand: workspace/businesses/{{business_slug}}/company/brand.yaml
+  pricing_strategy: workspace/businesses/{{business_slug}}/operations/pricing-strategy.yaml
+notes: ""

@@ -1,0 +1,27 @@
+---
+# Template: feedback causal diagnostic dataset (N8 reverse trace)
+
+metadata:
+  template_id: "movement.feedback_causal_diagnostic"
+  version: "1.0.0"
+  lifecycle_stage: "feedback"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+causal_diagnostic:
+  cycle_id: "<required>"
+  problematic_metric: "<required>"
+  baseline_period: "<required>"
+  current_period: "<required>"
+  causal_tree:
+    - layer: "<metric|channel|format|rite|myth|doctrine|foundation>"
+      node: "<required>"
+      evidence: "<required>"
+      confidence: "<low|medium|high>"
+  rupture_point: "<required>"
+  correction_recommendation:
+    action: "<required>"
+    owner: "<required>"
+    expected_delta: "<required>"
+provenance:
+  source_docs: []

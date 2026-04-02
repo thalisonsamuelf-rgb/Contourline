@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#111214"/>
+  <rect x="64" y="64" width="1072" height="772" stroke="#DDD1BB" stroke-width="2"/>
+  <rect x="112" y="112" width="420" height="676" fill="#18181B"/>
+  <rect x="566" y="112" width="522" height="302" fill="#DDD1BB"/>
+  <rect x="566" y="446" width="522" height="342" fill="#1F1F23"/>
+  <circle cx="322" cy="450" r="148" fill="#DDD1BB" fill-opacity="0.18"/>
+  <path d="M640 590H1014" stroke="#F4F4F4" stroke-width="3"/>
+  <path d="M640 636H984" stroke="#F4F4F4" stroke-width="3"/>
+  <text x="178" y="703" fill="#F4F4F4" font-family="Arial, sans-serif" font-size="74" font-weight="700">STARTER</text>
+  <text x="178" y="770" fill="#DDD1BB" font-family="Courier New, monospace" font-size="26" letter-spacing="4">SHOWCASE / 04</text>
+</svg>

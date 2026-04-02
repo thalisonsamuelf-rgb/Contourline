@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Editar' if venda else 'Nova' }} Venda - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 800px;">
+    <a href="{{ url_for('vendas_lista') }}" class="btn btn-sm btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+
+    <div class="form-container">
+        <h4 class="mb-4">{{ 'Editar Venda' if venda else 'Nova Venda' }}</h4>
+
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Cliente *</label>
+                    <select name="cliente_id" class="form-select" required>
+                        <option value="">Selecione...</option>
+                        {% for c in clientes %}
+                        <option value="{{ c.id }}" {{ 'selected' if venda and venda.cliente_id == c.id else '' }}>{{ c.razao_social }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Equipamento *</label>
+                    <select name="equipamento_id" class="form-select" required>
+                        <option value="">Selecione...</option>
+                        {% for e in equipamentos %}
+                        <option value="{{ e.id }}" {{ 'selected' if venda and venda.equipamento_id == e.id else '' }}>{{ e.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Valor (R$) *</label>
+                    <input type="number" name="valor" class="form-control" step="0.01" value="{{ venda.valor if venda else '' }}" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Tipo Pagamento</label>
+                    <select name="tipo_pagamento" class="form-select">
+                        <option value="">Selecione...</option>
+                        {% for t in ['A vista', 'Parcelado', 'Leasing', 'Financiamento'] %}
+                        <option value="{{ t }}" {{ 'selected' if venda and venda.tipo_pagamento == t else '' }}>{{ t }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Parcelas</label>
+                    <input type="number" name="parcelas" class="form-control" min="1" max="60" value="{{ venda.parcelas if venda else 1 }}">
+                </div>
+
+                {% if venda %}
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Status</label>
+                    <select name="status" class="form-select">
+                        {% for s in ['em_negociacao', 'proposta_enviada', 'fechada', 'perdida'] %}
+                        <option value="{{ s }}" {{ 'selected' if venda.status == s else '' }}>{{ s | replace('_', ' ') | title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% endif %}
+
+                <div class="col-12">
+                    <label class="form-label">Observacoes</label>
+                    <textarea name="observacoes" class="form-control" rows="3">{{ venda.observacoes if venda else '' }}</textarea>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg"></i> {{ 'Salvar' if venda else 'Registrar Venda' }}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

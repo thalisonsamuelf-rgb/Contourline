@@ -1,0 +1,20 @@
+---
+metadata:
+  schema: "brand.identity_system_plan"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+identity_guidelines:
+  logo_rules: []
+  color_rules: []
+  typography_rules: []
+  usage_rules: []
+governance:
+  owner: "FILL_THIS"
+  approval_flow: []
+rollout_scope:
+  channels: []
+  priorities: []
+references:
+  source_doc: "FILL_THIS"

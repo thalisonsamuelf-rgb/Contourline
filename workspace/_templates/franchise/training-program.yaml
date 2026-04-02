@@ -1,0 +1,11 @@
+business_slug: "{{business_slug}}"
+status: draft
+tracks:
+  onboarding: []
+  operations: []
+  management: []
+  sales: []
+evaluation:
+  certification_required: false
+  score_threshold: 0
+support_assets: []

@@ -1,0 +1,8 @@
+business_slug: "{{business_slug}}"
+assessment_ref: franchisability-assessment.yaml
+phases:
+  quick_wins_0_3_months: []
+  core_improvements_3_6_months: []
+  advanced_preparation_6_12_months: []
+success_criteria: []
+owner: franchise-chief

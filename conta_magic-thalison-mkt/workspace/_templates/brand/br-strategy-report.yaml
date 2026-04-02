@@ -1,0 +1,20 @@
+---
+metadata:
+  schema: "brand.br_strategy_report"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+ana_couto_core:
+  e_essencia: "FILL_THIS"
+  faz_comportamento: "FILL_THIS"
+  fala_expressao: "FILL_THIS"
+ondas_de_valor:
+  wave_1: "FILL_THIS"
+  wave_2: "FILL_THIS"
+  wave_3: "FILL_THIS"
+strategic_decisions:
+  - "FILL_THIS"
+  - "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

@@ -1,0 +1,25 @@
+---
+# Template: movement brand profile (YAML-only workspace contract)
+# Scope: workspace/businesses/{bu}/movement/
+
+metadata:
+  template_id: "movement.brand_profile"
+  version: "1.0.0"
+  owner_role: "movement-chief"
+  lifecycle_stage: "foundation"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+entity:
+  bu_slug: "<required>"
+  movement_slug: "<required>"
+  movement_name: "<required>"
+  status: "draft"
+  maturity_level: "n1"
+positioning:
+  central_cause: "<required>"
+  main_antagonist: "<required>"
+  trueline: "<required>"
+provenance:
+  source_docs: []
+  last_curated_at: "<yyyy-mm-dd>"

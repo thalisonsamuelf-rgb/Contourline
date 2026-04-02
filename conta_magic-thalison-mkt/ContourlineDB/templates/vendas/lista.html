@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Vendas - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0"><i class="bi bi-cart-check"></i> Vendas / Negociacoes</h4>
+        <a href="{{ url_for('venda_nova') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Nova Venda</a>
+    </div>
+
+    <!-- FILTRO STATUS -->
+    <div class="mb-3">
+        <div class="btn-group" role="group">
+            <a href="{{ url_for('vendas_lista') }}" class="btn btn-sm {{ 'btn-primary' if not status_selecionado else 'btn-outline-primary' }}">Todas</a>
+            <a href="{{ url_for('vendas_lista', status='em_negociacao') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'em_negociacao' else 'btn-outline-primary' }}">Em Negociacao</a>
+            <a href="{{ url_for('vendas_lista', status='proposta_enviada') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'proposta_enviada' else 'btn-outline-primary' }}">Proposta Enviada</a>
+            <a href="{{ url_for('vendas_lista', status='fechada') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'fechada' else 'btn-outline-primary' }}">Fechada</a>
+            <a href="{{ url_for('vendas_lista', status='perdida') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'perdida' else 'btn-outline-primary' }}">Perdida</a>
+        </div>
+    </div>
+
+    <!-- TABELA -->
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Cliente</th>
+                        <th>Equipamento</th>
+                        <th>Vendedor</th>
+                        <th>Valor</th>
+                        <th>Pagamento</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for v in vendas %}
+                    <tr>
+                        <td>{{ v.id }}</td>
+                        <td><strong>{{ v.cliente.razao_social[:30] }}</strong></td>
+                        <td>{{ v.equipamento.nome }}</td>
+                        <td>{{ v.vendedor.nome }}</td>
+                        <td>R$ {{ "{:,.0f}".format(v.valor) }}</td>
+                        <td>{{ v.tipo_pagamento or '-' }}{% if v.parcelas and v.parcelas > 1 %} ({{ v.parcelas }}x){% endif %}</td>
+                        <td><span class="badge-status badge-{{ v.status }}">{{ v.status | replace('_', ' ') | title }}</span></td>
+                        <td><a href="{{ url_for('venda_editar', id=v.id) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a></td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="8" class="text-center text-muted py-4">Nenhuma venda encontrada.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,333 @@
+---
+# GUARANTEE-DESIGN.YAML - Risk Reversal Engineering (Hormozi Method)
+# Purpose: Design a guarantee that maximizes Perceived Likelihood and removes the #1 purchase barrier
+# Guardian: Offer Engineer / CMO
+# Timing: FILL after value-equation.yaml and problem-solution-matrix.yaml are complete
+# Framework: Alex Hormozi, $100M Offers — Guarantee Hierarchy + Risk Reversal Design
+# Dependency: value-equation.yaml (Perceived Likelihood variable)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Offer Engineer"
+  framework: "Hormozi Guarantee Design"
+  notes: |
+    The guarantee is NOT an afterthought. It is a STRATEGIC TOOL.
+
+    It serves three functions simultaneously:
+    1. RISK REVERSAL: Transfers purchase risk from client to business
+    2. BELIEF BUILDER: The guarantee itself IS proof that the offer works
+    3. FILTER: Strong guarantees attract serious buyers and repel tire-kickers
+
+    The stronger the guarantee, the HIGHER the conversion rate.
+    Data: Businesses with strong guarantees see 2-4x conversion lift
+    with refund rates under 10%.
+
+    The math: Double your sales, lose 10% to refunds. Net: massive win.
+
+    RULE: If you cannot guarantee results, your product does not work.
+    That is a product problem, not a guarantee problem. Fix the product first.
+# ============================================================================
+# STEP 1: FEAR IDENTIFICATION
+# ============================================================================
+# The guarantee must address the client's #1 fear about purchasing.
+# Not the generic "what if I do not like it" — the SPECIFIC, visceral fear
+# that stops them from clicking "buy."
+#
+# The fear is always one of these categories:
+# - Financial risk: "What if I waste my money?"
+# - Time risk: "What if I waste months and get no result?"
+# - Effort risk: "What if I do all the work and it does not pay off?"
+# - Social risk: "What if people judge me for buying this?"
+# - Opportunity cost: "What if I choose this and miss something better?"
+fear_identification:
+  primary_fear: "FILL — What is the client's #1 fear about purchasing this offer? Be specific."
+  fear_category: "FILL — Financial / Time / Effort / Social / Opportunity Cost"
+  fear_intensity: "FILL — 1-10. How much does this fear influence the purchase decision?"
+  secondary_fears:
+    fear_2: "FILL — Second fear (if any)"
+    fear_3: "FILL — Third fear (if any)"
+  fear_origin: |
+    FILL — Where does this fear come from?
+    Past bad experiences with similar products? Industry reputation?
+    Personal insecurity? Budget constraints? Time constraints?
+
+    Understanding the ORIGIN helps you design a guarantee that addresses
+    the root, not just the symptom.
+  fear_in_their_words: |
+    FILL — How would the client express this fear in their own words?
+    Write it as they would say it to a friend:
+    Example: "I have bought 3 courses already and never finished any of them.
+    Why would this one be different?"
+# ============================================================================
+# STEP 2: GUARANTEE HIERARCHY
+# ============================================================================
+# Four levels of guarantee, from weakest to strongest.
+# Each level increases Perceived Likelihood proportionally.
+# Higher levels require more confidence in your product — and that is the point.
+#
+# CRITICAL INSIGHT: The guarantee level you choose SIGNALS your confidence.
+# Level 1 says "we are not sure." Level 4 says "we are certain."
+# The client reads the guarantee as PROOF, not just policy.
+guarantee_hierarchy:
+  level_1_unconditional:
+    name: "Satisfaction Guarantee"
+    description: "If you are not satisfied, full refund within X days. No questions asked."
+    strength: "Weakest — standard, expected, does not differentiate"
+    best_for: "Low-ticket offers, first-time products, markets where guarantees are rare"
+    risk_to_business: "Low — refund rate typically 5-15%"
+    conversion_impact: "Low — clients expect this. It removes a barrier but does not create desire."
+    example: "'Try for 30 days. If you are not satisfied for any reason, full refund.'"
+    signal: "We think you will probably like it."
+  level_2_conditional:
+    name: "Conditional Result Guarantee"
+    description: "If you do X specific actions and do not get Y result in Z timeframe, full refund."
+    strength: "Medium — requires effort from client, which filters tire-kickers"
+    best_for: "Mid-ticket offers, programs with clear action steps, coaching/courses"
+    risk_to_business: "Medium — serious clients rarely qualify for refund because they get results"
+    conversion_impact: "High — the conditions make the guarantee BELIEVABLE. It implies a system."
+    example: "'Complete all 9 modules, implement the WIP=1 system for 60 days, and if you have not saved 10h/week, full refund.'"
+    signal: "We know this works IF you do the work."
+  level_3_performance:
+    name: "Unconditional Result Guarantee"
+    description: "If you do not get Y result in Z timeframe, full refund. No conditions."
+    strength: "High — all risk on the business"
+    best_for: "High-ticket offers, done-for-you services, offers with strong track records"
+    risk_to_business: "High — must have data proving results are achievable"
+    conversion_impact: "Very high — removes ALL purchase objections related to results"
+    example: "'Get 20 new clients in 60 days or full refund. No questions.'"
+    signal: "We guarantee the result. Period."
+  level_4_anti_guarantee:
+    name: "Better Than Money Back (Anti-Guarantee)"
+    description: "If you do not get Y result, we refund AND pay you Z for your time."
+    strength: "Maximum — makes the client MONEY for the business failing"
+    best_for: "Premium offers, businesses with overwhelming proof, market leaders"
+    risk_to_business: "Very high — only viable when success rate is >90%"
+    conversion_impact: "Maximum — makes the offer literally risk-free. Client cannot lose."
+    example: "'Add $100K in revenue this year or we refund your investment AND pay you $10K for your time.'"
+    signal: "We are so confident we will PAY YOU if we fail."
+  # There is also the inverse strategy for ultra-premium:
+  level_0_no_guarantee:
+    name: "No Guarantee (Exclusivity Signal)"
+    description: "No refunds. All sales final."
+    strength: "Paradoxically strong for ultra-premium — signals extreme confidence and exclusivity"
+    best_for: "Ultra-premium offers ($10K+), exclusive access, high-demand products with waitlists"
+    risk_to_business: "Zero — but requires massive social proof to compensate"
+    conversion_impact: "Can increase perceived value for premium buyers. Repels bargain hunters (feature, not bug)."
+    example: "'This is not for everyone. No refunds. If you need a guarantee, this is not for you.'"
+    signal: "We do not need to convince you. The results speak for themselves."
+# ============================================================================
+# STEP 3: GUARANTEE DESIGN EXERCISE
+# ============================================================================
+# Design your specific guarantee using the hierarchy above.
+# Answer each question honestly. If you cannot answer #6, do not ship the guarantee.
+guarantee_design:
+  chosen_level: "FILL — Level 0 / Level 1 / Level 2 / Level 3 / Level 4"
+  reasoning: "FILL — Why this level? What about your product and market makes this the right choice?"
+  result_guaranteed: "FILL — What SPECIFIC result are you guaranteeing? Must be measurable."
+  measurement_method: "FILL — How will the result be measured? (By whom? Using what data?)"
+  conditions:
+    has_conditions: "FILL — Yes / No"
+    condition_1: "FILL — First condition the client must meet (if conditional)"
+    condition_2: "FILL — Second condition (if any)"
+    condition_3: "FILL — Third condition (if any)"
+    conditions_are_measurable: "FILL — Yes / No. Can you objectively verify whether conditions were met?"
+    conditions_are_achievable: "FILL — Yes / No. Can a reasonable person complete these conditions?"
+  timeframe: "FILL — What is the guarantee window? (30 days / 60 days / 90 days / 12 months / lifetime)"
+  timeframe_reasoning: "FILL — Why this timeframe? Is it long enough for the result to be achievable?"
+  refund_mechanism:
+    what_they_get_back: "FILL — Full refund / Partial refund / Refund + compensation / Credit"
+    process: "FILL — How does the client request a refund? (Email / Form / Call / Automatic)"
+    processing_time: "FILL — How long to process? (Immediate / 7 days / 30 days)"
+    friction_level: "FILL — Low (1-click) / Medium (email required) / High (call required + justification)"
+    # CRITICAL: The friction to request a refund should match the guarantee level.
+    # Level 1 (satisfaction): Low friction. They do not need to justify.
+    # Level 2 (conditional): Medium friction. They must prove they did the work.
+    # Level 3 (performance): Low friction. They just show the result was not achieved.
+    # Level 4 (anti-guarantee): Low friction + you pay THEM.
+# ============================================================================
+# STEP 4: GUARANTEE LANGUAGE (Ready for Sales Copy)
+# ============================================================================
+# Write the actual guarantee text as it would appear on the sales page.
+# Three versions: headline, short copy, and full copy.
+guarantee_language:
+  guarantee_name: "FILL — Give the guarantee a name (e.g., 'The Iron-Clad Result Guarantee', 'The Anti-Tedio Guarantee')"
+  headline: "FILL — One-line guarantee headline for the sales page. Must be clear and bold."
+  short_copy: |
+    FILL — 2-3 sentence version for use in emails, ads, and quick mentions.
+    Example: "Try [Product] for 30 days. If you do not [specific result],
+    we will refund every cent. No questions, no hassle, no risk."
+  full_copy: |
+    FILL — Full guarantee section for the sales page (5-10 sentences).
+    This should:
+    1. Name the guarantee
+    2. State what is guaranteed (the result)
+    3. State the timeframe
+    4. State the conditions (if any)
+    5. State what happens if the guarantee is triggered
+    6. End with a confidence statement
+
+    Example:
+    "The [Guarantee Name]
+
+    [Join/Buy/Enroll] in [Product]. [Do X, Y, Z / Use it for N days].
+    If you do not [specific measurable result] within [timeframe],
+    [we refund your full investment / we refund AND pay you $X].
+
+    Why can we make this guarantee? Because [proof/reason].
+    [X]% of our clients achieve [result]. We are not gambling on you —
+    we are betting on a system that has already worked [X] times.
+
+    The only risk is not trying."
+  objection_preempt: |
+    FILL — What will skeptics think when they read the guarantee?
+    Common objections:
+    - "If it is so good, why do they need a guarantee?" --> FILL your answer
+    - "What is the catch?" --> FILL your answer
+    - "Everyone offers guarantees, it means nothing" --> FILL your answer
+# ============================================================================
+# STEP 5: GUARANTEE AS PROOF (Belief Architecture)
+# ============================================================================
+# The guarantee is not just a safety net. It is a PROOF MECHANISM.
+# A strong guarantee communicates: "We are so confident, we take all the risk."
+# This directly increases Perceived Likelihood in the Value Equation.
+guarantee_as_proof:
+  confidence_signal: |
+    FILL — What does your guarantee SIGNAL about your confidence in the product?
+    A Level 1 guarantee says: "We hope you like it."
+    A Level 4 guarantee says: "We KNOW this works. We will pay you if it does not."
+
+    Your guarantee signals: FILL
+  perceived_likelihood_impact: |
+    FILL — How does the guarantee change the client's perception of likelihood?
+    Before guarantee: "This might work" (Perceived Likelihood: X/10)
+    After guarantee: "I literally cannot lose" (Perceived Likelihood: Y/10)
+
+    Expected score change: FILL
+  social_proof_amplifier: |
+    FILL — Does the guarantee create social proof?
+    Example: "We have sold 5,000 units with this guarantee and had only 47 refunds.
+    That is a 99.1% satisfaction rate — and we did not have to tell you.
+    The guarantee told you."
+
+    Your version: FILL
+  stacking_position: |
+    FILL — Where does the guarantee appear in the value stack presentation?
+    RULE: The guarantee should be presented AFTER all value is stacked
+    but BEFORE the price is revealed.
+
+    Position in your stack: FILL
+# ============================================================================
+# STEP 6: ETHICAL FILTER (Non-Negotiable)
+# ============================================================================
+# Before finalizing the guarantee, pass it through this ethical filter.
+# If ANY answer is "No", the guarantee needs redesign or the product needs improvement.
+# A guarantee you cannot fulfill is worse than no guarantee at all.
+ethical_filter:
+  can_you_deliver: "FILL — Yes / No. Can you actually deliver the guaranteed result for most clients?"
+  success_rate_known: "FILL — Yes / No. Do you know your actual success rate?"
+  success_rate_value: "FILL — What percentage of clients achieve the guaranteed result?"
+  financially_sustainable: "FILL — Yes / No. Can your business survive the worst-case refund rate?"
+  worst_case_analysis:
+    expected_refund_rate: "FILL — What % of clients will likely request a refund?"
+    worst_case_refund_rate: "FILL — In a bad month, what could the refund rate reach?"
+    revenue_at_worst_case: |
+      FILL — If worst-case refund rate hits, what is the financial impact?
+      Example: 100 sales x $1,000 = $100,000
+      Worst-case refund rate: 20% = $20,000 in refunds
+      Net revenue: $80,000
+      Is this sustainable? FILL (Yes / No)
+  moral_check:
+    - "FILL — Can a reasonable person achieve the conditions? (If conditional)"
+    - "FILL — Is the timeframe realistic for the result promised?"
+    - "FILL — Are you using the guarantee as a genuine commitment, not a marketing trick?"
+    - "FILL — Would you be comfortable if every client triggered the guarantee?"
+  ethical_verdict: "FILL — PASS (guarantee is honest and deliverable) / FAIL (needs redesign) / REDESIGN (product needs improvement first)"
+# ============================================================================
+# STEP 7: GUARANTEE UPGRADE PATH
+# ============================================================================
+# Most businesses start at Level 1 and upgrade over time as they build proof.
+# This section maps the path from current guarantee to a stronger one.
+upgrade_path:
+  current_level: "FILL — Current guarantee level (0-4)"
+  target_level: "FILL — Target guarantee level"
+  gap: "FILL — What needs to happen to upgrade?"
+  upgrade_requirements:
+    data_needed: "FILL — What data do you need to collect to upgrade? (Success rate, completion rate, client results)"
+    product_improvements: "FILL — What product improvements would make a stronger guarantee possible?"
+    proof_needed: "FILL — What proof points would give you confidence to upgrade?"
+    timeline: "FILL — When could you realistically upgrade? (3 months / 6 months / 12 months)"
+  milestone_guarantees:
+    month_1_to_6: |
+      FILL — Guarantee for the first 6 months of the product lifecycle.
+      This is typically Level 1 (satisfaction) while collecting data.
+      Example: "30-day satisfaction guarantee while we build our case study library."
+    month_6_to_12: |
+      FILL — Guarantee after 6 months with data.
+      This is typically Level 2 (conditional) with documented success stories.
+      Example: "Complete the program and if you do not [result], full refund."
+    month_12_plus: |
+      FILL — Guarantee after 12+ months with strong proof.
+      This is typically Level 3 or 4 (performance / anti-guarantee).
+      Example: "Get [result] or we refund AND [compensation]."
+# ============================================================================
+# STEP 8: GUARANTEE VARIATIONS (For Different Contexts)
+# ============================================================================
+# You may need different guarantee language for different channels.
+guarantee_variations:
+  sales_page_version: "FILL — Full guarantee copy for the main sales page"
+  email_version: "FILL — 1-2 sentence version for email sequences"
+  ad_version: "FILL — 1 sentence version for ads (short, punchy)"
+  call_script_version: |
+    FILL — How the salesperson presents the guarantee on a call:
+    Example: "And here is why I know this works for you. If you [complete the program]
+    and do not [achieve the result] within [timeframe], I will personally refund
+    your entire investment. That means the worst case scenario is you get
+    [everything in the value stack] for free."
+  faq_version: |
+    FILL — FAQ answer about the guarantee:
+    Q: "What if it does not work for me?"
+    A: FILL
+# ============================================================================
+# DIAGNOSTIC SUMMARY
+# ============================================================================
+diagnostic_summary:
+  primary_fear_addressed: "FILL — Does the guarantee directly address the #1 purchase fear?"
+  guarantee_level: "FILL — Current level (0-4)"
+  guarantee_name: "FILL — Name of the guarantee"
+  perceived_likelihood_impact: "FILL — Expected score improvement (e.g., +2 points)"
+  ethical_filter_passed: "FILL — Yes / No"
+  upgrade_timeline: "FILL — When will you upgrade to a stronger guarantee?"
+  value_equation_connection: |
+    FILL — How does this guarantee connect to the Value Equation?
+    - Perceived Likelihood: FILL (primary impact)
+    - Dream Outcome: FILL (does the guarantee reinforce the dream?)
+    - Effort & Sacrifice: FILL (does the guarantee reduce perceived risk/effort?)
+    - Time Delay: FILL (does the guarantee reduce perceived time risk?)
+  next_actions:
+    action_1: "FILL — Most important next step for the guarantee"
+    action_2: "FILL — Second priority"
+    action_3: "FILL — Third priority"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# TEMPLATE INSTRUCTIONS
+# 1. Start with fear identification — the guarantee must address the SPECIFIC fear, not a generic one
+# 2. Study the hierarchy — understand what each level signals about your confidence
+# 3. Choose your level honestly — do not pick Level 4 if your product cannot deliver
+# 4. Design the guarantee with measurable results and realistic timeframes
+# 5. Write the language in three versions (headline, short, full)
+# 6. Run the ethical filter — if it fails, fix the product before fixing the guarantee
+# 7. Map the upgrade path — start at Level 1, earn your way to Level 4
+# 8. Create variations for different channels
+#
+# CROSS-REFERENCES:
+# - value-equation.yaml: Perceived Likelihood variable (guarantee is the primary lever)
+# - problem-solution-matrix.yaml: The guarantee sits AFTER the value stack in presentation
+# - proof.yaml: Guarantee proof points and success rate data
+# - objections.yaml: Guarantee directly addresses purchase fear objections
+# - offerbook.yaml: Guarantee is a core component of the offer architecture

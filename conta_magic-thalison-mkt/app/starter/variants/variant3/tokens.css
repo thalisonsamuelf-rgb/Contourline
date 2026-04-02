@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   BRANDBOOK BRIDGE — LEGACY COMPAT LAYER
+   Maps legacy vars to bb-* tokens while preserving old semantic aliases.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer brandbook-bridge {
+  .brandbook-root {
+    /* Core palette */
+    --lime: var(--bb-lime, #D1FF00);
+    --dark: var(--bb-dark, #050505);
+    --void: var(--bg-void, #000000);
+    --surface: var(--bb-surface, #0F0F11);
+    --surface-alt: var(--bb-surface-alt, #1C1E19);
+    --cream: var(--bb-cream, rgb(244, 244, 232));
+    --cream-alt: var(--bb-cream-alt, rgb(245, 244, 231));
+    --warm-white: var(--bb-warm-white, #FFFFED);
+
+    /* Neutral scale */
+    --gray-charcoal: var(--bb-gray-charcoal, #3D3D3D);
+    --gray-dim: var(--bb-gray-dim, #696969);
+    --gray-muted: var(--bb-gray-muted, #999999);
+    --gray-silver: var(--bb-gray-silver, #BDBDBD);
+    --gray-light: var(--bb-gray-light, #C2C2C2);
+
+    /* Accent colors */
+    --blue: var(--bb-blue, #0099FF);
+    --flare: var(--bb-flare, #ED4609);
+    --error: var(--bb-error, #EF4444);
+    --warning: var(--bb-warning, #f59e0b);
+
+    /* Typography */
+    --font-sans: var(--font-bb-sans, "Geist", system-ui, sans-serif);
+    --font-display: var(--font-bb-display, "TASAOrbiterDisplay", system-ui, sans-serif);
+    --font-mono: var(--font-bb-mono, "Roboto Mono", monospace);
+
+    --font-weight-thin: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+
+    /* Easing / motion */
+    --ease-spring: var(--bb-ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1));
+    --ease-smooth: var(--bb-ease-smooth, cubic-bezier(0.25, 0.1, 0.25, 1));
+    --ease-decel: var(--bb-ease-decel, cubic-bezier(0, 0, 0.2, 1));
+    --ease-accel: var(--bb-ease-accel, cubic-bezier(0.4, 0, 1, 1));
+    --ease-expo: var(--bb-ease-expo, cubic-bezier(0.16, 1, 0.3, 1));
+
+    --motion-duration-slow: var(--bb-dur-slow, 0.7s);
+    --motion-duration-medium: var(--bb-dur-medium, 0.4s);
+    --motion-duration-fast: var(--bb-dur-fast, 0.2s);
+    --motion-easing-spring: var(--bb-ease-expo, cubic-bezier(0.16, 1, 0.3, 1));
+
+    /* Breakpoints */
+    --bp-desktop: 1200px;
+    --bp-tablet: 768px;
+    --bp-mobile: 767px;
+
+    /* Layering */
+    --layer-nav: 100;
+    --layer-dropdown: 200;
+    --layer-overlay: 300;
+    --layer-modal: 400;
+    --layer-toast: 500;
+
+    /* Border primitives */
+    --border-width-base: 2px;
+    --border-radius-none: 0px;
+
+    /* Semantic background */
+    --color-bg-void: var(--void);
+    --color-bg-base: var(--dark);
+    --color-bg-elevated: var(--surface-alt);
+    --color-bg-surface: var(--surface);
+    --color-bg-surface-alt: var(--surface-alt);
+    --color-bg-overlay: rgba(61, 61, 61, 0.5);
+
+    /* Semantic text */
+    --dim: var(--bb-dim, rgba(245, 244, 231, 0.4));
+    --color-text-base: var(--cream);
+    --color-text-secondary: rgba(244, 244, 232, 0.7);
+    --color-text-tertiary: rgba(244, 244, 232, 0.55);
+    --color-text-muted: var(--dim);
+    --cream-dim: var(--dim);
+
+    /* Brand / glow */
+    --color-brand: var(--lime);
+    --neon: var(--lime);
+    --neon-dim: var(--bb-accent-15);
+    --neon-glow: var(--bb-accent-40);
+    --lime-glow: var(--bb-accent-25);
+    --lime-glow-soft: var(--bb-accent-10);
+
+    /* Border semantics */
+    --border: var(--bb-border, rgba(156, 156, 156, 0.15));
+    --border-hover: var(--bb-border-hover, rgba(156, 156, 156, 0.24));
+    --border-soft: var(--border);
+    --border-strong: var(--gray-charcoal);
+    --border-focus: var(--gray-silver);
+
+    /* Overlay / shadow */
+    --shadow: rgba(0, 0, 0, 0.2);
+    --overlay: rgba(61, 61, 61, 0.5);
+
+    /* Selection */
+    --selection-bg: var(--dark);
+    --selection-fg: var(--lime);
+
+    /* Warning states */
+    --warning-bg: rgba(245, 158, 11, 0.05);
+    --warning-border: rgba(245, 158, 11, 0.2);
+
+    /* Focus */
+    --focus-brand: var(--lime);
+    --focus-neutral: var(--gray-silver);
+
+    /* Chart palette */
+    --bb-chart-1: var(--bb-lime, #D1FF00);
+    --bb-chart-2: var(--bb-blue, #0099FF);
+    --bb-chart-3: var(--bb-error, #EF4444);
+    --bb-chart-4: var(--bb-warning, #f59e0b);
+    --bb-chart-5: #8B5CF6;
+    --bb-chart-6: #06B6D4;
+    --bb-chart-tooltip-bg: var(--bb-surface, #0F0F11);
+    --bb-chart-tooltip-border: var(--bb-border, rgba(156, 156, 156, 0.15));
+    --bb-chart-tooltip-text: var(--bb-cream, rgb(244, 244, 232));
+    --bb-chart-grid: rgba(244, 244, 232, 0.06);
+    --bb-chart-axis: rgba(244, 244, 232, 0.3);
+    --bb-chart-ring-bg: rgba(244, 244, 232, 0.08);
+
+    /* Map palette */
+    --bb-map-land: var(--bb-surface-alt, #1C1E19);
+    --bb-map-border: rgba(156, 156, 156, 0.12);
+    --bb-map-marker: var(--bb-lime, #D1FF00);
+    --bb-map-water: var(--bb-dark, #050505);
+    --bb-map-land-hover: rgba(209, 255, 0, 0.08);
+
+    /* Legacy aliases */
+    --color-brand-primary: var(--lime);
+    --color-background-base: #F4F4F4; /* legacy — no AIOX token equivalent */
+    --color-surface-grey: #D6D6D6; /* legacy — no AIOX token equivalent */
+    --color-surface-dark: var(--surface);
+    --color-text-primary: var(--cream);
+    --color-text-inverse: #FFFFFF; /* legacy — no AIOX token equivalent */
+    --font-family-sans: var(--font-sans);
+    --font-family-mono: var(--font-mono);
+    --letter-spacing-tight: -0.05em;
+    --letter-spacing-base: normal;
+    --border-color-default: var(--color-text-primary);
+  }
+}

@@ -1,0 +1,636 @@
+---
+# SALES-PAGE.YAML - Complete sales page architecture & copy
+# Purpose: Blueprint for high-converting sales pages (landing pages)
+# Guardian: Copywriter / CMO / Marketing
+# Timing: FILL BEFORE writing sales page copy
+
+metadata:
+  version: "2.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Copywriter"
+  notes: |
+    This file answers: "What goes on the sales page and in what order?"
+    Uses proven structure from: Agora Financial, Todd Brown, Gary Halbert.
+    Every section has a PURPOSE (not just marketing fluff).
+
+    STRUCTURAL NOTE (v2.0):
+    Section order follows the Proof > Promise > Plan sequence.
+    Proof appears early (section 3: authority) and deep (section 8: full stack).
+    This is deliberate. The reader's first question is "Why should I listen to you?"
+    Answer that in 3-5 lines, then earn the right to make promises.
+# ============================================================================
+# PRE-WRITE CHECKLIST (Do this BEFORE filling sales page)
+# ============================================================================
+pre_write_checklist:
+  items:
+    - "[ ] diagnosis.yaml completed (awareness + sophistication identified)"
+    - "[ ] icp.yaml completed (avatar deep understanding)"
+    - "[ ] offerbook.yaml completed (offer architecture solid)"
+    - "[ ] objections.yaml completed (know all objections)"
+    - "[ ] proof.yaml completed (know what proof you have)"
+    - "[ ] testimonials.yaml started (at least 3 strong ones)"
+    - "[ ] copy-swipes.yaml has headlines for your awareness level"
+    - "[ ] CMO approved the strategy before copy writing"
+  note: |
+    DO NOT write sales page without these.
+    Sales page structure DEPENDS on diagnosis + offer clarity.
+    Filling this file first = faster copy writing + higher conversion.
+# ============================================================================
+# SECTION 1: PAGE STRATEGY
+# ============================================================================
+page_strategy:
+  # What is this sales page's JOB?
+  primary_goal: |
+    CHOOSE ONE:
+    - [ ] Get email optins (lead magnet → funnel)
+    - [ ] Sell $0-$297 (low-ticket, impulse)
+    - [ ] Sell $297-$2,000 (mid-ticket, logical proof needed)
+    - [ ] Sell $2,000+ (high-ticket, application/call needed)
+    - [ ] Sell continuity (monthly recurring revenue)
+
+    Your goal: [WHICH ONE?]
+  traffic_source: |
+    Where is traffic coming from?
+    - [ ] Cold email
+    - [ ] Paid ads
+    - [ ] Organic search
+    - [ ] Social media
+    - [ ] Referral
+    - [ ] Other: [...]
+
+    Impacts: Copy warmth, proof requirements, length
+  visitor_awareness: |
+    What awareness level is arriving?
+    - [ ] Level 1 (Unaware of problem)
+    - [ ] Level 2 (Problem aware, solution shopping)
+    - [ ] Level 3 (Solution aware, YOUR solution unaware)
+    - [ ] Level 4 (Product aware, debating price)
+    - [ ] Level 5 (Most aware, ready to buy)
+
+    Impacts: Lead type, proof emphasis, CTA aggressiveness
+  expected_conversion_rate: |
+    What's realistic for this traffic type?
+    - Cold ads Level 2: 1-3% is GOOD
+    - Warm email Level 3: 5-15% is GOOD
+    - High-ticket (call): 5-20% is GOOD
+    - Low-ticket: 0.5-2% is OK
+
+    Your target: [X%]
+# ============================================================================
+# SECTION 2: SALES PAGE STRUCTURE (The Framework)
+# ============================================================================
+# Structure follows the Proof > Promise > Plan sequence.
+#
+# Proof appears in two layers:
+#   - Section 3 (Proof Authority): Preemptive credibility — "why listen to me?" in 3-5 lines
+#   - Section 8 (Proof Stacking): Full proof stack + testimonials after mechanism reveal
+#
+# This is not accidental. The reader decides in seconds whether you are credible.
+# Section 3 earns you the right to make promises. Section 8 closes the credibility loop.
+sales_page_sections:
+  # Every section has PURPOSE. Don't skip.
+  section_1_headline:
+    purpose: "Grab attention and promise result"
+    timing: "First 3-5 seconds"
+    length: "One powerful sentence (8-12 words)"
+    formula: "[Unique Mechanism] that gives you [Primary Promise]"
+    example_1: |
+      "The Systems Framework That Lets Entrepreneurs Work Less and Earn More"
+    example_2: |
+      "How to Scale Your Digital Product Without Trading Your Life"
+    example_3: |
+      "The Selling System That Converts Cold Traffic Into Paying Customers"
+    your_headline: "[YOUR HEADLINE HERE]"
+    notes: |
+      - Should be visible before scroll
+      - Should reference unique mechanism OR big promise
+      - Should NOT be generic ("Learn more")
+  section_2_subheadline:
+    purpose: "Expand on headline, add specificity"
+    timing: "Immediately after headline"
+    length: "1-3 sentences"
+    formula: "[Mechanism] allows you to [Result] without [Common objection]"
+    example_1: |
+      "Based on 15 years of consulting with 1,000+ entrepreneurs.
+      Used to scale businesses from $100K to $10M+.
+      Now available as a complete training."
+    example_2: |
+      "The exact framework we use internally.
+      Battle-tested in real businesses across 20+ industries.
+      Packaged so you can implement immediately."
+    your_subheadline: "[YOUR SUBHEADLINE]"
+    notes: |
+      - Builds credibility immediately
+      - Adds specificity to headline
+      - Should make prospect think "OK, I'm listening"
+  section_3_proof_authority:
+    purpose: "Preemptive authority proof — answer 'Why should I listen to you?' before making any promises"
+    timing: "Immediately after subheadline, before any story or hook"
+    length: "3-5 lines maximum. This is a speed bump, not a wall."
+    structure: |
+      Brief credibility markers that establish authority in under 10 seconds.
+      This is NOT the full proof stack (that comes in section 8).
+      This is the minimum viable proof to earn the right to keep talking.
+
+      FORMULA: [Credential] + [Numbers] + [Recognition] in 3-5 short lines.
+    example_1: |
+      "15 years building and selling digital products.
+      $10M+ in documented student results.
+      Used by teams at [Company 1], [Company 2], and [Company 3].
+      Published in [Publication]. Recommended by [Expert]."
+    example_2: |
+      "I have launched 47 products across 12 industries.
+      My students have generated $25M+ in combined revenue.
+      I am not a guru — I am an operator who teaches what works."
+    example_3: |
+      "Founded 3 companies. Sold 2. Failed at 1.
+      1,200+ clients served across 20+ countries.
+      Everything I teach, I have done first."
+    your_authority_proof: "[YOUR AUTHORITY PROOF — 3-5 LINES MAX]"
+    key_rule: |
+      This section answers ONE question: "Why should I trust this person?"
+      Do NOT tell your life story. Do NOT list every credential.
+      Give the 3-5 strongest data points and move on.
+      The full proof stack comes later (section 8).
+    notes: |
+      - Keep it factual — numbers, names, results
+      - A "damaging admission" (one honest failure) increases credibility
+      - If you have no credentials yet, use client results or methodology proof
+      - This section can be a simple text block or a minimal visual with stats
+  section_4_hero_image_or_video:
+    purpose: "Visual hook (optional but powerful)"
+    placement: "After authority proof"
+    what_to_show:
+      - "Video intro (best conversion)"
+      - "Visual of transformation (before/after)"
+      - "Product screenshot"
+      - "Founder/expert on camera"
+    your_choice: "[WHAT WILL YOU USE?]"
+    notes: |
+      - Video = highest conversion
+      - If video: 60-90 seconds maximum
+      - Should show someone getting results (not just talking)
+  section_5_opening_hook:
+    purpose: "Start building desire (first 200 words = critical) — this is the PROMISE"
+    structure: |
+      AGORA Method: Problem → Consequence → Solution intro
+
+      EXAMPLE:
+      "You have an idea for a digital product. You build it. You launch it.
+      And... nothing. You sell to 3 friends. That's it.
+
+      Most digital product creators hit this wall because they don't have
+      a SELLING SYSTEM. They can build great products but can't sell them.
+
+      The result? Months of work making $0. Frustration. Self-doubt.
+
+      But what if you had the exact system that tells you:
+      - Who to sell to
+      - How to reach them
+      - What message converts
+      - How to close the sale
+
+      That's what we're going to teach you..."
+    your_hook: "[YOUR OPENING HOOK]"
+    length: "150-300 words"
+    key_rule: "Make prospect feel UNDERSTOOD. Show you know their problem."
+  section_6_problem_amplification:
+    purpose: "Make the pain REAL before offering solution"
+    structure: "List consequences of NOT solving the problem"
+    example: |
+      "If you don't have a selling system, here's what happens:
+
+      → You spend weeks building a great product
+      → You launch to silence (or to friends)
+      → You sell maybe $1,000-$3,000 total
+      → You feel like a failure
+      → You tell yourself 'maybe I'm not cut out for this'
+      → You don't try again
+
+      And the worst part? You did everything 'right.'
+      You just didn't have the selling part.
+
+      That's the gap you're trying to fill."
+    your_amplification: "[YOUR PROBLEM AMPLIFICATION]"
+    key_rule: "Go deep. Paint the consequence. Make it emotional."
+    length: "200-400 words"
+  section_7_unique_mechanism_reveal:
+    purpose: "Show HOW your solution works (not just WHAT) — this is the PLAN"
+    structure: |
+      Name the mechanism.
+      Explain why it works.
+      Show proof of the mechanism.
+    example: |
+      "The [Framework Name] - How It Works
+
+      We discovered that digital product sales breaks down into 4 parts:
+
+      1. TARGETING: Know exactly who wants your product
+         (Most creators skip this. They build for 'everyone.')
+
+      2. REACHING: Get in front of your audience without paid ads
+         (Most rely on paid ads. We show organic traffic methods.)
+
+      3. MESSAGING: Tell the story that makes people WANT to buy
+         (Most use features. We use transformation.)
+
+      4. CLOSING: Convert interest into actual sales
+         (Most add a button. We have proven close sequences.)
+
+      Master these 4, and your digital product sells on autopilot.
+
+      Here's proof: Sarah used this framework and went from
+      $0 to $40K/month digital product sales in 6 months."
+    your_mechanism: "[YOUR MECHANISM]"
+    key_rule: "This section should make prospect think: 'OH, that's it?'"
+    length: "300-500 words"
+  section_8_proof_stacking:
+    purpose: "Full proof stack + testimonials — unified credibility section after mechanism reveal"
+    timing: "After mechanism reveal, before the offer. This is where you CLOSE the credibility loop."
+    structure: |
+      This section combines all proof types AND testimonials into one unified section.
+      Proof and testimonials are not separate concerns — they are both answers
+      to the same question: "Does this actually work?"
+
+      PROOF TYPES (include as many as possible):
+      1. Demonstration proof (show how it works)
+      2. Results proof (show student/client results with numbers)
+      3. Third-party proof (outside validation — media, awards, endorsements)
+      4. Authority proof (your expertise — deeper than section 3)
+      5. Testimonial proof (3-5 strong testimonials with specific results)
+
+      TESTIMONIAL GUIDELINES:
+      - Each testimonial should show a DIFFERENT result type or avatar
+      - Include: name + title/context + specific measurable result
+      - Video testimonials convert higher than text
+      - 3-5 testimonials here. More available via link to testimonials page.
+    example: |
+      "Proof This Works:
+
+      RESULTS PROOF: 1,000+ students with documented results
+         Average: 2-3x revenue growth in first year
+         See case studies: [link], [link], [link]
+
+      AUTHORITY PROOF: Creator has built $10M+ in digital product sales
+         15 years consulting with top product creators
+         Published 2 books on selling strategy
+
+      THIRD-PARTY PROOF: Featured in [Publication], [Podcast], [Award]
+         Recommended by [Expert 1], [Expert 2], [Expert 3]
+
+      DEMONSTRATION PROOF: Free module shows first part of framework
+         [Free resource link]
+
+      WHAT STUDENTS SAY:
+
+      '[Testimonial 1 — biggest revenue result]
+      Name, Title — Before: $X/month, After: $Y/month'
+
+      '[Testimonial 2 — different result type: time saved, confidence, etc.]
+      Name, Title — Specific result with numbers'
+
+      '[Testimonial 3 — different avatar/industry to show breadth]
+      Name, Title — Specific result with context'"
+    your_proof_stack: "[YOUR COMPLETE PROOF STACK]"
+    your_testimonials: "[YOUR 3-5 STRONGEST TESTIMONIALS]"
+    key_rule: "4+ types of proof + 3-5 strong testimonials = unshakeable credibility. Unified, not scattered."
+    length: "500-800 words"
+    notes: |
+      - This is the FULL proof section. Section 3 was the preview.
+      - Reference proof.yaml and testimonials.yaml for source material.
+      - Quality over quantity for testimonials. 3 strong beats 10 weak.
+      - Each testimonial should include before/after metrics when possible.
+  section_9_who_this_is_for:
+    purpose: "Include people who need it, exclude people who don't"
+    structure: "Yes, this is for you IF... No, this is NOT for you IF..."
+    example: |
+      "This is FOR you if:
+      You're a digital product creator or thinking about it
+      You know you need a selling system but don't know where to start
+      You're willing to implement (not just watch videos)
+      You want systematic results, not get-rich-quick
+
+      This is NOT for you if:
+      You don't have a product yet (build first, sell second)
+      You don't want to put in the work (this requires implementation)
+      You expect instant results (real results take 90+ days)
+      You're looking for a magic button (there isn't one)"
+    your_version: "[YOUR YES/NO]"
+    key_rule: "Being clear about WHO it's for = higher conversion."
+    length: "200-300 words"
+  section_10_objection_crushing:
+    purpose: "Answer the biggest objections BEFORE they ask"
+    structure: "Question → Answer (specific, not defensive)"
+    example: |
+      "Q: How long does this take to implement?
+      A: 90 days minimum to see real results. Most students see impact in first 30 days.
+
+      Q: Will this work for [my specific niche]?
+      A: We show framework-based approach that works across 20+ niches
+      (digital courses, info products, SaaS, coaching, etc). Proven in:
+      [niche 1], [niche 2], [niche 3], and more.
+
+      Q: What if I'm not technical?
+      A: This is about STRATEGY not technology.
+      No coding, no technical setup. Just thinking and execution."
+    your_objections: "[YOUR BIGGEST 3-5 OBJECTIONS + ANSWERS]"
+    key_rule: "Don't wait for them to ask. Answer proactively."
+    length: "300-500 words"
+  section_11_the_offer:
+    purpose: "Make it crystal clear what they're buying"
+    structure: |
+      What they get (core product)
+      Bonuses (strategic additions)
+      Format (course, coaching, membership, etc)
+      Access (immediate, delayed, etc)
+    example: |
+      "What You Get:
+
+      CORE COURSE: The Digital Product Selling System
+      → Module 1: Targeting Framework
+      → Module 2: Reaching Audience (without ads)
+      → Module 3: Messaging That Converts
+      → Module 4: Closing System
+      → Live Q&A sessions (monthly)
+      → Forever access (lifetime updates)
+
+      BONUSES:
+      → Templates ($297 value)
+      → Email sequences ($197 value)
+      → Done-with-you session ($500 value)
+
+      TOTAL VALUE: $1,494
+
+      Your investment: $497 (one-time)"
+    your_offer: "[YOUR COMPLETE OFFER]"
+    key_rule: "Be specific. List exactly what they get."
+    length: "250-400 words"
+  section_12_guarantee:
+    purpose: "Remove risk from buyer's decision"
+    structure: "Type + Duration + How to claim + Why confident"
+    example: |
+      "60-Day Money-Back Guarantee
+
+      If you don't see progress implementing the framework within 60 days,
+      we'll refund every penny. No questions asked.
+
+      Why are we confident? Because 97% of students who implement see results.
+      The 3% who don't are usually missing one key element (time or commitment).
+
+      We want you to risk nothing."
+    your_guarantee: "[YOUR GUARANTEE]"
+    key_rule: "Strong guarantee = reduced objection = higher conversion."
+    length: "150-250 words"
+  section_13_the_ask_button_area:
+    purpose: "Make the next action CRYSTAL clear"
+    structure: |
+      Action button (prominent)
+      Button text (specific, not generic)
+      Secondary CTA (email list if applicable)
+    example_button_text:
+      good: "Yes, I Want The System (Enroll Now)"
+      bad: "Click Here"
+      bad: "Buy Now"
+      good: "Get Immediate Access + Bonuses ($197 Value)"
+    your_button_text: "[YOUR BUTTON TEXT]"
+    key_rule: "Button should say what happens next."
+    length: "Button text only"
+  section_14_social_proof_footer:
+    purpose: "Final credibility boost before they leave"
+    structure: |
+      Trust signals + logos + testimonials
+      Media mentions + awards + student count
+    example: |
+      "1,000+ students
+       97% success rate
+       Featured in [Publication], [Publication]
+       30-day money-back guarantee
+       Lifetime access + updates"
+    your_footer: "[YOUR SOCIAL PROOF FOOTER]"
+    length: "2-3 bullet points"
+# ============================================================================
+# SECTION 3: SALES PAGE LENGTH DECISION
+# ============================================================================
+length_decision:
+  # How long should the sales page be?
+  factors:
+    awareness_level: "[YOUR AWARENESS LEVEL - impacts length]"
+    price_point: "[YOUR PRICE - higher price = longer page]"
+    cold_vs_warm: "[TRAFFIC TYPE - cold needs longer]"
+    product_complexity: "[SIMPLE vs COMPLEX]"
+  guidelines:
+    low_ticket_warm: "Short (1-2 min read, 1-2 scrolls)"
+    low_ticket_cold: "Medium (2-3 min read, 3-4 scrolls)"
+    mid_ticket: "Long (3-5 min read, 5-7 scrolls)"
+    high_ticket: "Very long (5-10 min read) OR short + send to call"
+  your_length: "[SHORT / MEDIUM / LONG / VERY LONG]"
+  note: |
+    As Todd Brown says: "Long copy sells.
+    The length should match the skepticism level."
+# ============================================================================
+# SECTION 4: SALES PAGE ELEMENTS NOT INCLUDED (Why)
+# ============================================================================
+what_to_skip:
+  - element: "Company story"
+    reason: "Use company-profile.yaml instead. Keep sales page focused on THEM."
+  - element: "Founder bio"
+    reason: "Use founder-dna.yaml instead. Keep focused."
+  - element: "Full price breakdown"
+    reason: "Confuses buyers. State price once, clearly."
+  - element: "Terms and conditions"
+    reason: "Put in footer, not sales page. Reduces conversions."
+  - element: "Navigation menu"
+    reason: "Every option is a distraction. Remove it."
+# ============================================================================
+# SECTION 5: DESIGN NOTES (For designer/developer)
+# ============================================================================
+design_guidance:
+  layout: |
+    - Single column (most conversions)
+    - White space (reduces cognitive load)
+    - Headings in bold (easy scanning)
+    - No navigation menu (reduces escape options)
+    - Testimonials in boxes (visual separation)
+    - CTA button sticky (always visible)
+  color:
+    cta_button: "[CONTRASTING COLOR - stands out]"
+    text: "[DARK on light or light on dark - readable]"
+    accents: "[Your brand color for emphasis]"
+  typography:
+    headlines: "[SERIF or SANS SERIF - your choice]"
+    body: "[SANS SERIF usually better for web]"
+    size: "[16px+ minimum for body text]"
+  mobile:
+    - Stack vertically
+    - Readable on small screens
+    - Buttons large enough to tap
+    - Testimonials in single column
+# ============================================================================
+# SECTION 6: COPY TONE & VOICE
+# ============================================================================
+copy_tone:
+  # How should this page sound?
+  tone: |
+    Example: "Educational mentor, not hype guru"
+    Example: "Confident but honest, not arrogant"
+    Example: "Specific and practical, not vague"
+
+    Your tone: "[YOUR TONE]"
+  vocabulary:
+    use: "[Key terms from copy-swipes.yaml]"
+    avoid: "[Generic marketing speak]"
+  pacing:
+    - Short sentences (easy to read)
+    - Mix short + long for rhythm
+    - Avoid walls of text (break into bullet points)
+# ============================================================================
+# SECTION 7: CONVERSION OPTIMIZATION
+# ============================================================================
+optimization:
+  # After launch, what to test?
+  test_1:
+    element: "Headline"
+    version_a: "[CURRENT HEADLINE]"
+    version_b: "[ALTERNATE HEADLINE]"
+    winner: "TBD"
+  test_2:
+    element: "Button text"
+    version_a: "[CURRENT TEXT]"
+    version_b: "[ALTERNATE TEXT]"
+    winner: "TBD"
+  test_3:
+    element: "[ANOTHER ELEMENT]"
+    version_a: "[VERSION A]"
+    version_b: "[VERSION B]"
+    winner: "TBD"
+  note: |
+    Test ONE element at a time.
+    Need 100+ conversions minimum to see winner.
+    Keep winning versions, kill losing ones.
+# ============================================================================
+# SECTION 8: SALES PAGE COPY CHECKLIST
+# ============================================================================
+copy_checklist:
+  headline:
+    - "[ ] Headline references unique mechanism OR primary promise"
+    - "[ ] Headline is specific (not 'Learn more' generic)"
+    - "[ ] Headline would make prospect stop scrolling"
+  authority_proof:
+    - "[ ] Section 3 answers 'why should I listen to you?' in 3-5 lines"
+    - "[ ] Includes at least 2 credibility markers (numbers, names, results)"
+    - "[ ] Does NOT turn into a full bio — brief and factual"
+  hook:
+    - "[ ] Opens with problem (not your solution)"
+    - "[ ] Shows you understand the struggle"
+    - "[ ] Makes prospect think 'they get me'"
+  mechanism:
+    - "[ ] Unique mechanism is named"
+    - "[ ] Why it works is explained"
+    - "[ ] Proof that it works is shown"
+  proof_stack:
+    - "[ ] At least 4 types of proof present in section 8"
+    - "[ ] Proof includes numbers/specificity"
+    - "[ ] 3-5 strong testimonials included with specific results"
+    - "[ ] Testimonials show different result types and avatars"
+    - "[ ] Proof and testimonials are unified (not scattered across page)"
+  objections:
+    - "[ ] Top 3 objections answered"
+    - "[ ] Answers are specific, not defensive"
+    - "[ ] Answers appear before CTA"
+  offer:
+    - "[ ] Core product clearly defined"
+    - "[ ] Bonuses listed with values"
+    - "[ ] Price is stated once, clearly"
+    - "[ ] Guarantee is strong and specific"
+  cta:
+    - "[ ] Button is visually prominent"
+    - "[ ] Button text says what happens next"
+    - "[ ] CTA appears multiple times (top + bottom + middle)"
+  overall:
+    - "[ ] Page follows Proof > Promise > Plan sequence"
+    - "[ ] Authority proof appears early (section 3)"
+    - "[ ] Full proof stack appears after mechanism reveal (section 8)"
+    - "[ ] No distractions (navigation, popups, etc removed)"
+    - "[ ] Mobile-friendly (tested on phone)"
+    - "[ ] No spelling/grammar errors"
+# ============================================================================
+# SECTION 9: SALES PAGE VERSIONS (A/B Testing Framework)
+# ============================================================================
+version_tracking:
+  # Track different versions for testing
+  version_1:
+    name: "Original"
+    date_launched: "YYYY-MM-DD"
+    primary_change: "[WHAT WAS CHANGED]"
+    conversion_rate: "X%"
+    notes: "[PERFORMANCE NOTES]"
+  version_2:
+    name: "[VERSION NAME]"
+    date_launched: "YYYY-MM-DD"
+    primary_change: "[WHAT WAS CHANGED]"
+    conversion_rate: "TBD"
+    notes: "[NOTES]"
+# ============================================================================
+# BEFORE YOU WRITE: FINAL CHECKLIST
+# ============================================================================
+final_pre_write_checklist:
+  items:
+    - "[ ] Diagnosis completed (awareness + sophistication)"
+    - "[ ] Big Idea is crystal clear"
+    - "[ ] Unique Mechanism is named and explained"
+    - "[ ] Primary Promise is specific"
+    - "[ ] Offer is architecture complete (core + bonus + price)"
+    - "[ ] Guarantee is decided"
+    - "[ ] Top 3 objections identified"
+    - "[ ] Authority proof drafted (3-5 lines for section 3)"
+    - "[ ] Full proof stacked (4+ types for section 8)"
+    - "[ ] 3+ strong testimonials collected (for section 8)"
+    - "[ ] Copy-swipes has headlines for your awareness level"
+    - "[ ] Page goal is clear (email / low-ticket / mid / high-ticket)"
+    - "[ ] Traffic source identified (cold / warm / hot)"
+    - "[ ] Length decision made (short / medium / long)"
+    - "[ ] CMO approved strategy before writing begins"
+  GO_AHEAD: "Only proceed if ALL are checked"
+# ============================================================================
+# TEMPLATE NOTES FOR USERS
+# ============================================================================
+template_notes: |
+  This file is the BLUEPRINT for sales page copy.
+  Fill this BEFORE writing the actual copy.
+
+  Why? Because it forces strategic thinking before tactical writing.
+  Vague sales pages come from skipping this.
+
+  STRUCTURAL PRINCIPLE (v2.0):
+  The page follows the Proof > Promise > Plan sequence:
+  - Section 3 (Proof Authority): Brief credibility before making any claims
+  - Section 5 (Opening Hook): The PROMISE — paint the transformation
+  - Section 7 (Mechanism Reveal): The PLAN — show how it works
+  - Section 8 (Proof Stacking): Full proof + testimonials to close the loop
+
+  DO:
+  Fill this entire file before writing
+  Get CMO approval on strategy section
+  Use this as your copywriting outline
+  Reference diagnosis + offerbook while filling
+  Test and iterate (never done)
+
+  DON'T:
+  Write copy without filling this first
+  Use generic formulas (customize to YOUR offer)
+  Forget objections (they WILL come up)
+  Use weak guarantees (strong guarantee = higher conversion)
+  Include distractions (every element should push CTA)
+  Scatter proof across the page — unify it in sections 3 and 8
+
+  CRITICAL PRINCIPLE:
+  Sales page structure is 80% of conversion.
+  Copy is only 20%.
+  Get structure right, copy becomes easy.
+
+  UPDATE: When offer changes, update this file first.
+  Then update sales page copy.
+
+  This is your SYSTEM for sales page success.

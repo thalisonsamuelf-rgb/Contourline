@@ -1,0 +1,161 @@
+---
+# SHOW-RATE-OPTIMIZATION.YAML - Pre-Call Commitment Protocol & Show Rate Engineering
+# Purpose: Maximize the percentage of booked calls that actually happen
+# Guardian: Sales Lead / Sales Ops
+# Timing: FILL after discovery-framework.yaml and icp.yaml are complete
+# Framework: Cole Gordon Show Rate System + Full Sales System Pre-Frame Protocol
+# Dependency: discovery-framework.yaml (call structure), icp.yaml (prospect understanding)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Sales Lead / Sales Ops"
+  framework: "Cole Gordon Show Rate System + FSS Pre-Frame Protocol"
+  notes: |
+    The most expensive call is the one that does not happen.
+
+    Industry average show rate: 50-60%.
+    Top performers: 80-90%.
+
+    The difference is not reminders. It is PRE-COMMITMENT.
+
+    Cole Gordon's insight: Show rate is determined BEFORE the booking.
+    The application, the confirmation sequence, and the pre-call content
+    all contribute to whether someone actually shows up.
+
+    Three pillars of high show rates:
+    1. QUALIFICATION: Only book people who are serious
+    2. COMMITMENT: Get micro-commitments before the call
+    3. VALUE: Make the call itself feel valuable (not a sales pitch)
+
+    RULE: If your show rate is below 70%, fix the pre-call sequence
+    before hiring more closers. More calls with low show rate = wasted money.
+
+# ============================================================================
+# STEP 1: CURRENT METRICS
+# ============================================================================
+
+current_metrics:
+  total_calls_booked_monthly: "FILL — Number of calls booked per month"
+  show_rate_current: "FILL — Current show rate (%)"
+  no_show_rate: "FILL — Current no-show rate (%)"
+  reschedule_rate: "FILL — Current reschedule rate (%)"
+  show_rate_target: "FILL — Target show rate (%)"
+
+# ============================================================================
+# STEP 2: APPLICATION / BOOKING FORM
+# ============================================================================
+
+application_form:
+  form_exists: "FILL — Yes/No. Do you have a pre-call application form?"
+
+  qualifying_questions:
+    q_1: "FILL — Question that assesses problem severity"
+    q_2: "FILL — Question that assesses readiness to invest"
+    q_3: "FILL — Question that assesses decision-making authority"
+    q_4: "FILL — Question that assesses timeline urgency"
+    q_5: "FILL — Open-ended: 'What would solving this mean to you?'"
+
+  disqualification_criteria:
+    dq_1: "FILL — What answer to which question disqualifies them?"
+    dq_2: "FILL — Second disqualification signal"
+    dq_3: "FILL — Third disqualification signal"
+
+  commitment_element: |
+    FILL — What micro-commitment is built into the form?
+    Example: "By submitting this application, I confirm I am serious about
+    [outcome] and will show up prepared for my call."
+
+# ============================================================================
+# STEP 3: CONFIRMATION SEQUENCE
+# ============================================================================
+
+confirmation_sequence:
+  immediately_after_booking:
+    channel: "FILL — Email / SMS / Both"
+    content: |
+      FILL — What does the immediate confirmation say?
+      Include: date/time, what to prepare, what to expect, your credibility.
+
+  twenty_four_hours_before:
+    channel: "FILL — Email / SMS / Both"
+    content: |
+      FILL — 24-hour reminder.
+      Include: value preview ("Here is what we will cover"),
+      preparation task ("Think about X before the call").
+
+  one_hour_before:
+    channel: "FILL — SMS preferred"
+    content: |
+      FILL — 1-hour reminder.
+      Short, friendly, includes call link.
+
+  no_show_follow_up:
+    timing: "FILL — How soon after no-show?"
+    channel: "FILL — SMS / Email / Both"
+    content: |
+      FILL — No-show follow-up message.
+      Tone: concerned (not annoyed). Offer reschedule.
+
+# ============================================================================
+# STEP 4: PRE-CALL CONTENT
+# ============================================================================
+
+pre_call_content:
+  video_or_content: "FILL — Yes/No. Do you send pre-call content?"
+
+  content_1:
+    type: "FILL — Video / PDF / Case study / Article"
+    title: "FILL — Content title"
+    purpose: "FILL — What should they learn/feel before the call?"
+    delivery: "FILL — When and how is it delivered?"
+
+  content_2:
+    type: "FILL — Type"
+    title: "FILL — Title"
+    purpose: "FILL — Purpose"
+    delivery: "FILL — When/how"
+
+  pre_call_task: |
+    FILL — Do you give them a task before the call?
+    Example: "Write down your top 3 challenges and bring them to the call."
+    Tasks increase show rate because they create investment.
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+show_rate_score:
+  qualification_strength: "FILL 1-10"
+  confirmation_sequence: "FILL 1-10"
+  pre_call_value: "FILL 1-10"
+  follow_up_system: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "No application form, single confirmation email, no pre-call content, no no-show follow-up."
+    range_4_6: "Basic form without disqualification, email confirmations, some pre-call content, manual no-show follow-up."
+    range_7_8: "Qualifying form with commitment, multi-touch confirmation (email+SMS), valuable pre-call content, automated follow-up."
+    range_9_10: "Strategic application with scoring, automated multi-channel sequence, pre-call tasks that increase investment, immediate no-show recovery with 50%+ reschedule rate."
+
+evidence:
+  data_points: "FILL — Show rate data over time, reschedule success rate"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  biggest_drop_off_point: "FILL — Where are most no-shows coming from? (cold leads? specific time slots? specific source?)"
+  quickest_improvement: "FILL — Single change that would most improve show rate"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "discovery-framework.yaml"
+    - "icp.yaml"
+  feeds_into:
+    - "analytics.yaml"
+    - "conversion-funnel.yaml"
+  related:
+    - "call-script.yaml"
+    - "follow-up-system.yaml"

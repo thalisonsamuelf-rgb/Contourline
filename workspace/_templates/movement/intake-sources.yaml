@@ -1,0 +1,18 @@
+---
+# Template: movement intake sources
+
+metadata:
+  template_id: "movement.intake_sources"
+  version: "1.0.0"
+  lifecycle_stage: "intake"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+sources:
+  - id: "SRC-001"
+    type: "whatsapp_mining"
+    title: "<required>"
+    path: "<required>"
+    reliability: "high"
+    status: "active"
+    notes: ""

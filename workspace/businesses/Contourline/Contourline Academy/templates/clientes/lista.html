@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Clientes - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0"><i class="bi bi-building"></i> Clientes</h4>
+        <a href="{{ url_for('cliente_novo') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Novo Cliente</a>
+    </div>
+
+    <!-- BUSCA -->
+    <div class="table-container mb-3">
+        <form method="GET" class="row g-2">
+            <div class="col-md-8">
+                <input type="text" name="busca" class="form-control" placeholder="Buscar por nome, cidade, contato..." value="{{ busca }}">
+            </div>
+            <div class="col-md-4 d-flex gap-2">
+                <button type="submit" class="btn btn-primary flex-fill"><i class="bi bi-search"></i> Buscar</button>
+                {% if busca %}
+                <a href="{{ url_for('clientes_lista') }}" class="btn btn-outline-secondary">Limpar</a>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+
+    <!-- TABELA -->
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Razao Social</th>
+                        <th>Contato</th>
+                        <th>Cidade/UF</th>
+                        <th>Segmento</th>
+                        <th>Telefone</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in clientes %}
+                    <tr>
+                        <td><strong>{{ c.razao_social }}</strong>{% if c.nome_fantasia %}<br><small class="text-muted">{{ c.nome_fantasia }}</small>{% endif %}</td>
+                        <td>{{ c.contato_nome or '-' }}</td>
+                        <td>{{ c.cidade or '' }}{% if c.estado %}/{{ c.estado }}{% endif %}</td>
+                        <td>{{ c.segmento or '-' }}</td>
+                        <td>{{ c.contato_telefone or '-' }}</td>
+                        <td>
+                            <a href="{{ url_for('cliente_editar', id=c.id) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="6" class="text-center text-muted py-4">Nenhum cliente encontrado.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% if clientes %}
+        <div class="text-muted mt-2"><small>{{ clientes | length }} cliente(s) encontrado(s)</small></div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Editar' if cliente else 'Novo' }} Cliente - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 800px;">
+    <a href="{{ url_for('clientes_lista') }}" class="btn btn-sm btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+
+    <div class="form-container">
+        <h4 class="mb-4">{{ 'Editar Cliente' if cliente else 'Novo Cliente' }}</h4>
+
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="row g-3">
+                <div class="col-md-8">
+                    <label class="form-label fw-semibold">Razao Social *</label>
+                    <input type="text" name="razao_social" class="form-control" value="{{ cliente.razao_social if cliente else '' }}" required>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">CNPJ</label>
+                    <input type="text" name="cnpj" class="form-control" value="{{ cliente.cnpj if cliente else '' }}">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Nome Fantasia</label>
+                    <input type="text" name="nome_fantasia" class="form-control" value="{{ cliente.nome_fantasia if cliente else '' }}">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Segmento</label>
+                    <select name="segmento" class="form-select">
+                        <option value="">Selecione...</option>
+                        {% for s in ['Clinica Dermatologica', 'Clinica Estetica', 'Clinica Medica', 'Hospital', 'Spa', 'Centro de Estetica', 'Outro'] %}
+                        <option value="{{ s }}" {{ 'selected' if cliente and cliente.segmento == s else '' }}>{{ s }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-12"><hr><h6 class="fw-bold">Contato Principal</h6></div>
+                <div class="col-md-4">
+                    <label class="form-label">Nome</label>
+                    <input type="text" name="contato_nome" class="form-control" value="{{ cliente.contato_nome if cliente else '' }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="contato_email" class="form-control" value="{{ cliente.contato_email if cliente else '' }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Telefone</label>
+                    <input type="text" name="contato_telefone" class="form-control" value="{{ cliente.contato_telefone if cliente else '' }}">
+                </div>
+
+                <div class="col-12"><hr><h6 class="fw-bold">Endereco</h6></div>
+                <div class="col-md-8">
+                    <label class="form-label">Endereco</label>
+                    <input type="text" name="endereco" class="form-control" value="{{ cliente.endereco if cliente else '' }}">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Cidade</label>
+                    <input type="text" name="cidade" class="form-control" value="{{ cliente.cidade if cliente else '' }}">
+                </div>
+                <div class="col-md-1">
+                    <label class="form-label">UF</label>
+                    <input type="text" name="estado" class="form-control" maxlength="2" value="{{ cliente.estado if cliente else '' }}">
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Observacoes</label>
+                    <textarea name="observacoes" class="form-control" rows="3">{{ cliente.observacoes if cliente else '' }}</textarea>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg"></i> {{ 'Salvar Alteracoes' if cliente else 'Cadastrar Cliente' }}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

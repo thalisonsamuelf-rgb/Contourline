@@ -1,0 +1,9 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#151517"/>
+  <circle cx="450" cy="320" r="122" fill="#DDD1BB" fill-opacity="0.18"/>
+  <path d="M266 1032C266 906.369 347.816 804.5 448.75 804.5C549.684 804.5 631.5 906.369 631.5 1032V1136H266V1032Z" fill="#DDD1BB" fill-opacity="0.22"/>
+  <path d="M360 450C360 399.742 400.742 359 451 359C501.258 359 542 399.742 542 450V552C542 602.258 501.258 643 451 643C400.742 643 360 602.258 360 552V450Z" fill="#E8E1D2"/>
+  <rect x="96" y="96" width="708" height="1008" stroke="#DDD1BB" stroke-width="2"/>
+  <text x="112" y="1032" fill="#F4F4F4" font-family="Arial, sans-serif" font-size="72" font-weight="700">CREATIVE LEAD</text>
+  <text x="116" y="1088" fill="#DDD1BB" font-family="Courier New, monospace" font-size="24" letter-spacing="4">STARTER PORTRAIT PLACEHOLDER</text>
+</svg>

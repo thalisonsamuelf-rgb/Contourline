@@ -1,0 +1,24 @@
+---
+# Template: feedback recommendations dataset (N8 -> next cycle)
+
+metadata:
+  template_id: "movement.feedback_recommendations"
+  version: "1.0.0"
+  lifecycle_stage: "feedback"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+recommendations:
+  cycle_id: "<required>"
+  prioritized_actions:
+    - id: "<required>"
+      target_level: "<N3|N5|N6|N7|N8>"
+      owner_role: "<required>"
+      action: "<required>"
+      expected_impact: "<required>"
+      priority: "<p0|p1|p2>"
+      due_date: "<yyyy-mm-dd>"
+      evidence_ref: "<required>"
+  carryover_patterns: []
+provenance:
+  source_docs: []

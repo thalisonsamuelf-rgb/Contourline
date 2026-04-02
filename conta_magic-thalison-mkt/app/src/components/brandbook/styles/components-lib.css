@@ -1,0 +1,257 @@
+/* ═══════════════════════════════════════════════════════════
+   BRANDBOOK BRIDGE — COMPONENT LIBRARY STYLES
+   Source: apps/brandbook/css/components-lib.css (v1.0.0)
+   Scoped via @layer brandbook-bridge for cascade isolation.
+   All selectors scoped under .brandbook-root.
+
+   NOTE: These classes (.btn, .input, .card, .badge, .alert)
+   are BRANDBOOK-ONLY components scoped to .brandbook-root.
+   They do NOT conflict with shadcn/ui components (Button,
+   Input, Card) which use Tailwind utilities + cn().
+   The two systems coexist: brandbook uses CSS classes,
+   site pages use shadcn React components.
+   ═══════════════════════════════════════════════════════════ */
+
+@layer brandbook-bridge {
+
+  /* ─── COMPONENT LAYOUT ─── */
+  .brandbook-root .comp-section { padding: 2rem 0; }
+
+  .brandbook-root .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .brandbook-root .comp-cell {
+    background: var(--dark);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .brandbook-root .comp-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--neon);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .brandbook-root .comp-desc {
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    color: var(--dim);
+    text-transform: uppercase;
+  }
+
+  /* ─── BUTTONS ─── */
+  .brandbook-root .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+
+  .brandbook-root .btn-primary { background: var(--bb-accent); color: var(--dark); }
+  .brandbook-root .btn-primary:hover { box-shadow: 0 0 20px var(--accent-glow); }
+  .brandbook-root .btn-secondary { background: transparent; color: var(--cream); border: 1px solid var(--border); }
+  .brandbook-root .btn-secondary:hover { border-color: var(--bb-accent); color: var(--bb-accent); }
+  .brandbook-root .btn-ghost { background: transparent; color: var(--dim); }
+  .brandbook-root .btn-ghost:hover { color: var(--cream); }
+  .brandbook-root .btn-destructive { background: var(--error); color: white; }
+  .brandbook-root .btn-destructive:hover { box-shadow: 0 0 20px rgba(239, 68, 68, 0.3); }
+  .brandbook-root .btn-sm { padding: 0.4rem 1rem; font-size: 0.55rem; }
+  .brandbook-root .btn-lg { padding: 0.85rem 2rem; font-size: 0.7rem; }
+  .brandbook-root .btn:disabled,
+  .brandbook-root .btn--disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+  .brandbook-root .btn--loading { position: relative; color: transparent !important; pointer-events: none; }
+  .brandbook-root .btn--loading::after {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: bb-spin 0.6s linear infinite;
+  }
+  .brandbook-root .btn-primary.btn--loading::after { border-color: var(--dark); border-right-color: transparent; }
+
+  /* ─── INPUTS ─── */
+  .brandbook-root .input {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--cream);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .brandbook-root .input:focus { border-color: var(--focus-brand); box-shadow: 0 0 0 1px var(--focus-brand); }
+  .brandbook-root .input::placeholder { color: var(--dim); }
+  .brandbook-root .input--error { border-color: var(--error); }
+  .brandbook-root .input--error:focus { border-color: var(--error); box-shadow: 0 0 0 1px var(--error); }
+  .brandbook-root .input--disabled { opacity: 0.4; cursor: not-allowed; }
+
+  .brandbook-root .textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--cream);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    outline: none;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.2s ease;
+  }
+  .brandbook-root .textarea:focus { border-color: var(--focus-brand); box-shadow: 0 0 0 1px var(--focus-brand); }
+
+  .brandbook-root .input-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--cream);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .brandbook-root .input-hint { font-family: var(--font-mono); font-size: 0.5rem; color: var(--dim); margin-top: 0.3rem; }
+  .brandbook-root .input-error-msg { font-family: var(--font-mono); font-size: 0.5rem; color: var(--error); margin-top: 0.3rem; }
+
+  /* ─── BADGES ─── */
+  .brandbook-root .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .brandbook-root .badge-lime { background: var(--bb-accent-10); color: var(--bb-accent); border: 1px solid var(--bb-accent-20); }
+  .brandbook-root .badge-surface { background: var(--surface); color: var(--dim); border: 1px solid var(--border); }
+  .brandbook-root .badge-error { background: rgba(239, 68, 68, 0.1); color: var(--error); border: 1px solid rgba(239, 68, 68, 0.2); }
+  .brandbook-root .badge-blue { background: rgba(0, 153, 255, 0.1); color: var(--blue); border: 1px solid rgba(0, 153, 255, 0.2); }
+  .brandbook-root .badge-solid { background: var(--bb-accent); color: var(--dark); border: none; }
+
+  /* ─── CARDS ─── */
+  .brandbook-root .card { background: var(--surface); border: 1px solid var(--border); transition: box-shadow 0.3s ease; }
+  .brandbook-root .card:hover { box-shadow: inset 0 0 0 1px var(--bb-accent-15); }
+  .brandbook-root .card-body { padding: 1.5rem; }
+  .brandbook-root .card-title { font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 0.5rem; }
+  .brandbook-root .card-text { font-size: 0.72rem; color: var(--dim); line-height: 1.5; }
+  .brandbook-root .card-footer { padding: 0.75rem 1.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+
+  /* ─── ALERTS ─── */
+  .brandbook-root .alert { padding: 1rem 1.25rem; display: flex; align-items: flex-start; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.65rem; }
+  .brandbook-root .alert-icon { flex-shrink: 0; width: 16px; height: 16px; margin-top: 1px; }
+  .brandbook-root .alert-default { background: var(--surface); border: 1px solid var(--border); color: var(--cream); }
+  .brandbook-root .alert-success { background: var(--bb-accent-05); border: 1px solid var(--bb-accent-20); color: var(--bb-accent); }
+  .brandbook-root .alert-error { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); color: var(--error); }
+  .brandbook-root .alert-info { background: rgba(0, 153, 255, 0.05); border: 1px solid rgba(0, 153, 255, 0.2); color: var(--blue); }
+  .brandbook-root .alert-warning { background: var(--warning-bg); border: 1px solid var(--warning-border); color: var(--warning); }
+
+  /* ─── LAYOUT HELPERS ─── */
+  .brandbook-root .button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+  .brandbook-root .badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+
+  /* ─── TABLE ─── */
+  .brandbook-root .tbl-wrap { overflow-x: auto; background: var(--dark); }
+  .brandbook-root .tbl { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.65rem; }
+  .brandbook-root .tbl th { padding: 0.75rem 1.25rem; text-align: left; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.55rem; color: var(--dim); background: var(--surface); border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .brandbook-root .tbl td { padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--border); color: var(--cream); white-space: nowrap; }
+  .brandbook-root .tbl tr:hover td { background: var(--bb-accent-02); }
+  .brandbook-root .tbl-num { text-align: right; font-variant-numeric: tabular-nums; }
+  .brandbook-root .tbl-lime { color: var(--bb-accent); }
+  .brandbook-root .tbl-error { color: var(--error); }
+  .brandbook-root .tbl-dim { color: var(--dim); }
+
+  /* ─── PROGRESS ─── */
+  .brandbook-root .progress { width: 100%; height: 6px; background: var(--surface); border: 1px solid var(--border); overflow: hidden; }
+  .brandbook-root .progress-bar { height: 100%; background: var(--bb-accent); transition: width 0.5s ease; }
+  .brandbook-root .progress-bar--error { background: var(--error); }
+  .brandbook-root .progress-bar--blue { background: var(--blue); }
+
+  /* ─── SPINNER ─── */
+  .brandbook-root .spinner { width: 24px; height: 24px; border: 2px solid var(--border); border-top-color: var(--bb-accent); border-radius: 50%; animation: bb-spin 0.7s linear infinite; }
+  .brandbook-root .spinner--sm { width: 16px; height: 16px; }
+  .brandbook-root .spinner--lg { width: 36px; height: 36px; }
+
+  /* ─── KPI CARD ─── */
+  .brandbook-root .kpi-card { background: var(--surface); border: 1px solid var(--border); padding: 1.25rem; }
+  .brandbook-root .kpi-label { font-family: var(--font-mono); font-size: 0.55rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .brandbook-root .kpi-value { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--cream); letter-spacing: -0.02em; }
+  .brandbook-root .kpi-trend { display: inline-flex; align-items: center; gap: 0.25rem; font-family: var(--font-mono); font-size: 0.55rem; margin-top: 0.4rem; }
+  .brandbook-root .kpi-trend--up { color: var(--bb-accent); }
+  .brandbook-root .kpi-trend--down { color: var(--error); }
+
+  /* ─── WORKSPACE BLOCK ACCENT ─── */
+  .brandbook-root .block-accent {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border-left: 3px solid var(--border);
+  }
+  .brandbook-root .block-accent[data-accent="gold"]   { border-left-color: var(--bb-accent); }
+  .brandbook-root .block-accent[data-accent="red"]    { border-left-color: #ef4444; }
+  .brandbook-root .block-accent[data-accent="green"]  { border-left-color: #22c55e; }
+  .brandbook-root .block-accent[data-accent="blue"]   { border-left-color: #0099ff; }
+  .brandbook-root .block-accent[data-accent="purple"] { border-left-color: #a855f7; }
+  .brandbook-root .block-accent[data-accent="amber"]  { border-left-color: #f59e0b; }
+
+  .brandbook-root .block-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .brandbook-root .highlight-box {
+    padding: 0.875rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .brandbook-root .highlight-box[data-tone="green"]  { background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2); }
+  .brandbook-root .highlight-box[data-tone="red"]    { background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); }
+  .brandbook-root .highlight-box[data-tone="blue"]   { background: rgba(0, 153, 255, 0.08); border: 1px solid rgba(0, 153, 255, 0.2); }
+  .brandbook-root .highlight-box[data-tone="amber"]  { background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2); }
+  .brandbook-root .highlight-box[data-tone="purple"] { background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.2); }
+
+  /* ─── SUPERELLIPSE (P2.2) ─── */
+  @supports (corner-shape: superellipse) {
+    .brandbook-root .card,
+    .brandbook-root .btn {
+      corner-shape: superellipse;
+    }
+  }
+
+  /* ─── KEYFRAMES ─── */
+  @keyframes bb-spin { to { transform: rotate(360deg); } }
+  @keyframes bb-shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 767px) {
+    .brandbook-root .comp-grid { grid-template-columns: 1fr; }
+  }
+
+} /* end @layer brandbook-bridge */

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Clientes — Contourline</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- Supabase JS v2 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <!-- SheetJS -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        :root {
+            --navy:       #0B2341;
+            --navy-light: #1A3A5C;
+            --ice:        #E8EFF6;
+            --gray:       #5A5A5A;
+            --steel:      #8C8C8C;
+            --bg:         #F5F7FA;
+            --white:      #FFFFFF;
+            --success:    #0D7C3E;
+            --warning:    #D4880F;
+            --error:      #C62828;
+
+            --r-norte:    #1565C0;
+            --r-nordeste: #D4880F;
+            --r-co:       #0D7C3E;
+            --r-sudeste:  #0B2341;
+            --r-sul:      #6A1B9A;
+
+            --font:  'Inter', system-ui, sans-serif;
+            --mono:  'JetBrains Mono', ui-monospace, monospace;
+            --sh-md: 0 4px 6px rgba(11,35,65,.07), 0 2px 4px rgba(11,35,65,.06);
+            --sh-lg: 0 10px 15px rgba(11,35,65,.10), 0 4px 6px rgba(11,35,65,.05);
+            --ease:  cubic-bezier(0.25,0.1,0.25,1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; font-family: var(--font); font-size: 14px; color: var(--gray); background: var(--bg); }
+
+        /* ── Layout ── */
+        .app   { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        .body  { display: flex; flex: 1; overflow: hidden; }
+
+        /* ── Header ── */
+        .header {
+            background: var(--navy); color: white;
+            height: 56px; padding: 0 24px;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-shrink: 0; box-shadow: var(--sh-md); z-index: 100;
+        }
+        .hbrand { display: flex; align-items: center; gap: 12px; }
+        .hname  { font-size: 16px; font-weight: 700; letter-spacing: -.3px; }
+        .hsep   { width: 1px; height: 20px; background: rgba(255,255,255,.2); }
+        .hpage  { font-size: 13px; font-weight: 500; color: rgba(255,255,255,.7); }
+        .hstats { display: flex; gap: 24px; }
+        .hstat  { display: flex; align-items: center; gap: 6px; font-size: 13px; color: rgba(255,255,255,.75); }
+        .hstat strong { color: white; font-weight: 600; font-family: var(--mono); }
+
+        /* ── Sidebar ── */
+        .sidebar {
+            width: 296px; flex-shrink: 0;
+            background: var(--white); border-right: 1px solid var(--ice);
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        .ss { padding: 14px 16px; border-bottom: 1px solid var(--ice); flex-shrink: 0; }
+        .slabel {
+            font-size: 10px; font-weight: 700; color: var(--steel);
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
+        }
+
+        /* Upload */
+        .uzone {
+            position: relative; border: 2px dashed var(--ice);
+            border-radius: 8px; padding: 16px 12px;
+            text-align: center; cursor: pointer;
+            transition: all .2s var(--ease);
+        }
+        .uzone:hover, .uzone.drag { border-color: var(--navy); background: var(--ice); }
+        .uzone input {
+            position: absolute; inset: 0; opacity: 0;
+            cursor: pointer; width: 100%; height: 100%; z-index: 10;
+        }
+        .uicon { font-size: 22px; display: block; margin-bottom: 6px; }
+        .umain { font-size: 13px; font-weight: 600; color: var(--navy); display: block; margin-bottom: 3px; }
+        .uhint { font-size: 11px; color: var(--steel); }
+        .utip {
+            margin-top: 8px; padding: 7px 9px;
+            background: var(--ice); border-radius: 4px;
+            font-size: 11px; color: var(--navy); line-height: 1.6;
+        }
+        .utip code {
+            font-family: var(--mono); font-size: 10px;
+            background: rgba(11,35,65,.1); padding: 1px 4px; border-radius: 2px;
+        }
+        .ustatus { margin-top: 8px; font-size: 12px; font-weight: 500; display: none; }
+
+        /* Danger zone */
+        .btn-danger {
+            margin-top: 8px; width: 100%; height: 32px;
+            border: 1px solid #fca5a5; border-radius: 4px;
+            background: white; font-family: var(--font);
+            font-size: 12px; font-weight: 500; color: var(--error);
+            cursor: pointer; transition: all .2s var(--ease);
+        }
+        .btn-danger:hover { background: #fef2f2; border-color: var(--error); }
+
+        /* Filters */
+        .fgroup { display: flex; flex-direction: column; gap: 8px; }
+        .frow   { display: flex; flex-direction: column; gap: 3px; }
+        .flabel { font-size: 11px; font-weight: 500; color: var(--gray); }
+        .finput, .fselect {
+            width: 100%; height: 34px; padding: 0 10px;
+            border: 1px solid var(--ice); border-radius: 4px;
+            font-family: var(--font); font-size: 12px;
+            color: var(--navy); background: white; outline: none;
+            transition: border-color .2s var(--ease);
+        }
+        .fselect {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235A5A5A' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 10px center;
+            cursor: pointer;
+        }
+        .finput:focus, .fselect:focus { border-color: var(--navy); }
+        .btn-clear {
+            height: 32px; border: 1px solid var(--ice); border-radius: 4px;
+            background: white; font-family: var(--font);
+            font-size: 12px; font-weight: 500; color: var(--gray);
+            cursor: pointer; transition: all .2s var(--ease); width: 100%; margin-top: 2px;
+        }
+        .btn-clear:hover { border-color: var(--navy); color: var(--navy); }
+
+        /* Legend */
+        .legend { display: flex; flex-direction: column; gap: 3px; }
+        .litem {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 12px; color: var(--gray);
+            cursor: pointer; padding: 5px 6px; border-radius: 4px;
+            transition: background .2s var(--ease);
+        }
+        .litem:hover { background: var(--ice); }
+        .litem.active { background: var(--ice); font-weight: 600; }
+        .ldot  { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+        .lname { flex: 1; }
+        .lcnt  {
+            font-family: var(--mono); font-size: 11px; color: var(--steel);
+            background: var(--bg); padding: 1px 6px; border-radius: 10px;
+        }
+
+        /* Progress */
+        .pbar-wrap {
+            padding: 10px 16px; background: var(--ice);
+            border-top: 1px solid #d4e3f0; display: none; flex-shrink: 0;
+        }
+        .pbar-hdr {
+            display: flex; justify-content: space-between;
+            font-size: 12px; color: var(--navy); font-weight: 500; margin-bottom: 6px;
+        }
+        .pbar-track { height: 4px; background: rgba(11,35,65,.15); border-radius: 2px; overflow: hidden; }
+        .pbar-fill  { height: 100%; background: var(--navy); border-radius: 2px; width: 0%; transition: width .3s; }
+
+        /* Client list */
+        .clist-wrap { flex: 1; overflow-y: auto; padding: 12px 14px; }
+        .clist-wrap::-webkit-scrollbar { width: 3px; }
+        .clist-wrap::-webkit-scrollbar-thumb { background: var(--ice); border-radius: 2px; }
+
+        .clh { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--ice); }
+        .clhtitle { font-size: 12px; font-weight: 600; color: var(--navy); }
+        .clhcnt   { font-family: var(--mono); font-size: 11px; color: var(--steel); }
+
+        .ccard {
+            display: flex; align-items: flex-start; gap: 9px;
+            padding: 9px 8px; border-radius: 4px; cursor: pointer;
+            border: 1px solid transparent; transition: all .2s var(--ease); margin-bottom: 4px;
+        }
+        .ccard:hover  { background: var(--ice); border-color: var(--ice); }
+        .ccard.active { background: var(--ice); border-color: rgba(11,35,65,.25); }
+        .cdot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+        .cinfo { flex: 1; min-width: 0; }
+        .cname { font-size: 12px; font-weight: 600; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cloc  { font-size: 11px; color: var(--steel); margin-top: 1px; }
+        .ccep  { font-family: var(--mono); font-size: 10px; color: var(--steel); }
+        .cfail { font-size: 10px; color: var(--warning); font-weight: 500; }
+
+        /* Empty */
+        .empty { text-align: center; padding: 40px 16px; color: var(--steel); }
+        .empty-icon  { font-size: 36px; margin-bottom: 12px; opacity: .5; }
+        .empty-title { font-size: 14px; font-weight: 600; color: var(--gray); margin-bottom: 6px; }
+        .empty-desc  { font-size: 12px; line-height: 1.6; }
+
+        /* Map */
+        .map-area { flex: 1; position: relative; overflow: hidden; }
+        #map { width: 100%; height: 100%; }
+
+        /* Map panel */
+        .mpanel {
+            position: absolute; top: 12px; right: 12px;
+            background: white; border-radius: 8px; padding: 14px;
+            box-shadow: var(--sh-lg); border: 1px solid var(--ice);
+            z-index: 1000; min-width: 170px; display: none;
+        }
+        .mptitle { font-size: 10px; font-weight: 700; color: var(--steel); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .rbar { display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+        .rbar-lbl { font-size: 11px; color: var(--gray); width: 86px; flex-shrink: 0; }
+        .rbar-trk { flex: 1; height: 4px; background: var(--ice); border-radius: 2px; overflow: hidden; }
+        .rbar-fil { height: 100%; border-radius: 2px; }
+        .rbar-num { font-family: var(--mono); font-size: 11px; color: var(--steel); width: 22px; text-align: right; }
+
+        /* Popup */
+        .leaflet-popup-content-wrapper { border-radius: 8px !important; box-shadow: var(--sh-lg) !important; border: 1px solid var(--ice) !important; }
+        .pop-name   { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; font-family: 'Inter', sans-serif; }
+        .pop-row    { font-size: 12px; color: var(--gray); margin-bottom: 2px; font-family: 'Inter', sans-serif; }
+        .pop-cep    { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--ice); }
+        .pop-badge  { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 10px; color: white; margin-top: 6px; font-family: 'Inter', sans-serif; }
+
+        /* Toast */
+        .toast {
+            position: fixed; bottom: 20px; right: 20px;
+            background: var(--navy); color: white;
+            padding: 12px 16px; border-radius: 8px;
+            font-size: 13px; box-shadow: var(--sh-lg);
+            z-index: 9999; display: none; max-width: 340px; line-height: 1.5;
+        }
+        .toast.err { background: var(--error); }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: absolute; inset: 0;
+            background: rgba(245,247,250,.85);
+            display: none; align-items: center; justify-content: center;
+            flex-direction: column; z-index: 999;
+        }
+        .spinner {
+            width: 32px; height: 32px;
+            border: 3px solid var(--ice); border-top-color: var(--navy);
+            border-radius: 50%; animation: spin .7s linear infinite; margin-bottom: 12px;
+        }
+        .loading-txt { font-size: 13px; font-weight: 500; color: var(--navy); }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+<div class="app">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="hbrand">
+            <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="3"   fill="white" opacity=".9"/>
+                <circle cx="20" cy="8"  r="2"   fill="white" opacity=".7"/>
+                <circle cx="30" cy="13" r="1.5" fill="white" opacity=".6"/>
+                <circle cx="32" cy="24" r="2"   fill="white" opacity=".7"/>
+                <circle cx="26" cy="32" r="1.5" fill="white" opacity=".5"/>
+                <circle cx="14" cy="33" r="1.5" fill="white" opacity=".5"/>
+                <circle cx="8"  cy="27" r="2"   fill="white" opacity=".6"/>
+                <circle cx="8"  cy="15" r="1.5" fill="white" opacity=".5"/>
+                <circle cx="14" cy="8"  r="1.5" fill="white" opacity=".5"/>
+                <line x1="20" y1="20" x2="20" y2="8"  stroke="white" stroke-width="1" opacity=".35"/>
+                <line x1="20" y1="20" x2="30" y2="13" stroke="white" stroke-width="1" opacity=".35"/>
+                <line x1="20" y1="20" x2="32" y2="24" stroke="white" stroke-width="1" opacity=".35"/>
+                <line x1="20" y1="20" x2="26" y2="32" stroke="white" stroke-width="1" opacity=".35"/>
+                <line x1="20" y1="20" x2="14" y2="33" stroke="white" stroke-width="1" opacity=".35"/>
+                <line x1="20" y1="20" x2="8"  y2="27" stroke="white" stroke-width="1" opacity=".35"/>
+                <line x1="20" y1="20" x2="8"  y2="15" stroke="white" stroke-width="1" opacity=".35"/>
+                <line x1="20" y1="20" x2="14" y2="8"  stroke="white" stroke-width="1" opacity=".35"/>
+            </svg>
+            <span class="hname">Contourline</span>
+            <div class="hsep"></div>
+            <span class="hpage">Mapa de Clientes</span>
+        </div>
+        <div class="hstats">
+            <div class="hstat">Total: <strong id="s-total">0</strong></div>
+            <div class="hstat">No mapa: <strong id="s-map">0</strong></div>
+            <div class="hstat">Estados: <strong id="s-states">0</strong></div>
+        </div>
+    </header>
+
+    <!-- Body -->
+    <div class="body">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <!-- Import -->
+            <div class="ss">
+                <div class="slabel">Importar Clientes</div>
+                <div class="uzone" id="uzone">
+                    <input type="file" id="file-input" accept=".xlsx,.xls,.csv">
+                    <span class="uicon">📊</span>
+                    <span class="umain">Clique ou arraste o arquivo</span>
+                    <span class="uhint">.xlsx · .xls · .csv</span>
+                </div>
+                <div class="utip">
+                    Colunas: <code>Nome</code>, <code>CEP</code><br>
+                    Opcionais: <code>Cidade</code>, <code>Estado</code>, <code>Telefone</code>, <code>Email</code>
+                </div>
+                <div class="ustatus" id="ustatus"></div>
+                <button class="btn-danger" id="btn-limpar-bd" style="display:none">
+                    🗑 Limpar todos os clientes do banco
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="ss">
+                <div class="slabel">Filtros</div>
+                <div class="fgroup">
+                    <div class="frow">
+                        <label class="flabel">Buscar</label>
+                        <input type="text" class="finput" id="f-search" placeholder="Nome ou cidade...">
+                    </div>
+                    <div class="frow">
+                        <label class="flabel">Região</label>
+                        <select class="fselect" id="f-region">
+                            <option value="">Todas as regiões</option>
+                            <option>Norte</option><option>Nordeste</option>
+                            <option>Centro-Oeste</option><option>Sudeste</option><option>Sul</option>
+                        </select>
+                    </div>
+                    <div class="frow">
+                        <label class="flabel">Estado</label>
+                        <select class="fselect" id="f-state"><option value="">Todos os estados</option></select>
+                    </div>
+                    <div class="frow">
+                        <label class="flabel">Cidade</label>
+                        <select class="fselect" id="f-city"><option value="">Todas as cidades</option></select>
+                    </div>
+                    <button class="btn-clear" id="btn-clear">Limpar filtros</button>
+                </div>
+            </div>
+
+            <!-- Regions legend -->
+            <div class="ss">
+                <div class="slabel">Regiões</div>
+                <div class="legend">
+                    <div class="litem" data-r="Norte"><div class="ldot" style="background:var(--r-norte)"></div><span class="lname">Norte</span><span class="lcnt" id="c-norte">0</span></div>
+                    <div class="litem" data-r="Nordeste"><div class="ldot" style="background:var(--r-nordeste)"></div><span class="lname">Nordeste</span><span class="lcnt" id="c-nordeste">0</span></div>
+                    <div class="litem" data-r="Centro-Oeste"><div class="ldot" style="background:var(--r-co)"></div><span class="lname">Centro-Oeste</span><span class="lcnt" id="c-co">0</span></div>
+                    <div class="litem" data-r="Sudeste"><div class="ldot" style="background:var(--r-sudeste)"></div><span class="lname">Sudeste</span><span class="lcnt" id="c-sudeste">0</span></div>
+                    <div class="litem" data-r="Sul"><div class="ldot" style="background:var(--r-sul)"></div><span class="lname">Sul</span><span class="lcnt" id="c-sul">0</span></div>
+                </div>
+            </div>
+
+            <!-- Geocode progress -->
+            <div class="pbar-wrap" id="pbar-wrap">
+                <div class="pbar-hdr"><span id="pbar-label">Geocodificando CEPs...</span><span id="pbar-txt">0/0</span></div>
+                <div class="pbar-track"><div class="pbar-fill" id="pbar-fill"></div></div>
+            </div>
+
+            <!-- Client list -->
+            <div class="clist-wrap">
+                <div class="empty" id="empty">
+                    <div class="empty-icon">🗺️</div>
+                    <div class="empty-title">Nenhum cliente carregado</div>
+                    <div class="empty-desc">Importe uma planilha Excel com seus clientes para visualizá-los no mapa.</div>
+                </div>
+                <div id="clist" style="display:none">
+                    <div class="clh">
+                        <span class="clhtitle">Clientes</span>
+                        <span class="clhcnt" id="clhcnt">0</span>
+                    </div>
+                    <div id="ccards"></div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Map -->
+        <div class="map-area">
+            <div id="map"></div>
+            <div class="mpanel" id="mpanel">
+                <div class="mptitle">Por Região</div>
+                <div id="rbreakdown"></div>
+            </div>
+            <div class="loading-overlay" id="loading-overlay">
+                <div class="spinner"></div>
+                <div class="loading-txt" id="loading-txt">Carregando...</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+// ── CONFIG ─────────────────────────────────────────────────────
+const SUPABASE_URL  = 'https://lyifnttxpoypwibbffnv.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5aWZudHR4cG95cHdpYmJmZm52Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAzNDY3MTQsImV4cCI6MjA2NTkyMjcxNH0.4z8lmc2DAnykbh7YqquyoeEo0uJM_dKt2X90D7-OTS0';
+
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+
+// ── CONSTANTS ──────────────────────────────────────────────────
+const REGIONS = {
+    AC:'Norte',AM:'Norte',AP:'Norte',PA:'Norte',RO:'Norte',RR:'Norte',TO:'Norte',
+    AL:'Nordeste',BA:'Nordeste',CE:'Nordeste',MA:'Nordeste',PB:'Nordeste',
+    PE:'Nordeste',PI:'Nordeste',RN:'Nordeste',SE:'Nordeste',
+    DF:'Centro-Oeste',GO:'Centro-Oeste',MS:'Centro-Oeste',MT:'Centro-Oeste',
+    ES:'Sudeste',MG:'Sudeste',RJ:'Sudeste',SP:'Sudeste',
+    PR:'Sul',RS:'Sul',SC:'Sul'
+};
+const STATE_NAMES = {
+    AC:'Acre',AL:'Alagoas',AP:'Amapá',AM:'Amazonas',BA:'Bahia',CE:'Ceará',
+    DF:'Distrito Federal',ES:'Espírito Santo',GO:'Goiás',MA:'Maranhão',
+    MT:'Mato Grosso',MS:'Mato Grosso do Sul',MG:'Minas Gerais',PA:'Pará',
+    PB:'Paraíba',PR:'Paraná',PE:'Pernambuco',PI:'Piauí',RJ:'Rio de Janeiro',
+    RN:'Rio Grande do Norte',RS:'Rio Grande do Sul',RO:'Rondônia',RR:'Roraima',
+    SC:'Santa Catarina',SP:'São Paulo',SE:'Sergipe',TO:'Tocantins'
+};
+const RCOLOR = {
+    'Norte':'#1565C0','Nordeste':'#D4880F',
+    'Centro-Oeste':'#0D7C3E','Sudeste':'#0B2341','Sul':'#6A1B9A'
+};
+
+// ── STATE ──────────────────────────────────────────────────────
+let leafMap, clients = [], markers = {};
+const F = { search:'', region:'', state:'', city:'' };
+
+// ── MAP ────────────────────────────────────────────────────────
+function initMap() {
+    leafMap = L.map('map', { center:[-14.235,-51.925], zoom:4 });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution:'© OpenStreetMap © CARTO',
+        subdomains:'abcd', maxZoom:19
+    }).addTo(leafMap);
+}
+
+function mkIcon(color, ok) {
+    return L.divIcon({
+        className:'',
+        html:`<div style="width:12px;height:12px;background:${color};border:2.5px solid white;border-radius:50%;box-shadow:0 2px 5px rgba(0,0,0,.3);opacity:${ok?1:.5}"></div>`,
+        iconSize:[12,12], iconAnchor:[6,6], popupAnchor:[0,-10]
+    });
+}
+
+// ── SUPABASE CRUD ──────────────────────────────────────────────
+async function loadClients() {
+    showOverlay(true, 'Carregando clientes...');
+    const { data, error } = await db.from('clientes_mapa').select('*').order('nome');
+    hideOverlay();
+    if (error) { toast('Erro ao carregar: ' + error.message, true); return; }
+    clients = data || [];
+    render();
+}
+
+async function saveClients(rows) {
+    const { error } = await db.from('clientes_mapa').insert(rows);
+    if (error) throw new Error(error.message);
+}
+
+async function deleteAllClients() {
+    const { error } = await db.from('clientes_mapa').delete().neq('id', '00000000-0000-0000-0000-000000000000');
+    if (error) throw new Error(error.message);
+}
+
+async function getCachedCEP(cep) {
+    const { data } = await db.from('cep_cache').select('*').eq('cep', cep).maybeSingle();
+    return data;
+}
+
+async function saveCEPCache(entry) {
+    await db.from('cep_cache').upsert(entry, { onConflict: 'cep' });
+}
+
+// ── GEOCODING ──────────────────────────────────────────────────
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+async function geocode(cep) {
+    // 1. Check Supabase cache first
+    const cached = await getCachedCEP(cep);
+    if (cached) return cached;
+
+    // 2. ViaCEP
+    const vr = await fetch(`https://viacep.com.br/ws/${cep}/json/`).catch(() => null);
+    if (!vr?.ok) return null;
+    const vd = await vr.json();
+    if (vd.erro) return null;
+
+    await sleep(1100); // Nominatim rate limit
+
+    // 3. Nominatim
+    const q = encodeURIComponent(`${vd.localidade} ${vd.uf} Brasil`);
+    const nr = await fetch(
+        `https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1&countrycodes=br`,
+        { headers:{ 'Accept-Language':'pt-BR','User-Agent':'ContourlineMap/1.0' } }
+    ).catch(() => null);
+    if (!nr?.ok) return null;
+    const nd = await nr.json();
+    if (!nd?.length) return null;
+
+    const result = {
+        cep, cidade: vd.localidade, estado: vd.uf,
+        regiao: REGIONS[vd.uf] || null,
+        lat: parseFloat(nd[0].lat),
+        lon: parseFloat(nd[0].lon)
+    };
+
+    // 4. Save to cache
+    await saveCEPCache(result);
+    return result;
+}
+
+// ── EXCEL PARSING ──────────────────────────────────────────────
+function readExcel(file) {
+    return new Promise((res, rej) => {
+        const r = new FileReader();
+        r.onload = e => {
+            try {
+                const wb = XLSX.read(new Uint8Array(e.target.result), { type:'array' });
+                const rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { defval:'' });
+                rows.length ? res(rows) : rej('Planilha vazia.');
+            } catch(err) { rej('Erro ao ler: ' + err.message); }
+        };
+        r.onerror = () => rej('Erro ao ler o arquivo.');
+        r.readAsArrayBuffer(file);
+    });
+}
+
+function parseRow(row) {
+    const ks = Object.keys(row).map(k => ({ k, l: k.toLowerCase().trim() }));
+    const get = (...cands) => {
+        for (const c of cands) {
+            const m = ks.find(k => k.l === c || k.l.includes(c));
+            if (m) return String(row[m.k] || '').trim();
+        }
+        return '';
+    };
+    const estado = get('estado','state','uf').toUpperCase().slice(0,2);
+    return {
+        nome:     get('nome','name','cliente','razão social','razao social','empresa') || 'Sem nome',
+        cep:      get('cep','zip','postal').replace(/\D/g,''),
+        cidade:   get('cidade','city','municipio','município'),
+        estado,
+        telefone: get('telefone','phone','fone','celular','tel'),
+        email:    get('email','e-mail','mail'),
+        regiao:   REGIONS[estado] || null,
+        lat: null, lon: null, geocoded: false
+    };
+}
+
+// ── PROCESS UPLOAD ──────────────────────────────────────────────
+async function handleUpload(file) {
+    setStatus('Lendo arquivo...', 'info');
+    const rows = await readExcel(file);
+    const parsed = rows.map(parseRow);
+
+    setStatus(`${parsed.length} clientes encontrados. Geocodificando CEPs...`, 'info');
+    showPbar(true);
+
+    const toInsert = [];
+
+    for (let i = 0; i < parsed.length; i++) {
+        const cl = parsed[i];
+        setPbar(i, parsed.length, cl.nome);
+
+        if (cl.cep.length === 8) {
+            const geo = await geocode(cl.cep);
+            if (geo) {
+                cl.lat     = geo.lat;
+                cl.lon     = geo.lon;
+                cl.cidade  = cl.cidade || geo.cidade;
+                cl.estado  = cl.estado || geo.estado;
+                cl.regiao  = geo.regiao;
+                cl.geocoded = true;
+            }
+        }
+
+        toInsert.push(cl);
+    }
+
+    showPbar(false);
+    setStatus('Salvando no banco...', 'info');
+
+    await saveClients(toInsert);
+    await loadClients();
+
+    const ok = toInsert.filter(c => c.geocoded).length;
+    setStatus(`✓ ${toInsert.length} clientes salvos · ${ok} no mapa`, 'ok');
+    document.getElementById('btn-limpar-bd').style.display = 'block';
+}
+
+// ── RENDER ──────────────────────────────────────────────────────
+function render() {
+    renderMap();
+    renderList();
+    updateStats();
+    updateRegionCounts();
+    updateFilters();
+    updateBreakdown();
+    document.getElementById('mpanel').style.display = clients.length ? 'block' : 'none';
+    document.getElementById('btn-limpar-bd').style.display = clients.length ? 'block' : 'none';
+}
+
+function filtered() {
+    return clients.filter(c => {
+        if (F.search) {
+            const q = F.search.toLowerCase();
+            if (!c.nome.toLowerCase().includes(q) && !(c.cidade||'').toLowerCase().includes(q)) return false;
+        }
+        if (F.region && c.regiao  !== F.region) return false;
+        if (F.state  && c.estado  !== F.state)  return false;
+        if (F.city   && c.cidade  !== F.city)   return false;
+        return true;
+    });
+}
+
+function renderMap() {
+    Object.values(markers).forEach(m => leafMap.removeLayer(m));
+    markers = {};
+
+    const vis = filtered().filter(c => c.lat && c.lon);
+    vis.forEach(cl => {
+        const color = RCOLOR[cl.regiao] || '#8C8C8C';
+        const m = L.marker([cl.lat, cl.lon], { icon: mkIcon(color, cl.geocoded) })
+            .bindPopup(mkPopup(cl), { maxWidth:240 })
+            .addTo(leafMap);
+        m.on('click', () => highlightCard(cl.id));
+        markers[cl.id] = m;
+    });
+
+    if (vis.length) {
+        try { leafMap.fitBounds(L.featureGroup(Object.values(markers)).getBounds().pad(0.12)); } catch {}
+    }
+}
+
+function mkPopup(cl) {
+    const color = RCOLOR[cl.regiao] || '#8C8C8C';
+    return `
+        <div class="pop-name">${esc(cl.nome)}</div>
+        ${cl.cidade    ? `<div class="pop-row">📍 ${esc(cl.cidade)}${cl.estado?', '+cl.estado:''}</div>` : ''}
+        ${cl.telefone  ? `<div class="pop-row">📞 ${esc(cl.telefone)}</div>` : ''}
+        ${cl.email     ? `<div class="pop-row">✉️ ${esc(cl.email)}</div>`    : ''}
+        <div class="pop-cep">CEP ${fmtCEP(cl.cep)}</div>
+        ${cl.regiao ? `<span class="pop-badge" style="background:${color}">${cl.regiao}</span>` : ''}
+        ${!cl.geocoded ? '<div style="font-size:10px;color:#D4880F;margin-top:4px">⚠ sem coordenada</div>' : ''}
+    `;
+}
+
+function renderList() {
+    const f = filtered();
+    const empty  = document.getElementById('empty');
+    const clist  = document.getElementById('clist');
+    const ccards = document.getElementById('ccards');
+    const cnt    = document.getElementById('clhcnt');
+
+    if (!clients.length) { empty.style.display = 'block'; clist.style.display = 'none'; return; }
+    empty.style.display = 'none';
+    clist.style.display = 'block';
+    cnt.textContent = `${f.length} exibidos`;
+    ccards.innerHTML = '';
+
+    f.forEach(cl => {
+        const color = RCOLOR[cl.regiao] || '#8C8C8C';
+        const loc   = [cl.cidade, cl.estado].filter(Boolean).join(', ');
+        const div   = document.createElement('div');
+        div.className = 'ccard';
+        div.dataset.id = cl.id;
+        div.innerHTML = `
+            <div class="cdot" style="background:${color};${!cl.geocoded?'opacity:.45':''}"></div>
+            <div class="cinfo">
+                <div class="cname">${esc(cl.nome)}</div>
+                <div class="cloc">${loc||'—'}${cl.regiao?' · '+cl.regiao:''}</div>
+                <div class="ccep">${fmtCEP(cl.cep)}${!cl.geocoded?' <span class="cfail">⚠ sem coord</span>':''}</div>
+            </div>
+        `;
+        div.addEventListener('click', () => { flyTo(cl); highlightCard(cl.id); });
+        ccards.appendChild(div);
+    });
+}
+
+function highlightCard(id) {
+    document.querySelectorAll('.ccard').forEach(c => c.classList.remove('active'));
+    const el = document.querySelector(`.ccard[data-id="${id}"]`);
+    if (el) { el.classList.add('active'); el.scrollIntoView({ behavior:'smooth', block:'nearest' }); }
+}
+
+function flyTo(cl) {
+    if (cl.lat && cl.lon) {
+        leafMap.flyTo([cl.lat, cl.lon], 13, { duration:1.2 });
+        const m = markers[cl.id];
+        if (m) m.openPopup();
+    }
+}
+
+function updateStats() {
+    const f = filtered();
+    document.getElementById('s-total').textContent  = clients.length;
+    document.getElementById('s-map').textContent    = f.filter(c=>c.lat&&c.lon).length;
+    document.getElementById('s-states').textContent = new Set(f.map(c=>c.estado).filter(Boolean)).size;
+}
+
+function updateRegionCounts() {
+    const cnt = { Norte:0, Nordeste:0, 'Centro-Oeste':0, Sudeste:0, Sul:0 };
+    clients.forEach(c => { if (c.regiao && cnt[c.regiao]!==undefined) cnt[c.regiao]++; });
+    document.getElementById('c-norte').textContent   = cnt['Norte'];
+    document.getElementById('c-nordeste').textContent = cnt['Nordeste'];
+    document.getElementById('c-co').textContent      = cnt['Centro-Oeste'];
+    document.getElementById('c-sudeste').textContent = cnt['Sudeste'];
+    document.getElementById('c-sul').textContent     = cnt['Sul'];
+}
+
+function updateFilters() {
+    const states = [...new Set(clients.map(c=>c.estado).filter(Boolean))].sort();
+    const cities  = [...new Set(clients.map(c=>c.cidade).filter(Boolean))].sort();
+
+    const se = document.getElementById('f-state');
+    const ce = document.getElementById('f-city');
+    const curState = se.value;
+    const curCity  = ce.value;
+
+    se.innerHTML = '<option value="">Todos os estados</option>';
+    states.forEach(s => {
+        const o = document.createElement('option');
+        o.value = s; o.textContent = STATE_NAMES[s] ? `${STATE_NAMES[s]} (${s})` : s;
+        if (s === curState) o.selected = true;
+        se.appendChild(o);
+    });
+
+    ce.innerHTML = '<option value="">Todas as cidades</option>';
+    cities.forEach(c => {
+        const o = document.createElement('option');
+        o.value = c; o.textContent = c;
+        if (c === curCity) o.selected = true;
+        ce.appendChild(o);
+    });
+}
+
+function updateBreakdown() {
+    const f     = filtered();
+    const total = f.length || 1;
+    const cnt   = {};
+    f.forEach(c => { if (c.regiao) cnt[c.regiao] = (cnt[c.regiao]||0)+1; });
+
+    document.getElementById('rbreakdown').innerHTML = Object.entries(RCOLOR).map(([r, color]) => {
+        const n = cnt[r] || 0;
+        const pct = Math.round(n/total*100);
+        return `
+            <div class="rbar">
+                <span class="rbar-lbl" style="color:${color};font-weight:600">${r}</span>
+                <div class="rbar-trk"><div class="rbar-fil" style="width:${pct}%;background:${color}"></div></div>
+                <span class="rbar-num">${n}</span>
+            </div>`;
+    }).join('');
+}
+
+// ── PROGRESS / STATUS ──────────────────────────────────────────
+function showPbar(v) { document.getElementById('pbar-wrap').style.display = v ? 'block' : 'none'; }
+function setPbar(i, total, name) {
+    const pct = Math.round((i+1)/total*100);
+    document.getElementById('pbar-fill').style.width = pct + '%';
+    document.getElementById('pbar-txt').textContent  = `${i+1}/${total}`;
+    document.getElementById('pbar-label').textContent = `Geocodificando: ${name.slice(0,30)}...`;
+}
+function setStatus(msg, type='ok') {
+    const el = document.getElementById('ustatus');
+    el.textContent = msg;
+    el.style.display = 'block';
+    el.style.color = type === 'ok' ? 'var(--success)' : type === 'error' ? 'var(--error)' : 'var(--navy)';
+}
+function showOverlay(v, txt='') {
+    const el = document.getElementById('loading-overlay');
+    el.style.display = v ? 'flex' : 'none';
+    if (txt) document.getElementById('loading-txt').textContent = txt;
+}
+function hideOverlay() { showOverlay(false); }
+function toast(msg, err=false) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = 'toast' + (err ? ' err' : '');
+    el.style.display = 'block';
+    setTimeout(() => { el.style.display = 'none'; }, 5000);
+}
+
+// ── UTILS ──────────────────────────────────────────────────────
+function fmtCEP(cep) {
+    const c = String(cep||'').replace(/\D/g,'');
+    return c.length===8 ? c.slice(0,5)+'-'+c.slice(5) : cep||'—';
+}
+function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── EVENTS ────────────────────────────────────────────────────
+function bindEvents() {
+    const fi   = document.getElementById('file-input');
+    const zone = document.getElementById('uzone');
+
+    fi.addEventListener('change', async e => {
+        const file = e.target.files[0];
+        if (!file) return;
+        try { await handleUpload(file); }
+        catch(err) { setStatus(String(err), 'error'); toast(String(err), true); }
+        fi.value = '';
+    });
+
+    zone.addEventListener('dragover',  e => { e.preventDefault(); zone.classList.add('drag'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('drag'));
+    zone.addEventListener('drop', e => {
+        e.preventDefault(); zone.classList.remove('drag');
+        const file = e.dataTransfer.files[0];
+        if (file) { const dt = new DataTransfer(); dt.items.add(file); fi.files = dt.files; fi.dispatchEvent(new Event('change')); }
+    });
+
+    // Search
+    let deb;
+    document.getElementById('f-search').addEventListener('input', e => {
+        clearTimeout(deb);
+        deb = setTimeout(() => { F.search = e.target.value; renderMap(); renderList(); updateStats(); updateBreakdown(); }, 200);
+    });
+
+    // Selects
+    document.getElementById('f-region').addEventListener('change', e => { F.region = e.target.value; renderMap(); renderList(); updateStats(); updateBreakdown(); });
+    document.getElementById('f-state').addEventListener('change',  e => { F.state  = e.target.value; renderMap(); renderList(); updateStats(); updateBreakdown(); });
+    document.getElementById('f-city').addEventListener('change',   e => { F.city   = e.target.value; renderMap(); renderList(); updateStats(); updateBreakdown(); });
+
+    // Clear filters
+    document.getElementById('btn-clear').addEventListener('click', () => {
+        F.search = F.region = F.state = F.city = '';
+        document.getElementById('f-search').value = '';
+        ['f-region','f-state','f-city'].forEach(id => document.getElementById(id).value = '');
+        document.querySelectorAll('.litem').forEach(i => i.classList.remove('active'));
+        renderMap(); renderList(); updateStats(); updateBreakdown();
+    });
+
+    // Legend filter
+    document.querySelectorAll('.litem').forEach(item => {
+        item.addEventListener('click', () => {
+            const r = item.dataset.r;
+            if (F.region === r) {
+                F.region = '';
+                item.classList.remove('active');
+                document.getElementById('f-region').value = '';
+            } else {
+                F.region = r;
+                document.querySelectorAll('.litem').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                document.getElementById('f-region').value = r;
+            }
+            renderMap(); renderList(); updateStats(); updateBreakdown();
+        });
+    });
+
+    // Limpar banco
+    document.getElementById('btn-limpar-bd').addEventListener('click', async () => {
+        if (!confirm('Tem certeza? Isso apaga TODOS os clientes do banco de dados.')) return;
+        try {
+            await deleteAllClients();
+            clients = [];
+            markers = {};
+            render();
+            setStatus('Banco limpo.', 'ok');
+            toast('Todos os clientes foram removidos.');
+        } catch(err) {
+            toast('Erro ao limpar: ' + err.message, true);
+        }
+    });
+}
+
+// ── INIT ──────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', async () => {
+    initMap();
+    bindEvents();
+    await loadClients();
+});
+</script>
+</body>
+</html>

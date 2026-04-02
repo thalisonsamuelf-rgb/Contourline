@@ -1,0 +1,1127 @@
+# AIOX Ads Skill Router
+# Roteamento inteligente de requisicoes para skills e agentes
+# Suporta triggers semanticos, de metricas, encadeamento e platform routing
+# v5.0.0: 9 new skill routes, SKILL.md entry point, ads-traffic-chief/audit-orchestrator REMOVED
+# Previous: v4.0 (Fusion: media-buyer-squad v2.0 + traffic-masters v3.0 -> aiox-ads v4.0)
+
+version: "5.0"
+domain: "aiox-ads"
+squad: "aiox-ads"
+
+# =============================================================================
+# ROUTING CONFIGURATION
+# =============================================================================
+
+routing_config:
+  min_confidence: 0.70
+  fallback_agent: "@ad-midas"
+  fallback_action: "clarify_intent"
+  log_all_routes: true
+  log_path: "workspace/businesses/{business_slug}/ads/routing.log"
+  enable_metric_triggers: true
+  enable_skill_chains: true
+  entry_point: "squads/aiox-ads/skills/*/SKILL.md"
+
+# =============================================================================
+# SEMANTIC TRIGGERS (Natural Language)
+# =============================================================================
+
+semantic_triggers:
+
+  # ---------------------------------------------------------------------------
+  # DIAGNOSTIC SKILLS (9 skills)
+  # ---------------------------------------------------------------------------
+
+  diagnostic:
+    - id: "diag-metric"
+      patterns:
+        - "por que (nao|n.o) (esta|est.) convertendo"
+        - "campanha (nao|n.o) (performa|converte|funciona)"
+        - "CPA (alto|subindo|acima|aumentou)"
+        - "ROAS (baixo|caindo|abaixo|diminuiu)"
+        - "CTR (baixo|caindo|ruim)"
+        - "CPM (alto|caro|subindo)"
+        - "(diagnostico|analisar) (campanha|metricas|performance)"
+        - "o que (esta|est.) (errado|acontecendo)"
+      skill: "metric-diagnosis"
+      agent: "@performance-analyst"
+      confidence: 0.90
+      priority: 1
+
+    - id: "diag-tracking"
+      patterns:
+        - "pixel (nao|n.o) (dispara|funciona|registra)"
+        - "tracking (problema|erro|quebrado|nao funciona)"
+        - "(conversoes) (nao aparecem|faltando|sumindo)"
+        - "auditar (pixel|tracking|eventos)"
+        - "CAPI (problema|configurar|setup)"
+        - "match rate (baixo|ruim)"
+      skill: "tracking-audit"
+      agent: "@pixel-specialist"
+      confidence: 0.92
+      priority: 1
+
+    - id: "diag-fatigue"
+      patterns:
+        - "(fadiga|saturacao) (de criativo|de anuncio)"
+        - "criativo (cansou|saturou|nao funciona mais)"
+        - "(frequencia) (alta|muito alta|acima de 3)"
+        - "view rate (caindo|baixo)"
+        - "hook rate (baixo|caindo)"
+        - "CTR (caiu|esta caindo|diminuindo)"
+      skill: "creative-fatigue-detector"
+      agent: "@performance-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "diag-funnel"
+      patterns:
+        - "(analisar|analise) (funil|conversao por etapa)"
+        - "drop.?off (alto|onde)"
+        - "(gargalo|bottleneck) (no funil|de conversao)"
+        - "checkout (abandono|baixo)"
+        - "conversao por (etapa|stage)"
+      skill: "funnel-analysis"
+      agent: "@performance-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "diag-attribution"
+      patterns:
+        - "(atribuicao) (problema|errada|incorreta)"
+        - "janela de (atribuicao|conversao)"
+        - "iOS.?14 (impacto|problema)"
+        - "dados (Meta|Facebook) vs (backend|GA)"
+        - "reconciliar (dados|conversoes)"
+      skill: "attribution-analysis"
+      agent: "@pixel-specialist"
+      confidence: 0.85
+      priority: 2
+
+    # --- NEW (Sprint 3) ---
+
+    - id: "diag-learning-phase"
+      patterns:
+        - "learning phase"
+        - "fase de aprendizado"
+        - "ad set (aprendendo|learning)"
+        - "(pode|posso) (pausar|escalar) durante aprendizado"
+        - "50 (conversoes|conversions)"
+        - "aprendizado (ativo|em curso)"
+      skill: "learning-phase-detector"
+      agent: "@performance-analyst"
+      confidence: 0.92
+      priority: 1
+
+    - id: "diag-auction-overlap"
+      patterns:
+        - "(overlap|sobreposicao) (de audiencia|audience)"
+        - "auto.?competicao"
+        - "audiencia (duplicada|sobreposta)"
+        - "ad sets (competindo|concorrendo)"
+        - "CPM subindo sem (mudanca|alteracao)"
+      skill: "auction-overlap-detector"
+      agent: "@performance-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "diag-creative-eval"
+      patterns:
+        - "(avaliar|evaluate) (criativo|creative) (por|via) (numeros|performance)"
+        - "scoring (de criativo|creative)"
+        - "(manter|substituir|testar) (criativo|creative)"
+        - "criativo (performando|performance)"
+        - "creative (evaluation|evaluator)"
+      skill: "creative-evaluator"
+      agent: "@performance-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "diag-page"
+      patterns:
+        - "(analisar|analise) (landing page|LP|pagina)"
+        - "EMQ (score|pontuacao)"
+        - "qualidade (da pagina|do LP)"
+        - "(pagina|LP) (lenta|ruim|quebrada)"
+        - "page analyzer"
+      skill: "page-analyzer"
+      agent: "@pixel-specialist"
+      confidence: 0.90
+      priority: 1
+
+  # ---------------------------------------------------------------------------
+  # GENERATIVE SKILLS (6 skills)
+  # ---------------------------------------------------------------------------
+
+  generative:
+    - id: "gen-hook"
+      patterns:
+        - "(criar|gerar|fazer|escrever) (hook|gancho|headline)"
+        - "(variacoes|variantes) de (hook|headline)"
+        - "(atencao) (do publico|do avatar|inicial)"
+        - "DSL (framework|revolution|pattern)"
+        - "(10|dez|multiplas|varias) (variacoes|opcoes)"
+        - "parar o scroll"
+        - "primeiros (3|tres) segundos"
+      skill: "hook-generator"
+      agent: "@creative-analyst"
+      confidence: 0.92
+      priority: 1
+
+    - id: "gen-copy"
+      patterns:
+        - "(criar|gerar|escrever) (copy|texto|primary text)"
+        - "(framework|estrutura) (PAS|AIDA|BAB)"
+        - "Problem.?Agitation.?Solution"
+        - "Before.?After.?Bridge"
+        - "copy (de anuncio|para ad|publicitario)"
+      skill: "copy-generator"
+      agent: "@creative-analyst"
+      confidence: 0.90
+      priority: 2
+
+    - id: "gen-brief"
+      patterns:
+        - "(criar|gerar|fazer) brief"
+        - "briefing (criativo|de anuncio|para designer)"
+        - "(orientacao) para (designer|editor)"
+        - "direcionamento (visual|criativo)"
+      skill: "creative-brief"
+      agent: "@creative-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "gen-angles"
+      patterns:
+        - "(criar|gerar) (angulos)"
+        - "(abordagem|perspectiva) (diferente|nova)"
+        - "creative (angles|concepts)"
+        - "(testar|variar) (angulos|abordagens)"
+      skill: "angle-generator"
+      agent: "@creative-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "gen-dsl"
+      patterns:
+        - "DSL (criar|estrutura|slides)"
+        - "deck sales letter"
+        - "(mini|webinar) (2.0|estrutura)"
+        - "(slides|apresentacao) (vendas|high.?ticket)"
+        - "slide 5"
+      skill: "dsl-structure"
+      agent: "@creative-analyst"
+      confidence: 0.90
+      priority: 2
+
+    - id: "gen-youtube-script"
+      patterns:
+        - "script (youtube|video ad)"
+        - "youtube (ad|ads) script"
+        - "7.?(part|partes) script"
+        - "5.?second hook (youtube|video)"
+        - "roteiro (youtube|video)"
+      skill: "youtube-ad-scriptwriter"
+      agent: "@tom-breeze"
+      confidence: 0.90
+      priority: 2
+
+  # ---------------------------------------------------------------------------
+  # OPTIMIZATION SKILLS (5 skills)
+  # ---------------------------------------------------------------------------
+
+  optimization:
+    - id: "opt-kill-scale"
+      patterns:
+        - "(pausar|matar|desligar|parar) (ad|adset|campanha|anuncio)"
+        - "(escalar|aumentar|subir) (budget|orcamento|investimento)"
+        - "quando (pausar|escalar|matar)"
+        - "(kill|scale) (rules|regras)"
+        - "(20|vinte) por cento"
+        - "(vertical|horizontal) (scale|escala)"
+      skill: "kill-scale-rules"
+      agent: "@performance-analyst"
+      confidence: 0.92
+      priority: 1
+
+    - id: "opt-budget"
+      patterns:
+        - "(realocar|redistribuir|otimizar) (budget|orcamento)"
+        - "onde (colocar|investir) mais (dinheiro|budget)"
+        - "(comparar|comparacao) (custo|investimento)"
+        - "CBO vs ABO (budget|alocar)"
+      skill: "budget-allocation"
+      agent: "@performance-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "opt-audience-expand"
+      patterns:
+        - "(expandir|ampliar) (audiencia|publico)"
+        - "LAL (maior|expandir|3%|5%)"
+        - "lookalike (expansion|expandir)"
+        - "broad (targeting|testar)"
+        - "audiencia (saturada|saturando)"
+      skill: "audience-expansion"
+      agent: "@performance-analyst"
+      confidence: 0.88
+      priority: 2
+
+    - id: "opt-bombardment"
+      patterns:
+        - "(bombardeio|bombardment) (de criativos|criativo)"
+        - "creative lab"
+        - "(10|20) criativos (simultaneos|de uma vez)"
+        - "hammer (strategy|them)"
+        - "volume (de criativos|criativo)"
+      skill: "creative-bombardment"
+      agent: "@ralph-burns"
+      confidence: 0.88
+      priority: 2
+
+    - id: "opt-google-search"
+      patterns:
+        - "search terms (report|analise)"
+        - "negative keywords"
+        - "quality score (otimizar|melhorar|baixo)"
+        - "google search (otimizar|optimizer)"
+        - "termos de busca (desperdicando|irrelevantes)"
+      skill: "google-search-optimizer"
+      agent: "@kasim-aslam"
+      confidence: 0.90
+      priority: 2
+
+  # ---------------------------------------------------------------------------
+  # STRATEGIC SKILLS (10 skills)
+  # ---------------------------------------------------------------------------
+
+  strategic:
+    - id: "strat-funnel-select"
+      patterns:
+        - "(qual|melhor|escolher) funil"
+        - "(trafego) direto"
+        - "aula (no zoom|zoom|ao vivo)"
+        - "funil (de 1 real|um real)"
+        - "(perpetuo) (ou|vs|versus) (lancamento)"
+        - "estrategia de (aquisicao|vendas)"
+      skill: "funnel-selection"
+      agent: "@ad-midas"
+      confidence: 0.92
+      priority: 1
+
+    - id: "strat-economics"
+      patterns:
+        - "(unit economics|economia unitaria)"
+        - "(CAC|LTV|payback)"
+        - "margem de (lucro|contribuicao)"
+        - "quanto (posso|devo) pagar por (lead|cliente)"
+        - "(posso|devo|quando) escalar"
+        - "(3|tres):1 (ratio|razao)"
+      skill: "unit-economics"
+      agent: "@performance-analyst"
+      confidence: 0.90
+      priority: 1
+
+    - id: "strat-scale-ready"
+      patterns:
+        - "(pronto|ready) para escalar"
+        - "scale readiness"
+        - "(posso|devo) aumentar (budget|investimento)"
+        - "checklist (de escala|scaling)"
+        - "validar (escala|scaling)"
+      skill: "scale-readiness-check"
+      agent: "@performance-analyst"
+      confidence: 0.90
+      priority: 2
+
+    - id: "strat-campaign-struct"
+      patterns:
+        - "estrutura (de campanha|campanha)"
+        - "(CBO|ABO) (estrutura|setup)"
+        - "nomenclatura (campanha|adset|ad)"
+        - "(organizar|estruturar) campanhas"
+        - "testing vs scaling (structure|estrutura)"
+      skill: "campaign-structure"
+      agent: "@ad-midas"
+      confidence: 0.90
+      priority: 2
+
+    - id: "strat-google-arch"
+      patterns:
+        - "google (ads|campaign) (arquitetura|architect|estrutura)"
+        - "(PMax|performance max) (setup|configurar|criar)"
+        - "google (search|display) (campanha|campaign)"
+        - "asset groups"
+      skill: "google-campaign-architect"
+      agent: "@kasim-aslam"
+      confidence: 0.90
+      priority: 2
+
+    - id: "strat-youtube-launch"
+      patterns:
+        - "(lancar|launch) youtube (ads|campanha)"
+        - "targeting (timeline|pyramid)"
+        - "youtube (ads|ad) (protocolo|protocol)"
+        - "youtube (campanha|campaign) (nova|new)"
+      skill: "youtube-campaign-launcher"
+      agent: "@tom-breeze"
+      confidence: 0.90
+      priority: 2
+
+    - id: "strat-forester"
+      patterns:
+        - "forester (system|strategy|escala)"
+        - "6 campanhas (paralelas|simultaneas)"
+        - "testing.?(to|para).?winner.?(to|para).?scale"
+        - "escala agressiva"
+      skill: "forester-scaling-system"
+      agent: "@ralph-burns"
+      confidence: 0.88
+      priority: 2
+
+    # --- NEW (Sprint 3 — Story 3.1) ---
+
+    - id: "strat-research"
+      patterns:
+        - "(pesquisar|research) (mercado|concorrencia|negocio)"
+        - "antes de (lancar|criar) campanha"
+        - "inteligencia (de mercado|competitiva)"
+        - "research protocol"
+        - "pesquisa (pre-campanha|antes)"
+        - "\\*research"
+      skill: "research-protocol"
+      agent: "@ad-midas"
+      confidence: 0.92
+      priority: 1
+
+    - id: "strat-competitive"
+      patterns:
+        - "(espionar|spy|analisar) (concorrente|competitor|anuncios)"
+        - "ad library (analise|pesquisa)"
+        - "facebook ad library"
+        - "(concorrente|competitor) (anuncios|ads)"
+        - "\\*spy-ads"
+      skill: "competitive-intel"
+      agent: "@ad-midas"
+      confidence: 0.90
+      priority: 2
+
+    - id: "strat-bidding"
+      patterns:
+        - "(estrategia|strategy) de (lance|bidding|bid)"
+        - "(cost cap|roas goal|bid cap)"
+        - "lowest cost (migrar|mudar|sair)"
+        - "qual (lance|bid) usar"
+        - "bidding (decision|decisao)"
+        - "\\*bidding"
+      skill: "bidding-strategy"
+      agent: "@ad-midas"
+      confidence: 0.90
+      priority: 2
+
+  # ---------------------------------------------------------------------------
+  # AUTOMATION SKILLS (1 skill)
+  # ---------------------------------------------------------------------------
+
+  automation:
+    - id: "auto-monitor"
+      patterns:
+        - "(monitorar|acompanhar) (automaticamente|24h|continuo)"
+        - "(modo|operacao) (autonomo|autonomous)"
+        - "pausar (automaticamente|sozinho)"
+        - "regras automaticas"
+        - "(orquestrar|orquestracao) (campanhas|automatico)"
+        - "campaign monitor"
+        - "\\*orchestration"
+        - "\\*monitor"
+      skill: "campaign-monitor"
+      agent: "@ad-midas"
+      confidence: 0.95
+      priority: 0
+
+  # ---------------------------------------------------------------------------
+  # OPERATIONAL SKILLS (routes for user-facing operational skills only)
+  # ---------------------------------------------------------------------------
+
+  operational:
+    - id: "op-compliance"
+      patterns:
+        - "(compliance|conformidade) (check|verificar)"
+        - "(pre-publish|antes de publicar)"
+        - "(gate|portao) de (qualidade|seguranca)"
+        - "(pode|posso) (publicar|lancar)"
+        - "\\*compliance-check"
+      skill: "ad-compliance-gate"
+      agent: "@fiscal"
+      confidence: 0.92
+      priority: 1
+
+    - id: "op-accountability"
+      patterns:
+        - "accountability (report|loop)"
+        - "(prestacao de contas|rastreamento) (de decisoes)"
+        - "(decisao|decisoes) (erradas|acertos|hit rate)"
+        - "\\*accountability-report"
+      skill: "accountability-loop"
+      agent: "@fiscal"
+      confidence: 0.85
+      priority: 3
+
+    - id: "op-pixel-setup"
+      patterns:
+        - "(instalar|setup|configurar) pixel (do zero|novo)"
+        - "(criar|configurar) (eventos|event setup)"
+        - "CAPI (instalar|configurar|setup)"
+        - "\\*setup-pixel"
+      skill: "pixel-setup"
+      agent: "@pixel-specialist"
+      confidence: 0.90
+      priority: 2
+
+    - id: "op-br-ops"
+      patterns:
+        - "(brasil|br) (campanha|operacao|ops)"
+        - "PAF (4 fases|framework)"
+        - "whatsapp (funnel|funil)"
+        - "(sobral|pedro sobral)"
+        - "(pix|parcelamento) (pagamento|checkout)"
+        - "\\*br-ops"
+      skill: "br-campaign-ops"
+      agent: "@br-traffic-operator"
+      confidence: 0.88
+      priority: 2
+
+    - id: "op-monitoring-setup"
+      patterns:
+        - "(configurar|setup) monitoramento"
+        - "thresholds (de alerta|configurar|definir)"
+        - "schedule (de monitoramento|adaptativo)"
+        - "\\*setup-monitoring"
+      skill: "monitoring-setup"
+      agent: "@ad-midas"
+      confidence: 0.88
+      priority: 2
+
+    - id: "op-scorecard"
+      patterns:
+        - "(criar|gerar|build) scorecard"
+        - "(relatorio|report) (semanal|mensal)"
+        - "(dashboard|painel) (de metricas|resumo)"
+        - "\\*build-scorecard"
+      skill: "scorecard-builder"
+      agent: "@fiscal"
+      confidence: 0.85
+      priority: 3
+
+    # NOTE: api-resilience has NO semantic route — it is system-embedded, never user-invoked
+
+# =============================================================================
+# METRIC TRIGGERS (Quantitative)
+# =============================================================================
+
+metric_triggers:
+
+  # ---------------------------------------------------------------------------
+  # CRITICAL (Immediate Action)
+  # ---------------------------------------------------------------------------
+
+  critical:
+    - id: "mt-roas-critical"
+      condition:
+        metric: "roas"
+        operator: "<"
+        value: 0.5
+        previous: "> 2"
+        timeframe: "24h"
+      triggers:
+        - skill: "metric-diagnosis"
+          action: "full_diagnostic"
+          priority: 0
+        - skill: "tracking-audit"
+          action: "verify_tracking"
+          priority: 1
+      urgency: "critical"
+      escalate: true
+
+    - id: "mt-spend-anomaly"
+      condition:
+        metric: "daily_spend"
+        operator: ">"
+        value: "budget_limit * 1.5"
+      triggers:
+        - skill: "campaign-monitor"
+          action: "alert_and_pause"
+          priority: 0
+      urgency: "critical"
+      escalate: true
+
+  # ---------------------------------------------------------------------------
+  # HIGH (Within 1 hour)
+  # ---------------------------------------------------------------------------
+
+  high:
+    - id: "mt-cpa-high"
+      condition:
+        metric: "cpa"
+        operator: ">"
+        value: "target * 2"
+        min_data: "1000 impressions"
+      triggers:
+        - skill: "kill-scale-rules"
+          action: "evaluate_pause"
+          priority: 1
+        - skill: "metric-diagnosis"
+          action: "diagnose_cpa"
+          priority: 2
+      urgency: "high"
+
+    - id: "mt-ctr-low"
+      condition:
+        metric: "ctr"
+        operator: "<"
+        value: "0.5%"
+        min_data: "500 impressions"
+      triggers:
+        - skill: "hook-generator"
+          action: "generate_new_hooks"
+          priority: 1
+        - skill: "creative-fatigue-detector"
+          action: "check_fatigue"
+          priority: 2
+      urgency: "high"
+
+    - id: "mt-frequency-high"
+      condition:
+        metric: "frequency"
+        operator: ">"
+        value: 3
+        additional: "conversions == 0 in 48h"
+      triggers:
+        - skill: "kill-scale-rules"
+          action: "evaluate_pause"
+          priority: 1
+        - skill: "audience-expansion"
+          action: "recommend_expansion"
+          priority: 2
+      urgency: "high"
+
+    - id: "mt-learning-phase-violation"
+      condition:
+        metric: "ad_set_status"
+        operator: "=="
+        value: "LEARNING"
+        additional: "kill_or_scale_requested"
+      triggers:
+        - skill: "learning-phase-detector"
+          action: "block_and_alert"
+          priority: 0
+      urgency: "high"
+
+    - id: "mt-overlap-high"
+      condition:
+        metric: "audience_overlap"
+        operator: ">"
+        value: "30%"
+      triggers:
+        - skill: "auction-overlap-detector"
+          action: "analyze_and_recommend"
+          priority: 1
+      urgency: "high"
+
+  # ---------------------------------------------------------------------------
+  # MEDIUM (Within 24 hours)
+  # ---------------------------------------------------------------------------
+
+  medium:
+    - id: "mt-hook-rate-low"
+      condition:
+        metric: "hook_rate"
+        operator: "<"
+        value: "15%"
+        platform: "video"
+        min_data: "1000 views"
+      triggers:
+        - skill: "hook-generator"
+          action: "generate_new_hooks"
+          priority: 1
+      urgency: "medium"
+
+    - id: "mt-roas-dropping"
+      condition:
+        metric: "roas"
+        operator: "<"
+        value: "previous_week * 0.7"
+      triggers:
+        - skill: "metric-diagnosis"
+          action: "trend_analysis"
+          priority: 1
+        - skill: "creative-fatigue-detector"
+          action: "check_saturation"
+          priority: 2
+      urgency: "medium"
+
+    - id: "mt-funnel-leak"
+      condition:
+        metric: "checkout_to_purchase"
+        operator: "<"
+        value: "30%"
+      triggers:
+        - skill: "funnel-analysis"
+          action: "analyze_checkout"
+          priority: 1
+      urgency: "medium"
+
+    - id: "mt-emq-low"
+      condition:
+        metric: "emq_score"
+        operator: "<"
+        value: 6.0
+      triggers:
+        - skill: "page-analyzer"
+          action: "full_analysis"
+          priority: 1
+      urgency: "medium"
+      notes: "EMQ < 6.0 is hard gate — BLOCK campaign launch"
+
+    - id: "mt-creative-aging"
+      condition:
+        metric: "creative_age"
+        operator: ">"
+        value: "14 days"
+        additional: "ctr_declining 3 consecutive days"
+      triggers:
+        - skill: "creative-evaluator"
+          action: "evaluate_and_score"
+          priority: 1
+        - skill: "creative-fatigue-detector"
+          action: "check_fatigue"
+          priority: 2
+      urgency: "medium"
+
+  # ---------------------------------------------------------------------------
+  # LOW (Opportunity)
+  # ---------------------------------------------------------------------------
+
+  low:
+    - id: "mt-roas-stable-high"
+      condition:
+        metric: "roas"
+        operator: ">"
+        value: 2.5
+        duration: "3 days"
+        stability: "< 20% variance"
+      triggers:
+        - skill: "kill-scale-rules"
+          action: "recommend_scale"
+          priority: 1
+        - skill: "scale-readiness-check"
+          action: "verify_scaling_readiness"
+          priority: 2
+      urgency: "low"
+      opportunity: true
+
+    - id: "mt-cpa-improving"
+      condition:
+        metric: "cpa"
+        operator: "<"
+        value: "target * 0.8"
+        trend: "decreasing"
+        duration: "5 days"
+      triggers:
+        - skill: "scale-readiness-check"
+          action: "consider_expansion"
+          priority: 1
+      urgency: "low"
+      opportunity: true
+
+# =============================================================================
+# SKILL CHAINS (Sequential Workflows)
+# =============================================================================
+
+skill_chains:
+
+  # ---------------------------------------------------------------------------
+  # Campaign Launch Chain (v5 — updated with research-protocol entry point)
+  # ---------------------------------------------------------------------------
+
+  new_campaign_launch:
+    id: "chain-launch"
+    description: "Workflow completo para lancar nova campanha"
+    trigger: "*launch-campaign"
+    requires_approval: true
+    notes: "See wf-meta-launch.yaml for full 6-phase workflow"
+    steps:
+      - order: 1
+        skill: "research-protocol"
+        action: "full_research"
+        output: "research-brief.md"
+        agent: "@ad-midas"
+
+      - order: 2
+        skill: "unit-economics"
+        action: "calculate_targets"
+        input: "research-brief.md"
+        output: "targets.yaml"
+
+      - order: 3
+        skill: "funnel-selection"
+        action: "recommend_funnel"
+        input: "targets.yaml"
+        output: "funnel.yaml"
+
+      - order: 4
+        skill: "bidding-strategy"
+        action: "recommend_bid_strategy"
+        input: ["targets.yaml", "funnel.yaml"]
+        output: "bidding.yaml"
+        agent: "@ad-midas"
+
+      - order: 5
+        skill: "campaign-structure"
+        action: "define_structure"
+        input: "funnel.yaml"
+        output: "structure.yaml"
+
+      - order: 6
+        skill: "page-analyzer"
+        action: "evaluate_lp"
+        delegate_to: "@pixel-specialist"
+        decision_point:
+          check: "emq_score >= 6.0"
+          if_false:
+            halt: true
+            message: "EMQ < 6.0 — Landing page nao atende qualidade minima. BLOCK."
+
+      - order: 7
+        skill: "creative-brief"
+        action: "generate_brief"
+        input: ["funnel.yaml", "structure.yaml"]
+        output: "brief.md"
+        delegate_to: "@creative-analyst"
+
+      - order: 8
+        skill: "hook-generator"
+        action: "generate_initial_hooks"
+        input: "brief.md"
+        output: "hooks.yaml"
+        delegate_to: "@creative-analyst"
+
+      - order: 9
+        skill: "tracking-audit"
+        action: "verify_setup"
+        delegate_to: "@pixel-specialist"
+        decision_point:
+          check: "tracking_verified"
+          if_false:
+            halt: true
+            message: "Tracking nao verificado. Corrigir antes de lancar."
+
+      - order: 10
+        skill: "ad-compliance-gate"
+        action: "full_gate_check"
+        delegate_to: "@fiscal"
+        decision_point:
+          check: "verdict == PASS"
+          if_false:
+            halt: true
+            message: "Compliance gate FAIL. Corrigir antes de lancar."
+
+      - order: 11
+        skill: "monitoring-setup"
+        action: "configure_monitoring"
+        input: ["targets.yaml", "structure.yaml"]
+        agent: "@ad-midas"
+
+      - order: 12
+        skill: "campaign-monitor"
+        action: "initialize_monitoring"
+        input: ["targets.yaml", "structure.yaml"]
+
+  # ---------------------------------------------------------------------------
+  # Full Optimization Chain
+  # ---------------------------------------------------------------------------
+
+  campaign_optimization:
+    id: "chain-optimize"
+    description: "Workflow completo de otimizacao"
+    trigger: "*optimize-full"
+    requires_approval: false
+    steps:
+      - order: 1
+        skill: "metric-diagnosis"
+        action: "full_diagnostic"
+        output: "diagnosis.yaml"
+
+      - order: 2
+        skill: "learning-phase-detector"
+        action: "check_learning_status"
+        output: "learning-status.yaml"
+
+      - order: 3
+        skill: "creative-fatigue-detector"
+        action: "check_all_creatives"
+        output: "fatigue-report.yaml"
+
+      - order: 4
+        skill: "auction-overlap-detector"
+        action: "check_overlaps"
+        output: "overlap-report.yaml"
+
+      - order: 5
+        skill: "funnel-analysis"
+        action: "analyze_conversion_funnel"
+        output: "funnel-report.yaml"
+
+      - order: 6
+        skill: "kill-scale-rules"
+        action: "evaluate_all"
+        input: ["diagnosis.yaml", "fatigue-report.yaml", "learning-status.yaml", "overlap-report.yaml"]
+        output: "actions.yaml"
+
+      - order: 7
+        skill: "budget-allocation"
+        action: "recommend_reallocation"
+        input: "actions.yaml"
+        output: "budget-plan.yaml"
+        decision_point:
+          question: "Aprovar plano de otimizacao?"
+          options: ["aprovar", "modificar", "cancelar"]
+
+      - order: 8
+        skill: "hook-generator"
+        condition: "diagnosis.has_ctr_issues"
+        action: "generate_replacement_hooks"
+        delegate_to: "@creative-analyst"
+
+  # ---------------------------------------------------------------------------
+  # Scaling Chain
+  # ---------------------------------------------------------------------------
+
+  scale_campaign:
+    id: "chain-scale"
+    description: "Workflow para escalar campanha vencedora"
+    trigger: "*scale"
+    requires_approval: true
+    steps:
+      - order: 1
+        skill: "learning-phase-detector"
+        action: "verify_learning_complete"
+        decision_point:
+          check: "learning_phase == COMPLETE"
+          if_false:
+            halt: true
+            message: "Learning Phase ativa. Nao escalar ate completar."
+
+      - order: 2
+        skill: "unit-economics"
+        action: "verify_economics"
+        output: "economics.yaml"
+        decision_point:
+          check: "ltv_cac_ratio >= 3"
+          if_false:
+            halt: true
+            message: "LTV:CAC abaixo de 3:1. Nao recomendado escalar."
+
+      - order: 3
+        skill: "auction-overlap-detector"
+        action: "check_pre_scale"
+        decision_point:
+          check: "overlap_rate < 30%"
+          if_false:
+            halt: true
+            message: "Overlap > 30%. Resolver auto-competicao antes de escalar."
+
+      - order: 4
+        skill: "scale-readiness-check"
+        action: "full_readiness_check"
+        output: "readiness.yaml"
+        decision_point:
+          check: "score >= 85"
+          if_false:
+            halt: true
+            message: "Campanha nao atende criterios de escala."
+
+      - order: 5
+        skill: "audience-expansion"
+        action: "evaluate_expansion_options"
+        input: "readiness.yaml"
+        output: "expansion-plan.yaml"
+
+      - order: 6
+        skill: "budget-allocation"
+        action: "calculate_scale_budget"
+        input: ["readiness.yaml", "expansion-plan.yaml"]
+        output: "scaling-budget.yaml"
+
+      - order: 7
+        skill: "campaign-structure"
+        action: "plan_scaling_structure"
+        input: "scaling-budget.yaml"
+        output: "scaling-structure.yaml"
+
+  # ---------------------------------------------------------------------------
+  # Creative Refresh Chain
+  # ---------------------------------------------------------------------------
+
+  creative_refresh_batch:
+    id: "chain-refresh"
+    description: "Refresh semanal de criativos"
+    trigger: "*refresh-creatives"
+    schedule: "weekly"
+    steps:
+      - order: 1
+        skill: "creative-fatigue-detector"
+        action: "identify_fatigued"
+        output: "fatigued-creatives.yaml"
+
+      - order: 2
+        skill: "creative-evaluator"
+        action: "score_all_creatives"
+        output: "creative-scores.yaml"
+
+      - order: 3
+        skill: "angle-generator"
+        action: "generate_new_angles"
+        input: "fatigued-creatives.yaml"
+        output: "new-angles.yaml"
+
+      - order: 4
+        skill: "hook-generator"
+        action: "generate_batch"
+        count: 20
+        input: "new-angles.yaml"
+        output: "new-hooks.yaml"
+
+      - order: 5
+        skill: "copy-generator"
+        action: "generate_variations"
+        input: "new-hooks.yaml"
+        output: "new-copy.yaml"
+
+      - order: 6
+        skill: "creative-brief"
+        action: "create_briefs"
+        input: ["new-angles.yaml", "new-hooks.yaml", "new-copy.yaml"]
+        output: "briefs/"
+
+  # ---------------------------------------------------------------------------
+  # DSL Creation Chain
+  # ---------------------------------------------------------------------------
+
+  dsl_creation:
+    id: "chain-dsl"
+    description: "Workflow para criar DSL completo"
+    trigger: "*create-dsl-full"
+    requires_approval: true
+    steps:
+      - order: 1
+        skill: "funnel-selection"
+        action: "verify_high_ticket"
+        decision_point:
+          check: "ticket > 1000"
+          if_false:
+            halt: true
+            message: "DSL recomendado apenas para high-ticket."
+
+      - order: 2
+        skill: "angle-generator"
+        action: "generate_dsl_angles"
+        output: "dsl-angles.yaml"
+
+      - order: 3
+        skill: "hook-generator"
+        action: "generate_dsl_hooks"
+        input: "dsl-angles.yaml"
+        output: "dsl-hooks.yaml"
+
+      - order: 4
+        skill: "dsl-structure"
+        action: "create_full_dsl"
+        input: ["dsl-angles.yaml", "dsl-hooks.yaml"]
+        output: "dsl-structure.yaml"
+
+      - order: 5
+        skill: "copy-generator"
+        action: "generate_slide_copy"
+        input: "dsl-structure.yaml"
+        output: "dsl-slides.yaml"
+
+# =============================================================================
+# ROUTING PRIORITY MATRIX
+# =============================================================================
+
+priority_matrix:
+  # Lower number = higher priority
+  0: "critical_automation"    # Campaign monitor, emergencies, learning phase blocks
+  1: "kill_scale_decisions"   # Pausar/escalar (with learning phase gate)
+  2: "diagnostic_urgent"      # Diagnosticos urgentes
+  3: "generative_requested"   # Criacao solicitada
+  4: "strategic_planning"     # Planejamento
+  5: "optimization_routine"   # Otimizacoes de rotina
+
+# =============================================================================
+# FALLBACK RULES
+# =============================================================================
+
+fallback_rules:
+  no_match:
+    action: "clarify"
+    agent: "@ad-midas"
+    message: |
+      Nao identifiquei qual skill usar. Posso ajudar com:
+
+      **Diagnostico:** Metricas, tracking, fadiga, funil, atribuicao, learning phase, overlap, creative eval, LP analysis
+      **Criacao:** Hooks, copy, briefs, angulos, DSL, YouTube scripts
+      **Otimizacao:** Kill/scale, budget, audiencias, bombardment, Google Search
+      **Estrategia:** Funis, economia, readiness, estrutura, research, competitive intel, bidding, Google/YouTube campaigns, Forester scaling
+      **Automacao:** Monitoramento continuo
+      **Operacional:** Compliance gate, scorecards, accountability, pixel setup, BR ops, monitoring setup
+
+      O que voce precisa?
+
+  low_confidence:
+    threshold: 0.70
+    action: "confirm"
+    message: "Entendi que voce quer {{skill}}. Correto?"
+
+  multiple_matches:
+    action: "disambiguate"
+    message: "Encontrei multiplas opcoes. Qual voce prefere?"
+
+# =============================================================================
+# CHANGELOG
+# =============================================================================
+
+changelog:
+  - version: "5.0"
+    date: "2026-03-18"
+    changes:
+      - "Entry point via SKILL.md declared in routing_config"
+      - "log_path migrated from .claude/jarvis/media-buyer-routing.jsonl to workspace path"
+      - "9 NEW semantic routes: research-protocol, competitive-intel, bidding-strategy, page-analyzer, learning-phase-detector, auction-overlap-detector, creative-evaluator, monitoring-setup, scorecard-builder"
+      - "Added operational category with 7 routes (compliance, accountability, pixel-setup, br-ops, monitoring-setup, scorecard)"
+      - "Added routes for pre-existing skills: youtube-ad-scriptwriter, creative-bombardment, google-search-optimizer, google-campaign-architect, youtube-campaign-launcher, forester-scaling-system"
+      - "Routes to ads-traffic-chief REMOVED (agent deprecated)"
+      - "Routes to audit-orchestrator REMOVED (agent deprecated)"
+      - "Fallback route: unmatched -> @ad-midas (concierge model)"
+      - "New metric triggers: learning-phase-violation, overlap-high, emq-low, creative-aging"
+      - "Skill chains updated: launch chain adds research-protocol, bidding-strategy, page-analyzer, compliance-gate, monitoring-setup"
+      - "Optimization chain adds learning-phase-detector and auction-overlap-detector"
+      - "Scaling chain adds learning-phase-detector and auction-overlap-detector as gates"
+      - "Creative refresh chain adds creative-evaluator scoring step"
+  - version: "1.1"
+    date: "2026-02-01"
+    changes:
+      - "Synchronized skill IDs with actual SKILL.md files"
+      - "audience-analyzer -> funnel-analysis"
+      - "youtube-relevance-audit -> attribution-analysis"
+      - "copy-frameworks -> copy-generator"
+      - "youtube-script-builder -> angle-generator"
+      - "email-sequence-builder -> dsl-structure"
+      - "budget-optimizer -> budget-allocation"
+      - "creative-refresh -> audience-expansion"
+      - "hydra-multi-funnel -> scale-readiness-check"
+      - "youtube-launch-protocol -> campaign-structure"
+      - "Updated skill chains to use correct skill IDs"
+      - "Added funnel-analysis and attribution triggers"
+      - "Added dsl_creation chain"

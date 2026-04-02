@@ -1,0 +1,164 @@
+---
+# WEBINAR-SCRIPT.YAML - Webinar Conversion Architecture & Script Framework
+# Purpose: Structure a webinar that educates AND converts, with clear act structure and conversion points
+# Guardian: CMO / Copywriter
+# Timing: FILL after narrative-architecture.yaml and solution-architecture.yaml are complete
+# Framework: Webinar Conversion Framework (Todd Brown Unique Mechanism) + Story Selling
+# Dependency: narrative-architecture.yaml (narrative structure), solution-architecture.yaml (mechanism)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Copywriter"
+  framework: "Todd Brown Unique Mechanism + Webinar Conversion Architecture"
+  notes: |
+    A webinar is NOT a presentation. It is a CONVERSION EVENT disguised
+    as education.
+
+    The structure: Teach something genuinely valuable (70%) while
+    naturally leading to why they need your offer (30%).
+
+    Todd Brown's rule: The webinar must introduce the UNIQUE MECHANISM
+    but not fully teach it. The mechanism is the "what" — the offer is the "how."
+
+    Template structure:
+    - Opening hook (5 min)
+    - Promise + credibility (5 min)
+    - Content (3 big ideas) (30-40 min)
+    - Transition to offer (5 min)
+    - Offer presentation (15-20 min)
+    - Q&A + close (10-15 min)
+
+    RULE: If someone can implement your entire solution from the webinar alone,
+    you taught too much. Teach the WHAT and WHY, sell the HOW.
+# ============================================================================
+# STEP 1: WEBINAR OVERVIEW
+# ============================================================================
+webinar_overview:
+  title: "FILL — Webinar title (use a headline from headlines.yaml)"
+  subtitle: "FILL — Supporting subtitle"
+  duration: "FILL — Total duration (recommended: 60-90 minutes)"
+  format: "FILL — Live / Recorded / Hybrid"
+  platform: "FILL — Zoom / YouTube Live / Custom platform"
+# ============================================================================
+# STEP 2: OPENING HOOK (5 minutes)
+# ============================================================================
+opening_hook:
+  hook_statement: |
+    FILL — Write the first 2-3 sentences of the webinar.
+    Must immediately capture attention and create a "stay" moment.
+    Reference act_01 from narrative-architecture.yaml.
+  credibility_proof: |
+    FILL — Brief credibility (30 seconds).
+    One result, one credential, one reason to listen.
+  promise: |
+    FILL — What will they learn in this webinar?
+    Be specific: "By the end of this 60 minutes, you will know X, Y, and Z."
+  anti_pitch_frame: |
+    FILL — Set the frame: "This is not a pitch. I will teach you [X].
+    At the end, I will show you how we can help if you want to go deeper."
+# ============================================================================
+# STEP 3: CONTENT SECTION (30-40 minutes — 3 Big Ideas)
+# ============================================================================
+content:
+  big_idea_1:
+    title: "FILL — Big Idea 1 title"
+    duration: "FILL — Minutes"
+    teaching_point: |
+      FILL — What is the key insight? What does the audience learn?
+      This should be genuinely valuable — something they can use immediately.
+    connection_to_offer: |
+      FILL — How does this idea naturally lead to needing your offer?
+      (Subtle, not forced. They should think "I need help with this.")
+    story_or_example: "FILL — Real example or story that illustrates this idea"
+  big_idea_2:
+    title: "FILL — Big Idea 2 title"
+    duration: "FILL — Minutes"
+    teaching_point: |
+      FILL — Key insight for idea 2.
+    connection_to_offer: |
+      FILL — Connection to your offer.
+    story_or_example: "FILL — Example or story"
+  big_idea_3:
+    title: "FILL — Big Idea 3 title"
+    duration: "FILL — Minutes"
+    teaching_point: |
+      FILL — Key insight for idea 3.
+      This is typically the MECHANISM reveal — the unique way your system works.
+      Teach the concept, not the implementation.
+    connection_to_offer: |
+      FILL — This should be the strongest connection to your offer.
+      "This is the mechanism. In [offer name], we implement this for you."
+    story_or_example: "FILL — Example or story"
+# ============================================================================
+# STEP 4: TRANSITION TO OFFER (5 minutes)
+# ============================================================================
+transition:
+  bridge_statement: |
+    FILL — The bridge from education to offer.
+    "Now you understand [X, Y, Z]. The question is:
+    do you want to implement this alone, or do you want help?"
+  permission_to_pitch: |
+    FILL — Ask permission to present the offer.
+    "Would it be okay if I showed you how we can help you implement this faster?"
+# ============================================================================
+# STEP 5: OFFER PRESENTATION (15-20 minutes)
+# ============================================================================
+offer_presentation:
+  offer_overview: "FILL — Reference offerbook.yaml — core offer in one sentence"
+  deliverables_walkthrough: "FILL — Walk through each deliverable (from deliverables.yaml)"
+  bonuses: "FILL — Present bonus stack with individual value"
+  price_anchoring: "FILL — Reference pricing-anchoring.yaml — stack value vs price"
+  guarantee: "FILL — Reference guarantee-design.yaml"
+  scarcity: "FILL — Reference scarcity-urgency.yaml"
+  cta: "FILL — Exact call to action (what to click, where to go)"
+# ============================================================================
+# STEP 6: Q&A + CLOSE (10-15 minutes)
+# ============================================================================
+qa_close:
+  prepared_questions:
+    q_1: "FILL — Pre-prepared question (common objection disguised as question)"
+    a_1: "FILL — Answer that reinforces the offer"
+    q_2: "FILL — Second prepared question"
+    a_2: "FILL — Answer"
+    q_3: "FILL — Third prepared question"
+    a_3: "FILL — Answer"
+  final_close: |
+    FILL — Final statement before ending.
+    Restate the promise, the urgency, and the CTA.
+    "If [problem] resonates with you, [offer] is the solution. Link is [X]. We start [date]."
+# ============================================================================
+# STEP 7: SCORING & DIAGNOSTIC
+# ============================================================================
+webinar_strength_score:
+  hook_power: "FILL 1-10"
+  content_value: "FILL 1-10"
+  transition_smoothness: "FILL 1-10"
+  offer_clarity: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Weak hook, content is generic, transition feels forced, offer is confusing."
+    range_4_6: "Decent hook, content has some value, transition works but is obvious, offer is clear but not compelling."
+    range_7_8: "Strong hook with retention, content is genuinely valuable, transition feels natural, offer is clear and desirable."
+    range_9_10: "Hook is unforgettable, content changes their thinking, they barely notice the transition, offer feels like the obvious next step."
+evidence:
+  data_points: "FILL — Previous webinar data (attendance, stay rate, conversion)"
+  sources: "FILL — List sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  strongest_section: "FILL — Which section is most powerful?"
+  weakest_section: "FILL — Which section needs work?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "narrative-architecture.yaml"
+    - "solution-architecture.yaml"
+    - "offerbook.yaml"
+  feeds_into:
+    - "conversion-funnel.yaml"
+    - "analytics.yaml"
+  related:
+    - "headlines.yaml"
+    - "objections.yaml"
+    - "guarantee-design.yaml"

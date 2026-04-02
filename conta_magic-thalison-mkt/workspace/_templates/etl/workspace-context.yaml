@@ -1,0 +1,15 @@
+---
+metadata:
+  schema: "etl.workspace_context"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  generated_at: "FILL_THIS"
+  business_slug: "FILL_THIS"
+workspace_context:
+  preflight_status: "FILL_THIS"
+  output_route:
+    mode: "FILL_THIS"
+    root: "FILL_THIS"
+  templates_available: []
+  blockers: []
+  warnings: []

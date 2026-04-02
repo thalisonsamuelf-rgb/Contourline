@@ -1,0 +1,143 @@
+---
+# PRICING-ANCHORING.YAML - Price Psychology & Anchoring Strategy
+# Purpose: Design the pricing presentation that makes your price feel like a steal
+# Guardian: CMO / Offer Engineer
+# Timing: FILL after value-equation.yaml and offerbook.yaml are complete
+# Framework: Hormozi Grand Slam Pricing + Price Anchoring Psychology + Decoy Effect
+# Dependency: value-equation.yaml (value quantification), offerbook.yaml (offer components)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Offer Engineer"
+  framework: "Hormozi Grand Slam Pricing + Price Anchoring + Decoy Effect"
+  notes: |
+    Price is not a number. It is a FEELING.
+
+    The same price feels expensive or cheap depending on WHAT COMES BEFORE IT.
+    This is anchoring — the first number someone sees becomes their reference point.
+
+    Hormozi's pricing rule: Stack the VALUE first (to absurd levels),
+    then reveal the price. The gap between perceived value and actual price
+    creates the "this is a steal" feeling.
+
+    RULE: If you have to justify your price with logic, your anchoring is weak.
+    Strong anchoring makes the price feel self-evidently fair.
+
+    This template designs the entire pricing presentation — not just the number.
+# ============================================================================
+# STEP 1: VALUE STACK
+# ============================================================================
+value_stack:
+  core_offer:
+    name: "FILL — Core offer name"
+    individual_value: "FILL — What would this cost if purchased separately?"
+    justification: "FILL — How did you arrive at this value?"
+  bonus_1:
+    name: "FILL — Bonus 1 name"
+    individual_value: "FILL — Standalone value"
+    justification: "FILL — Why this value?"
+  bonus_2:
+    name: "FILL — Bonus 2 name"
+    individual_value: "FILL — Standalone value"
+    justification: "FILL — Why this value?"
+  bonus_3:
+    name: "FILL — Bonus 3 name"
+    individual_value: "FILL — Standalone value"
+    justification: "FILL — Why this value?"
+  total_stacked_value: "FILL — Sum of all individual values"
+  actual_price: "FILL — What you actually charge"
+  value_to_price_ratio: "FILL — Stacked value / actual price (target: 10x+)"
+# ============================================================================
+# STEP 2: PRICE ANCHORING SEQUENCE
+# ============================================================================
+anchoring_sequence:
+  anchor_1_industry_cost: |
+    FILL — What does the INDUSTRY alternative cost?
+    "A consultant who does this charges $X/hour. Over 3 months, that is $Y."
+  anchor_2_diy_cost: |
+    FILL — What does it cost to figure this out ALONE?
+    "The average entrepreneur spends $X and Y months trying to solve this."
+  anchor_3_cost_of_inaction: |
+    FILL — What does it cost to do NOTHING?
+    "Every month you wait, you lose $X in potential revenue."
+  anchor_4_stacked_value: |
+    FILL — Present the total stacked value.
+    "The total value of everything you get is $X."
+  price_reveal: |
+    FILL — Reveal the actual price.
+    "You are not paying $[stacked value]. You are not even paying $[half].
+    Your investment today is just $[actual price]."
+  price_per_day: "FILL — Break price into daily cost. 'That is less than $X per day.'"
+# ============================================================================
+# STEP 3: PRICING TIERS (if applicable)
+# ============================================================================
+pricing_tiers:
+  has_tiers: "FILL — Yes/No"
+  tier_1_basic:
+    name: "FILL — Tier name"
+    price: "FILL — Price"
+    includes: "FILL — What is included"
+    purpose: "FILL — Why does this tier exist? (anchor / entry / decoy)"
+  tier_2_recommended:
+    name: "FILL — Tier name (this should be the one you WANT them to buy)"
+    price: "FILL — Price"
+    includes: "FILL — What is included"
+    purpose: "FILL — Why is this the best value?"
+    highlight: true
+  tier_3_premium:
+    name: "FILL — Tier name"
+    price: "FILL — Price"
+    includes: "FILL — What is included"
+    purpose: "FILL — Why does this tier exist? (aspiration / decoy / true premium)"
+  decoy_strategy: |
+    FILL — Which tier is the decoy and why?
+    The decoy makes the recommended tier look like the obvious choice.
+    Classic: Make Tier 1 close to Tier 2 in price but far in value.
+# ============================================================================
+# STEP 4: PAYMENT PSYCHOLOGY
+# ============================================================================
+payment_psychology:
+  payment_options:
+    option_1: "FILL — Full payment (with discount?)"
+    option_2: "FILL — Installment plan (how many? what amount?)"
+    option_3: "FILL — Trial or starter option (if applicable)"
+  friction_reducers:
+    reducer_1: "FILL — What reduces payment anxiety? (guarantee from guarantee-design.yaml)"
+    reducer_2: "FILL — What builds trust at checkout? (trust badges, security, testimonials)"
+    reducer_3: "FILL — What creates urgency? (from scarcity-urgency.yaml)"
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+pricing_strength_score:
+  value_perception: "FILL 1-10"
+  anchoring_effectiveness: "FILL 1-10"
+  tier_design: "FILL 1-10"
+  payment_ease: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "No value stack, price presented without context, no tiers, high friction checkout."
+    range_4_6: "Basic value stack, some anchoring but weak, tiers exist but no clear decoy, standard checkout."
+    range_7_8: "Strong value stack (5x+), multi-anchor sequence, clear decoy strategy, low-friction checkout with options."
+    range_9_10: "Masterful anchoring (10x+ value/price), every anchor builds on previous, decoy makes choice obvious, payment feels like a no-brainer."
+evidence:
+  data_points: "FILL — Conversion data at different price points (if available)"
+  sources: "FILL — List sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  price_perception: "FILL — Do customers feel the price is fair, cheap, or expensive?"
+  highest_leverage_improvement: "FILL — What single change would most improve price perception?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "value-equation.yaml"
+    - "offerbook.yaml"
+  feeds_into:
+    - "sales-page.yaml"
+    - "webinar-script.yaml"
+    - "monetization-strategy.yaml"
+  related:
+    - "guarantee-design.yaml"
+    - "scarcity-urgency.yaml"
+    - "competitor-analysis.yaml"

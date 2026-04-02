@@ -1,0 +1,295 @@
+---
+# COPY-SWIPES.YAML - Proven Headlines, Bullets, Copy Templates
+# PURPOSE: Copywriter cheat sheet (copy-paste starting points)
+# Guardian: CMO / Copywriter / Marketing
+# Timing: FILL NOW with proven copy + UPDATE after each test
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  note: "This is YOUR copy library. Updated after each campaign test."
+# ============================================================================
+# HEADLINES BY AWARENESS LEVEL
+# ============================================================================
+headlines_level_1_unaware:
+  theme: "Problem establishment (they don't know they have problem)"
+  template_1: |
+    "Why [problem perception] is ACTUALLY [deeper truth]
+    — and what [percentage]% of [audience] don't realize"
+  template_2: |
+    "[X people] are [wrong behavior] when trying to [goal].
+    Here's why."
+  template_3: |
+    "The [problem] epidemic nobody's talking about
+    (And why it's about to change everything)"
+  proven_examples:
+    - "FILL THIS (headline that worked)"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+headlines_level_2_problem_aware:
+  theme: "Solution type introduction (they know problem, not solution type)"
+  template_1: |
+    "The [Solution Type] method that [result]
+    — without [common objection]"
+  template_2: |
+    "How [type of person] finally solved [problem]
+    using [solution approach]"
+  template_3: |
+    "[Specific result] in [timeframe] using [your method]
+    (Not [competitor method])"
+  proven_examples:
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+headlines_level_3_solution_aware:
+  theme: "Differentiation (they know solutions exist, not yours)"
+  template_1: |
+    "Why [generic solution] fails at [specific problem]
+    — and what works instead"
+  template_2: |
+    "The [Your Mechanism] Method that [result]
+    — different from [competitor approach]"
+  template_3: |
+    "[Your approach] vs traditional [competitor approach]:
+    Here's what changed"
+  proven_examples:
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+headlines_level_4_product_aware:
+  theme: "Objection crushing (they know you, unsure if for them)"
+  template_1: |
+    "Still worried this won't work?
+    Here's why [type of person] succeeded (even after [past failure])"
+  template_2: |
+    "The only [type] that [specific result]
+    — because it fixes [mechanism]"
+  template_3: |
+    "Skeptical? Here's proof [X] people in your situation
+    got [result]"
+  proven_examples:
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+headlines_level_5_most_aware:
+  theme: "Urgency/reason to act NOW (they're ready, need push)"
+  template_1: |
+    "Spots close [day/date]. Last chance at [price/bonus]"
+  template_2: |
+    "[N] people just joined. Room for [X] more before door closes"
+  template_3: |
+    "This price never comes back. New members pay [higher price]"
+  proven_examples:
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# LEAD PARAGRAPHS (What comes after headline)
+# ============================================================================
+lead_paragraphs:
+  problem_validation: |
+    FILL THIS - Opening that validates their problem
+    Example: "You know that feeling when you've consumed 200 hours of content
+    but can't seem to execute? That suffocating feeling of knowing but not doing?"
+  big_contrast: |
+    FILL THIS - Shows contrast between worlds
+    Example: "While you're still trying to figure out your next move,
+    someone is building their second business with the system you're missing."
+  surprising_insight: |
+    FILL THIS - Unexpected fact or pattern
+    Example: "Here's what the top 2% of entrepreneurs know that others don't:
+    Information is abundant. System is rare."
+  story_opening: |
+    FILL THIS - Opens with story hook
+    Example: "Three years ago, João was exactly where you are now.
+    Burned out from 5 projects, no direction, consuming constantly.
+    Then everything changed..."
+  direct_promise: |
+    FILL THIS - Goes straight to promise
+    Example: "Your experience + our system + IA = You finally become
+    who you always knew you could be."
+  status: "INCOMPLETE"
+# ============================================================================
+# POWER BULLETS (Benefit statements that convert)
+# ============================================================================
+power_bullets:
+  format_1_result_driven: |
+    "How to [desirable result] in [timeframe]
+    without [common barrier]"
+  format_2_mechanism_revealed: |
+    "The [mechanism] that [type of person] uses to [result]"
+  format_3_objection_crusher: |
+    "Why [common belief] is backwards — and what works instead"
+  format_4_specificity: |
+    "[Specific number] the [specific metric] of [type of person]
+    in [timeframe]"
+  format_5_permission: |
+    "Permission to [what they secretly want but think they shouldn't]"
+  proven_examples:
+    - "FILL THIS (bullet that converted)"
+    - "FILL THIS"
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# EMAIL SUBJECT LINES (By email position in sequence)
+# ============================================================================
+email_subject_lines:
+  email_1_open: |
+    "FILL THIS - Subject line for email 1 (establish relevance)"
+    Example: "I thought of you when I saw this..."
+  email_2_value: |
+    "FILL THIS - Subject line for email 2 (deliver value/insight)"
+    Example: "The real reason most [attempts] fail"
+  email_3_proof: |
+    "FILL THIS - Subject line for email 3 (show social proof)"
+    Example: "Check what João did in 30 days"
+  email_4_objection: |
+    "FILL THIS - Subject line for email 4 (crush objection)"
+    Example: "Still skeptical? Here's what happened with doubters"
+  email_5_offer: |
+    "FILL THIS - Subject line for email 5 (present offer)"
+    Example: "Limited: Founding price + [bonus]"
+  email_6_deadline: |
+    "FILL THIS - Subject line for email 6 (urgency)"
+    Example: "Last day: Price rises tomorrow"
+  status: "INCOMPLETE"
+# ============================================================================
+# CTA (Call-To-Action) VARIATIONS
+# ============================================================================
+call_to_action:
+  soft_cta: |
+    "FILL THIS - Low pressure CTA"
+    Example: "See if this is right for you"
+  medium_cta: |
+    "FILL THIS - Medium urgency"
+    Example: "Claim your spot"
+  strong_cta: |
+    "FILL THIS - High urgency/scarcity"
+    Example: "Join before spots close"
+  curiosity_cta: |
+    "FILL THIS - Curiosity-driven"
+    Example: "See what changed for members"
+  guarantee_cta: |
+    "FILL THIS - Risk reversal"
+    Example: "Try risk-free with 30-day guarantee"
+  status: "INCOMPLETE"
+# ============================================================================
+# OPENING HOOKS (First 3 seconds)
+# ============================================================================
+opening_hooks:
+  question_hook: |
+    "FILL THIS - Opens with provocative question"
+    Example: "What if everything you learned about scaling was wrong?"
+  statement_hook: |
+    "FILL THIS - Bold statement"
+    Example: "Most entrepreneurs fail not because they're not smart.
+    They fail because they're following the wrong system."
+  story_hook: |
+    "FILL THIS - Personal story opening"
+    Example: "I was 47 when I realized I'd wasted 20 years."
+  data_hook: |
+    "FILL THIS - Surprising statistic"
+    Example: "80% of what you learned doesn't matter."
+  empathy_hook: |
+    "FILL THIS - Validation of their feeling"
+    Example: "That crushing weight of knowing you could do more?
+    You're not alone. And it's not your fault."
+  status: "INCOMPLETE"
+# ============================================================================
+# POSITIONING SWIPES (Short positioning statements)
+# ============================================================================
+positioning_statements:
+  what_we_are: |
+    "FILL THIS - Simple definition"
+    Example: "Não é curso. É sistema operacional."
+  what_we_arent: |
+    "FILL THIS - What we explicitly are NOT"
+    Example: "Não é coaching genérico. Não é ferramenta técnica."
+  who_its_for: |
+    "FILL THIS - Exact avatar statement"
+    Example: "Para empreendedor digital frustrado que já tentou de tudo."
+  who_its_not_for: |
+    "FILL THIS - Who should NOT buy"
+    Example: "Se você quer fórmula mágica, procure outro."
+  promise_statement: |
+    "FILL THIS - Core promise in 1 sentence"
+    Example: "Sua experiência + nosso sistema + IA = você finalmente se torna
+    quem sempre soube que podia ser."
+  status: "INCOMPLETE"
+# ============================================================================
+# COMPARISON COPY (Vs alternatives)
+# ============================================================================
+comparisons:
+  vs_courses: |
+    FILL THIS - How you're different from generic courses
+    Template: "Cursos ensinam [what]. Nós entregamos [what].
+    Diferença: [mechanism]"
+  vs_coaching: |
+    FILL THIS - How you're different from coaching
+    Template: "Coaching custa [price] 1:1. Nós custamos [price]
+    com comunidade."
+  vs_diy: |
+    FILL THIS - Why DIY won't work
+    Template: "Aprende sozinho? [Risk/consequence]. Com sistema: [result]"
+  vs_competitor_x: |
+    FILL THIS - Direct competitor comparison
+    Template: "[Competitor] faz [approach]. Nós fazemos [approach].
+    Por que importa: [diferença]"
+  status: "INCOMPLETE"
+# ============================================================================
+# GUARANTEE STATEMENTS
+# ============================================================================
+guarantee_copy:
+  guarantee_type: "FILL THIS (money-back / satisfaction / results)"
+  guarantee_statement: |
+    FILL THIS - Your guarantee promise
+    Example: "Anti-Tédio: Se não amar, devolvemos 100% em 30 dias"
+  guarantee_rationale: |
+    FILL THIS - Why you can make this guarantee
+    Example: "Fazemos essa promessa porque sabemos que sistema funciona."
+  how_to_claim: |
+    FILL THIS - Easy process to get refund
+    Example: "Um email. Sem perguntas. Sem burocracia."
+  status: "INCOMPLETE"
+# ============================================================================
+# USAGE INSTRUCTIONS
+# ============================================================================
+usage_instructions: |
+  1. FILL THIS FILE with proven copy from your campaigns
+  2. For each section:
+     - Start with TEMPLATES (how to structure)
+     - Then add PROVEN EXAMPLES (what actually worked)
+  3. When copywriter needs headline:
+     - They read templates first
+     - They see proven examples
+     - They write new version using pattern
+  4. After campaign runs:
+     - Which headline won?
+     - Add it to "proven_examples"
+  5. This file becomes your SWIPE FILE
+updating_process: |
+  WEEKLY:
+    - What copy outperformed this week?
+    - Add to proven_examples
+    - Note: Subject line, open rate, context
+
+  MONTHLY:
+    - Review all proven examples
+    - Do patterns emerge?
+    - Are certain templates underperforming?
+tracking_what_works: |
+  For each proven example, track:
+  - Where it was used (email, ads, landing page)
+  - Metric it drove (open rate, click rate, conversion)
+  - Audience it worked for (archetype, awareness level)
+  - Context (what offer, what season)
+---
+metadata:
+  version: "1.0"
+  status: "INCOMPLETE"
+  note: "This file is your copywriter's best friend. Fill it constantly."
+  last_updated: FILL_THIS
+  product_name: FILL_THIS

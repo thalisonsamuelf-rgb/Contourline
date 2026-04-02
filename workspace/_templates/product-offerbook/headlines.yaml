@@ -1,0 +1,392 @@
+---
+# HEADLINES.YAML - Proven headlines by awareness level & archetype
+# Purpose: Headline templates for sales pages, ads, emails, landing pages
+# Guardian: Copywriter / Marketing / Ads Manager
+# Timing: FILL BEFORE WRITING - Use as copy-starting points
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Copywriter"
+  notes: |
+    This file is your HEADLINE SWIPE FILE by awareness level.
+    Not generic formulas - actual headline templates.
+    Use for: Sales pages, ads, emails, landing pages.
+# ============================================================================
+# SECTION 1: HEADLINES BY AWARENESS LEVEL
+# ============================================================================
+headlines_by_awareness:
+  # Different awareness levels need different headlines
+  level_1_unaware:
+    # Prospect doesn't know they have a problem
+    # Headlines should REVEAL the problem
+    purpose: "Make them aware a problem exists"
+    formula_1: "Why [Common assumption] is actually [Reality]"
+    example_1: |
+      "Why Working Harder Actually Makes You Poorer"
+      "Why 90% of Digital Products Fail (Even Good Ones)"
+      "Why Your Productivity System Is Making You Exhausted"
+    formula_2: "The [Unexpected thing] Nobody Tells You About [Topic]"
+    example_2: |
+      "The Hidden Reason 94% of Entrepreneurs Feel Stuck (It's Not What You Think)"
+      "The $10K Mistake Every Digital Creator Makes Without Realizing"
+      "The One Thing That Sabotages Your Business Growth"
+    formula_3: "What [Successful people] Do That [Common people] Don't"
+    example_3: |
+      "What Millionaire Founders Do That Most Entrepreneurs Miss"
+      "The System Successful People Use (That Schools Never Teach)"
+      "How Top 1% Entrepreneurs Think Differently About Systems"
+    formula_4: "The Problem With [Common solution] (And What Works Instead)"
+    example_4: |
+      "The Problem With Motivation (And Why Systems Work Instead)"
+      "The Trap With Hustle Culture (And The Real Answer)"
+      "Why Your Productivity App Is Failing (And What Actually Works)"
+    formula_5: "[Number]% of [Group] Don't Know [Surprising fact]"
+    example_5: |
+      "97% of Entrepreneurs Don't Know They're Solving the Wrong Problem"
+      "87% of Digital Creators Optimize for the Wrong Metric"
+      "92% of Course Creators Miss This Critical Element"
+    your_level_1_headlines:
+      - "headline_1: [YOUR HEADLINE]"
+      - "headline_2: [YOUR HEADLINE]"
+      - "headline_3: [YOUR HEADLINE]"
+  level_2_problem_aware:
+    # Prospect knows they have a problem
+    # Headlines should INTRODUCE solution type
+    purpose: "Make them aware your solution type exists"
+    formula_1: "The [Solution type] That [Specific result] Without [Common fear]"
+    example_1: |
+      "The Scaling System That 3x's Revenue Without Burnout"
+      "The Selling Framework That Works Without Ads or Expensive Traffic"
+      "The Email Strategy That Converts Without Being Pushy"
+    formula_2: "How to [Desired result] Using [Unique approach/mechanism]"
+    example_2: |
+      "How to Earn $100K/Month Using Your Email List (Not Ads)"
+      "How to Scale Without Chaos Using the 4-Module Framework"
+      "How Top Creators Automate Sales Without Losing Personal Touch"
+    formula_3: "[Result] in [Timeframe] With [Specific mechanism]"
+    example_3: |
+      "3x Your Revenue in 6 Months Using the Systematic Selling Method"
+      "Cut Your Work Hours in Half Without Losing Income"
+      "Build 6-Figure Product in 90 Days Using This Framework"
+    formula_4: "The [Mechanism] That [Group] Uses to [Result]"
+    example_4: |
+      "The Systems Framework That Successful Founders Use to Scale"
+      "The Positioning Strategy That Premium Brands Use to Charge 3x More"
+      "The Launch Method That Top Course Creators Use for 6-Figure Launches"
+    formula_5: "[Negative] is Easier Than [Positive] (Here's Why + How to Fix It)"
+    example_5: |
+      "Scaling is Harder Than Building (Here's the Selling System to Fix It)"
+      "Staying Busy is Easier Than Getting Strategic (Here's How to Flip It)"
+    your_level_2_headlines:
+      - "headline_1: [YOUR HEADLINE]"
+      - "headline_2: [YOUR HEADLINE]"
+      - "headline_3: [YOUR HEADLINE]"
+  level_3_solution_aware:
+    # Prospect knows solutions exist
+    # Headlines should DIFFERENTIATE your solution
+    purpose: "Make them aware YOUR solution is different"
+    formula_1: "Why [Generic solution] Fails (And What Actually Works)"
+    example_1: |
+      "Why Most Email Systems Fail (And How We're Different)"
+      "Why Scaling Courses Lead to Burnout (And Our System Avoids It)"
+      "Why Most Funnels Underperform (And The Mechanism That Changes That)"
+    formula_2: "[X company type] Gets [Result], Here's How We're Different"
+    example_2: |
+      "Other Agencies Promise 2x Growth, We Show the System for 3x"
+      "Competitors Teach Strategy, We Teach Implementation"
+      "Most Courses Give Info, We Give Transformation"
+    formula_3: "The [Unique Mechanism] That [Competitor] Doesn't Use"
+    example_3: |
+      "The Awareness-Based Positioning That Other Experts Miss"
+      "The 4-Part Selling System Most Course Creators Never Use"
+      "The Funnel Optimization Method That Competitors Don't Know"
+    formula_4: "[Result] Using [Your unique approach] (Not [Common approach])"
+    example_4: |
+      "Scale to $10M Using Systems (Not Hiring 100 People)"
+      "Sell Products Without Ads (Using This Email Method)"
+      "Build Authority Without Personal Brand (Using This Framework)"
+    formula_5: "The [Mechanism] Most [Experts] Get Wrong"
+    example_5: |
+      "The Pricing Strategy Most Consultants Get Wrong"
+      "The Funnel Structure Most Marketers Get Wrong"
+      "The Launch Sequence Most Course Creators Get Wrong"
+    your_level_3_headlines:
+      - "headline_1: [YOUR HEADLINE]"
+      - "headline_2: [YOUR HEADLINE]"
+      - "headline_3: [YOUR HEADLINE]"
+  level_4_product_aware:
+    # Prospect knows YOUR product exists
+    # Headlines should OVERCOME OBJECTIONS (mainly price/skepticism)
+    purpose: "Make them convinced investment is worth it"
+    formula_1: "The [X] Investment That Pays for Itself in [Timeframe]"
+    example_1: |
+      "The $2K Investment That Pays for Itself in First 2 Weeks"
+      "The Course That Returns 10x Investment in First 90 Days"
+      "The Program That Covers Its Cost in One Client"
+    formula_2: "[Specific objection] Overcome (Here's How)"
+    example_2: |
+      "Too Expensive? Here's Why It's The Cheapest Option Available"
+      "Skeptical About Results? Here's 47 Proof Points"
+      "Worried It Won't Work for Your Niche? Here's Proof in Your Industry"
+    formula_3: "[Stat/proof] Proves This Investment is Worth Every Dollar"
+    example_3: |
+      "97% Success Rate Proves This Investment Changes Lives"
+      "1,000+ Case Studies Show This Works Across Every Niche"
+      "$3M in Student Revenue Last Year Speaks for Itself"
+    formula_4: "Finally, A [Product type] Worth Paying For"
+    example_4: |
+      "Finally, A Scaling Program That Actually Delivers"
+      "Finally, A Course That Doesn't Waste Your Time"
+      "Finally, A System That Works Without Hype"
+    formula_5: "[Time to result] or Your Money Back"
+    example_5: |
+      "Results in 60 Days or Full Refund"
+      "Your First Client Pays for It or We Return Your Money"
+    your_level_4_headlines:
+      - "headline_1: [YOUR HEADLINE]"
+      - "headline_2: [YOUR HEADLINE]"
+      - "headline_3: [YOUR HEADLINE]"
+  level_5_most_aware:
+    # Ready to buy, just needs push
+    # Headlines should CREATE URGENCY
+    purpose: "Make them act NOW instead of later"
+    formula_1: "Last Chance: [Limited resource]"
+    example_1: |
+      "Last Cohort This Year: Only 20 Spots Remaining"
+      "Early Bird Pricing Closes Friday"
+      "Last Enrollment: Closes This Month"
+    formula_2: "[Consequence] of waiting"
+    example_2: |
+      "Every Month You Wait Costs You $X"
+      "You Could Have Made This Back 3 Times Over By Next Year"
+      "Another Year at $[Current income] — Or Start Now?"
+    formula_3: "[Benefit] You Get if You Act Today"
+    example_3: |
+      "Enroll Today + Get $1K in Bonuses"
+      "Join This Week + Get Lifetime Payment Plan"
+      "Sign Up Now + I'll Do First Session With You"
+    formula_4: "[Social proof] Just Joined"
+    example_4: |
+      "3 People Joined Yesterday - Don't Miss Out"
+      "We're At 85% Capacity - Final Spots Going Fast"
+      "Spots Getting Filled Daily - Join the 847 Who Already Committed"
+    formula_5: "Begin [Result] Right Now"
+    example_5: |
+      "Begin Your Transformation Today"
+      "Start Building Your Asset Now"
+      "Join the Winners Today"
+    your_level_5_headlines:
+      - "headline_1: [YOUR HEADLINE]"
+      - "headline_2: [YOUR HEADLINE]"
+      - "headline_3: [YOUR HEADLINE]"
+# ============================================================================
+# SECTION 2: HEADLINES BY ARCHETYPE
+# ============================================================================
+headlines_by_archetype:
+  # Different types of people need different angles
+  archetype_1_solo_entrepreneur:
+    # Solopreneurs, freelancers, independent operators
+    angle: "Freedom, control, not being dependent on boss/client"
+    headline_1: "How to Build a $100K Business Working 20 Hours/Week"
+    headline_2: "The System That Lets You Say 'No' to Low-Paying Clients"
+    headline_3: "Free Yourself From the Feast/Famine Cycle"
+    headline_4: "Build a Business That Doesn't Depend on You Working"
+  archetype_2_agency_owner:
+    # Agency owners, service providers
+    angle: "Scaling without losing quality, delegation, profit margins"
+    headline_1: "Scale Your Agency to $1M Without Hiring 10 People"
+    headline_2: "The Hybrid Model That Increases Revenue AND Profit Margin"
+    headline_3: "Stop Trading Time for Money - Systematize Your Agency"
+    headline_4: "Build an Agency You Can Actually Sell"
+  archetype_3_coach_consultant:
+    # Coaches, consultants, subject matter experts
+    angle: "Moving from 1:1 to scalable, impact + income"
+    headline_1: "Scale Your Coaching Without Losing the Personal Touch"
+    headline_2: "Turn 1:1 Coaching Into a $500K/Year Group Program"
+    headline_3: "Help More People AND Make More Money"
+    headline_4: "The Hybrid Offer That Works for Service Providers"
+  archetype_4_course_creator:
+    # Online course creators, info product creators
+    angle: "Selling courses that actually sell, not building a course no one buys"
+    headline_1: "How to Sell a Course to People Who Actually Implement It"
+    headline_2: "The Selling System Every Course Creator Is Missing"
+    headline_3: "From 0 to 6-Figure Course Launch in 90 Days"
+    headline_4: "Why Your Course Isn't Selling (And How to Fix It)"
+  archetype_5_founder:
+    # Company founders, CEOs, business builders
+    angle: "Scale, systems, delegation, growth, building an asset"
+    headline_1: "How Founders Scale to $10M Without Burning Out"
+    headline_2: "The Operating System Top Founders Use"
+    headline_3: "Build a Company That Doesn't Need You"
+    headline_4: "From Startup to Scalable Business: The Framework"
+  archetype_6_service_provider:
+    # Accountants, lawyers, consultants, professionals
+    angle: "Modernizing their practice, attracting quality clients"
+    headline_1: "How Smart Professionals Are Doubling Their Income"
+    headline_2: "The Client Attraction System for Professional Services"
+    headline_3: "Stop Competing on Price - Attract Premium Clients"
+  your_archetypes: "[ADD YOUR ARCHETYPES AND HEADLINES]"
+# ============================================================================
+# SECTION 3: HEADLINES BY CHANNEL
+# ============================================================================
+headlines_by_channel:
+  # Same headline, different channels, different optimization
+  channel_sales_page:
+    # On-page: longer, more specific, education-focused
+    characteristics: "Longer, more specific, educational tone"
+    length: "8-12 words"
+    focus: "Promise + differentiation"
+    example: |
+      "The Systems Framework That Lets Entrepreneurs Work Less and Earn More"
+  channel_ads:
+    # Facebook, Instagram, TikTok: shorter, curiosity-focused
+    characteristics: "Shorter, curiosity-hook, pattern interrupt"
+    length: "4-8 words"
+    focus: "Stop scroll + curiosity"
+    example: |
+      "Stop Working 60+ Hours (Here's the System)"
+      "The Framework Successful Founders Won't Share"
+  channel_email_subject:
+    # Email subject lines: personalization, curiosity, relevant
+    characteristics: "Personal, curious, clickable"
+    length: "4-6 words"
+    focus: "Open rate"
+    example: |
+      "I was skeptical too (then I tried this)"
+      "The framework that changed everything"
+      "You've been doing this wrong"
+  channel_google_ads:
+    # Google search ads: search-intent matching
+    characteristics: "Match search query, specific benefit"
+    length: "8-10 words"
+    focus: "Match intent + benefit"
+    example: |
+      "Learn the System Top Founders Use to Scale"
+  channel_linkedin_post:
+    # Professional, story-focused, education
+    characteristics: "Personal story + insight + invitation"
+    length: "10-15 words"
+    focus: "Engagement + value"
+    example: |
+      "After 15 Years, I Finally Cracked the Scaling Code"
+# ============================================================================
+# SECTION 4: HEADLINE TESTING FRAMEWORK
+# ============================================================================
+headline_testing:
+  # How to systematically test headlines
+  test_1:
+    element: "Sales page headline"
+    version_a: "[CURRENT HEADLINE]"
+    version_b: "[ALTERNATE HEADLINE]"
+    winner: "TBD"
+    conversion_a: "X%"
+    conversion_b: "X%"
+  test_2:
+    element: "Ad headline"
+    version_a: "[CURRENT]"
+    version_b: "[ALTERNATE]"
+    winner: "TBD"
+    ctr_a: "X%"
+    ctr_b: "X%"
+  test_3:
+    element: "Email subject line"
+    version_a: "[CURRENT]"
+    version_b: "[ALTERNATE]"
+    winner: "TBD"
+    open_rate_a: "X%"
+    open_rate_b: "X%"
+  winning_headlines:
+    # Track your winners
+    - "Headline_1: [BEST PERFORMING]"
+    - "Headline_2: [BEST PERFORMING]"
+    - "Headline_3: [BEST PERFORMING]"
+# ============================================================================
+# SECTION 5: HEADLINE PRINCIPLES
+# ============================================================================
+headline_principles:
+  principle_1:
+    title: "Specific > Generic"
+    bad: "Learn How to Grow Your Business"
+    good: "3x Your Revenue in 12 Months Using These 4 Systems"
+  principle_2:
+    title: "Transformation > Feature"
+    bad: "A Course About Selling"
+    good: "From Struggling to Sell to 6-Figure Sales in 90 Days"
+  principle_3:
+    title: "Unique Mechanism > Generic Benefit"
+    bad: "Make More Money Fast"
+    good: "The Email System That Converts Cold List Into Paying Customers"
+  principle_4:
+    title: "Curiosity > Obvious"
+    bad: "Click Here to Learn More"
+    good: "The One Thing Successful Founders Do (That You're Missing)"
+  principle_5:
+    title: "Relevant > Clever"
+    bad: "Mind-Blowing Business Secrets Revealed!"
+    good: "How to Stop Losing Customers to Competitors (And Keep Them)"
+  principle_6:
+    title: "Specificity > Vague"
+    bad: "Amazing Results"
+    good: "Average Student Goes From $80K to $240K in Year One"
+# ============================================================================
+# SECTION 6: HEADLINE SWIPES (Real Examples)
+# ============================================================================
+proven_headlines_database:
+  # Real headlines that have worked (customize for your product)
+  swiped_1:
+    original: "[ORIGINAL HEADLINE]"
+    source: "[WHERE FOUND]"
+    why_works: "[WHY THIS HEADLINE IS POWERFUL]"
+    your_version: "[CUSTOMIZE FOR YOUR PRODUCT]"
+  swiped_2:
+    original: "[ORIGINAL]"
+    source: "[SOURCE]"
+    why_works: "[WHY WORKS]"
+    your_version: "[YOUR VERSION]"
+# ============================================================================
+# CHECKLIST: HEADLINES COMPLETENESS
+# ============================================================================
+completion_checklist:
+  - "[ ] Level 1 headlines (problem reveal) drafted"
+  - "[ ] Level 2 headlines (solution intro) drafted"
+  - "[ ] Level 3 headlines (differentiation) drafted"
+  - "[ ] Level 4 headlines (objection overcome) drafted"
+  - "[ ] Level 5 headlines (urgency) drafted"
+  - "[ ] Headlines by archetype drafted (your archetypes)"
+  - "[ ] Headlines by channel drafted (sales page, ads, email, etc)"
+  - "[ ] Testing framework set up"
+  - "[ ] Winning headlines tracked"
+  - "[ ] All headlines follow 6 principles"
+# ============================================================================
+# TEMPLATE NOTES FOR USERS
+# ============================================================================
+template_notes: |
+  This file is your HEADLINE SWIPE FILE.
+  Use it before writing any copy.
+
+  DO:
+  ✅ Use formulas as starting points (customize for YOUR offer)
+  ✅ Test multiple headlines (never assume one is best)
+  ✅ Track winners (use them everywhere)
+  ✅ Match headline to awareness level of traffic
+  ✅ Be specific (numbers, timelines, mechanisms)
+
+  DON'T:
+  ❌ Use generic headlines ("Click Here")
+  ❌ Use vague claims ("Amazing Results")
+  ❌ Use same headline everywhere (customize by channel)
+  ❌ Skip testing (always test)
+
+  MOST IMPORTANT:
+  Headline is 80% of copy performance.
+  Get headline right, conversion skyrockets.
+  Get it wrong, nothing else matters.
+
+  Spend 30% of copy time on headlines.
+  Test continuously.
+  Winners live, losers die.
+
+  This is your SYSTEM for headline success.

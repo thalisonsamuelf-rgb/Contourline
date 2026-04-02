@@ -1,0 +1,239 @@
+---
+# NARRATIVE-ARCHITECTURE.YAML - The Story That Sells (Story Selling Framework)
+# Purpose: Design the complete narrative structure that takes a prospect from attention to purchase
+# Guardian: CMO / Copywriter
+# Timing: FILL after solution-architecture.yaml and objections.yaml are complete
+# Framework: Story Selling (Eugene Schwartz) + Hero's Journey (Joseph Campbell) + 18-Act Narrative
+# Dependency: solution-architecture.yaml (mechanism), objections.yaml (objection stack)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Copywriter"
+  framework: "Story Selling + Hero's Journey + 18-Act Narrative Architecture"
+  notes: |
+    People do not buy products. They buy STORIES.
+    The story is not decoration — it IS the sales mechanism.
+
+    Eugene Schwartz: "The copywriter's job is not to create desire.
+    It is to channel existing desire into a specific product."
+
+    This template structures an 18-act narrative that systematically
+    moves the prospect through emotional states:
+    Recognition → Relief → Hope → Urgency → Trust → Understanding →
+    Anger → Possibility → Belief → Desire → Certainty → Action.
+
+    CRITICAL RULE: Every act must trigger a specific EMOTION
+    and receive a specific RESPONSE from the prospect.
+    If you cannot define the emotion and response, the act is weak.
+
+    The narrative must be COHERENT — each act flows into the next.
+    Jumping between unrelated emotions breaks the spell.
+# ============================================================================
+# STEP 1: NARRATIVE OVERVIEW
+# ============================================================================
+narrative_overview:
+  total_acts: 18
+  flow_summary: "ATTENTION → WELCOME → PROMISE → LEAD → PROBLEM → CONSEQUENCES → WHY IT HAPPENS → FAILED ATTEMPTS → WHY THEY FAIL → NOT YOUR FAULT → COMMON ENEMY → WHY OUR SOLUTION → PROOF → MECHANISM → EXAMPLE → IDEAL WORLD → OBJECTIONS → BONUSES + SCARCITY → CTA"
+  estimated_length: "FILL — Short form (5-10 min) / Long form (30-60 min) / Full presentation (60-90 min)"
+  primary_channel: "FILL — Sales page / Webinar / VSL / Live presentation / Email sequence"
+# ============================================================================
+# STEP 2: THE 18 ACTS
+# ============================================================================
+act_01_attention:
+  name: "Atenção (Pattern Interrupt)"
+  copy: |
+    FILL — Write the opening hook. 2-3 sentences max.
+    Must create instant recognition ("that's ME").
+    Use a question, bold statement, or relatable scenario.
+  emotion: "Recognition (they feel seen)"
+  expected_response: "Yes, that's me"
+  notes: "FILL — Why did you choose this specific hook? What makes it relevant to your ICP?"
+act_02_welcome:
+  name: "Boas-vindas (You're Not Alone)"
+  copy: |
+    FILL — Welcome them. Show they are not alone.
+    Reference data or research that validates their experience.
+    Transition from "I feel alone" to "others share this."
+  emotion: "Relief (not alone)"
+  expected_response: "Tell me more"
+act_03_promise:
+  name: "Promessa (The Possibility)"
+  copy: |
+    FILL — State the core promise in one powerful sentence.
+    Formula: [Their experience] + [Your system] + [Desired transformation] = [New identity]
+  emotion: "Hope (it's possible)"
+  expected_response: "How?"
+act_04_lead:
+  name: "Lead (Why Now)"
+  copy: |
+    FILL — Explain why this moment is different.
+    What has changed (technology, market, methodology) that makes
+    the promise achievable NOW when it was not before?
+  emotion: "Urgency (window opening)"
+  expected_response: "I need to act"
+act_05_problem:
+  name: "Problema (The Real Pain)"
+  copy: |
+    FILL — Describe the core problem in vivid, specific detail.
+    Use the language from icp.yaml fear stack.
+    Paint the picture they live every day.
+  emotion: "Pain recognition (deep identification)"
+  expected_response: "Exactly, that's what I go through"
+act_06_consequences:
+  name: "Consequências (What Happens If Nothing Changes)"
+  copy: |
+    FILL — Describe what happens if they do NOT solve this.
+    Project 6-12 months into the future. Make it real and specific.
+    Not fear-mongering — honest projection based on patterns.
+  emotion: "Fear of status quo"
+  expected_response: "I cannot let this continue"
+act_07_why_it_happens:
+  name: "Por Que Acontece (Root Cause)"
+  copy: |
+    FILL — Explain the root cause of the problem.
+    Not the symptom. The STRUCTURAL reason it persists.
+    This demonstrates expertise and builds trust.
+  emotion: "Understanding (ah-ha moment)"
+  expected_response: "That explains everything"
+act_08_failed_attempts:
+  name: "Erros Que Tentam (What They've Already Tried)"
+  copy: |
+    FILL — List the 3-5 most common solutions they have already tried.
+    Name them specifically. Show you KNOW their journey.
+    Each one should feel like "I did that exact thing."
+  emotion: "Validation (someone understands my journey)"
+  expected_response: "I tried all of those"
+act_09_why_they_fail:
+  name: "Por Que Não Funciona (Why Alternatives Fail)"
+  copy: |
+    FILL — Explain WHY those alternatives fail. Not "they're bad."
+    The structural, systematic reason they cannot solve the root cause.
+    This positions your mechanism as the missing piece.
+  emotion: "Clarity (now I see why nothing worked)"
+  expected_response: "That's why I kept failing"
+act_10_not_your_fault:
+  name: "Não É Culpa Deles (Absolution)"
+  copy: |
+    FILL — Absolve them. It is NOT their fault.
+    The system was broken, the information was incomplete,
+    the approach was wrong — not their effort or intelligence.
+  emotion: "Relief + restored confidence"
+  expected_response: "It really wasn't my fault"
+act_11_common_enemy:
+  name: "Inimigo Comum (Us vs Them)"
+  copy: |
+    FILL — Name the common enemy. Not a person — a SYSTEM or PARADIGM.
+    The outdated approach, the industry lie, the broken model.
+    Unite you and the prospect against the enemy.
+  emotion: "Righteous anger (directed outward)"
+  expected_response: "Yes, that's the real problem"
+act_12_why_our_solution:
+  name: "Por Que Nossa Solução Funciona (The Bridge)"
+  copy: |
+    FILL — Transition from problem to solution.
+    Reference the unique mechanism from solution-architecture.yaml.
+    Explain HOW your solution addresses the root cause directly.
+  emotion: "Belief (this could actually work)"
+  expected_response: "This makes sense"
+act_13_proof:
+  name: "Provas e Casos (Evidence Stack)"
+  copy: |
+    FILL — Present 3-5 proof points. Best format:
+    1. Data/statistic (from analytics.yaml)
+    2. Testimonial (from testimonials.yaml)
+    3. Case study (specific, named, with numbers)
+    4. Social proof (number of members/clients)
+    5. Credential (from credentials.yaml)
+  emotion: "Trust (evidence-based confidence)"
+  expected_response: "The proof is real"
+act_14_mechanism:
+  name: "Mecanismo Único (How It Works)"
+  copy: |
+    FILL — Walk through the unique mechanism step by step.
+    Make it feel SIMPLE and LOGICAL.
+    Reference solution-architecture.yaml mechanism steps.
+  emotion: "Clarity (I can see exactly how this works)"
+  expected_response: "I understand the system"
+act_15_example:
+  name: "Exemplo Concreto (See It In Action)"
+  copy: |
+    FILL — Give one specific, detailed example of the mechanism in action.
+    Real person, real situation, real result.
+    Walk through the transformation step by step.
+  emotion: "Visualization (I can see myself doing this)"
+  expected_response: "I can see myself in that story"
+act_16_ideal_world:
+  name: "Mundo Ideal (The New Reality)"
+  copy: |
+    FILL — Paint the picture of life AFTER the transformation.
+    Be specific: what does Monday morning look like?
+    What has changed in their business, relationships, identity?
+  emotion: "Desire (I want that life)"
+  expected_response: "I want that"
+act_17_objections:
+  name: "Objeções Antecipadas (Pre-Emptive Handling)"
+  copy: |
+    FILL — Address the top 3-5 objections BEFORE they arise.
+    Reference objections.yaml for the full stack.
+    Handle them with empathy + evidence, not argument.
+  emotion: "Safety (my concerns are addressed)"
+  expected_response: "They thought of everything"
+act_18_cta:
+  name: "CTA + Bônus com Escassez (The Close)"
+  copy: |
+    FILL — The call to action. Include:
+    1. Clear next step (what to do)
+    2. Bonus stack with scarcity
+    3. Guarantee reminder (from guarantee-design.yaml)
+    4. Urgency element (time or quantity limited)
+    5. Final emotional reinforcement
+  emotion: "Certainty + urgency (ready to act)"
+  expected_response: "I'm in"
+# ============================================================================
+# STEP 3: NARRATIVE COHERENCE CHECK
+# ============================================================================
+coherence_check:
+  emotional_arc_flows: "FILL — Yes/No. Does each emotion naturally lead to the next?"
+  no_logical_jumps: "FILL — Yes/No. Are there any jarring transitions between acts?"
+  mechanism_introduced_before_proof: "FILL — Yes/No. Is the mechanism explained before you present evidence?"
+  objections_handled_before_cta: "FILL — Yes/No. Are all major objections addressed before the close?"
+  icp_language_used: "FILL — Yes/No. Does the copy use the ICP's actual language (from icp.yaml)?"
+# ============================================================================
+# STEP 4: SCORING & DIAGNOSTIC
+# ============================================================================
+narrative_strength_score:
+  emotional_arc: "FILL 1-10"
+  copy_specificity: "FILL 1-10"
+  proof_integration: "FILL 1-10"
+  coherence: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Narrative is disjointed, generic copy, no emotional arc, proof feels forced."
+    range_4_6: "Narrative has structure but emotions are weak, copy uses generic language, proof is present but not integrated naturally."
+    range_7_8: "Strong emotional arc, specific copy using ICP language, proof is woven into the story, coherent flow from attention to CTA."
+    range_9_10: "Masterful storytelling — each act builds on the previous, copy feels personal and visceral, proof is undeniable, the reader cannot stop reading."
+evidence:
+  conversion_data: "FILL — What conversion data supports this narrative structure? (from analytics.yaml)"
+  audience_feedback: "FILL — What feedback have you received on this narrative?"
+  sources: "FILL — List verifiable sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  strongest_acts: "FILL — Which 3 acts are most powerful?"
+  weakest_acts: "FILL — Which acts need the most work?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "solution-architecture.yaml"
+    - "objections.yaml"
+    - "icp.yaml"
+  feeds_into:
+    - "sales-page.yaml"
+    - "webinar-script.yaml"
+    - "email-sequences.yaml"
+    - "copy-swipes.yaml"
+  related:
+    - "headlines.yaml"
+    - "testimonials.yaml"
+    - "proof.yaml"

@@ -1,0 +1,19 @@
+business_slug: "{{business_slug}}"
+version: "0.1.0"
+sections:
+  - introduction
+  - brand_standards
+  - pre_opening
+  - daily_operations
+  - personnel_management
+  - marketing_and_sales
+  - financial_management
+  - quality_control
+  - technology_systems
+  - supply_chain
+  - legal_and_compliance
+  - support_and_communication
+  - problem_solving
+  - appendices
+source_processes: []
+status: draft

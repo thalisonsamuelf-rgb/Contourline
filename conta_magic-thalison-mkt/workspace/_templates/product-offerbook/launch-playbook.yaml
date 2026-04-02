@@ -1,0 +1,153 @@
+---
+# LAUNCH-PLAYBOOK.YAML - Product Launch Sequence & Execution Framework
+# Purpose: Structure the complete launch sequence from pre-launch to post-launch optimization
+# Guardian: CMO / Launch Manager
+# Timing: FILL after all core offerbook templates are complete (sales-page, email-sequences, etc.)
+# Framework: Launch Sequence Framework (Jeff Walker PLF adapted) + Campaign Structure (Jeremy Haynes)
+# Dependency: sales-page.yaml, email-sequences.yaml, ad-creative-brief.yaml
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Launch Manager"
+  framework: "Launch Sequence Framework + Haynes Campaign Structure"
+  notes: |
+    A launch is NOT a single event. It is a 3-phase CAMPAIGN.
+
+    Phase 1 (Pre-Launch): Build anticipation, grow the list, warm the audience
+    Phase 2 (Launch): Open cart, execute the sales sequence, handle objections
+    Phase 3 (Post-Launch): Optimize, follow up, capture learnings
+
+    CRITICAL: 80% of launch success is determined BEFORE the cart opens.
+    If your pre-launch is weak, no amount of discount or urgency fixes it.
+
+    This template structures all three phases with exact timelines,
+    content requirements, and success metrics.
+# ============================================================================
+# STEP 1: LAUNCH OVERVIEW
+# ============================================================================
+launch_overview:
+  launch_type: "FILL — Seed launch / Internal launch / Joint venture launch / Evergreen launch"
+  launch_date: "FILL — Cart open date"
+  cart_close_date: "FILL — Cart close date"
+  launch_duration: "FILL — Total days cart is open"
+  revenue_target: "FILL — Revenue goal for this launch"
+  customer_target: "FILL — Number of new customers target"
+  capacity_limit: "FILL — Max customers (if applicable, e.g., cohort size)"
+# ============================================================================
+# STEP 2: PRE-LAUNCH (4-6 weeks before)
+# ============================================================================
+pre_launch:
+  duration: "FILL — Number of weeks before launch"
+  week_1_2_foundation:
+    goal: "Build awareness and grow waitlist"
+    actions:
+      action_1: "FILL — Content piece 1 (blog, video, podcast)"
+      action_2: "FILL — Content piece 2"
+      action_3: "FILL — Lead magnet deployment"
+      action_4: "FILL — Social media teaser campaign"
+    metric_target: "FILL — Waitlist size target"
+  week_3_4_warming:
+    goal: "Educate and build anticipation"
+    actions:
+      action_1: "FILL — Educational content series (e.g., 3-part video series)"
+      action_2: "FILL — Case study or success story release"
+      action_3: "FILL — Email nurture sequence activation"
+      action_4: "FILL — Community engagement activities"
+    metric_target: "FILL — Email open rate target / Engagement rate target"
+  week_5_6_anticipation:
+    goal: "Create urgency and finalize waitlist"
+    actions:
+      action_1: "FILL — Waitlist exclusive content or early access"
+      action_2: "FILL — Countdown sequence begins"
+      action_3: "FILL — Final objection-handling content"
+      action_4: "FILL — Partner/affiliate notification"
+    metric_target: "FILL — Final waitlist size / Pre-registrations"
+# ============================================================================
+# STEP 3: LAUNCH WEEK (Cart Open)
+# ============================================================================
+launch_week:
+  day_1_open:
+    actions:
+      - "FILL — Cart open email"
+      - "FILL — Sales page goes live"
+      - "FILL — Social media announcement"
+      - "FILL — Paid ads activated (if applicable)"
+    expected_sales_percentage: "FILL — % of total sales expected on day 1 (typical: 30-40%)"
+  day_2_3_momentum:
+    actions:
+      - "FILL — Testimonial/case study email"
+      - "FILL — FAQ content (address objections)"
+      - "FILL — Community engagement"
+    expected_sales_percentage: "FILL — % (typical: 15-20%)"
+  day_4_5_mid_launch:
+    actions:
+      - "FILL — Mid-launch bonus or incentive"
+      - "FILL — Live Q&A or webinar"
+      - "FILL — Personal outreach to warm leads"
+    expected_sales_percentage: "FILL — % (typical: 10-15%)"
+  final_48_hours:
+    actions:
+      - "FILL — Urgency email sequence (last chance)"
+      - "FILL — Cart closing countdown"
+      - "FILL — Final bonus deadline"
+      - "FILL — Last objection handling"
+    expected_sales_percentage: "FILL — % (typical: 30-40% — final push is critical)"
+# ============================================================================
+# STEP 4: POST-LAUNCH (1-2 weeks after)
+# ============================================================================
+post_launch:
+  immediate_actions:
+    action_1: "FILL — Welcome sequence for new customers"
+    action_2: "FILL — Non-buyer follow-up sequence"
+    action_3: "FILL — Revenue and metrics compilation"
+    action_4: "FILL — Team debrief and learnings capture"
+  metrics_to_capture:
+    - "Total revenue"
+    - "Total customers"
+    - "Conversion rate (leads to customers)"
+    - "Revenue per email subscriber"
+    - "Ad spend and ROAS"
+    - "Top-performing content/email"
+    - "Top objection that prevented sales"
+    - "FILL — Additional metric"
+  learnings_template:
+    what_worked: "FILL — Top 3 things that worked well"
+    what_failed: "FILL — Top 3 things that did not work"
+    what_to_change: "FILL — Top 3 changes for next launch"
+    surprise_insights: "FILL — Unexpected discoveries"
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+launch_readiness_score:
+  pre_launch_preparation: "FILL 1-10"
+  content_completeness: "FILL 1-10"
+  audience_warmth: "FILL 1-10"
+  systems_readiness: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "No pre-launch, cold audience, content not ready, systems untested."
+    range_4_6: "Some pre-launch activity, partially warm audience, most content ready, systems partially tested."
+    range_7_8: "Strong pre-launch with waitlist, warm audience with engagement data, all content complete, systems fully tested."
+    range_9_10: "Comprehensive multi-week pre-launch, hot audience eagerly waiting, content optimized from previous launches, all systems automated and tested."
+evidence:
+  data_points: "FILL — What pre-launch data supports readiness?"
+  sources: "FILL — List verifiable sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  biggest_risk: "FILL — What could derail this launch?"
+  highest_leverage_action: "FILL — Single most impactful thing to do before launch"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "sales-page.yaml"
+    - "email-sequences.yaml"
+    - "ad-creative-brief.yaml"
+  feeds_into:
+    - "analytics.yaml"
+    - "conversion-funnel.yaml"
+  related:
+    - "narrative-architecture.yaml"
+    - "copy-swipes.yaml"
+    - "headlines.yaml"

@@ -1,0 +1,19 @@
+---
+# Template: founders dynamics dataset
+
+metadata:
+  template_id: "movement.identity_founders_dynamics"
+  version: "1.0.0"
+  lifecycle_stage: "identity"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+founders_pair:
+  founder_a: "<required>"
+  founder_b: "<required>"
+  dynamic_core: "<required>"
+  complementarity: []
+  timeline_markers: []
+  productive_tensions: []
+provenance:
+  source_docs: []

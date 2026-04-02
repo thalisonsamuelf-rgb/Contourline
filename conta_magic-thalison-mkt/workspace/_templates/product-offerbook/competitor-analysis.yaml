@@ -1,0 +1,129 @@
+---
+# COMPETITOR-ANALYSIS.YAML - Competitive Intelligence & Market Positioning Map
+# Purpose: Map the competitive landscape to identify your blue ocean and positioning advantages
+# Guardian: CMO / Founder
+# Timing: FILL after diagnosis.yaml and market-validation.yaml — before brand.yaml positioning decisions
+# Framework: Competitive Intelligence Matrix + Blue Ocean Strategy + Hormozi Market Positioning
+# Dependency: diagnosis.yaml (market awareness/sophistication), market-validation.yaml (market validation)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Founder"
+  framework: "Competitive Intelligence Matrix + Blue Ocean Strategy"
+  notes: |
+    You do not compete on features. You compete on POSITIONING.
+
+    Most founders make the mistake of comparing feature lists.
+    The winning strategy is to make competition irrelevant
+    by creating a category of ONE.
+
+    This template maps the competitive landscape so you can find
+    the VOID — the positioning gap that no one occupies.
+
+    RULE: If your differentiation requires a feature comparison chart
+    to explain, your differentiation is weak.
+
+    Strong differentiation is felt, not calculated.
+# ============================================================================
+# STEP 1: COMPETITIVE LANDSCAPE
+# ============================================================================
+competitive_landscape:
+  market_category: "FILL — What category does your offer compete in?"
+  market_maturity: "FILL — Emerging / Growing / Mature / Saturated (from diagnosis.yaml sophistication stage)"
+  total_competitors_estimated: "FILL — How many direct competitors exist?"
+  competitor_1:
+    name: "FILL — Competitor name"
+    type: "FILL — Direct / Indirect / Substitute"
+    price_point: "FILL — Their price"
+    positioning: "FILL — How they position themselves (in one sentence)"
+    target_audience: "FILL — Who they serve"
+    strengths: "FILL — Their 2-3 genuine strengths"
+    weaknesses: "FILL — Their 2-3 real weaknesses"
+    threat_level: "FILL 1-10"
+  competitor_2:
+    name: "FILL — Competitor name"
+    type: "FILL — Direct / Indirect / Substitute"
+    price_point: "FILL — Their price"
+    positioning: "FILL — How they position themselves"
+    target_audience: "FILL — Who they serve"
+    strengths: "FILL — Their 2-3 genuine strengths"
+    weaknesses: "FILL — Their 2-3 real weaknesses"
+    threat_level: "FILL 1-10"
+  competitor_3:
+    name: "FILL — Competitor name"
+    type: "FILL — Direct / Indirect / Substitute"
+    price_point: "FILL — Their price"
+    positioning: "FILL — How they position themselves"
+    target_audience: "FILL — Who they serve"
+    strengths: "FILL — Their 2-3 genuine strengths"
+    weaknesses: "FILL — Their 2-3 real weaknesses"
+    threat_level: "FILL 1-10"
+# ============================================================================
+# STEP 2: POSITIONING MAP
+# ============================================================================
+positioning_map:
+  axis_x: "FILL — Choose horizontal axis (e.g., Price: Low → High)"
+  axis_y: "FILL — Choose vertical axis (e.g., Approach: Generic → Specialized)"
+  your_position:
+    x_value: "FILL — Where you are on X axis"
+    y_value: "FILL — Where you are on Y axis"
+    quadrant: "FILL — Which quadrant are you in?"
+  competitor_positions:
+    comp_1_position: "FILL — Competitor 1 quadrant"
+    comp_2_position: "FILL — Competitor 2 quadrant"
+    comp_3_position: "FILL — Competitor 3 quadrant"
+  empty_quadrant: |
+    FILL — Is there an EMPTY quadrant no one occupies?
+    This is your Blue Ocean opportunity.
+    Describe what positioning would occupy that space.
+# ============================================================================
+# STEP 3: DIFFERENTIATION ANALYSIS
+# ============================================================================
+differentiation:
+  your_unfair_advantage: |
+    FILL — What do you have that competitors CANNOT replicate?
+    (Personal story, proprietary data, unique methodology,
+    community, technology, relationships, experience)
+  category_of_one: |
+    FILL — If you could create a new category that ONLY you occupy,
+    what would it be called? What would it stand for?
+    Example: "AI-Powered Operating System for Experienced Professionals"
+    instead of "Online Course for Entrepreneurs"
+  switching_cost_analysis: |
+    FILL — How easy is it for your customers to switch to a competitor?
+    What creates LOCK-IN? (Community, data, relationships, results, identity)
+# ============================================================================
+# STEP 4: SCORING & DIAGNOSTIC
+# ============================================================================
+competitive_strength_score:
+  market_awareness: "FILL 1-10"
+  positioning_clarity: "FILL 1-10"
+  differentiation_strength: "FILL 1-10"
+  competitive_moat: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "No awareness of competitors, generic positioning, no clear differentiation, easy to replicate."
+    range_4_6: "Basic competitor knowledge, some positioning effort, differentiation is feature-based, weak moat."
+    range_7_8: "Deep competitive intelligence, clear positioning in a quadrant, differentiation is structural, moderate moat."
+    range_9_10: "Complete market map, category of one positioning, differentiation is unfair advantage, strong lock-in moat."
+evidence:
+  data_points: "FILL — What data supports your competitive analysis?"
+  sources: "FILL — List verifiable sources (competitor websites, reviews, market reports)"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  biggest_competitive_threat: "FILL — Which competitor or trend poses the biggest risk?"
+  strongest_advantage: "FILL — What is your strongest competitive advantage?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "diagnosis.yaml"
+    - "market-validation.yaml"
+  feeds_into:
+    - "brand.yaml"
+    - "solution-architecture.yaml"
+    - "pricing-anchoring.yaml"
+  related:
+    - "icp.yaml"
+    - "offerbook.yaml"

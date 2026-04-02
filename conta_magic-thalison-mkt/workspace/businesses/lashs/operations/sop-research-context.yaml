@@ -1,0 +1,421 @@
+# =============================================================================
+# SOP-RESEARCH-CONTEXT.YAML — Contourline (lashs)
+# =============================================================================
+# Research context com categoria, processos core e burros aplicaveis
+# Generated: 2026-03-19
+# Source: Planejamento Estrategico 2026 + category-map.yaml + diagnostic-backlog
+# Consumed by: sop-chief (contexto ao criar SOPs para este business)
+# =============================================================================
+
+business:
+  slug: "lashs"
+  name: "Contourline Equipamentos Medicos e Diagnosticos"
+  ceo: "Egio Roberto"
+  revenue: "R$ 200M+ (projecao 2026)"
+  headcount: 118 (projetado 165)
+  customers: "4000+"
+  headquarters: "Sete Lagoas, MG"
+
+  primary_category:
+    id: "IND-HEALTHCARE"
+    name: "Healthcare / MedTech"
+    slug: "healthcare-medtech"
+
+  secondary_categories:
+    - id: "MOD-B2B-EQUIPMENT"
+      name: "B2B Equipment Sales & Distribution"
+      slug: "b2b-equipment"
+    - id: "MOD-MANUFACTURING"
+      name: "Manufacturing with Own R&D"
+      slug: "manufacturing-rd"
+
+  business_model: "B2B Equipment Sales + Manufacturing + Distribution + Service"
+  stage: "SCALE"
+
+# =============================================================================
+# CORE PROCESSES — Revenue-generating, competitive moat
+# =============================================================================
+# Conceito Pedro Valerio: processos que a empresa VENDE, que geram receita.
+# Mix dos 4 executores. Semanas a meses para sincronizar. Visiveis.
+# "Se eu consigo replicar teu processo core em dois dias, tua empresa nao tem moat."
+# =============================================================================
+
+core_processes:
+
+  # --- COMERCIAL (Diretoria Gabriel Carpello) ---
+
+  - id: "PC-CTL-01"
+    name: "Pipeline Comercial B2B (Equipamentos Medicos)"
+    description: |
+      Ciclo completo de venda de equipamentos de alta tecnologia:
+      prospeccao → qualificacao → demonstracao → proposta → negociacao →
+      credito → fechamento → faturamento. Ticket medio alto (R$ 50K-500K).
+    why_core: "Responsavel por R$ 200M+ de receita. Venda consultiva com ciclo de 30-90 dias."
+    diretoria: "Comercial"
+    owner: "Gabriel Carpello"
+    executor_mix:
+      human: "60%"
+      agent: "15%"
+      worker: "20%"
+      hybrid: "5%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P0"
+    pe_2026_ref: "Pilar 2: Expansao Comercial"
+    evidence: "R$ 200M+ faturamento, 5 linhas de produto, Inside Sales + Vendas Externas"
+
+  - id: "PC-CTL-02"
+    name: "Gestao de Credito e Financiamento"
+    description: |
+      Analise de credito do cliente, aprovacao, estruturacao de financiamento
+      (FIDC, FINIMP, capital de giro), gestao de inadimplencia e cobranca.
+    why_core: "Viabiliza vendas de alto ticket. Credito mal gerido = inadimplencia + fluxo de caixa negativo."
+    diretoria: "Comercial (linha direta CFO)"
+    owner: "Gabriel Carpello + Claudio Kaizer"
+    executor_mix:
+      human: "40%"
+      agent: "20%"
+      worker: "30%"
+      hybrid: "10%"
+    complexity: "alta"
+    time_to_sync: "semanas"
+    sop_priority: "P0"
+    pe_2026_ref: "Politica de Cobranca e Negociacao"
+    evidence: "Funding R$ 106M, FIDC R$ 50M, resultado financeiro negativo R$ 10M"
+
+  - id: "PC-CTL-03"
+    name: "Gestao de Unidades de Negocio (Lumenis/Visbody)"
+    description: |
+      Operacao completa de cada unidade de negocio representada:
+      importacao → pricing → estoque → vendas → pos-venda.
+      Cada UN tem dinamica propria de margem e volume.
+    why_core: "Lumenis R$ 47M (9% margem - CRITICO), Visbody R$ 7M (62% margem - ESCALAR)."
+    diretoria: "Comercial"
+    owner: "Gabriel Carpello"
+    executor_mix:
+      human: "50%"
+      agent: "10%"
+      worker: "30%"
+      hybrid: "10%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P0"
+    pe_2026_ref: "Lumenis 40M + Visbody lancamento oficial"
+    evidence: "Margem Lumenis 9% (custo 91% da receita) vs Visbody 62%"
+
+  # --- OPERACOES (Diretoria Filipe Ferreira) ---
+
+  - id: "PC-CTL-04"
+    name: "Pipeline de Producao de Equipamentos"
+    description: |
+      Producao de equipamentos proprios: PCP → compras de insumos →
+      producao → controle de qualidade → testes → certificacao →
+      expedicao. Fabrica propria de 2 mil m2.
+    why_core: "Moat competitivo: P&D e producao propria diferenciam da concorrencia que so distribui."
+    diretoria: "Operacoes"
+    owner: "Filipe Ferreira"
+    executor_mix:
+      human: "50%"
+      agent: "5%"
+      worker: "35%"
+      hybrid: "10%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P0"
+    pe_2026_ref: "Pilar 1: Inovacao e Ciencia - 2 equip med + 1 estetico"
+    evidence: "Fabrica 2mil m2, P&D proprio, Lei da Informatica"
+
+  - id: "PC-CTL-05"
+    name: "Pipeline Regulatorio (ANVISA/INMETRO)"
+    description: |
+      Registro de produtos na ANVISA, certificacoes INMETRO,
+      compliance regulatorio, renovacoes, auditorias de qualidade.
+      Obrigatorio para operar no mercado medico.
+    why_core: "Sem registro = nao pode vender. Barreira de entrada que protege o negocio."
+    diretoria: "Operacoes (Qualidade)"
+    owner: "Filipe Ferreira"
+    executor_mix:
+      human: "70%"
+      agent: "5%"
+      worker: "15%"
+      hybrid: "10%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P0"
+    pe_2026_ref: "Pilar 3: Governanca - conformidade ANVISA/Inmetro"
+    evidence: "SWOT: risco regulatorio, endurecimento ANVISA"
+
+  - id: "PC-CTL-06"
+    name: "Assistencia Tecnica e Manutencao"
+    description: |
+      Atendimento tecnico pos-venda: abertura de chamado → diagnostico →
+      despacho de tecnico/peca → reparo → calibracao → encerramento.
+      Diferencial competitivo: resposta rapida com instrumentos calibrados.
+    why_core: "Diferencial SWOT. Receita de R$ 1.4M em servicos. Fideliza e gera cross-sell."
+    diretoria: "Operacoes (Engenharia/AT)"
+    owner: "Filipe Ferreira"
+    executor_mix:
+      human: "55%"
+      agent: "10%"
+      worker: "25%"
+      hybrid: "10%"
+    complexity: "media"
+    time_to_sync: "semanas"
+    sop_priority: "P0"
+    pe_2026_ref: "Pilar 4: Experiencia do Cliente - CX Excellence"
+    evidence: "Forca SWOT: assistencia diferenciada, resposta rapida"
+
+  - id: "PC-CTL-07"
+    name: "Gestao de Importacao e Supply Chain"
+    description: |
+      Importacao de equipamentos e insumos: pedido → FINIMP →
+      desembaraco aduaneiro → logistica interna → estoque.
+      R$ 66M em importacoes anuais.
+    why_core: "Abastece 3 linhas de produto (Lumenis, Visbody, insumos). Cambio impacta margens."
+    diretoria: "Operacoes (Logistica) + CFO"
+    owner: "Filipe Ferreira + Claudio Kaizer"
+    executor_mix:
+      human: "40%"
+      agent: "10%"
+      worker: "40%"
+      hybrid: "10%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P1"
+    pe_2026_ref: "FINIMP R$ 36M, riscos cambiais, greves alfandegarias"
+    evidence: "Fraqueza SWOT: dependencia fornecedor exclusivo Body Health"
+
+  # --- CONSULTORIA E P&D (Diretoria Andreia Almeida) ---
+
+  - id: "PC-CTL-08"
+    name: "Pipeline de P&D e Lancamento de Produto"
+    description: |
+      Pesquisa → desenvolvimento → prototipagem → testes clinicos →
+      registro ANVISA → producao piloto → go-to-market.
+      3% da receita liquida investida em P&D.
+    why_core: "Moat principal: capacidade de inovar e criar produtos proprios."
+    diretoria: "Consultoria/P&D"
+    owner: "Andreia Almeida"
+    executor_mix:
+      human: "65%"
+      agent: "5%"
+      worker: "15%"
+      hybrid: "15%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P1"
+    pe_2026_ref: "Pilar 1: 2 equip med + 1 estetico ate dez/2026"
+    evidence: "3% receita em P&D, Lei da Informatica, publicacoes cientificas"
+
+  - id: "PC-CTL-09"
+    name: "Treinamento de Clientes (Universidade Contourline)"
+    description: |
+      Capacitacao tecnica de medicos e clinicas: treinamento em
+      equipamento → protocolos clinicos → certificacao → acompanhamento.
+      Online e presencial.
+    why_core: "Diferencial competitivo. Cliente treinado = melhores resultados = referencia."
+    diretoria: "Consultoria/P&D"
+    owner: "Andreia Almeida"
+    executor_mix:
+      human: "50%"
+      agent: "15%"
+      worker: "25%"
+      hybrid: "10%"
+    complexity: "media"
+    time_to_sync: "semanas"
+    sop_priority: "P1"
+    pe_2026_ref: "Pilar 4: Universidade Contourline"
+    evidence: "Politica: Vendas de Treinamento e Consultoria"
+
+  # --- MARKETING (Diretoria Helaine Hohendorff) ---
+
+  - id: "PC-CTL-10"
+    name: "Pipeline de Marketing Cientifico"
+    description: |
+      Producao e distribuicao de conteudo cientifico: estudos clinicos →
+      publicacoes → white papers → cases → eventos cientificos →
+      rede de speakers/KOLs.
+    why_core: "Posicionamento premium baseado em evidencia. Diferencia de concorrentes globais."
+    diretoria: "Marketing"
+    owner: "Helaine Hohendorff + Andreia Almeida"
+    executor_mix:
+      human: "45%"
+      agent: "20%"
+      worker: "25%"
+      hybrid: "10%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P1"
+    pe_2026_ref: "Pilar 1: Marketing Cientifico + Pilar 5: Producao Cientifica"
+    evidence: "8% receita em marketing, programa Ciencia que Conecta"
+
+  - id: "PC-CTL-11"
+    name: "Gestao de Eventos e Feiras"
+    description: |
+      Planejamento e execucao de eventos: Contourline Experience →
+      feiras medicas → convencao de revendedores. R$ 10M em eventos/ano.
+    why_core: "Canal de venda e posicionamento. Pipeline comercial gerado em eventos."
+    diretoria: "Marketing"
+    owner: "Helaine Hohendorff"
+    executor_mix:
+      human: "50%"
+      agent: "10%"
+      worker: "30%"
+      hybrid: "10%"
+    complexity: "alta"
+    time_to_sync: "semanas"
+    sop_priority: "P1"
+    pe_2026_ref: "Pilar 5: Contourline Experience + Convencao Revendedores"
+    evidence: "R$ 10M em feiras (fluxo de caixa)"
+
+  # --- FINANCEIRO (CFO Claudio Kaizer) ---
+
+  - id: "PC-CTL-12"
+    name: "Gestao de Funding e Captacao"
+    description: |
+      Estruturacao e gestao de captacoes: FIDC (R$ 50M) → FINIMP (R$ 36M) →
+      capital de giro (R$ 20M). Amortizacoes, covenants, hedge cambial.
+    why_core: "R$ 106M em funding viabiliza operacao. Estrutura de capital determina margem liquida."
+    diretoria: "Financeiro"
+    owner: "Claudio Kaizer"
+    executor_mix:
+      human: "60%"
+      agent: "10%"
+      worker: "25%"
+      hybrid: "5%"
+    complexity: "alta"
+    time_to_sync: "meses"
+    sop_priority: "P1"
+    pe_2026_ref: "Estrategia de Funding R$ 106M"
+    evidence: "Divida bruta R$ 113M, alavancagem 1.97x EBITDA"
+
+# =============================================================================
+# DUMB PROCESSES — Repetitivos, automatizaveis, invisiveis
+# =============================================================================
+# Conceito: processos repetitivos, deterministicos, sem singularidade.
+# Worker executa 80%+. Horas para sincronizar. Invisiveis.
+# =============================================================================
+
+dumb_processes:
+
+  # --- Universais (do category-map) ---
+  - id: "PB-UNIV-01"
+    name: "Emissao de Nota Fiscal (NF-e)"
+    executor: "Worker"
+    complexity: "baixa"
+    sop_priority: "P1"
+    contourline_context: "Volume alto - R$ 200M+ faturamento, multiplas linhas"
+
+  - id: "PB-UNIV-02"
+    name: "Contas a Pagar e Receber"
+    executor: "Worker"
+    complexity: "baixa"
+    sop_priority: "P1"
+    contourline_context: "Tesouraria sob CFO Claudio Kaizer"
+
+  - id: "PB-UNIV-03"
+    name: "Onboarding de Novo Colaborador"
+    executor: "Hybrid"
+    complexity: "media"
+    sop_priority: "P1"
+    contourline_context: "CRITICO: 47 novas contratacoes planejadas (+40%)"
+
+  - id: "PB-UNIV-04"
+    name: "Qualificacao de Lead Inbound"
+    executor: "Worker/Agent"
+    complexity: "baixa"
+    sop_priority: "P1"
+    contourline_context: "Inside Sales filtra leads para Vendas Externas"
+
+  - id: "PB-UNIV-05"
+    name: "Geracao de Relatorios Periodicos"
+    executor: "Worker"
+    complexity: "baixa"
+    sop_priority: "P2"
+    contourline_context: "Fraqueza SWOT: baixa maturidade em dados"
+
+  - id: "PB-UNIV-06"
+    name: "Atualizacao de CRM"
+    executor: "Worker"
+    complexity: "baixa"
+    sop_priority: "P2"
+    contourline_context: "CRM & Automacao sob Diretoria de Marketing"
+
+  - id: "PB-UNIV-07"
+    name: "Backup e Exportacao de Dados"
+    executor: "Worker"
+    complexity: "baixa"
+    sop_priority: "P2"
+    contourline_context: "ERP Protheus recente - dados precisam de governance"
+
+  # --- Especificos Contourline ---
+  - id: "PB-CTL-01"
+    name: "Processamento de Pedido de Venda"
+    executor: "Worker"
+    complexity: "baixa"
+    sop_priority: "P1"
+    contourline_context: "Alto volume: 750+ equipamentos/ano nas 4 linhas"
+
+  - id: "PB-CTL-02"
+    name: "Abertura de Chamado de Assistencia Tecnica"
+    executor: "Worker/Agent"
+    complexity: "baixa"
+    sop_priority: "P1"
+    contourline_context: "4 mil clientes, diferencial de resposta rapida"
+
+  - id: "PB-CTL-03"
+    name: "Controle de Estoque e Rastreabilidade"
+    executor: "Worker"
+    complexity: "media"
+    sop_priority: "P1"
+    contourline_context: "Exigencia ANVISA/INMETRO, multiplos almoxarifados"
+
+  - id: "PB-CTL-04"
+    name: "Agendamento de Treinamento de Cliente"
+    executor: "Worker"
+    complexity: "baixa"
+    sop_priority: "P2"
+    contourline_context: "Universidade Contourline, online + presencial"
+
+  - id: "PB-CTL-05"
+    name: "Processo de Garantia e Troca"
+    executor: "Hybrid"
+    complexity: "media"
+    sop_priority: "P1"
+    contourline_context: "Politica de Garantia e Troca implementada em 2026"
+
+  - id: "PB-CTL-06"
+    name: "Fiscal e Tributario (Apuracao)"
+    executor: "Worker"
+    complexity: "media"
+    sop_priority: "P1"
+    contourline_context: "Lei da Informatica, Lucro Real, reforma tributaria"
+
+# =============================================================================
+# RESEARCH GAPS
+# =============================================================================
+
+research_gaps:
+  - field: "customer_journey_detalhada"
+    status: "missing"
+    action: "Mapear jornada do cliente B2B: primeiro contato → compra → pos-venda → recompra"
+
+  - field: "metricas_de_conversao"
+    status: "missing"
+    action: "Coletar taxa de conversao por etapa do funil comercial"
+
+  - field: "processos_de_inside_sales"
+    status: "missing"
+    action: "Entrevistar equipe de Inside Sales para extrair processo atual"
+
+  - field: "fluxo_de_importacao_detalhado"
+    status: "missing"
+    action: "Documentar passo-a-passo do desembaraco com tempos e custos"
+
+  - field: "protocolos_clinicos_por_equipamento"
+    status: "missing"
+    action: "Levantar protocolos clinicos que acompanham cada equipamento"
+
+  - field: "processos_do_erp_protheus"
+    status: "missing"
+    action: "Mapear fluxos configurados no ERP Protheus apos go-live"

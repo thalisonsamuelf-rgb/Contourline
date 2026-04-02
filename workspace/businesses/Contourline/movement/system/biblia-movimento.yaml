@@ -1,0 +1,8 @@
+metadata:
+  schema: contamagic.biblia
+  version: '1.0'
+  status: SKELETON
+  updated_at: '2026-03-14'
+movement_bible:
+  title: FILL_THIS
+  chapters: []

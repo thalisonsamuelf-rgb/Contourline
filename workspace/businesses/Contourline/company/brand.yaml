@@ -1,0 +1,59 @@
+metadata:
+  version: '1.0'
+  company_name: Contourline
+  status: IN_PROGRESS
+  last_updated: '2026-03-14'
+  source: ETL Deep Pass v1 — perfil + formulario + call vendas (145 linhas)
+  product_name: egio_roberto
+  completeness_percentage: 40
+  etl_pass: 1
+brand_core:
+  brand_name: Contourline
+  brand_tagline: FILL_THIS
+  brand_purpose: FILL_THIS
+brand_essence:
+  core_belief: FILL_THIS
+promises:
+  marketing_promise: FILL_THIS
+  actual_promise: Equipamentos medicos certificados Anvisa para profissionais de medicina estetica
+  true_promise: FILL_THIS
+enemies:
+  NOT_the_enemy: Profissionais de estetica (eles sao os clientes)
+  THE_real_enemy: Equipamentos sem certificacao, procedimentos inseguros, falta de padrao de qualidade no mercado estetico
+personality:
+  warmth_level: 5
+  directness_level: 7
+  formality_level: 6
+  confidence_level: 9
+voice_dna:
+  power_words:
+  - certificado
+  - Anvisa
+  - tecnologia
+  - inovacao
+  - resultado
+  - seguranca
+  signature_phrases: []
+  forbidden_words: []
+brand_pillars:
+  pillar_1:
+    name: Tecnologia
+    description: Empresa de tecnologia que cria equipamentos de ponta
+  pillar_2:
+    name: Certificacao
+    description: Conformidade total com Anvisa e normas regulatorias
+  pillar_3:
+    name: Resultado
+    description: Equipamentos que entregam resultado para profissionais
+  pillar_4:
+    name: Inovacao
+    description: IA, videos, animacoes — sempre na vanguarda
+channels:
+  instagram_brand: '@onlinemag'
+  instagram_founder: '@egioroberto'
+  site: FILL_THIS
+  acquisition: Marketing digital (14 pessoas no time), vendas diretas
+core_values:
+  value_1:
+    name: FILL_THIS
+    principle: FILL_THIS

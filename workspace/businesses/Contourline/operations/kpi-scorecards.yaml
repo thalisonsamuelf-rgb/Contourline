@@ -1,0 +1,38 @@
+metadata:
+  version: '1.0'
+  product_name: egio_roberto
+  status: TEMPLATE
+  last_updated: '2026-03-14'
+  owner: COO / Egio Roberto (CEO)
+  framework: North Star Metric + Scalable Company KPI System
+north_star:
+  metric_name: FILL_THIS
+  definition: FILL_THIS
+  current_value: FILL_THIS
+  target_value: FILL_THIS
+  owner: FILL_THIS
+revenue_metrics:
+  arr:
+    name: Annual Revenue
+    current: R$ 115.000.000-120.000.000
+    target: FILL_THIS
+    owner: Egio Roberto (CEO)
+    cadence: Annually
+operational_metrics:
+  payroll_efficiency:
+    name: Payroll as % of Revenue
+    current: ~8% (R$700-800k/mes / ~R$10M/mes)
+    target: ~5.5% (30% reduction target)
+    owner: CFO
+    cadence: Monthly
+  marketing_team_productivity:
+    name: Revenue per Marketing Team Member
+    current: ~R$8.5M per person (R$120M / 14)
+    target: FILL_THIS
+    owner: Head Marketing
+    cadence: Quarterly
+cross_references:
+  depends_on:
+  - company/company-profile.yaml
+  feeds_into:
+  - company/analytics.yaml

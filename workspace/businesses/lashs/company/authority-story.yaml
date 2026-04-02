@@ -1,0 +1,492 @@
+---
+# AUTHORITY-STORY.YAML - How the founder became an authority
+# Purpose: Narrative structure for EARNING authority (different from credentials)
+# Guardian: Founder / CMO / Head of Content
+# Timing: FILL ONCE - Powerful story stays consistent
+
+metadata:
+  version: "1.0"
+  company_name: "YOUR_COMPANY_NAME_HERE"
+  founder_name: "YOUR_FOUNDER_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Founder or CEO"
+  notes: |
+    This file is NOT about credentials (that's credentials.yaml).
+    This is about the STORY of how authority was EARNED.
+
+    credentials.yaml asks: "What qualifies this person?"
+    authority-story.yaml asks: "How did they BECOME an authority?"
+
+    Example:
+    credentials: "15 years consulting, 2 books, 50+ articles"
+    authority-story: "Started as frustrated consultant → saw the pattern →
+                      tested frameworks → got results → started teaching →
+                      1,000+ students → became the expert"
+  product_name: FILL_THIS
+# ============================================================================
+# SECTION 1: THE PROBLEM (Why authority was needed)
+# ============================================================================
+the_problem:
+  # What problem did the founder witness that needed expert solution?
+  market_problem: |
+    Example: "Most entrepreneurs have ideas and hustle, but no systems.
+    They work 80-hour weeks and still feel behind.
+    The market was full of motivation coaches, not systems experts."
+
+    Your version:
+    [WHAT PROBLEM DID YOU SEE?]
+  why_existing_experts_failed: |
+    Example: "Traditional business educators taught theory.
+    Motivational speakers taught inspiration.
+    Neither taught the SYSTEMS that actually work.
+    There was a gap between inspiration and execution."
+
+    Your version:
+    [WHAT WAS THE GAP?]
+  founder_frustration: |
+    Example: "As a consultant, Alan saw this problem constantly.
+    Brilliant entrepreneurs failing because they had no system.
+    The lack of a clear expert in this space was painful to watch."
+
+    Your version:
+    [WHAT FRUSTRATED YOU?]
+# ============================================================================
+# SECTION 2: THE OBSESSION (Becoming an expert)
+# ============================================================================
+obsession_phase:
+  # The moment the founder decided to BECOME the expert
+  the_realization: |
+    Example: "One day, after interviewing 50+ entrepreneurs,
+    Alan saw the pattern crystal clear:
+    The ones who succeeded had systems.
+    The ones who failed didn't.
+    It wasn't about talent. It was about SYSTEMS."
+
+    Your version:
+    [WHAT DID YOU REALIZE?]
+  decision_to_master_it: |
+    Example: "Alan decided he would become the expert in systems.
+    Not a motivational speaker. Not a theorist.
+    A practitioner-educator who had PROVEN the systems work."
+
+    Your version:
+    [WHAT DID YOU DECIDE TO DO?]
+  the_sacrifice: |
+    Example: "He spent 5 years studying everything about systems thinking,
+    operational excellence, business design, and scaling.
+    He read 400+ books. Interviewed 100+ successful entrepreneurs.
+    He tested every framework on his own businesses first."
+
+    Your version:
+    [WHAT DID YOU SACRIFICE / INVEST TO LEARN?]
+  obsession_proof: |
+    Example: "Alan became obsessive about systems.
+    He documented every insight. Created frameworks.
+    Started testing them with early clients.
+    This wasn't a side project—it was his life's work."
+
+    Your version:
+    [HOW DID YOU PROVE YOUR OBSESSION?]
+# ============================================================================
+# SECTION 3: THE TESTING (Proving it works)
+# ============================================================================
+testing_phase:
+  # How did the founder PROVE their expertise?
+  first_experiment: |
+    Example: "Alan taught his first framework to a friend's business.
+    The friend went from $50K to $150K annual revenue in 12 months.
+    Proof: Systems actually work."
+
+    Your version:
+    [WHAT WAS YOUR FIRST TEST?]
+  early_validation: |
+    Example: "Alan tested with 10 entrepreneurs. 9 of 10 got results.
+    2x-3x revenue growth in the first year.
+    He didn't go public. Just kept improving the system."
+
+    Your version:
+    [WHAT EARLY VALIDATION DID YOU GET?]
+  private_teaching_phase: |
+    Example: "Before teaching publicly, Alan taught 50 entrepreneurs privately.
+    Refined the framework based on real feedback.
+    Only went public after he was 100% confident it worked."
+
+    Your version:
+    [HOW DID YOU REFINE IN PRIVATE?]
+  the_breakthrough: |
+    Example: "After working with 50+ entrepreneurs, Alan saw that the system
+    was REPLICABLE. It worked across industries, company sizes, experiences.
+    He realized: 'I need to teach this to the world.'"
+
+    Your version:
+    [WHAT WAS YOUR BREAKTHROUGH MOMENT?]
+# ============================================================================
+# SECTION 4: THE PUBLIC EMERGENCE (Becoming visible)
+# ============================================================================
+public_emergence:
+  # How did the founder go from private expert to known authority?
+  first_public_claim: |
+    Example: "Alan published his first article: 'Why Most Entrepreneurs Fail
+    (And How Systems Save Them)'. Got 10K views. People asked for more."
+
+    Your version:
+    [WHAT WAS YOUR FIRST PUBLIC MOVE?]
+  early_publicity_strategy: |
+    Example: "Alan didn't do ads. He did:
+    - Published articles (free content that proved expertise)
+    - Spoke at small conferences
+    - Guest appearances on podcasts
+    - Built from credibility, not ads"
+
+    Your version:
+    [HOW DID YOU BUILD VISIBILITY?]
+  first_major_publication: |
+    Example: "His first book: 'The Systems That Scale'.
+    Published 2015. Took 2 years to write.
+    Sold organically through word-of-mouth.
+    3,000+ copies in first year."
+
+    Your version:
+    [WHAT WAS YOUR FIRST MAJOR PUBLICATION?]
+  reputation_spreading: |
+    Example: "People who read his book got results and told others.
+    Other experts invited him to speak at conferences.
+    Media started asking him for interviews.
+    Authority grew through proof, not promotion."
+
+    Your version:
+    [HOW DID YOUR REPUTATION SPREAD?]
+# ============================================================================
+# SECTION 5: THE MOVEMENT (From expert to movement leader)
+# ============================================================================
+movement_building:
+  # When the founder became bigger than just an individual expert
+  inflection_point: |
+    Example: "In 2018, Alan realized demand was so high that he couldn't
+    help everyone 1-on-1. He created YOUR_COMPANY to scale his teaching.
+    500 students in first year."
+
+    Your version:
+    [WHEN DID YOU MOVE FROM INDIVIDUAL EXPERT TO MOVEMENT?]
+  founding_the_institution: |
+    Example: "YOUR_COMPANY wasn't about Alan becoming famous.
+    It was about scaling the systems to help 1,000+ entrepreneurs.
+    He built an institution, not a personal brand."
+
+    Your version:
+    [WHAT INSTITUTION DID YOU BUILD?]
+  movement_momentum: |
+    Example: "Now 1,000+ alumni. Network effects. Community.
+    Alumni teach others. Success stories multiply.
+    It's no longer 'Alan's course'—it's a movement."
+
+    Your version:
+    [WHAT MOMENTUM HAVE YOU BUILT?]
+  proof_of_movement: |
+    Example: "The movement is proven by:
+    - 1,000+ alumni
+    - 84% alumni still applying systems 2+ years later
+    - Word-of-mouth growth (no paid ads)
+    - Alumni now teaching others"
+
+    Your version:
+    [HOW IS YOUR MOVEMENT PROVEN?]
+# ============================================================================
+# SECTION 6: THE AUTHORITY STACK (How authority compounds)
+# ============================================================================
+authority_stack:
+  # The different sources of authority working together
+  layer_1_practitioner:
+    description: "First, prove you've DONE it"
+    evidence: |
+      Example: "Alan built 3+ successful businesses.
+      He knows systems from first-hand experience, not theory."
+    your_evidence: "[WHAT HAVE YOU BUILT / DONE?]"
+  layer_2_teacher:
+    description: "Then, prove you can TEACH it"
+    evidence: |
+      Example: "Alan taught 50 private clients before going public.
+      Proved he could transfer knowledge, not just have it."
+    your_evidence: "[WHO HAVE YOU TAUGHT?]"
+  layer_3_author:
+    description: "Document your knowledge in published form"
+    evidence: |
+      Example: "Alan published 2 books.
+      Written knowledge that outlives the teacher."
+    your_evidence: "[WHAT HAVE YOU PUBLISHED?]"
+  layer_4_speaker:
+    description: "Share from prestigious stages"
+    evidence: |
+      Example: "Alan speaks at 8-10 conferences annually.
+      Invited by event organizers, not paying to speak."
+    your_evidence: "[WHERE HAVE YOU SPOKEN?]"
+  layer_5_results_proof:
+    description: "Show student/client success"
+    evidence: |
+      Example: "1,000+ students with documented results.
+      Average 2-3x revenue growth, 50% time savings."
+    your_evidence: "[WHAT RESULTS HAVE YOUR STUDENTS/CLIENTS ACHIEVED?]"
+  layer_6_media:
+    description: "Get interviewed by credible outlets"
+    evidence: |
+      Example: "50+ podcast appearances.
+      Media outlets want HIS perspective, not paying for ads."
+    your_evidence: "[WHO HAS INTERVIEWED YOU?]"
+  layer_7_recognition:
+    description: "Receive awards/recognition from peers"
+    evidence: |
+      Example: "Named 'Top Entrepreneurship Educator 2022' by [ORGANIZATION]"
+    your_evidence: "[WHAT RECOGNITION HAVE YOU RECEIVED?]"
+  authority_multiplication: |
+    These layers don't replace each other—they MULTIPLY each other.
+    Practitioner proof + Teaching proof + Published work + Speaking +
+    Student results + Media coverage + Peer recognition = UNSHAKEABLE authority
+# ============================================================================
+# SECTION 7: THE AUTHORITY NARRATIVE (For marketing)
+# ============================================================================
+authority_narrative:
+  # The story you tell about how founder became an authority
+  headline: |
+    Example: "How a Frustrated Consultant Became the Authority That
+    1,000+ Entrepreneurs Now Turn To"
+  narrative_arc:
+    # Full story structure for sales pages, videos, ads
+    act_1_witness:
+      description: "The founder witnesses a problem that needs solving"
+      story: |
+        Example: "For 15 years, Alan watched brilliant entrepreneurs fail.
+        They had ideas. They had hustle. They didn't have SYSTEMS."
+    act_2_obsession:
+      description: "Gets obsessed with finding/creating the solution"
+      story: |
+        Example: "Alan decided to become the expert in systems.
+        Spent 5 years studying. Read 400+ books. Tested on own businesses."
+    act_3_proof:
+      description: "Proves the solution works (privately first)"
+      story: |
+        Example: "He taught 50 entrepreneurs his framework.
+        49 got 2-3x revenue growth. Proof: The system works."
+    act_4_emergence:
+      description: "Goes public with the solution"
+      story: |
+        Example: "Alan published his knowledge through books, articles, podcasts.
+        Grew through credibility, not ads. People wanted what he knew."
+    act_5_movement:
+      description: "Scales to help thousands"
+      story: |
+        Example: "Founded YOUR_COMPANY to scale beyond 1-on-1.
+        Now 1,000+ entrepreneurs use his systems every day."
+    act_6_legacy:
+      description: "Builds institution that outlives the individual"
+      story: |
+        Example: "YOUR_COMPANY is bigger than Alan.
+        Alumni teach others. System perpetuates. Movement continues."
+# ============================================================================
+# SECTION 8: KEY INFLECTION POINTS (Timeline of authority growth)
+# ============================================================================
+inflection_points:
+  # Major moments when authority increased significantly
+  inflection_1:
+    year: YYYY
+    event: "[MAJOR EVENT - first success, first book, first public talk, etc]"
+    impact: "Authority increased by X%"
+    proof: "[HOW DO WE KNOW AUTHORITY INCREASED]"
+  inflection_2:
+    year: YYYY
+    event: "[EVENT]"
+    impact: "[IMPACT]"
+    proof: "[PROOF]"
+  inflection_3:
+    year: YYYY
+    event: "[EVENT]"
+    impact: "[IMPACT]"
+    proof: "[PROOF]"
+  inflection_4:
+    year: YYYY
+    event: "[EVENT]"
+    impact: "[IMPACT]"
+    proof: "[PROOF]"
+  authority_growth_trajectory: |
+    Example: "2005: Unknown consultant. 0 authority.
+    2010: Local expert. Small reputation.
+    2015: Published first book. Wider recognition.
+    2018: Founded YOUR_COMPANY. Movement begins.
+    2022: 1,000+ alumni. National authority.
+    2024: International recognition. Movement leader."
+# ============================================================================
+# SECTION 9: WHAT MADE AUTHORITY CREDIBLE (Why people believe it)
+# ============================================================================
+credibility_factors:
+  # What made people trust the founder's authority?
+  factor_1_consistency:
+    description: "Same message for 15+ years"
+    evidence: |
+      Example: "Alan has consistently said: 'Systems beat talent.'
+      He's lived it, taught it, written it.
+      Consistency built trust."
+    your_factor: "[WHAT CONSISTENCY HAVE YOU MAINTAINED?]"
+  factor_2_proof:
+    description: "Results, not promises"
+    evidence: |
+      Example: "Alan shows student case studies with real names, numbers, proof.
+      Not generic 'results may vary' disclaimers."
+    your_factor: "[WHAT PROOF DO YOU SHOW?]"
+  factor_3_vulnerability:
+    description: "Admits what doesn't work and fixes it"
+    evidence: |
+      Example: "Alan publicly admits when a framework failed.
+      Shows how he improved it.
+      Transparency builds trust."
+    your_factor: "[WHERE HAVE YOU SHOWN VULNERABILITY?]"
+  factor_4_generosity:
+    description: "Teaches publicly before charging"
+    evidence: |
+      Example: "Alan published free articles for years before selling courses.
+      Proven knowledge publicly first, then monetized."
+    your_factor: "[WHAT HAVE YOU GIVEN AWAY FREE?]"
+  factor_5_longevity:
+    description: "Been doing this for decades, not months"
+    evidence: |
+      Example: "Alan has been teaching systems for 15+ years.
+      Not a 90-day viral expert. Not a new trend."
+    your_factor: "[HOW LONG HAVE YOU BEEN AT THIS?]"
+  factor_6_third_party_validation:
+    description: "Others vouch for the authority"
+    evidence: |
+      Example: "Invited to speak at major conferences.
+      Other experts recommend his work.
+      Media wants his perspective."
+    your_factor: "[WHO HAS VALIDATED YOU?]"
+# ============================================================================
+# SECTION 10: COMPETITIVE AUTHORITY POSITIONING
+# ============================================================================
+vs_other_authorities:
+  # How is this founder's authority different from competitors?
+  vs_type_1_motivational_speaker:
+    their_positioning: "Inspire people to take action through emotion"
+    founder_positioning: "[YOUR POSITIONING]"
+    founder_advantage: |
+      Example: "Alan teaches SYSTEMS, not motivation.
+      When the webinar ends, people have a framework to implement.
+      Not just an inspiring story."
+  vs_type_2_academic:
+    their_positioning: "Teach theory from ivory tower perspective"
+    founder_positioning: "[YOUR POSITIONING]"
+    founder_advantage: |
+      Example: "Alan teaches from 15 years of practice.
+      His frameworks are tested in real businesses.
+      Not theoretical, but proven."
+  vs_type_2_celebrity:
+    their_positioning: "Famous for being famous"
+    founder_positioning: "[YOUR POSITIONING]"
+    founder_advantage: |
+      Example: "Alan is known for expertise, not celebrity.
+      You follow him to learn, not to be entertained.
+      Authority earned, not inherited."
+  unfair_competitive_advantage: |
+    Example: "The unfair advantage: Alan is a PRACTITIONER teaching educators.
+    Most educators teach theory. Alan teaches what he's actively doing.
+    That difference is massive."
+# ============================================================================
+# SECTION 11: AUTHORITY DEFENSE (Why it's not easily replicated)
+# ============================================================================
+why_authority_is_defensible:
+  # Why can't competitors just copy this authority?
+  network_effect:
+    description: "The community effect makes authority stronger over time"
+    example: |
+      Example: "1,000 alumni form a network. They refer others.
+      Network becomes a moat. Can't just duplicate that."
+  trust_over_time:
+    description: "15 years of consistent teaching builds trust"
+    example: |
+      Example: "Alan has taught thousands over years.
+      Reputation compounds. New competitors start at zero trust.
+      They can't just 'catch up' on trust."
+  framework_ownership:
+    description: "The frameworks are proprietary and tested"
+    example: |
+      Example: "The systems Alan teaches are uniquely his (and validated).
+      A competitor can't just 'copy' them—they need their own proof."
+  first_mover_advantage:
+    description: "Was early into the space"
+    example: |
+      Example: "When Alan started teaching systems, no one else was.
+      Now he's the benchmark. New entrants are always playing catch-up."
+# ============================================================================
+# SECTION 12: AUTHORITY STORY SUMMARY (For copy)
+# ============================================================================
+one_page_story:
+  # Ultra-condensed authority story for ads/short pages
+  version_30_seconds: |
+    Example: "YOUR_FOUNDER spent 15 years as a consultant watching brilliant
+    entrepreneurs fail due to lack of systems. So he became obsessed with
+    systems thinking. Tested frameworks on his own businesses. Taught 50
+    entrepreneurs. Got results. Now 1,000+ entrepreneurs use his systems."
+  version_60_seconds: |
+    Example: "YOUR_FOUNDER witnessed a frustrating gap: entrepreneurs had
+    ideas and hustle, but no SYSTEMS. For 15 years as a consultant, he
+    watched smart people fail because of this. He got obsessed with systems
+    thinking. Spent 5 years studying. Tested everything on his own
+    businesses. Then taught 50 entrepreneurs privately—49 of them tripled
+    revenue. Proof in hand, he founded YOUR_COMPANY. Now 1,000+
+    entrepreneurs run systematic businesses because of his frameworks.
+    That's his authority: proven results at scale."
+  version_3_minutes: |
+    [This is the full act_1 through act_6 story above]
+# ============================================================================
+# CHECKLIST: AUTHORITY-STORY COMPLETENESS
+# ============================================================================
+completion_checklist:
+  - "[ ] The problem (why authority was needed) is clearly identified"
+  - "[ ] The obsession phase (commitment to mastery) is documented"
+  - "[ ] The testing phase (private proof) is documented"
+  - "[ ] The public emergence (going visible) is documented"
+  - "[ ] The movement phase (scaling impact) is documented"
+  - "[ ] All 7 authority layers are addressed"
+  - "[ ] Authority narrative arc (6 acts) is complete"
+  - "[ ] Key inflection points are mapped with dates"
+  - "[ ] Credibility factors are documented"
+  - "[ ] Competitive advantage is clear"
+  - "[ ] Authority defensibility is documented"
+  - "[ ] One-page story is written (30s, 60s, 3m versions)"
+# ============================================================================
+# TEMPLATE NOTES FOR USERS
+# ============================================================================
+template_notes: |
+  This file is about the STORY of becoming an authority.
+  Different from credentials.yaml which lists formal qualifications.
+
+  DO put here:
+  ├─ Journey of becoming expert (problem → obsession → testing → emergence)
+  ├─ Key inflection points
+  ├─ Authority stack (how different types of proof multiply)
+  ├─ Competitive positioning vs other experts
+  ├─ Why authority is defensible/can't be copied
+  ├─ Narrative versions (30s, 60s, 3m) for marketing
+
+  DO NOT put here (use credentials.yaml instead):
+  ├─ Specific credentials lists
+  ├─ Award details
+  ├─ Article/book lists
+  ├─ Speaking appearance lists
+
+  credentials.yaml is the PROOF.
+  authority-story.yaml is the NARRATIVE around that proof.
+
+  Both are needed:
+  - credentials.yaml = "Here are my qualifications" (LinkedIn resume style)
+  - authority-story.yaml = "Here's how I became qualified" (story style)
+
+  A great sales page uses BOTH:
+  - Narrative hook from authority-story
+  - Credibility proof from credentials
+
+  This story should be:
+  - TRUE (not exaggerated)
+  - SPECIFIC (details matter)
+  - EMOTIONAL (people buy from people they trust)
+  - ACTIONABLE (shows path to authority, not destiny)
+
+  Update when major inflection points happen (new book, major media, 100+ more students).

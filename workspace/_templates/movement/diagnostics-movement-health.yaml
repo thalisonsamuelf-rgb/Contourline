@@ -1,0 +1,31 @@
+---
+# Template: movement health diagnostics dataset (N8 feedback lens)
+
+metadata:
+  template_id: "movement.diagnostics_health"
+  version: "1.0.0"
+  lifecycle_stage: "feedback"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+health:
+  doctrine_consistency: "<green|yellow|red|pending>"
+  ritual_adoption: "<green|yellow|red|pending>"
+  narrative_cohesion: "<green|yellow|red|pending>"
+  evidence_freshness: "<green|yellow|red|pending>"
+  flywheel_transition_health:
+    know_to_trust: "<green|yellow|red|pending>"
+    trust_to_buy: "<green|yellow|red|pending>"
+    trust_to_propagate: "<green|yellow|red|pending>"
+analysis:
+  root_causes: []
+  risks: []
+next_actions:
+  - owner: "<required>"
+    action: "<required>"
+    due_date: "<yyyy-mm-dd>"
+cadence:
+  reviewed_at: "<yyyy-mm-dd>"
+  next_review_at: "<yyyy-mm-dd>"
+provenance:
+  source_docs: []

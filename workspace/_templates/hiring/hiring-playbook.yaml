@@ -1,0 +1,182 @@
+---
+# HIRING-PLAYBOOK.YAML - A-Player Hiring Framework & Recruitment System
+# Purpose: Design a systematic hiring process that consistently attracts and identifies A-players
+# Guardian: COO / Founder / HR Lead
+# Timing: FILL after team-structure.yaml defines which roles to hire
+# Framework: Scalable Company A-Player Hiring (15fw) + Cole Gordon Recruiting
+# Dependency: team-structure.yaml (role definitions), commission-design.yaml (compensation)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "COO / Founder"
+  framework: "Scalable Company A-Player Hiring + Cole Gordon Recruiting"
+  notes: |
+    Hiring is the most leveraged activity in business.
+    One A-player is worth 3 B-players and 10 C-players.
+
+    The problem: Most hiring processes are designed to FILL A SEAT,
+    not to FIND THE RIGHT PERSON.
+
+    Three principles of A-player hiring:
+    1. CLARITY: Define success BEFORE you start looking
+    2. PIPELINE: Treat hiring like sales — build a pipeline
+    3. RIGOR: Use structured evaluation, not gut feeling
+
+    RULE: Never hire out of desperation.
+    If you are hiring because you are overwhelmed, you will hire wrong.
+    Build the hiring pipeline BEFORE you need people.
+
+# ============================================================================
+# STEP 1: ROLE DEFINITION
+# ============================================================================
+
+role_definition:
+  role_title: "FILL — Job title"
+  role_purpose: "FILL — Why does this role exist? (one sentence)"
+  reports_to: "FILL — Who do they report to?"
+  department: "FILL — Which department?"
+
+  outcomes_not_tasks:
+    outcome_1: "FILL — Primary outcome this role is responsible for (not a task — an OUTCOME)"
+    outcome_2: "FILL — Secondary outcome"
+    outcome_3: "FILL — Third outcome"
+
+  kpis:
+    kpi_1: "FILL — How is success measured? (specific metric)"
+    kpi_2: "FILL — Second KPI"
+    kpi_3: "FILL — Third KPI"
+
+  ninety_day_success: |
+    FILL — What does success look like after 90 days?
+    Be specific: "Has closed X deals" not "Is performing well."
+
+  compensation:
+    base: "FILL — Base salary range"
+    variable: "FILL — Commission/bonus structure (from commission-design.yaml)"
+    total_compensation: "FILL — Total estimated compensation"
+    benefits: "FILL — Benefits offered"
+
+# ============================================================================
+# STEP 2: CANDIDATE PROFILE
+# ============================================================================
+
+candidate_profile:
+  must_have:
+    skill_1: "FILL — Non-negotiable skill (will reject without this)"
+    skill_2: "FILL — Second must-have"
+    skill_3: "FILL — Third must-have"
+
+  nice_to_have:
+    skill_1: "FILL — Preferred but not required"
+    skill_2: "FILL — Second nice-to-have"
+
+  culture_fit:
+    value_1: "FILL — What value/trait MUST they embody?"
+    value_2: "FILL — Second cultural requirement"
+    value_3: "FILL — Third cultural requirement"
+
+  red_flags:
+    flag_1: "FILL — What immediately disqualifies someone?"
+    flag_2: "FILL — Second red flag"
+    flag_3: "FILL — Third red flag"
+
+# ============================================================================
+# STEP 3: SOURCING STRATEGY
+# ============================================================================
+
+sourcing:
+  channel_1:
+    name: "FILL — Sourcing channel (LinkedIn, job boards, referrals, agencies)"
+    budget: "FILL — Budget for this channel"
+    expected_volume: "FILL — Expected applicants from this channel"
+  channel_2:
+    name: "FILL — Second channel"
+    budget: "FILL — Budget"
+    expected_volume: "FILL — Expected volume"
+  channel_3:
+    name: "FILL — Third channel"
+    budget: "FILL — Budget"
+    expected_volume: "FILL — Expected volume"
+
+  job_post_headline: "FILL — Headline for the job post (treat it like a marketing headline)"
+  job_post_hook: |
+    FILL — First paragraph of the job post.
+    Sell the OPPORTUNITY, not the company.
+    Why should an A-player want THIS role?
+
+  referral_bonus: "FILL — Internal referral bonus amount (if applicable)"
+
+# ============================================================================
+# STEP 4: HIRING PIPELINE
+# ============================================================================
+
+pipeline:
+  stage_1_application:
+    name: "Application Review"
+    evaluator: "FILL — Who reviews applications?"
+    criteria: "FILL — What are you screening for? (resume keywords, experience)"
+    pass_rate: "FILL — Expected % that pass (target: 20-30%)"
+
+  stage_2_phone_screen:
+    name: "Phone Screen (15-20 min)"
+    evaluator: "FILL — Who conducts?"
+    questions:
+      - "FILL — Screening question 1"
+      - "FILL — Screening question 2"
+      - "FILL — Screening question 3"
+    pass_rate: "FILL — Expected % (target: 40-50%)"
+
+  stage_3_interview:
+    name: "Structured Interview (45-60 min)"
+    evaluator: "FILL — Who conducts? (reference interview-framework.yaml)"
+    format: "FILL — Behavioral / Technical / Case study / Combo"
+    pass_rate: "FILL — Expected % (target: 30-40%)"
+
+  stage_4_assignment:
+    name: "Practical Assignment"
+    description: "FILL — What do they complete? (paid test project, roleplay, presentation)"
+    evaluator: "FILL — Who evaluates?"
+    pass_rate: "FILL — Expected % (target: 50-60%)"
+
+  stage_5_offer:
+    name: "Offer & Negotiation"
+    owner: "FILL — Who extends the offer?"
+    timeline: "FILL — Offer valid for X days"
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+hiring_strength_score:
+  role_clarity: "FILL 1-10"
+  pipeline_rigor: "FILL 1-10"
+  sourcing_diversity: "FILL 1-10"
+  quality_of_hire: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "Unclear role definition, no structured pipeline, single sourcing channel, hire based on gut feeling."
+    range_4_6: "Basic role definition, some pipeline structure, 2 sourcing channels, some evaluation criteria."
+    range_7_8: "Clear outcomes + KPIs, structured multi-stage pipeline, diverse sourcing, data-informed evaluation."
+    range_9_10: "Crystal-clear role with 90-day success metrics, rigorous pipeline with scoring rubrics, proactive talent pipeline, 90%+ quality of hire rate."
+
+evidence:
+  data_points: "FILL — Time to hire, cost per hire, quality of hire, offer acceptance rate"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  biggest_hiring_bottleneck: "FILL — Where do you lose the most candidates?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "team-structure.yaml"
+    - "commission-design.yaml"
+  feeds_into:
+    - "interview-framework.yaml"
+    - "ramp-plan.yaml"
+  related:
+    - "kpi-scorecards.yaml"

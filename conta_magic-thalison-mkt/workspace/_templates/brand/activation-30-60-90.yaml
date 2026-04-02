@@ -1,0 +1,33 @@
+---
+metadata:
+  schema: "brand.activation_30_60_90"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+plan:
+  d30:
+    objectives: []
+    actions:
+      - owner: "FILL_THIS"
+        action: "FILL_THIS"
+        checkpoint: "FILL_THIS"
+  d60:
+    objectives: []
+    actions:
+      - owner: "FILL_THIS"
+        action: "FILL_THIS"
+        checkpoint: "FILL_THIS"
+  d90:
+    objectives: []
+    actions:
+      - owner: "FILL_THIS"
+        action: "FILL_THIS"
+        checkpoint: "FILL_THIS"
+kpis:
+  awareness: "FILL_THIS"
+  consideration: "FILL_THIS"
+  conversion: "FILL_THIS"
+  retention: "FILL_THIS"
+references:
+  source_doc: "FILL_THIS"

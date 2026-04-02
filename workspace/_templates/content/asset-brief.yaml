@@ -1,0 +1,69 @@
+metadata:
+  artifact: asset_brief
+  version: "1.0.0"
+  status: draft
+  campaign_slug: FILL_THIS
+  asset_slug: FILL_THIS
+  asset_type: FILL_THIS
+  channel: FILL_THIS
+  owner: FILL_THIS
+  updated_at: YYYY-MM-DD
+
+source_of_truth:
+  campaign_brief: "workspace/businesses/{business}/copy/{campaign_slug}/campaign-brief.yaml"
+  message_architecture: "workspace/businesses/{business}/copy/{campaign_slug}/message-architecture.yaml"
+  creative_brief: "workspace/businesses/{business}/copy/{campaign_slug}/creative-brief.yaml"
+  upstream_offer: "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+  upstream_proof:
+    - "workspace/businesses/{business}/products/{product}/proof.yaml"
+    - "workspace/businesses/{business}/products/{product}/testimonials.yaml"
+
+objective:
+  primary: FILL_THIS
+  secondary: FILL_THIS
+  cta: FILL_THIS
+
+audience_fit:
+  segment: FILL_THIS
+  awareness_stage: FILL_THIS
+  temperature: FILL_THIS
+  primary_objection: FILL_THIS
+
+requirements:
+  required_sections:
+    - FILL_THIS
+  required_proof:
+    - FILL_THIS
+  required_offer_elements:
+    - FILL_THIS
+  required_tone: FILL_THIS
+
+constraints:
+  length_or_duration: FILL_THIS
+  format_rules:
+    - FILL_THIS
+  platform_constraints:
+    - FILL_THIS
+  compliance_constraints:
+    - FILL_THIS
+
+dependencies:
+  campaign_brief: FILL_THIS
+  message_architecture: FILL_THIS
+  creative_brief: FILL_THIS
+  prior_assets_or_drafts:
+    - FILL_THIS
+
+approval:
+  must_be_present:
+    - FILL_THIS
+  failure_conditions:
+    - FILL_THIS
+
+handoff:
+  builder_notes:
+    - FILL_THIS
+  media_notes:
+    - FILL_THIS
+  tracking_notes:
+    - FILL_THIS

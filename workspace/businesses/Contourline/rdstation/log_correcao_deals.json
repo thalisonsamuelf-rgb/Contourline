@@ -1,0 +1,104 @@
+{
+  "date": "2026-03-17",
+  "total_contacts_processed": 170,
+  "total_deals_to_fix": 244,
+  "success": 159,
+  "errors": 11,
+  "deals_fixed": 228,
+  "deals_not_fixed": 16,
+  "error_details": [
+    {
+      "contact_id": "6868233ed56a350001fb5b97",
+      "contact_name": "ARIANE",
+      "deals_not_linked": [
+        "68f76af02ee3fc00148d418c"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "68682340d56a350001fb5c62",
+      "contact_name": "LEONARDO (ARNALDO FLAVIO PEREIRA DE SOUZA)",
+      "deals_not_linked": [
+        "68f7661b34fe5c0020379409"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "68682344d56a350001fb5e46",
+      "contact_name": "Candice",
+      "deals_not_linked": [
+        "68f684751a4af400144a8daf"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "68a31d25bb1d130020e5e46a",
+      "contact_name": "Erica Fabiula Canutto Teixeira",
+      "deals_not_linked": [
+        "689a8b5a4ef17f0001dfc84f",
+        "695fbd92ce171a001539beca",
+        "696004ea790761001ccfa809",
+        "690890778695ef0013fdcd2b"
+      ],
+      "deals_count": 4
+    },
+    {
+      "contact_id": "68a488eaf636dd000175ed2c",
+      "contact_name": "Fabrício C.",
+      "deals_not_linked": [
+        "697915b41882af001315c9e8"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "68a488f2f636dd000175f144",
+      "contact_name": "Fabyana",
+      "deals_not_linked": [
+        "68f7694a34fe5c0019379494"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "68682341d56a350001fb5d33",
+      "contact_name": "Pollyanna",
+      "deals_not_linked": [
+        "68f6852188c83200163be18b"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "6868233ed56a350001fb5b81",
+      "contact_name": "Raquel",
+      "deals_not_linked": [
+        "68f76a982ee3fc00168d4165"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "68682345d56a350001fb5ebf",
+      "contact_name": "Renan",
+      "deals_not_linked": [
+        "68f682010554cf0014aa0613"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "689dff65ce53e400018226be",
+      "contact_name": "Renata",
+      "deals_not_linked": [
+        "68f764664d45620017414eb8"
+      ],
+      "deals_count": 1
+    },
+    {
+      "contact_id": "68682346d56a350001fb5fba",
+      "contact_name": "Ricardo",
+      "deals_not_linked": [
+        "68dd69109e4dc30014cc9256",
+        "6980d470ee9cc5001ad8d294",
+        "68f67df0c0121700144275c2"
+      ],
+      "deals_count": 3
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+---
+# TEMPLATE: Buyer Journey Map
+# Complete customer journey from awareness to advocacy
+# Guardian: CMO
+# Status: SEPARATE FILE (Alan decision 2026-02-14)
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  source: "FILL_THIS"
+# ============================================================================
+# BUYER JOURNEY MAP
+# ============================================================================
+buyer_journey:
+  overview:
+    stages: 6
+    timeline: "Awareness → Consideration → Decision → Onboarding → Execution → Advocacy"
+    goal: "Convert prospect into member, then advocate"
+  stage_1_awareness:
+    name: "Awareness - They Know They Have Problem"
+    entry_trigger: "Burnout, frustration, seeing others succeed"
+    duration: "Days to weeks"
+    mindset: "Something is wrong with my approach"
+    emotional_state: "Frustrated, curious"
+    touchpoints:
+      - "Alan's social media (Instagram, LinkedIn)"
+      - "Member referrals (word of mouth)"
+      - "Articles/content about IA + business"
+      - "Ads (retargeting previous visitors)"
+      - "[PENDING] Other organic sources"
+    content_needs:
+      - "Validate that problem exists (naming it)"
+      - "Show others face same problem"
+      - "Hint at solution exists"
+    success_metrics:
+      - "Page view"
+      - "Video watch (30 sec+)"
+      - "Email signup"
+  stage_2_consideration:
+    name: "Consideration - They Explore Options"
+    entry_trigger: "Signed up for email or visited landing page"
+    duration: "Weeks to months"
+    mindset: "Maybe there's a system that can help me"
+    emotional_state: "Hopeful but skeptical"
+    touchpoints:
+      - "Email sequences (education + storytelling)"
+      - "Landing page (detailed offer info)"
+      - "Testimonials/case studies"
+      - "Free training/webinar"
+      - "Sales page (discovery call CTA)"
+    content_needs:
+      - "Understand the system (not a course)"
+      - "See proof it works (case studies)"
+      - "Know what to expect (timeline, effort)"
+      - "Lower risk (guarantee, testimonials)"
+    decision_factors:
+      - "Does founder have credibility? (FILL_THIS)"
+      - "Are results real? (proof from similar people)"
+      - "Can I afford it? (FILL_THIS)"
+      - "Do I have time? (10-15h/week)"
+      - "Is it safe? (30-day guarantee)"
+    success_metrics:
+      - "Email opens (40%+)"
+      - "Click-throughs (10%+)"
+      - "Landing page conversion (5%)"
+      - "Call booking (2-5%)"
+  stage_3_decision:
+    name: "Decision - They Commit or Don't"
+    entry_trigger: "Booked discovery call or ready to purchase"
+    duration: "Days"
+    mindset: "Should I do this?"
+    emotional_state: "Excited but scared"
+    touchpoints:
+      - "Discovery call with sales person"
+      - "Objection handling conversation"
+      - "Introduction to current member (if needed)"
+      - "Payment processing"
+    conversation_flow:
+      - "Share story (why they're here)"
+      - "Ask about current situation (pain level)"
+      - "Show them system (how it works)"
+      - "Address objections (remove barriers)"
+      - "Explain guarantee (remove risk)"
+      - "Call to action (join now)"
+    success_metrics:
+      - "Discovery call completion (70%+)"
+      - "Close rate (30-40% of calls)"
+      - "Average order value (FILL_THIS)"
+  stage_4_onboarding:
+    name: "Onboarding - They Get Started"
+    entry_trigger: "Payment received"
+    duration: "Days 1-7"
+    mindset: "I made the decision. Now what?"
+    emotional_state: "Excited, a bit nervous"
+    critical_moment: "First week determines success"
+    touchpoints:
+      - "Welcome email (what happens next)"
+      - "Platform access + login"
+      - "Orientation video (how to use system)"
+      - "First module access"
+      - "Community introduction"
+      - "First accountability check-in"
+    success_metrics:
+      - "Platform login (FILL_THIS +)"
+      - "First module start (80%+)"
+      - "Community join (70%+)"
+      - "First check-in attendance (60%+)"
+  stage_5_execution:
+    name: "Execution - They Build"
+    entry_trigger: "Completed onboarding"
+    duration: "Weeks 2-12"
+    mindset: "Let's make this work"
+    emotional_state: "Determined, occasional doubt"
+    key_milestones:
+      - "Week 1 - Zone of Genius mapped"
+      - "Week 2 - First automations set up"
+      - "Week 3 - Metric being tracked daily"
+      - "Week 4 - First small victory"
+      - "Week 8 - First offer test"
+      - "Week 12 - ROI positive"
+    weekly_touchpoints:
+      - "Accountability check-in (live or async)"
+      - "Module content consumption"
+      - "Community participation"
+      - "Metric tracking + feedback"
+      - "Optional 1-on-1 coaching"
+    critical_moments:
+      - "Day 7 (will they continue?)"
+      - "Day 30 (first real test)"
+      - "Day 60 (ROI question)"
+      - "Day 90 (decision to stay or refund)"
+    success_metrics:
+      - "Weekly attendance (70%+)"
+      - "Module completion (90%+)"
+      - "Metric tracking (5+ days/week)"
+      - "First automation deployed (60%)"
+      - "Community posts (active participation)"
+      - "Refund rate (<5%)"
+  stage_6_advocacy:
+    name: "Advocacy - They Tell Others"
+    entry_trigger: "Completed 90 days successfully"
+    duration: "Months 4-12"
+    mindset: "This actually worked"
+    emotional_state: "Grateful, energized"
+    touchpoints:
+      - "Member-exclusive 'success story' showcase"
+      - "Referral program (incentive to share)"
+      - "Advanced cohort offer (deeper engagement)"
+      - "Speaking opportunity in community"
+      - "Testimonial request"
+    advocacy_channels:
+      - "Direct referral (word of mouth)"
+      - "LinkedIn post about journey"
+      - "Testimonial video"
+      - "Introduction to their network"
+      - "[PENDING] Other channels"
+    success_metrics:
+      - "Referral rate (30%+ of members)"
+      - "Renewal rate (FILL_THIS + for year 2)"
+      - "Upgrade to advanced (20%)"
+      - "Testimonial completion (50%)"
+  overall_journey_metrics:
+    awareness_to_decision: "[PENDING] Conversion rate"
+    decision_to_payment: "80%+ (of discovery calls)"
+    payment_to_completion: "FILL_THIS + (with <5% refund)"
+    completion_to_renewal: "FILL_THIS +"
+    completion_to_referral: "30%+"
+    lifetime_value: "R$ 5.880+ (5 years)"
+  critical_success_factors:
+    factor_1: "Fast time to first win (week 4)"
+    factor_2: "Weekly accountability (prevents dropout)"
+    factor_3: "Community validation (feels safe)"
+    factor_4: "Clear path (no confusion)"
+    factor_5: "Founder credibility (builds trust)"
+    factor_6: "Guarantee (removes risk)"
+  dropout_prevention:
+    risk_1:
+      name: "Overwhelm (too much content)"
+      prevention: "Pre-loaded module order, weekly pacing"
+    risk_2:
+      name: "No quick wins (demoralization)"
+      prevention: "Week 4 forced small victory"
+    risk_3:
+      name: "Isolation (no support)"
+      prevention: "Weekly accountability ritual"
+    risk_4:
+      name: "Perfectionism (paralysis)"
+      prevention: "30-day forced launch, feedback first"
+    risk_5:
+      name: "WIP explosion (back to default)"
+      prevention: "System tracks WIP, forces WIP=1"
+  retention_hooks:
+    hook_1: "First small victory (30 days) = dopamine hit"
+    hook_2: "Community relationships = belonging"
+    hook_3: "Weekly check-in = accountability"
+    hook_4: "Visible metric progress = motivation"
+    hook_5: "Increasing income = proof"
+  reactivation_points:
+    trigger_1: "If member inactive day 21: Personal check-in email"
+    trigger_2: "If member inactive day 35: Success story from similar member"
+    trigger_3: "If member skips checkpoint: Community nudge (peer)"
+    trigger_4: "If member considering refund: 1-on-1 call with coach"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# END OF TEMPLATE
+
+# This file maps the complete customer journey from first awareness
+# through advocacy. Use it to identify drop-off points and optimize
+# each stage of the funnel.

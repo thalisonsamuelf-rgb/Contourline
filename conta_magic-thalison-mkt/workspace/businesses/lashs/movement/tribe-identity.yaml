@@ -1,0 +1,80 @@
+---
+# Tribe Identity - Contourline
+# Based on: foundation-tribe-identity template
+
+metadata:
+  template_id: "movement.foundation_tribe_identity"
+  version: "1.0.0"
+  lifecycle_stage: "foundation"
+  status: PARTIAL
+  last_updated: "2026-03-19"
+  source: "company-profile.yaml"
+  product_name: "Contourline - Equipamentos Medicos e Esteticos"
+
+tribe:
+  name: "#SomosAFabricaDeAltoEstima"
+
+  in_group: >
+    Profissionais que acreditam em medicina estetica baseada em ciencia.
+    Medicos, clinicas de estetica e centros medicos que buscam equipamentos
+    de alta tecnologia com respaldo cientifico e resultados comprovados.
+
+  out_group: >
+    Empresas que vendem equipamentos comoditizados sem ciencia, sem P&D
+    proprio e sem validacao cientifica. Quem prioriza preco sobre qualidade
+    e promete resultados sem evidencia.
+
+  rallying_cry: "Revelando em todas as pessoas a sua melhor versao"
+
+  events:
+    - name: "Contourline Experience"
+      type: "annual"
+      description: "Evento anual da marca para reposicionamento e forca de marca"
+    - name: "Convencao de Revendedores"
+      type: "annual"
+      description: "Encontro de parceiros comerciais para expansao e alinhamento"
+
+  archetypes:
+    - key: "REQUIRES_ELICITATION"
+      label: "REQUIRES_ELICITATION"
+      motivation_core: "REQUIRES_ELICITATION"
+      main_fear: "REQUIRES_ELICITATION"
+      sample_members: []
+
+  transformation_arc:
+    stages: "REQUIRES_ELICITATION"
+
+  semantic_clusters:
+    - key: "autoestima"
+      strength: "dominant"
+      terms:
+        - "Fabrica de Autoestima"
+        - "Melhor versao"
+        - "Autoestima"
+    - key: "ciencia"
+      strength: "high"
+      terms:
+        - "Ciencia que Conecta"
+        - "P&D proprio"
+        - "Validacao cientifica"
+        - "Estudos publicados"
+    - key: "inovacao"
+      strength: "high"
+      terms:
+        - "Inovacao"
+        - "Tecnologia de ponta"
+        - "Premium"
+        - "Alta tecnologia"
+    - key: "excelencia"
+      strength: "high"
+      terms:
+        - "Excelencia"
+        - "CX Excellence"
+        - "Profissionalizacao"
+
+  narrative_gaps: "REQUIRES_ELICITATION"
+
+provenance:
+  source_docs:
+    - "workspace/businesses/lashs/company/company-profile.yaml"
+    - "workspace/businesses/lashs/operations/team-structure.yaml"

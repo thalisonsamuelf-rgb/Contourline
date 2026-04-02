@@ -1,0 +1,30 @@
+---
+metadata:
+  schema: "brand.master_plan"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+executive_summary:
+  business_context: "FILL_THIS"
+  strategic_thesis: "FILL_THIS"
+core_decisions:
+  selected_name: "FILL_THIS"
+  selected_domain: "FILL_THIS"
+  positioning_core: "FILL_THIS"
+  activation_priority: "FILL_THIS"
+package:
+  naming_domain:
+    recommendation_doc: "FILL_THIS"
+  foundations:
+    report_doc: "FILL_THIS"
+  positioning_narrative:
+    report_doc: "FILL_THIS"
+  activation:
+    report_doc: "FILL_THIS"
+  governance:
+    operating_model: "FILL_THIS"
+next_90_days:
+  milestones: []
+references:
+  source_docs: []

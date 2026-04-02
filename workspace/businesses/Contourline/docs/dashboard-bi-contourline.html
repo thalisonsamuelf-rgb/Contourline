@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contourline BI — Sales x RD Station</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e4e4e7;
+  --muted: #9ca3af;
+  --accent: #6366f1;
+  --green: #22c55e;
+  --red: #ef4444;
+  --yellow: #eab308;
+  --blue: #3b82f6;
+  --purple: #a855f7;
+  --orange: #f97316;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); }
+
+.header { background: linear-gradient(135deg, #1e1b4b, #312e81); padding: 24px 40px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.header-left h1 { font-size: 24px; font-weight: 700; }
+.header-left p { color: var(--muted); margin-top: 2px; font-size: 13px; }
+
+/* Year Filter */
+.year-filter { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.year-btn { padding: 6px 14px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; background: rgba(255,255,255,0.08); color: var(--muted); border: 1px solid rgba(255,255,255,0.12); transition: all 0.2s; }
+.year-btn:hover { background: rgba(255,255,255,0.15); color: var(--text); }
+.year-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.year-filter-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px; }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.kpi-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.kpi-value { font-size: 26px; font-weight: 700; margin-top: 2px; }
+.kpi-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.kpi-value.green { color: var(--green); }
+.kpi-value.red { color: var(--red); }
+.kpi-value.blue { color: var(--blue); }
+.kpi-value.purple { color: var(--purple); }
+.kpi-value.yellow { color: var(--yellow); }
+.kpi-value.orange { color: var(--orange); }
+
+.section { margin-bottom: 24px; }
+.section-title { font-size: 16px; font-weight: 600; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+
+.chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.chart-card.full { grid-column: 1 / -1; }
+.chart-card h3 { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.chart-wrap { position: relative; height: 280px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { text-align: left; padding: 6px 10px; border-bottom: 2px solid var(--border); color: var(--muted); font-size: 10px; text-transform: uppercase; }
+td { padding: 6px 10px; border-bottom: 1px solid var(--border); }
+tr:hover { background: rgba(99, 102, 241, 0.05); }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.tabs { display: flex; gap: 4px; margin-bottom: 16px; }
+.tab { padding: 7px 14px; border-radius: 8px; cursor: pointer; font-size: 12px; background: transparent; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s; }
+.tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.loading { text-align: center; padding: 60px; color: var(--muted); font-size: 16px; }
+
+@media (max-width: 768px) {
+  .chart-grid { grid-template-columns: 1fr; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .header { padding: 16px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Contourline BI</h1>
+    <p>Sales x RD Station CRM | Dados do Supabase</p>
+  </div>
+  <div class="year-filter">
+    <span class="year-filter-label">Filtrar:</span>
+    <div class="year-btn active" onclick="setYear('all')">Todos</div>
+    <div class="year-btn" onclick="setYear(2026)">2026</div>
+    <div class="year-btn" onclick="setYear(2025)">2025</div>
+    <div class="year-btn" onclick="setYear(2024)">2024</div>
+    <div class="year-btn" onclick="setYear(2023)">2023</div>
+    <div class="year-btn" onclick="setYear(2022)">2022</div>
+    <div class="year-btn" onclick="setYear(2021)">2021</div>
+    <div class="year-btn" onclick="setYear(2020)">2020</div>
+    <div class="year-btn" onclick="setYear(2019)">2019</div>
+  </div>
+</div>
+
+<div class="container">
+  <div id="kpis" class="kpi-grid"></div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('vendas',this)">Vendas</div>
+    <div class="tab" onclick="showTab('produtos',this)">Produtos</div>
+    <div class="tab" onclick="showTab('vendedores',this)">Vendedores</div>
+    <div class="tab" onclick="showTab('geo',this)">Geografico</div>
+    <div class="tab" onclick="showTab('rdstation',this)">RD Station</div>
+  </div>
+
+  <div id="tab-vendas" class="tab-content active">
+    <div class="chart-grid">
+      <div class="chart-card full"><h3>Faturamento por Ano</h3><div class="chart-wrap"><canvas id="cRevYear"></canvas></div></div>
+      <div class="chart-card"><h3>Pedidos por Mes</h3><div class="chart-wrap"><canvas id="cCountMonth"></canvas></div></div>
+      <div class="chart-card"><h3>Ticket Medio por Mes</h3><div class="chart-wrap"><canvas id="cTicketMonth"></canvas></div></div>
+    </div>
+  </div>
+
+  <div id="tab-produtos" class="tab-content">
+    <div class="chart-grid">
+      <div class="chart-card"><h3>Top Produtos (qtd)</h3><div class="chart-wrap"><canvas id="cProdCount"></canvas></div></div>
+      <div class="chart-card"><h3>Top Produtos (receita)</h3><div class="chart-wrap"><canvas id="cProdRev"></canvas></div></div>
+      <div class="chart-card full"><h3>Detalhamento</h3><table><thead><tr><th>Produto</th><th class="num">Vendas</th><th class="num">Receita</th><th class="num">Ticket</th></tr></thead><tbody id="tbProd"></tbody></table></div>
+    </div>
+  </div>
+
+  <div id="tab-vendedores" class="tab-content">
+    <div class="chart-grid">
+      <div class="chart-card"><h3>Top Vendedores (qtd)</h3><div class="chart-wrap"><canvas id="cSellerCount"></canvas></div></div>
+      <div class="chart-card"><h3>Top Vendedores (receita)</h3><div class="chart-wrap"><canvas id="cSellerRev"></canvas></div></div>
+      <div class="chart-card full"><h3>Detalhamento</h3><table><thead><tr><th>Vendedor</th><th class="num">Vendas</th><th class="num">Receita</th><th class="num">Ticket</th></tr></thead><tbody id="tbSeller"></tbody></table></div>
+    </div>
+  </div>
+
+  <div id="tab-geo" class="tab-content">
+    <div class="chart-grid">
+      <div class="chart-card"><h3>Top Estados (qtd)</h3><div class="chart-wrap"><canvas id="cStateCount"></canvas></div></div>
+      <div class="chart-card"><h3>Top Estados (receita)</h3><div class="chart-wrap"><canvas id="cStateRev"></canvas></div></div>
+      <div class="chart-card full"><h3>Fonte de Captacao</h3><div class="chart-wrap"><canvas id="cAcq"></canvas></div></div>
+    </div>
+  </div>
+
+  <div id="tab-rdstation" class="tab-content">
+    <div class="chart-grid">
+      <div class="chart-card"><h3>Deals Ganhos por Mes (RD)</h3><div class="chart-wrap"><canvas id="cRdMonth"></canvas></div></div>
+      <div class="chart-card"><h3>Fonte dos Deals Ganhos</h3><div class="chart-wrap"><canvas id="cRdSource"></canvas></div></div>
+      <div class="chart-card"><h3>Produtos (deals ganhos)</h3><div class="chart-wrap"><canvas id="cRdProd"></canvas></div></div>
+      <div class="chart-card"><h3>Vendedores RD (deals ganhos)</h3><div class="chart-wrap"><canvas id="cRdSeller"></canvas></div></div>
+      <div class="chart-card full"><h3>Campanhas que geraram vendas</h3><div class="chart-wrap"><canvas id="cRdCamp"></canvas></div></div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center; padding:24px; color:var(--muted); font-size:11px; border-top:1px solid var(--border);">
+  Contourline Equipamentos Medicos | Dashboard BI gerado por AIOX Synkra | 29/03/2026
+</div>
+
+<script>
+// === CONFIG ===
+const SUPABASE_URL = 'https://lyifnttxpoypwibbffnv.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx5aWZudHR4cG95cHdpYmJmZm52Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MDM0NjcxNCwiZXhwIjoyMDY1OTIyNzE0fQ.UP0B9Bb4NncVhaSqlbUWX74xspisyEphKFW98ECjy1g';
+
+const colors = ['#6366f1','#3b82f6','#22c55e','#eab308','#f97316','#ef4444','#a855f7','#ec4899','#14b8a6','#84cc16','#06b6d4','#f43f5e','#8b5cf6','#10b981','#fbbf24'];
+Chart.defaults.color = '#9ca3af';
+Chart.defaults.borderColor = '#2a2d3a';
+Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, sans-serif';
+
+let allSales = [];
+let rdDeals = [];
+let selectedYear = 'all';
+let charts = {};
+
+// === SUPABASE FETCH ===
+async function sbFetch(table, select='*', extra='') {
+  const results = [];
+  let offset = 0;
+  while (true) {
+    const url = `${SUPABASE_URL}/rest/v1/${table}?select=${select}${extra}&offset=${offset}&limit=1000`;
+    const r = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }});
+    const data = await r.json();
+    results.push(...data);
+    if (data.length < 1000) break;
+    offset += 1000;
+  }
+  return results;
+}
+
+// === HELPERS ===
+function fmt(n) { return n >= 1000000 ? 'R$ '+(n/1e6).toFixed(1)+'M' : 'R$ '+(n/1e3).toFixed(0)+'k'; }
+function fmtK(n) { return 'R$ '+(n/1e3).toFixed(0)+'k'; }
+function fmtN(n) { return n.toLocaleString('pt-BR'); }
+
+function topN(arr, keyFn, n=15) {
+  const map = {};
+  arr.forEach(item => {
+    const k = keyFn(item);
+    if (!k) return;
+    if (!map[k]) map[k] = { count: 0, revenue: 0 };
+    map[k].count++;
+    map[k].revenue += parseFloat(item.sale_value || 0);
+  });
+  return Object.entries(map).sort((a,b) => b[1].count - a[1].count).slice(0, n).map(([k,v]) => ({name:k,...v}));
+}
+
+function makeChart(id, type, labels, datasets, opts={}) {
+  if (charts[id]) charts[id].destroy();
+  charts[id] = new Chart(document.getElementById(id), {
+    type, data: { labels, datasets },
+    options: { responsive: true, maintainAspectRatio: false, indexAxis: opts.horizontal ? 'y' : 'x',
+      plugins: { legend: { display: (datasets.length > 1) } },
+      scales: opts.scales || {},
+      ...opts.extra
+    }
+  });
+}
+
+function showTab(id, el) {
+  document.querySelectorAll('.tab-content').forEach(e => e.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+}
+
+// === YEAR FILTER ===
+function setYear(yr) {
+  selectedYear = yr;
+  document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  render();
+}
+
+function filterSales() {
+  if (selectedYear === 'all') return allSales;
+  return allSales.filter(s => s.year === selectedYear);
+}
+
+function filterRd() {
+  if (selectedYear === 'all') return rdDeals;
+  return rdDeals.filter(d => {
+    const ca = d.closed_at || d.created_at || '';
+    return ca.startsWith(String(selectedYear));
+  });
+}
+
+// === RENDER ===
+function render() {
+  const sales = filterSales();
+  const rd = filterRd();
+  const totalRev = sales.reduce((s,o) => s + parseFloat(o.sale_value||0), 0);
+  const totalCount = sales.length;
+  const avgTicket = totalCount ? totalRev / totalCount : 0;
+  const rdRev = rd.reduce((s,d) => s + (d.amount_total||0), 0);
+  const yearLabel = selectedYear === 'all' ? '2019-2026' : String(selectedYear);
+
+  // KPIs
+  document.getElementById('kpis').innerHTML = `
+    <div class="kpi-card"><div class="kpi-label">Vendas (${yearLabel})</div><div class="kpi-value">${fmtN(totalCount)}</div><div class="kpi-sub">pedidos</div></div>
+    <div class="kpi-card"><div class="kpi-label">Faturamento</div><div class="kpi-value green">${fmt(totalRev)}</div></div>
+    <div class="kpi-card"><div class="kpi-label">Ticket Medio</div><div class="kpi-value blue">${fmtK(avgTicket)}</div></div>
+    <div class="kpi-card"><div class="kpi-label">Deals Ganhos RD</div><div class="kpi-value purple">${fmtN(rd.length)}</div><div class="kpi-sub">${fmt(rdRev)} estimado</div></div>
+    <div class="kpi-card"><div class="kpi-label">Produtos Unicos</div><div class="kpi-value orange">${new Set(sales.map(s=>s.product_name).filter(Boolean)).size}</div></div>
+    <div class="kpi-card"><div class="kpi-label">Estados</div><div class="kpi-value">${new Set(sales.map(s=>s.state).filter(Boolean)).size}</div></div>
+  `;
+
+  // --- TAB VENDAS ---
+  // Revenue by year (always all years for context, highlight selected)
+  const byYear = {};
+  allSales.forEach(s => {
+    if (!byYear[s.year]) byYear[s.year] = {count:0, value:0};
+    byYear[s.year].count++;
+    byYear[s.year].value += parseFloat(s.sale_value||0);
+  });
+  const years = Object.keys(byYear).sort();
+  const bgColors = years.map(y => (selectedYear==='all' || Number(y)===selectedYear) ? '#6366f1' : '#2a2d3a');
+
+  makeChart('cRevYear', 'bar', years, [
+    { label:'Faturamento', data:years.map(y=>byYear[y].value), backgroundColor:bgColors, borderRadius:6 },
+    { label:'Pedidos', data:years.map(y=>byYear[y].count), type:'line', borderColor:'#22c55e', yAxisID:'y1', pointRadius:4, tension:0.3 }
+  ], { scales: { y:{ticks:{callback:v=>fmt(v)}}, y1:{position:'right',grid:{display:false}} } });
+
+  // Monthly breakdown
+  const byMonth = {};
+  const months = ['JANEIRO','FEVEREIRO','MARCO','ABRIL','MAIO','JUNHO','JULHO','AGOSTO','SETEMBRO','OUTUBRO','NOVEMBRO','DEZEMBRO'];
+  const monthsShort = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  sales.forEach(s => {
+    const m = (s.month||'').toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    const idx = months.indexOf(m);
+    const key = idx >= 0 ? monthsShort[idx] : m;
+    if (!key) return;
+    if (!byMonth[key]) byMonth[key] = {count:0,value:0};
+    byMonth[key].count++;
+    byMonth[key].value += parseFloat(s.sale_value||0);
+  });
+  const mLabels = monthsShort.filter(m => byMonth[m]);
+  makeChart('cCountMonth', 'bar', mLabels, [{data:mLabels.map(m=>(byMonth[m]||{}).count||0),backgroundColor:'#3b82f6',borderRadius:4}]);
+  makeChart('cTicketMonth', 'bar', mLabels, [{data:mLabels.map(m=>{const d=byMonth[m]||{count:1,value:0};return Math.round(d.value/d.count)}),backgroundColor:'#22c55e',borderRadius:4}]);
+
+  // --- TAB PRODUTOS ---
+  const prods = topN(sales, s => (s.product_name||'').toUpperCase());
+  makeChart('cProdCount', 'bar', prods.map(p=>p.name), [{data:prods.map(p=>p.count),backgroundColor:colors}], {horizontal:true});
+  makeChart('cProdRev', 'bar', prods.map(p=>p.name), [{data:prods.map(p=>p.revenue),backgroundColor:colors}], {horizontal:true});
+  document.getElementById('tbProd').innerHTML = prods.map(p =>
+    `<tr><td>${p.name}</td><td class="num">${p.count}</td><td class="num">${fmt(p.revenue)}</td><td class="num">${fmtK(p.revenue/p.count)}</td></tr>`
+  ).join('');
+
+  // --- TAB VENDEDORES ---
+  const sellers = topN(sales, s => s.seller_name);
+  makeChart('cSellerCount', 'bar', sellers.map(s=>s.name), [{data:sellers.map(s=>s.count),backgroundColor:colors}], {horizontal:true});
+  makeChart('cSellerRev', 'bar', sellers.map(s=>s.name), [{data:sellers.map(s=>s.revenue),backgroundColor:colors}], {horizontal:true});
+  document.getElementById('tbSeller').innerHTML = sellers.map(s =>
+    `<tr><td>${s.name}</td><td class="num">${s.count}</td><td class="num">${fmt(s.revenue)}</td><td class="num">${fmtK(s.revenue/s.count)}</td></tr>`
+  ).join('');
+
+  // --- TAB GEO ---
+  const states = topN(sales, s => s.state);
+  makeChart('cStateCount', 'bar', states.map(s=>s.name), [{data:states.map(s=>s.count),backgroundColor:colors}]);
+  makeChart('cStateRev', 'bar', states.map(s=>s.name), [{data:states.map(s=>s.revenue),backgroundColor:colors}]);
+  const acqs = topN(sales, s => s.acquisition_source);
+  makeChart('cAcq', 'bar', acqs.map(a=>a.name),
+    [{label:'Qtd',data:acqs.map(a=>a.count),backgroundColor:'#6366f1',borderRadius:4},
+     {label:'Receita',data:acqs.map(a=>a.revenue),backgroundColor:'#22c55e',borderRadius:4}]);
+
+  // --- TAB RD STATION ---
+  const rdByMonth = {};
+  rd.forEach(d => { const m=(d.closed_at||'').slice(0,7); if(m){rdByMonth[m]=(rdByMonth[m]||0)+1;} });
+  const rdMonths = Object.keys(rdByMonth).sort();
+  makeChart('cRdMonth', 'bar', rdMonths, [{data:rdMonths.map(m=>rdByMonth[m]),backgroundColor:'#a855f7',borderRadius:4}]);
+
+  const rdSrc = {};
+  rd.forEach(d => { const s=(d.deal_source&&d.deal_source.name)||'Sem fonte'; rdSrc[s]=(rdSrc[s]||0)+1; });
+  const srcEntries = Object.entries(rdSrc).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  makeChart('cRdSource', 'doughnut', srcEntries.map(e=>e[0]), [{data:srcEntries.map(e=>e[1]),backgroundColor:colors}]);
+
+  const rdProd = {};
+  rd.forEach(d => (d.deal_products||[]).forEach(p => { if(p&&p.name){rdProd[p.name]=(rdProd[p.name]||0)+1;} }));
+  const prodEntries = Object.entries(rdProd).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  makeChart('cRdProd', 'bar', prodEntries.map(e=>e[0]), [{data:prodEntries.map(e=>e[1]),backgroundColor:colors}], {horizontal:true});
+
+  const rdUser = {};
+  rd.forEach(d => { const u=(d.user&&d.user.name)||'?'; rdUser[u]=(rdUser[u]||0)+1; });
+  const userEntries = Object.entries(rdUser).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  makeChart('cRdSeller', 'bar', userEntries.map(e=>e[0]), [{data:userEntries.map(e=>e[1]),backgroundColor:colors}], {horizontal:true});
+
+  const rdCamp = {};
+  rd.forEach(d => { const c=(d.campaign&&d.campaign.name); if(c){rdCamp[c]=(rdCamp[c]||0)+1;} });
+  const campEntries = Object.entries(rdCamp).sort((a,b)=>b[1]-a[1]).slice(0,12);
+  makeChart('cRdCamp', 'bar', campEntries.map(e=>e[0]), [{data:campEntries.map(e=>e[1]),backgroundColor:colors}], {horizontal:true});
+}
+
+// === INIT ===
+async function init() {
+  document.getElementById('kpis').innerHTML = '<div class="kpi-card" style="grid-column:1/-1;text-align:center;padding:40px"><div class="kpi-value" style="font-size:16px;color:var(--muted)">Carregando dados do Supabase...</div></div>';
+
+  // Fetch sales from Supabase
+  allSales = await sbFetch('sales_orders', 'year,month,client_name,seller_name,product_name,product_line,sale_value,state,city,acquisition_source');
+
+  // Fetch RD deals from local file (embedded)
+  try {
+    const r = await fetch('dashboard-rd-deals.json');
+    if (r.ok) rdDeals = await r.json();
+  } catch(e) {}
+
+  // If no local file, use embedded data
+  if (!rdDeals.length) {
+    rdDeals = window.__rdDeals || [];
+  }
+
+  render();
+}
+
+init();
+</script>
+
+<!-- RD Deals embedded (133 deals ganhos do funil VENDAS — 2026-03-29) -->
+<script>
+window.__rdDeals = [{"name": "Sigrid Corrêa", "amount_total": 44900.0, "closed_at": "2026-03-25T12:06:28.913-03:00", "created_at": "2026-03-23T12:27:15.955-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": "Outbound"}, "campaign": {"name": ""}, "deal_products": [{"name": "PONTEIRA HIPRO", "price": 44900.0, "amount": 1}]}, {"name": "ANGELA MARQUES", "amount_total": 428900.0, "closed_at": "2026-03-26T15:20:52.384-03:00", "created_at": "2026-02-26T13:52:40.995-03:00", "user": {"name": "Aiani "}, "deal_source": {"name": "Outbound"}, "campaign": {"name": ""}, "deal_products": [{"name": "UNYQUE PRO", "price": 428900.0, "amount": 1}]}, {"name": "Luciena Ortigosa ", "amount_total": 281158.37, "closed_at": "2026-03-27T19:11:59.567-03:00", "created_at": "2026-02-25T21:21:28.547-03:00", "user": {"name": "Aiani "}, "deal_source": {"name": "Outbound"}, "campaign": {"name": ""}, "deal_products": [{"name": "UNYQUE PRO + ENYGMA", "price": 449900.0, "amount": 1}]}, {"name": "KEDIMA CRISTINA DO PRADO ARAUJO ", "amount_total": 242462.25, "closed_at": "2026-02-27T01:00:00.000-03:00", "created_at": "2026-02-23T16:03:53.364-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 242462.25, "amount": 1}]}, {"name": "MARCELA", "amount_total": 62900.0, "closed_at": "2026-02-23T15:05:26.085-03:00", "created_at": "2026-02-19T08:22:06.890-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": "CONTATO DIRETO COM VENDEDOR"}, "campaign": {"name": "Criado manualmente"}, "deal_products": [{"name": "M30", "price": 62900.0, "amount": 1}]}, {"name": "EVANDRO IZIDORO (VIVIAN NEVES)", "amount_total": 253417.45, "closed_at": "2026-02-27T01:00:00.000-03:00", "created_at": "2026-02-12T20:23:03.900-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "API"}, "deal_products": [{"name": "HIPRO", "price": 253417.45, "amount": 1}]}, {"name": "Edson Neto", "amount_total": 129258.7, "closed_at": "2026-02-27T01:00:00.000-03:00", "created_at": "2026-02-12T10:51:25.557-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "S30", "price": 129258.7, "amount": 1}]}, {"name": "Larissa Bastos", "amount_total": 60000.0, "closed_at": "2026-02-06T15:46:44.930-03:00", "created_at": "2026-01-30T09:07:07.345-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "S30", "price": 60000.0, "amount": 1}]}, {"name": "ALLAN MARCOS MACHADO FERREIRA", "amount_total": 99796.0, "closed_at": "2026-02-20T08:22:31.368-03:00", "created_at": "2026-01-28T17:25:23.795-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "MULTISHAPE", "price": 99796.0, "amount": 1}]}, {"name": "LUDMILLA F RANGEL", "amount_total": 231869.0, "closed_at": "2026-03-27T16:56:54.098-03:00", "created_at": "2026-01-26T14:47:52.544-03:00", "user": {"name": "Flaviana Cecilia "}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "API"}, "deal_products": [{"name": "HIPRO", "price": 231869.0, "amount": 1}]}, {"name": "PAOLA COSTA REHDER ", "amount_total": 270008.15, "closed_at": "2026-01-31T01:00:00.000-03:00", "created_at": "2026-01-21T18:00:46.916-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Pós Vendas"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO MED", "price": 270008.15, "amount": 1}]}, {"name": "IVAN", "amount_total": 173462.06, "closed_at": "2025-12-16T15:14:18.567-03:00", "created_at": "2025-12-11T17:31:04.206-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Pós Vendas"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 173462.06, "amount": 1}]}, {"name": "Bruna Lima ", "amount_total": 277994.19, "closed_at": "2025-12-16T15:41:44.247-03:00", "created_at": "2025-12-01T14:39:03.255-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "UNYQUE PRO", "price": 277994.19, "amount": 1}]}, {"name": "PAOLA COSTA REHDER ", "amount_total": 100000.0, "closed_at": "2025-11-28T01:00:00.000-03:00", "created_at": "2025-11-28T16:57:07.944-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "MULTISHAPE", "price": 100000.0, "amount": 1}]}, {"name": "MÁRCIA CAMPOS", "amount_total": 253417.45, "closed_at": "2026-02-27T01:00:00.000-03:00", "created_at": "2025-11-26T14:18:13.371-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 253417.45, "amount": 1}]}, {"name": "EVERTON GENEROSO", "amount_total": 239900.0, "closed_at": "2026-02-11T15:51:24.710-03:00", "created_at": "2025-11-26T13:46:53.332-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "NAHIL SERVICOS MEDICOS E HOSPITALARES LTDA | 891", "amount_total": 319900.0, "closed_at": "2025-12-16T15:04:46.456-03:00", "created_at": "2025-11-17T10:43:38.441-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Contato pelo Site"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "UNYQUE PRO", "price": 319900.0, "amount": 1}]}, {"name": "DENNYS ALBUQUERQUE RODRIGUES", "amount_total": 179746.51, "closed_at": "2025-11-18T11:54:45.601-03:00", "created_at": "2025-11-13T11:30:13.617-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 179746.51, "amount": 1}]}, {"name": "CENTRO DE ESTETICA FERNANDA FREITAS LTDA | 771", "amount_total": 197000.0, "closed_at": "2025-11-17T13:59:43.194-03:00", "created_at": "2025-11-12T11:08:49.086-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Contato pelo Site"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 197000.0, "amount": 1}]}, {"name": "PATRICIA VIEIRA DUARTE", "amount_total": 194395.0, "closed_at": "2025-11-27T11:52:45.476-03:00", "created_at": "2025-11-12T10:04:27.746-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Contato pelo Site"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 194395.0, "amount": 1}]}, {"name": "Thaíssa Oliveira de Almeida Coelho", "amount_total": 561720.3, "closed_at": "2026-02-27T01:00:00.000-03:00", "created_at": "2025-11-05T22:10:15.315-03:00", "user": {"name": "Felipe Gontijo"}, "deal_source": {"name": ""}, "campaign": {"name": "Lançamento Lumenis"}, "deal_products": [{"name": "STELLAR IPL + NDYAG + Q-SWITCHED + RESURFX", "price": 939900.0, "amount": 1}]}, {"name": "Kaito Casagrande", "amount_total": 392000.0, "closed_at": "2025-11-04T14:39:41.795-03:00", "created_at": "2025-11-04T14:32:41.373-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": ""}, "campaign": {"name": "Lançamento Lumenis"}, "deal_products": [{"name": "TRILIFT", "price": 490000.0, "amount": 1}]}, {"name": "RODRIGO PERIN FRANCESCATTO", "amount_total": 180000.0, "closed_at": "2025-11-21T09:19:58.407-03:00", "created_at": "2025-11-03T17:15:36.715-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Indicação"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 180000.0, "amount": 1}]}, {"name": "GREICE SPINDLER CHAVES", "amount_total": 319569.61, "closed_at": "2026-01-30T01:00:00.000-03:00", "created_at": "2025-10-31T08:49:51.064-03:00", "user": {"name": "Thiago Mendes"}, "deal_source": {"name": "Indicação"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "UNYQUE PRO", "price": 428900.0, "amount": 1}]}, {"name": "ALEXANDRE DANTAS", "amount_total": 298687.0, "closed_at": "2026-01-31T01:00:00.000-03:00", "created_at": "2025-10-30T15:42:56.074-03:00", "user": {"name": "Juliana Ambrosano"}, "deal_source": {"name": "Indicação por Clientes"}, "campaign": {"name": "Criado manualmente"}, "deal_products": [{"name": "NuEra Tight | Lumenis", "price": 298687.0, "amount": 1}]}, {"name": "NuEra tight - Marcos Vinicius e Dani", "amount_total": 299000.0, "closed_at": "2025-11-17T16:59:49.061-03:00", "created_at": "2025-10-28T11:17:48.458-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": ""}, "campaign": {"name": "Lançamento Lumenis"}, "deal_products": [{"name": "NuRevital | Creme NuEra", "price": 0.0, "amount": 1}, {"name": "NuRevital | Creme NuEra", "price": 0.0, "amount": 1}, {"name": "NuEra Tight | Lumenis", "price": 299000.0, "amount": 1}]}, {"name": "LIGIA B N BRAGA", "amount_total": 360000.0, "closed_at": "2026-01-29T09:45:15.415-03:00", "created_at": "2025-10-23T22:53:23.897-03:00", "user": {"name": "Juliana Ambrosano"}, "deal_source": {"name": "Desconhecido"}, "campaign": {"name": "Lançamento Lumenis"}, "deal_products": [{"name": "TRILIFT", "price": 490000.0, "amount": 1}]}, {"name": "VANESSA DANIELLE CREMASCO WAETGE", "amount_total": 200000.0, "closed_at": "2026-02-27T01:00:00.000-03:00", "created_at": "2025-10-23T22:53:08.758-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": "Desconhecido"}, "campaign": {"name": "Lançamento Lumenis"}, "deal_products": [{"name": "SUPREME PRO", "price": 428900.0, "amount": 1}]}, {"name": "Mariana Gradowski", "amount_total": 440000.0, "closed_at": "2025-11-06T00:13:24.614-03:00", "created_at": "2025-10-23T22:52:13.241-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": "Tráfego Direto"}, "campaign": {"name": "Lançamento Lumenis"}, "deal_products": [{"name": "TRILIFT", "price": 490000.0, "amount": 1}]}, {"name": "Thiara Souza Rodrigues ", "amount_total": 197000.0, "closed_at": "2025-11-28T01:00:00.000-03:00", "created_at": "2025-10-06T17:17:00.448-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Contato pelo Site"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 197000.0, "amount": 1}]}, {"name": "Lívia Cristina Cardoso Ninno Andraus", "amount_total": 0.0, "closed_at": "2025-10-21T22:19:56.894-03:00", "created_at": "2025-09-22T17:03:33.218-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": "Indicação"}, "campaign": {"name": ""}, "deal_products": []}, {"name": "CAROLINE MANSUR", "amount_total": 340000.0, "closed_at": "2025-10-30T09:28:24.707-03:00", "created_at": "2025-09-17T11:21:30.821-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "SUPREME PRO", "price": 340000.0, "amount": 1}]}, {"name": "CRISTIANE JUNQUEIRA DE SOUZA", "amount_total": 197000.0, "closed_at": "2025-10-29T09:40:41.741-03:00", "created_at": "2025-09-03T09:36:14.840-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Contato pelo Site"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 197000.0, "amount": 1}]}, {"name": "Dr. Mauro e Dra. Fabiana", "amount_total": 714563.88, "closed_at": "2025-08-26T12:16:05.384-03:00", "created_at": "2025-08-18T08:36:58.963-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": ""}, "campaign": {"name": "Lumenis"}, "deal_products": [{"name": "ULTRAPULSE ALPHA", "price": 1701000.0, "amount": 1}]}, {"name": "Daniela Aidar", "amount_total": 250000.0, "closed_at": "2025-11-08T07:33:21.599-03:00", "created_at": "2025-08-14T12:25:19.137-03:00", "user": {"name": "Juliana Ambrosano"}, "deal_source": {"name": "Eventos"}, "campaign": {"name": "Criado manualmente"}, "deal_products": [{"name": "TRILIFT", "price": 609900.0, "amount": 1}]}, {"name": "Ricardo Kacowicz", "amount_total": 1062665.69, "closed_at": "2025-08-12T01:00:00.000-03:00", "created_at": "2025-08-12T18:17:53.857-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "ULTRAPULSE ALPHA", "price": 1701000.0, "amount": 1}]}, {"name": "UltraPulse Alpha - Guilherme Almeida", "amount_total": 987381.06, "closed_at": "2025-08-26T12:11:49.579-03:00", "created_at": "2025-08-12T18:17:52.645-03:00", "user": {"name": "Felipe Ribeiro"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "ULTRAPULSE ALPHA", "price": 1701000.0, "amount": 1}]}, {"name": "Juliana Chaves", "amount_total": 654800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:19:30.311-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 175000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Roberta Andressa Mata Padovan", "amount_total": 623138.23, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:19:05.016-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 143338.23, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "FLÁVIA LORENE TEXEIRA MELILLO", "amount_total": 175000.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:58.992-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 175000.0, "amount": 1}]}, {"name": "Lucas turatti", "amount_total": 666517.97, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:58.203-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 186717.97, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Rafael Santos", "amount_total": 689700.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:50.537-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 209900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Cleidi aparecida costa zini", "amount_total": 659149.15, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:46.134-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 179349.15, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Gabriela Oliveira", "amount_total": 673007.66, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:35.501-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 193207.66, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Daiane Xavier", "amount_total": 529630.17, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:29.448-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 49830.17, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "DANIELA DE PAULA JACOBS", "amount_total": 695710.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:23.844-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 215910.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "MARIANA MATHEUS MOREIRA LOPES", "amount_total": 662326.13, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:22.449-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 182526.13, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Nayara Cristina Mendonça", "amount_total": 671790.28, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:20.893-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 191990.28, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Julie pessoa", "amount_total": 676517.97, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:19.964-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 196717.97, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Joana Savoldi Rossi", "amount_total": 664900.73, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:19.612-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 185100.73, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Helena Rodrigues Lopes", "amount_total": 652922.53, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:15.678-03:00", "user": {"name": "Fabrícia Carvalho Resende "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 173122.53, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Poliana Freitas", "amount_total": 645789.8, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:14.003-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 165989.8, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "ROGÉRIO GOMES SILVA", "amount_total": 660146.09, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:07.930-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 180346.09, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "JOÃO PAULO ALVES GONÇALVES", "amount_total": 662783.33, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:02.777-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 182983.33, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Patricia Matos", "amount_total": 516031.67, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:18:01.753-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 36231.67, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Lethicia Staffen", "amount_total": 664800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:53.974-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 185000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "VERNEI DUTRA STURZA", "amount_total": 197000.0, "closed_at": "2025-11-13T18:02:34.152-03:00", "created_at": "2025-08-11T22:17:50.562-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Contato pelo Site"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIPRO", "price": 197000.0, "amount": 1}]}, {"name": "Vanessa Vieira Marinho", "amount_total": 649229.3, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:44.377-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 169429.3, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "BRUNA LOPES DA CUNHA", "amount_total": 641055.33, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:38.832-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 161255.33, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "CAROLINA HIPRO", "amount_total": 672149.55, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:38.011-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 192349.55, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "JEANE", "amount_total": 713370.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:28.387-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 233570.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "RICARDO ALVES COELHO", "amount_total": 649800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:22.457-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 170000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Dra Anuska Lima", "amount_total": 667300.72, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:18.150-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 187500.72, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Tatyane milan", "amount_total": 680027.64, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:13.028-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 200227.64, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "VICENTE", "amount_total": 704800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:01.338-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 225000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Candice Ballalai", "amount_total": 676813.8200000001, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:17:00.269-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 197013.82, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Felipe Franck", "amount_total": 636904.03, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:57.458-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 157104.03, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Marcelo Augusto Mourao de Oliveira", "amount_total": 687641.34, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:48.951-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 207841.34, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Andrea Santana", "amount_total": 657800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:45.001-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 178000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Valeria Maria Koehler", "amount_total": 664699.48, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:39.101-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 184899.48, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Victor Paranhos de andrade", "amount_total": 645839.45, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:38.298-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 166039.45, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Dra Paula Melo", "amount_total": 554822.28, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:36.780-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 75022.28, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "GUSTAVO CURY", "amount_total": 532912.25, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:35.648-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 53112.25, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Marcelo Augusto Mourao de Oliveira", "amount_total": 681614.1799999999, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:15.664-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 201814.18, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "DRA DANIELA ROCHA", "amount_total": 517560.72, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:12.847-03:00", "user": {"name": "Rafaela Caldeira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 37760.72, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Jéssica Amorim Gonçalves Prudente Corrêa", "amount_total": 650692.56, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:16:02.392-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 170892.56, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Bruna Coimbra", "amount_total": 653264.4, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:59.434-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 173464.4, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Raquel Sesso Perches Hansen", "amount_total": 625563.13, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:57.103-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 145763.13, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Silas Gomes dos Santos", "amount_total": 657277.6, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:52.227-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 177477.6, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Roberta Andressa Mata Padovan", "amount_total": 627988.08, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:48.088-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 148188.08, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Jana kniest", "amount_total": 579800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:25.312-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 100000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Renata Pirrone", "amount_total": 639407.5700000001, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:22.322-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 159607.57, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Marcos", "amount_total": 521657.09, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:21.066-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 41857.09, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Rita Maria Garcia Ribeiro", "amount_total": 639407.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:12.082-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 159607.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Caroline Leão F Carvalho", "amount_total": 639800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:03.516-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 160000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "PAOLA COSTA REHDER | 813", "amount_total": 26900.0, "closed_at": "2025-11-28T09:05:45.270-03:00", "created_at": "2025-08-11T22:15:02.821-03:00", "user": {"name": "Jessica Carvalho"}, "deal_source": {"name": "Inbound"}, "campaign": {"name": "Sem Campanha"}, "deal_products": [{"name": "HIVE PRO", "price": 26900.0, "amount": 1}]}, {"name": "Gabriela Oliveira", "amount_total": 849700.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:15:01.097-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 369900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Lidiane saito", "amount_total": 630036.14, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:58.877-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 150236.14, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Renato Cortez", "amount_total": 499700.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:45.852-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 19900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Beatriz Navarro", "amount_total": 651998.42, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:35.035-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 172198.42, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Guilherme Novacck", "amount_total": 656156.9, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:33.664-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 176356.9, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Luciana Nocera", "amount_total": 640461.1799999999, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:33.013-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 160661.18, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Rafale Consoli", "amount_total": 645803.46, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:28.061-03:00", "user": {"name": "Fabrícia Carvalho Resende "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 166003.46, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Paulo Matielo", "amount_total": 515674.1, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:25.039-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 35874.1, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Anderson Gaspar", "amount_total": 671380.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:22.826-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 191580.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Guilherme Ikeda", "amount_total": 776172.2, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:22.439-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 296372.2, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Márcio Silva de Almeida", "amount_total": 610128.3200000001, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:14:08.622-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 130328.32, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Julie Scheffer", "amount_total": 565432.73, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:13:49.266-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 85632.73, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Caroline Leão F Carvalho", "amount_total": 729321.78, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:13:24.271-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 249521.78, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Mariana Tavares Neves", "amount_total": 569800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:13:17.975-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 90000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Adriana Paula Rosa de Arruda", "amount_total": 676651.96, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:13:02.713-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 196851.96, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Patricia Almeida", "amount_total": 610128.3200000001, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:13:01.058-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 130328.32, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Luis Henrique Franqueado Laser Rosa", "amount_total": 609700.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:59.390-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 129900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Fernanda Alves do Vale Souza", "amount_total": 645870.1799999999, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:55.470-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 166070.18, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "[DUPLICADO] Karystula Montanha", "amount_total": 786068.0800000001, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:46.999-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 306268.08, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Bruno Wyliames Vieira de Carvalho", "amount_total": 482470.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:32.341-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 2670.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Alexandre Magno de Melo Almeida", "amount_total": 600443.8, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:30.327-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 120643.8, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Alexandre Augusto Costa", "amount_total": 652720.22, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:29.224-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 172920.22, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Andressa Guimarães", "amount_total": 596944.03, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:25.167-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 117144.03, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Pedro Luís de Castro Lanzoni Breda", "amount_total": 663275.17, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:24.360-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 183475.17, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "THAIS EMILY SOARES DE QUEIROZ", "amount_total": 657927.59, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:23.758-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 178127.59, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Gabriela Rezende", "amount_total": 657927.59, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:23.041-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 178127.59, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Rosirene Dos Santos Amorim", "amount_total": 485504.33, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:22.194-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 5704.33, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Eloar Fernanda Costa Cândido", "amount_total": 646089.34, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:19.571-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 166289.34, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "ROGÉRIO GOMES SILVA", "amount_total": 646839.81, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:12.423-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 167039.81, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Luis Henrique Franqueado Laser Rosa", "amount_total": 598587.78, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:10.508-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 118787.78, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Alessandra Soares", "amount_total": 625071.91, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:12:05.144-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 145271.91, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Amanda Gouvea", "amount_total": 676900.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:58.199-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 197100.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Iris Cristine Odizio", "amount_total": 663762.52, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:35.090-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 183962.52, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Silvia Kaminsky", "amount_total": 659800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:33.892-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 180000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Walter Venancio Diniz Queiroz", "amount_total": 650768.86, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:30.802-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 170968.86, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Leise Mesquita", "amount_total": 663961.8200000001, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:26.559-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 184161.82, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Kellen Luciana da Silveira Roso", "amount_total": 645534.95, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:12.620-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 165734.95, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Jackson Sangalli", "amount_total": 661241.59, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:04.529-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 181441.59, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "GÉSSICA CARNEIRO DAMASCENO DUTRA", "amount_total": 603119.5700000001, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:11:02.461-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 123319.57, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Laíse Paula Gonçalves Dornelas", "amount_total": 647384.92, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:45.062-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 167584.92, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Julio Cesar  Odizio", "amount_total": 653264.4, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:40.097-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 173464.4, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Karlene Batista da Silva", "amount_total": 698800.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:37.461-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 219000.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Melissa de Mello e Souza Machado Fonseca", "amount_total": 661339.9, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:33.686-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 181539.9, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Adriana Oliveira", "amount_total": 778700.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:28.431-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 298900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Luis Henrique Franqueado Laser Rosa", "amount_total": 629700.0, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:25.079-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 149900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Márcio Silva de Almeida", "amount_total": 652982.49, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:23.220-03:00", "user": {"name": "Cláudia  Vieira"}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 173182.49, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}, {"name": "Fabricia Lelis", "amount_total": 634341.02, "closed_at": "2025-07-31T01:00:00.000-03:00", "created_at": "2025-08-11T22:10:18.247-03:00", "user": {"name": "Brandina "}, "deal_source": {"name": ""}, "campaign": {"name": ""}, "deal_products": [{"name": "Valor da oportunidade", "price": 154541.02, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}, {"name": "HIPRO", "price": 239900.0, "amount": 1}]}];
+</script>
+
+</body>
+</html>

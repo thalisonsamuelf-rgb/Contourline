@@ -1,0 +1,32 @@
+---
+# Template: manifestation content traceability dataset (N7)
+
+metadata:
+  template_id: "movement.manifestation_content_traceability"
+  version: "1.0.0"
+  lifecycle_stage: "manifestation"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+content_traceability:
+  content_id: "<required>"
+  cycle_id: "<required>"
+  doctrine:
+    id: "<required>"
+    function: "<required>"
+  myth:
+    id: "<required>"
+    role: "<founder|leader|sustenance>"
+    source_type: "<required>"
+  rite:
+    id: "<required>"
+    dimension: "<verbal|visual|audio|performance|design|editing|symbolic>"
+  execution:
+    channel: "<required>"
+    format: "<required>"
+    hook_type: "<provocation|revelation|promise|curiosity|identification>"
+  flywheel_target_phase: "<know|trust|buy|propagate>"
+  cta:
+    migration_to_owned: "<required>"
+provenance:
+  source_docs: []

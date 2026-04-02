@@ -1,0 +1,60 @@
+slug: variant2
+name: Orbit Flow
+
+seo:
+  title: Orbit Flow - White-label Ops Brandbook
+  description: Starter variant para times de operacao, produto e service design
+    com visual signal-on-dark.
+  og_image: /variants/variant2/og.svg
+
+branding:
+  marketing_wordmark: orbit
+  home_aria_label: Ir para a home de Orbit Flow
+  logo_light_alt: Orbit Flow
+  logo_dark_alt: Orbit Flow
+  brandbook_tagline: Signal-first Operations Design System
+  version_label: Variant 2
+  edition_label: Scaffold Fixture
+  brandbook_cta_label: Open Brandbook
+  floating_brandbook_label: Orbit Flow
+  footer_badges:
+    - 48+ Components
+    - Signal UI
+    - 2 Themes
+    - Variant Fixture
+
+navigation:
+  cta:
+    label: Book Intro
+    href: mailto:hello@orbitflow.ai
+
+footer:
+  entity:
+    display_name: Orbit Flow
+    legal_name: Orbit Flow Studio
+  contact:
+    email: hello@orbitflow.ai
+    phone: +55 (21) 4000-0102
+    city: Rio de Janeiro
+    region: RJ
+    location_lines:
+      - Rio de Janeiro, RJ
+      - Brazil
+  socials:
+    - label: X / Twitter
+      href: https://x.com/orbitflow
+    - label: Instagram
+      href: https://instagram.com/orbitflow
+    - label: GitHub
+      href: https://github.com/SynkraAI/aiox-stage
+  copyright_notice: Orbit Flow. All rights reserved.
+  bottom_note: Variant fixture generated from the starter scaffold
+
+assets:
+  logo_light: /variants/variant2/logo-light.svg
+  logo_dark: /variants/variant2/logo-dark.svg
+  og_image: /variants/variant2/og.svg
+
+fonts:
+  external_stylesheets:
+    - https://fonts.cdnfonts.com/css/tasa-orbiter-display

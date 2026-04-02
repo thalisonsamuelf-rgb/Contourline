@@ -1,0 +1,954 @@
+---
+# HOOKS.YAML - Central Hook Engineering Command Center (Hormozi Method)
+# Purpose: Engineer scroll-stopping hooks across ALL touchpoints: ads, emails, videos, social, sales pages
+# Guardian: Hook Engineer / Ads Manager / Content Strategist
+# Timing: FILL after diagnosis.yaml (awareness level) and icp.yaml (avatar language) are complete
+# Framework: Alex Hormozi, $100M Hooks Playbook — 121 Formulas, 8 Types, 70-20-10 Distribution
+# Dependency: diagnosis.yaml (awareness level), icp.yaml (pain/desire language), value-equation.yaml (4 variables)
+# NOTE: This file is the HOOK COMMAND CENTER. headlines.yaml handles sales page headline FORMULAS.
+#       This file covers hooks for EVERY touchpoint: ads, emails, videos, social, WhatsApp, sales pages.
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Hook Engineer"
+  framework: "Hormozi Hook Engineering — 121 Formulas x 8 Types x 70-20-10"
+  notes: |
+    The hook determines 80% of whether any piece of marketing succeeds or fails.
+    If nobody stops scrolling, nobody reads. Nobody reads, nobody buys.
+
+    David Ogilvy said it first: "After you have written your headline, you have
+    spent eighty cents of your advertising dollar."
+
+    Dean Graziosi proved it: changed TWO SENTENCES in an infomercial with Larry King.
+    Same content, same offer, same price, same website. Only the hook changed.
+    Went from total failure to millions in sales.
+
+    This file is NOT about body copy, offers, or creative direction.
+    This file is about the FIRST 5 SECONDS. Period.
+
+    HOOK EQUATION:
+    Hook = Call Out + Condition for Value
+    Call Out = Gets the prospect to say "This is for me" (Cocktail Party Effect)
+    Condition for Value = Promises benefit if they consume
+
+    RULES:
+    1. At least 80% of hooks must contain a specific number
+    2. Minimum 10 hook variations per creative test
+    3. 70% proven formulas, 20% adapted from adjacent niches, 10% experimental
+    4. Hook determines content — never the other way around
+    5. Data over feelings. Always.
+# ============================================================================
+# SECTION 1: THE 8 HOOK TYPES (Core Taxonomy)
+# ============================================================================
+# Every hook in existence fits into one of these 8 categories.
+# The distribution percentages come from analysis of 121 proven hooks
+# across ads, YouTube, Instagram, email, and Twitter.
+hook_types:
+  # --------------------------------------------------------------------------
+  # TYPE 1: QUESTIONS (15% of proven hooks)
+  # --------------------------------------------------------------------------
+  type_1_questions:
+    distribution: "15%"
+    definition: |
+      Questions force engagement. The brain cannot NOT answer a question.
+      Use when you want immediate mental participation from the audience.
+      Questions work at every awareness level but are most powerful at Levels 1-3
+      where the audience does not yet know your solution.
+    formula: "[Question that the avatar must answer YES to or that creates a curiosity gap]"
+    subtypes:
+      yes_questions: "Questions where the answer is obviously YES — creates agreement momentum"
+      open_questions: "Questions that create a mental fork — the audience must choose"
+      diagnostic_questions: "Questions that make the avatar feel seen — 'Do you ever wonder if...'"
+    best_awareness_levels: [1, 2, 3]
+    best_platforms: ["Facebook/Instagram Ads", "YouTube first 5 seconds", "Email subject lines"]
+    examples:
+      - hook: "Would you pay R$1.000 to have 10 new clients in 30 days?"
+        subtype: "yes_question"
+        why_works: "Specific number (R$1.000, 10, 30 days) + obvious YES answer"
+      - hook: "Have you ever looked in the mirror and thought 'I should be further ahead by now'?"
+        subtype: "diagnostic_question"
+        why_works: "Dean Graziosi hook — made MILLIONS because it makes the audience feel important, not the speaker"
+      - hook: "What would you do with an extra R$10.000 per month without working weekends?"
+        subtype: "open_question"
+        why_works: "Forces mental visualization of the dream outcome + removes key objection (weekends)"
+    your_question_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+      - "FILL — your_hook_3"
+  # --------------------------------------------------------------------------
+  # TYPE 2: STATEMENTS (35% of proven hooks — most common)
+  # --------------------------------------------------------------------------
+  type_2_statements:
+    distribution: "35%"
+    definition: |
+      Bold, specific claims that demand attention. Statements are the most common
+      hook type because they work everywhere. The key: the statement must be either
+      surprising, counterintuitive, or so specific that it feels undeniably real.
+      Vague statements die. Specific statements stop scrolls.
+    formula: "[Declarative fact/claim that creates curiosity or pattern interrupt]"
+    subtypes:
+      bold_claim: "A statement so specific it must be true — '$4.664/month... that is what Kyle made'"
+      counterintuitive: "A statement that contradicts common belief — 'The more expensive, the easier to sell'"
+      confession: "A vulnerable admission that builds credibility — 'My first 9 businesses failed'"
+    best_awareness_levels: [2, 3, 4, 5]
+    best_platforms: ["Instagram", "Facebook Ads", "Twitter/X", "Sales pages"]
+    examples:
+      - hook: "The rumors are true."
+        subtype: "bold_claim"
+        why_works: "Used 6x in Money Models launch. Hormozi highest-confidence hook. 4 words. Maximum curiosity gap."
+      - hook: "R$4.664 por mes em receita recorrente... isso e o que o Kyle — o ULTIMO no ranking — construiu."
+        subtype: "bold_claim"
+        why_works: "Unusual number ($4.664 not $5.000) = real. Worst performer still earns well = social proof floor."
+      - hook: "Smart business owners make money from customers. Dumb ones make money from products."
+        subtype: "counterintuitive"
+        why_works: "Binary identity hook. Nobody wants to be 'dumb.' Forces self-categorization."
+    your_statement_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+      - "FILL — your_hook_3"
+  # --------------------------------------------------------------------------
+  # TYPE 3: CONDITIONALS (20% of proven hooks)
+  # --------------------------------------------------------------------------
+  type_3_conditionals:
+    distribution: "20%"
+    definition: |
+      If/then scenarios that pre-qualify the reader. Conditionals are surgical:
+      the right people lean in, the wrong people scroll past. That is the point.
+      You WANT disqualification. A conditional hook that everyone relates to is
+      too broad. A conditional that makes 5% of people say "that is exactly me"
+      is a winner.
+    formula: "If [specific situation the avatar is in], [consequence/reveal/command]"
+    subtypes:
+      situation_consequence: "'If you are spending more than R$5K on ads and not seeing ROI...'"
+      situation_reveal: "'If you could only read 1 business book this year, make it this one'"
+      situation_command: "'If you are 25 to 55 and own a business, stop scrolling'"
+    best_awareness_levels: [2, 3, 4]
+    best_platforms: ["Facebook/Instagram Ads", "Email subject lines", "YouTube"]
+    examples:
+      - hook: "If you are working all the time and your business is not growing, you are working on the wrong things."
+        subtype: "situation_consequence"
+        why_works: "Identifies exact pain (overwork without results) + provides the diagnosis in the hook itself"
+      - hook: "Se voce tem um negocio faturando entre R$30K e R$300K por mes, isso e pra voce."
+        subtype: "situation_command"
+        why_works: "Revenue bracket = surgical targeting. Cocktail Party Effect with specific numbers."
+      - hook: "If I woke up tomorrow with a struggling business and R$0 in the bank, here are the 3 things I would do."
+        subtype: "situation_reveal"
+        why_works: "Hypothetical + specific number (3 things) + authority (implies speaker has solved this before)"
+    your_conditional_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+      - "FILL — your_hook_3"
+  # --------------------------------------------------------------------------
+  # TYPE 4: COMMANDS (10% of proven hooks)
+  # --------------------------------------------------------------------------
+  type_4_commands:
+    distribution: "10%"
+    definition: |
+      Direct instructions that pre-qualify the reader. Commands work because
+      they create instant polarity: the reader either obeys (engagement) or
+      rebels (still engagement — they read to find out why they should care).
+      Commands are most effective at awareness levels 4-5 where the audience
+      already trusts you.
+    formula: "[Direct action verb] + [qualifier or reason]"
+    subtypes:
+      stop_action: "'Stop scrolling. This will save your business.'"
+      read_this: "'Read this if you are tired of being broke.'"
+      throw_out: "'Throw out your morning routine and switch to a money routine.'"
+    best_awareness_levels: [4, 5]
+    best_platforms: ["Facebook/Instagram Ads", "TikTok/Reels", "Email subject lines"]
+    examples:
+      - hook: "Stop trying to figure it out alone."
+        subtype: "stop_action"
+        why_works: "6 words. Identifies the pain (isolation) and implies the solution (help exists)"
+      - hook: "Read this if you want to win."
+        subtype: "read_this"
+        why_works: "Self-selection mechanism. Only ambitious people continue. Disqualifies passive readers."
+      - hook: "Pare o que esta fazendo. Isso aqui muda tudo."
+        subtype: "stop_action"
+        why_works: "Pattern interrupt + big promise in 8 words. Works in native scroll environments."
+    your_command_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+      - "FILL — your_hook_3"
+  # --------------------------------------------------------------------------
+  # TYPE 5: LABELS (3% of proven hooks)
+  # --------------------------------------------------------------------------
+  type_5_labels:
+    distribution: "3%"
+    definition: |
+      Words your avatar identifies with. The Cocktail Party Effect: hearing your
+      name in a crowded room. Labels call out a specific group by name, revenue,
+      profession, or situation. Low volume in the 121 database, but extremely
+      high conversion when used correctly because they are the purest form
+      of Call Out.
+    formula: "[Exact avatar description], [what you have for them]"
+    subtypes:
+      profession_label: "'Chiropractors, I have a gift for you'"
+      revenue_label: "'Donos de negocio faturando mais de R$50K/mes'"
+      situation_label: "'Coaches making under R$10K/month — I have something for you'"
+    best_awareness_levels: [2, 3, 4]
+    best_platforms: ["Facebook/Instagram Ads", "YouTube thumbnails", "Email subject lines"]
+    examples:
+      - hook: "Local business owners, I have a gift for you."
+        subtype: "profession_label"
+        why_works: "Direct name-call + value promise. Simple. Proven across multiple Hormozi campaigns."
+      - hook: "Coaches making under R$10K/month — I have something for you."
+        subtype: "revenue_label"
+        why_works: "Revenue qualifier = surgical. Under R$10K = pain point. 'Something for you' = curiosity."
+      - hook: "ATTENTION: donos de clinica gastando mais de R$5K em ads sem resultado."
+        subtype: "situation_label"
+        why_works: "Profession + spend threshold + negative result = triple qualification in one sentence."
+    your_label_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+      - "FILL — your_hook_3"
+  # --------------------------------------------------------------------------
+  # TYPE 6: LISTS (5% of proven hooks)
+  # --------------------------------------------------------------------------
+  type_6_lists:
+    distribution: "5%"
+    definition: |
+      Numbered frameworks that promise organized value. Lists work because
+      they signal completeness ("all 7 steps") and create manageable expectations.
+      The number in the hook is doing 80% of the work: it implies structure,
+      brevity, and actionability.
+    formula: "[Number] [things/ways/steps] that [result or avoid outcome]"
+    subtypes:
+      result_list: "'7 ways to get clients in 5 days'"
+      avoid_list: "'28 ways to stay poor'"
+      essential_list: "'These are the only 3 books you need'"
+    best_awareness_levels: [1, 2, 3]
+    best_platforms: ["YouTube", "Instagram", "Blog/SEO", "TikTok/Reels"]
+    examples:
+      - hook: "In this video I am going to talk to you about the 28 ways to stay poor."
+        subtype: "avoid_list"
+        why_works: "Negative framing (3x more engagement than positive). Specific number (28). Curiosity about which ones apply."
+      - hook: "3 things I would do if I had to restart my business from zero."
+        subtype: "result_list"
+        why_works: "Hypothetical reset + small number (3 = digestible) + implies authority"
+      - hook: "5 erros que todo dono de negocio comete antes de faturar R$1M."
+        subtype: "avoid_list"
+        why_works: "Negative frame + revenue anchor (R$1M) + universal identifier ('every owner')"
+    your_list_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+      - "FILL — your_hook_3"
+  # --------------------------------------------------------------------------
+  # TYPE 7: NARRATIVES (10% of proven hooks)
+  # --------------------------------------------------------------------------
+  type_7_narratives:
+    distribution: "10%"
+    definition: |
+      Stories and anecdotes — the oldest hook type in human history.
+      Narratives work because the brain is wired for story: once a narrative
+      opens, the brain must hear the ending. The key is SPECIFICITY in the
+      opening detail. "One day" is weak. "472 days ago" is strong.
+      "A client" is weak. "Kyle, the last person on the leaderboard" is strong.
+    formula: "[Specific detail/date/number] + [unexpected situation or transformation]"
+    subtypes:
+      origin_story: "'472 days ago, I started writing a book that changed everything'"
+      client_story: "'I went from losing R$20 per customer to making R$240 profit'"
+      confession_story: "'My first 9 businesses did not amount to anything. Nine.'"
+    best_awareness_levels: [1, 2, 3]
+    best_platforms: ["YouTube", "Instagram Reels", "Email body", "Podcast"]
+    examples:
+      - hook: "472 days ago, I started writing a book."
+        subtype: "origin_story"
+        why_works: "Unusual number (472, not '1 year') = impossible specificity = real. Open loop: what happened?"
+      - hook: "I went from losing R$20 on every customer to making R$240 profit."
+        subtype: "client_story"
+        why_works: "Before/after with specific numbers. R$20 loss vs R$240 profit = 12x transformation. Undeniable."
+      - hook: "My first 9 businesses did not amount to anything. Nine."
+        subtype: "confession_story"
+        why_works: "Strategic vulnerability. Repetition of 'Nine' for emphasis. If he failed 9x and succeeded, what is stopping you?"
+    your_narrative_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+      - "FILL — your_hook_3"
+  # --------------------------------------------------------------------------
+  # TYPE 8: EXCLAMATIONS (2% of proven hooks — use sparingly)
+  # --------------------------------------------------------------------------
+  type_8_exclamations:
+    distribution: "2%"
+    definition: |
+      Raw emotional outbursts — surprise, intensity, confession. Exclamations
+      are the rarest hook type for a reason: overuse kills credibility. But used
+      correctly, they create pattern interrupts that are impossible to ignore.
+      One exclamation in a set of 10 hooks provides the experimental wild card.
+    formula: "[Emotional outburst/reaction] + [big promise or revelation]"
+    subtypes:
+      surprise: "'I cannot believe this actually worked.'"
+      intensity: "'I guarantee you will make more than people with 4-year degrees'"
+      confession: "'I have a confession...'"
+    best_awareness_levels: [3, 4, 5]
+    best_platforms: ["TikTok/Reels", "YouTube", "Instagram Stories"]
+    examples:
+      - hook: "Ahhhhh... This is the blueprint to becoming a millionaire and I am going to walk you through the levels."
+        subtype: "intensity"
+        why_works: "Raw energy + massive promise + 'walk you through' = structured value. Contrast between chaos and order."
+      - hook: "I have a confession..."
+        subtype: "confession"
+        why_works: "3 words. Maximum curiosity gap. Implies vulnerability. Impossible not to continue."
+      - hook: "Eu nao acredito que isso funcionou. Olha esses numeros."
+        subtype: "surprise"
+        why_works: "Genuine reaction + 'look at these numbers' = proof is coming. Stops scroll with authenticity."
+    your_exclamation_hooks:
+      - "FILL — your_hook_1"
+      - "FILL — your_hook_2"
+# ============================================================================
+# SECTION 2: 70-20-10 DISTRIBUTION FRAMEWORK
+# ============================================================================
+# Larry Page and Sergey Brin proved this resource allocation strategy
+# mathematically produces the best returns. Applied to hooks:
+# 70% proven patterns, 20% adapted from adjacent niches, 10% radical experiments.
+distribution_framework:
+  proven_70:
+    description: |
+      Replicate proven winners. Copy EXACT structure, adapt the words.
+      This is NOT inspiration. This is structural replication.
+      Use hooks that have already worked in your own content or in competitors' content.
+      The formula stays. The details change.
+    source: "Your own swipe file, competitor ads, the 121 database, proven formulas"
+    scoring_criteria:
+      - "Uses a tested formula from the 121 database or your own test history"
+      - "Structure is identical to a proven winner — only the specifics change"
+      - "Contains at least 1 specific number"
+      - "Would score 7+ on the Hook Quality Checklist"
+    example_process: |
+      PROVEN HOOK: "$4,664/month... that is what Kyle made"
+      STRUCTURE: "[Specific unusual number]... that is what [common person] [achieved]"
+      YOUR REPLICATION:
+        "R$7.832/mes... isso e o que a Ana — dona de uma clinica em BH — faturou em 47 dias."
+        "47 deals... that is what Sarah closed in her first 90 days."
+        "R$2.3M... isso e o que essa academia gerou no primeiro ano."
+  adapted_20:
+    description: |
+      Take proven hooks from ADJACENT niches and adapt to yours.
+      Cross-market pollination. Consumer to B2B and vice versa.
+      International markets, "boring" industries, completely different verticals.
+      The pattern works in another context — bring it to yours.
+    source: "Adjacent niches, international markets, non-competing industries"
+    scoring_criteria:
+      - "Original hook is proven in another niche (cite source)"
+      - "Adaptation preserves the psychological mechanism"
+      - "Feels fresh to your market but structurally sound"
+      - "Contains at least 1 specific number"
+    example_process: |
+      ORIGINAL (fitness niche): "I lost 30 pounds as a mom of 3 without giving up a single family dinner."
+      MECHANISM: [Result] + [identity] + [without biggest sacrifice]
+      YOUR ADAPTATION (business niche):
+        "I added R$50K/month as a solo founder without hiring a single employee."
+        "I grew to 1.000 subscribers in 60 days without spending R$1 on ads."
+  experimental_10:
+    description: |
+      Wild card hooks. Pattern interrupts that nobody has tried.
+      Impossible combinations. Total expectation inversion.
+      "This will probably fail, but if it works..."
+      Document failures as obsessively as successes.
+      1 in 10 experimental hooks becomes a new "core" proven hook.
+    source: "Creative intuition, cultural moments, absurd combinations, contrarian takes"
+    scoring_criteria:
+      - "No direct template or precedent"
+      - "Creates genuine surprise or confusion"
+      - "Still connects to avatar pain/desire (not random for random's sake)"
+      - "You would hesitate before posting it — that is the signal"
+    example_process: |
+      EXPERIMENTAL HOOKS:
+        "I used to hide from photos at family events. Now I am the one asking to take them."
+        "This spreadsheet made me R$1M. Seriously. A spreadsheet."
+        "My accountant called me crying. Here is why."
+  # EXERCISE: Fill in 10 hooks following the 70-20-10 distribution
+  your_hook_set:
+    proven_hooks:
+      - "FILL — hook_1 (proven formula: cite which formula)"
+      - "FILL — hook_2 (proven formula: cite which formula)"
+      - "FILL — hook_3 (proven formula: cite which formula)"
+      - "FILL — hook_4 (proven formula: cite which formula)"
+      - "FILL — hook_5 (proven formula: cite which formula)"
+      - "FILL — hook_6 (proven formula: cite which formula)"
+      - "FILL — hook_7 (proven formula: cite which formula)"
+    adapted_hooks:
+      - "FILL — hook_8 (adapted from: original hook + source niche)"
+      - "FILL — hook_9 (adapted from: original hook + source niche)"
+    experimental_hooks:
+      - "FILL — hook_10 (hypothesis: why this might work)"
+    distribution_check:
+      total_hooks: "FILL — count (minimum 10)"
+      proven_count: "FILL — should be 7 (70%)"
+      adapted_count: "FILL — should be 2 (20%)"
+      experimental_count: "FILL — should be 1 (10%)"
+      number_rule_check: "FILL — at least 8 of 10 contain a specific number? Yes/No"
+# ============================================================================
+# SECTION 3: PLATFORM-SPECIFIC HOOK RULES
+# ============================================================================
+# Different platforms, different rules. Non-negotiable.
+# These are PRESCRIPTIVE constraints, not suggestions.
+platform_rules:
+  facebook_instagram_ads:
+    max_hook_length: "First line of primary text — 125 characters before 'See more' truncation"
+    structural_rules:
+      - "Hook is the FIRST LINE of the primary text — everything before the line break"
+      - "Line break IMMEDIATELY after the hook — creates visual separation"
+      - "One specific number minimum in the hook"
+      - "Maximum 1 strategic emoji or zero (zero preferred)"
+      - "No hashtags in the hook line"
+    banned_patterns:
+      - "Starting with your name or brand name"
+      - "Starting with 'Hey' or 'Hi' or 'Oi'"
+      - "All caps entire hook (1-2 WORDS in caps is acceptable for emphasis)"
+      - "Questions longer than 15 words"
+    best_hook_types: ["Questions", "Statements", "Conditionals", "Labels"]
+    proven_examples:
+      - "Business owners: Do you ever wonder if you are working on the wrong stuff?"
+      - "R$4.664/mes... isso e o que o Kyle construiu."
+      - "Read this if you are tired of being broke."
+    format_spec: |
+      [HOOK — 1 line, under 125 chars]
+      [LINE BREAK]
+      [Body copy begins here...]
+  youtube_thumbnails:
+    max_words: "5 words maximum. 3 words ideal."
+    structural_rules:
+      - "High contrast colors — yellow or red text on dark background"
+      - "Face with exaggerated emotion visible"
+      - "Text does NOT overlap the face"
+      - "Numbers are 2x larger than other words"
+      - "One concept per thumbnail — never two ideas"
+    banned_patterns:
+      - "More than 5 words"
+      - "Full sentences (use fragments)"
+      - "Small text that is unreadable on mobile"
+      - "Generic stock photos without a face"
+    best_hook_types: ["Statements", "Lists", "Exclamations"]
+    proven_examples:
+      - "I Tried This for 30 Days"
+      - "R$0 to R$100K"
+      - "The R$1M Mistake"
+    format_spec: |
+      [2-5 WORDS — large, high contrast]
+      [FACE — exaggerated emotion]
+      [VISUAL — arrow, circle, or contrast element]
+  youtube_first_5_seconds:
+    time_structure:
+      second_0_to_1: "VISUAL PATTERN INTERRUPT — unexpected image, motion, or environment. No intro. No logo."
+      second_1_to_2: "VERBAL HOOK SETUP — first sentence begins. Must contain the Call Out or the number."
+      second_2_to_4: "VALUE PROMISE — what the viewer will get if they keep watching. Specific. Measurable."
+      second_4_to_5: "TRANSITION — bridge into content. 'Let me show you how' or 'Here is the first one.'"
+    structural_rules:
+      - "Preview the result FIRST — show the 'after' before anything else"
+      - "Never start with intro, logo, or 'Hey guys'"
+      - "The hook IS the content — no gap between hook and value"
+      - "Maximum 7 words for the verbal hook"
+      - "Energy must be higher in the first 5 seconds than in the rest of the video"
+    banned_patterns:
+      - "'Hey guys, welcome to my channel'"
+      - "Logo intros or animated bumpers"
+      - "Throat clearing, 'so', 'um', 'basically'"
+      - "Describing what you are going to talk about instead of starting"
+    best_hook_types: ["Statements", "Narratives", "Lists"]
+    proven_examples:
+      - "I have been in business for 13 years. Sold 9 companies. My last for $46.200.000."
+      - "In this video — the 28 ways to stay poor."
+      - "One in 250 businesses does over $10M a year. 99% never hit it."
+  tiktok_reels:
+    max_verbal_words: "7 words or fewer for the verbal hook"
+    structural_rules:
+      - "Visual hook is more important than verbal hook"
+      - "Start mid-action or mid-sentence — never from a static position"
+      - "Native format — filmed vertically, no borders, no watermarks"
+      - "Text overlay appears within first 0.5 seconds"
+      - "Do not introduce yourself"
+    banned_patterns:
+      - "'Oi, tudo bem?'"
+      - "Sitting in front of a camera explaining"
+      - "Landscape video with black bars"
+      - "Hooks longer than 7 words"
+      - "Starting with 'So today I want to talk about...'"
+    best_hook_types: ["Statements", "Lists", "Exclamations", "Commands"]
+    proven_examples:
+      - "R$6 for 100 grams of protein. Zero prep."
+      - "Youth. Free time. Money. Pick two."
+      - "3 hacks to make life suck less."
+    format_spec: |
+      [VISUAL ACTION — 0-0.5s]
+      [TEXT OVERLAY — appears by 0.5s]
+      [VERBAL HOOK — 7 words max, starts at 0.5-1s]
+  email_subject_lines:
+    max_characters: "40-60 characters (display varies by client: Gmail ~70, mobile ~35-40)"
+    structural_rules:
+      - "80% of subject lines should contain a specific number"
+      - "Preview text (first 40-90 chars of body) is part of the hook — optimize it"
+      - "Personalization tokens ([Name]) increase open rate 26% on average"
+      - "Lowercase subject lines outperform Title Case in most B2B tests"
+      - "Parenthetical intrigue works: 'Quick question (about your business)'"
+    banned_patterns:
+      - "ALL CAPS subject lines (spam filter trigger)"
+      - "Multiple exclamation marks"
+      - "Spam words: 'FREE', 'ACT NOW', 'LIMITED TIME', 'GUARANTEED'"
+      - "Misleading Re: or Fwd: prefixes"
+    best_hook_types: ["Questions", "Statements", "Conditionals", "Commands"]
+    proven_examples:
+      - "SHHHHH It is a SURPRISE"
+      - "We made a boo boo"
+      - "Btw... (I have a favor to ask)"
+      - "Only open this if you have a business and want to scale"
+      - "1 week out (warning inside)"
+    format_spec: |
+      Subject: [40-60 chars — hook]
+      Preview text: [40-90 chars — extends the curiosity gap]
+  sales_page_headline:
+    max_words: "8-12 words"
+    structural_rules:
+      - "Mechanism + promise in the same headline"
+      - "Must be above the fold — visible without scrolling"
+      - "Subheadline removes the biggest objection"
+      - "Numbers in the headline are mandatory"
+      - "For awareness levels 1-2: longer headline (15-20 words) is acceptable"
+    banned_patterns:
+      - "'Welcome to our product'"
+      - "Feature descriptions as headlines"
+      - "Brand name in the headline"
+      - "Generic benefit claims without specificity"
+    best_hook_types: ["Statements", "Conditionals", "Questions"]
+    proven_examples:
+      - "Scale to R$10M Without Working Weekends."
+      - "The System That 3x Revenue in 6 Months."
+      - "R$47K Added in 90 Days. Here is How."
+    format_spec: |
+      [HEADLINE — 8-12 words, mechanism + promise]
+      [SUBHEADLINE — removes biggest objection]
+      [ABOVE FOLD — no scrolling required to read it]
+  whatsapp_sms:
+    max_characters: "160 characters for SMS. 250 characters for WhatsApp first message."
+    structural_rules:
+      - "No greeting — go straight to value"
+      - "One link maximum"
+      - "Specific number in the first 10 words"
+      - "Direct value statement — no buildup"
+      - "Feels like a message from a friend, not a brand"
+    banned_patterns:
+      - "'Oi [Name], tudo bem?'"
+      - "Long paragraphs"
+      - "Multiple links"
+      - "Formal corporate language"
+    best_hook_types: ["Statements", "Commands", "Conditionals"]
+    proven_examples:
+      - "Ana, 47 vagas. 12 preenchidas. Abertas ate sexta. Link:"
+      - "Seus concorrentes ja estao implementando isso. 3 min de leitura:"
+      - "R$50K em 30 dias. Caso real. Quer ver?"
+    format_spec: |
+      [VALUE STATEMENT — under 160/250 chars]
+      [LINK — 1 maximum]
+# ============================================================================
+# SECTION 4: HOOK-TO-VALUE-EQUATION MAPPING
+# ============================================================================
+# Every hook should target at least one of the 4 Value Equation variables.
+# The strongest hooks target 2 variables simultaneously.
+# Reference: value-equation.yaml for full diagnostic.
+#
+# FORMULA: Value = (Dream Outcome x Perceived Likelihood) / (Time Delay x Effort & Sacrifice)
+value_equation_mapping:
+  dream_outcome_hooks:
+    variable: "Dream Outcome (numerator — MAXIMIZE)"
+    what_it_targets: "The aspirational end state. What the client BECOMES, not what they GET."
+    hook_formula: "[Specific dream result] + [status implication]"
+    examples:
+      - "Scale to R$10M without working weekends."
+      - "Be the first millionaire in your family."
+      - "Build a company your kids will be proud of."
+      - "My client went from R$8K to R$83K per month in 90 days."
+    your_dream_outcome_hooks:
+      - "FILL — hook targeting Dream Outcome"
+      - "FILL — hook targeting Dream Outcome"
+  perceived_likelihood_hooks:
+    variable: "Perceived Likelihood (numerator — MAXIMIZE)"
+    what_it_targets: "Certainty that this will work. Proof, social proof, data, guarantees."
+    hook_formula: "[Specific proof point] + [implies replicability]"
+    examples:
+      - "97% of our clients see results in the first 90 days."
+      - "847 members. 94% positive ROI. Here is how."
+      - "I read over 1.000 books and this is the only one you need."
+      - "After 13 years and 9 companies, this is the one framework that always works."
+    your_likelihood_hooks:
+      - "FILL — hook targeting Perceived Likelihood"
+      - "FILL — hook targeting Perceived Likelihood"
+  time_delay_hooks:
+    variable: "Time Delay (denominator — MINIMIZE)"
+    what_it_targets: "Speed of results. How fast the client sees the first win."
+    hook_formula: "[Specific result] + [compressed timeframe]"
+    examples:
+      - "Get your first client in 48 hours."
+      - "7 clients in 5 days using this script."
+      - "Your first automation running within 1 hour of purchase."
+      - "R$50K in 30 days. Not theory. Case study."
+    your_time_delay_hooks:
+      - "FILL — hook targeting Time Delay"
+      - "FILL — hook targeting Time Delay"
+  effort_sacrifice_hooks:
+    variable: "Effort & Sacrifice (denominator — MINIMIZE)"
+    what_it_targets: "How easy it is. What the client does NOT have to do, give up, or suffer through."
+    hook_formula: "[Result] + without [biggest objection/fear/sacrifice]"
+    examples:
+      - "Without hiring a team, without burning out, without spending a year learning."
+      - "Scale without chaos. Sell without ads. Grow without burnout."
+      - "Done in 15 minutes per day. No tech skills. No team needed."
+      - "We build it for you. You approve. Done."
+    your_effort_hooks:
+      - "FILL — hook targeting Effort & Sacrifice"
+      - "FILL — hook targeting Effort & Sacrifice"
+  # COMPLETENESS CHECK
+  completeness_check:
+    dream_outcome_hooks_count: "FILL — minimum 2"
+    perceived_likelihood_hooks_count: "FILL — minimum 2"
+    time_delay_hooks_count: "FILL — minimum 2"
+    effort_sacrifice_hooks_count: "FILL — minimum 2"
+    all_four_covered: "FILL — Yes / No"
+    weakest_variable_hooks: "FILL — Which variable has the fewest/weakest hooks? Strengthen it."
+# ============================================================================
+# SECTION 5: HOOK-TO-AWARENESS-LEVEL MATRIX
+# ============================================================================
+# Cross-reference: which hook types work best at which awareness level.
+# Reference: diagnosis.yaml for awareness level determination.
+#
+# RULE: The hook must MATCH the awareness level or it fails.
+# A Level 1 (Unaware) audience needs education. A Level 5 (Most Aware) needs urgency.
+# Using an educational hook on a Level 5 audience wastes their attention.
+# Using an urgency hook on a Level 1 audience confuses them.
+awareness_matrix:
+  level_1_unaware:
+    description: "Prospect does not know they have the problem. Hook must REVEAL the problem."
+    best_hook_types: ["Narratives", "Questions", "Lists"]
+    worst_hook_types: ["Commands", "Labels"]
+    why: "Unaware audiences need stories and questions to discover the problem. Commands and labels assume knowledge they do not have."
+    example_hooks:
+      narrative: "472 days ago, I discovered that 90% of businesses are solving the wrong problem."
+      question: "Have you ever wondered why some businesses grow 10x while you work harder every year?"
+      list: "5 signs your business model is broken (and you do not know it yet)."
+  level_2_problem_aware:
+    description: "Prospect knows the problem. Does not know YOUR type of solution exists."
+    best_hook_types: ["Questions", "Conditionals", "Statements"]
+    worst_hook_types: ["Exclamations"]
+    why: "They need solution introduction. Questions validate the pain. Conditionals qualify. Statements introduce the mechanism."
+    example_hooks:
+      question: "What if the reason your ads do not convert has nothing to do with your ads?"
+      conditional: "If you are spending more than R$5K/month on ads without R$15K in return, this is for you."
+      statement: "The system that transforms overwhelmed founders into operators doing R$100K/month."
+  level_3_solution_aware:
+    description: "Prospect knows solutions exist. Does not know why YOURS is different."
+    best_hook_types: ["Statements", "Conditionals", "Lists", "Questions"]
+    worst_hook_types: ["Exclamations"]
+    why: "They are comparing. Statements differentiate. Conditionals qualify. Lists organize your advantage."
+    example_hooks:
+      statement: "Most coaches teach strategy. We install a system. That is why our clients average 3x ROI."
+      conditional: "If you have tried 2-3 courses and still have not hit R$50K/month, the problem is not you."
+      list: "3 reasons our method works when others have failed you."
+  level_4_product_aware:
+    description: "Prospect knows YOUR product. Has objections or is comparing you to 1-2 alternatives."
+    best_hook_types: ["Statements", "Commands", "Labels", "Conditionals"]
+    worst_hook_types: ["Narratives"]
+    why: "They need objection crushing and proof. Long stories lose them. Direct statements and commands convert."
+    example_hooks:
+      statement: "847 members. 94% positive ROI. 30-day guarantee. What is stopping you?"
+      command: "Stop comparing and start implementing. 48-hour access to the full system."
+      label: "For the 37 of you who visited the page but did not enroll — here is what you missed."
+  level_5_most_aware:
+    description: "Prospect wants to buy. Needs a reason to act NOW."
+    best_hook_types: ["Commands", "Statements", "Exclamations"]
+    worst_hook_types: ["Questions", "Narratives"]
+    why: "They already decided. Questions slow them down. Stories are unnecessary. Commands and urgency close the deal."
+    example_hooks:
+      command: "Last 12 spots. Enrollment closes Friday. Get in now."
+      statement: "Price increases from R$997 to R$1.497 at midnight. Same product. Higher price."
+      exclamation: "It is live. Doors are open. 47 people enrolled in the last 3 hours."
+# ============================================================================
+# SECTION 6: HOOK TESTING PROTOCOL
+# ============================================================================
+# Testing is not optional. It is the ONLY way to know what works.
+# Feelings do not pay bills. Data does.
+testing_protocol:
+  minimum_requirements:
+    hooks_per_test: "10 minimum — non-negotiable for ads. 3-4 for organic content."
+    impressions_before_judgment: "1.000 impressions minimum per hook before any decision"
+    test_duration: "48 hours minimum — covers weekday and weekend behavior"
+    variable_isolation: "Test ONE element at a time. Hook vs body vs CTA — never all three simultaneously."
+    budget_allocation: "80% of test budget to proven hooks. 20% to new test hooks."
+  kill_criteria:
+    ctr_below: "CTR < 1% after 1.000 impressions = kill immediately"
+    hook_rate_below: "Hook Rate (3s views / impressions) < 25% = kill immediately"
+    cpa_above: "CPA > 2x target after 48 hours = kill"
+    no_conversions: "Zero conversions after 2.000 impressions = kill"
+    rule: "Kill fast. Do not let bad hooks drain budget. Bottom 50% gets cut within 48 hours."
+  scale_criteria:
+    ctr_above: "CTR > 3% = double the budget"
+    hook_rate_above: "Hook Rate > 40% = scale immediately"
+    cpa_below: "CPA < 0.7x target = scale aggressively"
+    consistency: "Maintains performance for 72+ hours = add to proven bank"
+    rule: "Scale winners fast. Top 20% gets 80% of future budget."
+  testing_cycle:
+    week_1: "Launch 10 hooks with equal budget. Measure for 48 hours."
+    week_1_end: "Kill bottom 50%. Redistribute budget to top 50%."
+    week_2: "Scale top 3 hooks. Create 5 new hooks to test alongside."
+    week_2_end: "Kill bottom performers. Add winners to proven bank."
+    ongoing: "3 new hooks per week minimum. Never stop testing. Frequency > 7 = hook fatigue."
+  documentation_template:
+    test_id: "FILL — unique identifier"
+    hook_text: "FILL — exact hook, word for word"
+    hook_type: "FILL — 1 of 8 types"
+    platform: "FILL — where tested"
+    awareness_level_targeted: "FILL — 1-5"
+    value_equation_variable: "FILL — which variable"
+    impressions: "FILL"
+    ctr: "FILL — %"
+    hook_rate_3s: "FILL — %"
+    cpa: "FILL — cost per acquisition"
+    conversions: "FILL — count"
+    hypothesis: "FILL — why you think this should work"
+    result: "FILL — WINNER / KILL / NEEDS MORE DATA"
+    learning: "FILL — what did this test teach you?"
+  budget_framework:
+    total_monthly_test_budget: "FILL — how much allocated to hook testing"
+    per_hook_initial_budget: "FILL — equal distribution across 10 hooks"
+    winner_budget_increase: "FILL — how much to add when a hook wins"
+    test_to_scale_ratio: "80% proven / 20% test (adjust after 30 days of data)"
+# ============================================================================
+# SECTION 7: HOOK QUALITY CHECKLIST
+# ============================================================================
+# Run every hook through this checklist BEFORE publishing.
+# A hook that fails 3+ items should be rewritten.
+quality_checklist:
+  items:
+    - check: "Contains a specific number?"
+      why: "Numbers stop scrolls. Vague hooks get ignored. '$4.664' beats 'thousands'."
+      fail_action: "Add a number. Revenue, percentage, time, quantity — any specificity."
+    - check: "Stops scroll in less than 0.5 seconds?"
+      why: "Average scroll speed gives you 0.3-0.5 seconds of visibility. If the first 3-5 words do not arrest attention, the hook is dead."
+      fail_action: "Move the most surprising element to the first 3 words."
+    - check: "Clear who this is for (Label or implied)?"
+      why: "The Cocktail Party Effect: people notice their own name. If the avatar cannot instantly say 'this is for me,' the hook fails."
+      fail_action: "Add a label, situation, or qualifier that identifies the avatar."
+    - check: "Triggers curiosity gap or pattern interrupt?"
+      why: "A curiosity gap is an unresolved tension the brain must resolve. Without it, the hook is ignorable."
+      fail_action: "Add a contradiction, open loop, or unexpected element."
+    - check: "Connected to a Value Equation variable?"
+      why: "Hooks that do not connect to Dream Outcome, Likelihood, Time, or Effort are disconnected from what the buyer actually cares about."
+      fail_action: "Map the hook to one of the 4 variables. If it does not connect, rewrite."
+    - check: "Appropriate for the awareness level?"
+      why: "A Level 1 audience needs education, not urgency. A Level 5 audience needs urgency, not education. Mismatch = zero resonance."
+      fail_action: "Cross-reference with the awareness matrix in Section 5."
+    - check: "Platform-optimized (length, format, structure)?"
+      why: "A 20-word hook is fine for Facebook. It is death for TikTok. Platform rules are non-negotiable."
+      fail_action: "Check Section 3 platform rules. Trim or restructure."
+    - check: "Passes the 'would I stop scrolling for this?' test?"
+      why: "If YOU would not stop, your audience will not. Be honest. This is not about your ego."
+      fail_action: "If no, rewrite. If unsure, test."
+    - check: "No banned patterns (clickbait, false promise, spam triggers)?"
+      why: "Clickbait erodes trust. False promises create refund requests. Spam triggers kill deliverability."
+      fail_action: "Remove the offending element. Replace with genuine specificity."
+    - check: "Has emotional or logical proof embedded?"
+      why: "The best hooks contain proof INSIDE the hook itself. 'R$4.664/month' is proof embedded in the hook."
+      fail_action: "Add a number, a name, a date, or a result that serves as implicit proof."
+    - check: "Different from what competitors are currently running?"
+      why: "If your hook looks like every other ad in the feed, pattern recognition makes it invisible."
+      fail_action: "Check competitor ads using Meta Ad Library. Differentiate."
+    - check: "Makes the AUDIENCE feel important, not the speaker?"
+      why: "Dean Graziosi lesson. The hook that made Dean look important failed. The hook that made the audience feel seen made millions."
+      fail_action: "Replace 'I' with 'you'. Replace credentials with audience pain. Make THEM the hero."
+  scoring:
+    pass_threshold: "10 of 12 checks passed = PUBLISH"
+    rewrite_threshold: "7-9 checks passed = REWRITE weak elements"
+    kill_threshold: "Below 7 = KILL and start over"
+# ============================================================================
+# SECTION 8: HOOK BANK (Your Tested Hooks Database)
+# ============================================================================
+# Log every hook you test. Organized by type, platform, awareness level,
+# and Value Equation variable. This is your institutional memory.
+# Without documentation, you repeat mistakes. With it, you compound wins.
+hook_bank:
+  # Pre-filled starters (universal hooks — adapt to your avatar)
+  starter_hooks:
+    - hook: "Have you ever looked at your business and thought 'there has to be a better way'?"
+      type: "Question"
+      platform: "Facebook/Instagram Ads"
+      awareness_level: 2
+      value_equation: "Dream Outcome"
+      performance: "Untested — starter"
+    - hook: "R$50K in 30 days. Not theory. Real case study inside."
+      type: "Statement"
+      platform: "Facebook/Instagram Ads"
+      awareness_level: 3
+      value_equation: "Time Delay"
+      performance: "Untested — starter"
+    - hook: "If you are making between R$20K and R$100K per month and feel stuck, this is for you."
+      type: "Conditional"
+      platform: "Facebook/Instagram Ads"
+      awareness_level: 3
+      value_equation: "Dream Outcome"
+      performance: "Untested — starter"
+    - hook: "Stop scrolling. This changes how you run your business."
+      type: "Command"
+      platform: "TikTok/Reels"
+      awareness_level: 4
+      value_equation: "Dream Outcome"
+      performance: "Untested — starter"
+    - hook: "3 things every business owner does wrong before hitting R$1M."
+      type: "List"
+      platform: "YouTube"
+      awareness_level: 2
+      value_equation: "Effort & Sacrifice"
+      performance: "Untested — starter"
+    - hook: "My client went from R$8K to R$83K per month in 90 days. Here is exactly what we changed."
+      type: "Narrative"
+      platform: "Instagram"
+      awareness_level: 3
+      value_equation: "Perceived Likelihood"
+      performance: "Untested — starter"
+    - hook: "Donos de clinica faturando menos de R$50K/mes — tenho algo pra voces."
+      type: "Label"
+      platform: "Facebook/Instagram Ads"
+      awareness_level: 3
+      value_equation: "Dream Outcome"
+      performance: "Untested — starter"
+    - hook: "I cannot believe how simple this turned out to be. Look at these numbers."
+      type: "Exclamation"
+      platform: "TikTok/Reels"
+      awareness_level: 4
+      value_equation: "Effort & Sacrifice"
+      performance: "Untested — starter"
+  # Your tested hooks (fill as you test)
+  your_tested_hooks:
+    - hook: "FILL — exact hook text"
+      type: "FILL — 1 of 8 types"
+      platform: "FILL"
+      awareness_level: "FILL — 1-5"
+      value_equation: "FILL — which variable"
+      impressions: "FILL"
+      ctr: "FILL — %"
+      result: "FILL — WINNER / KILL / NEEDS DATA"
+      date_tested: "FILL"
+    - hook: "FILL — exact hook text"
+      type: "FILL"
+      platform: "FILL"
+      awareness_level: "FILL"
+      value_equation: "FILL"
+      impressions: "FILL"
+      ctr: "FILL"
+      result: "FILL"
+      date_tested: "FILL"
+  # Winners archive (your proven bank)
+  proven_winners:
+    - hook: "FILL — your best performing hook"
+      type: "FILL"
+      platform: "FILL"
+      ctr: "FILL — %"
+      why_it_won: "FILL — hypothesis"
+# ============================================================================
+# SECTION 9: CROSS-REFERENCES
+# ============================================================================
+# Hooks do not exist in isolation. They feed from and feed into other
+# offerbook files. This map shows the connections.
+cross_references:
+  icp_to_hooks:
+    file: "icp.yaml"
+    what_it_provides: "Exact pain language, fear language, desire phrases, demographic details"
+    how_it_feeds_hooks: |
+      The words your avatar uses to describe their pain are the words that go
+      into your hooks. Do not use YOUR language. Use THEIR language.
+      Extract: pain phrases, exact quotes from interviews, emotional triggers.
+    action: "Pull the top 5 pain phrases from icp.yaml and turn each into a hook."
+  diagnosis_to_hooks:
+    file: "diagnosis.yaml"
+    what_it_provides: "Awareness level (1-5) and sophistication stage (1-5)"
+    how_it_feeds_hooks: |
+      The awareness level determines which hook types to use (see Section 5 matrix).
+      A Level 1 audience needs Narratives and Questions.
+      A Level 5 audience needs Commands and Statements.
+      Using the wrong type for the awareness level = zero resonance.
+    action: "Check your awareness level in diagnosis.yaml. Then filter your hooks through the matrix."
+  value_equation_to_hooks:
+    file: "value-equation.yaml"
+    what_it_provides: "4 variable scores (Dream Outcome, Likelihood, Time, Effort) + weakest variable"
+    how_it_feeds_hooks: |
+      Your weakest Value Equation variable should have the MOST hooks targeting it.
+      If Time Delay scores 4/10, create extra hooks that emphasize speed.
+      If Perceived Likelihood scores 3/10, create extra hooks that embed proof.
+    action: "Identify your weakest variable. Create 3 additional hooks targeting it."
+  proof_to_hooks:
+    file: "proof.yaml"
+    what_it_provides: "Case studies, testimonials, statistics, credibility markers"
+    how_it_feeds_hooks: |
+      Proof points become hooks directly. A case study with specific numbers
+      IS a hook: "R$7.832/month in 47 days. Real client. Real results."
+      The best hooks have proof EMBEDDED, not just implied.
+    action: "Take your top 3 proof points and turn each into a Statement hook."
+  objections_to_hooks:
+    file: "objections.yaml"
+    what_it_provides: "Top objections, fear language, resistance patterns"
+    how_it_feeds_hooks: |
+      Objections become Conditional and Question hooks.
+      "If you think you cannot afford it, read this" (Conditional).
+      "What if the reason your ads do not work has nothing to do with your ads?" (Question).
+      Addressing the objection IN the hook pre-qualifies the click.
+    action: "Take the top 3 objections and create one hook each that addresses the objection in the hook itself."
+  scarcity_urgency_to_hooks:
+    file: "scarcity-urgency.yaml"
+    what_it_provides: "Genuine deadlines, capacity limits, countdown sequences"
+    how_it_feeds_hooks: |
+      Scarcity and urgency language feeds Command and Statement hooks
+      for Level 4-5 audiences. "Last 12 spots" is a hook.
+      "Price increases Friday" is a hook. But ONLY if genuine.
+    action: "Take your primary scarcity element and create a Command hook and a Statement hook from it."
+  email_sequences_to_hooks:
+    file: "email-sequences.yaml"
+    what_it_provides: "Subject line context, sequence timing, email purpose by phase"
+    how_it_feeds_hooks: |
+      Every email subject line IS a hook. The rules from Section 3 (email subject lines)
+      apply directly. The launch sequence in email-sequences.yaml needs 7+ subject lines
+      — each is a hook creation exercise.
+    action: "Map one hook to each email in your launch sequence. Use the 70-20-10 distribution."
+# ============================================================================
+# COMPLETION CHECKLIST
+# ============================================================================
+completion_checklist:
+  - "[ ] All 8 hook types reviewed and understood (Section 1)"
+  - "[ ] At least 2 hooks written per hook type (your_xxx_hooks fields)"
+  - "[ ] 70-20-10 exercise completed with 10+ hooks (Section 2)"
+  - "[ ] Number rule verified: 80%+ of hooks contain a specific number"
+  - "[ ] Platform rules reviewed for your primary platform (Section 3)"
+  - "[ ] At least 2 hooks per Value Equation variable (Section 4)"
+  - "[ ] Awareness level identified and correct hook types selected (Section 5)"
+  - "[ ] Testing protocol understood — kill/scale criteria documented (Section 6)"
+  - "[ ] All 12 quality checklist items applied to every hook (Section 7)"
+  - "[ ] Hook bank initialized with starter hooks + space for tested hooks (Section 8)"
+  - "[ ] Cross-references reviewed — icp, diagnosis, value-equation connected (Section 9)"
+  - "[ ] Weakest Value Equation variable has extra hooks targeting it"
+  - "[ ] At least 10 hooks ready for first creative test"
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# TEMPLATE INSTRUCTIONS
+# 1. Read diagnosis.yaml FIRST — your awareness level determines everything
+# 2. Read icp.yaml SECOND — your avatar's language IS your hook language
+# 3. Read value-equation.yaml THIRD — identify the weakest variable to target
+# 4. Complete Section 1 — write 2-3 hooks per type using your avatar's words
+# 5. Complete Section 2 — build a set of 10 hooks following 70-20-10
+# 6. Apply Section 3 — trim/restructure for your primary platform
+# 7. Verify Section 4 — ensure all 4 Value Equation variables are covered
+# 8. Cross-check Section 5 — do your hook types match your awareness level?
+# 9. Run Section 7 — quality checklist on every hook before publishing
+# 10. Launch Section 6 — test 10 hooks with equal budget for 48 hours
+# 11. Document results in Section 8 — hook bank is your institutional memory
+#
+# CROSS-REFERENCES:
+# - diagnosis.yaml: Awareness level determines hook type selection
+# - icp.yaml: Avatar language becomes hook language
+# - value-equation.yaml: Weakest variable = highest-leverage hook target
+# - proof.yaml: Proof points become embedded-proof hooks
+# - objections.yaml: Objection language becomes Conditional/Question hooks
+# - scarcity-urgency.yaml: Urgency elements become Command/Statement hooks
+# - email-sequences.yaml: Every subject line is a hook creation exercise
+# - headlines.yaml: Sales page headline FORMULAS (complementary, not overlapping)

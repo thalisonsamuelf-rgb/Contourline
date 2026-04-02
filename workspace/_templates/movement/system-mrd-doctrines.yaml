@@ -1,0 +1,18 @@
+---
+# Template: system MRD doctrines dataset
+
+metadata:
+  template_id: "movement.system_mrd_doctrines"
+  version: "1.0.0"
+  lifecycle_stage: "system"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+doctrines:
+  - id: "DOC-001"
+    statement: "<required>"
+    function: "<required>"
+    source_level: "<N1|N3|N4|N5>"
+    linked_discourse_elements: []
+provenance:
+  source_docs: []

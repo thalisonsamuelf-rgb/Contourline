@@ -1,0 +1,151 @@
+---
+# TEAM-STRUCTURE.YAML - Estrutura Organizacional Contourline
+# Source: Planejamento Estrategico 2026 - Organograma Executivo
+# Last Updated: 2026-03-19
+
+metadata:
+  version: "1.0"
+  status: "FILLED"
+  last_updated: "2026-03-19"
+  source: "Planejamento Estrategico 2026"
+
+# ============================================================================
+# ORGANOGRAMA EXECUTIVO
+# ============================================================================
+organizational_structure:
+  model: "5 Diretorias Executivas reportando ao CEO"
+  notes: "CS, CX e Juridico possuem canal direto complementar ao CEO"
+
+  ceo:
+    name: "Egio Roberto"
+    title: "CEO"
+    role: "Lider estrategico"
+    reports_diretos:
+      - "RH"
+      - "TI"
+    reports_pontilhados:
+      - "Customer Success"
+      - "Customer Experience"
+      - "Juridico"
+
+  diretorias:
+    comercial:
+      titular: "Glaucia Moura (transicao para Gabriel Carpello)"
+      title: "Diretoria Comercial"
+      areas:
+        - "Inside Sales"
+        - "Vendas Externas"
+        - "Unidade de Negocio Lumenis"
+        - "Unidade de Negocio Visbody"
+        - "Credito (linha direta com CFO)"
+        - "Customer Success (operacional)"
+        - "Customer Experience (operacional)"
+
+    administrativa_financeira:
+      titular: "Claudio Kaizer"
+      title: "CFO - Diretoria Administrativa & Financeira"
+      areas:
+        - "Financeiro (Tesouraria, Contas a Pagar/Receber)"
+        - "Controladoria (novo)"
+        - "FP&A - Planejamento e Analise Financeira (novo)"
+        - "Fiscal & Tributario"
+        - "Contabilidade"
+        - "Compras"
+        - "Juridico (reporte tecnico ao CFO, estrategico ao CEO)"
+        - "Compliance & Governanca"
+
+    operacoes:
+      titular: "Filipe Ferreira"
+      title: "Diretoria de Operacoes"
+      areas:
+        - "Producao"
+        - "Engenharia e Assistencia Tecnica"
+        - "Logistica & Almoxarifado"
+        - "Qualidade (Auditoria, Certificacao e Testes)"
+        - "PCP / Processos Industriais"
+        - "Manutencao & Facilities"
+
+    consultoria_pd:
+      titular: "Andreia Almeida"
+      title: "Diretoria de Consultoria, Treinamento e P&D"
+      areas:
+        - "Consultoria Tecnica"
+        - "Treinamentos de Clientes"
+        - "Programas de Educacao (Ciencia que Conecta)"
+        - "Laboratorio / Testes"
+        - "Pesquisa & Desenvolvimento (P&D)"
+        - "Inovacao Tecnologica"
+
+    marketing:
+      titular: "Helaine Hohendorff"
+      title: "Diretoria de Marketing"
+      areas:
+        - "Marketing de Performance"
+        - "Branding & Posicionamento"
+        - "Conteudo / Audiovisual"
+        - "CRM & Automacao"
+        - "Eventos & Feiras"
+
+# ============================================================================
+# HEADCOUNT
+# ============================================================================
+headcount:
+  atual: 118
+  projetado_2026: 165
+  novas_contratacoes: 47
+  crescimento: "40%"
+
+  expansao_por_area:
+    comercial:
+      novas_posicoes: 13
+      percentual: "28%"
+      objetivo: "Captura agressiva de mercado"
+    producao_at:
+      novas_posicoes: 8
+      percentual: "17%"
+      objetivo: "Suportar volume crescente"
+    consultoria:
+      novas_posicoes: 6
+      percentual: "13%"
+      objetivo: "Projetos complexos"
+    backoffice:
+      novas_posicoes: 5
+      percentual: "11%"
+      objetivo: "Disciplina em custos administrativos"
+
+# ============================================================================
+# OKRs 2026 - RESPONSAVEIS
+# ============================================================================
+okrs_responsaveis:
+  esg_sustentabilidade: "Felipe Ferreira"
+  inovacao_talentos: "Andreia Almeida"
+  experiencia_cliente: "Gabriel Carpello e Helaine Hohendorff"
+  eficiencia_operacional_financeira: "Claudio Kaizer"
+  expansao_mercado: "Gabriel Carpello"
+
+# ============================================================================
+# POLITICAS IMPLEMENTADAS 2026
+# ============================================================================
+politicas:
+  - "Vendas de Treinamento e Consultoria (linha medica e estetica)"
+  - "Praticas Comerciais e Comissionamento do Setor Comercial"
+  - "Cobranca e Negociacao"
+  - "Manual do Departamento Pessoal e Ciclo de Gente"
+  - "Contratacao de Prestadores de Servicos (PJ)"
+  - "Garantia e Troca"
+  - "Codigo de Conduta e Cultura Organizacional"
+  - "Excelencia no Atendimento Contourline"
+
+# ============================================================================
+# INVESTIMENTOS EM PESSOAS
+# ============================================================================
+investimentos:
+  capacitacao:
+    valor: "R$ 200K"
+    parceiro: "Fundacao Dom Cabral"
+    objetivo: "Profissionalizacao da gestao"
+  erp:
+    valor: "R$ 250K"
+    sistema: "Protheus TOTVS"
+    go_live: "Janeiro/2026"
+    objetivo: "Eficiencia operacional e governanca"

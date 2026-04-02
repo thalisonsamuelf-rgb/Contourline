@@ -1,0 +1,100 @@
+# Canonical template for:
+# workspace/businesses/{bu}/design-system/config.yaml
+#
+# Purpose:
+# - Define the Design System owned by a BU
+# - Declare semantically named themes (`main`, `secondary`)
+# - Expose app bindings for script-based discovery and validation
+# - Serve as the single configuration file whose absence means DS is not configured
+# - Always declare where the DS implementation lives via `source`
+
+id: FILL_THIS_BU_DS_ID
+name: FILL_THIS_DESIGN_SYSTEM_NAME
+status: draft # draft | active | deprecated
+owner_bu: FILL_THIS_BU_SLUG
+
+source:
+  type: local # local | external
+  repo_root: FILL_THIS_REPO_ROOT
+  ds_root: FILL_THIS_DS_ROOT
+
+default_theme: main
+
+themes:
+  main:
+    label: FILL_THIS_MAIN_THEME_LABEL
+    role: primary
+    status: active # active | restricted | deprecated
+    description: FILL_THIS_WHEN_TO_USE_MAIN_THEME
+    allowed_use_cases:
+      - FILL_THIS_ALLOWED_USE_CASE
+    forbidden_use_cases: []
+    modes:
+      - main
+    tokens:
+      primary: FILL_THIS_PRIMARY_TOKEN_FILE
+      files:
+        - FILL_THIS_ADDITIONAL_TOKEN_OR_STYLE_FILE
+      prefix: FILL_THIS_TOKEN_PREFIX
+    patterns: []
+    notes: ""
+
+  secondary:
+    label: FILL_THIS_SECONDARY_THEME_LABEL
+    role: secondary
+    status: restricted # active | restricted | deprecated
+    description: FILL_THIS_WHEN_TO_USE_SECONDARY_THEME
+    allowed_use_cases:
+      - FILL_THIS_ALLOWED_USE_CASE
+    forbidden_use_cases:
+      - FILL_THIS_FORBIDDEN_USE_CASE
+    modes:
+      - secondary
+    tokens:
+      primary: FILL_THIS_PRIMARY_TOKEN_FILE
+      files:
+        - FILL_THIS_ADDITIONAL_TOKEN_OR_STYLE_FILE
+      prefix: FILL_THIS_TOKEN_PREFIX
+    patterns: []
+    notes: ""
+
+apps:
+  - id: FILL_THIS_APP_ID
+    root: FILL_THIS_APP_ROOT
+    theme: main # main | secondary
+    framework: FILL_THIS_FRAMEWORK
+    ui_primitives: FILL_THIS_UI_PRIMITIVES
+    components_root: FILL_THIS_COMPONENTS_ROOT
+    component_dirs:
+      atoms: FILL_THIS_COMPONENT_DIR
+      molecules: FILL_THIS_COMPONENT_DIR
+      organisms: FILL_THIS_COMPONENT_DIR
+      blocks: FILL_THIS_COMPONENT_DIR
+      sections: FILL_THIS_COMPONENT_DIR
+      chrome: FILL_THIS_COMPONENT_DIR
+      patterns: FILL_THIS_COMPONENT_DIR
+      motion: FILL_THIS_COMPONENT_DIR
+      pages: FILL_THIS_COMPONENT_DIR
+      ui: FILL_THIS_COMPONENT_DIR
+    hooks_dir: FILL_THIS_HOOKS_DIR
+    blueprint_files:
+      - FILL_THIS_BLUEPRINT_FILE
+    token_files:
+      - FILL_THIS_TOKEN_FILE
+    data_dir: FILL_THIS_DATA_DIR
+    app_dir: FILL_THIS_APP_DIR
+    notes: ""
+
+governance:
+  requires_explicit_approval_for_theme_override: true
+  fallback_theme: main
+  validation_rules:
+    - source_must_exist
+    - source_type_must_be_local_or_external
+    - source_repo_root_must_exist
+    - source_ds_root_must_exist
+    - default_theme_must_exist
+    - secondary_cannot_be_default
+    - app_theme_must_exist
+    - declared_paths_must_exist
+    - missing_config_means_ds_not_configured

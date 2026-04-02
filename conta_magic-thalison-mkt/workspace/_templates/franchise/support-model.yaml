@@ -1,0 +1,11 @@
+business_slug: "{{business_slug}}"
+status: draft
+support_structure:
+  field_support: {}
+  training_support: {}
+  qa_support: {}
+  escalation_paths: []
+network_health:
+  e_factor_target: 75
+  metrics: []
+rituals: []

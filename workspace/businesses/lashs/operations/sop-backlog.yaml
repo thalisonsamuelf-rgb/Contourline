@@ -1,0 +1,441 @@
+# =============================================================================
+# SOP-BACKLOG.YAML — Contourline (lashs)
+# =============================================================================
+# Backlog priorizado de SOPs que este business precisa
+# Generated: 2026-03-19
+# Source: PE 2026 + category-map.yaml (IND-HEALTHCARE) + diagnostic-backlog
+# Consumed by: sop-chief (prioriza qual SOP criar primeiro), COO (diagnostico)
+# =============================================================================
+
+business:
+  slug: "lashs"
+  name: "Contourline Equipamentos Medicos e Diagnosticos"
+  generated_at: "2026-03-19"
+  total_sops: 25
+  source: "Planejamento Estrategico 2026"
+
+# =============================================================================
+# SCORING CRITERIA (from map-core-sop-backlog task)
+# =============================================================================
+# Frequencia cross-business: 30% (neste caso, single business)
+# Impacto em receita:        25%
+# Complexidade de criacao:   20% (menor = faster win)
+# Dados disponiveis:         15% (quanto mais dados no workspace)
+# Urgencia reportada:        10% (pain points explicitos no PE)
+# =============================================================================
+
+# =============================================================================
+# P0 — CRITICAL: Processos core que geram receita direta
+# Resolver em 30 dias. Impacto imediato no negocio.
+# =============================================================================
+
+backlog:
+
+  - id: "SOP-CTL-001"
+    name: "Pipeline Comercial B2B — Venda de Equipamentos Medicos"
+    type: "core"
+    priority: "P0"
+    score: 95
+    executor_dominante: "Human"
+    complexity: "alta"
+    estimated_effort: "3-4 sessoes"
+    diretoria: "Comercial"
+    owner: "Gabriel Carpello"
+    status: "pending"
+    why_first: |
+      Responsavel por R$ 200M+. Ciclo de venda complexo (30-90 dias),
+      alto ticket, venda consultiva. Com +13 novos comerciais entrando,
+      SOP e critico para onboarding e padronizacao.
+    pe_2026_ref: "Pilar 2: Expansao Comercial + Regionalizacao"
+    data_available: "company-profile (portfolio, metricas), team-structure (org comercial)"
+
+  - id: "SOP-CTL-002"
+    name: "Gestao de Credito, Financiamento e Cobranca"
+    type: "core"
+    priority: "P0"
+    score: 92
+    executor_dominante: "Hybrid"
+    complexity: "alta"
+    estimated_effort: "2-3 sessoes"
+    diretoria: "Comercial + CFO"
+    owner: "Gabriel Carpello + Claudio Kaizer"
+    status: "pending"
+    why_first: |
+      Resultado financeiro negativo de R$ 10M. Funding de R$ 106M.
+      Politica de Cobranca implementada mas sem SOP formal.
+      Inadimplencia impacta diretamente fluxo de caixa.
+    pe_2026_ref: "Politica de Cobranca e Negociacao"
+    data_available: "company-profile (metricas financeiras, funding)"
+
+  - id: "SOP-CTL-003"
+    name: "Pipeline Regulatorio ANVISA/INMETRO"
+    type: "core"
+    priority: "P0"
+    score: 90
+    executor_dominante: "Human"
+    complexity: "alta"
+    estimated_effort: "3-4 sessoes"
+    diretoria: "Operacoes (Qualidade)"
+    owner: "Filipe Ferreira"
+    status: "pending"
+    why_first: |
+      Sem registro ANVISA = nao pode vender. Risco regulatorio
+      identificado como ameaca no SWOT. Endurecimento de normas.
+      2 novos equipamentos medicos planejados para 2026.
+    pe_2026_ref: "Pilar 3: Governanca + SWOT (ameaca regulatoria)"
+    data_available: "category-map (SOP-IND-HEALTH-01, 03)"
+
+  - id: "SOP-CTL-004"
+    name: "Producao de Equipamentos (PCP → Expedicao)"
+    type: "core"
+    priority: "P0"
+    score: 88
+    executor_dominante: "Human"
+    complexity: "alta"
+    estimated_effort: "4-5 sessoes"
+    diretoria: "Operacoes"
+    owner: "Filipe Ferreira"
+    status: "pending"
+    why_first: |
+      Moat competitivo: fabrica propria de 2mil m2 com P&D.
+      Capacidade no limite (fraqueza SWOT). Padronizacao urgente
+      para escalar producao com novos lancamentos.
+    pe_2026_ref: "Pilar 1: Lancamentos 2026 + SWOT (capacidade no limite)"
+    data_available: "team-structure (areas de operacoes)"
+
+  - id: "SOP-CTL-005"
+    name: "Assistencia Tecnica e Pos-Venda"
+    type: "core"
+    priority: "P0"
+    score: 87
+    executor_dominante: "Hybrid"
+    complexity: "media"
+    estimated_effort: "2-3 sessoes"
+    diretoria: "Operacoes (Engenharia/AT)"
+    owner: "Filipe Ferreira"
+    status: "pending"
+    why_first: |
+      Forca SWOT: assistencia diferenciada, resposta rapida.
+      4 mil clientes dependem de suporte tecnico. Receita R$ 1.4M.
+      Potencial de contratos recorrentes de manutencao preventiva.
+    pe_2026_ref: "Pilar 4: CX Excellence + DIAG-32 (AT como centro de receita)"
+    data_available: "company-profile (metricas AT), diagnostic-backlog (DIAG-32)"
+
+  - id: "SOP-CTL-006"
+    name: "Operacao Unidade de Negocio Lumenis"
+    type: "core"
+    priority: "P0"
+    score: 85
+    executor_dominante: "Hybrid"
+    complexity: "alta"
+    estimated_effort: "2-3 sessoes"
+    diretoria: "Comercial (UN Lumenis)"
+    owner: "Gabriel Carpello"
+    status: "pending"
+    why_first: |
+      URGENTE: Margem bruta de apenas 9% (custo consome 91%).
+      R$ 47M de faturamento com rentabilidade insustentavel.
+      Revisao de pricing e custos e critica.
+    pe_2026_ref: "DIAG-07 (margem Lumenis CRITICO)"
+    data_available: "company-profile (metricas Lumenis detalhadas)"
+
+  # ==========================================================================
+  # P1 — HIGH: Processos core importantes, nao bloqueadores imediatos
+  # Resolver em 60 dias.
+  # ==========================================================================
+
+  - id: "SOP-CTL-007"
+    name: "Gestao de Importacao e Desembaraco Aduaneiro"
+    type: "core"
+    priority: "P1"
+    score: 82
+    executor_dominante: "Hybrid"
+    complexity: "alta"
+    estimated_effort: "2-3 sessoes"
+    diretoria: "Operacoes + CFO"
+    owner: "Filipe Ferreira + Claudio Kaizer"
+    status: "pending"
+    why: "R$ 66M em importacoes. FINIMP R$ 36M. Risco cambial e alfandegario."
+    pe_2026_ref: "Estrategia de Funding + SWOT (volatilidade cambial)"
+
+  - id: "SOP-CTL-008"
+    name: "Pipeline de P&D e Lancamento de Produto"
+    type: "core"
+    priority: "P1"
+    score: 80
+    executor_dominante: "Human"
+    complexity: "alta"
+    estimated_effort: "3-4 sessoes"
+    diretoria: "Consultoria/P&D"
+    owner: "Andreia Almeida"
+    status: "pending"
+    why: "3% receita em P&D, 3 lancamentos planejados, Lei da Informatica."
+    pe_2026_ref: "Pilar 1: Inovacao e Ciencia"
+
+  - id: "SOP-CTL-009"
+    name: "Treinamento de Clientes (Universidade Contourline)"
+    type: "core"
+    priority: "P1"
+    score: 78
+    executor_dominante: "Hybrid"
+    complexity: "media"
+    estimated_effort: "2 sessoes"
+    diretoria: "Consultoria/P&D"
+    owner: "Andreia Almeida"
+    status: "pending"
+    why: "Diferencial competitivo. Cliente treinado = resultado = referencia."
+    pe_2026_ref: "Pilar 4: Universidade Contourline + Politica Treinamento"
+
+  - id: "SOP-CTL-010"
+    name: "Marketing Cientifico e Producao de Conteudo"
+    type: "core"
+    priority: "P1"
+    score: 76
+    executor_dominante: "Hybrid"
+    complexity: "alta"
+    estimated_effort: "2-3 sessoes"
+    diretoria: "Marketing"
+    owner: "Helaine Hohendorff"
+    status: "pending"
+    why: "8% receita em marketing. Ciencia que Conecta. Posicionamento premium."
+    pe_2026_ref: "Pilar 1: Marketing Cientifico + Pilar 5: Forca da Marca"
+
+  - id: "SOP-CTL-011"
+    name: "Gestao de Eventos e Feiras Medicas"
+    type: "core"
+    priority: "P1"
+    score: 75
+    executor_dominante: "Hybrid"
+    complexity: "alta"
+    estimated_effort: "2-3 sessoes"
+    diretoria: "Marketing"
+    owner: "Helaine Hohendorff"
+    status: "pending"
+    why: "R$ 10M em feiras. Contourline Experience. Pipeline comercial."
+    pe_2026_ref: "Pilar 5: Contourline Experience"
+
+  - id: "SOP-CTL-012"
+    name: "Gestao de Funding e Estrutura de Capital"
+    type: "core"
+    priority: "P1"
+    score: 74
+    executor_dominante: "Human"
+    complexity: "alta"
+    estimated_effort: "2 sessoes"
+    diretoria: "Financeiro"
+    owner: "Claudio Kaizer"
+    status: "pending"
+    why: "R$ 106M em captacoes. Alavancagem 1.97x EBITDA. Hedge cambial."
+    pe_2026_ref: "Estrategia de Funding"
+
+  - id: "SOP-CTL-013"
+    name: "Operacao Unidade de Negocio Visbody"
+    type: "core"
+    priority: "P1"
+    score: 72
+    executor_dominante: "Hybrid"
+    complexity: "media"
+    estimated_effort: "1-2 sessoes"
+    diretoria: "Comercial (UN Visbody)"
+    owner: "Gabriel Carpello"
+    status: "pending"
+    why: "Margem 62%, lancamento oficial Brasil. Escalar com estrategia dedicada."
+    pe_2026_ref: "Visbody lancamento oficial + DIAG-08"
+
+  # ==========================================================================
+  # P1 — Processos "burros" de alto impacto (quick wins)
+  # ==========================================================================
+
+  - id: "SOP-CTL-014"
+    name: "Onboarding de Novo Colaborador"
+    type: "burro"
+    priority: "P1"
+    score: 85
+    executor_dominante: "Hybrid"
+    complexity: "media"
+    estimated_effort: "1-2 sessoes"
+    diretoria: "RH (report CEO)"
+    owner: "RH"
+    status: "pending"
+    why: "47 contratacoes planejadas (+40%). Sem SOP = ramp-up lento e diluicao cultural."
+    pe_2026_ref: "DIAG-27 (hiring plan) + Manual DP"
+
+  - id: "SOP-CTL-015"
+    name: "Processamento de Pedido de Venda"
+    type: "burro"
+    priority: "P1"
+    score: 78
+    executor_dominante: "Worker"
+    complexity: "baixa"
+    estimated_effort: "1 sessao"
+    diretoria: "Comercial"
+    owner: "Gabriel Carpello"
+    status: "pending"
+    why: "750+ equipamentos/ano. ERP Protheus novo - padronizar fluxo."
+
+  - id: "SOP-CTL-016"
+    name: "Emissao de Nota Fiscal (NF-e)"
+    type: "burro"
+    priority: "P1"
+    score: 75
+    executor_dominante: "Worker"
+    complexity: "baixa"
+    estimated_effort: "1 sessao"
+    diretoria: "Fiscal"
+    owner: "Claudio Kaizer"
+    status: "pending"
+    why: "Volume alto, Lei da Informatica, ERP novo."
+
+  - id: "SOP-CTL-017"
+    name: "Controle de Estoque e Rastreabilidade"
+    type: "burro"
+    priority: "P1"
+    score: 74
+    executor_dominante: "Worker"
+    complexity: "media"
+    estimated_effort: "1-2 sessoes"
+    diretoria: "Operacoes (Logistica)"
+    owner: "Filipe Ferreira"
+    status: "pending"
+    why: "Exigencia ANVISA. Lotes, validades, rastreabilidade. ERP integra."
+
+  - id: "SOP-CTL-018"
+    name: "Abertura e Gestao de Chamado AT"
+    type: "burro"
+    priority: "P1"
+    score: 72
+    executor_dominante: "Worker/Agent"
+    complexity: "baixa"
+    estimated_effort: "1 sessao"
+    diretoria: "Operacoes (AT)"
+    owner: "Filipe Ferreira"
+    status: "pending"
+    why: "4 mil clientes. Volume de chamados cresce com base instalada."
+
+  - id: "SOP-CTL-019"
+    name: "Processo de Garantia e Troca"
+    type: "burro"
+    priority: "P1"
+    score: 70
+    executor_dominante: "Hybrid"
+    complexity: "media"
+    estimated_effort: "1 sessao"
+    diretoria: "Operacoes + Comercial"
+    owner: "Filipe Ferreira"
+    status: "pending"
+    why: "Politica de Garantia e Troca ja implementada - falta SOP."
+
+  # ==========================================================================
+  # P2 — MEDIUM: Processos importantes mas nao urgentes
+  # Resolver em 90 dias.
+  # ==========================================================================
+
+  - id: "SOP-CTL-020"
+    name: "Qualificacao de Lead Inbound"
+    type: "burro"
+    priority: "P2"
+    score: 65
+    executor_dominante: "Worker/Agent"
+    complexity: "baixa"
+    estimated_effort: "1 sessao"
+    diretoria: "Comercial (Inside Sales)"
+    owner: "Gabriel Carpello"
+    status: "pending"
+    why: "Inside Sales filtra leads. Padronizar criterios de qualificacao."
+
+  - id: "SOP-CTL-021"
+    name: "Atualizacao de CRM e Dados Comerciais"
+    type: "burro"
+    priority: "P2"
+    score: 62
+    executor_dominante: "Worker"
+    complexity: "baixa"
+    estimated_effort: "1 sessao"
+    diretoria: "Marketing (CRM)"
+    owner: "Helaine Hohendorff"
+    status: "pending"
+    why: "Baixa maturidade em dados (SWOT). CRM & Automacao sob Marketing."
+
+  - id: "SOP-CTL-022"
+    name: "Fiscal e Tributario — Apuracao Mensal"
+    type: "burro"
+    priority: "P2"
+    score: 60
+    executor_dominante: "Worker"
+    complexity: "media"
+    estimated_effort: "1-2 sessoes"
+    diretoria: "Financeiro (Fiscal)"
+    owner: "Claudio Kaizer"
+    status: "pending"
+    why: "Lei da Informatica, Lucro Real. Reforma tributaria como ameaca."
+
+  - id: "SOP-CTL-023"
+    name: "Agendamento de Treinamento de Cliente"
+    type: "burro"
+    priority: "P2"
+    score: 55
+    executor_dominante: "Worker"
+    complexity: "baixa"
+    estimated_effort: "1 sessao"
+    diretoria: "Consultoria/P&D"
+    owner: "Andreia Almeida"
+    status: "pending"
+    why: "Universidade Contourline. Automatizar agendamento."
+
+  - id: "SOP-CTL-024"
+    name: "Geracao de Relatorios Gerenciais"
+    type: "burro"
+    priority: "P2"
+    score: 52
+    executor_dominante: "Worker"
+    complexity: "baixa"
+    estimated_effort: "1 sessao"
+    diretoria: "Financeiro + TI"
+    owner: "Claudio Kaizer"
+    status: "pending"
+    why: "Baixa maturidade em dados. ERP Protheus deve gerar automaticamente."
+
+  - id: "SOP-CTL-025"
+    name: "Backup e Governanca de Dados"
+    type: "burro"
+    priority: "P2"
+    score: 50
+    executor_dominante: "Worker"
+    complexity: "media"
+    estimated_effort: "1 sessao"
+    diretoria: "TI"
+    owner: "TI"
+    status: "pending"
+    why: "LGPD, dados de pacientes, ERP novo. Seguranca da informacao."
+
+# =============================================================================
+# RESUMO EXECUTIVO
+# =============================================================================
+
+summary:
+  total_sops: 25
+  by_priority:
+    P0: 6
+    P1: 13
+    P2: 6
+  by_type:
+    core: 13
+    burro: 12
+  by_diretoria:
+    comercial: 8
+    operacoes: 7
+    consultoria_pd: 3
+    marketing: 3
+    financeiro: 3
+    rh: 1
+  estimated_total_effort: "35-50 sessoes"
+  recommended_start: "SOP-CTL-001 (Pipeline Comercial) + SOP-CTL-014 (Onboarding) em paralelo"
+  note: |
+    Os 6 P0 devem ser os primeiros a entrar na assembly line.
+    Recomendacao: criar SOPs dos 6 P0 em paralelo usando 2 tracks:
+
+    Track 1 (Comercial): SOP-001, SOP-002, SOP-006
+    Track 2 (Operacoes): SOP-003, SOP-004, SOP-005
+
+    Quick wins (burros P1): SOP-014 a SOP-019 podem ser criados
+    rapidamente (1 sessao cada) para gerar momentum.

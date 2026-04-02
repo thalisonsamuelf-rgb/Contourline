@@ -1,0 +1,19 @@
+---
+# Template: intake raw N4 leader dataset
+
+metadata:
+  template_id: "movement.intake_raw_n4_leader"
+  version: "1.0.0"
+  lifecycle_stage: "intake"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+raw_n4_leader:
+  journey_signals: []
+  values_signals: []
+  worldview_signals: []
+  expression_signals: []
+  symbol_signals: []
+  notes: []
+provenance:
+  source_docs: []

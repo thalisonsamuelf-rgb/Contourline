@@ -1,0 +1,257 @@
+---
+# OBJECTIONS.YAML - Stack de Objeções + Respostas
+# THIS FILE GROWS - Add objections as you get them
+# Purpose: Document every customer objection + your response
+# Guardian: CMO / Head of Customer Success
+# Timing: FILL NOW + UPDATE WEEKLY as new objections arrive
+
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# OBJECTION FRAMEWORK (How to structure responses)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+# ============================================================================
+# TIER 1 OBJECTIONS - Most Frequent (Top 5)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# TIER 2 OBJECTIONS - Secondary (6-10)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# OBJECTIONS BY AWARENESS LEVEL (Pattern by stage)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# OBJECTION HANDLING BY CHANNEL
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# OBJECTION PATTERNS & INSIGHTS
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# OBJECTION RESPONSE TEMPLATES
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# HIDDEN OBJECTIONS NOT VERBALIZED (Extended from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# HANDLING FRAMEWORK (from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# CLOSING THE OBJECTION (from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# META OBJECTION (from System B)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# USAGE & UPDATES
+# ============================================================================
+FILL_THIS: |-
+  FILL_THIS
+FILL_THIS: |-
+  FILL_THIS
+FILL_THIS: |-
+  FILL_THIS
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+---
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS

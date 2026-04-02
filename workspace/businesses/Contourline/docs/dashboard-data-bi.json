@@ -1,0 +1,703 @@
+{
+  "summary": {
+    "total_sales": 2420,
+    "total_revenue": 392290875.36,
+    "total_rd_won": 603,
+    "rd_won_revenue": 145189069.7,
+    "match_rate": 36,
+    "sales_without_rd": 86,
+    "avg_ticket": 162103.66750413223,
+    "years_range": "2019-2026",
+    "unique_sellers": 86,
+    "unique_products": 98,
+    "unique_states": 31
+  },
+  "sales_by_year": [
+    {
+      "year": 2019,
+      "count": 131,
+      "value": 14870314.34
+    },
+    {
+      "year": 2020,
+      "count": 205,
+      "value": 34504232.54
+    },
+    {
+      "year": 2021,
+      "count": 354,
+      "value": 65394385.56
+    },
+    {
+      "year": 2022,
+      "count": 400,
+      "value": 52908998.13
+    },
+    {
+      "year": 2023,
+      "count": 397,
+      "value": 50499348.73
+    },
+    {
+      "year": 2024,
+      "count": 409,
+      "value": 59549603.98
+    },
+    {
+      "year": 2025,
+      "count": 442,
+      "value": 97104109.23
+    },
+    {
+      "year": 2026,
+      "count": 82,
+      "value": 17459882.85
+    }
+  ],
+  "rd_by_month": [
+    {
+      "month": "2025-07",
+      "count": 114
+    },
+    {
+      "month": "2025-08",
+      "count": 42
+    },
+    {
+      "month": "2025-09",
+      "count": 39
+    },
+    {
+      "month": "2025-10",
+      "count": 36
+    },
+    {
+      "month": "2025-11",
+      "count": 76
+    },
+    {
+      "month": "2025-12",
+      "count": 30
+    },
+    {
+      "month": "2026-01",
+      "count": 55
+    },
+    {
+      "month": "2026-02",
+      "count": 50
+    },
+    {
+      "month": "2026-03",
+      "count": 161
+    }
+  ],
+  "top_products_sales": [
+    {
+      "name": "LASER CRYSTAL 3D",
+      "count": 533,
+      "revenue": 114888336.12
+    },
+    {
+      "name": "HIPRO",
+      "count": 493,
+      "revenue": 84533724.28
+    },
+    {
+      "name": "BHS 156 FULL",
+      "count": 142,
+      "revenue": 14673608.91
+    },
+    {
+      "name": "MULTISHAPE",
+      "count": 132,
+      "revenue": 13538193.78
+    },
+    {
+      "name": "UNYQUE PRO",
+      "count": 127,
+      "revenue": 38997416.51
+    },
+    {
+      "name": "INKIE",
+      "count": 94,
+      "revenue": 5703982.73
+    },
+    {
+      "name": "ULTRALIFT DUO",
+      "count": 82,
+      "revenue": 9763960.01
+    },
+    {
+      "name": "HIPRO C/ PONTEIRA EXTRA",
+      "count": 79,
+      "revenue": 15843701.0
+    },
+    {
+      "name": "UNYQUE PRO C/ ENYGMA",
+      "count": 59,
+      "revenue": 19726418.12
+    },
+    {
+      "name": "HIPRO MED",
+      "count": 51,
+      "revenue": 8505456.17
+    },
+    {
+      "name": "LUMINAX",
+      "count": 48,
+      "revenue": 189482.46
+    },
+    {
+      "name": "PONTEIRA HIPRO",
+      "count": 37,
+      "revenue": 1331404.05
+    },
+    {
+      "name": "ADENA LASER",
+      "count": 37,
+      "revenue": 5081641.21
+    },
+    {
+      "name": "UNYQUE",
+      "count": 36,
+      "revenue": 5533312.82
+    },
+    {
+      "name": "ICONYC",
+      "count": 30,
+      "revenue": 3255808.77
+    }
+  ],
+  "top_products_rd": [
+    {
+      "name": "HIPRO",
+      "count": 318
+    },
+    {
+      "name": "Valor da oportunidade",
+      "count": 97
+    },
+    {
+      "name": "UNYQUE PRO",
+      "count": 39
+    },
+    {
+      "name": "UNYQUE PRO + ENYGMA",
+      "count": 38
+    },
+    {
+      "name": "HIPRO MED",
+      "count": 35
+    },
+    {
+      "name": "S30",
+      "count": 27
+    },
+    {
+      "name": "MULTISHAPE",
+      "count": 25
+    },
+    {
+      "name": "SUPREME PRO",
+      "count": 18
+    },
+    {
+      "name": "M30",
+      "count": 11
+    },
+    {
+      "name": "PONTEIRA HIPRO",
+      "count": 8
+    },
+    {
+      "name": "TRILIFT",
+      "count": 6
+    },
+    {
+      "name": "ULTRAPULSE ALPHA",
+      "count": 5
+    },
+    {
+      "name": "PONTEIRA ENYGMA",
+      "count": 5
+    },
+    {
+      "name": "FOCUSKIN",
+      "count": 5
+    },
+    {
+      "name": "STELLAR IPL + NDYAG + Q-SWITCHED + RESURFX",
+      "count": 2
+    }
+  ],
+  "top_sellers": [
+    {
+      "name": "Diana Carvalho",
+      "count": 423,
+      "revenue": 69792191.81
+    },
+    {
+      "name": "Égio",
+      "count": 308,
+      "revenue": 28848799.4
+    },
+    {
+      "name": "Brandina Vidal",
+      "count": 239,
+      "revenue": 40947955.77
+    },
+    {
+      "name": "Gláucia Moura",
+      "count": 188,
+      "revenue": 31613984.81
+    },
+    {
+      "name": "Bruna Campos",
+      "count": 181,
+      "revenue": 27611462.09
+    },
+    {
+      "name": "Jéssica Carvalho",
+      "count": 165,
+      "revenue": 27900742.65
+    },
+    {
+      "name": "Cláudia Jardim",
+      "count": 117,
+      "revenue": 19804876.35
+    },
+    {
+      "name": "Thiago Mendes",
+      "count": 91,
+      "revenue": 21360695.89
+    },
+    {
+      "name": "Ana Laura Cavalcanti",
+      "count": 62,
+      "revenue": 9608113.2
+    },
+    {
+      "name": "Maria Diniz",
+      "count": 60,
+      "revenue": 10229025.3
+    },
+    {
+      "name": "Rafaela Caldeira",
+      "count": 52,
+      "revenue": 10508275.82
+    },
+    {
+      "name": "Filipe Anjos",
+      "count": 35,
+      "revenue": 9297386.06
+    },
+    {
+      "name": "Empresa",
+      "count": 34,
+      "revenue": 3575916.57
+    },
+    {
+      "name": "Essenza (Representante)",
+      "count": 30,
+      "revenue": 5990103.14
+    },
+    {
+      "name": "Gláucia Zica",
+      "count": 28,
+      "revenue": 4344343.33
+    }
+  ],
+  "top_states": [
+    {
+      "state": "SP",
+      "count": 524,
+      "revenue": 91960383.36
+    },
+    {
+      "state": "MG",
+      "count": 427,
+      "revenue": 55908668.28
+    },
+    {
+      "state": "PR",
+      "count": 207,
+      "revenue": 33575277.0
+    },
+    {
+      "state": "SC",
+      "count": 124,
+      "revenue": 22518026.45
+    },
+    {
+      "state": "RJ",
+      "count": 117,
+      "revenue": 16496655.27
+    },
+    {
+      "state": "DF",
+      "count": 89,
+      "revenue": 15812038.6
+    },
+    {
+      "state": "RS",
+      "count": 73,
+      "revenue": 13610884.34
+    },
+    {
+      "state": "GO",
+      "count": 71,
+      "revenue": 10739544.21
+    },
+    {
+      "state": "BA",
+      "count": 53,
+      "revenue": 10621806.87
+    },
+    {
+      "state": "ES",
+      "count": 52,
+      "revenue": 9545418.42
+    },
+    {
+      "state": "MT",
+      "count": 49,
+      "revenue": 8539243.79
+    },
+    {
+      "state": "PB",
+      "count": 39,
+      "revenue": 7998906.18
+    },
+    {
+      "state": "PE",
+      "count": 36,
+      "revenue": 5596242.63
+    },
+    {
+      "state": "PA",
+      "count": 34,
+      "revenue": 6021650.68
+    },
+    {
+      "state": "MS",
+      "count": 27,
+      "revenue": 5083355.46
+    }
+  ],
+  "rd_sources": [
+    {
+      "source": "Sem fonte",
+      "count": 251
+    },
+    {
+      "source": "Inbound",
+      "count": 140
+    },
+    {
+      "source": "Desconhecido",
+      "count": 47
+    },
+    {
+      "source": "Indicação",
+      "count": 34
+    },
+    {
+      "source": "Cliente Ativo",
+      "count": 28
+    },
+    {
+      "source": "Eventos",
+      "count": 16
+    },
+    {
+      "source": "Outbound",
+      "count": 14
+    },
+    {
+      "source": "Indicação por Parceiros",
+      "count": 10
+    },
+    {
+      "source": "Base de Oportunidades",
+      "count": 9
+    },
+    {
+      "source": "Contato pelo Site",
+      "count": 9
+    },
+    {
+      "source": "Busca Paga | google",
+      "count": 6
+    },
+    {
+      "source": "Indicação por Clientes",
+      "count": 6
+    },
+    {
+      "source": "CONTATO DIRETO COM VENDEDOR",
+      "count": 5
+    },
+    {
+      "source": "Pós Vendas",
+      "count": 5
+    },
+    {
+      "source": "Tráfego Direto",
+      "count": 4
+    },
+    {
+      "source": "Outros | medicos+alto+padrao",
+      "count": 3
+    },
+    {
+      "source": "Social | Instagram",
+      "count": 3
+    },
+    {
+      "source": "Outros | paid",
+      "count": 2
+    },
+    {
+      "source": "Outros | interessesmultishape",
+      "count": 2
+    },
+    {
+      "source": "Outros | interesseshipro",
+      "count": 1
+    },
+    {
+      "source": "Referência | bit.ly",
+      "count": 1
+    },
+    {
+      "source": "Busca Orgânica | Google",
+      "count": 1
+    },
+    {
+      "source": "Outros | cpcc",
+      "count": 1
+    },
+    {
+      "source": "Social | ig",
+      "count": 1
+    },
+    {
+      "source": "Busca Paga | Google",
+      "count": 1
+    },
+    {
+      "source": "Outros | [vv]",
+      "count": 1
+    },
+    {
+      "source": "Outros | interesses+unyque",
+      "count": 1
+    },
+    {
+      "source": "Prospecção Ativa",
+      "count": 1
+    }
+  ],
+  "rd_sellers": [
+    {
+      "name": "Gleidsson Félix ",
+      "count": 73
+    },
+    {
+      "name": "Brandina ",
+      "count": 73
+    },
+    {
+      "name": "Alice Coelho",
+      "count": 54
+    },
+    {
+      "name": "Cláudia  Vieira",
+      "count": 53
+    },
+    {
+      "name": "Representantes Contourline",
+      "count": 51
+    },
+    {
+      "name": "Rafaela Caldeira",
+      "count": 49
+    },
+    {
+      "name": "Diana Carvalho",
+      "count": 48
+    },
+    {
+      "name": "Filipe dos Anjos Laranjeira",
+      "count": 40
+    },
+    {
+      "name": "Paulo Nunes",
+      "count": 35
+    },
+    {
+      "name": "Thiago Mendes",
+      "count": 25
+    },
+    {
+      "name": "Jessica Carvalho",
+      "count": 23
+    },
+    {
+      "name": "Jéssica Oliveira",
+      "count": 16
+    },
+    {
+      "name": "Lucas Pereira de Souza ",
+      "count": 11
+    },
+    {
+      "name": "Caroline Lorrany Pereira",
+      "count": 8
+    },
+    {
+      "name": "Felipe Ribeiro",
+      "count": 8
+    }
+  ],
+  "acquisition_sources": [
+    {
+      "source": "Novo",
+      "count": 250,
+      "revenue": 63413127.13
+    },
+    {
+      "source": "Recorrente",
+      "count": 99,
+      "revenue": 15785076.2
+    },
+    {
+      "source": "Representante",
+      "count": 83,
+      "revenue": 16667035.9
+    },
+    {
+      "source": "NOVO",
+      "count": 45,
+      "revenue": 10178464.14
+    },
+    {
+      "source": "Cliente da base",
+      "count": 35,
+      "revenue": 6163424.47
+    },
+    {
+      "source": "Contato Whatsapp",
+      "count": 28,
+      "revenue": 5770889.52
+    },
+    {
+      "source": "RECORRENTE",
+      "count": 27,
+      "revenue": 5473817.53
+    },
+    {
+      "source": "Sem forma Definida",
+      "count": 22,
+      "revenue": 4607822.83
+    },
+    {
+      "source": "Socios",
+      "count": 22,
+      "revenue": 4099709.57
+    },
+    {
+      "source": "Google",
+      "count": 22,
+      "revenue": 4543763.86
+    },
+    {
+      "source": "BASE",
+      "count": 19,
+      "revenue": 974080.74
+    },
+    {
+      "source": "App Body Health",
+      "count": 19,
+      "revenue": 3222155.68
+    },
+    {
+      "source": "Captação Externa (Pescaria)",
+      "count": 14,
+      "revenue": 2655141.79
+    },
+    {
+      "source": "Indicação",
+      "count": 13,
+      "revenue": 2532150.24
+    },
+    {
+      "source": "Site",
+      "count": 13,
+      "revenue": 2664582.93
+    }
+  ],
+  "rd_campaigns": [
+    {
+      "campaign": "Criado manualmente",
+      "count": 120
+    },
+    {
+      "campaign": "Sem Campanha",
+      "count": 82
+    },
+    {
+      "campaign": "CONVERSÃO - VISBODY S-30",
+      "count": 20
+    },
+    {
+      "campaign": "API",
+      "count": 17
+    },
+    {
+      "campaign": "CONVERSÃO - HIPRO",
+      "count": 16
+    },
+    {
+      "campaign": "CONVERSÃO - SUPREME PRO",
+      "count": 7
+    },
+    {
+      "campaign": "CONVERSÃO - UNYQUE PRO",
+      "count": 7
+    },
+    {
+      "campaign": "FALE CONOSCO - CONTOURLINE/ BODY HEALTH/ VISBODY",
+      "count": 6
+    },
+    {
+      "campaign": "CONVERSÃO - VISBODY M-30",
+      "count": 6
+    },
+    {
+      "campaign": "CONVERSÃO - MULTISHAPE",
+      "count": 6
+    },
+    {
+      "campaign": "Lançamento Lumenis",
+      "count": 6
+    },
+    {
+      "campaign": "Lumenis",
+      "count": 3
+    },
+    {
+      "campaign": "CONVERSÃO - HIPRO MED",
+      "count": 2
+    },
+    {
+      "campaign": "VERÃO A VISTA",
+      "count": 2
+    },
+    {
+      "campaign": "PATRÍCIA LEITE",
+      "count": 2
+    }
+  ]
+}

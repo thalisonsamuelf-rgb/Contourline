@@ -1,0 +1,29 @@
+---
+# DEPRECATED TEMPLATE
+# Use `workspace/_templates/movement/identity-leaders.yaml` instead.
+# Kept only for backward compatibility.
+
+metadata:
+  template_id: "movement.identity_leader"
+  version: "1.1.0"
+  lifecycle_stage: "identity"
+  status: DEPRECATED
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+  deprecation:
+    deprecated: true
+    replaced_by_template_id: "movement.identity_leaders"
+    replaced_by_path: "workspace/_templates/movement/identity-leaders.yaml"
+    migration_note: "Use leaders[] even for single-leader businesses."
+leader:
+  key: "<required>"
+  name: "<required>"
+  role_in_movement: "<required>"
+  top_values:
+    - name: "<required>"
+      score: "<required>"
+  vulnerabilities: []
+  signature_phrases: []
+  strategic_focus: []
+provenance:
+  source_docs: []

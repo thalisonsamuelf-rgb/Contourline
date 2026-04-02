@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Chamados - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0"><i class="bi bi-wrench"></i> Chamados Tecnicos</h4>
+        <a href="{{ url_for('chamado_novo') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Novo Chamado</a>
+    </div>
+
+    <!-- FILTRO STATUS -->
+    <div class="mb-3">
+        <div class="btn-group flex-wrap" role="group">
+            <a href="{{ url_for('chamados_lista') }}" class="btn btn-sm {{ 'btn-primary' if not status_selecionado else 'btn-outline-primary' }}">Todos</a>
+            <a href="{{ url_for('chamados_lista', status='aberto') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'aberto' else 'btn-outline-primary' }}">Aberto</a>
+            <a href="{{ url_for('chamados_lista', status='em_andamento') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'em_andamento' else 'btn-outline-primary' }}">Em Andamento</a>
+            <a href="{{ url_for('chamados_lista', status='aguardando_peca') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'aguardando_peca' else 'btn-outline-primary' }}">Aguardando Peca</a>
+            <a href="{{ url_for('chamados_lista', status='resolvido') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'resolvido' else 'btn-outline-primary' }}">Resolvido</a>
+            <a href="{{ url_for('chamados_lista', status='fechado') }}" class="btn btn-sm {{ 'btn-primary' if status_selecionado == 'fechado' else 'btn-outline-primary' }}">Fechado</a>
+        </div>
+    </div>
+
+    <!-- TABELA -->
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Cliente</th>
+                        <th>Equipamento</th>
+                        <th>Titulo</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                        <th>Tecnico</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in chamados %}
+                    <tr>
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.cliente.razao_social[:25] }}</td>
+                        <td>{{ c.equipamento.nome if c.equipamento else '-' }}</td>
+                        <td>{{ c.titulo[:35] }}</td>
+                        <td><span class="badge-status badge-{{ c.prioridade }}">{{ c.prioridade | title }}</span></td>
+                        <td><span class="badge-status badge-{{ c.status }}">{{ c.status | replace('_', ' ') | title }}</span></td>
+                        <td>{{ c.tecnico.nome if c.tecnico else '-' }}</td>
+                        <td><a href="{{ url_for('chamado_editar', id=c.id) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a></td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="8" class="text-center text-muted py-4">Nenhum chamado encontrado.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,244 @@
+---
+# ADOPTION-SIGNALS.YAML - Product Adoption Signal Map & Intervention Layer
+# Purpose: Transform qualitative and quantitative product signals into a shared operating layer
+# Guardian: Product Lead / COO / Customer Success Lead
+# Timing: Fill after onboarding-flow.yaml starts receiving real usage evidence
+# Framework: Activation Signals + Adoption Milestones + Product Friction Diagnosis
+# Dependency: onboarding-flow.yaml, churn-prevention.yaml, analytics.yaml, icp.yaml
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Product Lead / COO"
+  framework: "Activation Signals + Adoption Milestones + Product Friction Diagnosis"
+  notes: |
+    Product optimization should not start with feature requests.
+    It should start with behavioral evidence.
+
+    This template exists to capture the signals that matter:
+    who activates, where they get stuck, what language they use,
+    what milestones predict retention, and what frictions predict churn.
+
+    RULE: Do not promote anecdotes into product decisions without evidence.
+    Every important signal should be tied to a source, frequency, and recommended action.
+
+# ============================================================================
+# STEP 1: ADOPTION MODEL
+# ============================================================================
+
+adoption_model:
+  primary_outcome: "FILL — What product behavior proves real adoption?"
+  activation_definition: "FILL — What specific event or milestone counts as activation?"
+  adoption_stages:
+    stage_1:
+      name: "FILL — e.g. New / Unactivated"
+      definition: "FILL — What defines this stage?"
+    stage_2:
+      name: "FILL — e.g. Activated"
+      definition: "FILL — What defines this stage?"
+    stage_3:
+      name: "FILL — e.g. Installed / Habitual"
+      definition: "FILL — What defines this stage?"
+    stage_4:
+      name: "FILL — e.g. Advocate / Power User"
+      definition: "FILL — What defines this stage?"
+
+# ============================================================================
+# STEP 2: SEGMENTATION SIGNALS
+# ============================================================================
+
+segmentation_signals:
+  maturity_bands:
+    band_1:
+      label: "FILL — e.g. Iniciante Confuso"
+      observed_signals:
+        - "FILL"
+      core_need: "FILL"
+      product_implication: "FILL"
+    band_2:
+      label: "FILL — e.g. Operador em Instalação"
+      observed_signals:
+        - "FILL"
+      core_need: "FILL"
+      product_implication: "FILL"
+    band_3:
+      label: "FILL — e.g. Avançado Obcecado"
+      observed_signals:
+        - "FILL"
+      core_need: "FILL"
+      product_implication: "FILL"
+  role_mix:
+    - "FILL — What user roles or backgrounds appear repeatedly?"
+
+# ============================================================================
+# STEP 3: ACTIVATION SIGNALS
+# ============================================================================
+
+activation_signals:
+  leading_signals:
+    signal_1:
+      name: "FILL — Early positive signal"
+      description: "FILL — What behavior indicates activation is likely?"
+      source_type: "FILL — product analytics / support / interviews / community"
+      intervention_if_missing: "FILL"
+    signal_2:
+      name: "FILL — Second leading signal"
+      description: "FILL"
+      source_type: "FILL"
+      intervention_if_missing: "FILL"
+  activation_milestones:
+    milestone_1:
+      name: "FILL — First value milestone"
+      evidence: "FILL — What counts as proof?"
+      target_time: "FILL — e.g. <24h / <7 days"
+    milestone_2:
+      name: "FILL — First repeatable usage milestone"
+      evidence: "FILL"
+      target_time: "FILL"
+    milestone_3:
+      name: "FILL — Installed usage milestone"
+      evidence: "FILL"
+      target_time: "FILL"
+
+# ============================================================================
+# STEP 4: PRODUCT FRICTION MAP
+# ============================================================================
+
+product_friction_map:
+  friction_1:
+    label: "FILL — e.g. Setup complexity"
+    type: "FILL — onboarding / technical / conceptual / motivational"
+    symptom: "FILL — What does the user say or do?"
+    probable_root_cause: "FILL"
+    most_affected_segment: "FILL"
+    suggested_product_response: "FILL — What should product change?"
+  friction_2:
+    label: "FILL — Second friction"
+    type: "FILL"
+    symptom: "FILL"
+    probable_root_cause: "FILL"
+    most_affected_segment: "FILL"
+    suggested_product_response: "FILL"
+  friction_3:
+    label: "FILL — Third friction"
+    type: "FILL"
+    symptom: "FILL"
+    probable_root_cause: "FILL"
+    most_affected_segment: "FILL"
+    suggested_product_response: "FILL"
+
+# ============================================================================
+# STEP 5: RITUALS / MILESTONES THAT PREDICT RETENTION
+# ============================================================================
+
+retention_predictors:
+  ritual_or_milestone_1:
+    name: "FILL — What behavior predicts staying?"
+    category: "FILL — activation / habit / social proof / system usage"
+    why_it_matters: "FILL"
+    if_present: "FILL — What usually happens next?"
+    if_absent: "FILL — What risk does absence signal?"
+  ritual_or_milestone_2:
+    name: "FILL"
+    category: "FILL"
+    why_it_matters: "FILL"
+    if_present: "FILL"
+    if_absent: "FILL"
+
+# ============================================================================
+# STEP 6: RISK SIGNALS
+# ============================================================================
+
+risk_signals:
+  signal_1:
+    label: "FILL — e.g. Overwhelm before first win"
+    category: "FILL — churn / drop-off / stalled adoption"
+    evidence: "FILL — What shows this is happening?"
+    severity: "FILL — low / medium / high"
+    lead_time: "FILL — How early before drop-off?"
+    intervention: "FILL — What should happen automatically or manually?"
+  signal_2:
+    label: "FILL"
+    category: "FILL"
+    evidence: "FILL"
+    severity: "FILL"
+    lead_time: "FILL"
+    intervention: "FILL"
+  signal_3:
+    label: "FILL"
+    category: "FILL"
+    evidence: "FILL"
+    severity: "FILL"
+    lead_time: "FILL"
+    intervention: "FILL"
+
+# ============================================================================
+# STEP 7: PRODUCT OPPORTUNITIES
+# ============================================================================
+
+product_opportunities:
+  opportunity_1:
+    label: "FILL — e.g. Guided onboarding wizard"
+    triggered_by:
+      - "FILL — Which signals suggest this?"
+    expected_impact: "FILL — Activation / retention / expansion / support load"
+    confidence: "FILL — low / medium / high"
+  opportunity_2:
+    label: "FILL"
+    triggered_by:
+      - "FILL"
+    expected_impact: "FILL"
+    confidence: "FILL"
+  opportunity_3:
+    label: "FILL"
+    triggered_by:
+      - "FILL"
+    expected_impact: "FILL"
+    confidence: "FILL"
+
+# ============================================================================
+# STEP 8: EVIDENCE GOVERNANCE
+# ============================================================================
+
+evidence_governance:
+  primary_sources:
+    - "FILL — Analytics tables / events"
+    - "FILL — Support tickets"
+    - "FILL — Community transcripts"
+    - "FILL — Interviews / calls"
+  evidence_quality_rules:
+    - "FILL — What counts as strong evidence?"
+    - "FILL — What stays as hypothesis?"
+    - "FILL — How often should this file be reviewed?"
+  freshness_window: "FILL — e.g. review every 30 / 60 / 90 days"
+
+# ============================================================================
+# STEP 9: DIAGNOSTIC SUMMARY
+# ============================================================================
+
+diagnostic_summary:
+  strongest_adoption_signal: "FILL_THIS"
+  biggest_activation_blocker: "FILL_THIS"
+  strongest_retention_predictor: "FILL_THIS"
+  biggest_product_opportunity: "FILL_THIS"
+  recommended_next_actions:
+    - "FILL"
+    - "FILL"
+    - "FILL"
+
+cross_references:
+  depends_on:
+    - "onboarding-flow.yaml"
+    - "icp.yaml"
+  feeds_into:
+    - "churn-prevention.yaml"
+    - "analytics.yaml"
+    - "retention-strategy.yaml"
+    - "nps-feedback-loop.yaml"
+  related:
+    - "learning-journey.yaml"
+    - "activation-score.yaml"
+    - "student-health-score.yaml"
+    - "company/analytics.yaml"

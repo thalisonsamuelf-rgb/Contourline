@@ -1,0 +1,143 @@
+---
+# UPSELL-ARCHITECTURE.YAML - Revenue Ascension & Value Ladder Design
+# Purpose: Design the upsell/cross-sell/downsell architecture that maximizes customer lifetime value
+# Guardian: CMO / Revenue Lead
+# Timing: FILL after offerbook.yaml and monetization-strategy.yaml are complete
+# Framework: Hormozi Value Ladder + Ascension Model + Revenue Maximizer
+# Dependency: offerbook.yaml (core offer), monetization-strategy.yaml (revenue streams)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Revenue Lead"
+  framework: "Hormozi Value Ladder + Ascension Model"
+  notes: |
+    The most expensive thing in business is acquiring a customer.
+    The smartest thing is MAXIMIZING the value of every customer you already have.
+
+    Hormozi's Value Ladder: Every product should have a natural NEXT STEP
+    that delivers MORE value at a HIGHER price point.
+
+    Three types of post-purchase offers:
+    1. UPSELL: More of the same, premium version, or next level
+    2. CROSS-SELL: Complementary product that enhances the original
+    3. DOWNSELL: Lower-priced alternative for those who cannot afford the upsell
+
+    RULE: Every upsell must GENUINELY deliver more value.
+    If the upsell does not make their result better, it is a cash grab.
+# ============================================================================
+# STEP 1: VALUE LADDER OVERVIEW
+# ============================================================================
+value_ladder:
+  total_tiers: "FILL — How many tiers in your value ladder? (recommended: 3-5)"
+  tier_1_entry:
+    name: "FILL — Entry-level offer name"
+    price: "FILL — Price"
+    value_delivered: "FILL — What result does this deliver?"
+    purpose: "FILL — Why does this tier exist? (typically: get them in the door)"
+  tier_2_core:
+    name: "FILL — Core offer name (your main product)"
+    price: "FILL — Price"
+    value_delivered: "FILL — What result does this deliver?"
+    purpose: "FILL — Why does this tier exist? (typically: the main transformation)"
+  tier_3_premium:
+    name: "FILL — Premium/advanced offer"
+    price: "FILL — Price"
+    value_delivered: "FILL — What additional result does this deliver?"
+    purpose: "FILL — Why does this tier exist? (typically: accelerated/enhanced results)"
+  tier_4_elite:
+    name: "FILL — Elite/done-for-you/1-on-1 offer (if applicable)"
+    price: "FILL — Price"
+    value_delivered: "FILL — What exclusive result does this deliver?"
+    purpose: "FILL — Why does this tier exist? (typically: maximum speed and personalization)"
+# ============================================================================
+# STEP 2: UPSELL TRIGGERS
+# ============================================================================
+upsell_triggers:
+  trigger_1:
+    name: "FILL — Trigger name (e.g., 'Module 3 Completion')"
+    type: "FILL — Time-based / Milestone-based / Behavior-based / Request-based"
+    when: "FILL — Exactly when does this trigger fire?"
+    offer: "FILL — Which tier/product is offered?"
+    delivery_method: "FILL — Email / In-app / Call / Checkout page"
+  trigger_2:
+    name: "FILL — Trigger name"
+    type: "FILL — Time-based / Milestone-based / Behavior-based / Request-based"
+    when: "FILL — When does this trigger fire?"
+    offer: "FILL — Which tier/product is offered?"
+    delivery_method: "FILL — Email / In-app / Call / Checkout page"
+  trigger_3:
+    name: "FILL — Trigger name"
+    type: "FILL — Time-based / Milestone-based / Behavior-based / Request-based"
+    when: "FILL — When does this trigger fire?"
+    offer: "FILL — Which tier/product is offered?"
+    delivery_method: "FILL — Email / In-app / Call / Checkout page"
+# ============================================================================
+# STEP 3: CROSS-SELL OPPORTUNITIES
+# ============================================================================
+cross_sells:
+  cross_sell_1:
+    name: "FILL — Product/service name"
+    price: "FILL — Price"
+    relationship_to_core: "FILL — How does this complement the core offer?"
+    ideal_timing: "FILL — When is the customer most receptive?"
+    take_rate_target: "FILL — Expected % of customers who buy"
+  cross_sell_2:
+    name: "FILL — Product/service name"
+    price: "FILL — Price"
+    relationship_to_core: "FILL — How does this complement the core offer?"
+    ideal_timing: "FILL — When is the customer most receptive?"
+    take_rate_target: "FILL — Expected %"
+# ============================================================================
+# STEP 4: DOWNSELL STRATEGY
+# ============================================================================
+downsells:
+  downsell_1:
+    trigger: "FILL — What triggers the downsell? (cart abandonment, objection on call, declined upsell)"
+    offer: "FILL — What is the lower-priced alternative?"
+    price: "FILL — Price (must be significantly lower than original)"
+    value_delivered: "FILL — What do they still get?"
+    goal: "FILL — Recover the customer / Build trust for future upsell / Cover CAC"
+# ============================================================================
+# STEP 5: REVENUE PROJECTIONS
+# ============================================================================
+revenue_impact:
+  current_avg_order_value: "FILL — Current AOV without upsells"
+  projected_avg_order_value: "FILL — Projected AOV with upsell architecture"
+  aov_increase_percentage: "FILL — Expected % increase"
+  ltv_before_upsells: "FILL — Current LTV"
+  ltv_after_upsells: "FILL — Projected LTV with full ladder"
+  ltv_increase_percentage: "FILL — Expected % increase"
+# ============================================================================
+# STEP 6: SCORING & DIAGNOSTIC
+# ============================================================================
+upsell_strength_score:
+  ladder_completeness: "FILL 1-10"
+  trigger_precision: "FILL 1-10"
+  value_alignment: "FILL 1-10"
+  revenue_impact: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "No upsell strategy, single product, no post-purchase offers."
+    range_4_6: "Basic upsell exists but timing is arbitrary, value add is marginal, no downsell."
+    range_7_8: "Clear value ladder with 3+ tiers, trigger-based upsells, genuine value at each level, downsell strategy."
+    range_9_10: "Sophisticated ascension model, automated triggers, each tier multiplies results, complete ladder with downsells, LTV 3x+ increase."
+evidence:
+  data_points: "FILL — What data supports these projections?"
+  sources: "FILL — List verifiable sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  highest_potential_upsell: "FILL — Which upsell has the most revenue potential?"
+  biggest_gap: "FILL — Where is the value ladder weakest?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "offerbook.yaml"
+    - "monetization-strategy.yaml"
+  feeds_into:
+    - "email-sequences.yaml"
+    - "analytics.yaml"
+  related:
+    - "pricing-anchoring.yaml"
+    - "deliverables.yaml"

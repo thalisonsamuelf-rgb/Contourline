@@ -1,0 +1,125 @@
+---
+# REFERRAL-SYSTEM.YAML - Word-of-Mouth Engineering & Referral Mechanics
+# Purpose: Design a systematic referral engine that turns customers into acquisition channels
+# Guardian: CMO / Growth Lead
+# Timing: FILL after customer-success/ templates and monetization-strategy.yaml are complete
+# Framework: Hormozi $100M Leads (Referral Engineering) + Viral Loop Design
+# Dependency: monetization-strategy.yaml (LTV for referral incentive math), deliverables.yaml (product experience)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO / Growth Lead"
+  framework: "Hormozi $100M Leads Referral Engineering + Viral Loop Design"
+  notes: |
+    Referrals are not luck. They are ENGINEERED.
+
+    Hormozi's insight: The best leads come from people who already
+    bought from you. A referred customer has 4x higher LTV and
+    37% higher retention than cold-acquired customers.
+
+    Three conditions for referrals:
+    1. The customer must GET RESULTS (otherwise nothing to refer)
+    2. There must be a MECHANISM (easy way to refer)
+    3. There must be an INCENTIVE (reason to refer NOW)
+
+    RULE: Fix conditions 1 and 2 before adding incentives.
+    No incentive compensates for a bad product.
+# ============================================================================
+# STEP 1: REFERRAL READINESS CHECK
+# ============================================================================
+readiness_check:
+  customers_getting_results: "FILL — Yes/No. Are customers achieving promised outcomes?"
+  nps_score: "FILL — Current NPS score (9-10 = promoters, 7-8 = passives, 0-6 = detractors)"
+  organic_referrals_happening: "FILL — Yes/No. Are people already referring without being asked?"
+  testimonials_available: "FILL — Yes/No. Do you have 5+ strong testimonials?"
+  readiness_assessment: |
+    FILL — Based on the above, is your product READY for a referral program?
+    If NPS < 8 or customers are not getting results, fix the product first.
+# ============================================================================
+# STEP 2: REFERRAL MECHANICS
+# ============================================================================
+referral_mechanics:
+  referral_type: "FILL — One-sided (referrer gets reward) / Two-sided (both get reward) / Tiered (escalating rewards)"
+  how_to_refer:
+    method_1: "FILL — Unique referral link"
+    method_2: "FILL — Referral code"
+    method_3: "FILL — Direct introduction (warm intro)"
+    method_4: "FILL — Social sharing (pre-written post)"
+  referral_incentive_referrer:
+    type: "FILL — Discount / Cash / Credit / Free month / Exclusive content / Status"
+    value: "FILL — Specific value of the incentive"
+    when_received: "FILL — When the referrer gets the reward (on referral / on purchase / after 30 days)"
+  referral_incentive_referee:
+    type: "FILL — Discount / Free trial / Bonus content / Special access"
+    value: "FILL — Specific value"
+    why_compelling: "FILL — Why would the referred person care about this incentive?"
+# ============================================================================
+# STEP 3: REFERRAL TRIGGER POINTS
+# ============================================================================
+trigger_points:
+  trigger_1:
+    moment: "FILL — When in the customer journey? (e.g., after first win, after module 3)"
+    why_this_moment: "FILL — Why are they most likely to refer at this point?"
+    ask_script: "FILL — Exact words to ask for the referral"
+    delivery: "FILL — Email / In-app / Call / Automated"
+  trigger_2:
+    moment: "FILL — Second trigger point"
+    why_this_moment: "FILL — Why this moment?"
+    ask_script: "FILL — Exact words"
+    delivery: "FILL — Delivery method"
+  trigger_3:
+    moment: "FILL — Third trigger point"
+    why_this_moment: "FILL — Why this moment?"
+    ask_script: "FILL — Exact words"
+    delivery: "FILL — Delivery method"
+# ============================================================================
+# STEP 4: REFERRAL TRACKING & METRICS
+# ============================================================================
+tracking:
+  tracking_method: "FILL — How do you track referrals? (software, spreadsheet, CRM)"
+  metrics_to_track:
+    - "Total referrals made"
+    - "Referral conversion rate"
+    - "Revenue from referrals"
+    - "CAC from referrals vs other channels"
+    - "LTV of referred customers vs non-referred"
+    - "Top referrers (power users)"
+  targets:
+    referral_rate: "FILL — Target % of customers who refer at least 1 person"
+    referrals_per_referrer: "FILL — Average referrals per active referrer"
+    referral_conversion_rate: "FILL — % of referrals that become customers"
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+referral_strength_score:
+  product_referrability: "FILL 1-10"
+  mechanism_ease: "FILL 1-10"
+  incentive_alignment: "FILL 1-10"
+  tracking_quality: "FILL 1-10"
+  scoring_rubric:
+    range_1_3: "Product not generating results, no referral mechanism, no incentives, no tracking."
+    range_4_6: "Some organic referrals, basic mechanism exists, incentive is generic, partial tracking."
+    range_7_8: "Product consistently delivers results, easy referral mechanism, aligned incentives, full tracking with metrics."
+    range_9_10: "Viral product with high NPS, frictionless referral with multiple methods, two-sided incentives, automated tracking with referral as top acquisition channel."
+evidence:
+  data_points: "FILL — Current referral data (if any)"
+  sources: "FILL — List sources"
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  biggest_blocker: "FILL — What is preventing more referrals?"
+  quickest_win: "FILL — Fastest way to increase referral rate?"
+  recommended_actions: "FILL_THIS"
+cross_references:
+  depends_on:
+    - "monetization-strategy.yaml"
+    - "deliverables.yaml"
+  feeds_into:
+    - "conversion-funnel.yaml"
+    - "analytics.yaml"
+  related:
+    - "testimonials.yaml"
+    - "proof.yaml"
+    - "nps-feedback-loop.yaml"

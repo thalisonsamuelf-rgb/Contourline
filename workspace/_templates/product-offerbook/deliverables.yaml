@@ -1,0 +1,457 @@
+---
+# DELIVERABLES.YAML - Exact specification of what's delivered
+# Purpose: Technical & content specs of the product (modules, lessons, resources, delivery format)
+# Guardian: Product Manager / Curriculum Designer / Project Manager
+# Timing: FILL BEFORE building/launching product
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Product Manager"
+  notes: |
+    This file answers: "Exactly what is the customer getting?"
+    Not the story (that's offerbook.yaml).
+    Not the offer architecture (that's offerbook.yaml).
+    Just: What are the actual deliverables?
+
+    Format:
+    - Modules / sections
+    - Lessons / content pieces
+    - Resources / tools / templates
+    - Access type / duration
+    - Bonus deliverables
+# ============================================================================
+# SECTION 1: PRODUCT STRUCTURE OVERVIEW
+# ============================================================================
+product_structure:
+  # High-level structure of the product
+  product_type: |
+    CHOOSE ONE:
+    - [ ] Online course (recorded video)
+    - [ ] Live training (group sessions)
+    - [ ] Hybrid (recorded + live components)
+    - [ ] Membership/Community (ongoing access)
+    - [ ] Coaching (1:1 or group calls)
+    - [ ] Coaching + course combo
+    - [ ] Cohort-based course (group learning)
+    - [ ] Other: [...]
+
+    Your type: [WHICH ONE?]
+  total_duration: |
+    How long is the full product?
+    Example: "90-day program with 12 weeks of content"
+    Example: "Lifetime access course"
+    Example: "6-month membership"
+
+    Your duration: [HOW LONG?]
+  delivery_format: |
+    How is it delivered?
+    - [ ] Video modules
+    - [ ] PDF guides
+    - [ ] Live group calls
+    - [ ] 1:1 coaching calls
+    - [ ] Workbooks
+    - [ ] Templates
+    - [ ] Community forum
+    - [ ] Other: [...]
+
+    Your formats: [WHICH ONES?]
+  total_content_hours: |
+    Estimated total learning time
+    Example: "45 hours of video content"
+    Example: "12 hours of core content + 30 hours of implementation"
+
+    Your estimate: [HOURS?]
+# ============================================================================
+# SECTION 2: MODULE BREAKDOWN
+# ============================================================================
+modules:
+  # Each module = major section of curriculum
+  module_1:
+    name: "[MODULE NAME]"
+    purpose: "[WHAT DOES THIS TEACH?]"
+    duration: "[HOW LONG TO COMPLETE]"
+    lessons:
+      lesson_1:
+        title: "[LESSON TITLE]"
+        format: "VIDEO / PDF / WORKBOOK / LIVE / OTHER"
+        duration: "[LENGTH - 15 min video, etc]"
+        description: "[WHAT IS TAUGHT]"
+      lesson_2:
+        title: "[LESSON TITLE]"
+        format: "[FORMAT]"
+        duration: "[LENGTH]"
+        description: "[DESCRIPTION]"
+      lesson_3:
+        title: "[LESSON TITLE]"
+        format: "[FORMAT]"
+        duration: "[LENGTH]"
+        description: "[DESCRIPTION]"
+    resources:
+      - "[TEMPLATE / WORKSHEET / TOOL]"
+      - "[RESOURCE 2]"
+    homework_assignment: |
+      Example: "Complete the [Framework] for your own business"
+      Your assignment: [WHAT SHOULD THEY DO?]
+    total_lessons: X
+    total_content_minutes: X
+  module_2:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  module_3:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  module_4:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  module_5:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  module_6:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  module_7:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  module_8:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  module_9:
+    name: "[MODULE NAME]"
+    purpose: "[PURPOSE]"
+    # ... repeat lesson structure
+  total_modules: X
+  total_lessons: X
+  total_content_hours: X
+# ============================================================================
+# SECTION 3: BONUS DELIVERABLES
+# ============================================================================
+bonuses:
+  # Extra deliverables that add value
+  bonus_1:
+    name: "[BONUS NAME]"
+    description: "[WHAT IS IT?]"
+    format: "[PDF / TEMPLATE / VIDEO / TOOL / OTHER]"
+    value: "$[ESTIMATED VALUE]"
+    reason_included: "[WHY INCLUDED AS BONUS?]"
+  bonus_2:
+    name: "[BONUS NAME]"
+    description: "[DESCRIPTION]"
+    format: "[FORMAT]"
+    value: "$[VALUE]"
+    reason_included: "[WHY?]"
+  bonus_3:
+    name: "[BONUS NAME]"
+    description: "[DESCRIPTION]"
+    format: "[FORMAT]"
+    value: "$[VALUE]"
+    reason_included: "[WHY?]"
+  total_bonus_value: "$[TOTAL]"
+# ============================================================================
+# SECTION 4: RESOURCES & TOOLS
+# ============================================================================
+resources:
+  # Templates, worksheets, tools, checklists
+  resource_1:
+    name: "[RESOURCE NAME]"
+    type: "TEMPLATE / WORKSHEET / CHECKLIST / SCRIPT / TOOL / OTHER"
+    format: "PDF / SPREADSHEET / NOTION / VIDEO / HTML / OTHER"
+    use_case: "[WHEN WOULD YOU USE THIS?]"
+    value: "$[ESTIMATED VALUE]"
+  resource_2:
+    name: "[RESOURCE NAME]"
+    type: "[TYPE]"
+    format: "[FORMAT]"
+    use_case: "[USE CASE]"
+    value: "$[VALUE]"
+  total_resources: X
+  total_resource_value: "$[TOTAL]"
+# ============================================================================
+# SECTION 5: COMMUNITY & SUPPORT
+# ============================================================================
+community:
+  # Group communication, support, interaction
+  included: "YES / NO"
+  if_yes:
+    platform: "[FACEBOOK GROUP / SLACK / MIGHTY NETWORKS / CIRCLE / OTHER]"
+    purpose: "[WHY THIS COMMUNITY?]"
+    moderation: "YES / NO - Active moderation?"
+    community_events: |
+      Example: "Weekly Q&A calls (Thursday 3pm EST)"
+      Example: "Monthly challenge"
+      Example: "Office hours"
+    access_duration: "[LIFETIME / 1 YEAR / 6 MONTHS / OTHER]"
+# ============================================================================
+# SECTION 6: LIVE COMPONENTS (If Applicable)
+# ============================================================================
+live_components:
+  # Any live/synchronous elements
+  included: "YES / NO"
+  if_yes:
+    component_1:
+      name: "[LIVE COMPONENT NAME]"
+      type: "GROUP CALL / 1:1 COACHING / WEBINAR / WORKSHOP / OTHER"
+      frequency: "[HOW OFTEN - weekly, monthly, etc]"
+      duration: "[LENGTH - 60 minutes, 90 minutes]"
+      included_in_product: "YES / NO"
+      if_no_included: "Extra cost: $[PRICE]"
+      total_sessions: X
+      timezone: "[YOUR TIMEZONE]"
+    component_2:
+      name: "[COMPONENT 2]"
+      # ... repeat
+# ============================================================================
+# SECTION 7: ACCESS & TECHNICAL SPECS
+# ============================================================================
+access:
+  # How do customers access the product?
+  platform: "[TEACHABLE / KAJABI / CIRCLE / THINKIFIC / WEBFLOW / OTHER]"
+  access_type:
+    - "[ ] Lifetime access (forever)"
+    - "[ ] Time-limited (6 months, 1 year, etc)"
+    - "[ ] Until [SPECIFIC DATE]"
+  access_duration: "[LIFETIME / 6 MONTHS / 1 YEAR / OTHER]"
+  mobile_access: "YES / NO"
+  offline_download: "YES / NO"
+  number_of_logins: "UNLIMITED / [LIMITED NUMBER]"
+  concurrent_users: "[ONE ACCOUNT = ONE USER, or can family share?]"
+  device_limit: "UNLIMITED / [NUMBER OF DEVICES]"
+  renewal: |
+    If time-limited, what happens at expiry?
+    - [ ] Access expires (must repurchase)
+    - [ ] Grandfathered in (keep forever)
+    - [ ] Auto-renewal (charged again)
+
+    Your renewal: [WHICH ONE?]
+# ============================================================================
+# SECTION 8: CONTENT FORMAT SPECIFICATIONS
+# ============================================================================
+content_specs:
+  # Video specs, PDF specs, etc
+  video_specs:
+    format: "[MP4 / WEBM / HLS / OTHER]"
+    resolution: "[720P / 1080P / 4K]"
+    hosting: "[VIMEO / YOUTUBE / CUSTOM / OTHER]"
+    captions: "YES / NO"
+    playback_speed: "VARIABLE (0.75x - 1.5x) / FIXED"
+    quality_options: "YES / NO - Can viewers choose quality?"
+  pdf_specs:
+    format: "PDF"
+    downloadable: "YES / NO"
+    printable: "YES / NO"
+    editable: "YES / NO (if workbooks)"
+  worksheet_specs:
+    format: "[PDF / GOOGLE DOCS / NOTION / FILLABLE PDF / OTHER]"
+    editable: "YES / NO"
+    printable: "YES / NO"
+  template_specs:
+    format: "[FIGMA / CANVA / GOOGLE DOCS / NOTION / SPREADSHEET / OTHER]"
+    customizable: "YES / NO"
+    editable_link: "[SHARED LINK / DOWNLOAD / OTHER]"
+# ============================================================================
+# SECTION 9: DELIVERABLES QUANTITY SUMMARY
+# ============================================================================
+quantity_summary:
+  # Quick reference of total quantities
+  modules: X
+  lessons: X
+  videos: X
+  total_video_minutes: X
+  PDFs: X
+  worksheets: X
+  templates: X
+  tools: X
+  checklists: X
+  resources: X
+  bonuses: X
+  live_sessions: X
+  total_content_hours: X
+  total_estimated_value: "$[TOTAL VALUE OF EVERYTHING]"
+# ============================================================================
+# SECTION 10: CURRICULUM OUTLINE (Complete)
+# ============================================================================
+complete_curriculum:
+  # Full curriculum at a glance (for marketing + delivery)
+  structure: |
+    MODULE 1: [NAME]
+      - Lesson 1: [TITLE]
+      - Lesson 2: [TITLE]
+      - Lesson 3: [TITLE]
+      - Resources: [LIST]
+
+    MODULE 2: [NAME]
+      - Lesson 1: [TITLE]
+      - Lesson 2: [TITLE]
+      - Lesson 3: [TITLE]
+      - Resources: [LIST]
+
+    MODULE 3: [NAME]
+      - Lesson 1: [TITLE]
+      - Lesson 2: [TITLE]
+      - Lesson 3: [TITLE]
+      - Resources: [LIST]
+
+    BONUSES:
+      - [BONUS 1]
+      - [BONUS 2]
+      - [BONUS 3]
+
+    COMMUNITY:
+      - [COMMUNITY DETAILS]
+
+    LIVE:
+      - [LIVE COMPONENTS]
+# ============================================================================
+# SECTION 11: IMPLEMENTATION TIMELINE
+# ============================================================================
+implementation_timeline:
+  # When should customer complete what?
+  week_1:
+    target: "[WHAT SHOULD BE DONE BY END OF WEEK 1?]"
+    example: "Complete modules 1-2, do assignment"
+    lessons_to_complete: "[MODULE 1-2]"
+    deliverable_due: "[WHAT HOMEWORK IS DUE?]"
+  week_2:
+    target: "[WHAT BY WEEK 2?]"
+    lessons_to_complete: "[MODULES]"
+    deliverable_due: "[HOMEWORK]"
+  week_3:
+    target: "[WHAT BY WEEK 3?]"
+    lessons_to_complete: "[MODULES]"
+    deliverable_due: "[HOMEWORK]"
+  week_4:
+    target: "[WHAT BY WEEK 4?]"
+    lessons_to_complete: "[MODULES]"
+    deliverable_due: "[HOMEWORK]"
+  total_timeline: "[X WEEKS / X MONTHS TO COMPLETE]"
+# ============================================================================
+# SECTION 12: QUALITY STANDARDS
+# ============================================================================
+quality_standards:
+  # How good should each deliverable be?
+  video_quality:
+    production: "PROFESSIONAL / SEMI-PRO / AUTHENTIC / PHONE-RECORDED"
+    editing: "POLISHED / MINIMAL / NONE"
+    audio: "STUDIO / USB MIC / BUILT-IN / [STANDARD]"
+    visuals: "SLIDES / SCREEN SHARE / TALKING HEAD / MULTI-FORMAT"
+  content_quality:
+    accuracy: "Fact-checked? YES / NO"
+    completeness: "100% comprehensive / 80% highlights / [YOUR STANDARD]"
+    clarity: "Written for clarity / [YOUR STANDARD]"
+  resource_quality:
+    design: "PROFESSIONALLY DESIGNED / FUNCTIONAL / TEMPLATE-BASED"
+    completeness: "Complete / Partial / Bare minimum"
+    usability: "Easy to use immediately / Requires customization"
+# ============================================================================
+# SECTION 13: DELIVERABLES CHECKLIST
+# ============================================================================
+deliverables_checklist:
+  modules:
+    - "[ ] Module 1 complete (specs defined)"
+    - "[ ] Module 2 complete"
+    - "[ ] Module 3 complete"
+    - "[ ] Module 4 complete"
+  lessons:
+    - "[ ] All lessons outlined"
+    - "[ ] Video scripts written (if applicable)"
+    - "[ ] Videos recorded"
+    - "[ ] Videos edited"
+    - "[ ] Captions added"
+  resources:
+    - "[ ] All templates created"
+    - "[ ] All worksheets created"
+    - "[ ] All checklists created"
+    - "[ ] All tools built"
+  bonuses:
+    - "[ ] All bonuses created"
+    - "[ ] Bonus values assigned"
+  platform:
+    - "[ ] Course platform set up"
+    - "[ ] All content uploaded"
+    - "[ ] Navigation tested"
+    - "[ ] Access tested"
+  community:
+    - "[ ] Community platform set up"
+    - "[ ] Welcome post written"
+    - "[ ] Moderation plan created"
+    - "[ ] First members invited"
+  support:
+    - "[ ] Support system in place"
+    - "[ ] FAQ documented"
+    - "[ ] Response time standard defined"
+# ============================================================================
+# SECTION 14: CHANGE LOG (Track Updates)
+# ============================================================================
+changelog:
+  # As product evolves, track changes
+  v1_0_launch:
+    date: "YYYY-MM-DD"
+    content: "Initial launch - [X] modules, [Y] lessons"
+    notes: "First version"
+  v1_1:
+    date: "YYYY-MM-DD"
+    changes: "Added [RESOURCE], improved [MODULE], etc"
+    notes: "[NOTES]"
+  v1_2:
+    date: "YYYY-MM-DD"
+    changes: "[CHANGES]"
+    notes: "[NOTES]"
+# ============================================================================
+# SECTION 15: EXPANSION OPPORTUNITIES
+# ============================================================================
+expansion:
+  # What could be added in future?
+  future_modules:
+    - "[POTENTIAL MODULE 1]"
+    - "[POTENTIAL MODULE 2]"
+    - "[POTENTIAL MODULE 3]"
+  future_bonuses:
+    - "[POTENTIAL BONUS 1]"
+    - "[POTENTIAL BONUS 2]"
+  future_resources:
+    - "[POTENTIAL RESOURCE 1]"
+    - "[POTENTIAL RESOURCE 2]"
+  upsell_opportunities:
+    - "[HIGH-TICKET COACHING / COMMUNITY / OTHER]"
+# ============================================================================
+# NOTES FOR USERS
+# ============================================================================
+template_notes: |
+  This file specifies EXACTLY what customer gets.
+  It's the source of truth for:
+  - Marketing (what we're promising)
+  - Product building (what we need to create)
+  - Customer support (what they should have access to)
+  - QA (what needs testing)
+
+  DO:
+  ✅ Be specific (not vague)
+  ✅ Include quantities (number of lessons, videos, etc)
+  ✅ Define access (how long, on what platform, etc)
+  ✅ Track bonuses (with values)
+  ✅ Plan implementation timeline
+
+  DON'T:
+  ❌ Promise things that don't exist
+  ❌ Be vague ("lots of content")
+  ❌ Forget technical specs (video quality, etc)
+  ❌ Skip the resources (they're part of what's delivered)
+
+  KEY PRINCIPLE:
+  What's in this file should match what's in marketing copy.
+  If you promise "8 modules", deliver 8 modules.
+  If you promise "lifetime access", deliver lifetime access.
+
+  Update: When you add new content, update this file first.
+  It's your single source of truth for what's included.
+
+  This is your SYSTEM for deliverables specification.

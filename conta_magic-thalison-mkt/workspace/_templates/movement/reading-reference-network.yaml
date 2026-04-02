@@ -1,0 +1,21 @@
+---
+# Template: reading reference network dataset
+
+metadata:
+  template_id: "movement.reading_reference_network"
+  version: "1.0.0"
+  lifecycle_stage: "reading"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+reference_network:
+  primary_references:
+    - name: "<required>"
+      role: "<required>"
+      links: []
+  secondary_references: []
+integration_actions:
+  - action: "<required>"
+    status: "<pending|in_progress|done>"
+provenance:
+  source_docs: []

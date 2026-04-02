@@ -1,0 +1,337 @@
+# ClickUp Structure Template — Based on Pedro's gestao-projeto
+# Source: /docs/workspace-migrations/pedro-reference/GESTAO-PROJETO-CLICKUP-MAP.md
+# Purpose: Reusable structure for squads to follow Pedro's proven ClickUp architecture
+
+---
+clickup_structure:
+  name: "Project Management Structure (Pedro Pattern)"
+  description: "ClickUp organization following Pedro's project management system (D1-D11 timeline)"
+  version: "1.0"
+  date_extracted: "2026-02-14"
+
+  spaces:
+    - name: "Delivery"
+      purpose: "Operational hub for all project management"
+      folders:
+        - name: "Gestão de Projetos"
+          lists:
+            - name: "Ideação"
+              purpose: "Project origin/ideas"
+              task_count_reference: 12
+
+            - name: "Projetos"
+              purpose: "Central project list (Principal)"
+              task_count_reference: 76
+              custom_fields:
+                # Identification
+                - name: "ttcx-id"
+                  type: "short_text"
+                  purpose: "Unique project ID"
+
+                - name: "Abreviacao"
+                  type: "short_text"
+                  purpose: "Short project code"
+
+                - name: "number"
+                  type: "number"
+                  purpose: "Sequential number"
+
+                # Status & Workflow
+                - name: "ttcx-status"
+                  type: "drop_down"
+                  purpose: "Primary status"
+                  values: ["BACKLOG", "PESQUISA", "VALIDACAO", "DEFINICAO", "AJUSTE", "REVISAO", "PRODUCAO", "REFAZER", "SETUP", "TESTE DE PRODUTO", "PRODUTO ATIVO", "MODELO"]
+
+                - name: "project-status"
+                  type: "drop_down"
+                  purpose: "Detailed status"
+
+                - name: "Responsavel"
+                  type: "drop_down"
+                  purpose: "Current responsible"
+
+                # Dates & Financial
+                - name: "Kick-off Call"
+                  type: "date"
+                  purpose: "Kickoff date (D2)"
+
+                - name: "Data de Entrega"
+                  type: "date"
+                  purpose: "Deadline (D11)"
+
+                - name: "RECEITA"
+                  type: "currency"
+                  purpose: "Project value"
+
+                - name: "Moeda"
+                  type: "drop_down"
+                  purpose: "BRL/USD"
+                  values: ["BRL", "USD"]
+
+                # Relationships
+                - name: "00 Gestao de Clientes"
+                  type: "list_relationship"
+                  target_list: "Clientes"
+                  purpose: "Link to client"
+
+                - name: "Agencia de Midia"
+                  type: "list_relationship"
+                  target_list: "Agencias de Midia"
+                  purpose: "Media agency"
+
+                - name: "TTCX > Casting"
+                  type: "list_relationship"
+                  target_list: "CASTING"
+                  purpose: "Project creators"
+
+                - name: "Selecao Casting"
+                  type: "list_relationship"
+                  target_list: "CASTING"
+                  purpose: "Selected creators"
+
+                - name: "Proposta"
+                  type: "list_relationship"
+                  target_list: "Propostas Comerciais"
+                  purpose: "Commercial proposal"
+
+                - name: "Contas a Pagar"
+                  type: "list_relationship"
+                  target_list: "Contas a Pagar"
+                  purpose: "Financial tracking"
+
+                # Automation & Integration
+                - name: "Automation"
+                  type: "checkbox"
+                  purpose: "Trigger N8N workflow"
+
+                - name: "Gerar Produtos"
+                  type: "checkbox"
+                  purpose: "Trigger product creation"
+
+                - name: "omie_project_id"
+                  type: "short_text"
+                  purpose: "Omie integration ID"
+
+                # Documents
+                - name: "Drive do Projeto"
+                  type: "url"
+                  purpose: "Google Drive folder"
+
+                - name: "ttcx-planilha"
+                  type: "url"
+                  purpose: "Spreadsheet URL"
+
+                - name: "briefing-files"
+                  type: "attachment"
+                  purpose: "Briefing attachments"
+
+                - name: "market-research"
+                  type: "url"
+                  purpose: "Market research doc"
+
+                - name: "icp"
+                  type: "url"
+                  purpose: "ICP (Ideal Customer Profile)"
+
+                - name: "expert-dna"
+                  type: "url"
+                  purpose: "Expert DNA document"
+
+                - name: "product-map"
+                  type: "url"
+                  purpose: "Product map document"
+
+                - name: "tendencies"
+                  type: "url"
+                  purpose: "Market tendencies research"
+
+                # Account Management
+                - name: "Account"
+                  type: "users"
+                  purpose: "Account Manager (AM)"
+
+                - name: "Estrategista"
+                  type: "users"
+                  purpose: "Project strategist"
+
+            - name: "Gestão de Creators"
+              purpose: "Creators allocated to projects"
+              task_count_reference: 428
+
+            - name: "Produção de Criativos"
+              purpose: "Creative assets by project"
+              task_count_reference: 1681
+
+  status_workflow:
+    phase_0_backlog:
+      name: "BACKLOG"
+      day: "D0"
+      description: "Awaiting start"
+
+    phase_1_pesquisa:
+      name: "PESQUISA"
+      day: "D1-D2"
+      description: "Initial research"
+
+    phase_2_product_map:
+      name: "Criar Product-map e ICP"
+      day: "D3-D4"
+      description: "Documentation phase"
+
+    phase_3_validacao:
+      name: "VALIDACAO"
+      day: "D5"
+      description: "Client validation"
+
+    phase_4_definicao:
+      name: "DEFINICAO"
+      day: "D6-D7"
+      description: "Final definition"
+
+    phase_5_ajuste:
+      name: "AJUSTE"
+      day: "D6-D7"
+      description: "Adjustments needed"
+
+    phase_6_revisao:
+      name: "REVISAO"
+      day: "D10"
+      description: "Under review"
+
+    phase_7_producao:
+      name: "PRODUCAO"
+      day: "D8-D9"
+      description: "In production"
+
+    phase_8_refazer:
+      name: "REFAZER"
+      day: "Variable"
+      description: "Needs rework"
+
+    phase_9_setup:
+      name: "SETUP"
+      day: "D1"
+      description: "Initial setup"
+
+    phase_10_teste:
+      name: "TESTE DE PRODUTO"
+      day: "D10"
+      description: "Product testing"
+
+    phase_11_ativo:
+      name: "PRODUTO ATIVO"
+      day: "D11"
+      description: "Finalized/Active"
+
+    phase_12_modelo:
+      name: "MODELO"
+      day: "Variable"
+      description: "Template for reuse"
+
+  business_rules:
+    - rule: "AM (Account Manager) ALWAYS present from D1 to D11"
+      impact: "Critical"
+
+    - rule: "Responsible field mandatory on all projects"
+      impact: "Pedro PV001"
+
+    - rule: "Deadline mandatory (Data de Entrega < today + 7 days alerts)"
+      impact: "Pedro PV002"
+
+    - rule: "Status flows unidirectional: cannot go backward"
+      impact: "Pedro PV006"
+
+    - rule: "Delete operations BLOCKED (use status/archive instead)"
+      impact: "Data integrity"
+
+  webhooks_monitored:
+    - event: "taskCreated"
+      trigger: "new_project"
+      priority: "P0"
+
+    - event: "taskStatusUpdated"
+      trigger: "status_change"
+      priority: "P0"
+
+    - event: "taskUpdated"
+      trigger: "field_change"
+      priority: "P1"
+
+    - event: "taskCommentPosted"
+      trigger: "mention_all"
+      priority: "P1"
+
+    - event: "taskDeleted"
+      trigger: "project_removed"
+      priority: "P2"
+
+  crud_operations:
+    create:
+      - "New project in Projetos list"
+      - "Auto-create Google Drive folder + docs"
+      - "Allocate creators via Casting relationships"
+
+    read:
+      - "List active projects (status != PRODUTO ATIVO)"
+      - "Search by client (00 Gestao de Clientes = X)"
+      - "Check deadlines (Data de Entrega < today + 7d) → Daily"
+      - "Metrics by status"
+
+    update:
+      - "Status changes via project-status"
+      - "Responsible updates (Account field)"
+      - "Delivery registration (Data de Entrega + status)"
+      - "Document linking via N8N automation"
+
+    delete:
+      - "BLOCKED - use status or archive instead"
+
+  integrations:
+    - system: "N8N"
+      trigger: "new-project webhook"
+      endpoint: "https://webhook.n8n.allfluence.ai/webhook/new-project"
+      status: "Active"
+
+    - system: "Supabase"
+      table: "projects"
+      sync_type: "Bidirectional"
+
+    - system: "Omie"
+      field: "omie_project_id"
+      purpose: "Financial integration"
+
+---
+
+# Timeline D1-D11
+
+d1_setup:
+  status: "BACKLOG → PESQUISA"
+  am_task: "Cadastro do projeto, análise de briefing"
+
+d2_kick_off:
+  status: "PESQUISA"
+  am_task: "Facilitar call com cliente, pesquisa de creators"
+
+d3_d4_concepts:
+  status: "Criar Product-map e ICP"
+  am_task: "Deep research, coordenação com Copy"
+
+d5_validacao:
+  status: "VALIDACAO"
+  am_task: "Call com cliente, aprovação de concepts/creators"
+
+d6_d7_contratacao:
+  status: "DEFINICAO"
+  am_task: "Contratos via Zapsign, briefing para creators"
+
+d8_d9_producao:
+  status: "PRODUCAO"
+  am_task: "Upload de material, QG do material"
+
+d10_revisao:
+  status: "REVISAO"
+  am_task: "Revisão cliente, coordenação ajustes"
+
+d11_entrega:
+  status: "PRODUTO ATIVO"
+  am_task: "Publicação, confirmação de entrega"

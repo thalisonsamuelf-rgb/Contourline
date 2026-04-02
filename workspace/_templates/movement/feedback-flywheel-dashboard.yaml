@@ -1,0 +1,34 @@
+---
+# Template: feedback flywheel dashboard dataset (N8)
+
+metadata:
+  template_id: "movement.feedback_flywheel_dashboard"
+  version: "1.0.0"
+  lifecycle_stage: "feedback"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+flywheel_dashboard:
+  cycle_id: "<required>"
+  phases:
+    know:
+      volume: "<required>"
+      quality_signal: "<required>"
+    trust:
+      volume: "<required>"
+      quality_signal: "<required>"
+    buy:
+      volume: "<required>"
+      quality_signal: "<required>"
+    propagate:
+      volume: "<required>"
+      quality_signal: "<required>"
+  transition_rates:
+    know_to_trust: "<required>"
+    trust_to_buy: "<required>"
+    trust_to_propagate: "<required>"
+    buy_to_propagate: "<required>"
+    propagate_to_know: "<required>"
+  bottlenecks: []
+provenance:
+  source_docs: []

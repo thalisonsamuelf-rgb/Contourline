@@ -1,0 +1,68 @@
+workflow:
+  id: wf-brownfield-upgrade-squad
+  name: Brownfield Squad Upgrade
+  version: 1.0.0
+  purpose: Upgrade existing squads with safe phase reexecution and final artifact quality gates
+  description: Brownfield orchestration with module imports and guarded phase reexecution.
+  orchestrator: "@squad-chief"
+  type: brownfield
+  sequence:
+    - import: modules/module-discovery.yaml
+      agent: various
+      action: import_module
+    - phase: baseline
+      agent: various
+      task: validate-squad
+      action: capture_baseline_validation
+      notes: Capture baseline score before changes
+    - phase: upgrade-plan
+      agent: various
+      task: upgrade-squad
+      action: define_upgrade_plan
+    - phase: workspace-governance
+      agent: various
+      task: validate-squad
+      action: validate_workspace_governance
+      notes: Ensure upgraded squad declares valid workspace integration level and contract
+    - phase: workspace-hardening
+      agent: various
+      task: workspace-integration-hardening
+      action: harden_workspace_integration
+      notes: Enforce template-first pairing and apply workspace contract remediations when needed
+    - phase: selective-rerun
+      agent: various
+      task: reexecute-squad-phase
+      action: reexecute_changed_phases
+      optional: true
+      notes: Use when upgrade modifies phase-critical artifacts
+    - phase: optimization
+      agent: various
+      task: optimize-workflow
+      action: optimize_workflow
+    - import: modules/module-integration.yaml
+      agent: various
+      action: import_module
+    - import: modules/module-quality-gates.yaml
+      agent: various
+      action: import_module
+  checkpoints:
+    - id: CP_BASELINE
+      phase: baseline
+      decision: CONTINUE_OR_ABORT
+    - id: CP_RERUN
+      phase: selective-rerun
+      decision: APPROVE_RERUN
+    - id: CP_WORKSPACE
+      phase: workspace-governance
+      decision: WORKSPACE_GOVERNANCE_PASS
+    - id: CP_WORKSPACE_HARDENING
+      phase: workspace-hardening
+      decision: WORKSPACE_CONTRACT_VALID
+    - id: CP_FINAL
+      phase: quality-final-artifacts
+      decision: PASS_OR_REVISE
+  outputs:
+    - .aiox/squad-runtime/squad-upgrade/{squad_name}/upgrade-report.yaml
+    - .aiox/squad-runtime/squad-upgrade/{squad_name}/before-after-score.yaml
+    - .aiox/squad-runtime/squad-upgrade/{squad_name}/workspace-governance-report.yaml
+    - .aiox/squad-runtime/squad-upgrade/{squad_name}/workspace-hardening-final.yaml

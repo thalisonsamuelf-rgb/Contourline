@@ -1,0 +1,184 @@
+---
+# CHURN-PREVENTION.YAML - Churn Signal Detection & Intervention Protocols
+# Purpose: Identify at-risk customers early and intervene before they cancel
+# Guardian: Customer Success Lead
+# Timing: FILL after retention-strategy.yaml and kpi-scorecards.yaml define retention metrics
+# Framework: Churn Signal Analysis + Intervention Protocols + Scalable Company Churn Prevention
+# Dependency: retention-strategy.yaml (retention layers), kpi-scorecards.yaml (churn metrics)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Customer Success Lead"
+  framework: "Churn Signal Analysis + Intervention Protocols"
+  notes: |
+    Churn is a LAGGING indicator. By the time someone cancels,
+    the decision was made weeks or months ago.
+
+    The key is detecting LEADING indicators — behavioral signals
+    that predict churn BEFORE it happens.
+
+    Three categories of churn signals:
+    1. BEHAVIORAL: Usage drop, login frequency decrease, feature abandonment
+    2. ENGAGEMENT: Stopped attending events, no community participation, ignoring emails
+    3. SENTIMENT: Negative feedback, support complaints, low NPS score
+
+    RULE: The best churn prevention is a great product.
+    Intervention cannot compensate for broken value delivery.
+    Fix the product first, then build intervention systems.
+
+# ============================================================================
+# STEP 1: CHURN SIGNALS (EARLY WARNING)
+# ============================================================================
+
+churn_signals:
+  behavioral_signals:
+    signal_1:
+      name: "FILL — Signal name (e.g., 'Login frequency drops below 1x/week')"
+      threshold: "FILL — Specific threshold that triggers alert"
+      severity: "FILL — Low / Medium / High"
+      lead_time: "FILL — How far in advance does this predict churn? (days/weeks)"
+    signal_2:
+      name: "FILL — Second behavioral signal"
+      threshold: "FILL — Threshold"
+      severity: "FILL — Severity"
+      lead_time: "FILL — Lead time"
+    signal_3:
+      name: "FILL — Third behavioral signal"
+      threshold: "FILL — Threshold"
+      severity: "FILL — Severity"
+      lead_time: "FILL — Lead time"
+
+  engagement_signals:
+    signal_1:
+      name: "FILL — Engagement signal (e.g., 'Missed 2+ weekly check-ins')"
+      threshold: "FILL — Threshold"
+      severity: "FILL — Severity"
+    signal_2:
+      name: "FILL — Second engagement signal"
+      threshold: "FILL — Threshold"
+      severity: "FILL — Severity"
+
+  sentiment_signals:
+    signal_1:
+      name: "FILL — Sentiment signal (e.g., 'NPS score dropped to 6 or below')"
+      threshold: "FILL — Threshold"
+      severity: "FILL — Severity"
+    signal_2:
+      name: "FILL — Second sentiment signal"
+      threshold: "FILL — Threshold"
+      severity: "FILL — Severity"
+
+# ============================================================================
+# STEP 2: INTERVENTION PROTOCOLS
+# ============================================================================
+
+interventions:
+  low_severity:
+    trigger: "FILL — What triggers low-severity intervention?"
+    action: "FILL — Automated re-engagement (email, in-app notification)"
+    timing: "FILL — How quickly after signal detection?"
+    owner: "FILL — Automated / Customer Success team"
+
+  medium_severity:
+    trigger: "FILL — What triggers medium-severity intervention?"
+    action: "FILL — Personal outreach (email or call from CS team)"
+    timing: "FILL — Timing"
+    owner: "FILL — Customer Success rep"
+    script: |
+      FILL — What does the outreach message say?
+      Tone: caring, not desperate. Focus on THEM, not your revenue.
+      "Hey [name], I noticed you have not been in [platform] recently.
+      Is everything okay? Anything I can help with?"
+
+  high_severity:
+    trigger: "FILL — What triggers high-severity intervention?"
+    action: "FILL — Escalated personal intervention (call from manager or founder)"
+    timing: "FILL — Timing (urgent — within 24h)"
+    owner: "FILL — CS Manager or Founder"
+    script: |
+      FILL — Escalation script.
+      Offer concrete help: modified plan, extra support, pause option.
+
+# ============================================================================
+# STEP 3: CANCELLATION FLOW
+# ============================================================================
+
+cancellation_flow:
+  exit_survey:
+    question_1: "FILL — 'What is the primary reason you are canceling?'"
+    options:
+      - "FILL — Not getting results"
+      - "FILL — Too expensive"
+      - "FILL — Not enough time"
+      - "FILL — Found alternative"
+      - "FILL — Other"
+
+  save_attempts:
+    attempt_1: "FILL — Pause option (instead of cancel, pause for X months)"
+    attempt_2: "FILL — Downgrade option (cheaper tier with less features)"
+    attempt_3: "FILL — Personal call offer (talk to us before you go)"
+    attempt_4: "FILL — Discount offer (X% off for Y months — use sparingly)"
+
+  post_cancellation:
+    follow_up_timing: "FILL — When to follow up after cancellation (30 days? 90 days?)"
+    follow_up_message: "FILL — Win-back message content"
+    re_engagement_offer: "FILL — Special offer for returning customers"
+
+# ============================================================================
+# STEP 4: CHURN ANALYSIS
+# ============================================================================
+
+churn_analysis:
+  top_churn_reasons:
+    reason_1: "FILL — Most common reason (from exit surveys)"
+    percentage: "FILL — % of churns citing this reason"
+    addressable: "FILL — Yes/No. Can you fix this?"
+    action_plan: "FILL — What are you doing about it?"
+
+    reason_2: "FILL — Second reason"
+    percentage_2: "FILL — %"
+    addressable_2: "FILL — Yes/No"
+    action_plan_2: "FILL — Action"
+
+  cohort_analysis:
+    which_cohorts_churn_most: "FILL — Is there a pattern? (specific acquisition channel, specific time of year, specific segment)"
+    which_cohorts_retain_best: "FILL — What do the best-retaining cohorts have in common?"
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+churn_prevention_score:
+  signal_detection: "FILL 1-10"
+  intervention_speed: "FILL 1-10"
+  save_rate: "FILL 1-10"
+  analysis_depth: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "No churn signals tracked, reactive intervention only, no save attempts, no analysis."
+    range_4_6: "Some signals tracked, intervention within days, basic save flow, some exit survey data."
+    range_7_8: "Multi-signal detection, intervention within hours, structured save flow with options, regular cohort analysis."
+    range_9_10: "Automated real-time signal detection, immediate intervention, high save rate (50%+), deep analysis with predictive churn modeling."
+
+evidence:
+  data_points: "FILL — Churn data, intervention success rate, save rate, exit survey results"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  most_preventable_churn: "FILL — Which churn reason is most addressable?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "retention-strategy.yaml"
+    - "kpi-scorecards.yaml"
+  feeds_into:
+    - "analytics.yaml"
+    - "nps-feedback-loop.yaml"
+  related:
+    - "onboarding-flow.yaml"
+    - "follow-up-system.yaml"

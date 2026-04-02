@@ -1,0 +1,24 @@
+# Tech Stack for Lashs
+metadata:
+  status: TEMPLATE
+  business: lashs
+  version: "1.0"
+  last_updated: FILL_THIS
+  owner: CTO
+  notes: |
+    Define the technology stack used across
+    frontend, backend, infrastructure, and tooling.
+
+frontend: FILL_THIS
+backend: FILL_THIS
+database: FILL_THIS
+hosting: FILL_THIS
+ci_cd: FILL_THIS
+monitoring: FILL_THIS
+third_party_services: []
+
+cross_references:
+  related:
+    - "tech/strategy.yaml"
+    - "tech/infra.yaml"
+    - "tech/code-standards.yaml"

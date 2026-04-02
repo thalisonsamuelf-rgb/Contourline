@@ -1,0 +1,359 @@
+---
+# TEMPLATE: Brand for new products
+# Copy this file, fill all 42 fields, run validation
+# Required: ALL fields must have a value and status: COMPLETE
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  guardian: "CMO"
+  required_fields: 42
+  completed_fields: 0
+  completeness_percentage: 0
+  prerequisite: "diagnosis.yaml MUST be filled first"
+  note: "Brand positioning changes based on awareness level"
+# ============================================================================
+# AWARENESS-BASED POSITIONING (NEW - FROM diagnosis.yaml)
+# ============================================================================
+positioning_by_awareness_level:
+  market_awareness_level: "FILL THIS (1-5, from diagnosis.yaml)"
+  positioning_unaware:
+    when: "If market awareness level is 1 (Unaware)"
+    brand_message: "Establish that problem is REAL"
+    headline_approach: "Big picture, credibility-focused"
+    brand_tone: "Educational, authoritative"
+    example: "Copy that teaches market a problem exists"
+  positioning_problem_aware:
+    when: "If market awareness level is 2 (Problem Aware)"
+    brand_message: "Introduce solution TYPE"
+    headline_approach: "Solution-introduction"
+    brand_tone: "Helpful, solution-focused"
+    example: "Copy that explains how solutions work"
+  positioning_solution_aware:
+    when: "If market awareness level is 3 (Solution Aware)"
+    brand_message: "Differentiate YOUR approach"
+    headline_approach: "Mechanism/unique approach"
+    brand_tone: "Confident, differentiated"
+    example: "Copy that shows why YOURS is different"
+  positioning_product_aware:
+    when: "If market awareness level is 4 (Product Aware)"
+    brand_message: "Overcome specific objections"
+    headline_approach: "Objection-crushing"
+    brand_tone: "Reassuring, proof-heavy"
+    example: "Copy that addresses doubts directly"
+  positioning_most_aware:
+    when: "If market awareness level is 5 (Most Aware)"
+    brand_message: "Create reason to act NOW"
+    headline_approach: "Urgency/scarcity"
+    brand_tone: "Urgent, facilitative"
+    example: "Copy that removes friction + adds urgency"
+  your_positioning: |
+    FILL THIS - Based on awareness level, what's YOUR brand positioning?
+    (Sync with diagnosis.yaml Section 4)
+  status: "INCOMPLETE"
+# ============================================================================
+# BRAND CORE (3 fields)
+# ============================================================================
+brand_core:
+  brand_name: "FILL THIS"
+  brand_tagline: "FILL THIS"
+  brand_purpose: "FILL THIS"
+  status: "INCOMPLETE"
+brand_essence:
+  core_belief: "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# PROMISES & POSITIONING (3 fields)
+# ============================================================================
+promises:
+  marketing_promise: "FILL THIS"
+  actual_promise: "FILL THIS"
+  true_promise: "FILL THIS"
+  status: "INCOMPLETE"
+enemies:
+  NOT_the_enemy: "FILL THIS"
+  THE_real_enemy: "FILL THIS"
+  explanation: "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# PERSONALITY & TONE (3 fields)
+# ============================================================================
+personality:
+  warmth_level: "FILL THIS (1-10)"
+  warmth_description: "FILL THIS"
+  directness_level: "FILL THIS (1-10)"
+  directness_description: "FILL THIS"
+  formality_level: "FILL THIS (1-10)"
+  formality_description: "FILL THIS"
+  confidence_level: "FILL THIS (1-10)"
+  confidence_description: "FILL THIS"
+  status: "INCOMPLETE"
+voice_dna:
+  power_words:
+    - "FILL THIS (word 1 - emotion/action)"
+    - "FILL THIS (word 2 - emotion/action)"
+    - "FILL THIS (word 3 - emotion/action)"
+    - "FILL THIS (word 4 - emotion/action)"
+    - "FILL THIS (word 5 - emotion/action)"
+    - "FILL THIS (word 6 - emotion/action)"
+    - "FILL THIS (word 7 - emotion/action)"
+  usage_note: "Use these in headlines, CTAs, and pivotal moments"
+  status: "INCOMPLETE"
+  signature_phrases:
+    phrase_1: "FILL THIS"
+    phrase_2: "FILL THIS"
+    phrase_3: "FILL THIS"
+    phrase_4: "FILL THIS"
+    phrase_5: "FILL THIS"
+    phrase_6: "FILL THIS"
+  status: "INCOMPLETE"
+  metaphors:
+    metaphor_1: "FILL THIS"
+    metaphor_2: "FILL THIS"
+    metaphor_3: "FILL THIS"
+    metaphor_4: "FILL THIS"
+    metaphor_5: "FILL THIS"
+  status: "INCOMPLETE"
+  forbidden_words:
+    forbidden_1: "FILL THIS (why forbidden)"
+    forbidden_2: "FILL THIS (why forbidden)"
+    forbidden_3: "FILL THIS (why forbidden)"
+    forbidden_4: "FILL THIS (why forbidden)"
+    forbidden_5: "FILL THIS (why forbidden)"
+    master_reason: "FILL THIS (what value they violate)"
+  status: "INCOMPLETE"
+# ============================================================================
+# CORE VALUES (6 fields - 1 per value)
+# ============================================================================
+core_values:
+  value_1:
+    name: "FILL THIS (e.g., CLARITY > COMFORT)"
+    principle: "FILL THIS"
+    manifestation: "FILL THIS"
+    impact: "FILL THIS"
+  value_2:
+    name: "FILL THIS"
+    principle: "FILL THIS"
+    manifestation: "FILL THIS"
+    impact: "FILL THIS"
+  value_3:
+    name: "FILL THIS"
+    principle: "FILL THIS"
+    manifestation: "FILL THIS"
+    impact: "FILL THIS"
+  value_4:
+    name: "FILL THIS"
+    principle: "FILL THIS"
+    manifestation: "FILL THIS"
+    impact: "FILL THIS"
+  value_5:
+    name: "FILL THIS"
+    principle: "FILL THIS"
+    manifestation: "FILL THIS"
+    impact: "FILL THIS"
+  value_6:
+    name: "FILL THIS"
+    principle: "FILL THIS"
+    manifestation: "FILL THIS"
+    impact: "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# MANIFESTO (1 field - but multi-part)
+# ============================================================================
+manifesto:
+  opening: "FILL THIS"
+  contrast_section: "FILL THIS"
+  core_insight: "FILL THIS"
+  alternative_path: "FILL THIS"
+  ia_as_mirror: "FILL THIS"
+  community_statement: "FILL THIS"
+  promises: "FILL THIS"
+  binary_choice: "FILL THIS"
+  closing: "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# TESTIMONIAL FRAMEWORK (3 fields)
+# ============================================================================
+testimonials:
+  belonging_theme:
+    - "FILL THIS"
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+  quality_theme:
+    - "FILL THIS"
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+  transformation_theme:
+    - "FILL THIS"
+    - "FILL THIS"
+    - "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# COPY FRAMEWORKS (3 fields)
+# ============================================================================
+copy_frameworks:
+  heros_journey:
+    attention: "FILL THIS"
+    promise: "FILL THIS"
+    bridge: "FILL THIS"
+    social_proof: "FILL THIS"
+    objection: "FILL THIS"
+    close: "FILL THIS"
+    status: "INCOMPLETE"
+  problem_solution_bridge:
+    acknowledge: "FILL THIS"
+    root_cause: "FILL THIS"
+    cause: "FILL THIS"
+    solution: "FILL THIS"
+    proof: "FILL THIS"
+    cta: "FILL THIS"
+    status: "INCOMPLETE"
+  narrative_format:
+    opening_hook: "FILL THIS"
+    problem_amplification: "FILL THIS"
+    cause_identification: "FILL THIS"
+    error_pattern: "FILL THIS"
+    why_it_fails: "FILL THIS"
+    the_shift: "FILL THIS"
+    proof: "FILL THIS"
+    mechanism: "FILL THIS"
+    close: "FILL THIS"
+    status: "INCOMPLETE"
+# ============================================================================
+# BRAND AESTHETICS (3 fields)
+# ============================================================================
+aesthetics:
+  color_palette:
+    primary: "FILL THIS"
+    accent: "FILL THIS"
+    secondary: "FILL THIS"
+    status: "INCOMPLETE"
+  typography:
+    heading: "FILL THIS"
+    body: "FILL THIS"
+    emphasis: "FILL THIS"
+    status: "INCOMPLETE"
+  imagery:
+    rule_1: "FILL THIS"
+    rule_2: "FILL THIS"
+    rule_3: "FILL THIS"
+    rule_4: "FILL THIS"
+    rule_5: "FILL THIS"
+    status: "INCOMPLETE"
+# ============================================================================
+# FORBIDDEN MOVES (1 field)
+# ============================================================================
+forbidden_brand_moves:
+  move_1: "FILL THIS"
+  move_2: "FILL THIS"
+  move_3: "FILL THIS"
+  move_4: "FILL THIS"
+  move_5: "FILL THIS"
+  move_6: "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# WHAT WINS MEMBERS (1 field)
+# ============================================================================
+winning_factors:
+  factor_1: "FILL THIS"
+  factor_2: "FILL THIS"
+  factor_3: "FILL THIS"
+  factor_4: "FILL THIS"
+  factor_5: "FILL THIS"
+  factor_6: "FILL THIS"
+  status: "INCOMPLETE"
+# ============================================================================
+# TONE BY CHANNEL (4 fields)
+# ============================================================================
+channel_tone:
+  email:
+    warmth: "FILL THIS"
+    principles:
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+    status: "INCOMPLETE"
+  social:
+    warmth: "FILL THIS"
+    principles:
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+    status: "INCOMPLETE"
+  landing_pages:
+    warmth: "FILL THIS"
+    principles:
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+    status: "INCOMPLETE"
+  community:
+    warmth: "FILL THIS"
+    principles:
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+      - "FILL THIS"
+    status: "INCOMPLETE"
+# ============================================================================
+# BRAND PROMISE (1 field)
+# ============================================================================
+brand_contract:
+  preamble: "The contract between us and members"
+  status_preamble: "INCOMPLETE"
+  we_promise:
+    promise_1: "FILL THIS (specific outcome/behavior)"
+    promise_2: "FILL THIS (specific outcome/behavior)"
+    promise_3: "FILL THIS (specific outcome/behavior)"
+    promise_4: "FILL THIS (specific outcome/behavior)"
+    promise_5: "FILL THIS (specific outcome/behavior)"
+    status: "INCOMPLETE"
+  we_expect:
+    expectation_1: "FILL THIS (member behavior/commitment)"
+    expectation_2: "FILL THIS (member behavior/commitment)"
+    expectation_3: "FILL THIS (member behavior/commitment)"
+    expectation_4: "FILL THIS (member behavior/commitment)"
+    expectation_5: "FILL THIS (member behavior/commitment)"
+    status: "INCOMPLETE"
+  what_breaks_contract:
+    red_flag_1: "FILL THIS (violation that ends relationship)"
+    red_flag_2: "FILL THIS (violation that ends relationship)"
+    red_flag_3: "FILL THIS (violation that ends relationship)"
+    status: "INCOMPLETE"
+# ============================================================================
+# THE LEGENDARY FRAME (1 field)
+# ============================================================================
+legendary_frame: |
+  FILL THIS - Should be inspiring statement of what member becomes
+---
+# VALIDATION (Auto-calculated)
+validation:
+  required_fields: 42
+  completed_fields: 0
+  completeness_percentage: 0
+  validation_date: "NOT YET RUN"
+  validated_by: "PENDING"
+  status: "RUN VALIDATION SCRIPT"
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# INSTRUCTIONS
+
+# 1. Fill all FILL THIS sections
+# 2. Change all status: INCOMPLETE → status: COMPLETE as you fill
+# 3. Update metadata.product_name with your product
+# 4. Run validation:
+#    ./infrastructure/scripts/validate-product.sh
+
+# 5. When validation shows 42/42 COMPLETE:
+#    - Ready for production
+#    - Can commit to git
+#    - Hook will pass automatically

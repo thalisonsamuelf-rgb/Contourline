@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Cursos Academy - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0"><i class="bi bi-book"></i> Cursos Academy</h4>
+        <div>
+            <a href="{{ url_for('academy_lista') }}" class="btn btn-outline-secondary"><i class="bi bi-people"></i> Alunos</a>
+            {% if current_user.cargo in ['admin', 'marketing'] %}
+            <a href="{{ url_for('academy_curso_novo') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Novo Curso</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="table-container mb-3">
+        <div class="d-flex gap-2 align-items-center">
+            <span class="text-muted fw-semibold"><i class="bi bi-funnel"></i> Modalidade:</span>
+            <a href="{{ url_for('academy_cursos_lista') }}" class="btn btn-sm {{ 'btn-primary' if not modalidade_selecionada else 'btn-outline-secondary' }}">Todos</a>
+            <a href="{{ url_for('academy_cursos_lista', modalidade='presencial') }}" class="btn btn-sm {{ 'btn-primary' if modalidade_selecionada == 'presencial' else 'btn-outline-secondary' }}">Presencial</a>
+            <a href="{{ url_for('academy_cursos_lista', modalidade='online') }}" class="btn btn-sm {{ 'btn-primary' if modalidade_selecionada == 'online' else 'btn-outline-secondary' }}">Online</a>
+            <a href="{{ url_for('academy_cursos_lista', modalidade='hibrido') }}" class="btn btn-sm {{ 'btn-primary' if modalidade_selecionada == 'hibrido' else 'btn-outline-secondary' }}">Hibrido</a>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th>Modalidade</th>
+                        <th>Carga Horaria</th>
+                        <th>Equipamento</th>
+                        <th>Publico Alvo</th>
+                        <th>Alunos</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in cursos %}
+                    <tr>
+                        <td><strong>{{ c.nome }}</strong></td>
+                        <td>
+                            <span class="badge-status badge-{{ c.modalidade }}">{{ c.modalidade | title }}</span>
+                        </td>
+                        <td>{{ c.carga_horaria or '-' }}h</td>
+                        <td>{{ c.equipamento.nome if c.equipamento else '-' }}</td>
+                        <td>{{ c.publico_alvo or '-' }}</td>
+                        <td><span class="badge bg-secondary">{{ c.alunos.count() }}</span></td>
+                        <td>
+                            {% if current_user.cargo in ['admin', 'marketing'] %}
+                            <a href="{{ url_for('academy_curso_editar', id=c.id) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr><td colspan="7" class="text-center text-muted py-4">Nenhum curso cadastrado.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

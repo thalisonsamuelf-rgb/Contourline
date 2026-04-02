@@ -1,0 +1,431 @@
+# ClickUp ↔ Supabase Field Mapping Template
+# Source: /docs/workspace-migrations/pedro-reference/CLICKUP-SUPABASE-MAPPING.md
+# Purpose: Field-by-field transformation rules for bidirectional sync
+
+---
+version: "1.0"
+description: "Complete field mapping from ClickUp to Supabase (Pedro's pattern)"
+sync_pattern: "RFC-012 Bidirectional"
+
+transformation_rules:
+  # ============================================================================
+  # PROJECTS LIST (901303868897) → projects TABLE
+  # ============================================================================
+
+  projects_list:
+    source_system: "ClickUp"
+    target_table: "public.projects"
+    sync_type: "bidirectional"
+
+    field_mappings:
+      # Identification Fields
+      - clickup_field: "Name"
+        clickup_type: "text"
+        supabase_column: "name"
+        supabase_type: "TEXT"
+        transformation: "identity"
+        required: true
+
+      - clickup_field: "ttcx-id"
+        clickup_id: "5e2c3278-23b5-42e4-88ff-ed4db889cfe3"
+        clickup_type: "short_text"
+        supabase_column: "ttcx_id"
+        supabase_type: "TEXT"
+        transformation: "identity"
+        unique: true
+
+      - clickup_field: "Abreviacao"
+        clickup_id: "af542c8b-3b83-4b64-901a-d502000d7388"
+        clickup_type: "short_text"
+        supabase_column: "abbreviation"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      - clickup_field: "number"
+        clickup_id: "65b85ee5-deb1-46c5-b968-bc1a262744ea"
+        clickup_type: "number"
+        supabase_column: "project_number"
+        supabase_type: "INTEGER"
+        transformation: "cast_to_int"
+
+      # Status Fields
+      - clickup_field: "ttcx-status"
+        clickup_id: "778c0da9-042e-494f-bc24-ae7371b466a0"
+        clickup_type: "drop_down"
+        supabase_column: "status"
+        supabase_type: "project_status_enum"
+        transformation: "map_status"
+        status_mapping:
+          "BACKLOG": "planning"
+          "PESQUISA": "planning"
+          "Criar Product-map e ICP": "planning"
+          "VALIDACAO": "active"
+          "DEFINICAO": "active"
+          "AJUSTE": "active"
+          "REVISAO": "active"
+          "PRODUCAO": "active"
+          "REFAZER": "active"
+          "SETUP": "planning"
+          "TESTE DE PRODUTO": "active"
+          "PRODUTO ATIVO": "completed"
+          "MODELO": "archived"
+
+      - clickup_field: "project-status"
+        clickup_id: "7f8548be-35be-4de9-aff3-c5ae6c67be2b"
+        clickup_type: "drop_down"
+        supabase_column: "clickup_status"
+        supabase_type: "TEXT"
+        transformation: "identity"
+        note: "Raw status for reference/mapping"
+
+      # Date Fields (Timeline D1-D11)
+      - clickup_field: "Kick-off Call"
+        clickup_id: "1f3ad74c-932f-46dd-a22b-de5f814208b3"
+        clickup_type: "date"
+        supabase_column: "kickoff_date"
+        supabase_type: "DATE"
+        transformation: "parse_date"
+        timeline_day: "D2"
+
+      - clickup_field: "Data de Entrega"
+        clickup_id: "979eada3-79f2-4845-823d-217b1b0cfe50"
+        clickup_type: "date"
+        supabase_column: "delivery_date"
+        supabase_type: "DATE"
+        transformation: "parse_date"
+        timeline_day: "D11"
+        validation: "delivery_date > kickoff_date"
+
+      # Financial Fields
+      - clickup_field: "RECEITA"
+        clickup_id: "874562d0-6879-4d7f-8f9d-e2bd0cade1ad"
+        clickup_type: "currency"
+        supabase_column: "revenue"
+        supabase_type: "DECIMAL(15,2)"
+        transformation: "parse_currency"
+
+      - clickup_field: "Moeda"
+        clickup_id: "47888df1-7c66-46f9-bd0d-18dba3a3a910"
+        clickup_type: "drop_down"
+        supabase_column: "currency"
+        supabase_type: "VARCHAR(3)"
+        transformation: "identity"
+        allowed_values: ["BRL", "USD"]
+
+      # Relationship Fields
+      - clickup_field: "00 Gestao de Clientes"
+        clickup_id: "5db5cc6e-ddff-42c1-8a43-6824a50d52e5"
+        clickup_type: "list_relationship"
+        target_list: "Clientes (901303868355)"
+        supabase_column: "client_id"
+        supabase_type: "UUID"
+        transformation: "resolve_relationship"
+        note: "Lookup client_id by ClickUp task ID"
+
+      - clickup_field: "Account"
+        clickup_id: "c4f39b53-feda-41a4-b314-05ddd03b6a3d"
+        clickup_type: "users"
+        supabase_column: "account_manager_id"
+        supabase_type: "UUID"
+        transformation: "resolve_user"
+        note: "Account Manager (AM) - critical field"
+        pedro_veto: "PV001 - Always required"
+
+      - clickup_field: "Estrategista"
+        clickup_id: "c02c5ee0-9d50-407b-a7db-151ea869b8de"
+        clickup_type: "users"
+        supabase_column: "strategist_id"
+        supabase_type: "UUID"
+        transformation: "resolve_user"
+
+      # Integration Fields
+      - clickup_field: "omie_project_id"
+        clickup_id: "74ac0370-0c1c-406b-9e78-89769b2fc1c7"
+        clickup_type: "short_text"
+        supabase_column: "omie_project_id"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      # Document URLs
+      - clickup_field: "Drive do Projeto"
+        clickup_id: "f453a971-ebf6-40f4-a40c-9c75f97b5f82"
+        clickup_type: "url"
+        supabase_column: "drive_url"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      - clickup_field: "ttcx-planilha"
+        clickup_id: "2e9edf80-1280-4221-9499-67d6b23cb0ad"
+        clickup_type: "url"
+        supabase_column: "spreadsheet_url"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      - clickup_field: "briefing-files"
+        clickup_id: "3947252e-20a4-40aa-9400-c4647b4fa039"
+        clickup_type: "attachment"
+        supabase_column: "briefing_attachment_url"
+        supabase_type: "TEXT"
+        transformation: "extract_first_url"
+
+      - clickup_field: "market-research"
+        clickup_id: "0695aa5d-c934-4a22-89d2-1af693a588a4"
+        clickup_type: "url"
+        supabase_column: "market_research_url"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      - clickup_field: "icp"
+        clickup_id: "a4b90a08-3896-4628-b496-a2c8eed2f2dc"
+        clickup_type: "url"
+        supabase_column: "icp_url"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      - clickup_field: "expert-dna"
+        clickup_id: "4c9d28c5-2862-4b08-b6bd-5e15d972ee29"
+        clickup_type: "url"
+        supabase_column: "expert_dna_url"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      - clickup_field: "product-map"
+        clickup_id: "80a12f86-9274-4b20-86dd-d56186a8ef3c"
+        clickup_type: "url"
+        supabase_column: "product_map_url"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      - clickup_field: "tendencies"
+        clickup_id: "af11d5cd-3ce8-41ce-9138-7fea95ff2658"
+        clickup_type: "url"
+        supabase_column: "tendencies_url"
+        supabase_type: "TEXT"
+        transformation: "identity"
+
+      # Automation Fields
+      - clickup_field: "Automation"
+        clickup_id: "69f9a80a-4c42-4a25-8016-d72b59e896e5"
+        clickup_type: "checkbox"
+        supabase_column: "automation_enabled"
+        supabase_type: "BOOLEAN"
+        transformation: "parse_bool"
+
+      - clickup_field: "Gerar Produtos"
+        clickup_id: "292b231e-5231-4dae-8874-58e34aadd74e"
+        clickup_type: "checkbox"
+        supabase_column: "generate_products"
+        supabase_type: "BOOLEAN"
+        transformation: "parse_bool"
+
+  # ============================================================================
+  # SYSTEM FIELDS (ClickUp → Supabase)
+  # ============================================================================
+
+  system_fields:
+    - clickup_field: "id"
+      clickup_type: "uuid"
+      supabase_column: "clickup_task_id"
+      supabase_type: "TEXT"
+      transformation: "identity"
+      note: "ClickUp task UUID"
+
+    - clickup_field: "list_id"
+      clickup_type: "uuid"
+      supabase_column: "clickup_list_id"
+      supabase_type: "TEXT"
+      transformation: "identity"
+
+    - clickup_field: "folder_id"
+      clickup_type: "uuid"
+      supabase_column: "clickup_folder_id"
+      supabase_type: "TEXT"
+      transformation: "identity"
+
+    - clickup_field: "custom_fields (computed sync_hash)"
+      supabase_column: "sync_hash"
+      supabase_type: "TEXT"
+      transformation: "hash_all_fields"
+      note: "SHA256 of all custom fields for conflict detection"
+
+    - clickup_field: "dates.created"
+      clickup_type: "timestamp"
+      supabase_column: "created_at"
+      supabase_type: "TIMESTAMPTZ"
+      transformation: "parse_timestamp"
+
+    - clickup_field: "dates.updated"
+      clickup_type: "timestamp"
+      supabase_column: "updated_at"
+      supabase_type: "TIMESTAMPTZ"
+      transformation: "parse_timestamp"
+
+# ============================================================================
+# TRANSFORMATION FUNCTIONS (Implementation guide)
+# ============================================================================
+
+transformation_functions:
+  identity:
+    description: "Copy value as-is"
+    example: "name → name"
+
+  cast_to_int:
+    description: "Convert to integer"
+    example: "number:string → project_number:int"
+    error_handling: "Default to 0 if non-numeric"
+
+  parse_date:
+    description: "Parse date from various formats"
+    example: "2026-02-14 or Feb 14, 2026 → 2026-02-14"
+    error_handling: "Set to NULL if unparseable"
+
+  parse_currency:
+    description: "Extract numeric value from currency"
+    example: "R$ 10,000.00 → 10000.00"
+    error_handling: "Set to NULL if unparseable"
+
+  parse_bool:
+    description: "Convert to boolean"
+    example: "true/1/yes → true, false/0/no → false"
+
+  map_status:
+    description: "Map ClickUp status to Supabase enum"
+    note: "See status_mapping section above"
+
+  resolve_relationship:
+    description: "Look up related entity by ClickUp task ID"
+    example: "ClickUp task ID → Supabase UUID"
+    error_handling: "Set to NULL if relationship not found"
+
+  resolve_user:
+    description: "Look up user by ClickUp user ID"
+    example: "ClickUp user ID → Supabase user_profiles UUID"
+    error_handling: "Set to NULL if user not found"
+
+  extract_first_url:
+    description: "Extract first URL from attachments array"
+    example: "attachments[0].url → url"
+
+  hash_all_fields:
+    description: "SHA256 hash of all field values"
+    purpose: "Detect changes for RFC-012 sync"
+
+  parse_timestamp:
+    description: "Parse timestamp and convert to TIMESTAMPTZ"
+    example: "1707860400 (unix) → 2026-02-14T12:00:00+00:00"
+
+# ============================================================================
+# SYNC PROTOCOL (RFC-012)
+# ============================================================================
+
+sync_protocol:
+  direction: "bidirectional"
+
+  clickup_to_supabase:
+    trigger: "webhook on taskUpdated"
+    pipeline:
+      1: "Receive ClickUp webhook"
+      2: "Calculate sync_hash of updated fields"
+      3: "Compare with existing sync_hash in Supabase"
+      4: "If different: transform fields"
+      5: "Insert into sync_outbox"
+      6: "Process outbox (N8N worker)"
+      7: "Update Supabase table"
+      8: "Update sync metadata (last_sync, hash)"
+
+  supabase_to_clickup:
+    trigger: "INSERT/UPDATE on projects table"
+    pipeline:
+      1: "Trigger function captures change"
+      2: "Calculate sync_hash"
+      3: "Insert into sync_outbox"
+      4: "N8N worker processes outbox"
+      5: "Transform Supabase values to ClickUp API format"
+      6: "Call ClickUp API to update task"
+      7: "If success: mark outbox entry processed"
+      8: "If error: insert into sync_dead_letters with retry"
+
+  conflict_resolution:
+    rule: "Last write wins (based on timestamp)"
+    procedure: |
+      IF clickup_last_sync > supabase_last_sync:
+        - ClickUp is source of truth
+        - Overwrite Supabase
+      ELSE IF supabase_last_sync > clickup_last_sync:
+        - Supabase is source of truth
+        - Update ClickUp
+      ELSE:
+        - Same timestamp (rare): use sync_hash comparison
+        - If hashes differ: log conflict in sync_dead_letters
+        - Manual resolution required
+
+# ============================================================================
+# VALIDATION RULES (Pedro-inspired constraints)
+# ============================================================================
+
+validation_rules:
+  # Pedro PV001: Account Manager required
+  - field: "Account"
+    pedro_rule: "PV001"
+    constraint: "NOT NULL"
+    supabase_check: "account_manager_id IS NOT NULL"
+    error: "Account (AM) is mandatory on all projects"
+
+  # Pedro PV002: Deadline required
+  - field: "Data de Entrega"
+    pedro_rule: "PV002"
+    constraint: "NOT NULL"
+    supabase_check: "delivery_date IS NOT NULL"
+    error: "Deadline (delivery_date) is mandatory"
+
+  # Pedro PV006: Status flows unidirectional
+  - field: "ttcx-status"
+    pedro_rule: "PV006"
+    constraint: "Workflow validation"
+    validation: |
+      No backward transitions:
+      planning → active (OK)
+      active → completed (OK)
+      completed → active (NOT OK)
+      archived → any (NOT OK)
+
+  # Financial consistency
+  - field: "RECEITA / Moeda"
+    constraint: "If revenue set, currency must be set"
+    validation: "(revenue IS NULL) OR (currency IS NOT NULL)"
+
+  # Timeline consistency
+  - field: "Kick-off Call / Data de Entrega"
+    constraint: "Delivery date > Kickoff date"
+    validation: "delivery_date > kickoff_date"
+
+# ============================================================================
+# IMPLEMENTATION NOTES
+# ============================================================================
+
+implementation_notes:
+  - |
+    This mapping is based on Pedro's proven gestao-projeto system.
+    Use it as reference for any new domain following Pedro's patterns.
+
+  - |
+    The status mapping (ttcx-status → status enum) groups ClickUp's
+    13 detailed statuses into 4 Supabase enums for cleaner tracking.
+
+  - |
+    Relationship fields (Account, Client) require a lookup step
+    in the transformation pipeline to resolve ClickUp IDs to Supabase UUIDs.
+
+  - |
+    Sync metadata fields (sync_hash, clickup_last_sync, supabase_last_sync)
+    are critical for RFC-012 bidirectional sync. Never skip them.
+
+  - |
+    Always hash all custom fields together for sync_hash to detect
+    any field change, not just individual field monitoring.
+
+version_history:
+  - version: "1.0"
+    date: "2026-02-14"
+    source: "/docs/workspace-migrations/pedro-reference/CLICKUP-SUPABASE-MAPPING.md"
+    description: "Initial template extraction"

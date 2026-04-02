@@ -1,0 +1,64 @@
+---
+# MESSAGE-HIERARCHY.YAML - Shared messaging stack
+# PURPOSE: Canonical hierarchy of message claims across squads and channels.
+
+metadata:
+  version: "1.0"
+  artifact_type: "message_hierarchy"
+  status: "LEGACY_SUPPORTED"
+  owner: "coo-orchestrator"
+  canonical_role: "legacy narrative asset for company or franchise messaging"
+  not_for_new_campaign_work: true
+  canonical_storage:
+    company: "workspace/businesses/{business}/company/message-hierarchy.yaml"
+    franchise: "workspace/businesses/{business}/franchise/narrative/message-hierarchy.yaml"
+  shared_across:
+    - copy
+    - storytelling
+    - traffic-masters
+    - franchise
+  source_dependencies:
+    - "workspace/businesses/{business}/company/icp.yaml"
+    - "workspace/businesses/{business}/company/brand.yaml"
+    - "workspace/businesses/{business}/brand/strategic-positioning.yaml"
+    - "workspace/businesses/{business}/products/{product}/offerbook.yaml"
+  preferred_new_artifacts:
+    positioning: "workspace/businesses/{business}/brand/strategic-positioning.yaml"
+    messaging_framework: "workspace/businesses/{business}/brand/messaging-framework.yaml"
+    campaign_message_strategy: "workspace/businesses/{business}/copy/{campaign_slug}/message-architecture.yaml"
+
+context:
+  business_slug: "FILL_THIS"
+  product_slug: "FILL_THIS"
+
+hierarchy:
+  north_star_message: "FILL_THIS"
+  category_message: "FILL_THIS"
+  unique_mechanism_message: "FILL_THIS"
+  differentiation_message: "FILL_THIS"
+  proof_message: "FILL_THIS"
+  urgency_message: "FILL_THIS"
+
+channel_adaptations:
+  landing_page:
+    primary: "FILL_THIS"
+    supporting:
+      - "FILL_THIS"
+  ads:
+    primary: "FILL_THIS"
+    supporting:
+      - "FILL_THIS"
+  webinar:
+    primary: "FILL_THIS"
+    supporting:
+      - "FILL_THIS"
+  franchise_sales:
+    primary: "FILL_THIS"
+    supporting:
+      - "FILL_THIS"
+
+guardrails:
+  forbidden_claims:
+    - "FILL_THIS"
+  claims_requiring_proof:
+    - "FILL_THIS"

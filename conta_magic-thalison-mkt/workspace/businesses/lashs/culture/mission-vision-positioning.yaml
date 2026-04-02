@@ -1,0 +1,59 @@
+metadata:
+  version: "1.0"
+  template_type: culture_mvp
+  status: FILLED
+  last_updated: "2026-03-19"
+  owner: vision-chief
+  source: "company-profile.yaml (mission, vision, positioning sections)"
+  description: >
+    Missao, visao e posicionamento da Contourline para uso interno.
+    Frases curtas e diretas que orientam decisoes.
+
+mission:
+  statement: >
+    Ser uma Fabrica de Autoestima, revelando em todas as pessoas a sua
+    melhor versao. Ajudar colaboradores, clientes e seus pacientes a
+    descobrirem suas melhores versoes.
+  who_benefits:
+    - "Colaboradores da Contourline"
+    - "Medicos e clinicas (clientes diretos)"
+    - "Pacientes finais (beneficiarios indiretos)"
+  transformation: >
+    De profissionais e pacientes inseguros com sua aparencia e saude
+    para pessoas que descobriram sua melhor versao atraves de
+    tecnologia medica de ponta.
+
+vision:
+  statement: >
+    Ser a melhor empresa do segmento de equipamentos de estetica medica
+    no mercado brasileiro ate 2027, com forte reconhecimento no mercado
+    e avaliacao que reflita sucesso, inovacao e capacidade de entregar
+    resultados excepcionais. Meta: R$ 500M de valuation ate 2027.
+  time_horizon: "2027"
+  proof_of_traction:
+    - "4 mil clientes em todo o Brasil"
+    - "Projecao de faturamento acima de R$ 200 milhoes em 2026"
+    - "Sede propria de 2 mil m2 com P&D"
+    - "Estudos cientificos publicados"
+    - "15 anos de operacao"
+
+positioning:
+  statement: >
+    Unica empresa nacional com P&D proprio, fabrica de 2mil m2,
+    parcerias premium globais (Lumenis, Indiba, Visbody) e operacao
+    sob Lei da Informatica.
+  category: "Equipamentos medicos e esteticos de alta tecnologia"
+  differentiation: >
+    P&D proprio nacional, fabrica de 2mil m2, parcerias premium
+    globais (Lumenis, Indiba, Visbody), Lei da Informatica,
+    auditoria externa e governanca forte. Unica empresa nacional
+    posicionada para lideranca premium com ciencia e inovacao.
+  hashtag: "#SomosAFabricaDeAltoEstima"
+
+cross_references:
+  depends_on:
+    - company/company-profile.yaml
+    - brand/brandbook.yaml
+  feeds_into:
+    - culture/pillars.yaml
+    - culture/values.yaml

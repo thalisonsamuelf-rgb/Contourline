@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#121213"/>
+  <rect x="56" y="56" width="1088" height="788" stroke="#DDD1BB" stroke-width="2"/>
+  <rect x="96" y="96" width="420" height="280" fill="#1D1D20"/>
+  <rect x="542" y="96" width="560" height="160" fill="#DDD1BB"/>
+  <rect x="542" y="280" width="270" height="220" fill="#18181B"/>
+  <rect x="832" y="280" width="270" height="220" fill="#242428"/>
+  <rect x="96" y="412" width="1006" height="360" fill="#151517"/>
+  <path d="M140 708H1058" stroke="#DDD1BB" stroke-width="2" stroke-dasharray="10 10"/>
+  <text x="96" y="620" fill="#F4F4F4" font-family="Arial, sans-serif" font-size="96" font-weight="700">STARTER GRID / 01</text>
+  <text x="99" y="682" fill="#DDD1BB" font-family="Courier New, monospace" font-size="26" letter-spacing="4">MODULAR PRODUCT CANVAS</text>
+</svg>

@@ -1,0 +1,163 @@
+---
+# NPS-FEEDBACK-LOOP.YAML - Voice of Customer & Continuous Improvement System
+# Purpose: Systematically collect, analyze, and act on customer feedback to improve the product
+# Guardian: Customer Success Lead / Product Lead
+# Timing: FILL after onboarding-flow.yaml (first touchpoint for feedback) and retention-strategy.yaml
+# Framework: Voice of Customer (VoC) + NPS Methodology + Scalable Company Feedback Systems
+# Dependency: onboarding-flow.yaml (feedback collection points), retention-strategy.yaml (retention context)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Customer Success Lead / Product Lead"
+  framework: "Voice of Customer + NPS + Continuous Improvement Loop"
+  notes: |
+    Your customers know more about your product than you do.
+    They experience every friction, every gap, every delight.
+    The question is: are you LISTENING?
+
+    NPS (Net Promoter Score) is the simplest way to measure customer sentiment:
+    - Promoters (9-10): Love you, will refer
+    - Passives (7-8): Satisfied but not loyal
+    - Detractors (0-6): Unhappy, may churn or damage reputation
+
+    But NPS alone is useless. The FOLLOW-UP is everything.
+    "Why did you give that score?" → That answer is gold.
+
+    RULE: Collect feedback at MOMENTS THAT MATTER,
+    not randomly. Onboarding completion, milestone achievement,
+    renewal time, support interaction — these are feedback moments.
+
+# ============================================================================
+# STEP 1: NPS MEASUREMENT
+# ============================================================================
+
+nps_measurement:
+  current_nps: "FILL — Current NPS score (if known)"
+  target_nps: "FILL — Target NPS score"
+  measurement_frequency: "FILL — How often do you measure? (monthly, quarterly, after milestones)"
+
+  survey_question: "On a scale of 0-10, how likely are you to recommend [product] to a friend or colleague?"
+  follow_up_question: "FILL — What follow-up question do you ask? (e.g., 'What is the primary reason for your score?')"
+
+  collection_method: "FILL — How do you collect NPS? (email survey, in-app, Typeform, etc.)"
+  response_rate_target: "FILL — Target response rate (%)"
+
+# ============================================================================
+# STEP 2: FEEDBACK COLLECTION POINTS
+# ============================================================================
+
+feedback_touchpoints:
+  touchpoint_1:
+    moment: "FILL — When? (e.g., After onboarding completion)"
+    method: "FILL — How? (email survey, in-app prompt, call)"
+    questions:
+      - "FILL — Key question 1"
+      - "FILL — Key question 2"
+    purpose: "FILL — What do you want to learn?"
+
+  touchpoint_2:
+    moment: "FILL — When? (e.g., After 90-day milestone)"
+    method: "FILL — How?"
+    questions:
+      - "FILL — Key question 1"
+      - "FILL — Key question 2"
+    purpose: "FILL — What do you want to learn?"
+
+  touchpoint_3:
+    moment: "FILL — When? (e.g., Before renewal)"
+    method: "FILL — How?"
+    questions:
+      - "FILL — Key question 1"
+      - "FILL — Key question 2"
+    purpose: "FILL — What do you want to learn?"
+
+  touchpoint_4:
+    moment: "FILL — When? (e.g., After support interaction)"
+    method: "FILL — How?"
+    questions:
+      - "FILL — Key question 1"
+    purpose: "FILL — What do you want to learn?"
+
+# ============================================================================
+# STEP 3: FEEDBACK RESPONSE PROTOCOL
+# ============================================================================
+
+response_protocol:
+  promoters_9_10:
+    action_1: "FILL — Thank them and ask for a testimonial"
+    action_2: "FILL — Invite them to referral program (from referral-system.yaml)"
+    action_3: "FILL — Feature them in community (with permission)"
+    timing: "FILL — Respond within X hours"
+
+  passives_7_8:
+    action_1: "FILL — Ask what would make it a 9 or 10"
+    action_2: "FILL — Offer additional value or support"
+    action_3: "FILL — Schedule personal check-in"
+    timing: "FILL — Respond within X hours"
+
+  detractors_0_6:
+    action_1: "FILL — Immediate personal outreach (not automated)"
+    action_2: "FILL — Listen, diagnose, offer specific solution"
+    action_3: "FILL — Escalate to manager if needed"
+    action_4: "FILL — Follow up after intervention to re-survey"
+    timing: "FILL — Respond within X hours (urgent — same day)"
+
+# ============================================================================
+# STEP 4: FEEDBACK → ACTION LOOP
+# ============================================================================
+
+feedback_to_action:
+  collection: "FILL — How is feedback aggregated? (spreadsheet, CRM, dedicated tool)"
+  analysis_cadence: "FILL — How often do you analyze feedback trends? (weekly, monthly)"
+  categorization:
+    category_1: "Product/Feature requests"
+    category_2: "Support/Service quality"
+    category_3: "Onboarding/Education"
+    category_4: "Pricing/Value perception"
+    category_5: "FILL — Custom category relevant to your business"
+
+  prioritization_method: "FILL — How do you prioritize which feedback to act on? (frequency, impact, effort)"
+
+  action_tracking:
+    method: "FILL — How do you track feedback-driven changes? (Kanban, project management tool)"
+    close_the_loop: "FILL — Do you tell customers when their feedback led to a change? How?"
+
+# ============================================================================
+# STEP 5: SCORING & DIAGNOSTIC
+# ============================================================================
+
+feedback_loop_score:
+  collection_coverage: "FILL 1-10"
+  response_speed: "FILL 1-10"
+  action_follow_through: "FILL 1-10"
+  loop_closure: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "No systematic feedback collection, no NPS, feedback ignored, customers never hear back."
+    range_4_6: "Some feedback collected, NPS measured occasionally, some actions taken, rarely close the loop."
+    range_7_8: "Systematic collection at key moments, regular NPS with follow-up, feedback drives product decisions, customers know their input matters."
+    range_9_10: "Multi-touchpoint collection, real-time NPS tracking, every piece of feedback categorized and prioritized, customers are told when their feedback creates change."
+
+evidence:
+  data_points: "FILL — NPS trends, response rates, actions taken from feedback"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  top_feedback_theme: "FILL — What is the most common feedback you receive?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "onboarding-flow.yaml"
+    - "retention-strategy.yaml"
+  feeds_into:
+    - "analytics.yaml"
+    - "churn-prevention.yaml"
+  related:
+    - "testimonials.yaml"
+    - "referral-system.yaml"
+    - "proof.yaml"

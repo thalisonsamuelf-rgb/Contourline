@@ -1,0 +1,468 @@
+---
+# OFFER-NAMING.YAML - Offer Naming Using the MAGIC Framework
+# Purpose: Name is a conversion multiplier — the right name increases response rate before the prospect reads a single word of copy
+# Guardian: Offer Engineer / CMO
+# Timing: FILL after offerbook.yaml, value-equation.yaml, and icp.yaml are complete
+# Framework: MAGIC Naming (derived from Hormozi MAGICO, adapted for focused execution)
+# Dependency: offerbook.yaml (product positioning), value-equation.yaml (Dream Outcome), icp.yaml (Avatar)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "Offer Engineer"
+  framework: "MAGIC Naming Framework"
+  notes: |
+    The name is the FIRST hook of your offer. Before anyone reads your copy,
+    watches your VSL, or hears your pitch — they see the name.
+
+    A Grand Slam name does 3 jobs simultaneously:
+    1. Identifies the avatar (they instantly know "this is for me")
+    2. Promises the outcome (the transformation is in the name)
+    3. Implies the mechanism (how it works is hinted at)
+
+    BAD NAMES (and why):
+    - Generic: "Business Growth Program" — could be anyone, for anyone
+    - Clever-but-unclear: "The Phoenix Method" — sounds cool, says nothing
+    - Me-focused: "John's Coaching" — nobody cares about John yet
+    - Acronym: "The SOAR System" — forced, forgettable, taken 100x
+
+    GOOD NAMES (and why):
+    - "The 90-Day Client Acquisition System" — timeframe + avatar implied + outcome
+    - "Profit First" — counterintuitive + outcome + 2 words
+    - "30 Clients in 30 Days" — specific number + specific result + specific timeframe
+# ============================================================================
+# THE MAGIC FRAMEWORK — 5 Criteria Every Offer Name Must Pass
+# ============================================================================
+# Score each letter 1-10. Composite score determines if the name is ready.
+# GREEN (40+): Ship it. YELLOW (30-39): Refine. RED (<30): Start over.
+magic_framework:
+  # --------------------------------------------------------------------------
+  # M — MAGNETIC
+  # --------------------------------------------------------------------------
+  # Does the name stop the scroll? Does it create curiosity or desire?
+  M_magnetic:
+    definition: "The name grabs attention in a crowded feed, inbox, or conversation."
+    test: "If I saw this name in a feed full of noise, would I stop scrolling?"
+    techniques:
+      - "Specific number: '90-Day', 'The 5-Step', '$100M' — numbers break patterns"
+      - "Counterintuitive element: 'Profit First' (pay yourself before expenses?), 'The Anti-Hustle Blueprint'"
+      - "Pattern interrupt: unexpected word pairing that creates a double-take"
+      - "Contrast or tension: 'Effortless Authority', 'Lazy Genius Method'"
+    examples:
+      en:
+        - "'The 4-Hour Work Week' — number + counterintuitive (4 hours?!)"
+        - "'Profit First' — counterintuitive (profit before revenue?)"
+        - "'$100M Offers' — aspirational number that stops the scroll"
+      pt_br:
+        - "'Sistema 90 Dias' — prazo concreto que gera curiosidade"
+        - "'Maquina de Clientes' — metafora mecanica + resultado"
+        - "'Lucro Primeiro' — inversao que forca reflexao"
+    scoring_guide: |
+      1-3: Generic, invisible in a feed. No reason to stop.
+      4-6: Mildly interesting but does not demand attention.
+      7-8: Creates genuine curiosity. Prospect pauses.
+      9-10: Impossible to ignore. Creates immediate desire to know more.
+  # --------------------------------------------------------------------------
+  # A — AVATAR-SPECIFIC
+  # --------------------------------------------------------------------------
+  # Does the target audience instantly know "this is for me"?
+  A_avatar_specific:
+    definition: "The name signals who it is for. Non-ideal clients self-select out."
+    test: "Does my avatar see themselves in this name within 2 seconds?"
+    techniques:
+      - "Include avatar identifier: 'Coaches', 'SaaS Founders', 'Dentistas'"
+      - "Use their language: words they already use to describe themselves"
+      - "Reference their situation: 'Side Hustle to Full-Time', 'Corporate Escape'"
+      - "Niche specificity: the narrower the avatar reference, the higher the perceived value"
+    examples:
+      en:
+        - "'The Coach's Client Machine' — avatar = coaches, result = clients"
+        - "'The SaaS Growth Playbook' — avatar = SaaS founders"
+        - "'Gym Launch' — avatar = gym owners (2 words, crystal clear)"
+      pt_br:
+        - "'Automacao para Dentistas' — avatar no nome, zero ambiguidade"
+        - "'YOUR_PRODUCT' — avatar implícito (profissional + IA)"
+        - "'Sistema do Advogado Digital' — profissao + transformacao"
+    scoring_guide: |
+      1-3: Could be for anyone. No avatar signal.
+      4-6: Broad category implied but not explicit.
+      7-8: Avatar clearly identified. They see themselves.
+      9-10: Hyper-specific. Only the right person clicks. Everyone else scrolls.
+  # --------------------------------------------------------------------------
+  # G — GOAL-ORIENTED
+  # --------------------------------------------------------------------------
+  # Does the name promise a specific outcome?
+  G_goal_oriented:
+    definition: "The name communicates the result, not the process."
+    test: "What result does this name promise? If the answer is vague, the name is weak."
+    techniques:
+      - "Outcome in the name: 'Client Acquisition', 'Revenue Engine', 'Liberdade Financeira'"
+      - "Transformation implied: before-state to after-state in 2-5 words"
+      - "Specific metric: '$100K MRR', '30 Clients', '10h/Semana Liberadas'"
+      - "Status shift: the name implies a new identity ('Authority', 'Legend', 'Leader')"
+    examples:
+      en:
+        - "'$100M Offers' — goal = $100M revenue"
+        - "'The 4-Hour Body' — goal = body transformation + 4 hours"
+        - "'30 Clients in 30 Days' — goal = 30 clients, timeframe = 30 days"
+      pt_br:
+        - "'10k em 90 Dias' — meta clara, prazo concreto"
+        - "'Maquina de Vendas Automatica' — resultado = vendas sem esforco manual"
+        - "'Primeiro Cliente em 7 Dias' — marco especifico + urgencia"
+    scoring_guide: |
+      1-3: No result implied. The name describes a process or a vague concept.
+      4-6: General benefit implied but not specific.
+      7-8: Clear result. Prospect knows what they will achieve.
+      9-10: Measurable, time-bound, aspirational. Undeniable outcome.
+  # --------------------------------------------------------------------------
+  # I — IDENTIFIABLE
+  # --------------------------------------------------------------------------
+  # Can someone remember and repeat this name to a friend?
+  I_identifiable:
+    definition: "The name is short, sticky, and repeatable. Word-of-mouth test."
+    test: "If my client told a friend about this, could they remember the name 10 minutes later?"
+    techniques:
+      - "Short: 2-5 words ideal. Beyond 6 words, memorability drops sharply."
+      - "Rhythm or alliteration: 'Profit First', 'Gym Launch', 'Content Machine'"
+      - "No jargon: if it needs explanation, it fails this criterion"
+      - "Easy to spell: avoid made-up words, unusual spellings, forced acronyms"
+    anti_patterns:
+      - "Acronyms nobody knows: 'The S.C.A.L.E. Method' — forced, generic, forgettable"
+      - "Made-up words: 'Synergix Pro' — sounds like software, not a transformation"
+      - "Names that need a tagline: if the name does not stand alone, it is not a name"
+      - "Long compound names: 'The Ultimate High-Ticket Client Acquisition Accelerator Program' — nobody repeats this"
+    examples:
+      en:
+        - "'Gym Launch' — 2 words, crystal clear, easy to repeat"
+        - "'Profit First' — 2 words, counterintuitive, sticky"
+        - "'The $100M Playbook' — 3 words + number, memorable"
+      pt_br:
+        - "'YOUR_PRODUCT' — 2 words, aspirational, repeatable"
+        - "'Lucro Certo' — 2 words, rhymes in PT-BR, sticky"
+        - "'Sistema 90D' — short, numeric, easy to reference"
+    scoring_guide: |
+      1-3: Long, complex, requires explanation. Impossible to remember.
+      4-6: Reasonable length but no rhythm or stickiness.
+      7-8: Short, clear, someone could text it to a friend easily.
+      9-10: Iconic. Two words. Instant recognition. Could become a brand.
+  # --------------------------------------------------------------------------
+  # C — COMPELLING
+  # --------------------------------------------------------------------------
+  # Does the name create urgency, FOMO, or a sense of exclusivity?
+  C_compelling:
+    definition: "The name implies that NOT engaging means missing out."
+    test: "Does this name make someone want to act NOW rather than 'someday'?"
+    techniques:
+      - "Imply limited access: 'The Inner Circle', 'Founders Club', 'Turma Fechada'"
+      - "Suggest insider knowledge: 'The Launch Code', 'The Playbook', 'O Sistema'"
+      - "Hint at competitive advantage: 'The Unfair Advantage', 'The Edge'"
+      - "Create aspiration: 'Legendary', 'Grand Slam', 'Elite'"
+    examples:
+      en:
+        - "'The Inner Circle' — exclusivity, you are either in or out"
+        - "'The Launch Code' — insider knowledge, secret system"
+        - "'$100M Offers' — aspirational, implies you are playing at a higher level"
+      pt_br:
+        - "'Circulo Interno' — exclusividade, tribo fechada"
+        - "'O Codigo' — insider knowledge, sistema secreto"
+        - "'Lendário' — aspiracional, identidade transformada"
+    scoring_guide: |
+      1-3: No urgency, no exclusivity. Could buy anytime and feel nothing.
+      4-6: Mild aspiration but no FOMO.
+      7-8: Creates a real desire to be "in." Missing out feels costly.
+      9-10: The name itself generates urgency. People talk about it before they buy.
+# ============================================================================
+# MAGIC SCORING EXERCISE
+# ============================================================================
+# Score your current offer name (or each candidate) against the 5 criteria.
+# Be brutally honest. Inflated scores lead to weak names that cost conversions.
+magic_scoring:
+  name_candidate: "FILL — Your current or proposed offer name"
+  scores:
+    M_magnetic: "FILL X/10 — FILL reason"
+    A_avatar_specific: "FILL X/10 — FILL reason"
+    G_goal_oriented: "FILL X/10 — FILL reason"
+    I_identifiable: "FILL X/10 — FILL reason"
+    C_compelling: "FILL X/10 — FILL reason"
+  composite: "FILL X/50"
+  verdict: |
+    FILL — Based on composite score:
+    GREEN (40-50): Name is strong. Test in market immediately.
+    YELLOW (30-39): Name has potential. Refine the weakest letter.
+    RED (0-29): Name is holding back the offer. Rebuild using the generation exercise below.
+# ============================================================================
+# NAME GENERATION EXERCISE (5 Steps)
+# ============================================================================
+# Do not skip steps. The ingredients determine the output quality.
+name_generation:
+  # STEP 1: Extract raw ingredients from existing offerbook files
+  step_1_ingredients:
+    dream_outcome: "FILL — From value-equation.yaml: what is the final transformation?"
+    avatar: "FILL — From icp.yaml: who specifically is this for?"
+    unique_mechanism: "FILL — From offerbook.yaml: what makes this system different?"
+    timeframe: "FILL — How long until the primary result? (30 days, 90 days, 6 months)"
+    key_metric: "FILL — What number defines success? (clients, revenue, hours saved)"
+    counterintuitive_element: "FILL — What belief does this offer challenge?"
+    status_shift: "FILL — What does the client BECOME? (Authority, Leader, Free, Legendary)"
+  # STEP 2: Generate 10 candidates using naming formulas
+  step_2_formulas:
+    formula_1:
+      structure: "[Number] + [Timeframe] + [Outcome]"
+      example: "'90-Day Client Machine' / 'Sistema 90 Dias para 10k'"
+      your_candidate: "FILL"
+    formula_2:
+      structure: "The + [Avatar] + [Outcome] + [Mechanism]"
+      example: "'The Coach's Revenue System' / 'O Sistema do Consultor'"
+      your_candidate: "FILL"
+    formula_3:
+      structure: "[Outcome] + [Qualifier]"
+      example: "'Profit First' / 'Leads on Demand' / 'Lucro Certo'"
+      your_candidate: "FILL"
+    formula_4:
+      structure: "[Counterintuitive] + [Topic]"
+      example: "'The Anti-Hustle Blueprint' / 'Menos Trabalho, Mais Receita'"
+      your_candidate: "FILL"
+    formula_5:
+      structure: "[Mechanism] + [Number]"
+      example: "'The 5-Step Scaling Framework' / 'Os 3 Pilares do Negocio Digital'"
+      your_candidate: "FILL"
+    formula_6:
+      structure: "[Avatar]'s + [Desired State]"
+      example: "'The Founder's Freedom Formula' / 'A Formula do Profissional Livre'"
+      your_candidate: "FILL"
+    formula_7:
+      structure: "[Action] + Your + [Asset]"
+      example: "'Scale Your Agency' / 'Monetize Your Expertise' / 'Ative Sua Experiencia'"
+      your_candidate: "FILL"
+    formula_8:
+      structure: "[Result] + Without + [Pain]"
+      example: "'Premium Clients Without Cold Calling' / 'Vendas Sem Equipe'"
+      your_candidate: "FILL"
+    formula_9:
+      structure: "[Aspiration] + [Container]"
+      example: "'The Grand Slam Accelerator' / 'YOUR_PRODUCT'"
+      your_candidate: "FILL"
+    formula_10:
+      structure: "Free choice — combine any elements that feel right"
+      example: "'Gym Launch' / '$100M Offers' / 'Profit First'"
+      your_candidate: "FILL"
+  # STEP 3: Score all 10 candidates with MAGIC
+  step_3_scoring:
+    candidate_1:
+      name: "FILL — Copy from formula_1"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_2:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_3:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_4:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_5:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_6:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_7:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_8:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_9:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+    candidate_10:
+      name: "FILL"
+      M: "FILL /10"
+      A: "FILL /10"
+      G: "FILL /10"
+      I: "FILL /10"
+      C: "FILL /10"
+      total: "FILL /50"
+  # STEP 4: Top 3 go to market test
+  step_4_market_test:
+    top_3:
+      first: "FILL — Highest scoring name"
+      second: "FILL — Second highest"
+      third: "FILL — Third highest"
+    test_method: |
+      Ask 10 people in your target market: "Which of these 3 names would you click on?"
+      Do NOT explain what the offer is. The name must do the work alone.
+      Record: which name they pick and WHY (the "why" reveals which MAGIC letter is strongest).
+  # STEP 5: Winner selected
+  step_5_winner:
+    final_name: "FILL — The name that won the market test"
+    winning_score: "FILL /50"
+    strongest_letter: "FILL — Which MAGIC criterion scored highest?"
+    weakest_letter: "FILL — Which needs monitoring (could be improved with a tagline)?"
+    tagline_if_needed: "FILL — Optional: a short tagline to compensate for the weakest letter"
+# ============================================================================
+# NAMING ANTI-PATTERNS
+# ============================================================================
+# These patterns kill conversion. Check your final name against every one.
+anti_patterns:
+  items:
+    - pattern: "Generic program names"
+      examples: "'Business Mastery', 'Success Academy', 'Growth Lab'"
+      why_it_fails: "Could be any competitor. Zero differentiation. Avatar does not self-select."
+    - pattern: "Clever wordplay nobody gets"
+      examples: "'The Nexus Effect', 'Paradigm Shift Pro'"
+      why_it_fails: "Requires explanation. If the name needs a tagline to make sense, the name failed."
+    - pattern: "Names focused on YOU, not the AVATAR"
+      examples: "'Alan's Method', 'The Smith System'"
+      why_it_fails: "Nobody cares about you yet. They care about themselves. Earn name recognition first."
+    - pattern: "Forced acronyms"
+      examples: "'The S.C.A.L.E. Method', 'The R.I.S.E. Framework', 'Sistema S.O.A.R.'"
+      why_it_fails: "All taken. All generic. Nobody remembers what the letters stand for."
+    - pattern: "Names that sound like every competitor"
+      examples: "'AI Mastery Course', 'Digital Marketing Program'"
+      why_it_fails: "Commodity positioning. Impossible to charge premium."
+    - pattern: "Overly long names"
+      examples: "'The Ultimate High-Ticket Client Acquisition Accelerator System'"
+      why_it_fails: "Nobody repeats this. Word-of-mouth dies. Fails the I in MAGIC."
+  final_check: |
+    FILL — Does your final name pass ALL anti-pattern checks?
+    [ ] Not generic (would NOT apply to any competitor)
+    [ ] Not clever-but-unclear (stands alone without explanation)
+    [ ] Not me-focused (avatar is the hero, not the creator)
+    [ ] Not a forced acronym
+    [ ] Not identical to competitors
+    [ ] Not too long (under 6 words)
+# ============================================================================
+# NAME TESTING PROTOCOL
+# ============================================================================
+# The market decides. Not you. Not your team. Not your spouse.
+# Two testing methods, in order of reliability.
+testing_protocol:
+  method_1_qualitative:
+    description: "Ask 10 people in your target market"
+    process: |
+      1. Find 10 people who match your ICP (not friends, not family)
+      2. Show them ONLY the 3 finalist names (no context, no explanation)
+      3. Ask: "Which of these would you click on?"
+      4. Record the choice AND the reason
+      5. If 7+ pick the same name, you have a winner
+      6. If split, the names are too similar — go back to generation
+    what_to_track: "FILL — choices and reasons for each of the 10 people"
+  method_2_quantitative:
+    description: "A/B test as ad headline — cheapest market validation"
+    process: |
+      1. Create 3 identical ads, changing ONLY the headline (the offer name)
+      2. Run each to 1000+ impressions in your target audience
+      3. Track click-through rate (CTR) per variant
+      4. Winner = highest CTR after statistical significance
+      5. Budget: R$ 50-100 per variant is enough for directional data
+    metrics:
+      variant_1_name: "FILL"
+      variant_1_impressions: "FILL"
+      variant_1_clicks: "FILL"
+      variant_1_ctr: "FILL %"
+      variant_2_name: "FILL"
+      variant_2_impressions: "FILL"
+      variant_2_clicks: "FILL"
+      variant_2_ctr: "FILL %"
+      variant_3_name: "FILL"
+      variant_3_impressions: "FILL"
+      variant_3_clicks: "FILL"
+      variant_3_ctr: "FILL %"
+    winner: "FILL — Name with highest CTR"
+# ============================================================================
+# INTEGRATION — Where the Name Goes After Selection
+# ============================================================================
+# The name propagates to every customer-facing file. Update all of these.
+integration:
+  files_to_update:
+    - file: "offerbook.yaml"
+      field: "metadata.product_name + posicionamento.nome_produto_breakdown"
+      action: "FILL — Update product name and breakdown"
+    - file: "sales-page.yaml"
+      field: "headline + sub-headline"
+      action: "FILL — Name becomes the primary headline or headline anchor"
+    - file: "headlines.yaml"
+      field: "primary headlines bank"
+      action: "FILL — Generate headline variations incorporating the name"
+    - file: "ad-brief.yaml"
+      field: "offer_name + headline variations"
+      action: "FILL — Update ad creative with winning name"
+    - file: "email-sequences.yaml"
+      field: "subject lines + body references"
+      action: "FILL — Incorporate name into launch and nurture sequences"
+  consistency_check: |
+    FILL — After updating all files, verify:
+    [ ] Name appears consistently across all customer-facing materials
+    [ ] No old name references remain in any file
+    [ ] Tagline (if any) is used consistently alongside the name
+    [ ] Name works in all channels (email subject, ad headline, social post, word of mouth)
+---
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+# TEMPLATE INSTRUCTIONS
+# 1. Start by scoring your CURRENT offer name with the MAGIC framework
+# 2. If score is GREEN (40+), skip to testing protocol to validate
+# 3. If YELLOW or RED, do the full name generation exercise (all 10 formulas)
+# 4. Extract ingredients from value-equation.yaml (Dream Outcome), icp.yaml (Avatar), offerbook.yaml (Mechanism)
+# 5. Score all 10 candidates honestly — inflated scores cost you conversions
+# 6. Top 3 go to real market testing (10 people or A/B ad test)
+# 7. Winner gets integrated into all customer-facing offerbook files
+# 8. Run anti-pattern check on final name before committing
+#
+# CROSS-REFERENCES:
+# - value-equation.yaml: Dream Outcome drives the G (Goal-Oriented) criterion
+# - icp.yaml: Avatar definition drives the A (Avatar-Specific) criterion
+# - offerbook.yaml: Unique mechanism drives naming ingredients
+# - sales-page.yaml: Name becomes the headline anchor
+# - headlines.yaml: Name generates headline variations
+# - ad-brief.yaml: Name drives ad creative

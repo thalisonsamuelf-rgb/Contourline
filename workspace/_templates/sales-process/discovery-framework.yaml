@@ -1,0 +1,208 @@
+---
+# DISCOVERY-FRAMEWORK.YAML - Sales Discovery Call Architecture (NEPQ + 6-Phase)
+# Purpose: Structure the discovery process that uncovers pain, qualifies prospects, and sets up the close
+# Guardian: Sales Lead / Closer
+# Timing: FILL after icp.yaml and objections.yaml are complete — this is your primary sales tool
+# Framework: NEPQ 6-Phase (Jeremy Miner, peso 0.95) + 6-Phase Call Flow (Cole Gordon, peso 0.90)
+# Dependency: icp.yaml (avatar definition), objections.yaml (objection stack)
+
+metadata:
+  version: "1.0"
+  product_name: "FILL_THIS"
+  status: "TEMPLATE"
+  last_updated: "FILL_THIS"
+  owner: "Sales Lead / Closer"
+  framework: "NEPQ 6-Phase (Miner) + Cole Gordon 6-Phase Call Flow"
+  notes: |
+    Discovery is NOT interrogation. It is GUIDED SELF-DISCOVERY.
+
+    Jeremy Miner's NEPQ (Neuro-Emotional Persuasion Questioning):
+    People do not buy because you TELL them they have a problem.
+    They buy because they TELL THEMSELVES they have a problem.
+
+    Your job is to ask questions so powerful that the prospect
+    convinces themselves they need your solution.
+
+    Cole Gordon's 6-Phase Call Flow adds STRUCTURE to this:
+    Each phase has a specific PURPOSE and specific QUESTIONS.
+    Skip a phase, and the close falls apart.
+
+    RULE: The person asking questions controls the conversation.
+    Never answer a question with a statement. Answer with a better question.
+
+# ============================================================================
+# PHASE 1: CONNECTION (2-3 minutes)
+# ============================================================================
+# Purpose: Build rapport, set the frame, earn permission to ask deep questions.
+
+phase_1_connection:
+  objective: "Build trust and set expectations for the call"
+
+  opening_script: |
+    FILL — Write your opening script.
+    Elements to include:
+    1. Thank them for their time
+    2. Briefly explain the call structure
+    3. Set time expectations
+    4. Ask permission to take notes / ask questions
+    Example: "Thanks for jumping on. Here is how this works: I am going to
+    ask you a few questions to understand your situation, and then we will
+    see if what we do is a fit. Sound good?"
+
+  rapport_questions:
+    question_1: "FILL — Light question to build rapport (related to their business/life)"
+    question_2: "FILL — Follow-up question that transitions to business context"
+
+  frame_setting: |
+    FILL — How do you set the frame?
+    "My job is not to sell you anything. My job is to figure out
+    if we can actually help. If we can, great. If not, I will tell you."
+
+# ============================================================================
+# PHASE 2: SITUATION (3-5 minutes)
+# ============================================================================
+# Purpose: Understand their current state. Where are they NOW?
+
+phase_2_situation:
+  objective: "Map their current reality without judgment"
+
+  questions:
+    q_1: "FILL — What is your current [business/situation] like?"
+    q_2: "FILL — How long have you been doing [X]?"
+    q_3: "FILL — What have you tried before to solve [problem]?"
+    q_4: "FILL — What is working? What is not working?"
+    q_5: "FILL — What does a typical [week/month] look like for you?"
+
+  listen_for:
+    - "Current pain points (they may not articulate them directly)"
+    - "Previous solutions attempted (and why they failed)"
+    - "Level of awareness (from diagnosis.yaml — where are they on the spectrum?)"
+    - "Budget signals (implicit or explicit)"
+
+# ============================================================================
+# PHASE 3: PROBLEM AWARENESS (5-7 minutes)
+# ============================================================================
+# Purpose: Help them FEEL the problem. NEPQ core — they convince themselves.
+
+phase_3_problem_awareness:
+  objective: "Deepen their awareness of the problem and its consequences"
+
+  nepq_questions:
+    q_1: "FILL — 'What would you say is the biggest challenge with [X]?' (Surface problem)"
+    q_2: "FILL — 'How long has this been going on?' (Duration → urgency)"
+    q_3: "FILL — 'What have you tried to fix it?' (Failed attempts → frustration)"
+    q_4: "FILL — 'Why do you think those did not work?' (Self-diagnosis)"
+    q_5: "FILL — 'How does that affect [business/life/family]?' (Consequence expansion)"
+    q_6: "FILL — 'On a scale of 1-10, how frustrated are you with this?' (Emotional anchoring)"
+    q_7: "FILL — 'What happens if nothing changes in the next 6-12 months?' (Future pacing)"
+
+  tonality_notes: |
+    FILL — Miner's 7 Tonalities guidance for this phase:
+    Use CONCERNED tonality (not aggressive).
+    Lean into curiosity, not pressure.
+    Mirror their emotions, do not amplify artificially.
+
+  transition_signal: |
+    FILL — How do you know they are ready to move to Phase 4?
+    Signal: They express frustration, urgency, or "I need to fix this."
+
+# ============================================================================
+# PHASE 4: SOLUTION AWARENESS (3-5 minutes)
+# ============================================================================
+# Purpose: Introduce the CONCEPT of the solution (not the product).
+
+phase_4_solution_awareness:
+  objective: "Help them see that a solution EXISTS (still not pitching)"
+
+  questions:
+    q_1: "FILL — 'What would it look like if this problem was solved?' (Ideal state)"
+    q_2: "FILL — 'What would change in your [business/life] if you had [outcome]?' (Value visualization)"
+    q_3: "FILL — 'If you could wave a magic wand, what would your [X] look like in 90 days?' (Dream outcome)"
+    q_4: "FILL — 'What is that worth to you?' (Value quantification)"
+
+  bridge_statement: |
+    FILL — The bridge from their ideal to your solution concept.
+    "So what I am hearing is [summarize]. You want [outcome].
+    The challenge has been [problem]. Is that right?"
+    (Wait for confirmation before proceeding)
+
+# ============================================================================
+# PHASE 5: COMMITMENT CHECK (2-3 minutes)
+# ============================================================================
+# Purpose: Qualify their readiness to solve this NOW.
+
+phase_5_commitment:
+  objective: "Determine if they are ready, willing, and able to solve this"
+
+  questions:
+    q_1: "FILL — 'How important is it for you to solve this right now?' (Priority check)"
+    q_2: "FILL — 'Are you the decision-maker on this?' (Authority check)"
+    q_3: "FILL — 'If we could show you a path to [outcome], would you be ready to start?' (Willingness)"
+    q_4: "FILL — 'Is there anything that would prevent you from moving forward today?' (Pre-objection)"
+
+  qualification_criteria:
+    ready: "FILL — What signals readiness? (urgency language, leaning in, asking 'how')"
+    not_ready: "FILL — What signals they are not ready? (vague language, deflecting, 'let me think')"
+    disqualify: "FILL — What disqualifies them? (no budget, no authority, no urgency)"
+
+# ============================================================================
+# PHASE 6: PRESENTATION + CLOSE (5-10 minutes)
+# ============================================================================
+# Purpose: Present the solution and ask for the commitment.
+
+phase_6_presentation:
+  objective: "Present the offer and close"
+
+  presentation_structure: |
+    FILL — How do you present the offer?
+    1. Summarize their problem (in THEIR words)
+    2. Present the solution (reference solution-architecture.yaml mechanism)
+    3. Show proof (reference testimonials/results)
+    4. Present the offer (reference offerbook.yaml)
+    5. Address price (reference pricing-anchoring.yaml)
+    6. Ask for the commitment
+
+  closing_question: "FILL — Your closing question. Example: 'Based on everything we discussed, does this make sense as a next step for you?'"
+
+  objection_handling:
+    top_objection_1: "FILL — Most common objection and your response"
+    top_objection_2: "FILL — Second most common objection and response"
+    top_objection_3: "FILL — Third most common objection and response"
+
+# ============================================================================
+# STEP 7: SCORING & DIAGNOSTIC
+# ============================================================================
+
+discovery_strength_score:
+  question_quality: "FILL 1-10"
+  phase_structure: "FILL 1-10"
+  emotional_depth: "FILL 1-10"
+  close_effectiveness: "FILL 1-10"
+
+  scoring_rubric:
+    range_1_3: "Questions are surface-level, no clear phase structure, conversation feels like interrogation, close is pushy."
+    range_4_6: "Some good questions, phases exist but flow is unnatural, moderate emotional depth, close works sometimes."
+    range_7_8: "NEPQ-quality questions, clear phase flow, prospect self-discovers their need, close feels like the natural next step."
+    range_9_10: "Masterful questioning, seamless phase transitions, prospect is emotionally committed before presentation, close rate >30%."
+
+evidence:
+  data_points: "FILL — Call metrics (close rate, average call duration, show rate)"
+  sources: "FILL — List sources"
+
+diagnostic_summary:
+  overall_assessment: "FILL_THIS"
+  strongest_phase: "FILL — Which phase is most effective?"
+  weakest_phase: "FILL — Which phase needs work?"
+  recommended_actions: "FILL_THIS"
+
+cross_references:
+  depends_on:
+    - "icp.yaml"
+    - "objections.yaml"
+  feeds_into:
+    - "call-script.yaml"
+    - "follow-up-system.yaml"
+    - "analytics.yaml"
+  related:
+    - "solution-architecture.yaml"
+    - "show-rate-optimization.yaml"

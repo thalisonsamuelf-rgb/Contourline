@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Editar' if aluno else 'Novo' }} Aluno - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 700px;">
+    <a href="{{ url_for('academy_lista') }}" class="btn btn-sm btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+
+    <div class="form-container">
+        <h4 class="mb-4">{{ 'Editar Aluno' if aluno else 'Novo Aluno Academy' }}</h4>
+
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Nome *</label>
+                    <input type="text" name="nome" class="form-control" value="{{ aluno.nome if aluno else '' }}" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Email</label>
+                    <input type="email" name="email" class="form-control" value="{{ aluno.email if aluno else '' }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Telefone</label>
+                    <input type="text" name="telefone" class="form-control" value="{{ aluno.telefone if aluno else '' }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Curso *</label>
+                    <select name="curso_id" class="form-select" id="curso_select">
+                        <option value="">Selecione...</option>
+                        {% for c in cursos %}
+                        <option value="{{ c.id }}" {{ 'selected' if aluno and aluno.curso_id == c.id else '' }}>{{ c.nome }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="curso" id="curso_nome" value="{{ aluno.curso if aluno else '' }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Cliente</label>
+                    <select name="cliente_id" class="form-select">
+                        <option value="">Nenhum</option>
+                        {% for c in clientes %}
+                        <option value="{{ c.id }}" {{ 'selected' if aluno and aluno.cliente_id == c.id else '' }}>{{ c.razao_social }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Data Inicio</label>
+                    <input type="date" name="data_inicio" class="form-control" value="{{ aluno.data_inicio.strftime('%Y-%m-%d') if aluno and aluno.data_inicio else '' }}">
+                </div>
+                {% if aluno %}
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Data Conclusao</label>
+                    <input type="date" name="data_conclusao" class="form-control" value="{{ aluno.data_conclusao.strftime('%Y-%m-%d') if aluno and aluno.data_conclusao else '' }}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Status</label>
+                    <select name="status" class="form-select">
+                        {% for s in ['matriculado', 'em_andamento', 'concluido', 'cancelado'] %}
+                        <option value="{{ s }}" {{ 'selected' if aluno.status == s else '' }}>{{ s | replace('_', ' ') | title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% endif %}
+                <div class="col-12">
+                    <label class="form-label">Observacoes</label>
+                    <textarea name="observacoes" class="form-control" rows="2">{{ aluno.observacoes if aluno else '' }}</textarea>
+                </div>
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg"></i> {{ 'Salvar' if aluno else 'Cadastrar Aluno' }}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('curso_select').addEventListener('change', function() {
+    var selected = this.options[this.selectedIndex];
+    document.getElementById('curso_nome').value = selected.text !== 'Selecione...' ? selected.text : '';
+});
+</script>
+{% endblock %}

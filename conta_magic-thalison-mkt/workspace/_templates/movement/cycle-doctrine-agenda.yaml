@@ -1,0 +1,28 @@
+---
+# Template: cycle doctrine agenda dataset (N6)
+
+metadata:
+  template_id: "movement.cycle_doctrine_agenda"
+  version: "1.0.0"
+  lifecycle_stage: "cycle"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+doctrine_agenda:
+  cycle_id: "<required>"
+  prioritization_criteria:
+    - "<coverage_gap>"
+    - "<cultural_opportunity>"
+    - "<metric_urgency>"
+    - "<tribe_demand>"
+  ranked_doctrines:
+    - doctrine_id: "<required>"
+      score_total: "<0-100>"
+      score_breakdown:
+        coverage_gap: "<0-25>"
+        cultural_opportunity: "<0-25>"
+        metric_urgency: "<0-25>"
+        tribe_demand: "<0-25>"
+      rationale: "<required>"
+provenance:
+  source_docs: []

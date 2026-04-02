@@ -1,0 +1,18 @@
+---
+metadata:
+  schema: "brand.archetype_profile"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+archetype_system:
+  primary: "FILL_THIS"
+  secondary: "FILL_THIS"
+  rationale: "FILL_THIS"
+expression_rules:
+  verbal: []
+  visual: []
+  behavioral: []
+avoidances: []
+references:
+  source_doc: "FILL_THIS"

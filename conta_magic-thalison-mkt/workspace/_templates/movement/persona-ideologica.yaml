@@ -1,0 +1,22 @@
+---
+# Template: ideological persona dataset
+
+metadata:
+  template_id: "movement.ideological_persona"
+  version: "1.0.0"
+  lifecycle_stage: "reading"
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+persona_model:
+  dimensions_total: 15
+  clusters_total: 5
+personas:
+  - key: "<required>"
+    label: "<required>"
+    pain_core: "<required>"
+    aspiration_core: "<required>"
+    objections: []
+    desired_x: "<required>"
+provenance:
+  source_docs: []

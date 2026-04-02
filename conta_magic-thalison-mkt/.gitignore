@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.local
+sync.sh
+
+# Brand assets (large files - use external storage)
+workspace/businesses/conta_magic/brand/referencias/

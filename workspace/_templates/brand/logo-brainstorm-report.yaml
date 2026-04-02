@@ -1,0 +1,58 @@
+---
+metadata:
+  schema: "brand.logo_brainstorm_report"
+  version: "1.0.0"
+  status: "INCOMPLETE"
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+executive_summary:
+  result: "FILL_THIS"
+  selected_concept: "FILL_THIS"
+  selected_logo_type: "FILL_THIS"
+brief_summary:
+  brand_name: "FILL_THIS"
+  industry: "FILL_THIS"
+  archetype: "FILL_THIS"
+  positioning: "FILL_THIS"
+  visual_tone: "FILL_THIS"
+directions_explored:
+  total: FILL_THIS
+  directions:
+    - name: "FILL_THIS"
+      metaphor: "FILL_THIS"
+      logo_types: []
+      status: "FILL_THIS"
+generation_metrics:
+  total_generations: FILL_THIS
+  total_iterations: FILL_THIS
+  model_used: "FILL_THIS"
+  prompts_created: FILL_THIS
+curation:
+  total_rounds: FILL_THIS
+  rounds:
+    - round: 1
+      feedback_summary: "FILL_THIS"
+      decision: "FILL_THIS"
+refinement:
+  prio_cycles: FILL_THIS
+  variables_refined: []
+  improvement_summary: "FILL_THIS"
+result:
+  selected_logo:
+    file: "FILL_THIS"
+    concept: "FILL_THIS"
+    rationale: "FILL_THIS"
+  deliverables:
+    logo_spec: "FILL_THIS"
+    logo_concept_yaml: "FILL_THIS"
+next_steps:
+  - "vectorization"
+  - "color-variations"
+  - "application-testing"
+  - "trademark-registration"
+references:
+  brief: "FILL_THIS"
+  concepts: "FILL_THIS"
+  prompt_brief: "FILL_THIS"
+  curation_report: "FILL_THIS"
+  refinement_log: "FILL_THIS"

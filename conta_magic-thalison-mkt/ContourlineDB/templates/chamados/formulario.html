@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}{{ 'Editar' if chamado else 'Novo' }} Chamado - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 800px;">
+    <a href="{{ url_for('chamados_lista') }}" class="btn btn-sm btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+
+    <div class="form-container">
+        <h4 class="mb-4">{{ 'Editar Chamado #' ~ chamado.id if chamado else 'Novo Chamado' }}</h4>
+
+        <form method="POST">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Cliente *</label>
+                    <select name="cliente_id" class="form-select" required {% if chamado %}disabled{% endif %}>
+                        <option value="">Selecione...</option>
+                        {% for c in clientes %}
+                        <option value="{{ c.id }}" {{ 'selected' if chamado and chamado.cliente_id == c.id else '' }}>{{ c.razao_social }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">Equipamento</label>
+                    <select name="equipamento_id" class="form-select">
+                        <option value="">Selecione...</option>
+                        {% for e in equipamentos %}
+                        <option value="{{ e.id }}" {{ 'selected' if chamado and chamado.equipamento_id == e.id else '' }}>{{ e.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Titulo *</label>
+                    <input type="text" name="titulo" class="form-control" value="{{ chamado.titulo if chamado else '' }}" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Descricao *</label>
+                    <textarea name="descricao" class="form-control" rows="4" required>{{ chamado.descricao if chamado else '' }}</textarea>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Prioridade</label>
+                    <select name="prioridade" class="form-select">
+                        {% for p in ['baixa', 'media', 'alta', 'urgente'] %}
+                        <option value="{{ p }}" {{ 'selected' if chamado and chamado.prioridade == p else '' }}>{{ p | title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                {% if chamado %}
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Status</label>
+                    <select name="status" class="form-select">
+                        {% for s in ['aberto', 'em_andamento', 'aguardando_peca', 'resolvido', 'fechado'] %}
+                        <option value="{{ s }}" {{ 'selected' if chamado.status == s else '' }}>{{ s | replace('_', ' ') | title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label fw-semibold">Tecnico Responsavel</label>
+                    <select name="tecnico_id" class="form-select">
+                        <option value="">Nenhum</option>
+                        {% for t in tecnicos %}
+                        <option value="{{ t.id }}" {{ 'selected' if chamado.tecnico_id == t.id else '' }}>{{ t.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label class="form-label fw-semibold">Solucao</label>
+                    <textarea name="solucao" class="form-control" rows="3">{{ chamado.solucao if chamado else '' }}</textarea>
+                </div>
+                {% endif %}
+
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg"></i> {{ 'Salvar' if chamado else 'Abrir Chamado' }}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

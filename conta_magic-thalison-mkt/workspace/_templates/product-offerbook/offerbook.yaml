@@ -1,0 +1,586 @@
+---
+# OFFERBOOK - YOUR_PRODUCT
+# Source: offer-definition + problem-definition + solution-architecture + narrative-architecture (System B)
+# Framework: Story Selling + Grand Slam Offer
+# Guardian: CMO
+# Status: TEMPLATE BASELINE (UNFILLED)
+
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# DIAGNOSIS SECTION (FROM diagnosis.yaml)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 1: MATERIALS & REFERENCES
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: ["FILL_THIS", "FILL_THIS"]
+  FILL_THIS: ["FILL_THIS", "FILL_THIS"]
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 2: POSITIONING (HOW YOU'RE DIFFERENT)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 3: OFFER ARCHITECTURE (WHAT YOU SELL & THE DEAL)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 4: CORE MODULES/CURRICULUM (WHAT MEMBERS GET)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 5: AUTHORITY (WHO'S TEACHING & WHY TRUST)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 6: AVATAR DEFINITION (WHO IS THIS FOR?)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 7: PROBLEM & CONSEQUENCES (THE WORLD WITHOUT THE SOLUTION)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+  # PROBLEM DEPTH FIELDS (from System B problem-definition.yaml)
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 8: SOLUTION & MECHANISM (HOW YOU SOLVE IT)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: |-
+    FILL_THIS
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+    FILL_THIS:
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+      FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: |-
+      FILL_THIS
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 9: PROOF & SOCIAL PROOF
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 10: OBJECTIONS & RESPONSES
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 11: BENEFITS (WHAT THEY GET)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 12: VALUE EQUATION (THE MATH) - Summary only, full in value-equation.yaml
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 13: NARRATIVE FRAMEWORK (THE STORY YOU TELL)
+# ============================================================================
+FILL_THIS:
+  # 18-ACT NARRATIVE STRUCTURE (Story Selling + Hero's Journey)
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: |-
+      FILL_THIS
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  # NARRATIVE PSYCHOLOGY
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  # NARRATIVE VARIATIONS BY CHANNEL
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 14: LANGUAGE & VOICE
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS:
+    - "FILL_THIS"
+    - "FILL_THIS"
+    - "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 15: TIMELINE & ROADMAP (WHAT MEMBERS EXPERIENCE)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS:
+    FILL_THIS: "FILL_THIS"
+    FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# SECTION 16: SUMMARY (ONE-PAGER FOR CLARITY)
+# ============================================================================
+FILL_THIS: |-
+  FILL_THIS
+# ============================================================================
+# ANTI-PATTERNS PREVENTED (from offer-definition.yaml)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+# ============================================================================
+# PHILOSOPHY (from offer-definition.yaml)
+# ============================================================================
+FILL_THIS:
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+  FILL_THIS: "FILL_THIS"
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS
+---
+# VALIDATION
+FILL_THIS:
+  FILL_THIS: 16
+  FILL_THIS: 15
+  FILL_THIS: "FILL_THIS"
+# DATA SOURCES:
+# - offer-definition.yaml (offer core, modules, pricing, bonuses, scarcity, philosophy)
+# - problem-definition.yaml (Section 7: problema + depth fields)
+# - solution-architecture.yaml (Section 8: solucao + mechanism + veto conditions)
+# - narrative-architecture.yaml (Section 13: narrativa 18-act structure)
+
+metadata:
+  status: INCOMPLETE
+  last_updated: FILL_THIS
+  product_name: FILL_THIS

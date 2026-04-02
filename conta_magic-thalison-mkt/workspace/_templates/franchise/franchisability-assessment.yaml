@@ -1,0 +1,33 @@
+business_slug: "{{business_slug}}"
+assessment_date: "{{date}}"
+score:
+  overall: 0
+  band: not_assessed
+gerber_rules:
+  proprietary_operating_system:
+    score: 0
+    evidence: []
+  teachability:
+    score: 0
+    evidence: []
+  support_requirement:
+    score: 0
+    evidence: []
+  customer_fulfillment:
+    score: 0
+    evidence: []
+  market_differentiation:
+    score: 0
+    evidence: []
+  mutual_profitability:
+    score: 0
+    evidence: []
+additional_factors:
+  brand_strength: 0
+  scalability: 0
+  capital_requirements: 0
+  market_demand: 0
+recommendation:
+  decision: defer
+  rationale: ""
+next_step: ""

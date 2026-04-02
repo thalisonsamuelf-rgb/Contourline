@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Equipamentos - Contourline DB{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="mb-0"><i class="bi bi-cpu"></i> Equipamentos</h4>
+    </div>
+
+    <!-- FILTRO POR CATEGORIA -->
+    <div class="mb-3">
+        <div class="btn-group flex-wrap" role="group">
+            <a href="{{ url_for('equipamentos_lista') }}" class="btn btn-sm {{ 'btn-primary' if not categoria_selecionada else 'btn-outline-primary' }}">Todos</a>
+            {% for cat in categorias %}
+            <a href="{{ url_for('equipamentos_lista', categoria=cat) }}" class="btn btn-sm {{ 'btn-primary' if categoria_selecionada == cat else 'btn-outline-primary' }}">{{ cat }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- GRID DE EQUIPAMENTOS -->
+    <div class="row g-3">
+        {% for equip in equipamentos %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card equip-card">
+                <div class="card-header">
+                    <h6 class="mb-0 fw-bold">{{ equip.nome }}</h6>
+                </div>
+                <div class="card-body">
+                    <p class="mb-1"><small class="text-muted">Fabricante:</small> <strong>{{ equip.fabricante or '-' }}</strong></p>
+                    <p class="mb-1"><small class="text-muted">Categoria:</small> <strong>{{ equip.categoria or '-' }}</strong></p>
+                    <p class="mb-1"><small class="text-muted">Origem:</small> {{ equip.origem or '-' }}</p>
+                    {% if equip.registro_anvisa %}
+                    <p class="mb-1"><small class="text-muted">ANVISA:</small> {{ equip.registro_anvisa }}</p>
+                    {% endif %}
+                    {% if equip.tecnologia %}
+                    <p class="mb-2"><small class="text-muted">Tecnologia:</small><br>{{ equip.tecnologia[:100] }}{% if equip.tecnologia|length > 100 %}...{% endif %}</p>
+                    {% endif %}
+                    <a href="{{ url_for('equipamento_detalhe', id=equip.id) }}" class="btn btn-sm btn-outline-primary w-100">
+                        <i class="bi bi-eye"></i> Ver detalhes
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-12">
+            <div class="text-center py-5 text-muted">
+                <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                <p class="mt-2">Nenhum equipamento encontrado.</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

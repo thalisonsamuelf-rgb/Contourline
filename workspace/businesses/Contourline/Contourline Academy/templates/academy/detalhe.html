@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}{{ aluno.nome }} - Academy{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 800px;">
+    <a href="{{ url_for('academy_lista') }}" class="btn btn-sm btn-outline-secondary mb-3">
+        <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+
+    <div class="form-container">
+        <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+                <h4 class="mb-1"><i class="bi bi-mortarboard"></i> {{ aluno.nome }}</h4>
+                <span class="badge-status badge-{{ aluno.status }}">{{ aluno.status | replace('_', ' ') | title }}</span>
+                {% if aluno.certificado %}
+                <span class="badge bg-success ms-1"><i class="bi bi-award"></i> Certificado Emitido</span>
+                {% endif %}
+            </div>
+            <div class="d-flex gap-2">
+                {% if current_user.cargo in ['admin', 'marketing'] %}
+                <a href="{{ url_for('academy_editar', id=aluno.id) }}" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i> Editar</a>
+                <form method="POST" action="{{ url_for('academy_certificado', id=aluno.id) }}" class="d-inline">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    {% if aluno.certificado %}
+                    <button type="submit" class="btn btn-sm btn-outline-warning" onclick="return confirm('Remover certificado?')"><i class="bi bi-x-circle"></i> Remover Certificado</button>
+                    {% else %}
+                    <button type="submit" class="btn btn-sm btn-success"><i class="bi bi-award"></i> Emitir Certificado</button>
+                    {% endif %}
+                </form>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <h6 class="text-muted text-uppercase small">Dados Pessoais</h6>
+                <table class="table table-sm">
+                    <tr><td class="text-muted" style="width:130px">Email</td><td>{{ aluno.email or '-' }}</td></tr>
+                    <tr><td class="text-muted">Telefone</td><td>{{ aluno.telefone or '-' }}</td></tr>
+                    <tr><td class="text-muted">Cliente</td><td>{{ aluno.cliente.razao_social if aluno.cliente else '-' }}</td></tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <h6 class="text-muted text-uppercase small">Dados do Curso</h6>
+                <table class="table table-sm">
+                    <tr><td class="text-muted" style="width:130px">Curso</td><td>{{ aluno.curso }}</td></tr>
+                    <tr><td class="text-muted">Data Inicio</td><td>{{ aluno.data_inicio.strftime('%d/%m/%Y') if aluno.data_inicio else '-' }}</td></tr>
+                    <tr><td class="text-muted">Data Conclusao</td><td>{{ aluno.data_conclusao.strftime('%d/%m/%Y') if aluno.data_conclusao else '-' }}</td></tr>
+                    <tr><td class="text-muted">Certificado Em</td><td>{{ aluno.certificado_em.strftime('%d/%m/%Y') if aluno.certificado_em else '-' }}</td></tr>
+                </table>
+            </div>
+            {% if aluno.observacoes %}
+            <div class="col-12">
+                <h6 class="text-muted text-uppercase small">Observacoes</h6>
+                <p>{{ aluno.observacoes }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <hr>
+        <div class="text-muted small">
+            Cadastrado em {{ aluno.criado_em.strftime('%d/%m/%Y %H:%M') }}
+            {% if aluno.atualizado_em %}
+            | Atualizado em {{ aluno.atualizado_em.strftime('%d/%m/%Y %H:%M') }}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

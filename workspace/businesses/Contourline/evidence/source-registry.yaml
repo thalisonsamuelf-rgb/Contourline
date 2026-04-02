@@ -1,0 +1,20 @@
+metadata:
+  business_slug: egio_roberto
+  generated_at: '2026-03-14'
+  generated_by: ETL-Deep-Pass
+sources:
+- path: apps/aiox-imersao/recursos/perfis/egio-roberto.md
+  lines: 87
+  source: perfil
+  status: EXTRACTED
+- path: apps/aiox-imersao/recursos/formulario/Egio Roberto/formulario.md
+  lines: 18
+  source: formulario
+  status: EXTRACTED
+- path: apps/aiox-imersao/recursos/Calls vendas/Egio - Thalison/transcricao.md
+  lines: 145
+  source: call_vendas
+  status: EXTRACTED
+- path: N/A
+  source: instalacao
+  status: NONE — nao disponivel

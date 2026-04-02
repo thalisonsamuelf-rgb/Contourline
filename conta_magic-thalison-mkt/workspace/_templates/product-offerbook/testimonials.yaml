@@ -1,0 +1,566 @@
+---
+# TESTIMONIALS.YAML - Robust testimonials with story arcs
+# Purpose: Structure testimonials for maximum conversion power
+# Guardian: CMO / Customer Success / Head of Copy
+# Timing: FILL NOW with initial testimonials + UPDATE CONSTANTLY (new testimonials = new social proof)
+
+metadata:
+  version: "1.0"
+  product_name: "YOUR_PRODUCT_NAME_HERE"
+  status: "INCOMPLETE"
+  last_updated: "FILL_THIS"
+  owner: "CMO or Customer Success"
+  notes: |
+    This file is about DEEP testimonials - not just "great course!"
+    Each testimonial should:
+    - Show transformation (before → after)
+    - Be specific (numbers, timelines)
+    - Include emotional journey
+    - Be authentic (not marketing speak)
+    - Be usable in multiple formats (landing page, ads, email, etc)
+# ============================================================================
+# SECTION 1: TESTIMONIAL STRATEGY
+# ============================================================================
+testimonial_strategy:
+  # How to collect and use testimonials
+  collection_method: |
+    Example: "After students get results (90+ days), we ask:
+    'What was the biggest transformation? Can we feature your story?'
+    We record video + transcript + specific metrics."
+
+    Your method:
+    [HOW DO YOU COLLECT TESTIMONIALS?]
+  verification_process: |
+    Example: "Every testimonial is verified:
+    - Check LinkedIn profile exists
+    - Verify student actually took course
+    - Confirm numbers (revenue, time saved)
+    - Get permission to use publicly"
+
+    Your process:
+    [HOW DO YOU VERIFY AUTHENTICITY?]
+  usage_across_channels:
+    landing_page: "Best testimonial per awareness level + metrics"
+    email_campaigns: "Short form (1-2 sentences) + link to video"
+    ads: "Quote + name + result + video thumbnail"
+    social_proof: "Video or rotating quotes"
+    sales_calls: "Have 3-5 relevant testimonials ready to reference"
+  testimonial_types_needed:
+    - "By awareness level (Level 1 prospects resonate with Level 1 testimonials)"
+    - "By archetype (small business, agency, solo entrepreneur, etc)"
+    - "By result type (revenue, time, confidence, systems, etc)"
+    - "By transformation timeline (30-day, 90-day, 6-month)"
+# ============================================================================
+# SECTION 2: TESTIMONIAL STRUCTURE (The Framework)
+# ============================================================================
+testimonial_structure:
+  # Every strong testimonial needs these elements
+  element_1_the_person:
+    description: "Who is this person?"
+    includes:
+      - name: "First + Last"
+      - title: "Their job/role"
+      - company: "What business they run"
+      - linkedin: "Profile link (for verification)"
+    purpose: "Credibility - shows this is a real person"
+  element_2_the_before:
+    description: "What was their situation BEFORE the product?"
+    specificity: "Not vague, not generic"
+    bad_example: "I was struggling with my business"
+    good_example: "I was working 70 hours a week, making $80K/year, and felt like I was missing something"
+    purpose: "Prospect sees themselves in the 'before'"
+  element_3_the_struggle:
+    description: "What was the emotional pain?"
+    specificity: "Get to the FEELING, not just the situation"
+    bad_example: "I needed help with marketing"
+    good_example: "I felt like an imposter. I had great ideas but couldn't execute. Started every day overwhelmed."
+    purpose: "Emotional connection - prospect feels SEEN"
+  element_4_the_skepticism:
+    description: "What were they worried about?"
+    specificity: "The real objection they had"
+    bad_example: "I wasn't sure it would work"
+    good_example: "I'd done 5 other courses that promised results but delivered theory. I was skeptical another course would be different."
+    purpose: "Removes objection - 'me too' effect"
+  element_5_what_changed:
+    description: "What was different about THIS product?"
+    specificity: "Specific framework, specific insight, specific change"
+    bad_example: "The course was really good"
+    good_example: "The [Framework Name] gave me the system I was missing. For the first time, I wasn't guessing."
+    purpose: "Shows unique mechanism value"
+  element_6_the_transformation:
+    description: "What changed in their business/life?"
+    specificity: "Measurable + timeline + emotional state"
+    bad_example: "I got better results"
+    good_example: "In 90 days, revenue went from $80K to $240K. More important: I went from 70-hour weeks to 35 hours. I felt in control for the first time."
+    purpose: "Proof of transformation"
+  element_7_the_ripple:
+    description: "What else changed because of the transformation?"
+    specificity: "Secondary benefits"
+    bad_example: "Everything got better"
+    good_example: "Family time increased. I could finally help my kids with homework. My spouse said she got the real me back. Business growth was nice, but that was the real win."
+    purpose: "Deep trust - shows holistic impact"
+  element_8_the_recommendation:
+    description: "Would they recommend it? To who?"
+    specificity: "Specific type of person, specific reason"
+    bad_example: "I recommend this to everyone"
+    good_example: "If you're a service provider doing $100K-$500K annual revenue and working 60+ hours, this is THE course. Don't waste time on something else."
+    purpose: "Shows it's not for everyone (makes it more credible)"
+# ============================================================================
+# SECTION 3: TESTIMONIALS BY AWARENESS LEVEL
+# ============================================================================
+testimonials_by_awareness_level:
+  # Different testimonials resonate with different awareness levels
+  level_1_unaware:
+    # These people don't know they have a problem
+    # Need testimonials that REVEAL the problem
+    description: "Testimonials showing 'I didn't know this was possible'"
+    testimonial_1:
+      person:
+        name: "[EXAMPLE: Carlos Silva]"
+        title: "[EXAMPLE: Digital Agency Owner]"
+        company: "[EXAMPLE: Creative Agency, 5 employees]"
+        before_revenue: "$150K/year"
+        after_revenue: "$450K/year"
+        timeline: "12 months"
+      story: |
+        BEFORE: "I thought 70-hour weeks were normal for business owners.
+        Everyone I knew worked like that. I assumed it was 'just how it is.'"
+
+        STRUGGLE: "Burned out constantly. Missed family events.
+        Health was suffering. But I thought that was the price of ambition."
+
+        SKEPTICISM: "I'd never heard of business SYSTEMS.
+        Thought the answer was just 'work harder' or 'hire more people.'"
+
+        WHAT_CHANGED: "The course showed me that systems let you work
+        LESS and earn MORE. Completely flipped my worldview."
+
+        TRANSFORMATION: "Within 12 months, revenue 3x'd AND I'm working
+        35 hours/week instead of 70. Not lucky - systematic."
+
+        RIPPLE: "My marriage improved. I'm present with my kids.
+        But honestly, the business growth shocked me too."
+
+        RECOMMENDATION: "If you're running a business and constantly
+        overwhelmed, you need to see this. This isn't normal."
+      use_in: "Early-stage awareness campaigns, blog content, testimonial page"
+  level_2_problem_aware:
+    # These people know they have a problem
+    # Need testimonials showing 'I found the solution'
+    description: "Testimonials showing 'I was looking for answers and found them here'"
+    testimonial_1:
+      person:
+        name: "[EXAMPLE: Marina Costa]"
+        title: "[EXAMPLE: Coach, 1:1 model]"
+        company: "[EXAMPLE: Executive Coach]"
+        before_revenue: "$120K/year"
+        after_revenue: "$300K/year"
+        timeline: "6 months"
+      story: |
+        BEFORE: "I was making decent money but it was ALL 1:1 time.
+        If I took a vacation, I made zero. I knew I needed to scale but had no idea how."
+
+        STRUGGLE: "I searched everywhere. Read books, took courses.
+        Everyone said 'group coaching' but that felt impersonal.
+        I wanted to grow without sacrificing quality."
+
+        SKEPTICISM: "The course promised a 'systems approach' to scaling.
+        I'd heard that before. Skeptical it would actually work."
+
+        WHAT_CHANGED: "The [Offer/Product Name] showed me EXACTLY
+        how to go from 1:1 to hybrid model. Not theory - actual steps."
+
+        TRANSFORMATION: "6 months later, earning $300K with 40% less time.
+        Created group program that scaled my 1:1 practice."
+
+        RIPPLE: "Students in my group program got better results than 1:1.
+        Turns out group dynamic created accountability. Win-win."
+
+        RECOMMENDATION: "If you're a coach/consultant getting killed
+        by 1:1 model, this is the answer."
+      use_in: "Mid-funnel content, email sequences, targeted ads"
+  level_3_solution_aware:
+    # These people know solutions exist
+    # Need testimonials showing 'your solution is DIFFERENT'
+    description: "Testimonials showing 'tried other solutions, this one actually works'"
+    testimonial_1:
+      person:
+        name: "[EXAMPLE: Roberto Ferreira]"
+        title: "[EXAMPLE: CEO, SaaS Company]"
+        company: "[EXAMPLE: B2B SaaS, $2M ARR]"
+        before_revenue: "$1.5M/year"
+        after_revenue: "$3.5M/year"
+        timeline: "9 months"
+      story: |
+        BEFORE: "Running $1.5M SaaS company. Profitable but plateaued.
+        Knew I needed to scale but couldn't figure out the next level."
+
+        STRUGGLE: "I'd done 3 other scaling programs. All promised results.
+        All were 80% theory, 20% application. I was frustrated."
+
+        SKEPTICISM: "When I found [Product Name], I was skeptical.
+        Every scaling program claims to have the answer.
+        Most are just packaging the same stuff differently."
+
+        WHAT_CHANGED: "This was DIFFERENT. Day one, it was clear:
+        systems-first, not theory-first. They show you the exact frameworks
+        used in real $10M+ SaaS companies."
+
+        TRANSFORMATION: "9 months in, hit $3.5M ARR. More important:
+        I have systems in place that don't depend on me. This will scale to $10M without me working more."
+
+        RIPPLE: "Brought the frameworks into my entire team.
+        Execution got 10x faster. Quality improved."
+
+        RECOMMENDATION: "If you've done other programs and been disappointed,
+        this is the one. Execution-first, not motivation-first."
+      use_in: "Sales page, high-ticket ads, case studies"
+  level_4_product_aware:
+    # They know your product exists
+    # Need testimonials showing 'this is worth the investment'
+    description: "Testimonials showing 'best investment I made'"
+    testimonial_1:
+      person:
+        name: "[EXAMPLE: Fernanda Alves]"
+        title: "[EXAMPLE: Entrepreneur, Digital Products]"
+        company: "[EXAMPLE: Digital Product Business]"
+        before_revenue: "$500K/year"
+        after_revenue: "$1.5M/year"
+        timeline: "6 months"
+      story: |
+        BEFORE: "Making $500K/year with digital products but felt stuck.
+        Knew [Product Name] existed. Wasn't sure if $X was worth it."
+
+        STRUGGLE: "Price tag was high. I had to decide: invest or keep
+        doing what I'm doing. Fear of wasting money."
+
+        SKEPTICISM: "I checked reviews. Looked at testimonials.
+        Asked myself: Is this really worth 3x the cost of other courses?"
+
+        WHAT_CHANGED: "I bit the bullet and joined. First week: the
+        [Framework] alone paid for the course. Within month, revenue systems were 10x better."
+
+        TRANSFORMATION: "6 months later, $1.5M ARR. Cost of course?
+        Made it back in first 2 weeks. ROI is insane."
+
+        RIPPLE: "Built an asset instead of just a business.
+        Can now sell digital products on autopilot."
+
+        RECOMMENDATION: "If you're debating whether the investment is worth it:
+        it is. Not even close. Best money I've spent on my business."
+      use_in: "Final objection handling, email sequences, comparison pages"
+  level_5_most_aware:
+    # Ready to buy, just need final push
+    # Need testimonials showing 'you won't regret this'
+    description: "Testimonials showing 'I'm so glad I did this'"
+    testimonial_1:
+      person:
+        name: "[EXAMPLE: Paulo Mendes]"
+        title: "[EXAMPLE: Founder, Consulting Firm]"
+        company: "[EXAMPLE: Strategy Consulting]"
+        before_revenue: "$800K/year"
+        after_revenue: "$2M/year"
+        timeline: "12 months"
+      story: |
+        BEFORE: "I was ready to invest in scaling my consulting firm.
+        Looked at 3 options. [Product Name] felt right."
+
+        STRUGGLE: "Decision paralysis. High ticket price. Wanted guarantees."
+
+        SKEPTICISM: "None. I was just hesitant to pull trigger."
+
+        WHAT_CHANGED: "Joined. Immediately regretted NOT doing it sooner.
+        Should have done this years ago."
+
+        TRANSFORMATION: "$2M in year one. But real transformation:
+        Built a scalable business instead of a self-employed job."
+
+        RIPPLE: "Now I can take 8 weeks off and business runs.
+        That never happened before. Built actual freedom."
+
+        RECOMMENDATION: "Stop debating. Join. You know you need this.
+        Just do it."
+      use_in: "Final-step sales pages, thank-you pages, email closes"
+# ============================================================================
+# SECTION 4: TESTIMONIALS BY RESULT TYPE
+# ============================================================================
+testimonials_by_result:
+  # Different students care about different outcomes
+  revenue_growth:
+    description: "Testimonials focused on revenue increase"
+    example_1: |
+      PERSON: Sarah, E-commerce Owner
+      BEFORE: "$200K annual revenue, $30K monthly revenue at best"
+      AFTER: "$1.2M annual revenue, $100K monthly"
+      TIMELINE: "18 months"
+
+      STORY: "I was doing OK with my e-commerce store but felt like I was
+      leaving money on the table. No systems, just reactive. Learned the
+      [Framework] and systematized everything. Revenue multiplied."
+  time_freedom:
+    description: "Testimonials focused on time saved"
+    example_1: |
+      PERSON: Marcus, Agency Owner
+      BEFORE: "70 hours/week, stuck in delivery"
+      AFTER: "30 hours/week, focused on strategy"
+      TIMELINE: "6 months"
+
+      STORY: "Systems freed up my time from delivery to strategy.
+      Now I have actual business leverage. Not just a busy service provider."
+  confidence:
+    description: "Testimonials focused on emotional transformation"
+    example_1: |
+      PERSON: Lucia, Entrepreneur, Imposter Syndrome
+      BEFORE: "Felt like a fraud despite $500K revenue"
+      AFTER: "Confident CEO who knows exactly what she's doing"
+      TIMELINE: "90 days"
+
+      STORY: "I made money but felt like an imposter. The [Framework]
+      gave me confidence. Finally feel like I'm running a real business, not winging it."
+  scaling:
+    description: "Testimonials focused on business scaling"
+    example_1: |
+      PERSON: Viktor, Founder, Ready to Scale
+      BEFORE: "$1M revenue, hitting growth ceiling"
+      AFTER: "$3M revenue, systems ready for $10M"
+      TIMELINE: "12 months"
+
+      STORY: "Knew I needed systems to get past $1M. Learned exactly what
+      systems that are proven to scale to $10M+. Now implementing with confidence."
+  systems:
+    description: "Testimonials focused on business as a system"
+    example_1: |
+      PERSON: Amanda, Building Business Asset
+      BEFORE: "Self-employed contractor, dependent on me"
+      AFTER: "Business owner with business that works without me"
+      TIMELINE: "18 months"
+
+      STORY: "Realized I built a job, not a business. This framework
+      taught me to build actual systems. Now I have a $2M asset I can sell or scale."
+# ============================================================================
+# SECTION 5: VIDEO TESTIMONIAL SCRIPT
+# ============================================================================
+video_testimonial_format:
+  # How to structure a video testimonial for maximum impact
+  purpose: |
+    Video testimonials convert 2-3x better than text.
+    Script provides structure to keep testimonial on track.
+    Should feel conversational, not scripted.
+  duration: "2-3 minutes total (ideal for landing pages)"
+  structure:
+    intro_10_seconds:
+      prompt: "Who are you and what do you do?"
+      example: "Hey, I'm Sarah. I run an e-commerce business doing about $200K/year."
+      guidelines: "Name, role, business. Keep it simple."
+    before_20_seconds:
+      prompt: "What was your situation BEFORE this product? Be specific about the pain."
+      example: "I was working 60+ hours a week. Revenue plateaued. Knew I was missing something but didn't know what. Felt like I was just reacting, not leading."
+      guidelines: "Paint the before picture. Let prospect see themselves."
+    skepticism_15_seconds:
+      prompt: "What was your concern about trying this? What almost stopped you?"
+      example: "Honestly, I'd done courses before. Didn't want to waste money on another program that teaches theory without application."
+      guidelines: "Address real objections. This is powerful."
+    aha_moment_20_seconds:
+      prompt: "What was the 'aha' moment? When did you realize this was different?"
+      example: "First week, they showed me the [Framework]. I realized I'd been guessing about everything. This gave me actual system. Changed everything."
+      guidelines: "Specific framework, specific insight. Not vague praise."
+    transformation_30_seconds:
+      prompt: "What's different now? Give numbers + timeline + emotional state."
+      example: "6 months later, revenue 3x'd. But the real win: I'm working 30 hours instead of 60. I feel in control. I actually enjoy my business again."
+      guidelines: "Numbers + timeline + how it FEELS. Both matter."
+    recommendation_15_seconds:
+      prompt: "Would you recommend this to others? Who and why?"
+      example: "If you're a service provider or digital product creator making $100K-$500K and stuck, YES. This is the missing piece. Don't wait."
+      guidelines: "Specific recommendation. Not 'everyone should do this.'"
+  filming_tips: |
+    - Natural lighting (don't use phone flashlight)
+    - Look at camera
+    - Speak normally (not like you're reading)
+    - Background should be professional but not sterile
+    - Audio matters more than video quality
+    - One take is fine if natural
+# ============================================================================
+# SECTION 6: WRITTEN TESTIMONIAL FORMATS
+# ============================================================================
+written_testimonial_formats:
+  # Different lengths for different uses
+  format_1_short_form:
+    use_in: "Ads, email subject lines, social media"
+    max_length: "1-2 sentences"
+    structure: "Result + emotional state"
+    example: |
+      "Revenue went from $80K to $240K in 90 days. But more important:
+      I went from burned out to actually enjoying my business."
+      — João Silva, Digital Agency Owner
+  format_2_medium_form:
+    use_in: "Landing page, email body, testimonial section"
+    max_length: "3-4 paragraphs"
+    structure: "Before + problem + skepticism + transformation + recommendation"
+    example: |
+      "I was stuck at $500K/year with my digital product business.
+      Knew I needed systems but all the courses felt generic.
+
+      The [Framework] gave me the exact system I was missing.
+      Within 6 months, hit $1.5M. More important: I built a real business
+      instead of just trading time for money.
+
+      If you're making $100K-$1M and wondering how to scale,
+      this is the answer. Best investment I've made."
+      — Marina Costa, Digital Product Entrepreneur
+  format_3_long_form:
+    use_in: "Case study page, detailed testimonial, email sequence"
+    max_length: "full story with before/after breakdown"
+    structure: "Full 8-element structure (see Section 2)"
+    example: "[Full testimonial from Section 2]"
+  format_4_highlight_quote:
+    use_in: "Sales page callout boxes, ads"
+    max_length: "One powerful sentence"
+    structure: "Most powerful single statement from full testimonial"
+    example: |
+      ❝ This gave me the system I was missing.
+      For the first time, I wasn't guessing. ❞
+# ============================================================================
+# SECTION 7: TESTIMONIALS TO COLLECT (CHECKLIST)
+# ============================================================================
+testimonial_collection_checklist:
+  # What types of testimonials do you need?
+  by_awareness_level:
+    - "[ ] Level 1 testimonial (didn't know problem existed)"
+    - "[ ] Level 2 testimonial (was looking for solution)"
+    - "[ ] Level 3 testimonial (knew solutions existed, this was best)"
+    - "[ ] Level 4 testimonial (knew your product, was debating price)"
+    - "[ ] Level 5 testimonial (ready to buy, final confirmation)"
+  by_result_type:
+    - "[ ] Revenue growth testimonial (biggest number)"
+    - "[ ] Time freedom testimonial (biggest time savings)"
+    - "[ ] Confidence testimonial (emotional transformation)"
+    - "[ ] Scaling testimonial (built for growth)"
+    - "[ ] Systems testimonial (business transformation)"
+  by_archetype:
+    - "[ ] Testimonial from [Archetype 1]"
+    - "[ ] Testimonial from [Archetype 2]"
+    - "[ ] Testimonial from [Archetype 3]"
+  by_format:
+    - "[ ] Video testimonials (at least 3)"
+    - "[ ] Long-form written (at least 3)"
+    - "[ ] Medium-form (at least 5)"
+    - "[ ] Short-form quotes (at least 10)"
+  total_target: "20+ strong testimonials (for different uses + rotation)"
+# ============================================================================
+# SECTION 7B: THEMED TESTIMONIAL QUOTES (Extended from System B)
+# ============================================================================
+themed_testimonial_quotes:
+  # Quick-reference testimonial quotes organized by emotional theme
+  # These come from proof.yaml (belonging/quality/transformation themes)
+  belonging_theme:
+    description: "Quotes about sense of belonging, tribe, community"
+    quote_1: "Sensação de pertencimento absurdo"
+    quote_2: "Como se tivesse encontrado minha tribo"
+    quote_3: "Estar no lugar certo na hora certa"
+    significance: "Emotional transformation is real"
+    status: "COMPLETE"
+  quality_theme:
+    description: "Quotes about quality of content/teaching/system"
+    quote_1: "Transparência e profundidade do Alan"
+    quote_2: "Seriedade e compromisso genuíno"
+    quote_3: "Entregam muito mais do que prometem"
+    significance: "Not a scam, delivers on promises"
+    status: "COMPLETE"
+  transformation_theme:
+    description: "Quotes about actual transformation/results"
+    quote_1: "Segundo cérebro foi fora de série"
+    quote_2: "PS destrava o que você está travado"
+    quote_3: "Entrei pra aprender IA, aprendi sobre mim"
+    significance: "Goes beyond technical learning"
+    status: "COMPLETE"
+# ============================================================================
+# SECTION 8: TESTIMONIALS DATABASE (FILL IN)
+# ============================================================================
+testimonials_database:
+  # Actual testimonials you'll collect
+  testimonial_1:
+    person:
+      name: "[NAME]"
+      title: "[JOB TITLE]"
+      company: "[COMPANY/BUSINESS]"
+      linkedin: "[LINKEDIN URL]"
+    metrics:
+      before_state: "[BEFORE SITUATION]"
+      after_state: "[AFTER SITUATION]"
+      timeline: "[HOW LONG]"
+      quantifiable_result: "[NUMBER]"
+    story: "[FULL TESTIMONIAL STORY]"
+    video:
+      available: "YES / NO"
+      url: "[VIMEO / YOUTUBE URL]"
+      duration: "[VIDEO LENGTH]"
+    usage:
+      - "[WHERE IS THIS USED - landing page, email, etc]"
+      - "[WHERE ELSE]"
+    formats_available:
+      - "[ ] Full video testimonial"
+      - "[ ] Long-form text (4 paragraphs)"
+      - "[ ] Medium-form text (2 paragraphs)"
+      - "[ ] Short-form quote (1 sentence)"
+    permission:
+      - "[ ] Permission to use name and face?"
+      - "[ ] Permission to use company name?"
+      - "[ ] Permission to use numbers/results?"
+      - "[ ] Permission for all channels (landing, ads, email)?"
+    rating: "⭐⭐⭐⭐⭐"
+    reason_powerful: "[WHY THIS TESTIMONIAL WORKS SO WELL]"
+    # Repeat for 20+ testimonials
+# ============================================================================
+# CHECKLIST: TESTIMONIALS COMPLETENESS
+# ============================================================================
+completion_checklist:
+  - "[ ] Testimonial strategy defined (collection + verification)"
+  - "[ ] Testimonial structure documented (8 elements)"
+  - "[ ] Testimonials by awareness level drafted (5 examples)"
+  - "[ ] Testimonials by result type drafted (5 examples)"
+  - "[ ] Video testimonial script framework created"
+  - "[ ] Written formats documented (4 formats)"
+  - "[ ] Collection checklist filled (target 20+ testimonials)"
+  - "[ ] Testimonials database started (at least 3 real testimonials)"
+  - "[ ] All testimonials verified and permitted"
+  - "[ ] Testimonials organized by: awareness level, archetype, result"
+  - "[ ] Each testimonial in multiple formats (video + long + medium + short)"
+  - "[ ] Testimonials rotated regularly (not same ones forever)"
+# ============================================================================
+# TEMPLATE NOTES FOR USERS
+# ============================================================================
+template_notes: |
+  This file is CRITICAL for conversion.
+  Testimonials convert better than any other form of proof.
+
+  KEY PRINCIPLES:
+  1. Specific beats generic ("3x revenue in 90 days" > "great results")
+  2. Story beats stats (transformation arc > just numbers)
+  3. Emotional beats logical (how they FELT > what they earned)
+  4. Real beats perfect ("I was skeptical" > "I always believed")
+  5. Video beats text (2-3x conversion rate)
+
+  DO:
+  ✅ Show transformation (before → after)
+  ✅ Include skepticism (shows you're real)
+  ✅ Be specific (numbers, timelines, details)
+  ✅ Show emotion (how they FELT changes)
+  ✅ Vary testimonials (by awareness level, result, archetype)
+  ✅ Rotate regularly (don't use same 3 forever)
+  ✅ Get video (even on phone = better than text)
+
+  DON'T:
+  ❌ Generic praise ("This course is amazing!")
+  ❌ Unverifiable claims ("Made millions!")
+  ❌ Marketing speak (testimonials should sound like people, not ads)
+  ❌ Same testimonials everywhere (match to audience level)
+  ❌ Old testimonials (fresh testimonials convert better)
+
+  MOST POWERFUL TESTIMONIALS:
+  - Show the struggle (not just the result)
+  - Include skepticism (they almost didn't buy)
+  - Specific numbers (not vague)
+  - Emotional arc (how they felt before/after)
+  - Video format (1.5-3 min is perfect)
+
+  Update weekly: New testimonials = new social proof = continued conversion lift.
