@@ -1,77 +1,103 @@
 "use client"
 
-import { Suspense, useRef } from "react"
+import { useState, useRef, useCallback, useEffect } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { useRouter } from "next/navigation"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   FileText,
   Download,
   FolderOpen,
   ArrowRight,
-  Building2,
-  Megaphone,
-  TrendingUp,
-  GraduationCap,
   Cpu,
   ChevronLeft,
   ChevronRight,
   Clock,
-  Sparkles,
-  type LucideIcon,
+  Search,
+  LayoutGrid,
+  List,
 } from "lucide-react"
-import { SearchBar } from "@/components/partnerzone/search-bar"
 import { MaterialGrid } from "@/components/partnerzone/material-grid"
+import { cn } from "@/lib/utils"
+import { formatFileSize } from "@/lib/partnerzone/types"
+import Image from "next/image"
 import type { Material, Category } from "@/lib/partnerzone/types"
 
-const iconMap: Record<string, LucideIcon> = {
-  Building2,
-  Megaphone,
-  TrendingUp,
-  GraduationCap,
+const equipmentImages: Record<string, string> = {
+  "crystal 3d": "/equipamentos/Crystal 3D.png",
+  "enygma": "/equipamentos/enygma.png",
+  "focuskin": "/equipamentos/Focuskin.png",
+  "hipro": "/equipamentos/Hipro.png",
+  "hipro med": "/equipamentos/Hipro med.png",
+  "hipro hof": "/equipamentos/HIPRO HOF.png",
+  "hipro prime": "/equipamentos/Hipro Prime Edition.png",
+  "hipro prime edition": "/equipamentos/Hipro Prime Edition.png",
+  "hive pro": "/equipamentos/Hive pro.png",
+  "iconyc": "/equipamentos/Iconyc.png",
+  "inkie laser": "/equipamentos/Inkie Laser.png",
+  "inkie light": "/equipamentos/inkie light.png",
+  "multishape": "/equipamentos/multishape.png",
+  "s30": "/equipamentos/S30.png",
+  "m30": "/equipamentos/m30.png",
+  "supreme pro": "/equipamentos/Supreme Pro.png",
+  "bhs 156 full": "/equipamentos/bhs 156full.png",
+  "bhs 156full": "/equipamentos/bhs 156full.png",
+  "bhs 156 full - criofrequência": "/equipamentos/bhs 156full.png",
+  "bhs 156 full enygma": "/equipamentos/bhs 156full.png",
+  "fusion 3": "/equipamentos/fusion 3.png",
+  "raytrace": "/equipamentos/raytrace.png",
+  "reverso": "/equipamentos/Reverso.png",
+  "creator 600": "/equipamentos/Creator 600.png",
+  "ultralift": "/equipamentos/UltraLift.png",
+  "unyque pro": "/equipamentos/Unyque Pro.png",
+  "unyque pro enygma": "/equipamentos/Unyque Pro Enygma.png",
+  "x-tonus": "/equipamentos/X-Tonus.png",
+  "xtonus": "/equipamentos/xtonus.png",
+  "visbody": "/equipamentos/Visbody.png",
+  "lumenis": "/equipamentos/Lumenis.png",
+  "alpha": "/equipamentos/Alplha.png",
+  "alplha": "/equipamentos/Alplha.png",
+  "folix": "/equipamentos/Folix.png",
+  "nuera tight": "/equipamentos/Nuera tight.png",
+  "splendor x": "/equipamentos/splendor x.png",
+  "stellar": "/equipamentos/stellar.png",
+  "trilift": "/equipamentos/trilift.png",
+  "body health portugal": "/equipamentos/Contourline AIOX.png",
+  "bodysculpt": "/equipamentos/Contourline AIOX.png",
+  "eurofeedback": "/equipamentos/Contourline AIOX.png",
 }
 
-const categoryGradients = [
-  "from-blue-500/20 to-cyan-500/10",
-  "from-purple-500/20 to-pink-500/10",
-  "from-emerald-500/20 to-teal-500/10",
-  "from-amber-500/20 to-orange-500/10",
-  "from-rose-500/20 to-red-500/10",
-  "from-indigo-500/20 to-violet-500/10",
-]
-
-const categoryIconColors = [
-  "text-blue-400",
-  "text-purple-400",
-  "text-emerald-400",
-  "text-amber-400",
-  "text-rose-400",
-  "text-indigo-400",
-]
-
-const categoryBorderColors = [
-  "border-blue-500/20 hover:border-blue-500/40",
-  "border-purple-500/20 hover:border-purple-500/40",
-  "border-emerald-500/20 hover:border-emerald-500/40",
-  "border-amber-500/20 hover:border-amber-500/40",
-  "border-rose-500/20 hover:border-rose-500/40",
-  "border-indigo-500/20 hover:border-indigo-500/40",
-]
+function getEquipmentImage(name: string): string | null {
+  const lower = name.toLowerCase().trim()
+  if (equipmentImages[lower]) return equipmentImages[lower]
+  // fuzzy match: check if any key is contained in the name or vice versa
+  for (const [key, val] of Object.entries(equipmentImages)) {
+    if (lower.includes(key) || key.includes(lower)) return val
+  }
+  return null
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.08 },
   },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 16 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring" as const, stiffness: 200, damping: 20 },
+    transition: { type: "spring" as const, stiffness: 260, damping: 20 },
   },
+}
+
+interface AutocompleteResult {
+  categories: Category[]
+  materials: Material[]
+  totalMaterials: number
 }
 
 interface DashboardClientProps {
@@ -91,7 +117,95 @@ export function DashboardClient({
   categories,
   stats,
 }: DashboardClientProps) {
+  const router = useRouter()
   const materialsScrollRef = useRef<HTMLDivElement>(null)
+  const searchInputRef = useRef<HTMLInputElement>(null)
+  const autocompleteRef = useRef<HTMLDivElement>(null)
+
+  const [searchQuery, setSearchQuery] = useState("")
+  const [autocompleteResults, setAutocompleteResults] = useState<AutocompleteResult | null>(null)
+  const [showAutocomplete, setShowAutocomplete] = useState(false)
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
+  const debounceRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Close autocomplete on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        autocompleteRef.current &&
+        !autocompleteRef.current.contains(e.target as Node) &&
+        searchInputRef.current &&
+        !searchInputRef.current.contains(e.target as Node)
+      ) {
+        setShowAutocomplete(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  // Autocomplete search with debounce
+  const handleSearchInput = useCallback(
+    (value: string) => {
+      setSearchQuery(value)
+
+      if (debounceRef.current) clearTimeout(debounceRef.current)
+
+      if (value.trim().length < 2) {
+        setAutocompleteResults(null)
+        setShowAutocomplete(false)
+        return
+      }
+
+      debounceRef.current = setTimeout(() => {
+        const query = value.trim().toLowerCase()
+
+        // Filter categories matching the query
+        const matchedCategories = categories.filter(
+          (c) =>
+            c.name.toLowerCase().includes(query) ||
+            (c.description && c.description.toLowerCase().includes(query))
+        )
+
+        // Filter materials matching the query (from popular + recent combined)
+        const allMaterials = [...popularMaterials, ...recentMaterials]
+        const seen = new Set<string>()
+        const uniqueMaterials: Material[] = []
+        for (const m of allMaterials) {
+          if (!seen.has(m.id)) {
+            seen.add(m.id)
+            uniqueMaterials.push(m)
+          }
+        }
+
+        const matchedMaterials = uniqueMaterials.filter(
+          (m) =>
+            m.title.toLowerCase().includes(query) ||
+            (m.category?.name && m.category.name.toLowerCase().includes(query)) ||
+            (m.description && m.description.toLowerCase().includes(query))
+        )
+
+        setAutocompleteResults({
+          categories: matchedCategories.slice(0, 4),
+          materials: matchedMaterials.slice(0, 5),
+          totalMaterials: matchedMaterials.length,
+        })
+        setShowAutocomplete(true)
+      }, 300)
+    },
+    [categories, popularMaterials, recentMaterials]
+  )
+
+  const handleSearchSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault()
+      if (searchQuery.trim()) {
+        setShowAutocomplete(false)
+        router.push(`/partnerzone/search?q=${encodeURIComponent(searchQuery.trim())}`)
+      }
+    },
+    [searchQuery, router]
+  )
 
   const scrollMaterials = (direction: "left" | "right") => {
     if (!materialsScrollRef.current) return
@@ -109,85 +223,194 @@ export function DashboardClient({
       animate="show"
       className="flex flex-col gap-8"
     >
-      {/* Hero Banner */}
-      <motion.div
-        variants={itemVariants}
-        className="relative overflow-hidden rounded-2xl border border-white/[0.06]"
-      >
-        {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/15 to-indigo-600/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
-
-        <div className="relative px-6 py-8 lg:px-8 lg:py-10">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            {/* Left content */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <Sparkles className="size-4 text-blue-400" />
-                <span className="text-[11px] uppercase tracking-[0.15em] font-semibold text-blue-400/80">
-                  Central de Materiais
-                </span>
-              </div>
-              <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-white">
-                Bem-vindo ao PartnerZone
-              </h1>
-              <p className="text-[14px] text-white/50 max-w-md leading-relaxed">
-                Acesse materiais institucionais, equipamentos e recursos da Contourline Diagnosticos.
-              </p>
-
-              {/* Search in banner */}
-              <div className="mt-2 max-w-lg">
-                <Suspense fallback={<div className="h-11 rounded-xl bg-white/[0.05] animate-pulse" />}>
-                  <SearchBar showFilters className="[&_input]:bg-white/[0.06] [&_input]:border-white/[0.08] [&_input]:text-white [&_input]:placeholder-white/30" />
-                </Suspense>
-              </div>
+      {/* Hero / Welcome Section */}
+      <motion.div variants={itemVariants} className="flex flex-col gap-6">
+        {/* Top row: avatar + welcome + stats */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center size-[60px] rounded-full bg-gradient-to-br from-blue-500 to-teal-500 text-white text-xl font-bold shrink-0">
+              CL
             </div>
-
-            {/* Stats pills */}
-            <div className="flex flex-wrap lg:flex-col gap-3">
-              {[
-                {
-                  icon: FileText,
-                  label: "Materiais",
-                  value: stats.totalMaterials,
-                  gradient: "from-blue-500/20 to-blue-600/10",
-                  iconColor: "text-blue-400",
-                  borderColor: "border-blue-500/20",
-                },
-                {
-                  icon: Download,
-                  label: "Downloads",
-                  value: stats.totalDownloads,
-                  gradient: "from-emerald-500/20 to-emerald-600/10",
-                  iconColor: "text-emerald-400",
-                  borderColor: "border-emerald-500/20",
-                },
-                {
-                  icon: FolderOpen,
-                  label: "Categorias",
-                  value: stats.totalCategories,
-                  gradient: "from-purple-500/20 to-purple-600/10",
-                  iconColor: "text-purple-400",
-                  borderColor: "border-purple-500/20",
-                },
-              ].map(({ icon: Icon, label, value, gradient, iconColor, borderColor }) => (
-                <motion.div
-                  key={label}
-                  whileHover={{ scale: 1.03 }}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl bg-gradient-to-r ${gradient} border ${borderColor} backdrop-blur-sm min-w-[180px]`}
-                >
-                  <div className={`flex items-center justify-center size-9 rounded-lg bg-white/[0.06] ${iconColor}`}>
-                    <Icon className="size-[18px]" />
-                  </div>
-                  <div>
-                    <p className="text-xl font-bold tabular-nums text-white">{value}</p>
-                    <p className="text-[10px] uppercase tracking-[0.12em] text-white/40 font-medium">{label}</p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="flex flex-col">
+              <span className="text-[13px] text-white/40">Bem-vindo ao</span>
+              <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-white">
+                PartnerZone
+              </h1>
             </div>
           </div>
+
+          {/* Stats pills */}
+          <div className="flex flex-wrap gap-3">
+            {[
+              {
+                icon: FileText,
+                label: "Materiais",
+                value: stats.totalMaterials,
+                color: "text-blue-400",
+              },
+              {
+                icon: FolderOpen,
+                label: "Categorias",
+                value: stats.totalCategories,
+                color: "text-purple-400",
+              },
+              {
+                icon: Download,
+                label: "Downloads",
+                value: stats.totalDownloads,
+                color: "text-emerald-400",
+              },
+            ].map(({ icon: Icon, label, value, color }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#0c1220] border border-white/[0.08] min-w-[150px]"
+              >
+                <Icon className={cn("size-4", color)} />
+                <span className="text-lg font-bold tabular-nums text-white">{value}</span>
+                <span className="text-[11px] text-white/40">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Search bar */}
+        <div className="relative">
+          <form onSubmit={handleSearchSubmit} className="flex items-center gap-2">
+            <div className="relative flex-1">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-white/30" />
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchQuery}
+                onChange={(e) => handleSearchInput(e.target.value)}
+                onFocus={() => {
+                  if (autocompleteResults && searchQuery.trim().length >= 2) {
+                    setShowAutocomplete(true)
+                  }
+                }}
+                placeholder="Buscar materiais..."
+                className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/25 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              />
+            </div>
+            <button
+              type="submit"
+              className="h-12 px-6 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-[13px] font-semibold transition-colors shrink-0"
+            >
+              Buscar
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode(viewMode === "grid" ? "list" : "grid")}
+              className="h-12 px-3 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/[0.15] transition-all shrink-0"
+            >
+              {viewMode === "grid" ? (
+                <List className="size-5" />
+              ) : (
+                <LayoutGrid className="size-5" />
+              )}
+            </button>
+          </form>
+
+          {/* Autocomplete dropdown */}
+          <AnimatePresence>
+            {showAutocomplete && autocompleteResults && (
+              <motion.div
+                ref={autocompleteRef}
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.15 }}
+                className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl bg-[#0f1729] border border-white/[0.1] shadow-2xl shadow-black/40 overflow-hidden max-h-[420px] overflow-y-auto"
+              >
+                {/* Equipment/Category results */}
+                {autocompleteResults.categories.length > 0 && (
+                  <div className="p-3">
+                    <p className="px-2 pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-white/30">
+                      Equipamentos
+                    </p>
+                    {autocompleteResults.categories.map((cat) => (
+                      <Link
+                        key={cat.id}
+                        href={`/partnerzone/categories/${cat.slug}`}
+                        onClick={() => setShowAutocomplete(false)}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition-colors"
+                      >
+                        <Cpu className="size-4 text-purple-400 shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[13px] text-white font-medium truncate">{cat.name}</p>
+                          {cat.description && (
+                            <p className="text-[11px] text-white/30 truncate">{cat.description}</p>
+                          )}
+                        </div>
+                        <ChevronRight className="size-3.5 text-white/20 shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* Separator */}
+                {autocompleteResults.categories.length > 0 && autocompleteResults.materials.length > 0 && (
+                  <div className="mx-3 h-px bg-white/[0.06]" />
+                )}
+
+                {/* Material results */}
+                {autocompleteResults.materials.length > 0 && (
+                  <div className="p-3">
+                    <p className="px-2 pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-white/30">
+                      Materiais ({autocompleteResults.totalMaterials})
+                    </p>
+                    {autocompleteResults.materials.map((material) => (
+                      <Link
+                        key={material.id}
+                        href={`/partnerzone/material/${material.id}`}
+                        onClick={() => setShowAutocomplete(false)}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition-colors"
+                      >
+                        <FileText className="size-4 text-blue-400 shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[13px] text-white font-medium truncate">{material.title}</p>
+                          <div className="flex items-center gap-2 mt-0.5">
+                            {material.category && (
+                              <span className="text-[10px] text-blue-400/60 font-medium">
+                                {material.category.name}
+                              </span>
+                            )}
+                            <span className="text-[10px] text-white/25">
+                              {formatFileSize(material.file_size)}
+                            </span>
+                          </div>
+                        </div>
+                        <ChevronRight className="size-3.5 text-white/20 shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {/* No results */}
+                {autocompleteResults.categories.length === 0 && autocompleteResults.materials.length === 0 && (
+                  <div className="p-6 text-center">
+                    <p className="text-[13px] text-white/40">Nenhum resultado encontrado</p>
+                  </div>
+                )}
+
+                {/* Search all link */}
+                {(autocompleteResults.categories.length > 0 || autocompleteResults.materials.length > 0) && (
+                  <div className="border-t border-white/[0.06] p-2">
+                    <button
+                      onClick={() => {
+                        setShowAutocomplete(false)
+                        router.push(`/partnerzone/search?q=${encodeURIComponent(searchQuery.trim())}`)
+                      }}
+                      className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-[12px] text-blue-400 hover:bg-blue-500/10 transition-colors"
+                    >
+                      <Search className="size-3.5" />
+                      Ver todos os resultados para &quot;{searchQuery.trim()}&quot;
+                    </button>
+                  </div>
+                )}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </motion.div>
 
@@ -195,25 +418,17 @@ export function DashboardClient({
       {popularMaterials.length > 0 && (
         <motion.section variants={itemVariants} className="flex flex-col gap-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center size-8 rounded-lg bg-blue-500/10">
-                <Sparkles className="size-4 text-blue-400" />
-              </div>
-              <div>
-                <h2 className="text-lg font-bold text-white">Materiais Institucionais</h2>
-                <p className="text-[12px] text-white/35">Materiais mais baixados da plataforma</p>
-              </div>
-            </div>
+            <h2 className="text-lg font-bold text-white">Materiais Institucionais</h2>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => scrollMaterials("left")}
-                className="p-2 rounded-lg border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06] text-white/50 hover:text-white/80 transition-all"
+                className="p-2 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.06] text-white/40 hover:text-white/70 transition-all"
               >
                 <ChevronLeft className="size-4" />
               </button>
               <button
                 onClick={() => scrollMaterials("right")}
-                className="p-2 rounded-lg border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.06] text-white/50 hover:text-white/80 transition-all"
+                className="p-2 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.06] text-white/40 hover:text-white/70 transition-all"
               >
                 <ChevronRight className="size-4" />
               </button>
@@ -237,14 +452,14 @@ export function DashboardClient({
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="flex-shrink-0 w-[280px] snap-start"
+                className="flex-shrink-0 w-[260px] snap-start"
               >
                 <Link
                   href={`/partnerzone/material/${material.id}`}
-                  className="group flex flex-col rounded-xl border border-white/[0.06] bg-[#0d0d1a] hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 overflow-hidden"
+                  className="group flex flex-col rounded-xl border border-white/[0.06] bg-[#0c1220] hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 overflow-hidden"
                 >
-                  {/* Thumbnail */}
-                  <div className="relative h-36 bg-gradient-to-br from-white/[0.03] to-white/[0.01] overflow-hidden">
+                  {/* Thumbnail area */}
+                  <div className="relative h-32 bg-gradient-to-br from-white/[0.03] to-white/[0.01] overflow-hidden">
                     {material.thumbnail_path ? (
                       <img
                         src={material.thumbnail_path}
@@ -253,7 +468,7 @@ export function DashboardClient({
                       />
                     ) : (
                       <div className="flex items-center justify-center h-full">
-                        <FileText className="size-10 text-white/10 group-hover:text-blue-500/20 transition-colors duration-300" />
+                        <FileText className="size-8 text-white/10 group-hover:text-blue-500/20 transition-colors duration-300" />
                       </div>
                     )}
                     {/* File type badge */}
@@ -262,8 +477,8 @@ export function DashboardClient({
                     </div>
                   </div>
                   {/* Content */}
-                  <div className="flex flex-col gap-2 p-4">
-                    <h3 className="text-[13px] font-semibold text-white/90 line-clamp-2 group-hover:text-white transition-colors">
+                  <div className="flex flex-col gap-1.5 p-3.5">
+                    <h3 className="text-[13px] font-semibold text-white/90 line-clamp-2 group-hover:text-white transition-colors leading-snug">
                       {material.title}
                     </h3>
                     {material.category && (
@@ -289,76 +504,61 @@ export function DashboardClient({
         </motion.section>
       )}
 
-      {/* Equipamentos Section - Product Card Grid */}
+      {/* Equipamentos Section */}
       <motion.section variants={itemVariants} className="flex flex-col gap-5">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center size-8 rounded-lg bg-purple-500/10">
-              <Cpu className="size-4 text-purple-400" />
-            </div>
-            <div>
-              <h2 className="text-lg font-bold text-white">Equipamentos</h2>
-              <p className="text-[12px] text-white/35">Categorias de equipamentos e materiais</p>
-            </div>
-          </div>
+          <h2 className="text-lg font-bold text-white">Equipamentos</h2>
           <Link
             href="/partnerzone/categories"
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 transition-all"
+            className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 transition-all"
           >
             Ver todas <ArrowRight className="size-3" />
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {categories.map((cat, index) => {
-            const Icon = iconMap[cat.icon ?? ""] ?? Cpu
-            const gradientIndex = index % categoryGradients.length
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          {categories.map((cat) => {
             const childCount = cat.children?.length ?? 0
 
             return (
               <motion.div
                 key={cat.id}
-                whileHover={{ y: -4, scale: 1.01 }}
+                whileHover={{ y: -3, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Link
                   href={`/partnerzone/categories/${cat.slug}`}
-                  className={`group relative flex flex-col rounded-xl border ${categoryBorderColors[gradientIndex]} bg-[#0d0d1a] overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5`}
+                  className="group relative flex flex-col rounded-xl border border-white/[0.06] bg-[#0c1220] overflow-hidden transition-all duration-300 hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5"
                 >
-                  {/* Category image / icon area */}
-                  <div className={`relative h-32 bg-gradient-to-br ${categoryGradients[gradientIndex]} overflow-hidden`}>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.03] to-transparent" />
-                    <div className="flex items-center justify-center h-full">
-                      <div className={`p-4 rounded-2xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className={`size-8 ${categoryIconColors[gradientIndex]} transition-colors`} />
+                  {/* Equipment image area */}
+                  <div className="relative h-36 bg-gradient-to-br from-white/[0.02] to-white/[0.01] overflow-hidden">
+                    {getEquipmentImage(cat.name) ? (
+                      <Image
+                        src={getEquipmentImage(cat.name)!}
+                        alt={cat.name}
+                        fill
+                        className="object-contain p-3 group-hover:scale-110 transition-transform duration-300"
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center h-full">
+                        <div className="p-3 rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] group-hover:scale-110 transition-transform duration-300">
+                          <Cpu className="size-7 text-blue-400/60 group-hover:text-blue-400 transition-colors" />
+                        </div>
                       </div>
-                    </div>
-                    {/* Subcategory count badge */}
+                    )}
                     {childCount > 0 && (
-                      <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm text-[10px] font-medium text-white/70 border border-white/[0.08]">
+                      <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm text-[9px] font-medium text-white/60 border border-white/[0.06]">
                         {childCount} sub
                       </div>
                     )}
                   </div>
 
-                  {/* Content */}
-                  <div className="flex items-center gap-3 p-4">
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-[14px] font-semibold text-white group-hover:text-white/90 transition-colors">
-                        {cat.name}
-                      </h3>
-                      {cat.description && (
-                        <p className="text-[11px] text-white/30 line-clamp-1 mt-0.5">
-                          {cat.description}
-                        </p>
-                      )}
-                      {childCount > 0 && (
-                        <p className="text-[10px] text-white/25 mt-1">
-                          {childCount} subcategoria{childCount !== 1 ? "s" : ""}
-                        </p>
-                      )}
-                    </div>
-                    <ArrowRight className="size-4 text-white/15 group-hover:text-white/40 group-hover:translate-x-1 transition-all shrink-0" />
+                  {/* Equipment name */}
+                  <div className="p-3 pt-2.5">
+                    <h3 className="text-[13px] font-semibold text-white/80 group-hover:text-white transition-colors text-center truncate">
+                      {cat.name}
+                    </h3>
                   </div>
                 </Link>
               </motion.div>
@@ -368,29 +568,28 @@ export function DashboardClient({
       </motion.section>
 
       {/* Materiais Recentes */}
-      <motion.section variants={itemVariants} className="flex flex-col gap-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center size-8 rounded-lg bg-emerald-500/10">
-              <Clock className="size-4 text-emerald-400" />
-            </div>
-            <div>
+      {recentMaterials.length > 0 && (
+        <motion.section variants={itemVariants} className="flex flex-col gap-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center size-7 rounded-lg bg-emerald-500/10">
+                <Clock className="size-3.5 text-emerald-400" />
+              </div>
               <h2 className="text-lg font-bold text-white">Materiais Recentes</h2>
-              <p className="text-[12px] text-white/35">Adicionados recentemente na plataforma</p>
             </div>
+            <Link
+              href="/partnerzone/search?sort=recent"
+              className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10 transition-all"
+            >
+              Ver todos <ArrowRight className="size-3" />
+            </Link>
           </div>
-          <Link
-            href="/partnerzone/search?sort=recent"
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10 transition-all"
-          >
-            Ver todos <ArrowRight className="size-3" />
-          </Link>
-        </div>
-        <MaterialGrid
-          materials={recentMaterials}
-          emptyMessage="Nenhum material adicionado ainda."
-        />
-      </motion.section>
+          <MaterialGrid
+            materials={recentMaterials}
+            emptyMessage="Nenhum material adicionado ainda."
+          />
+        </motion.section>
+      )}
     </motion.div>
   )
 }
