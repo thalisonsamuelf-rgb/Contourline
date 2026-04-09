@@ -29,6 +29,11 @@ export default function PartnerZoneLayout({ children }: { children: ReactNode })
   const pathname = usePathname()
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
+  // Login page renders standalone without sidebar/nav
+  if (pathname === "/partnerzone/login") {
+    return <>{children}</>
+  }
+
   return (
     <div className="flex min-h-screen">
       {/* Mobile overlay */}

@@ -35,13 +35,24 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // If accessing a protected partnerzone route without a session, redirect to login
+  const isLoginPage = request.nextUrl.pathname === "/partnerzone/login"
+
+  // Authenticated users visiting login page get redirected to dashboard
+  if (user && isLoginPage) {
+    const dashboardUrl = request.nextUrl.clone()
+    dashboardUrl.pathname = "/partnerzone"
+    dashboardUrl.search = ""
+    return NextResponse.redirect(dashboardUrl)
+  }
+
+  // Unauthenticated users on protected partnerzone routes get redirected to login
   if (
     !user &&
-    request.nextUrl.pathname.startsWith("/partnerzone")
+    request.nextUrl.pathname.startsWith("/partnerzone") &&
+    !isLoginPage
   ) {
     const loginUrl = request.nextUrl.clone()
-    loginUrl.pathname = "/login"
+    loginUrl.pathname = "/partnerzone/login"
     loginUrl.searchParams.set("redirect", request.nextUrl.pathname)
     return NextResponse.redirect(loginUrl)
   }
