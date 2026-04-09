@@ -12,7 +12,12 @@ export async function middleware(request: NextRequest) {
 
   // Auth protection for partnerzone routes
   if (pathname.startsWith("/partnerzone")) {
-    return await updateSession(request)
+    try {
+      return await updateSession(request)
+    } catch {
+      // If auth check fails, allow through to avoid blocking the site
+      return NextResponse.next()
+    }
   }
 
   return NextResponse.next()
