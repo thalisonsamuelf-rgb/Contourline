@@ -67,6 +67,23 @@ const equipmentImages: Record<string, string> = {
   "eurofeedback": "/equipamentos/Contourline AIOX.png",
 }
 
+const hiddenCategories = new Set([
+  "body health portugal",
+  "bodysculpt",
+  "eurofeedback",
+  "manuais do usuario",
+  "manuais do usuário",
+  "materiais",
+  "medical care",
+  "sheila melo",
+  "techloc",
+  "zelotech",
+])
+
+function isCategoryHidden(name: string): boolean {
+  return hiddenCategories.has(name.toLowerCase().trim())
+}
+
 function getEquipmentImage(name: string): string | null {
   const lower = name.toLowerCase().trim()
   if (equipmentImages[lower]) return equipmentImages[lower]
@@ -239,38 +256,6 @@ export function DashboardClient({
             </div>
           </div>
 
-          {/* Stats pills */}
-          <div className="flex flex-wrap gap-3">
-            {[
-              {
-                icon: FileText,
-                label: "Materiais",
-                value: stats.totalMaterials,
-                color: "text-blue-400",
-              },
-              {
-                icon: FolderOpen,
-                label: "Categorias",
-                value: stats.totalCategories,
-                color: "text-purple-400",
-              },
-              {
-                icon: Download,
-                label: "Downloads",
-                value: stats.totalDownloads,
-                color: "text-emerald-400",
-              },
-            ].map(({ icon: Icon, label, value, color }) => (
-              <div
-                key={label}
-                className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#0c1220] border border-white/[0.08] min-w-[150px]"
-              >
-                <Icon className={cn("size-4", color)} />
-                <span className="text-lg font-bold tabular-nums text-white">{value}</span>
-                <span className="text-[11px] text-white/40">{label}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Search bar */}
@@ -414,95 +399,6 @@ export function DashboardClient({
         </div>
       </motion.div>
 
-      {/* Materiais Institucionais - Horizontal Carousel */}
-      {popularMaterials.length > 0 && (
-        <motion.section variants={itemVariants} className="flex flex-col gap-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-white">Materiais Institucionais</h2>
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => scrollMaterials("left")}
-                className="p-2 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.06] text-white/40 hover:text-white/70 transition-all"
-              >
-                <ChevronLeft className="size-4" />
-              </button>
-              <button
-                onClick={() => scrollMaterials("right")}
-                className="p-2 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.06] text-white/40 hover:text-white/70 transition-all"
-              >
-                <ChevronRight className="size-4" />
-              </button>
-              <Link
-                href="/partnerzone/search?sort=popular"
-                className="hidden sm:flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 transition-all"
-              >
-                Ver todos <ArrowRight className="size-3" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Scrollable carousel */}
-          <div
-            ref={materialsScrollRef}
-            className="flex gap-4 overflow-x-auto pb-2 scrollbar-none -mx-1 px-1 snap-x snap-mandatory"
-          >
-            {popularMaterials.map((material, index) => (
-              <motion.div
-                key={material.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.05 }}
-                className="flex-shrink-0 w-[260px] snap-start"
-              >
-                <Link
-                  href={`/partnerzone/material/${material.id}`}
-                  className="group flex flex-col rounded-xl border border-white/[0.06] bg-[#0c1220] hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 overflow-hidden"
-                >
-                  {/* Thumbnail area */}
-                  <div className="relative h-32 bg-gradient-to-br from-white/[0.03] to-white/[0.01] overflow-hidden">
-                    {material.thumbnail_path ? (
-                      <img
-                        src={material.thumbnail_path}
-                        alt={material.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex items-center justify-center h-full">
-                        <FileText className="size-8 text-white/10 group-hover:text-blue-500/20 transition-colors duration-300" />
-                      </div>
-                    )}
-                    {/* File type badge */}
-                    <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-black/50 backdrop-blur-sm text-[10px] font-medium text-white/70 uppercase tracking-wider">
-                      {material.file_type.split("/").pop()}
-                    </div>
-                  </div>
-                  {/* Content */}
-                  <div className="flex flex-col gap-1.5 p-3.5">
-                    <h3 className="text-[13px] font-semibold text-white/90 line-clamp-2 group-hover:text-white transition-colors leading-snug">
-                      {material.title}
-                    </h3>
-                    {material.category && (
-                      <span className="text-[10px] text-blue-400/60 font-medium">
-                        {material.category.name}
-                      </span>
-                    )}
-                    <div className="flex items-center justify-between pt-1 text-[11px] text-white/30">
-                      <span className="flex items-center gap-1">
-                        <Download className="size-3" />
-                        {material.download_count}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="size-3" />
-                        {new Date(material.created_at).toLocaleDateString("pt-BR", { day: "2-digit", month: "short" })}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-      )}
 
       {/* Equipamentos Section */}
       <motion.section variants={itemVariants} className="flex flex-col gap-5">
@@ -517,7 +413,7 @@ export function DashboardClient({
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {categories.map((cat) => {
+          {categories.filter((cat) => !isCategoryHidden(cat.name)).map((cat) => {
             const childCount = cat.children?.length ?? 0
 
             return (
