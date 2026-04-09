@@ -439,6 +439,115 @@ export async function getAnalyticsKPIs() {
   }
 }
 
+// ── User Management ────────────────────────────────────────────────────
+
+export interface UserWithEmail extends UserProfile {
+  email: string | null
+}
+
+export async function getAllUsers(): Promise<UserWithEmail[]> {
+  const client = getClient()
+
+  const { data: profiles, error } = await client
+    .from("partnerzone_user_profiles")
+    .select("*")
+    .order("created_at", { ascending: false })
+
+  if (error) throw error
+
+  // Try to get emails from auth.admin if available (service role)
+  const emailMap = new Map<string, string>()
+  try {
+    const { data: authData } = await client.auth.admin.listUsers({ perPage: 1000 })
+    if (authData?.users) {
+      for (const u of authData.users) {
+        emailMap.set(u.id, u.email ?? "")
+      }
+    }
+  } catch {
+    // auth.admin may not be available — fallback to no emails
+  }
+
+  return (profiles ?? []).map((p) => ({
+    ...p,
+    email: emailMap.get(p.id) ?? null,
+  }))
+}
+
+export async function updateUserRole(
+  userId: string,
+  role: "viewer" | "editor" | "admin"
+): Promise<UserProfile> {
+  const client = getClient()
+
+  const { data, error } = await client
+    .from("partnerzone_user_profiles")
+    .update({ role })
+    .eq("id", userId)
+    .select()
+    .single()
+
+  if (error) throw error
+  return data
+}
+
+export async function updateUserDepartment(
+  userId: string,
+  department: string
+): Promise<UserProfile> {
+  const client = getClient()
+
+  const { data, error } = await client
+    .from("partnerzone_user_profiles")
+    .update({ department })
+    .eq("id", userId)
+    .select()
+    .single()
+
+  if (error) throw error
+  return data
+}
+
+export async function deleteUserProfile(userId: string): Promise<void> {
+  const client = getClient()
+
+  const { error } = await client
+    .from("partnerzone_user_profiles")
+    .delete()
+    .eq("id", userId)
+
+  if (error) throw error
+}
+
+export async function getUserStats() {
+  const client = getClient()
+
+  const { data, error } = await client
+    .from("partnerzone_user_profiles")
+    .select("role, department")
+
+  if (error) throw error
+
+  const profiles = data ?? []
+
+  const byRole = { admin: 0, editor: 0, viewer: 0 }
+  const byDepartment: Record<string, number> = {}
+
+  for (const p of profiles) {
+    const role = p.role as keyof typeof byRole
+    if (role in byRole) byRole[role]++
+
+    const dept = p.department ?? "sem_departamento"
+    byDepartment[dept] = (byDepartment[dept] ?? 0) + 1
+  }
+
+  return {
+    total: profiles.length,
+    byRole,
+    byDepartment,
+  }
+}
+
 // ── Category materials count ────────────────────────────────────────────
 
 export async function getCategoriesWithCount(): Promise<Category[]> {

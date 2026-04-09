@@ -8,7 +8,7 @@ import {
   FolderOpen,
   Download,
   BarChart3,
-  Settings,
+  Users,
   ArrowRight,
 } from "lucide-react"
 
@@ -81,6 +81,7 @@ export function AdminDashboardClient({ stats, topDownloaded }: AdminDashboardCli
           { href: "/partnerzone/admin/materials", icon: FileText, label: "Gerenciar Materiais", desc: "Editar, remover, versionar" },
           { href: "/partnerzone/admin/categories", icon: FolderOpen, label: "Gerenciar Categorias", desc: "Organizar categorias" },
           { href: "/partnerzone/admin/analytics", icon: BarChart3, label: "Analytics", desc: "Métricas e relatórios" },
+          { href: "/partnerzone/admin/users", icon: Users, label: "Gestão de Usuários", desc: "Gerenciar permissões e convites" },
         ].map(({ href, icon: Icon, label, desc }) => (
           <Link
             key={href}
