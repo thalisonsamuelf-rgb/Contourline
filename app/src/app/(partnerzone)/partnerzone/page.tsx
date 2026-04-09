@@ -41,7 +41,7 @@ async function DashboardData() {
         recentMaterials={[]}
         popularMaterials={[]}
         categories={[]}
-        stats={{ totalMaterials: 0, totalDownloads: 0, totalCategories: 0, totalUsers: 0 }}
+        stats={{ totalMaterials: 0, totalDownloads: 0, totalCategories: 0 }}
       />
     )
   }
