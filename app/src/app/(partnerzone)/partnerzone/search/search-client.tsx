@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { SearchBar } from "@/components/partnerzone/search-bar"
 import { MaterialGrid } from "@/components/partnerzone/material-grid"
 import { CategorySidebar } from "@/components/partnerzone/category-sidebar"
-import { Badge } from "@/components/ui/badge"
 import type { Material, Category } from "@/lib/partnerzone/types"
 
 interface SearchPageClientProps {
@@ -13,6 +12,12 @@ interface SearchPageClientProps {
   totalCount: number
   categories: Category[]
   sort?: string
+  availableTags?: string[]
+  activeFilters?: {
+    fileType?: string
+    dateRange?: string
+    tags?: string[]
+  }
 }
 
 export function SearchPageClient({
@@ -21,6 +26,8 @@ export function SearchPageClient({
   totalCount,
   categories,
   sort,
+  availableTags = [],
+  activeFilters = {},
 }: SearchPageClientProps) {
   const title = query
     ? `Resultados para "${query}"`
@@ -29,6 +36,12 @@ export function SearchPageClient({
     : sort === "recent"
     ? "Adicionados Recentemente"
     : "Todos os Materiais"
+
+  const hasActiveFilters = !!(
+    activeFilters.fileType ||
+    (activeFilters.dateRange && activeFilters.dateRange !== "all") ||
+    (activeFilters.tags && activeFilters.tags.length > 0)
+  )
 
   return (
     <motion.div
@@ -40,10 +53,18 @@ export function SearchPageClient({
         <h1 className="text-2xl font-bold text-foreground">{title}</h1>
         <p className="text-sm text-muted-foreground mt-1">
           {totalCount} {totalCount === 1 ? "material encontrado" : "materiais encontrados"}
+          {hasActiveFilters && " (filtrado)"}
         </p>
       </div>
 
-      <SearchBar showFilters className="max-w-2xl" />
+      <SearchBar
+        showFilters
+        className="max-w-2xl"
+        availableTags={availableTags}
+        activeFileType={activeFilters.fileType}
+        activeDateRange={activeFilters.dateRange}
+        activeTags={activeFilters.tags}
+      />
 
       <div className="flex gap-6">
         <aside className="hidden lg:block w-56 shrink-0">

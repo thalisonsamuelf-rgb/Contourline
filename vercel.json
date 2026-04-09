@@ -1,4 +1,6 @@
 {
+  "buildCommand": "",
+  "outputDirectory": "public",
   "rewrites": [
     { "source": "/portal", "destination": "/portal/index.html" },
     { "source": "/dashboard", "destination": "/dashboard/index.html" },
@@ -7,7 +9,8 @@
     { "source": "/rdstation", "destination": "/rdstation/index.html" },
     { "source": "/academy", "destination": "/academy/index.html" },
     { "source": "/login", "destination": "/login/index.html" },
-    { "source": "/admin", "destination": "/admin/index.html" }
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/inventario", "destination": "/inventario/index.html" }
   ],
   "headers": [
     {
