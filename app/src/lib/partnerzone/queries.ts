@@ -392,7 +392,7 @@ export async function getRecentActivity(limit = 10) {
   return (data ?? []).map((row) => ({
     user: userNames.get(row.user_id) ?? "Usuario",
     action: "baixou",
-    material: (row.material as { title: string } | null)?.title ?? "Material",
+    material: ((row.material as unknown) as { title: string } | null)?.title ?? "Material",
     time: row.created_at,
   }))
 }
