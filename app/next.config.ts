@@ -5,6 +5,9 @@ import type { NextConfig } from "next";
 const appRoot = dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    "/*": ["./starter/**/*"],
+  },
   turbopack: {
     root: appRoot,
   },
