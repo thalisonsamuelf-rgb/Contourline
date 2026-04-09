@@ -14,21 +14,37 @@ export const metadata = {
 }
 
 async function DashboardData() {
-  const [recent, popular, categories, stats] = await Promise.all([
-    getRecentMaterials(8),
-    getPopularMaterials(8),
-    getCategoryTree(),
-    getAnalyticsSummary(),
-  ])
+  try {
+    const [recent, popular, categories, stats] = await Promise.all([
+      getRecentMaterials(8).catch(() => []),
+      getPopularMaterials(8).catch(() => []),
+      getCategoryTree().catch(() => []),
+      getAnalyticsSummary().catch(() => ({
+        totalMaterials: 0,
+        totalDownloads: 0,
+        totalCategories: 0,
+        totalUsers: 0,
+      })),
+    ])
 
-  return (
-    <DashboardClient
-      recentMaterials={recent}
-      popularMaterials={popular}
-      categories={categories}
-      stats={stats}
-    />
-  )
+    return (
+      <DashboardClient
+        recentMaterials={recent}
+        popularMaterials={popular}
+        categories={categories}
+        stats={stats}
+      />
+    )
+  } catch {
+    return (
+      <DashboardClient
+        recentMaterials={[]}
+        popularMaterials={[]}
+        categories={[]}
+        stats={{ totalMaterials: 0, totalDownloads: 0, totalCategories: 0, totalUsers: 0 }}
+      />
+    )
+  }
 }
 
 export default function PartnerZoneDashboard() {

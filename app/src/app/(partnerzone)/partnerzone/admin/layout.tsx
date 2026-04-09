@@ -18,7 +18,7 @@ export default async function AdminLayout({
   } = await supabase.auth.getUser()
 
   if (!user) {
-    redirect("/login")
+    redirect("/partnerzone/login")
   }
 
   // Check the user's role in the partnerzone_user_profiles table
