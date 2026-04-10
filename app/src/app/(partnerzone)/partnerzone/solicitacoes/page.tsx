@@ -109,8 +109,8 @@ export default function SolicitacoesPage() {
         setSubmitStatus("success")
         setFormData(initialFormData)
       } catch {
-        setSubmitStatus("success")
-        // Show success even if API fails (graceful degradation)
+        setSubmitStatus("error")
+        setErrorMessage("Erro ao enviar solicitacao. Tente novamente.")
       } finally {
         setSubmitting(false)
       }
