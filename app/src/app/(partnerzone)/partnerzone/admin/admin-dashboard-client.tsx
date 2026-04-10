@@ -10,6 +10,7 @@ import {
   BarChart3,
   Users,
   ArrowRight,
+  MessageSquare,
 } from "lucide-react"
 
 const containerVariants = {
@@ -81,7 +82,8 @@ export function AdminDashboardClient({ stats, topDownloaded }: AdminDashboardCli
           { href: "/partnerzone/admin/materials", icon: FileText, label: "Gerenciar Materiais", desc: "Editar, remover, versionar" },
           { href: "/partnerzone/admin/categories", icon: FolderOpen, label: "Gerenciar Categorias", desc: "Organizar categorias" },
           { href: "/partnerzone/admin/analytics", icon: BarChart3, label: "Analytics", desc: "Métricas e relatórios" },
-          { href: "/partnerzone/admin/users", icon: Users, label: "Gestão de Usuários", desc: "Gerenciar permissões e convites" },
+          { href: "/partnerzone/admin/users", icon: Users, label: "Gestao de Usuarios", desc: "Gerenciar permissoes e convites" },
+          { href: "/partnerzone/admin/solicitacoes", icon: MessageSquare, label: "Solicitacoes", desc: "Gerenciar solicitacoes e reclamacoes" },
         ].map(({ href, icon: Icon, label, desc }) => (
           <Link
             key={href}
