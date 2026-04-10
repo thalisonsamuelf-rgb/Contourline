@@ -30,30 +30,39 @@ async function CategoryData({ slug }: { slug: string }) {
 
   // Get materials for this category and its children
   const childCategories = allCategories.filter((c) => c.parent_id === category.id)
-  const categoryIds = [category.id, ...childCategories.map((c) => c.id)]
 
   // Fetch materials for main category
   const { data: materials, count } = await getMaterials({
     categoryId: category.id,
-    limit: 40,
+    limit: 100,
   })
 
-  // Also get materials from subcategories
-  const subMaterials = await Promise.all(
-    childCategories.map((c) => getMaterials({ categoryId: c.id, limit: 20 }))
+  // Materials per subcategory (so we know counts and can list by subcategory)
+  const subMaterialsResults = await Promise.all(
+    childCategories.map((c) => getMaterials({ categoryId: c.id, limit: 100 }))
   )
 
-  const allMaterials = [
-    ...materials,
-    ...subMaterials.flatMap((s) => s.data),
-  ]
+  // Build a map of subcategory id -> materials
+  const subcategoryMaterials: Record<string, typeof materials> = {}
+  childCategories.forEach((c, i) => {
+    subcategoryMaterials[c.id] = subMaterialsResults[i].data
+  })
+
+  // Enrich subcategories with their material counts
+  const enrichedSubcategories = childCategories.map((c, i) => ({
+    ...c,
+    material_count: subMaterialsResults[i].count,
+  }))
+
+  const totalCount = count + subMaterialsResults.reduce((a, s) => a + s.count, 0)
 
   return (
     <CategoryPageClient
       category={category}
-      subcategories={childCategories}
-      materials={allMaterials}
-      totalCount={count + subMaterials.reduce((a, s) => a + s.count, 0)}
+      subcategories={enrichedSubcategories}
+      directMaterials={materials}
+      subcategoryMaterials={subcategoryMaterials}
+      totalCount={totalCount}
       allCategories={allCategories}
     />
   )
