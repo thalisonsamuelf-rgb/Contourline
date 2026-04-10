@@ -2,3 +2,7 @@
 .next/
 tsconfig.tsbuildinfo
 next-env.d.ts
+.env*.local
+
+# Backup files
+backups/
