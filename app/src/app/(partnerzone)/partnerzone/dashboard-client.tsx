@@ -444,7 +444,7 @@ export function DashboardClient({
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
           {categories.filter((cat) => !isCategoryHidden(cat.name)).map((cat) => {
             const img = getEquipmentImage(cat.name)
             return (
@@ -455,7 +455,7 @@ export function DashboardClient({
               >
                 <Link
                   href={`/partnerzone/categories/${cat.slug}`}
-                  className="group relative block aspect-square rounded-2xl overflow-hidden bg-[#24336E] shadow-sm hover:shadow-xl transition-shadow duration-300"
+                  className="group relative block aspect-[4/3] rounded-2xl overflow-hidden bg-[#24336E] shadow-sm hover:shadow-xl transition-shadow duration-300"
                 >
                   {img ? (
                     <Image
