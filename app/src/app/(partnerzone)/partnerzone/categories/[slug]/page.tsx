@@ -5,7 +5,7 @@ import {
   getMaterials,
   getCategoriesWithCount,
 } from "@/lib/partnerzone/queries"
-import type { Material, Category } from "@/lib/partnerzone/types"
+import type { Category } from "@/lib/partnerzone/types"
 import { CategoryPageClient } from "./category-client"
 
 interface Props {
@@ -56,6 +56,26 @@ function countDescendantMaterials(
   return total
 }
 
+/**
+ * Build the breadcrumb trail from root to the current category.
+ */
+function buildBreadcrumbs(
+  category: Category,
+  allCategories: Category[]
+): { id: string; name: string; slug: string }[] {
+  const trail: Category[] = []
+  let current: Category | undefined = category
+  const maxDepth = 20
+  let depth = 0
+  while (current && depth < maxDepth) {
+    trail.unshift(current)
+    if (!current.parent_id) break
+    current = allCategories.find((c) => c.id === current!.parent_id)
+    depth++
+  }
+  return trail.map((c) => ({ id: c.id, name: c.name, slug: c.slug }))
+}
+
 async function CategoryData({ slug }: { slug: string }) {
   const [category, allCategories] = await Promise.all([
     getCategoryBySlug(slug),
@@ -71,47 +91,42 @@ async function CategoryData({ slug }: { slug: string }) {
   }
 
   // Direct child categories
-  const childCategories = allCategories.filter((c) => c.parent_id === category.id)
+  const childCategories = allCategories.filter(
+    (c) => c.parent_id === category.id
+  )
 
-  // For each subcategory, compute the recursive total
+  // Enrich each child with its recursive material count (to show in the card)
   const enrichedSubcategories = childCategories.map((c) => ({
     ...c,
-    material_count: countDescendantMaterials(c.id, allCategories, materialCountByCategory),
+    material_count: countDescendantMaterials(
+      c.id,
+      allCategories,
+      materialCountByCategory
+    ),
   }))
 
-  // All descendant ids of THIS category (for fetching materials recursively)
-  const allDescendantIds = collectDescendantIds(category.id, allCategories)
-
-  // Fetch all materials in this branch (use a recursive in-clause)
-  // Limit to 500 per branch to keep the page snappy
-  const { data: branchMaterials, count: branchCount } = await getMaterials({
-    categoryIds: allDescendantIds,
+  // Fetch ONLY materials directly at THIS category (not from descendants)
+  const { data: directMaterials } = await getMaterials({
+    categoryId: category.id,
     limit: 500,
   })
 
-  // Direct materials (those whose category_id == this category)
-  const directMaterials = branchMaterials.filter(
-    (m) => m.category_id === category.id
+  // Total count including all descendants (for the header)
+  const totalCount = countDescendantMaterials(
+    category.id,
+    allCategories,
+    materialCountByCategory
   )
 
-  // Group materials by subcategory (top-level child)
-  // For each direct child, get all materials whose category is the child OR its descendants
-  const subcategoryMaterials: Record<string, Material[]> = {}
-  for (const child of childCategories) {
-    const childDescendants = new Set(collectDescendantIds(child.id, allCategories))
-    subcategoryMaterials[child.id] = branchMaterials.filter((m) =>
-      childDescendants.has(m.category_id)
-    )
-  }
+  const breadcrumbs = buildBreadcrumbs(category, allCategories)
 
   return (
     <CategoryPageClient
       category={category}
       subcategories={enrichedSubcategories}
       directMaterials={directMaterials}
-      subcategoryMaterials={subcategoryMaterials}
-      totalCount={branchCount}
-      allCategories={allCategories}
+      breadcrumbs={breadcrumbs}
+      totalCount={totalCount}
     />
   )
 }
