@@ -75,7 +75,7 @@ export function MaterialDetailClient({ material, versions }: MaterialDetailClien
                   <FileText className="size-16 text-red-400" />
                   <p className="text-sm">Preview PDF</p>
                   <a
-                    href={material.file_path}
+                    href={`/partnerzone/api/download/${material.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 text-xs text-primary hover:underline"
@@ -116,7 +116,7 @@ export function MaterialDetailClient({ material, versions }: MaterialDetailClien
                 variant="primary"
                 size="md"
                 className="flex-1"
-                onClick={() => window.open(material.file_path, "_blank")}
+                onClick={() => window.open(`/partnerzone/api/download/${material.id}`, "_blank")}
               >
                 <Download className="size-4 mr-1.5" />
                 Baixar

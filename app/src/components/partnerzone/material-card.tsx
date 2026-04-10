@@ -94,8 +94,9 @@ export function MaterialCard({
             Ver
           </Link>
           <a
-            href={material.file_path}
-            download={material.file_name}
+            href={`/partnerzone/api/download/${material.id}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/80 backdrop-blur-sm text-primary-foreground text-xs font-medium hover:bg-primary transition-colors"
           >
             <Download className="size-3.5" />

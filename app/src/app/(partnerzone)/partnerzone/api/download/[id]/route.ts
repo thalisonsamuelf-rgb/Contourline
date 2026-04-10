@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseServer } from "@/lib/supabase/server"
+import { getTemporaryLink, isDropboxPath } from "@/lib/dropbox/client"
 
 export async function GET(
   request: NextRequest,
@@ -39,16 +40,30 @@ export async function GET(
     .update({ download_count: (current?.download_count ?? 0) + 1 })
     .eq("id", id)
 
-  // Generate signed URL for private storage
+  // Dropbox path: generate temporary link via Dropbox API
+  if (isDropboxPath(material.file_path)) {
+    try {
+      const tempLink = await getTemporaryLink(material.file_path)
+      return NextResponse.redirect(tempLink)
+    } catch (err) {
+      console.error("Dropbox temporary link error:", err)
+      return NextResponse.json(
+        { error: "Erro ao gerar link de download. Tente novamente." },
+        { status: 502 }
+      )
+    }
+  }
+
+  // Supabase Storage fallback (for materials uploaded directly)
   const { data: signedUrl } = await client.storage
     .from("partnerzone")
-    .createSignedUrl(material.file_path, 60) // 60 seconds expiry
+    .createSignedUrl(material.file_path, 60)
 
   if (signedUrl?.signedUrl) {
     return NextResponse.redirect(signedUrl.signedUrl)
   }
 
-  // Fallback: return the file path directly
+  // Last resort: return the file path directly
   return NextResponse.json({
     url: material.file_path,
     file_name: material.file_name,

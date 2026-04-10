@@ -302,8 +302,9 @@ function MaterialsList({ materials }: { materials: Material[] }) {
                 <span className="hidden md:inline">Ver</span>
               </Link>
               <a
-                href={material.file_path}
-                download={material.file_name}
+                href={`/partnerzone/api/download/${material.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[12px] font-semibold bg-[#24336E] text-white hover:bg-[#1B2655] transition-colors"
                 title="Baixar"
               >
