@@ -35,31 +35,39 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  const isLoginPage = request.nextUrl.pathname === "/partnerzone/login"
-  const isAuthCallback = request.nextUrl.pathname === "/partnerzone/auth/callback"
+  const pathname = request.nextUrl.pathname
+  const isLoginPage = pathname === "/partnerzone/login"
+  const isAuthCallback = pathname === "/partnerzone/auth/callback"
 
   // Auth callback must always pass through (handles OAuth redirect)
   if (isAuthCallback) {
     return supabaseResponse
   }
 
-  // Authenticated users visiting login page get redirected to dashboard
+  // Only these paths require authentication.
+  // Everything else under /partnerzone is publicly accessible (catalog mode).
+  const isProtectedRoute =
+    pathname.startsWith("/partnerzone/admin") ||
+    pathname.startsWith("/partnerzone/conta")
+
+  // Authenticated users visiting login page get redirected back to where they came from
   if (user && isLoginPage) {
+    const redirectParam = request.nextUrl.searchParams.get("redirect")
     const dashboardUrl = request.nextUrl.clone()
-    dashboardUrl.pathname = "/partnerzone"
+    dashboardUrl.pathname = redirectParam && redirectParam.startsWith("/")
+      ? redirectParam
+      : "/partnerzone"
     dashboardUrl.search = ""
     return NextResponse.redirect(dashboardUrl)
   }
 
-  // Unauthenticated users on protected partnerzone routes get redirected to login
-  if (
-    !user &&
-    request.nextUrl.pathname.startsWith("/partnerzone") &&
-    !isLoginPage
-  ) {
+  // Unauthenticated users on protected routes get redirected to login,
+  // preserving the original destination via ?redirect= so they return after login.
+  if (!user && isProtectedRoute) {
     const loginUrl = request.nextUrl.clone()
     loginUrl.pathname = "/partnerzone/login"
-    loginUrl.searchParams.set("redirect", request.nextUrl.pathname)
+    loginUrl.search = ""
+    loginUrl.searchParams.set("redirect", pathname)
     return NextResponse.redirect(loginUrl)
   }
 
