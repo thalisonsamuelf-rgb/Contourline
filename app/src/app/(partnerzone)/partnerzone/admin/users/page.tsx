@@ -9,12 +9,24 @@ export const metadata = {
 }
 
 async function UsersData() {
-  const [users, stats] = await Promise.all([
-    getAllUsers(),
-    getUserStats(),
-  ])
+  try {
+    const [users, stats] = await Promise.all([
+      getAllUsers().catch(() => []),
+      getUserStats().catch(() => ({
+        total: 0,
+        byRole: { admin: 0, editor: 0, viewer: 0 },
+        byDepartment: {},
+      })),
+    ])
 
-  return <UsersManager initialUsers={users} initialStats={stats} />
+    return <UsersManager initialUsers={users} initialStats={stats} />
+  } catch {
+    return <UsersManager initialUsers={[]} initialStats={{
+      total: 0,
+      byRole: { admin: 0, editor: 0, viewer: 0 },
+      byDepartment: {},
+    }} />
+  }
 }
 
 export default function UsersPage() {

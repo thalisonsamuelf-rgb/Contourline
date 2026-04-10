@@ -453,7 +453,10 @@ export async function getAllUsers(): Promise<UserWithEmail[]> {
     .select("*")
     .order("created_at", { ascending: false })
 
-  if (error) throw error
+  if (error) {
+    console.error("Error fetching user profiles:", error.message)
+    return []
+  }
 
   // Try to get emails from auth.admin if available (service role)
   const emailMap = new Map<string, string>()
