@@ -100,6 +100,9 @@ const hiddenCategories = new Set([
   "sheila melo",
   "techloc",
   "zelotech",
+  "adellaled1",
+  "adella led 1",
+  "hipro hof",
   "zelo tech",
   "zelo-tech",
 ])
@@ -470,11 +473,6 @@ export function DashboardClient({
                         <div className="p-3 rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] group-hover:scale-110 transition-transform duration-300">
                           <Cpu className="size-7 text-blue-400/60 group-hover:text-blue-400 transition-colors" />
                         </div>
-                      </div>
-                    )}
-                    {childCount > 0 && (
-                      <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/40 backdrop-blur-sm text-[9px] font-medium text-white/60 border border-white/[0.06]">
-                        {childCount} sub
                       </div>
                     )}
                   </div>
