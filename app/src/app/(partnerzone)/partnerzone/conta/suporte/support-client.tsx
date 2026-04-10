@@ -95,11 +95,11 @@ export function SupportForm({ defaultName, defaultEmail, defaultPhone }: Support
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="rounded-2xl bg-[#0c1220] border border-white/[0.06] p-6"
+      className="rounded-2xl bg-white border border-black/[0.08] p-6"
     >
       <motion.div variants={itemVariants} className="mb-5">
-        <h2 className="text-[16px] font-bold text-white">Abrir novo ticket</h2>
-        <p className="text-[12px] text-white/40 mt-0.5">
+        <h2 className="text-[16px] font-bold text-black/80">Abrir novo ticket</h2>
+        <p className="text-[12px] text-black/50 mt-0.5">
           Conta vinculada a {defaultEmail || "—"}
         </p>
       </motion.div>
@@ -108,7 +108,7 @@ export function SupportForm({ defaultName, defaultEmail, defaultPhone }: Support
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-3 px-4 py-3 mb-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[13px]"
+          className="flex items-center gap-3 px-4 py-3 mb-4 rounded-xl bg-[#10B981]/10 border border-[#10B981]/20 text-[#047857] text-[13px]"
         >
           <CheckCircle className="size-4 shrink-0" />
           <span>Ticket criado com sucesso. Vamos atualizar sua lista.</span>
@@ -119,7 +119,7 @@ export function SupportForm({ defaultName, defaultEmail, defaultPhone }: Support
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-3 px-4 py-3 mb-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-[13px]"
+          className="flex items-center gap-3 px-4 py-3 mb-4 rounded-xl bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#B91C1C] text-[13px]"
         >
           <AlertCircle className="size-4 shrink-0" />
           <span>{errorMsg}</span>
@@ -129,37 +129,37 @@ export function SupportForm({ defaultName, defaultEmail, defaultPhone }: Support
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         {/* Assunto */}
         <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
-            Assunto <span className="text-red-400">*</span>
+          <label className="text-[12px] font-medium text-black/60">
+            Assunto <span className="text-[#B91C1C]">*</span>
           </label>
           <div className="relative">
-            <FileText className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+            <FileText className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-black/40" />
             <input
               type="text"
               value={assunto}
               onChange={(e) => setAssunto(e.target.value)}
               placeholder="Resumo do que voce precisa"
-              className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#070b14] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#F5F5F5] border border-black/[0.10] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all"
             />
           </div>
         </motion.div>
 
         {/* Prioridade */}
         <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">Prioridade</label>
+          <label className="text-[12px] font-medium text-black/60">Prioridade</label>
           <div className="grid grid-cols-3 gap-2">
             {(["baixa", "media", "alta"] as const).map((p) => {
               const active = priority === p
               const colors: Record<Priority, string> = {
                 baixa: active
-                  ? "bg-blue-500/15 border-blue-500/40 text-blue-300"
-                  : "bg-[#070b14] border-white/[0.08] text-white/50",
+                  ? "bg-[#3B82F6]/10 border-[#3B82F6]/40 text-[#1D4ED8]"
+                  : "bg-[#F5F5F5] border-black/[0.10] text-black/60",
                 media: active
-                  ? "bg-amber-500/15 border-amber-500/40 text-amber-300"
-                  : "bg-[#070b14] border-white/[0.08] text-white/50",
+                  ? "bg-[#F59E0B]/10 border-[#F59E0B]/40 text-[#B45309]"
+                  : "bg-[#F5F5F5] border-black/[0.10] text-black/60",
                 alta: active
-                  ? "bg-red-500/15 border-red-500/40 text-red-300"
-                  : "bg-[#070b14] border-white/[0.08] text-white/50",
+                  ? "bg-[#EF4444]/10 border-[#EF4444]/40 text-[#B91C1C]"
+                  : "bg-[#F5F5F5] border-black/[0.10] text-black/60",
               }
               return (
                 <button
@@ -178,17 +178,17 @@ export function SupportForm({ defaultName, defaultEmail, defaultPhone }: Support
 
         {/* Descricao */}
         <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
-            Descricao <span className="text-red-400">*</span>
+          <label className="text-[12px] font-medium text-black/60">
+            Descricao <span className="text-[#B91C1C]">*</span>
           </label>
           <div className="relative">
-            <AlignLeft className="absolute left-3.5 top-4 size-4 text-white/25" />
+            <AlignLeft className="absolute left-3.5 top-4 size-4 text-black/40" />
             <textarea
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
               placeholder="Detalhe a sua duvida ou problema"
               rows={5}
-              className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#070b14] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all resize-none"
+              className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#F5F5F5] border border-black/[0.10] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all resize-none"
             />
           </div>
         </motion.div>
@@ -202,8 +202,8 @@ export function SupportForm({ defaultName, defaultEmail, defaultPhone }: Support
           whileTap={{ scale: submitting ? 1 : 0.98 }}
           className={`flex items-center justify-center gap-2 w-full h-12 rounded-xl text-[14px] font-semibold transition-all duration-200 mt-2 ${
             submitting
-              ? "bg-blue-500/50 text-white/50 cursor-not-allowed"
-              : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg shadow-blue-500/20"
+              ? "bg-[#24336E]/50 text-white/70 cursor-not-allowed"
+              : "bg-[#24336E] hover:bg-[#1B2655] text-white shadow-lg shadow-[#24336E]/20"
           }`}
         >
           {submitting ? (
@@ -226,22 +226,22 @@ const STATUS_MAP: Record<
 > = {
   pending: {
     label: "Pendente",
-    cls: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+    cls: "bg-[#F59E0B]/10 text-[#B45309] border-[#F59E0B]/20",
     Icon: Clock,
   },
   in_progress: {
     label: "Em andamento",
-    cls: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    cls: "bg-[#3B82F6]/10 text-[#1D4ED8] border-[#3B82F6]/20",
     Icon: History,
   },
   resolved: {
     label: "Resolvido",
-    cls: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
+    cls: "bg-[#10B981]/10 text-[#047857] border-[#10B981]/20",
     Icon: CheckCircle2,
   },
   rejected: {
     label: "Rejeitado",
-    cls: "bg-red-500/10 text-red-400 border-red-500/20",
+    cls: "bg-[#EF4444]/10 text-[#B91C1C] border-[#EF4444]/20",
     Icon: XCircle,
   },
 }
@@ -263,40 +263,40 @@ export function SupportHistory({ history }: { history: SupportRequest[] }) {
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="rounded-2xl bg-[#0c1220] border border-white/[0.06] overflow-hidden"
+      className="rounded-2xl bg-white border border-black/[0.08] overflow-hidden"
     >
       <motion.div
         variants={itemVariants}
-        className="px-6 py-4 border-b border-white/[0.06] flex items-center gap-2"
+        className="px-6 py-4 border-b border-black/[0.08] flex items-center gap-2"
       >
-        <History className="size-4 text-white/40" />
-        <h2 className="text-[15px] font-bold text-white">Historico de tickets</h2>
-        <span className="text-[11px] text-white/40 ml-1">({history.length})</span>
+        <History className="size-4 text-black/50" />
+        <h2 className="text-[15px] font-bold text-black/80">Historico de tickets</h2>
+        <span className="text-[11px] text-black/50 ml-1">({history.length})</span>
       </motion.div>
 
       {history.length === 0 ? (
         <motion.div
           variants={itemVariants}
-          className="px-6 py-10 text-center text-[13px] text-white/40"
+          className="px-6 py-10 text-center text-[13px] text-black/50"
         >
           Voce ainda nao abriu nenhum ticket.
         </motion.div>
       ) : (
-        <ul className="divide-y divide-white/[0.04]">
+        <ul className="divide-y divide-black/[0.06]">
           {history.map((req) => {
             const status = STATUS_MAP[req.status]
             return (
               <motion.li
                 key={req.id}
                 variants={itemVariants}
-                className="px-6 py-4 hover:bg-white/[0.02] transition-colors"
+                className="px-6 py-4 hover:bg-black/[0.02] transition-colors"
               >
                 <div className="flex items-start justify-between gap-4 mb-2">
                   <div className="flex-1 min-w-0">
-                    <p className="text-[13px] font-semibold text-white truncate">
+                    <p className="text-[13px] font-semibold text-black/80 truncate">
                       {req.assunto}
                     </p>
-                    <p className="text-[11px] text-white/40 mt-0.5">
+                    <p className="text-[11px] text-black/50 mt-0.5">
                       {formatRelativeDate(req.created_at)}
                     </p>
                   </div>
@@ -305,15 +305,15 @@ export function SupportHistory({ history }: { history: SupportRequest[] }) {
                     {status.label}
                   </span>
                 </div>
-                <p className="text-[12px] text-white/50 line-clamp-2 leading-relaxed">
+                <p className="text-[12px] text-black/60 line-clamp-2 leading-relaxed">
                   {req.descricao}
                 </p>
                 {req.admin_notes && (
-                  <div className="mt-3 p-3 rounded-lg bg-blue-500/[0.05] border border-blue-500/[0.15]">
-                    <p className="text-[10px] uppercase tracking-wider text-blue-400/70 font-bold mb-1">
+                  <div className="mt-3 p-3 rounded-lg bg-[#24336E]/[0.05] border border-[#24336E]/20">
+                    <p className="text-[10px] uppercase tracking-wider text-[#24336E] font-bold mb-1">
                       Resposta da equipe
                     </p>
-                    <p className="text-[12px] text-white/70 leading-relaxed">{req.admin_notes}</p>
+                    <p className="text-[12px] text-black/70 leading-relaxed">{req.admin_notes}</p>
                   </div>
                 )}
               </motion.li>

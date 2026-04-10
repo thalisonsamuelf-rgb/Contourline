@@ -1,0 +1,46 @@
+/**
+ * PartnerZone — Light Theme Tokens (Single Source of Truth)
+ *
+ * Edit values in THEME.md and mirror them here. All PartnerZone components
+ * should consume these variables (via Tailwind arbitrary values like
+ * `bg-[var(--pz-bg)]`) instead of hardcoding hex values.
+ */
+
+:root {
+  /* ─── Sidebar (Azul Contourline) ─── */
+  --pz-sidebar-bg: #24336E;
+  --pz-sidebar-text: #FFFFFF;
+  --pz-sidebar-muted: rgba(255, 255, 255, 0.6);
+  --pz-sidebar-active: #3A4D8E;
+  --pz-sidebar-hover: rgba(255, 255, 255, 0.10);
+  --pz-sidebar-border: rgba(255, 255, 255, 0.08);
+
+  /* ─── Page / Content (Light) ─── */
+  --pz-bg: #E7E7E6;
+  --pz-card-bg: #FFFFFF;
+  --pz-card-hover: #F5F5F5;
+  --pz-border: rgba(0, 0, 0, 0.08);
+  --pz-border-strong: rgba(0, 0, 0, 0.12);
+
+  /* ─── Typography ─── */
+  --pz-text: rgba(0, 0, 0, 0.80);
+  --pz-text-muted: rgba(0, 0, 0, 0.60);
+  --pz-text-soft: rgba(0, 0, 0, 0.40);
+  --pz-text-faint: rgba(0, 0, 0, 0.25);
+
+  /* ─── Accent ─── */
+  --pz-accent: #24336E;
+  --pz-accent-hover: #1B2655;
+  --pz-accent-text: #FFFFFF;
+  --pz-accent-soft: rgba(36, 51, 110, 0.10);
+
+  /* ─── Status ─── */
+  --pz-success: #10B981;
+  --pz-success-bg: rgba(16, 185, 129, 0.10);
+  --pz-warning: #F59E0B;
+  --pz-warning-bg: rgba(245, 158, 11, 0.10);
+  --pz-error: #EF4444;
+  --pz-error-bg: rgba(239, 68, 68, 0.10);
+  --pz-info: #3B82F6;
+  --pz-info-bg: rgba(59, 130, 246, 0.10);
+}

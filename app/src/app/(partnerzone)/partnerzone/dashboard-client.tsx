@@ -277,12 +277,12 @@ export function DashboardClient({
         {/* Top row: avatar + welcome + stats */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
           <div className="flex items-center gap-4">
-            <div className="flex items-center justify-center size-[60px] rounded-full bg-gradient-to-br from-blue-500 to-teal-500 text-white text-xl font-bold shrink-0">
+            <div className="flex items-center justify-center size-[60px] rounded-full bg-[#24336E] text-white text-xl font-bold shrink-0">
               CL
             </div>
             <div className="flex flex-col">
-              <span className="text-[13px] text-white/40">Bem-vindo ao</span>
-              <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-white">
+              <span className="text-[13px] text-black/50">Bem-vindo ao</span>
+              <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-black/80">
                 PartnerZone
               </h1>
             </div>
@@ -294,7 +294,7 @@ export function DashboardClient({
         <div className="relative">
           <form onSubmit={handleSearchSubmit} className="flex items-center gap-2">
             <div className="relative flex-1">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-white/30" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-black/40" />
               <input
                 ref={searchInputRef}
                 type="text"
@@ -306,19 +306,19 @@ export function DashboardClient({
                   }
                 }}
                 placeholder="Buscar materiais..."
-                className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/25 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+                className="w-full h-12 pl-11 pr-4 rounded-xl bg-white border border-black/[0.08] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all"
               />
             </div>
             <button
               type="submit"
-              className="h-12 px-6 rounded-xl bg-blue-500 hover:bg-blue-600 text-white text-[13px] font-semibold transition-colors shrink-0"
+              className="h-12 px-6 rounded-xl bg-[#24336E] hover:bg-[#1B2655] text-white text-[13px] font-semibold transition-colors shrink-0"
             >
               Buscar
             </button>
             <button
               type="button"
               onClick={() => setViewMode(viewMode === "grid" ? "list" : "grid")}
-              className="h-12 px-3 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white/40 hover:text-white/70 hover:border-white/[0.15] transition-all shrink-0"
+              className="h-12 px-3 rounded-xl bg-white border border-black/[0.08] text-black/50 hover:text-black/80 hover:border-black/[0.15] transition-all shrink-0"
             >
               {viewMode === "grid" ? (
                 <List className="size-5" />
@@ -337,12 +337,12 @@ export function DashboardClient({
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -4 }}
                 transition={{ duration: 0.15 }}
-                className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl bg-[#0f1729] border border-white/[0.1] shadow-2xl shadow-black/40 overflow-hidden max-h-[420px] overflow-y-auto"
+                className="absolute top-full left-0 right-0 mt-2 z-50 rounded-xl bg-white border border-black/[0.08] shadow-xl shadow-black/10 overflow-hidden max-h-[420px] overflow-y-auto"
               >
                 {/* Equipment/Category results */}
                 {autocompleteResults.categories.length > 0 && (
                   <div className="p-3">
-                    <p className="px-2 pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-white/30">
+                    <p className="px-2 pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">
                       Equipamentos
                     </p>
                     {autocompleteResults.categories.map((cat) => (
@@ -350,16 +350,16 @@ export function DashboardClient({
                         key={cat.id}
                         href={`/partnerzone/categories/${cat.slug}`}
                         onClick={() => setShowAutocomplete(false)}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition-colors"
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-black/[0.04] transition-colors"
                       >
-                        <Cpu className="size-4 text-purple-400 shrink-0" />
+                        <Cpu className="size-4 text-[#24336E] shrink-0" />
                         <div className="flex-1 min-w-0">
-                          <p className="text-[13px] text-white font-medium truncate">{cat.name}</p>
+                          <p className="text-[13px] text-black/80 font-medium truncate">{cat.name}</p>
                           {cat.description && (
-                            <p className="text-[11px] text-white/30 truncate">{cat.description}</p>
+                            <p className="text-[11px] text-black/40 truncate">{cat.description}</p>
                           )}
                         </div>
-                        <ChevronRight className="size-3.5 text-white/20 shrink-0" />
+                        <ChevronRight className="size-3.5 text-black/30 shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -367,13 +367,13 @@ export function DashboardClient({
 
                 {/* Separator */}
                 {autocompleteResults.categories.length > 0 && autocompleteResults.materials.length > 0 && (
-                  <div className="mx-3 h-px bg-white/[0.06]" />
+                  <div className="mx-3 h-px bg-black/[0.08]" />
                 )}
 
                 {/* Material results */}
                 {autocompleteResults.materials.length > 0 && (
                   <div className="p-3">
-                    <p className="px-2 pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-white/30">
+                    <p className="px-2 pb-2 text-[10px] font-bold uppercase tracking-[0.15em] text-black/40">
                       Materiais ({autocompleteResults.totalMaterials})
                     </p>
                     {autocompleteResults.materials.map((material) => (
@@ -381,23 +381,23 @@ export function DashboardClient({
                         key={material.id}
                         href={`/partnerzone/material/${material.id}`}
                         onClick={() => setShowAutocomplete(false)}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/[0.04] transition-colors"
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-black/[0.04] transition-colors"
                       >
-                        <FileText className="size-4 text-blue-400 shrink-0" />
+                        <FileText className="size-4 text-[#24336E] shrink-0" />
                         <div className="flex-1 min-w-0">
-                          <p className="text-[13px] text-white font-medium truncate">{material.title}</p>
+                          <p className="text-[13px] text-black/80 font-medium truncate">{material.title}</p>
                           <div className="flex items-center gap-2 mt-0.5">
                             {material.category && (
-                              <span className="text-[10px] text-blue-400/60 font-medium">
+                              <span className="text-[10px] text-[#24336E]/70 font-medium">
                                 {material.category.name}
                               </span>
                             )}
-                            <span className="text-[10px] text-white/25">
+                            <span className="text-[10px] text-black/30">
                               {formatFileSize(material.file_size)}
                             </span>
                           </div>
                         </div>
-                        <ChevronRight className="size-3.5 text-white/20 shrink-0" />
+                        <ChevronRight className="size-3.5 text-black/30 shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -406,19 +406,19 @@ export function DashboardClient({
                 {/* No results */}
                 {autocompleteResults.categories.length === 0 && autocompleteResults.materials.length === 0 && (
                   <div className="p-6 text-center">
-                    <p className="text-[13px] text-white/40">Nenhum resultado encontrado</p>
+                    <p className="text-[13px] text-black/50">Nenhum resultado encontrado</p>
                   </div>
                 )}
 
                 {/* Search all link */}
                 {(autocompleteResults.categories.length > 0 || autocompleteResults.materials.length > 0) && (
-                  <div className="border-t border-white/[0.06] p-2">
+                  <div className="border-t border-black/[0.08] p-2">
                     <button
                       onClick={() => {
                         setShowAutocomplete(false)
                         router.push(`/partnerzone/search?q=${encodeURIComponent(searchQuery.trim())}`)
                       }}
-                      className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-[12px] text-blue-400 hover:bg-blue-500/10 transition-colors"
+                      className="w-full flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-[12px] text-[#24336E] hover:bg-[#24336E]/10 transition-colors"
                     >
                       <Search className="size-3.5" />
                       Ver todos os resultados para &quot;{searchQuery.trim()}&quot;
@@ -435,10 +435,10 @@ export function DashboardClient({
       {/* Equipamentos Section */}
       <motion.section variants={itemVariants} className="flex flex-col gap-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-white">Equipamentos</h2>
+          <h2 className="text-lg font-bold text-black/80">Equipamentos</h2>
           <Link
             href="/partnerzone/categories"
-            className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 transition-all"
+            className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-[#24336E] hover:bg-[#24336E]/10 transition-all"
           >
             Ver todas <ArrowRight className="size-3" />
           </Link>
@@ -456,10 +456,10 @@ export function DashboardClient({
               >
                 <Link
                   href={`/partnerzone/categories/${cat.slug}`}
-                  className="group relative flex flex-col rounded-xl border border-white/[0.06] bg-[#0c1220] overflow-hidden transition-all duration-300 hover:border-blue-500/20 hover:shadow-lg hover:shadow-blue-500/5"
+                  className="group relative flex flex-col rounded-xl border border-black/[0.08] bg-white overflow-hidden transition-all duration-300 hover:border-[#24336E]/20 hover:shadow-lg hover:shadow-[#24336E]/5"
                 >
                   {/* Equipment image area */}
-                  <div className="relative h-36 bg-gradient-to-br from-white/[0.02] to-white/[0.01] overflow-hidden">
+                  <div className="relative h-36 bg-[#F5F5F5] overflow-hidden">
                     {getEquipmentImage(cat.name) ? (
                       <Image
                         src={getEquipmentImage(cat.name)!}
@@ -470,8 +470,8 @@ export function DashboardClient({
                       />
                     ) : (
                       <div className="flex items-center justify-center h-full">
-                        <div className="p-3 rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/[0.06] group-hover:scale-110 transition-transform duration-300">
-                          <Cpu className="size-7 text-blue-400/60 group-hover:text-blue-400 transition-colors" />
+                        <div className="p-3 rounded-xl bg-white border border-black/[0.08] group-hover:scale-110 transition-transform duration-300">
+                          <Cpu className="size-7 text-[#24336E]/60 group-hover:text-[#24336E] transition-colors" />
                         </div>
                       </div>
                     )}
@@ -479,7 +479,7 @@ export function DashboardClient({
 
                   {/* Equipment name */}
                   <div className="p-3 pt-2.5">
-                    <h3 className="text-[13px] font-semibold text-white/80 group-hover:text-white transition-colors text-center truncate">
+                    <h3 className="text-[13px] font-semibold text-black/80 group-hover:text-black transition-colors text-center truncate">
                       {cat.name}
                     </h3>
                   </div>
@@ -495,14 +495,14 @@ export function DashboardClient({
         <motion.section variants={itemVariants} className="flex flex-col gap-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center size-7 rounded-lg bg-emerald-500/10">
-                <Clock className="size-3.5 text-emerald-400" />
+              <div className="flex items-center justify-center size-7 rounded-lg bg-[#10B981]/10">
+                <Clock className="size-3.5 text-[#047857]" />
               </div>
-              <h2 className="text-lg font-bold text-white">Materiais Recentes</h2>
+              <h2 className="text-lg font-bold text-black/80">Materiais Recentes</h2>
             </div>
             <Link
               href="/partnerzone/search?sort=recent"
-              className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-emerald-400 hover:text-emerald-300 hover:bg-emerald-500/10 transition-all"
+              className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-[#047857] hover:bg-[#10B981]/10 transition-all"
             >
               Ver todos <ArrowRight className="size-3" />
             </Link>

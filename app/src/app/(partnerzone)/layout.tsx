@@ -2,6 +2,7 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import type { ReactNode } from "react"
 import "../tenant-tokens.generated.css"
+import "./partnerzone/partnerzone.css"
 
 export const metadata = {
   title: "PartnerZone — Contourline",
@@ -10,7 +11,9 @@ export const metadata = {
 
 export default function PartnerZoneRootLayout({ children }: { children: ReactNode }) {
   return (
-    <div className={`${GeistSans.variable} ${GeistMono.variable} dark min-h-screen bg-background text-foreground antialiased`}>
+    <div
+      className={`${GeistSans.variable} ${GeistMono.variable} min-h-screen bg-[var(--pz-bg)] text-[var(--pz-text)] antialiased`}
+    >
       {children}
     </div>
   )

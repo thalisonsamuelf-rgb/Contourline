@@ -28,13 +28,13 @@ const fileTypeIcons: Record<string, React.ElementType> = {
 }
 
 const fileTypeColors: Record<string, string> = {
-  pdf: "text-red-400",
-  image: "text-emerald-400",
-  video: "text-purple-400",
-  spreadsheet: "text-green-400",
-  presentation: "text-orange-400",
-  document: "text-blue-400",
-  other: "text-gray-400",
+  pdf: "text-[#B91C1C]",
+  image: "text-[#047857]",
+  video: "text-[#7C3AED]",
+  spreadsheet: "text-[#047857]",
+  presentation: "text-[#B45309]",
+  document: "text-[#24336E]",
+  other: "text-black/50",
 }
 
 interface MaterialCardProps {

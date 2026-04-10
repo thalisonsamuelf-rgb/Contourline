@@ -9,7 +9,7 @@ export default function PartnerZoneError({
 }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-[50vh] gap-4">
-      <h2 className="text-lg font-bold text-red-400">Erro no PartnerZone</h2>
+      <h2 className="text-lg font-bold text-[#B91C1C]">Erro no PartnerZone</h2>
       <p className="text-sm text-muted-foreground max-w-md text-center">
         {error.message}
       </p>

@@ -46,7 +46,7 @@ function StatusPill({ inv }: { inv: Invoice }) {
   const overdue = isOverdue(inv)
   if (overdue && inv.status !== "paid" && inv.status !== "cancelled") {
     return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-red-500/10 text-red-400 border border-red-500/20">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-[#EF4444]/10 text-[#B91C1C] border border-[#EF4444]/20">
         <AlertCircle className="size-3" />
         Vencido
       </span>
@@ -54,7 +54,7 @@ function StatusPill({ inv }: { inv: Invoice }) {
   }
   if (inv.status === "paid") {
     return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-[#10B981]/10 text-[#047857] border border-[#10B981]/20">
         <CheckCircle2 className="size-3" />
         Pago
       </span>
@@ -62,13 +62,13 @@ function StatusPill({ inv }: { inv: Invoice }) {
   }
   if (inv.status === "cancelled") {
     return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-white/[0.04] text-white/50 border border-white/10">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-black/[0.04] text-black/60 border border-black/10">
         Cancelado
       </span>
     )
   }
   return (
-    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold bg-[#F59E0B]/10 text-[#B45309] border border-[#F59E0B]/20">
       <Clock className="size-3" />
       Pendente
     </span>
@@ -110,7 +110,7 @@ async function BoletosData({ tab }: { tab: Tab }) {
       <div>
         <Link
           href="/partnerzone/conta"
-          className="inline-flex items-center gap-2 text-[13px] text-white/40 hover:text-white/70 transition-colors"
+          className="inline-flex items-center gap-2 text-[13px] text-black/50 hover:text-black/80 transition-colors"
         >
           <ArrowLeft className="size-4" />
           Voltar para Minha Conta
@@ -120,20 +120,20 @@ async function BoletosData({ tab }: { tab: Tab }) {
       {/* Header */}
       <div className="flex items-start justify-between flex-wrap gap-4">
         <div className="flex flex-col gap-1">
-          <h1 className="text-[24px] lg:text-[28px] font-bold text-white tracking-tight">
+          <h1 className="text-[24px] lg:text-[28px] font-bold text-black/80 tracking-tight">
             Boletos
           </h1>
-          <p className="text-[13px] text-white/40">
+          <p className="text-[13px] text-black/50">
             Visualize e copie a linha digitavel ou pix dos seus boletos
           </p>
         </div>
 
         {/* Total due card */}
-        <div className="rounded-2xl bg-gradient-to-br from-amber-500/10 to-amber-500/0 border border-amber-500/20 px-5 py-3.5">
-          <p className="text-[10px] uppercase tracking-wider text-amber-400/70 font-bold">
+        <div className="rounded-2xl bg-[#F59E0B]/10 border border-[#F59E0B]/20 px-5 py-3.5">
+          <p className="text-[10px] uppercase tracking-wider text-[#B45309] font-bold">
             Total em aberto
           </p>
-          <p className="text-[20px] font-bold text-white mt-0.5">
+          <p className="text-[20px] font-bold text-black/80 mt-0.5">
             {formatCurrencyBRL(totalDue)}
           </p>
         </div>
@@ -149,8 +149,8 @@ async function BoletosData({ tab }: { tab: Tab }) {
               href={`/partnerzone/conta/boletos?tab=${t.key}`}
               className={`px-4 py-2 rounded-xl text-[12px] font-semibold transition-all ${
                 active
-                  ? "bg-blue-500 text-white shadow-lg shadow-blue-500/20"
-                  : "bg-[#0c1220] border border-white/[0.08] text-white/50 hover:text-white/80 hover:border-white/[0.15]"
+                  ? "bg-[#24336E] text-white shadow-lg shadow-[#24336E]/20"
+                  : "bg-white border border-black/[0.08] text-black/60 hover:text-black/80 hover:border-black/[0.15]"
               }`}
             >
               {t.label}
@@ -161,18 +161,18 @@ async function BoletosData({ tab }: { tab: Tab }) {
 
       {/* Table */}
       {filtered.length === 0 ? (
-        <div className="rounded-2xl bg-[#0c1220] border border-white/[0.06] p-10 text-center">
-          <Receipt className="size-10 text-white/20 mx-auto mb-3" />
-          <p className="text-[14px] text-white/50">
+        <div className="rounded-2xl bg-white border border-black/[0.08] p-10 text-center">
+          <Receipt className="size-10 text-black/30 mx-auto mb-3" />
+          <p className="text-[14px] text-black/50">
             Nenhum boleto nesta categoria.
           </p>
         </div>
       ) : (
-        <div className="rounded-2xl bg-[#0c1220] border border-white/[0.06] overflow-hidden">
+        <div className="rounded-2xl bg-white border border-black/[0.08] overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-[13px]">
               <thead>
-                <tr className="text-left text-[11px] uppercase tracking-wider text-white/40 bg-white/[0.02]">
+                <tr className="text-left text-[11px] uppercase tracking-wider text-black/50 bg-black/[0.02]">
                   <th className="px-5 py-3.5 font-semibold">Numero</th>
                   <th className="px-5 py-3.5 font-semibold">Descricao</th>
                   <th className="px-5 py-3.5 font-semibold text-right">Valor</th>
@@ -187,20 +187,20 @@ async function BoletosData({ tab }: { tab: Tab }) {
                   return (
                     <tr
                       key={inv.id}
-                      className={`border-t border-white/[0.04] hover:bg-white/[0.02] transition-colors ${
-                        overdue ? "bg-red-500/[0.03]" : ""
+                      className={`border-t border-black/[0.06] hover:bg-black/[0.02] transition-colors ${
+                        overdue ? "bg-[#EF4444]/[0.04]" : ""
                       }`}
                     >
-                      <td className="px-5 py-4 font-mono text-white/90 font-semibold">
+                      <td className="px-5 py-4 font-mono text-black/90 font-semibold">
                         {inv.invoice_number}
                       </td>
-                      <td className="px-5 py-4 text-white/60 max-w-[260px] truncate">
+                      <td className="px-5 py-4 text-black/60 max-w-[260px] truncate">
                         {inv.description ?? "—"}
                       </td>
-                      <td className="px-5 py-4 text-right text-white font-bold">
+                      <td className="px-5 py-4 text-right text-black/80 font-bold">
                         {formatCurrencyBRL(inv.amount)}
                       </td>
-                      <td className={`px-5 py-4 ${overdue ? "text-red-400 font-semibold" : "text-white/60"}`}>
+                      <td className={`px-5 py-4 ${overdue ? "text-[#B91C1C] font-semibold" : "text-black/60"}`}>
                         {formatDateBR(inv.due_date)}
                       </td>
                       <td className="px-5 py-4">
@@ -214,7 +214,7 @@ async function BoletosData({ tab }: { tab: Tab }) {
                               target="_blank"
                               rel="noopener noreferrer"
                               title="Baixar boleto"
-                              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 text-[11px] font-semibold border border-blue-500/20 transition-colors"
+                              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[#24336E]/10 hover:bg-[#24336E]/20 text-[#24336E] text-[11px] font-semibold border border-[#24336E]/20 transition-colors"
                             >
                               <Download className="size-3" />
                               PDF
@@ -263,7 +263,7 @@ export default async function BoletosPage({ searchParams }: PageProps) {
     <Suspense
       fallback={
         <div className="flex items-center justify-center py-20">
-          <div className="size-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          <div className="size-8 border-2 border-[#24336E] border-t-transparent rounded-full animate-spin" />
         </div>
       }
     >

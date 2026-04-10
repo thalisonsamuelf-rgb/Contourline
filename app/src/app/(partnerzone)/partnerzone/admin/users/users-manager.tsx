@@ -61,25 +61,25 @@ type Role = "admin" | "editor" | "viewer"
 type Department = "marketing" | "vendas" | "clinical" | "admin" | "operacoes"
 
 const ROLE_CONFIG: Record<Role, { label: string; color: string; bgColor: string; icon: typeof Shield }> = {
-  admin: { label: "Admin", color: "text-rose-400", bgColor: "bg-rose-500/15 border-rose-500/20", icon: Shield },
-  editor: { label: "Editor", color: "text-blue-400", bgColor: "bg-blue-500/15 border-blue-500/20", icon: Edit3 },
-  viewer: { label: "Viewer", color: "text-gray-400", bgColor: "bg-gray-500/15 border-gray-500/20", icon: Eye },
+  admin: { label: "Admin", color: "text-[#B91C1C]", bgColor: "bg-[#EF4444]/10 border-[#EF4444]/20", icon: Shield },
+  editor: { label: "Editor", color: "text-[#1D4ED8]", bgColor: "bg-[#3B82F6]/10 border-[#3B82F6]/20", icon: Edit3 },
+  viewer: { label: "Viewer", color: "text-black/60", bgColor: "bg-black/[0.04] border-black/10", icon: Eye },
 }
 
 const DEPARTMENT_CONFIG: Record<string, { label: string; color: string }> = {
-  marketing: { label: "Marketing", color: "bg-purple-500/15 text-purple-400 border-purple-500/20" },
-  vendas: { label: "Vendas", color: "bg-emerald-500/15 text-emerald-400 border-emerald-500/20" },
-  clinical: { label: "Clinical", color: "bg-cyan-500/15 text-cyan-400 border-cyan-500/20" },
-  admin: { label: "Admin", color: "bg-amber-500/15 text-amber-400 border-amber-500/20" },
-  operacoes: { label: "Operacoes", color: "bg-orange-500/15 text-orange-400 border-orange-500/20" },
+  marketing: { label: "Marketing", color: "bg-[#24336E]/10 text-[#24336E] border-[#24336E]/20" },
+  vendas: { label: "Vendas", color: "bg-[#10B981]/10 text-[#047857] border-[#10B981]/20" },
+  clinical: { label: "Clinical", color: "bg-[#3B82F6]/10 text-[#1D4ED8] border-[#3B82F6]/20" },
+  admin: { label: "Admin", color: "bg-[#F59E0B]/10 text-[#B45309] border-[#F59E0B]/20" },
+  operacoes: { label: "Operacoes", color: "bg-[#F59E0B]/10 text-[#B45309] border-[#F59E0B]/20" },
 }
 
 const DEPARTMENTS: Department[] = ["marketing", "vendas", "clinical", "admin", "operacoes"]
 
 const AVATAR_COLORS: Record<Role, string> = {
-  admin: "bg-rose-500/20 text-rose-400 border-rose-500/30",
-  editor: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  viewer: "bg-gray-500/20 text-gray-400 border-gray-500/30",
+  admin: "bg-[#EF4444]/15 text-[#B91C1C] border-[#EF4444]/30",
+  editor: "bg-[#3B82F6]/15 text-[#1D4ED8] border-[#3B82F6]/30",
+  viewer: "bg-black/[0.06] text-black/70 border-black/15",
 }
 
 // ── Helpers ────────────────────────────────────────────────────────────
@@ -136,8 +136,8 @@ function ToastContainer({ toasts, onDismiss }: { toasts: Toast[]; onDismiss: (id
           exit={{ opacity: 0, x: 40 }}
           className={`flex items-center gap-3 rounded-lg border px-4 py-3 text-sm shadow-lg backdrop-blur-sm ${
             t.type === "success"
-              ? "border-emerald-500/30 bg-emerald-950/80 text-emerald-300"
-              : "border-red-500/30 bg-red-950/80 text-red-300"
+              ? "border-[#10B981]/30 bg-[#10B981]/10 text-[#047857]"
+              : "border-[#EF4444]/30 bg-[#EF4444]/10 text-[#B91C1C]"
           }`}
         >
           {t.type === "success" ? (
@@ -146,7 +146,7 @@ function ToastContainer({ toasts, onDismiss }: { toasts: Toast[]; onDismiss: (id
             <AlertTriangle className="size-4 shrink-0" />
           )}
           <span>{t.message}</span>
-          <button onClick={() => onDismiss(t.id)} className="ml-2 p-0.5 rounded hover:bg-white/10">
+          <button onClick={() => onDismiss(t.id)} className="ml-2 p-0.5 rounded hover:bg-black/10">
             <X className="size-3" />
           </button>
         </motion.div>
@@ -394,10 +394,10 @@ export default function UsersManager({ initialUsers, initialStats }: UsersManage
         {/* Stats cards */}
         <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { label: "Total", value: stats.total, icon: Users, color: "text-white" },
-            { label: "Admins", value: stats.byRole.admin, icon: Shield, color: "text-rose-400" },
-            { label: "Editors", value: stats.byRole.editor, icon: Edit3, color: "text-blue-400" },
-            { label: "Viewers", value: stats.byRole.viewer, icon: Eye, color: "text-gray-400" },
+            { label: "Total", value: stats.total, icon: Users, color: "text-[#24336E]" },
+            { label: "Admins", value: stats.byRole.admin, icon: Shield, color: "text-[#B91C1C]" },
+            { label: "Editors", value: stats.byRole.editor, icon: Edit3, color: "text-[#1D4ED8]" },
+            { label: "Viewers", value: stats.byRole.viewer, icon: Eye, color: "text-black/60" },
           ].map(({ label, value, icon: Icon, color }) => (
             <div
               key={label}
@@ -609,7 +609,7 @@ export default function UsersManager({ initialUsers, initialStats }: UsersManage
 
       {/* ── Invite Modal ──────────────────────────────────────────────── */}
       <Dialog open={inviteOpen} onOpenChange={setInviteOpen}>
-        <DialogContent className="bg-[#111827] border-white/[0.06]">
+        <DialogContent className="bg-white border-black/[0.08]">
           <DialogHeader>
             <DialogTitle className="text-foreground">Convidar Usuario</DialogTitle>
             <DialogDescription>
@@ -690,7 +690,7 @@ export default function UsersManager({ initialUsers, initialStats }: UsersManage
 
       {/* ── Confirmation Dialog ───────────────────────────────────────── */}
       <Dialog open={!!confirmAction} onOpenChange={() => setConfirmAction(null)}>
-        <DialogContent className="bg-[#111827] border-white/[0.06] sm:max-w-md">
+        <DialogContent className="bg-white border-black/[0.08] sm:max-w-md">
           <DialogHeader>
             <DialogTitle className="text-foreground">
               {confirmAction?.type === "delete" ? "Remover Usuario" : "Alterar Permissao"}

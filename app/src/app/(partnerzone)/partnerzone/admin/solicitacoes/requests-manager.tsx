@@ -67,14 +67,14 @@ interface RequestsManagerProps {
 const TYPE_CONFIG = {
   solicitar: {
     label: "Solicitacao",
-    color: "text-blue-400",
-    bgColor: "bg-blue-500/15 border-blue-500/20 text-blue-400",
+    color: "text-[#1D4ED8]",
+    bgColor: "bg-[#3B82F6]/10 border-[#3B82F6]/20 text-[#1D4ED8]",
     icon: MessageSquare,
   },
   reportar: {
     label: "Reclamacao",
-    color: "text-red-400",
-    bgColor: "bg-red-500/15 border-red-500/20 text-red-400",
+    color: "text-[#B91C1C]",
+    bgColor: "bg-[#EF4444]/10 border-[#EF4444]/20 text-[#B91C1C]",
     icon: AlertTriangle,
   },
 } as const
@@ -82,26 +82,26 @@ const TYPE_CONFIG = {
 const STATUS_CONFIG = {
   pending: {
     label: "Pendente",
-    color: "text-yellow-400",
-    bgColor: "bg-yellow-500/15 border-yellow-500/20 text-yellow-400",
+    color: "text-[#B45309]",
+    bgColor: "bg-[#F59E0B]/10 border-[#F59E0B]/20 text-[#B45309]",
     icon: Clock,
   },
   in_progress: {
     label: "Em Andamento",
-    color: "text-blue-400",
-    bgColor: "bg-blue-500/15 border-blue-500/20 text-blue-400",
+    color: "text-[#1D4ED8]",
+    bgColor: "bg-[#3B82F6]/10 border-[#3B82F6]/20 text-[#1D4ED8]",
     icon: Loader2,
   },
   resolved: {
     label: "Resolvida",
-    color: "text-emerald-400",
-    bgColor: "bg-emerald-500/15 border-emerald-500/20 text-emerald-400",
+    color: "text-[#047857]",
+    bgColor: "bg-[#10B981]/10 border-[#10B981]/20 text-[#047857]",
     icon: CheckCircle2,
   },
   rejected: {
     label: "Rejeitada",
-    color: "text-red-400",
-    bgColor: "bg-red-500/15 border-red-500/20 text-red-400",
+    color: "text-[#B91C1C]",
+    bgColor: "bg-[#EF4444]/10 border-[#EF4444]/20 text-[#B91C1C]",
     icon: XCircle,
   },
 } as const
@@ -172,8 +172,8 @@ function ToastContainer({ toasts, onDismiss }: { toasts: Toast[]; onDismiss: (id
           exit={{ opacity: 0, x: 40 }}
           className={`flex items-center gap-3 rounded-lg border px-4 py-3 text-sm shadow-lg backdrop-blur-sm ${
             t.type === "success"
-              ? "border-emerald-500/30 bg-emerald-950/80 text-emerald-300"
-              : "border-red-500/30 bg-red-950/80 text-red-300"
+              ? "border-[#10B981]/30 bg-[#10B981]/10 text-[#047857]"
+              : "border-[#EF4444]/30 bg-[#EF4444]/10 text-[#B91C1C]"
           }`}
         >
           {t.type === "success" ? (
@@ -182,7 +182,7 @@ function ToastContainer({ toasts, onDismiss }: { toasts: Toast[]; onDismiss: (id
             <AlertTriangle className="size-4 shrink-0" />
           )}
           <span>{t.message}</span>
-          <button onClick={() => onDismiss(t.id)} className="ml-2 p-0.5 rounded hover:bg-white/10">
+          <button onClick={() => onDismiss(t.id)} className="ml-2 p-0.5 rounded hover:bg-black/10">
             <X className="size-3" />
           </button>
         </motion.div>
@@ -345,10 +345,10 @@ export default function RequestsManager({ initialRequests }: RequestsManagerProp
         {/* Stats cards */}
         <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { label: "Total de Solicitacoes", value: stats.total, icon: FileText, color: "text-white" },
-            { label: "Pendentes", value: stats.pending, icon: Clock, color: "text-yellow-400" },
-            { label: "Em Andamento", value: stats.inProgress, icon: Loader2, color: "text-blue-400" },
-            { label: "Resolvidas", value: stats.resolved, icon: CheckCircle2, color: "text-emerald-400" },
+            { label: "Total de Solicitacoes", value: stats.total, icon: FileText, color: "text-[#24336E]" },
+            { label: "Pendentes", value: stats.pending, icon: Clock, color: "text-[#B45309]" },
+            { label: "Em Andamento", value: stats.inProgress, icon: Loader2, color: "text-[#1D4ED8]" },
+            { label: "Resolvidas", value: stats.resolved, icon: CheckCircle2, color: "text-[#047857]" },
           ].map(({ label, value, icon: Icon, color }) => (
             <div
               key={label}
@@ -470,7 +470,7 @@ export default function RequestsManager({ initialRequests }: RequestsManagerProp
                       <td className="px-4 py-3 text-right">
                         <button
                           onClick={() => openDetail(req)}
-                          className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1.5 rounded-md hover:bg-white/5"
+                          className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors px-2 py-1.5 rounded-md hover:bg-black/[0.04]"
                         >
                           <Eye className="size-3.5" />
                           <span className="hidden sm:inline">Ver detalhes</span>
@@ -508,7 +508,7 @@ export default function RequestsManager({ initialRequests }: RequestsManagerProp
 
       {/* ── Detail Modal ──────────────────────────────────────────────── */}
       <Dialog open={!!selectedRequest} onOpenChange={(open) => { if (!open) closeDetail() }}>
-        <DialogContent className="bg-[#111827] border-white/[0.06] sm:max-w-lg max-h-[90vh] overflow-y-auto">
+        <DialogContent className="bg-white border-black/[0.08] sm:max-w-lg max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-foreground flex items-center gap-2">
               {selectedRequest && (
@@ -554,7 +554,7 @@ export default function RequestsManager({ initialRequests }: RequestsManagerProp
               </div>
 
               {/* Divider */}
-              <div className="border-t border-white/[0.06]" />
+              <div className="border-t border-black/[0.08]" />
 
               {/* Subject & Description */}
               <div className="flex flex-col gap-1">
@@ -563,13 +563,13 @@ export default function RequestsManager({ initialRequests }: RequestsManagerProp
               </div>
               <div className="flex flex-col gap-1">
                 <Label className="text-muted-foreground text-xs">Descricao</Label>
-                <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed rounded-lg bg-white/[0.03] border border-white/[0.06] p-3">
+                <p className="text-sm text-foreground whitespace-pre-wrap leading-relaxed rounded-lg bg-black/[0.03] border border-black/[0.08] p-3">
                   {selectedRequest.descricao}
                 </p>
               </div>
 
               {/* Divider */}
-              <div className="border-t border-white/[0.06]" />
+              <div className="border-t border-black/[0.08]" />
 
               {/* Admin controls */}
               <div className="flex flex-col gap-3">

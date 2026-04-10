@@ -56,9 +56,9 @@ export function AdminDashboardClient({ stats, topDownloaded }: AdminDashboardCli
       {/* Stats */}
       <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { icon: FileText, label: "Total de Materiais", value: stats.totalMaterials, color: "text-blue-400" },
-          { icon: Download, label: "Total de Downloads", value: stats.totalDownloads, color: "text-emerald-400" },
-          { icon: FolderOpen, label: "Categorias", value: stats.totalCategories, color: "text-purple-400" },
+          { icon: FileText, label: "Total de Materiais", value: stats.totalMaterials, color: "text-[#24336E]" },
+          { icon: Download, label: "Total de Downloads", value: stats.totalDownloads, color: "text-[#047857]" },
+          { icon: FolderOpen, label: "Categorias", value: stats.totalCategories, color: "text-[#1D4ED8]" },
         ].map(({ icon: Icon, label, value, color }) => (
           <div
             key={label}

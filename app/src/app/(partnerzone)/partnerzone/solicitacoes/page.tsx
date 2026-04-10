@@ -129,7 +129,7 @@ export default function SolicitacoesPage() {
       <motion.div variants={itemVariants}>
         <Link
           href="/partnerzone"
-          className="inline-flex items-center gap-2 text-[13px] text-white/40 hover:text-white/70 transition-colors"
+          className="inline-flex items-center gap-2 text-[13px] text-black/50 hover:text-black/80 transition-colors"
         >
           <ArrowLeft className="size-4" />
           Voltar
@@ -138,8 +138,8 @@ export default function SolicitacoesPage() {
 
       {/* Header */}
       <motion.div variants={itemVariants} className="flex flex-col gap-1">
-        <h1 className="text-2xl font-bold text-white">Solicitacoes</h1>
-        <p className="text-[14px] text-white/40">
+        <h1 className="text-2xl font-bold text-black/80">Solicitacoes</h1>
+        <p className="text-[14px] text-black/50">
           Reporte problemas ou solicite novos materiais
         </p>
       </motion.div>
@@ -151,8 +151,8 @@ export default function SolicitacoesPage() {
           className={cn(
             "px-5 py-2.5 rounded-xl text-[13px] font-medium transition-all duration-200",
             activeTab === "solicitar"
-              ? "bg-blue-500 text-white"
-              : "bg-[#0c1220] border border-white/[0.08] text-white/50 hover:text-white/80 hover:border-white/[0.15]"
+              ? "bg-[#24336E] text-white"
+              : "bg-white border border-black/[0.08] text-black/60 hover:text-black/80 hover:border-black/[0.15]"
           )}
         >
           Solicitar Novo Material
@@ -162,8 +162,8 @@ export default function SolicitacoesPage() {
           className={cn(
             "px-5 py-2.5 rounded-xl text-[13px] font-medium transition-all duration-200",
             activeTab === "reportar"
-              ? "bg-blue-500 text-white"
-              : "bg-[#0c1220] border border-white/[0.08] text-white/50 hover:text-white/80 hover:border-white/[0.15]"
+              ? "bg-[#24336E] text-white"
+              : "bg-white border border-black/[0.08] text-black/60 hover:text-black/80 hover:border-black/[0.15]"
           )}
         >
           Reportar Problema
@@ -175,7 +175,7 @@ export default function SolicitacoesPage() {
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[13px]"
+          className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-[#10B981]/10 border border-[#10B981]/20 text-[#047857] text-[13px]"
         >
           <CheckCircle className="size-5 shrink-0" />
           <span>Solicitacao enviada com sucesso! Entraremos em contato em breve.</span>
@@ -187,7 +187,7 @@ export default function SolicitacoesPage() {
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-[13px]"
+          className="flex items-center gap-3 px-4 py-3.5 rounded-xl bg-[#EF4444]/10 border border-[#EF4444]/20 text-[#B91C1C] text-[13px]"
         >
           <AlertCircle className="size-5 shrink-0" />
           <span>{errorMessage}</span>
@@ -202,79 +202,79 @@ export default function SolicitacoesPage() {
       >
         {/* Nome */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
-            Nome <span className="text-red-400">*</span>
+          <label className="text-[12px] font-medium text-black/60">
+            Nome <span className="text-[#B91C1C]">*</span>
           </label>
           <div className="relative">
-            <User className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+            <User className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-black/40" />
             <input
               type="text"
               value={formData.nome}
               onChange={(e) => updateField("nome", e.target.value)}
               placeholder="Seu nome completo"
-              className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              className="w-full h-12 pl-11 pr-4 rounded-xl bg-white border border-black/[0.08] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all"
             />
           </div>
         </div>
 
         {/* Email */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
-            Email <span className="text-red-400">*</span>
+          <label className="text-[12px] font-medium text-black/60">
+            Email <span className="text-[#B91C1C]">*</span>
           </label>
           <div className="relative">
-            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-black/40" />
             <input
               type="email"
               value={formData.email}
               onChange={(e) => updateField("email", e.target.value)}
               placeholder="seu@email.com"
-              className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              className="w-full h-12 pl-11 pr-4 rounded-xl bg-white border border-black/[0.08] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all"
             />
           </div>
         </div>
 
         {/* Telefone */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
-            Telefone <span className="text-red-400">*</span>
+          <label className="text-[12px] font-medium text-black/60">
+            Telefone <span className="text-[#B91C1C]">*</span>
           </label>
           <div className="relative">
-            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-black/40" />
             <input
               type="tel"
               value={formData.telefone}
               onChange={(e) => updateField("telefone", formatPhone(e.target.value))}
               placeholder="(31) 99999-9999"
-              className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              className="w-full h-12 pl-11 pr-4 rounded-xl bg-white border border-black/[0.08] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all"
             />
           </div>
         </div>
 
         {/* Equipamento */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
+          <label className="text-[12px] font-medium text-black/60">
             Equipamento
           </label>
           <div className="relative">
-            <Settings className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+            <Settings className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-black/40" />
             <input
               type="text"
               value={formData.equipamento}
               onChange={(e) => updateField("equipamento", e.target.value)}
               placeholder="Ex: HIPRO, Enygma..."
-              className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              className="w-full h-12 pl-11 pr-4 rounded-xl bg-white border border-black/[0.08] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all"
             />
           </div>
         </div>
 
         {/* Assunto */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
-            Assunto <span className="text-red-400">*</span>
+          <label className="text-[12px] font-medium text-black/60">
+            Assunto <span className="text-[#B91C1C]">*</span>
           </label>
           <div className="relative">
-            <FileText className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/25" />
+            <FileText className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-black/40" />
             <input
               type="text"
               value={formData.assunto}
@@ -284,18 +284,18 @@ export default function SolicitacoesPage() {
                   ? "Ex: Preciso de fotos do novo HIPRO"
                   : "Ex: Link de download quebrado"
               }
-              className="w-full h-12 pl-11 pr-4 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              className="w-full h-12 pl-11 pr-4 rounded-xl bg-white border border-black/[0.08] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all"
             />
           </div>
         </div>
 
         {/* Descricao */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[12px] font-medium text-white/50">
-            Descricao <span className="text-red-400">*</span>
+          <label className="text-[12px] font-medium text-black/60">
+            Descricao <span className="text-[#B91C1C]">*</span>
           </label>
           <div className="relative">
-            <AlignLeft className="absolute left-3.5 top-4 size-4 text-white/25" />
+            <AlignLeft className="absolute left-3.5 top-4 size-4 text-black/40" />
             <textarea
               value={formData.descricao}
               onChange={(e) => updateField("descricao", e.target.value)}
@@ -305,7 +305,7 @@ export default function SolicitacoesPage() {
                   : "Descreva o problema encontrado..."
               }
               rows={5}
-              className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-[#0c1220] border border-white/[0.08] text-white text-[14px] placeholder-white/20 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-all resize-none"
+              className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-white border border-black/[0.08] text-black/80 text-[14px] placeholder-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-all resize-none"
             />
           </div>
         </div>
@@ -319,8 +319,8 @@ export default function SolicitacoesPage() {
           className={cn(
             "flex items-center justify-center gap-2 w-full h-12 rounded-xl text-[14px] font-semibold transition-all duration-200 mt-2",
             submitting
-              ? "bg-blue-500/50 text-white/50 cursor-not-allowed"
-              : "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg shadow-blue-500/20"
+              ? "bg-[#24336E]/50 text-white/70 cursor-not-allowed"
+              : "bg-[#24336E] hover:bg-[#1B2655] text-white shadow-lg shadow-[#24336E]/20"
           )}
         >
           {submitting ? (

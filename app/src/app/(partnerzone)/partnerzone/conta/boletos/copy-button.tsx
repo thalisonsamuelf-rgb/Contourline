@@ -28,8 +28,8 @@ export function CopyButton({ value, label, successLabel = "Copiado" }: CopyButto
       onClick={handleCopy}
       className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] font-semibold border transition-colors ${
         copied
-          ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-          : "bg-white/[0.04] hover:bg-white/[0.08] text-white/70 border-white/[0.08]"
+          ? "bg-[#10B981]/10 text-[#047857] border-[#10B981]/20"
+          : "bg-black/[0.04] hover:bg-black/[0.08] text-black/70 border-black/[0.10]"
       }`}
       title={`Copiar ${label}`}
     >

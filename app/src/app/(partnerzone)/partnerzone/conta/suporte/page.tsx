@@ -51,7 +51,7 @@ async function SupportData() {
       <div>
         <Link
           href="/partnerzone/conta"
-          className="inline-flex items-center gap-2 text-[13px] text-white/40 hover:text-white/70 transition-colors"
+          className="inline-flex items-center gap-2 text-[13px] text-black/50 hover:text-black/80 transition-colors"
         >
           <ArrowLeft className="size-4" />
           Voltar para Minha Conta
@@ -60,10 +60,10 @@ async function SupportData() {
 
       {/* Header */}
       <div className="flex flex-col gap-1">
-        <h1 className="text-[24px] lg:text-[28px] font-bold text-white tracking-tight">
+        <h1 className="text-[24px] lg:text-[28px] font-bold text-black/80 tracking-tight">
           Suporte
         </h1>
-        <p className="text-[13px] text-white/40">
+        <p className="text-[13px] text-black/50">
           Abra um ticket com a nossa equipe de atendimento
         </p>
       </div>
@@ -84,7 +84,7 @@ export default function SuportePage() {
     <Suspense
       fallback={
         <div className="flex items-center justify-center py-20">
-          <div className="size-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          <div className="size-8 border-2 border-[#24336E] border-t-transparent rounded-full animate-spin" />
         </div>
       }
     >

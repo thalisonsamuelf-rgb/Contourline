@@ -21,9 +21,9 @@ interface EquipmentRow extends CustomerEquipment {
 }
 
 const STATUS_MAP: Record<CustomerEquipment["status"], { label: string; cls: string }> = {
-  active: { label: "Ativo", cls: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" },
-  maintenance: { label: "Em manutencao", cls: "bg-amber-500/10 text-amber-400 border-amber-500/20" },
-  inactive: { label: "Inativo", cls: "bg-white/[0.04] text-white/50 border-white/10" },
+  active: { label: "Ativo", cls: "bg-[#10B981]/10 text-[#047857] border-[#10B981]/20" },
+  maintenance: { label: "Em manutencao", cls: "bg-[#F59E0B]/10 text-[#B45309] border-[#F59E0B]/20" },
+  inactive: { label: "Inativo", cls: "bg-black/[0.04] text-black/60 border-black/10" },
 }
 
 function isWarrantyValid(until: string | null): boolean {
@@ -61,7 +61,7 @@ async function EquipmentData() {
       <div>
         <Link
           href="/partnerzone/conta"
-          className="inline-flex items-center gap-2 text-[13px] text-white/40 hover:text-white/70 transition-colors"
+          className="inline-flex items-center gap-2 text-[13px] text-black/50 hover:text-black/80 transition-colors"
         >
           <ArrowLeft className="size-4" />
           Voltar para Minha Conta
@@ -70,18 +70,18 @@ async function EquipmentData() {
 
       {/* Header */}
       <div className="flex flex-col gap-1">
-        <h1 className="text-[24px] lg:text-[28px] font-bold text-white tracking-tight">
+        <h1 className="text-[24px] lg:text-[28px] font-bold text-black/80 tracking-tight">
           Meus Equipamentos
         </h1>
-        <p className="text-[13px] text-white/40">
+        <p className="text-[13px] text-black/50">
           Equipamentos Contourline vinculados a sua conta
         </p>
       </div>
 
       {equipment.length === 0 ? (
-        <div className="rounded-2xl bg-[#0c1220] border border-white/[0.06] p-12 text-center">
-          <Wrench className="size-10 text-white/20 mx-auto mb-3" />
-          <p className="text-[14px] text-white/50">
+        <div className="rounded-2xl bg-white border border-black/[0.08] p-12 text-center">
+          <Wrench className="size-10 text-black/30 mx-auto mb-3" />
+          <p className="text-[14px] text-black/50">
             Voce ainda nao possui equipamentos cadastrados.
           </p>
         </div>
@@ -94,10 +94,10 @@ async function EquipmentData() {
             return (
               <div
                 key={eq.id}
-                className="group rounded-2xl bg-[#0c1220] border border-white/[0.06] overflow-hidden flex flex-col hover:border-blue-500/30 transition-all"
+                className="group rounded-2xl bg-white border border-black/[0.08] overflow-hidden flex flex-col hover:border-[#24336E]/30 transition-all"
               >
                 {/* Image */}
-                <div className="relative aspect-[4/3] bg-gradient-to-br from-[#0f1a2e] to-[#070b14] flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-[4/3] bg-[#F5F5F5] flex items-center justify-center overflow-hidden">
                   {img ? (
                     <img
                       src={img}
@@ -105,7 +105,7 @@ async function EquipmentData() {
                       className="max-h-[80%] max-w-[80%] object-contain group-hover:scale-105 transition-transform duration-300"
                     />
                   ) : (
-                    <Wrench className="size-12 text-white/15" />
+                    <Wrench className="size-12 text-black/20" />
                   )}
                   <div className="absolute top-3 right-3">
                     <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold border ${status.cls}`}>
@@ -117,11 +117,11 @@ async function EquipmentData() {
                 {/* Body */}
                 <div className="p-5 flex flex-col gap-3 flex-1">
                   <div>
-                    <h3 className="text-[15px] font-bold text-white leading-tight">
+                    <h3 className="text-[15px] font-bold text-black/80 leading-tight">
                       {eq.equipment_name}
                     </h3>
                     {eq.serial_number && (
-                      <p className="text-[11px] text-white/40 font-mono mt-0.5">
+                      <p className="text-[11px] text-black/50 font-mono mt-0.5">
                         SN: {eq.serial_number}
                       </p>
                     )}
@@ -130,11 +130,11 @@ async function EquipmentData() {
                   <div className="flex flex-col gap-1.5 text-[11px]">
                     <div className="flex items-center gap-2">
                       {warrantyValid ? (
-                        <ShieldCheck className="size-3.5 text-emerald-400" />
+                        <ShieldCheck className="size-3.5 text-[#047857]" />
                       ) : (
-                        <ShieldAlert className="size-3.5 text-white/30" />
+                        <ShieldAlert className="size-3.5 text-black/40" />
                       )}
-                      <span className={warrantyValid ? "text-emerald-400/80" : "text-white/40"}>
+                      <span className={warrantyValid ? "text-[#047857]" : "text-black/50"}>
                         {warrantyValid
                           ? `Garantia ate ${formatDateBR(eq.warranty_until)}`
                           : eq.warranty_until
@@ -143,23 +143,23 @@ async function EquipmentData() {
                       </span>
                     </div>
                     {eq.purchase_date && (
-                      <p className="text-white/40">
+                      <p className="text-black/50">
                         Adquirido em {formatDateBR(eq.purchase_date)}
                       </p>
                     )}
                   </div>
 
-                  <div className="mt-auto pt-3 border-t border-white/[0.06]">
+                  <div className="mt-auto pt-3 border-t border-black/[0.08]">
                     {eq.category ? (
                       <Link
                         href={`/partnerzone/categories/${eq.category.slug}`}
-                        className="inline-flex items-center justify-center gap-1.5 w-full h-9 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 text-[12px] font-semibold border border-blue-500/20 transition-colors"
+                        className="inline-flex items-center justify-center gap-1.5 w-full h-9 rounded-lg bg-[#24336E]/10 hover:bg-[#24336E]/20 text-[#24336E] text-[12px] font-semibold border border-[#24336E]/20 transition-colors"
                       >
                         Ver Materiais
                         <ArrowRight className="size-3.5" />
                       </Link>
                     ) : (
-                      <span className="block text-center text-[11px] text-white/30">
+                      <span className="block text-center text-[11px] text-black/40">
                         Sem materiais vinculados
                       </span>
                     )}
@@ -179,7 +179,7 @@ export default function EquipmentPage() {
     <Suspense
       fallback={
         <div className="flex items-center justify-center py-20">
-          <div className="size-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+          <div className="size-8 border-2 border-[#24336E] border-t-transparent rounded-full animate-spin" />
         </div>
       }
     >

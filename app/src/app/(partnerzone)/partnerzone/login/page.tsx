@@ -49,8 +49,8 @@ export default function PartnerZoneLoginPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center bg-[#070b14]">
-          <Loader2 className="size-8 animate-spin text-blue-500" />
+        <div className="min-h-screen flex items-center justify-center bg-[#E7E7E6]">
+          <Loader2 className="size-8 animate-spin text-[#24336E]" />
         </div>
       }
     >
@@ -84,25 +84,25 @@ function LoginPageContent() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#070b14] px-4 py-8">
+    <div className="min-h-screen flex items-center justify-center bg-[#E7E7E6] px-4 py-8">
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 mb-8">
-          <div className="flex items-center justify-center size-14 rounded-2xl bg-blue-500/10 border border-blue-500/20">
-            <FolderOpen className="size-7 text-blue-400" />
+          <div className="flex items-center justify-center size-14 rounded-2xl bg-[#24336E]/10 border border-[#24336E]/20">
+            <FolderOpen className="size-7 text-[#24336E]" />
           </div>
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-white tracking-tight">
+            <h1 className="text-2xl font-bold text-black/80 tracking-tight">
               PartnerZone
             </h1>
-            <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mt-1 font-medium">
+            <p className="text-xs uppercase tracking-[0.25em] text-black/50 mt-1 font-medium">
               CONTOURLINE
             </p>
           </div>
         </div>
 
         {/* Card */}
-        <div className="bg-[#0c1220] border border-white/[0.08] rounded-2xl p-6 sm:p-8 shadow-2xl">
+        <div className="bg-white border border-black/[0.08] rounded-2xl p-6 sm:p-8 shadow-xl shadow-black/5">
           {/* Global messages */}
           <AnimatePresence mode="wait">
             {error && (
@@ -111,7 +111,7 @@ function LoginPageContent() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                className="mb-4 text-sm text-red-300 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3"
+                className="mb-4 text-sm text-[#B91C1C] bg-[#EF4444]/10 border border-[#EF4444]/20 rounded-xl px-4 py-3"
               >
                 {error}
               </motion.div>
@@ -122,7 +122,7 @@ function LoginPageContent() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                className="mb-4 text-sm text-green-300 bg-green-500/10 border border-green-500/20 rounded-xl px-4 py-3"
+                className="mb-4 text-sm text-[#047857] bg-[#10B981]/10 border border-[#10B981]/20 rounded-xl px-4 py-3"
               >
                 {success}
               </motion.div>
@@ -183,7 +183,7 @@ function LoginPageContent() {
           </AnimatePresence>
         </div>
 
-        <p className="text-center text-xs text-gray-600 mt-6">
+        <p className="text-center text-xs text-black/50 mt-6">
           Acesso restrito a colaboradores Contourline.
         </p>
       </div>
@@ -222,12 +222,12 @@ function InputField({
 }) {
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-sm font-medium text-gray-300">
+      <label htmlFor={id} className="block text-sm font-medium text-black/70">
         {label}
       </label>
       <div className="relative">
         <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-          <Icon className="size-4 text-gray-500" />
+          <Icon className="size-4 text-black/40" />
         </div>
         <input
           id={id}
@@ -236,14 +236,14 @@ function InputField({
           autoComplete={autoComplete}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-10 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-colors"
+          className="w-full rounded-xl border border-black/[0.10] bg-[#F5F5F5] pl-10 pr-10 py-2.5 text-sm text-black/80 placeholder:text-black/30 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-colors"
           placeholder={placeholder}
         />
         {showToggle && onToggle && (
           <button
             type="button"
             onClick={onToggle}
-            className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-300 transition-colors"
+            className="absolute inset-y-0 right-0 flex items-center pr-3 text-black/40 hover:text-black/70 transition-colors"
             tabIndex={-1}
           >
             {toggleState ? (
@@ -335,7 +335,7 @@ function LoginView({
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-white mb-5">Entrar</h2>
+      <h2 className="text-lg font-semibold text-black/80 mb-5">Entrar</h2>
 
       <form onSubmit={handleLogin} className="space-y-4">
         <InputField
@@ -366,7 +366,7 @@ function LoginView({
           <button
             type="button"
             onClick={() => switchView("recovery")}
-            className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+            className="text-xs text-[#24336E] hover:text-[#1B2655] transition-colors"
           >
             Esqueceu a senha?
           </button>
@@ -375,7 +375,7 @@ function LoginView({
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#24336E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1B2655] focus:outline-none focus:ring-2 focus:ring-[#24336E]/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {loading && <Loader2 className="size-4 animate-spin" />}
           {loading ? "Entrando..." : "Entrar"}
@@ -385,10 +385,10 @@ function LoginView({
       {/* Divider */}
       <div className="relative my-6">
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-white/[0.08]" />
+          <div className="w-full border-t border-black/[0.08]" />
         </div>
         <div className="relative flex justify-center text-xs">
-          <span className="bg-[#0c1220] px-3 text-gray-500">
+          <span className="bg-white px-3 text-black/50">
             ou continue com
           </span>
         </div>
@@ -399,10 +399,10 @@ function LoginView({
         type="button"
         onClick={handleGoogleLogin}
         disabled={googleLoading}
-        className="w-full flex items-center justify-center gap-3 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+        className="w-full flex items-center justify-center gap-3 rounded-xl bg-white border border-black/[0.10] px-4 py-2.5 text-sm font-semibold text-black/80 hover:bg-[#F5F5F5] focus:outline-none focus:ring-2 focus:ring-[#24336E]/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
       >
         {googleLoading ? (
-          <Loader2 className="size-4 animate-spin text-gray-600" />
+          <Loader2 className="size-4 animate-spin text-black/60" />
         ) : (
           <GoogleIcon />
         )}
@@ -410,12 +410,12 @@ function LoginView({
       </button>
 
       {/* Switch to register */}
-      <p className="text-center text-sm text-gray-500 mt-6">
+      <p className="text-center text-sm text-black/50 mt-6">
         Nao tem conta?{" "}
         <button
           type="button"
           onClick={() => switchView("register")}
-          className="text-blue-400 hover:text-blue-300 font-medium transition-colors"
+          className="text-[#24336E] hover:text-[#1B2655] font-medium transition-colors"
         >
           Cadastre-se
         </button>
@@ -513,7 +513,7 @@ function RegisterView({
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-white mb-5">Criar conta</h2>
+      <h2 className="text-lg font-semibold text-black/80 mb-5">Criar conta</h2>
 
       <form onSubmit={handleRegister} className="space-y-4">
         <InputField
@@ -566,20 +566,20 @@ function RegisterView({
         <div className="space-y-1.5">
           <label
             htmlFor="register-department"
-            className="block text-sm font-medium text-gray-300"
+            className="block text-sm font-medium text-black/70"
           >
             Departamento
           </label>
           <div className="relative">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-              <Building2 className="size-4 text-gray-500" />
+              <Building2 className="size-4 text-black/40" />
             </div>
             <select
               id="register-department"
               required
               value={department}
               onChange={(e) => setDepartment(e.target.value)}
-              className="w-full appearance-none rounded-xl border border-white/[0.08] bg-[#111827] pl-10 pr-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500/40 focus:ring-1 focus:ring-blue-500/20 transition-colors"
+              className="w-full appearance-none rounded-xl border border-black/[0.10] bg-[#F5F5F5] pl-10 pr-4 py-2.5 text-sm text-black/80 focus:outline-none focus:border-[#24336E]/40 focus:ring-1 focus:ring-[#24336E]/20 transition-colors"
             >
               <option value="" disabled>
                 Selecione seu departamento
@@ -596,19 +596,19 @@ function RegisterView({
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all mt-2"
+          className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#24336E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1B2655] focus:outline-none focus:ring-2 focus:ring-[#24336E]/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all mt-2"
         >
           {loading && <Loader2 className="size-4 animate-spin" />}
           {loading ? "Criando conta..." : "Criar conta"}
         </button>
       </form>
 
-      <p className="text-center text-sm text-gray-500 mt-6">
+      <p className="text-center text-sm text-black/50 mt-6">
         Ja tem conta?{" "}
         <button
           type="button"
           onClick={() => switchView("login")}
-          className="text-blue-400 hover:text-blue-300 font-medium transition-colors"
+          className="text-[#24336E] hover:text-[#1B2655] font-medium transition-colors"
         >
           Entrar
         </button>
@@ -666,16 +666,16 @@ function RecoveryView({
       <button
         type="button"
         onClick={() => switchView("login")}
-        className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-200 transition-colors mb-4"
+        className="flex items-center gap-1.5 text-sm text-black/50 hover:text-black/80 transition-colors mb-4"
       >
         <ArrowLeft className="size-4" />
         Voltar ao login
       </button>
 
-      <h2 className="text-lg font-semibold text-white mb-2">
+      <h2 className="text-lg font-semibold text-black/80 mb-2">
         Recuperar senha
       </h2>
-      <p className="text-sm text-gray-500 mb-5">
+      <p className="text-sm text-black/50 mb-5">
         Informe seu email e enviaremos um link para redefinir sua senha.
       </p>
 
@@ -694,7 +694,7 @@ function RecoveryView({
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#24336E] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1B2655] focus:outline-none focus:ring-2 focus:ring-[#24336E]/40 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {loading && <Loader2 className="size-4 animate-spin" />}
           {loading ? "Enviando..." : "Enviar link de recuperacao"}
