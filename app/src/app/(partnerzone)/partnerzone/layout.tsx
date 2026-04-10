@@ -16,7 +16,7 @@ import {
   Menu,
   X,
   ChevronRight,
-  ExternalLink,
+  LogOut,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { getSupabaseBrowserClient } from "@/lib/supabase/client"
@@ -248,7 +248,18 @@ export default function PartnerZoneLayout({ children }: { children: ReactNode })
             <div className="flex-1 min-w-0">
               <p className="text-[13px] font-medium text-white truncate">{displayName}</p>
             </div>
-            <ExternalLink className="size-4 text-white/30 hover:text-white/60 cursor-pointer transition-colors shrink-0" />
+            <button
+              onClick={async () => {
+                const { getSupabaseBrowserClient } = await import("@/lib/supabase/client")
+                const supabase = getSupabaseBrowserClient()
+                if (supabase) await supabase.auth.signOut()
+                window.location.href = "/partnerzone/login"
+              }}
+              title="Sair"
+              className="p-1 rounded-md hover:bg-red-500/10 transition-colors shrink-0"
+            >
+              <LogOut className="size-4 text-white/30 hover:text-red-400 transition-colors" />
+            </button>
           </div>
         </div>
       </aside>
