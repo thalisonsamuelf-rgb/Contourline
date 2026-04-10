@@ -12,6 +12,8 @@ import {
   CheckCircle,
   XCircle,
   Camera,
+  LayoutGrid,
+  List,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import type { Category } from "@/lib/partnerzone/types"
@@ -106,6 +108,7 @@ export default function CoversManager({ categories }: CoversManagerProps) {
   const [removing, setRemoving] = useState<string | null>(null)
   const [previewMap, setPreviewMap] = useState<Record<string, string>>({})
   const [toasts, setToasts] = useState<ToastMessage[]>([])
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const fileInputRef = useRef<HTMLInputElement>(null)
   const activeSlugRef = useRef<string | null>(null)
   const toastIdRef = useRef(0)
@@ -331,20 +334,32 @@ export default function CoversManager({ categories }: CoversManagerProps) {
           </p>
         </div>
 
-        {/* Stats */}
+        {/* Stats + View toggle */}
         {!loading && (
-          <div className="flex items-center gap-4 text-xs text-white/40">
-            <div className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-emerald-400" />
-              {totalWithImage} com imagem
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 text-xs text-white/40">
+              <span>{totalWithImage} com imagem</span>
+              <span>{totalWithoutImage} sem</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-white/20" />
-              {totalWithoutImage} sem imagem
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="size-2 rounded-full bg-blue-400" />
-              {totalUploaded} no Storage
+            <div className="flex items-center rounded-lg border border-white/[0.08] overflow-hidden">
+              <button
+                onClick={() => setViewMode("grid")}
+                className={cn(
+                  "p-2 transition-colors",
+                  viewMode === "grid" ? "bg-blue-500/20 text-blue-400" : "text-white/30 hover:text-white/60"
+                )}
+              >
+                <LayoutGrid className="size-4" />
+              </button>
+              <button
+                onClick={() => setViewMode("list")}
+                className={cn(
+                  "p-2 transition-colors",
+                  viewMode === "list" ? "bg-blue-500/20 text-blue-400" : "text-white/30 hover:text-white/60"
+                )}
+              >
+                <List className="size-4" />
+              </button>
             </div>
           </div>
         )}
@@ -367,9 +382,9 @@ export default function CoversManager({ categories }: CoversManagerProps) {
         </div>
       )}
 
-      {/* Equipment grid */}
-      {!loading && covers.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {/* Equipment grid/list */}
+      {!loading && covers.length > 0 && viewMode === "grid" && (
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
           {covers.map((cover) => {
             const displayImage = getDisplayImage(cover)
             const isUploading = uploading === cover.slug
@@ -379,83 +394,108 @@ export default function CoversManager({ categories }: CoversManagerProps) {
             return (
               <div
                 key={cover.id}
-                className="group relative rounded-xl border border-white/[0.06] bg-[#0c1220] overflow-hidden transition-all duration-200 hover:border-white/[0.12]"
+                className="group relative rounded-lg border border-white/[0.06] bg-[#0c1220] overflow-hidden transition-all duration-200 hover:border-white/[0.15]"
               >
-                {/* Image area */}
-                <div className="relative aspect-[4/3] bg-[#080d16] flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-square bg-[#080d16] flex items-center justify-center overflow-hidden">
                   {displayImage ? (
-                    <img
-                      src={displayImage}
-                      alt={cover.name}
-                      className="w-full h-full object-contain p-3"
-                    />
+                    <img src={displayImage} alt={cover.name} className="w-full h-full object-contain p-2" />
                   ) : (
-                    <div className="flex flex-col items-center gap-2 text-white/15">
-                      <ImageIcon className="size-10" />
-                      <span className="text-xs">Sem capa</span>
-                    </div>
+                    <ImageIcon className="size-6 text-white/10" />
                   )}
 
-                  {/* Upload overlay */}
-                  {isUploading && (
+                  {(isUploading || isRemoving) && (
                     <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                      <div className="flex flex-col items-center gap-2">
-                        <Loader2 className="size-6 text-blue-400 animate-spin" />
-                        <span className="text-xs text-white/60">Enviando...</span>
-                      </div>
+                      <Loader2 className={cn("size-5 animate-spin", isUploading ? "text-blue-400" : "text-red-400")} />
                     </div>
                   )}
 
-                  {/* Removing overlay */}
-                  {isRemoving && (
-                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                      <div className="flex flex-col items-center gap-2">
-                        <Loader2 className="size-6 text-red-400 animate-spin" />
-                        <span className="text-xs text-white/60">Removendo...</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Hover overlay with actions */}
                   {!isUploading && !isRemoving && (
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-200 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-all duration-200 flex items-center justify-center gap-1.5 opacity-0 group-hover:opacity-100">
                       <button
                         onClick={() => openFilePicker(cover.slug)}
-                        className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500/90 hover:bg-blue-500 text-white text-xs font-medium transition-colors"
+                        className="p-1.5 rounded-lg bg-blue-500/90 hover:bg-blue-500 text-white transition-colors"
+                        title={hasCover ? "Alterar Capa" : "Adicionar Capa"}
                       >
                         <Camera className="size-3.5" />
-                        {hasCover ? "Alterar Capa" : "Adicionar Capa"}
                       </button>
-
                       {cover.has_cover && (
                         <button
                           onClick={() => handleRemove(cover.slug)}
-                          className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-red-500/90 hover:bg-red-500 text-white text-xs font-medium transition-colors"
+                          className="p-1.5 rounded-lg bg-red-500/90 hover:bg-red-500 text-white transition-colors"
+                          title="Remover"
                         >
                           <Trash2 className="size-3.5" />
-                          Remover
                         </button>
                       )}
                     </div>
                   )}
+                </div>
 
-                  {/* Status badge */}
-                  {cover.has_cover && (
-                    <div className="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-medium border border-blue-500/30">
-                      <Upload className="size-2.5" />
-                      Storage
+                <div className="px-2 py-1.5 border-t border-white/[0.06]">
+                  <p className="text-[11px] font-medium text-white/80 truncate">{cover.name}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      )}
+
+      {/* List view */}
+      {!loading && covers.length > 0 && viewMode === "list" && (
+        <div className="flex flex-col rounded-xl border border-white/[0.06] bg-[#0c1220] overflow-hidden divide-y divide-white/[0.04]">
+          {covers.map((cover) => {
+            const displayImage = getDisplayImage(cover)
+            const isUploading = uploading === cover.slug
+            const isRemoving = removing === cover.slug
+            const hasCover = hasAnyImage(cover)
+
+            return (
+              <div key={cover.id} className="flex items-center gap-4 px-4 py-2.5 hover:bg-white/[0.02] transition-colors">
+                <div className="relative size-12 rounded-lg bg-[#080d16] border border-white/[0.06] overflow-hidden shrink-0 flex items-center justify-center">
+                  {displayImage ? (
+                    <img src={displayImage} alt={cover.name} className="w-full h-full object-contain p-1" />
+                  ) : (
+                    <ImageIcon className="size-4 text-white/10" />
+                  )}
+                  {(isUploading || isRemoving) && (
+                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                      <Loader2 className="size-3 animate-spin text-blue-400" />
                     </div>
                   )}
                 </div>
 
-                {/* Info area */}
-                <div className="px-3 py-2.5 border-t border-white/[0.06]">
-                  <p className="text-sm font-medium text-white truncate">
-                    {cover.name}
-                  </p>
-                  <p className="text-[11px] text-white/30 mt-0.5">
-                    {cover.slug}
-                  </p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium text-white truncate">{cover.name}</p>
+                  <p className="text-[11px] text-white/30">{cover.slug}</p>
+                </div>
+
+                <div className="flex items-center gap-1.5 shrink-0">
+                  {hasCover ? (
+                    <span className="text-[10px] text-emerald-400/70 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">Com capa</span>
+                  ) : (
+                    <span className="text-[10px] text-white/30 px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06]">Sem capa</span>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-1 shrink-0">
+                  <button
+                    onClick={() => openFilePicker(cover.slug)}
+                    disabled={isUploading || isRemoving}
+                    className="p-1.5 rounded-lg text-white/30 hover:text-blue-400 hover:bg-blue-500/10 transition-colors disabled:opacity-30"
+                    title={hasCover ? "Alterar Capa" : "Adicionar Capa"}
+                  >
+                    <Camera className="size-4" />
+                  </button>
+                  {cover.has_cover && (
+                    <button
+                      onClick={() => handleRemove(cover.slug)}
+                      disabled={isRemoving}
+                      className="p-1.5 rounded-lg text-white/30 hover:text-red-400 hover:bg-red-500/10 transition-colors disabled:opacity-30"
+                      title="Remover"
+                    >
+                      <Trash2 className="size-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             )
