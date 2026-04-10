@@ -31,7 +31,7 @@ const navItems = [
 
 const adminItems = [
   { href: "/partnerzone/admin", icon: Settings, label: "Painel Admin" },
-  { href: "/partnerzone/admin/categories", icon: Image, label: "Capas Equipamentos" },
+  { href: "/partnerzone/admin/covers", icon: Image, label: "Capas Equipamentos" },
   { href: "/partnerzone/admin/upload", icon: Upload, label: "Upload Material" },
   { href: "/partnerzone/admin/solicitacoes", icon: FileText, label: "Solicitacoes" },
   { href: "/partnerzone/admin/analytics", icon: BarChart3, label: "Analytics" },
