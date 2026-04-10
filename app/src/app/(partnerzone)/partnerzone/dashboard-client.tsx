@@ -24,47 +24,69 @@ import Image from "next/image"
 import type { Material, Category } from "@/lib/partnerzone/types"
 
 const equipmentImages: Record<string, string> = {
+  // Crystal / Enygma
   "crystal 3d": "/equipamentos/Crystal 3D.png",
   "enygma": "/equipamentos/enygma.png",
+  // Focuskin / Folix
   "focuskin": "/equipamentos/Focuskin.png",
+  "folix": "/equipamentos/Folix.png",
+  // Hipro variants
   "hipro": "/equipamentos/Hipro.png",
   "hipro med": "/equipamentos/Hipro med.png",
   "hipro hof": "/equipamentos/HIPRO HOF.png",
   "hipro prime": "/equipamentos/Hipro Prime Edition.png",
   "hipro prime edition": "/equipamentos/Hipro Prime Edition.png",
+  // Hive / Iconyc
   "hive pro": "/equipamentos/Hive pro.png",
   "iconyc": "/equipamentos/Iconyc.png",
+  // Inkie
   "inkie laser": "/equipamentos/Inkie Laser.png",
   "inkie light": "/equipamentos/inkie light.png",
+  // Multishape
   "multishape": "/equipamentos/multishape.png",
+  // S30 / M30 variants (Supabase may have "S -30", "M - 30", etc.)
   "s30": "/equipamentos/S30.png",
+  "s -30": "/equipamentos/S30.png",
+  "s-30": "/equipamentos/S30.png",
   "m30": "/equipamentos/m30.png",
+  "m - 30": "/equipamentos/m30.png",
+  "m-30": "/equipamentos/m30.png",
+  // Supreme Pro
   "supreme pro": "/equipamentos/Supreme Pro.png",
+  // BHS 156 variants
   "bhs 156 full": "/equipamentos/bhs 156full.png",
   "bhs 156full": "/equipamentos/bhs 156full.png",
   "bhs 156 full - criofrequência": "/equipamentos/bhs 156full.png",
+  "bhs 156 full - criofrequencia": "/equipamentos/bhs 156full.png",
   "bhs 156 full enygma": "/equipamentos/bhs 156full.png",
+  // Fusion / Raytrace / Reverso
   "fusion 3": "/equipamentos/fusion 3.png",
+  "laser fusion": "/equipamentos/fusion 3.png",
   "raytrace": "/equipamentos/raytrace.png",
   "reverso": "/equipamentos/Reverso.png",
+  // Creator 600
   "creator 600": "/equipamentos/Creator 600.png",
+  // UltraLift / Unyque
   "ultralift": "/equipamentos/UltraLift.png",
   "unyque pro": "/equipamentos/Unyque Pro.png",
   "unyque pro enygma": "/equipamentos/Unyque Pro Enygma.png",
+  // X-Tonus
   "x-tonus": "/equipamentos/X-Tonus.png",
   "xtonus": "/equipamentos/xtonus.png",
+  "x tonus": "/equipamentos/X-Tonus.png",
+  // Others
   "visbody": "/equipamentos/Visbody.png",
   "lumenis": "/equipamentos/Lumenis.png",
   "alpha": "/equipamentos/Alplha.png",
   "alplha": "/equipamentos/Alplha.png",
-  "folix": "/equipamentos/Folix.png",
   "nuera tight": "/equipamentos/Nuera tight.png",
   "splendor x": "/equipamentos/splendor x.png",
   "stellar": "/equipamentos/stellar.png",
   "trilift": "/equipamentos/trilift.png",
-  "body health portugal": "/equipamentos/Contourline AIOX.png",
-  "bodysculpt": "/equipamentos/Contourline AIOX.png",
-  "eurofeedback": "/equipamentos/Contourline AIOX.png",
+  // Adella variants
+  "adella laser": "/equipamentos/Inkie Laser.png",
+  "adella led": "/equipamentos/inkie light.png",
+  "adellaled1": "/equipamentos/inkie light.png",
 }
 
 const hiddenCategories = new Set([
@@ -78,10 +100,17 @@ const hiddenCategories = new Set([
   "sheila melo",
   "techloc",
   "zelotech",
+  "zelo tech",
+  "zelo-tech",
 ])
 
 function isCategoryHidden(name: string): boolean {
-  return hiddenCategories.has(name.toLowerCase().trim())
+  const lower = name.toLowerCase().trim()
+  if (hiddenCategories.has(lower)) return true
+  for (const hidden of hiddenCategories) {
+    if (lower.includes(hidden) || hidden.includes(lower)) return true
+  }
+  return false
 }
 
 function getEquipmentImage(name: string): string | null {
