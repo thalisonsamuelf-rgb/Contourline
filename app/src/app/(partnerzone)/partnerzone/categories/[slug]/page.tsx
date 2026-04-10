@@ -3,9 +3,9 @@ import { notFound } from "next/navigation"
 import {
   getCategoryBySlug,
   getMaterials,
-  getCategories,
   getCategoriesWithCount,
 } from "@/lib/partnerzone/queries"
+import type { Material, Category } from "@/lib/partnerzone/types"
 import { CategoryPageClient } from "./category-client"
 
 interface Props {
@@ -20,6 +20,42 @@ export async function generateMetadata({ params }: Props) {
   }
 }
 
+/**
+ * Recursively collect all descendant category ids of a given root.
+ */
+function collectDescendantIds(
+  rootId: string,
+  allCategories: Category[]
+): string[] {
+  const result: string[] = [rootId]
+  const stack = [rootId]
+  while (stack.length > 0) {
+    const currentId = stack.pop()!
+    const children = allCategories.filter((c) => c.parent_id === currentId)
+    for (const child of children) {
+      result.push(child.id)
+      stack.push(child.id)
+    }
+  }
+  return result
+}
+
+/**
+ * Counts total materials reachable from a category (recursive).
+ */
+function countDescendantMaterials(
+  rootId: string,
+  allCategories: Category[],
+  materialCountByCategory: Map<string, number>
+): number {
+  const ids = collectDescendantIds(rootId, allCategories)
+  let total = 0
+  for (const id of ids) {
+    total += materialCountByCategory.get(id) ?? 0
+  }
+  return total
+}
+
 async function CategoryData({ slug }: { slug: string }) {
   const [category, allCategories] = await Promise.all([
     getCategoryBySlug(slug),
@@ -28,41 +64,53 @@ async function CategoryData({ slug }: { slug: string }) {
 
   if (!category) notFound()
 
-  // Get materials for this category and its children
+  // Build a quick lookup: category id -> direct material count
+  const materialCountByCategory = new Map<string, number>()
+  for (const c of allCategories) {
+    materialCountByCategory.set(c.id, c.material_count ?? 0)
+  }
+
+  // Direct child categories
   const childCategories = allCategories.filter((c) => c.parent_id === category.id)
 
-  // Fetch materials for main category
-  const { data: materials, count } = await getMaterials({
-    categoryId: category.id,
-    limit: 100,
-  })
-
-  // Materials per subcategory (so we know counts and can list by subcategory)
-  const subMaterialsResults = await Promise.all(
-    childCategories.map((c) => getMaterials({ categoryId: c.id, limit: 100 }))
-  )
-
-  // Build a map of subcategory id -> materials
-  const subcategoryMaterials: Record<string, typeof materials> = {}
-  childCategories.forEach((c, i) => {
-    subcategoryMaterials[c.id] = subMaterialsResults[i].data
-  })
-
-  // Enrich subcategories with their material counts
-  const enrichedSubcategories = childCategories.map((c, i) => ({
+  // For each subcategory, compute the recursive total
+  const enrichedSubcategories = childCategories.map((c) => ({
     ...c,
-    material_count: subMaterialsResults[i].count,
+    material_count: countDescendantMaterials(c.id, allCategories, materialCountByCategory),
   }))
 
-  const totalCount = count + subMaterialsResults.reduce((a, s) => a + s.count, 0)
+  // All descendant ids of THIS category (for fetching materials recursively)
+  const allDescendantIds = collectDescendantIds(category.id, allCategories)
+
+  // Fetch all materials in this branch (use a recursive in-clause)
+  // Limit to 500 per branch to keep the page snappy
+  const { data: branchMaterials, count: branchCount } = await getMaterials({
+    categoryIds: allDescendantIds,
+    limit: 500,
+  })
+
+  // Direct materials (those whose category_id == this category)
+  const directMaterials = branchMaterials.filter(
+    (m) => m.category_id === category.id
+  )
+
+  // Group materials by subcategory (top-level child)
+  // For each direct child, get all materials whose category is the child OR its descendants
+  const subcategoryMaterials: Record<string, Material[]> = {}
+  for (const child of childCategories) {
+    const childDescendants = new Set(collectDescendantIds(child.id, allCategories))
+    subcategoryMaterials[child.id] = branchMaterials.filter((m) =>
+      childDescendants.has(m.category_id)
+    )
+  }
 
   return (
     <CategoryPageClient
       category={category}
       subcategories={enrichedSubcategories}
-      directMaterials={materials}
+      directMaterials={directMaterials}
       subcategoryMaterials={subcategoryMaterials}
-      totalCount={totalCount}
+      totalCount={branchCount}
       allCategories={allCategories}
     />
   )

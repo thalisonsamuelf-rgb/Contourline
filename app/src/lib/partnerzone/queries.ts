@@ -47,6 +47,7 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
 
 export async function getMaterials(options?: {
   categoryId?: string
+  categoryIds?: string[]
   limit?: number
   offset?: number
   orderBy?: "created_at" | "download_count" | "title"
@@ -55,6 +56,7 @@ export async function getMaterials(options?: {
 }): Promise<{ data: Material[]; count: number }> {
   const {
     categoryId,
+    categoryIds,
     limit = 20,
     offset = 0,
     orderBy = "created_at",
@@ -69,7 +71,9 @@ export async function getMaterials(options?: {
     .order(orderBy, { ascending: order === "asc" })
     .range(offset, offset + limit - 1)
 
-  if (categoryId) {
+  if (categoryIds && categoryIds.length > 0) {
+    query = query.in("category_id", categoryIds)
+  } else if (categoryId) {
     query = query.eq("category_id", categoryId)
   }
 
@@ -556,26 +560,44 @@ export async function getUserStats() {
 export async function getCategoriesWithCount(): Promise<Category[]> {
   const client = getClient()
 
-  const { data: categories, error: catError } = await client
-    .from("partnerzone_categories")
-    .select("*")
-    .order("sort_order")
-
-  if (catError) throw catError
-
-  const { data: counts, error: countError } = await client
-    .from("partnerzone_materials")
-    .select("category_id")
-    .eq("is_active", true)
-
-  if (countError) throw countError
-
-  const countMap = new Map<string, number>()
-  for (const row of counts ?? []) {
-    countMap.set(row.category_id, (countMap.get(row.category_id) ?? 0) + 1)
+  // Fetch all categories (paginated to bypass Supabase 1000 row limit)
+  const categories: Category[] = []
+  let catOffset = 0
+  const PAGE = 1000
+  while (true) {
+    const { data, error } = await client
+      .from("partnerzone_categories")
+      .select("*")
+      .order("sort_order")
+      .range(catOffset, catOffset + PAGE - 1)
+    if (error) throw error
+    if (!data || data.length === 0) break
+    categories.push(...data)
+    if (data.length < PAGE) break
+    catOffset += PAGE
   }
 
-  return (categories ?? []).map((c) => ({
+  // Fetch all material category_ids (paginated)
+  const countMap = new Map<string, number>()
+  let matOffset = 0
+  while (true) {
+    const { data, error } = await client
+      .from("partnerzone_materials")
+      .select("category_id")
+      .eq("is_active", true)
+      .range(matOffset, matOffset + PAGE - 1)
+    if (error) throw error
+    if (!data || data.length === 0) break
+    for (const row of data) {
+      if (row.category_id) {
+        countMap.set(row.category_id, (countMap.get(row.category_id) ?? 0) + 1)
+      }
+    }
+    if (data.length < PAGE) break
+    matOffset += PAGE
+  }
+
+  return categories.map((c) => ({
     ...c,
     material_count: countMap.get(c.id) ?? 0,
   }))
