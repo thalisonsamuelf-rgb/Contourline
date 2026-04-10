@@ -17,7 +17,6 @@ import {
   LayoutGrid,
   List,
 } from "lucide-react"
-import { MaterialGrid } from "@/components/partnerzone/material-grid"
 import { cn } from "@/lib/utils"
 import { formatFileSize } from "@/lib/partnerzone/types"
 import Image from "next/image"
@@ -175,6 +174,7 @@ export function DashboardClient({
   const [autocompleteResults, setAutocompleteResults] = useState<AutocompleteResult | null>(null)
   const [showAutocomplete, setShowAutocomplete] = useState(false)
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
+  const [recentExpanded, setRecentExpanded] = useState(false)
   const debounceRef = useRef<NodeJS.Timeout | null>(null)
 
   // Close autocomplete on outside click
@@ -484,27 +484,85 @@ export function DashboardClient({
         </div>
       </motion.section>
 
-      {/* Materiais Recentes */}
+      {/* Materiais Recentes - Lista colapsável */}
       {recentMaterials.length > 0 && (
-        <motion.section variants={itemVariants} className="flex flex-col gap-4">
-          <div className="flex items-center justify-between">
+        <motion.section variants={itemVariants} className="flex flex-col">
+          <button
+            onClick={() => setRecentExpanded((v) => !v)}
+            className="group flex items-center justify-between gap-3 w-full px-4 py-3 rounded-xl bg-white border border-black/[0.08] hover:border-black/[0.15] transition-all"
+          >
             <div className="flex items-center gap-3">
               <div className="flex items-center justify-center size-7 rounded-lg bg-[#10B981]/10">
                 <Clock className="size-3.5 text-[#047857]" />
               </div>
-              <h2 className="text-lg font-bold text-black/80">Materiais Recentes</h2>
+              <h2 className="text-[14px] font-semibold text-black/80">
+                Materiais Recentes
+              </h2>
+              <span className="text-[11px] text-black/40">
+                ({recentMaterials.slice(0, 5).length})
+              </span>
             </div>
-            <Link
-              href="/partnerzone/search?sort=recent"
-              className="flex items-center gap-1 px-3 py-2 rounded-lg text-[12px] text-[#047857] hover:bg-[#10B981]/10 transition-all"
-            >
-              Ver todos <ArrowRight className="size-3" />
-            </Link>
-          </div>
-          <MaterialGrid
-            materials={recentMaterials}
-            emptyMessage="Nenhum material adicionado ainda."
-          />
+            <ChevronRight
+              className={cn(
+                "size-4 text-black/40 transition-transform duration-200",
+                recentExpanded && "rotate-90"
+              )}
+            />
+          </button>
+
+          <AnimatePresence initial={false}>
+            {recentExpanded && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.25, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="mt-2 rounded-xl bg-white border border-black/[0.08] divide-y divide-black/[0.06]">
+                  {recentMaterials.slice(0, 5).map((material) => (
+                    <Link
+                      key={material.id}
+                      href={`/partnerzone/material/${material.id}`}
+                      className="flex items-center gap-3 px-4 py-2.5 hover:bg-black/[0.02] transition-colors first:rounded-t-xl last:rounded-b-xl"
+                    >
+                      <div className="flex items-center justify-center size-9 rounded-lg bg-[#24336E]/10 shrink-0">
+                        <FileText className="size-4 text-[#24336E]" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[13px] font-medium text-black/80 truncate">
+                          {material.title}
+                        </p>
+                        <div className="flex items-center gap-2 mt-0.5">
+                          {material.category && (
+                            <span className="text-[10px] text-[#24336E]/70 font-medium uppercase tracking-wider">
+                              {material.category.name}
+                            </span>
+                          )}
+                          <span className="text-[10px] text-black/30">
+                            {formatFileSize(material.file_size)}
+                          </span>
+                        </div>
+                      </div>
+                      <span className="text-[11px] text-black/40 shrink-0 hidden sm:block">
+                        {new Date(material.created_at).toLocaleDateString("pt-BR", {
+                          day: "2-digit",
+                          month: "short",
+                        })}
+                      </span>
+                      <ChevronRight className="size-4 text-black/30 shrink-0" />
+                    </Link>
+                  ))}
+                  <Link
+                    href="/partnerzone/search?sort=recent"
+                    className="flex items-center justify-center gap-1.5 px-4 py-2.5 text-[12px] font-medium text-[#24336E] hover:bg-[#24336E]/[0.04] transition-colors rounded-b-xl"
+                  >
+                    Ver todos <ArrowRight className="size-3" />
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.section>
       )}
     </motion.div>
