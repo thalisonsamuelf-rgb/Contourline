@@ -36,6 +36,12 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   const isLoginPage = request.nextUrl.pathname === "/partnerzone/login"
+  const isAuthCallback = request.nextUrl.pathname === "/partnerzone/auth/callback"
+
+  // Auth callback must always pass through (handles OAuth redirect)
+  if (isAuthCallback) {
+    return supabaseResponse
+  }
 
   // Authenticated users visiting login page get redirected to dashboard
   if (user && isLoginPage) {
