@@ -444,42 +444,36 @@ export function DashboardClient({
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
           {categories.filter((cat) => !isCategoryHidden(cat.name)).map((cat) => {
-            const childCount = cat.children?.length ?? 0
-
+            const img = getEquipmentImage(cat.name)
             return (
               <motion.div
                 key={cat.id}
-                whileHover={{ y: -3, scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                whileHover={{ y: -2, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 22 }}
               >
                 <Link
                   href={`/partnerzone/categories/${cat.slug}`}
-                  className="group relative flex flex-col rounded-xl border border-black/[0.08] bg-white overflow-hidden transition-all duration-300 hover:border-[#24336E]/20 hover:shadow-lg hover:shadow-[#24336E]/5"
+                  className="group relative block aspect-square rounded-2xl overflow-hidden bg-[#24336E] shadow-sm hover:shadow-xl transition-shadow duration-300"
                 >
-                  {/* Equipment image area */}
-                  <div className="relative h-36 bg-[#F5F5F5] overflow-hidden">
-                    {getEquipmentImage(cat.name) ? (
-                      <Image
-                        src={getEquipmentImage(cat.name)!}
-                        alt={cat.name}
-                        fill
-                        className="object-contain p-3 group-hover:scale-110 transition-transform duration-300"
-                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                      />
-                    ) : (
-                      <div className="flex items-center justify-center h-full">
-                        <div className="p-3 rounded-xl bg-white border border-black/[0.08] group-hover:scale-110 transition-transform duration-300">
-                          <Cpu className="size-7 text-[#24336E]/60 group-hover:text-[#24336E] transition-colors" />
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  {img ? (
+                    <Image
+                      src={img}
+                      alt={cat.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, (max-width: 1280px) 20vw, 16vw"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full">
+                      <Cpu className="size-10 text-white/40" />
+                    </div>
+                  )}
 
-                  {/* Equipment name */}
-                  <div className="p-3 pt-2.5">
-                    <h3 className="text-[13px] font-semibold text-black/80 group-hover:text-black transition-colors text-center truncate">
+                  {/* Bottom gradient overlay with name */}
+                  <div className="absolute inset-x-0 bottom-0 p-3 pt-10 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                    <h3 className="text-[13px] font-semibold text-white truncate drop-shadow-md">
                       {cat.name}
                     </h3>
                   </div>
